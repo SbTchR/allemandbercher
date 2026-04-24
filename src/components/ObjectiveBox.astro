@@ -1,0 +1,21 @@
+---
+type Props = {
+  objectives?: string[];
+  title?: string;
+};
+
+const { objectives = [], title = 'Objectifs' } = Astro.props;
+---
+
+{
+  objectives.length > 0 && (
+    <aside class="objective-box" aria-labelledby="objectives-title">
+      <h2 id="objectives-title">{title}</h2>
+      <ul>
+        {objectives.map((objective) => (
+          <li>{objective}</li>
+        ))}
+      </ul>
+    </aside>
+  )
+}

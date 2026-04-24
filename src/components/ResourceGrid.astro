@@ -1,0 +1,14 @@
+---
+import ChapterCard from './ChapterCard.astro';
+import type { ResourceEntry } from '../lib/resources';
+
+type Props = {
+  entries: ResourceEntry[];
+};
+
+const { entries } = Astro.props;
+---
+
+<div class="resource-grid">
+  {entries.map((entry) => <ChapterCard entry={entry} />)}
+</div>

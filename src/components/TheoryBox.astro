@@ -1,0 +1,19 @@
+---
+type Props = {
+  category?: 'grammaire' | 'syntaxe' | 'conjugaison' | 'general';
+};
+
+const { category = 'general' } = Astro.props;
+
+const labels = {
+  general: 'Théorie',
+  grammaire: 'Grammaire',
+  syntaxe: 'Syntaxe',
+  conjugaison: 'Conjugaison',
+};
+---
+
+<aside class:list={['theory-box', `theory-box-${category}`]}>
+  <strong>{labels[category]}</strong>
+  <slot />
+</aside>

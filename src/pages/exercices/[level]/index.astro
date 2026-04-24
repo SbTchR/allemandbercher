@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../components/Layout.astro';
+import ResourceGrid from '../../../components/ResourceGrid.astro';
+import { byOrderThenTitle } from '../../../lib/resources';
+
+export async function getStaticPaths() {
+  return ['9h', '10h', '11h'].map((level) => ({ params: { level } }));
+}
+
+const level = Astro.params.level?.toUpperCase() as '9H' | '10H' | '11H';
+const exercices = (await getCollection('exercices', (entry) => entry.data.level === level)).sort(byOrderThenTitle);
+---
+
+<Layout title={`Exercices ${level}`} description={`Exercices d’allemand pour le niveau ${level}.`}>
+  <section class="hero compact-hero">
+    <p class="eyebrow">Exercices</p>
+    <h1>{level}</h1>
+    <p class="lead">Chapitres et activités à finaliser à partir des contenus extraits du site source.</p>
+  </section>
+
+  <section class="content-band">
+    <ResourceGrid entries={exercices} />
+  </section>
+</Layout>

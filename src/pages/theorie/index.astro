@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import ResourceGrid from '../../components/ResourceGrid.astro';
+import TheoryBox from '../../components/TheoryBox.astro';
+import { byCategoryThenOrder } from '../../lib/resources';
+
+const entries = (await getCollection('theorie')).sort(byCategoryThenOrder);
+const categories = [
+  { key: 'grammaire', title: 'Grammaire' },
+  { key: 'syntaxe', title: 'Syntaxe' },
+  { key: 'conjugaison', title: 'Conjugaison' },
+] as const;
+---
+
+<Layout title="Théorie" description="Rappels de grammaire, syntaxe et conjugaison pour le cours d’allemand.">
+  <section class="hero compact-hero">
+    <p class="eyebrow">Références</p>
+    <h1>Théorie</h1>
+    <p class="lead">Les notions sont classées en trois blocs simples pour faciliter la recherche et la migration progressive.</p>
+  </section>
+
+  {
+    categories.map((category) => {
+      const categoryEntries = entries.filter((entry) => entry.data.category === category.key);
+      return (
+        <section class="content-band" aria-labelledby={`theorie-${category.key}`}>
+          <TheoryBox category={category.key}>
+            <h2 id={`theorie-${category.key}`}>{category.title}</h2>
+            <ResourceGrid entries={categoryEntries} />
+          </TheoryBox>
+        </section>
+      );
+    })
+  }
+</Layout>

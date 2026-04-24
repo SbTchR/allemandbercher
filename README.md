@@ -21,6 +21,7 @@ Astro affiche ensuite une adresse locale, généralement `http://localhost:4321`
 ## Modifier le contenu
 
 - Les pages principales sont dans `src/pages/`.
+- Les contenus migrés sont dans `src/content/`.
 - La navigation est dans `src/data/navigation.ts`.
 - Les niveaux et chapitres sont dans `src/data/chapters.ts`.
 - Les composants partagés sont dans `src/components/`.
@@ -33,6 +34,25 @@ Exemples :
 - `src/pages/conseils.astro` devient `/conseils/`
 - `src/pages/outils-en-ligne.astro` devient `/outils-en-ligne/`
 - `src/pages/chapitres/9h/index.astro` devient `/chapitres/9h/`
+
+## Modèle de contenu
+
+Les ressources migrées depuis l’audit sont organisées en collections Astro :
+
+- `src/content/exercices/9h/`, `10h/`, `11h/`
+- `src/content/theorie/grammaire/`, `syntaxe/`, `conjugaison/`
+- `src/content/vocabulaire/9h/`, `10h/`, `11h/`
+- `src/content/outils/`
+
+Chaque fichier Markdown contient un en-tête simple : titre, section, niveau ou catégorie, URL source, liens externes, images et notes de migration.
+
+Pour régénérer ces fichiers depuis `data/source-site-map.json` :
+
+```bash
+npm run content:generate
+```
+
+Attention : cette commande remplace le dossier `src/content/`. Ne pas l’utiliser après des corrections manuelles sans sauvegarder les modifications utiles.
 
 ## Règles de migration
 

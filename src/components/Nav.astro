@@ -2,6 +2,11 @@
 import { navigationItems } from '../data/navigation';
 
 const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(href);
+}
 ---
 
 <header class="site-header">
@@ -12,7 +17,7 @@ const currentPath = Astro.url.pathname;
   <nav class="main-nav" aria-label="Navigation principale">
     {
       navigationItems.map((item) => (
-        <a class:list={{ active: currentPath === item.href }} href={item.href}>
+        <a class:list={{ active: isActive(item.href) }} href={item.href}>
           {item.label}
         </a>
       ))

@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import ResourceGrid from '../../components/ResourceGrid.astro';
+import { byOrderThenTitle } from '../../lib/resources';
+
+const outils = (await getCollection('outils')).sort(byOrderThenTitle);
+---
+
+<Layout title="Outils en ligne" description="Outils en ligne utiles pour apprendre l’allemand.">
+  <section class="hero compact-hero">
+    <p class="eyebrow">Ressources externes</p>
+    <h1>Outils en ligne</h1>
+    <p class="lead">Liens et outils à vérifier puis intégrer proprement dans le futur site.</p>
+  </section>
+
+  <section class="content-band">
+    <ResourceGrid entries={outils} />
+  </section>
+</Layout>

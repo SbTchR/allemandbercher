@@ -18,7 +18,7 @@ export const navigationItems: NavigationItem[] = [
   {
     label: 'Exercices',
     href: '/exercices/',
-    description: 'Activités pour s’entraîner en classe ou à la maison.',
+    description: 'Activités par niveaux 9H, 10H et 11H.',
   },
   {
     label: 'Théorie',

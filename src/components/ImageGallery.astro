@@ -1,0 +1,28 @@
+---
+type ImageItem = {
+  src: string;
+  alt?: string;
+};
+
+type Props = {
+  images?: ImageItem[];
+};
+
+const { images = [] } = Astro.props;
+---
+
+{
+  images.length > 0 && (
+    <section class="image-gallery" aria-labelledby="images-title">
+      <h2 id="images-title">Images à récupérer</h2>
+      <div>
+        {images.map((image) => (
+          <figure>
+            <img src={image.src} alt={image.alt || ''} loading="lazy" />
+            <figcaption>{image.alt || image.src}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  )
+}

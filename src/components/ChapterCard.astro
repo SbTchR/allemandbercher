@@ -1,0 +1,22 @@
+---
+import type { ResourceEntry } from '../lib/resources';
+import { excerptFromBody, resourceUrl } from '../lib/resources';
+
+type Props = {
+  entry: ResourceEntry;
+};
+
+const { entry } = Astro.props;
+const href = resourceUrl(entry);
+const description = entry.data.description || excerptFromBody(entry.body ?? '');
+---
+
+<article class="chapter-card">
+  <a href={href}>
+    <span class="card-kicker">
+      {entry.data.level ? entry.data.level : entry.data.category}
+    </span>
+    <h3>{entry.data.title}</h3>
+    {description && <p>{description}</p>}
+  </a>
+</article>

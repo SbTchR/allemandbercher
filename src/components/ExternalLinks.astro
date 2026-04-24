@@ -1,0 +1,30 @@
+---
+type Link = {
+  label?: string;
+  url: string;
+};
+
+type Props = {
+  links?: Link[];
+  title?: string;
+};
+
+const { links = [], title = 'Liens externes' } = Astro.props;
+---
+
+{
+  links.length > 0 && (
+    <aside class="link-box" aria-labelledby="external-links-title">
+      <h2 id="external-links-title">{title}</h2>
+      <ul>
+        {links.map((link) => (
+          <li>
+            <a href={link.url} rel="noreferrer" target="_blank">
+              {link.label || link.url}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}

@@ -18,6 +18,7 @@ Ce dépôt reconstruit `https://www.allemandbercher.ch` en site statique Astro p
 - `src/pages/` contient les routes Astro publiées.
 - `src/components/` contient les composants réutilisables.
 - `src/data/` contient les listes faciles à modifier : navigation, chapitres, liens.
+- `src/content/` contient les ressources migrées en Markdown.
 - `src/styles/global.css` contient le style global du site.
 - `public/` contient les fichiers statiques publiés tels quels.
 - `raw/` est réservé aux sources brutes de migration et n’est pas versionné.
@@ -30,6 +31,15 @@ Les ressources 9H, 10H et 11H doivent rester simples à maintenir.
 - Garder les slugs en minuscules : `9h`, `10h`, `11h`.
 - Regrouper les métadonnées utiles dans `src/data/chapters.ts` avant de dupliquer du contenu.
 - Préférer des pages courtes et lisibles à de longues pages difficiles à modifier.
+
+## Contenus migrés
+
+- Garder le schéma dans `src/content.config.ts` minimal et stable.
+- Utiliser les collections `exercices`, `theorie`, `vocabulaire` et `outils`.
+- Ne pas coller du HTML Google Sites dans les fichiers Markdown.
+- Mettre les liens externes dans `externalLinks` quand ils doivent être conservés.
+- Mettre les images à récupérer dans `images`, puis remplacer progressivement les URLs Google par des fichiers locaux dans `public/`.
+- Noter les ambiguïtés dans `migrationNotes` au lieu d’inventer du contenu.
 
 ## Qualité
 

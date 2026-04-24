@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import ResourcePage from '../../../components/ResourcePage.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('exercices');
+  return entries.map((entry) => ({
+    params: {
+      level: entry.data.level.toLowerCase(),
+      slug: entry.id.split('/').pop(),
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<ResourcePage entry={entry} />
