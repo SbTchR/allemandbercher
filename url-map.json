@@ -1,0 +1,1408 @@
+{
+  "generatedAt": "2026-04-24T10:57:10.999Z",
+  "sourceBase": "https://www.allemandbercher.ch",
+  "targetBase": "https://www.allemandbercher.ch",
+  "summary": {
+    "sourceUrls": 100,
+    "mappedUrls": 100,
+    "unmappedUrls": 0,
+    "keptUrls": 57,
+    "redirectedUrls": 43,
+    "simplifiedSlugs": 41
+  },
+  "strategy": {
+    "hosting": "GitHub Pages static site",
+    "redirectMechanism": "La page 404 Astro embarque cette carte et redirige côté client les anciennes URLs connues.",
+    "slugPolicy": "Conserver les slugs source quand ils sont déjà propres; supprimer les accents quand une URL doit être simplifiée; ajouter le slash final Astro.",
+    "duplicatePolicy": "Les pages index sont générées une seule fois dans leur catégorie; les anciennes pages /chapitres ont été supprimées car elles ne viennent pas du site source."
+  },
+  "redirects": [
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/",
+      "sourcePath": "/",
+      "title": "Accueil",
+      "targetPath": "/",
+      "targetUrl": "https://www.allemandbercher.ch/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/accueil",
+      "sourcePath": "/accueil",
+      "title": "Accueil",
+      "targetPath": "/",
+      "targetUrl": "https://www.allemandbercher.ch/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "ancienne page accueil fusionnée avec la racine",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/conseils",
+      "sourcePath": "/conseils",
+      "title": "Conseils",
+      "targetPath": "/conseils/",
+      "targetUrl": "https://www.allemandbercher.ch/conseils/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite",
+      "sourcePath": "/conseils/compréhension-écrite",
+      "title": "Compréhension écrite",
+      "targetPath": "/conseils/comprehension-ecrite/",
+      "targetUrl": "https://www.allemandbercher.ch/conseils/comprehension-ecrite/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/conseils/compr%C3%A9hension-orale",
+      "sourcePath": "/conseils/compréhension-orale",
+      "title": "Compréhension orale",
+      "targetPath": "/conseils/comprehension-orale/",
+      "targetUrl": "https://www.allemandbercher.ch/conseils/comprehension-orale/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/conseils/expression-%C3%A9crite",
+      "sourcePath": "/conseils/expression-écrite",
+      "title": "Expression écrite",
+      "targetPath": "/conseils/expression-ecrite/",
+      "targetUrl": "https://www.allemandbercher.ch/conseils/expression-ecrite/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/conseils/expression-orale",
+      "sourcePath": "/conseils/expression-orale",
+      "title": "Expression orale",
+      "targetPath": "/conseils/expression-orale/",
+      "targetUrl": "https://www.allemandbercher.ch/conseils/expression-orale/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/conseils/vocabulaire",
+      "sourcePath": "/conseils/vocabulaire",
+      "title": "Vocabulaire",
+      "targetPath": "/conseils/vocabulaire/",
+      "targetUrl": "https://www.allemandbercher.ch/conseils/vocabulaire/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices",
+      "sourcePath": "/exercices",
+      "title": "Geni@l",
+      "targetPath": "/exercices/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h",
+      "sourcePath": "/exercices/10h",
+      "title": "10H",
+      "targetPath": "/exercices/10h/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k1-los-gehts",
+      "sourcePath": "/exercices/10h/k1-los-gehts",
+      "title": "K1 - Los geht's",
+      "targetPath": "/exercices/10h/k1-los-gehts/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k1-los-gehts/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k2-fit-und-sportlich",
+      "sourcePath": "/exercices/10h/k2-fit-und-sportlich",
+      "title": "K2 - Fit und sportlich !",
+      "targetPath": "/exercices/10h/k2-fit-und-sportlich/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k2-fit-und-sportlich/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k3-wie-gehts-denn-so",
+      "sourcePath": "/exercices/10h/k3-wie-gehts-denn-so",
+      "title": "K3 - Wie geht's denn so ?",
+      "targetPath": "/exercices/10h/k3-wie-gehts-denn-so/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k3-wie-gehts-denn-so/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k4-kaufen-verkaufen-leihen",
+      "sourcePath": "/exercices/10h/k4-kaufen-verkaufen-leihen",
+      "title": "K4 - Kaufen, verkaufen, leihen",
+      "targetPath": "/exercices/10h/k4-kaufen-verkaufen-leihen/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k4-kaufen-verkaufen-leihen/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k5-schmeckts",
+      "sourcePath": "/exercices/10h/k5-schmeckts",
+      "title": "K5 - Schmeckt's ?",
+      "targetPath": "/exercices/10h/k5-schmeckts/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k5-schmeckts/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k6-lies-mal-wieder",
+      "sourcePath": "/exercices/10h/k6-lies-mal-wieder",
+      "title": "K6 - Lies mal wieder !",
+      "targetPath": "/exercices/10h/k6-lies-mal-wieder/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k6-lies-mal-wieder/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k7-geld-allein-macht-nicht-gl%C3%BCcklich",
+      "sourcePath": "/exercices/10h/k7-geld-allein-macht-nicht-glücklich",
+      "title": "K7 - Geld allein macht nicht glücklich",
+      "targetPath": "/exercices/10h/k7-geld-allein-macht-nicht-glucklich/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k7-geld-allein-macht-nicht-glucklich/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/10h/k8-talente-gesucht",
+      "sourcePath": "/exercices/10h/k8-talente-gesucht",
+      "title": "K8 - Talente gesucht",
+      "targetPath": "/exercices/10h/k8-talente-gesucht/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/10h/k8-talente-gesucht/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h",
+      "sourcePath": "/exercices/11h",
+      "title": "11H",
+      "targetPath": "/exercices/11h/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k1-meine-st%C3%A4rken-meine-schw%C3%A4chen",
+      "sourcePath": "/exercices/11h/k1-meine-stärken-meine-schwächen",
+      "title": "K1 - Meine Stärken, meine Schwächen",
+      "targetPath": "/exercices/11h/k1-meine-starken-meine-schwachen/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k1-meine-starken-meine-schwachen/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k2-wir-und-die-medien",
+      "sourcePath": "/exercices/11h/k2-wir-und-die-medien",
+      "title": "K2 - Wir und die Medien",
+      "targetPath": "/exercices/11h/k2-wir-und-die-medien/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k2-wir-und-die-medien/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k3-f%C3%BCr-die-umwelt",
+      "sourcePath": "/exercices/11h/k3-für-die-umwelt",
+      "title": "K3 - Für die Umwelt",
+      "targetPath": "/exercices/11h/k3-fur-die-umwelt/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k3-fur-die-umwelt/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k4-ich-du-wir",
+      "sourcePath": "/exercices/11h/k4-ich-du-wir",
+      "title": "K4 - Ich, du, wir",
+      "targetPath": "/exercices/11h/k4-ich-du-wir/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k4-ich-du-wir/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k5-ich-w%C3%BCnsche-mir",
+      "sourcePath": "/exercices/11h/k5-ich-wünsche-mir",
+      "title": "K5 - Ich wünsche mir...",
+      "targetPath": "/exercices/11h/k5-ich-wunsche-mir/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k5-ich-wunsche-mir/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k6-wir-tun-was",
+      "sourcePath": "/exercices/11h/k6-wir-tun-was",
+      "title": "K6 - Wir tun was!",
+      "targetPath": "/exercices/11h/k6-wir-tun-was/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k6-wir-tun-was/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k7-so-war-es-so-ist-es-jetzt",
+      "sourcePath": "/exercices/11h/k7-so-war-es-so-ist-es-jetzt",
+      "title": "K7 - So war es - so ist es jetzt",
+      "targetPath": "/exercices/11h/k7-so-war-es-so-ist-es-jetzt/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k7-so-war-es-so-ist-es-jetzt/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/11h/k8-wie-gehts-weiter",
+      "sourcePath": "/exercices/11h/k8-wie-gehts-weiter",
+      "title": "K8 - Wie geht's weiter?",
+      "targetPath": "/exercices/11h/k8-wie-gehts-weiter/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/11h/k8-wie-gehts-weiter/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h",
+      "sourcePath": "/exercices/9h",
+      "title": "9H",
+      "targetPath": "/exercices/9h/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-1-die-neue-schule",
+      "sourcePath": "/exercices/9h/kap-1-die-neue-schule",
+      "title": "K1 - Die neue Schule",
+      "targetPath": "/exercices/9h/kap-1-die-neue-schule/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-1-die-neue-schule/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-2-meine-stadt",
+      "sourcePath": "/exercices/9h/kap-2-meine-stadt",
+      "title": "K2 - Meine Stadt",
+      "targetPath": "/exercices/9h/kap-2-meine-stadt/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-2-meine-stadt/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-3-meine-familie",
+      "sourcePath": "/exercices/9h/kap-3-meine-familie",
+      "title": "K3 - Meine Familie",
+      "targetPath": "/exercices/9h/kap-3-meine-familie/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-3-meine-familie/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-4-alles-gute",
+      "sourcePath": "/exercices/9h/kap-4-alles-gute",
+      "title": "K4 - Alles Gute",
+      "targetPath": "/exercices/9h/kap-4-alles-gute/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-4-alles-gute/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-5-wir-fahren-weg",
+      "sourcePath": "/exercices/9h/kap-5-wir-fahren-weg",
+      "title": "K5 - Wir fahren weg!",
+      "targetPath": "/exercices/9h/kap-5-wir-fahren-weg/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-5-wir-fahren-weg/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-6-klassenfahrt-nach-basel",
+      "sourcePath": "/exercices/9h/kap-6-klassenfahrt-nach-basel",
+      "title": "K6 - Klassenfahrt nach Basel",
+      "targetPath": "/exercices/9h/kap-6-klassenfahrt-nach-basel/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-6-klassenfahrt-nach-basel/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-7-freunde-haben-freunde-finden",
+      "sourcePath": "/exercices/9h/kap-7-freunde-haben-freunde-finden",
+      "title": "K7 - Freunde haben - Freunde finden",
+      "targetPath": "/exercices/9h/kap-7-freunde-haben-freunde-finden/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-7-freunde-haben-freunde-finden/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/exercices/9h/kap-8-bei-uns-zu-hause",
+      "sourcePath": "/exercices/9h/kap-8-bei-uns-zu-hause",
+      "title": "K8 - Bei uns zu Hause",
+      "targetPath": "/exercices/9h/kap-8-bei-uns-zu-hause/",
+      "targetUrl": "https://www.allemandbercher.ch/exercices/9h/kap-8-bei-uns-zu-hause/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/nad-maschine",
+      "sourcePath": "/nad-maschine",
+      "title": "NAD-Maschine",
+      "targetPath": "/outils-en-ligne/nad-maschine/",
+      "targetUrl": "https://www.allemandbercher.ch/outils-en-ligne/nad-maschine/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/outils-en-ligne",
+      "sourcePath": "/outils-en-ligne",
+      "title": "Outils en ligne",
+      "targetPath": "/outils-en-ligne/",
+      "targetUrl": "https://www.allemandbercher.ch/outils-en-ligne/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie",
+      "sourcePath": "/théorie",
+      "title": "Théorie",
+      "targetPath": "/theorie/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison",
+      "sourcePath": "/théorie/conjugaison",
+      "title": "Conjugaison",
+      "targetPath": "/theorie/conjugaison/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/futur",
+      "sourcePath": "/théorie/conjugaison/futur",
+      "title": "Futur",
+      "targetPath": "/theorie/conjugaison/futur/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/futur/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/imp%C3%A9ratif",
+      "sourcePath": "/théorie/conjugaison/impératif",
+      "title": "Impératif",
+      "targetPath": "/theorie/conjugaison/imperatif/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/imperatif/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/konjunktiv-ii",
+      "sourcePath": "/théorie/conjugaison/konjunktiv-ii",
+      "title": "Konjunktiv II",
+      "targetPath": "/theorie/conjugaison/konjunktiv-ii/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/konjunktiv-ii/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/les-verbes-r%C3%A9flexifs",
+      "sourcePath": "/théorie/conjugaison/les-verbes-réflexifs",
+      "title": "Les verbes réflexifs",
+      "targetPath": "/theorie/conjugaison/les-verbes-reflexifs/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/les-verbes-reflexifs/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pass%C3%A9-compos%C3%A9",
+      "sourcePath": "/théorie/conjugaison/passé-composé",
+      "title": "Passé composé",
+      "targetPath": "/theorie/conjugaison/passe-compose/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/passe-compose/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9sent",
+      "sourcePath": "/théorie/conjugaison/présent",
+      "title": "Présent",
+      "targetPath": "/theorie/conjugaison/present/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/present/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9t%C3%A9rit",
+      "sourcePath": "/théorie/conjugaison/prétérit",
+      "title": "Prétérit",
+      "targetPath": "/theorie/conjugaison/preterit/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/preterit/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/verbes-de-modalit%C3%A9",
+      "sourcePath": "/théorie/conjugaison/verbes-de-modalité",
+      "title": "Verbes de modalité",
+      "targetPath": "/theorie/conjugaison/verbes-de-modalite/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/conjugaison/verbes-de-modalite/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire",
+      "sourcePath": "/théorie/grammaire",
+      "title": "Grammaire",
+      "targetPath": "/theorie/grammaire/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-comparatif",
+      "sourcePath": "/théorie/grammaire/le-comparatif",
+      "title": "Le comparatif et le superlatif",
+      "targetPath": "/theorie/grammaire/le-comparatif/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/le-comparatif/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9nitif",
+      "sourcePath": "/théorie/grammaire/le-génitif",
+      "title": "Le génitif",
+      "targetPath": "/theorie/grammaire/le-genitif/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/le-genitif/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-superlatif",
+      "sourcePath": "/théorie/grammaire/le-superlatif",
+      "title": "Le superlatif",
+      "targetPath": "/theorie/grammaire/le-superlatif/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/le-superlatif/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-adjectifs",
+      "sourcePath": "/théorie/grammaire/les-adjectifs",
+      "title": "Les adjectifs",
+      "targetPath": "/theorie/grammaire/les-adjectifs/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/les-adjectifs/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base",
+      "sourcePath": "/théorie/grammaire/les-cas-théorie-de-base",
+      "title": "Les cas",
+      "targetPath": "/theorie/grammaire/les-cas-theorie-de-base/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/les-cas-theorie-de-base/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions",
+      "sourcePath": "/théorie/grammaire/les-prépositions",
+      "title": "Les prépositions",
+      "targetPath": "/theorie/grammaire/les-prepositions/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/les-prepositions/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-personnels",
+      "sourcePath": "/théorie/grammaire/les-pronoms-personnels",
+      "title": "Les pronoms personnels",
+      "targetPath": "/theorie/grammaire/les-pronoms-personnels/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/les-pronoms-personnels/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs",
+      "sourcePath": "/théorie/grammaire/les-pronoms-possessifs",
+      "title": "Les déterminants possessifs",
+      "targetPath": "/theorie/grammaire/les-pronoms-possessifs/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/les-pronoms-possessifs/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/tableaux-de-d%C3%A9clinaisons",
+      "sourcePath": "/théorie/grammaire/tableaux-de-déclinaisons",
+      "title": "Tableaux de déclinaisons",
+      "targetPath": "/theorie/grammaire/tableaux-de-declinaisons/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/grammaire/tableaux-de-declinaisons/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe",
+      "sourcePath": "/théorie/syntaxe",
+      "title": "Syntaxe",
+      "targetPath": "/theorie/syntaxe/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/damit-w%C3%A4hrend-bevor-nachdem-als-obwohl",
+      "sourcePath": "/théorie/syntaxe/damit-während-bevor-nachdem-als-obwohl",
+      "title": "damit, während, bevor, nachdem, als, ...",
+      "targetPath": "/theorie/syntaxe/damit-wahrend-bevor-nachdem-als-obwohl/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/damit-wahrend-bevor-nachdem-als-obwohl/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/dass",
+      "sourcePath": "/théorie/syntaxe/dass",
+      "title": "dass",
+      "targetPath": "/theorie/syntaxe/dass/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/dass/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal",
+      "sourcePath": "/théorie/syntaxe/la-place-du-verbe-principal",
+      "title": "La place du verbe principal",
+      "targetPath": "/theorie/syntaxe/la-place-du-verbe-principal/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/la-place-du-verbe-principal/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-infinitives",
+      "sourcePath": "/théorie/syntaxe/les-infinitives",
+      "title": "Les phrases infinitives",
+      "targetPath": "/theorie/syntaxe/les-infinitives/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/les-infinitives/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-au-pass%C3%A9-compos%C3%A9",
+      "sourcePath": "/théorie/syntaxe/les-phrases-au-passé-composé",
+      "title": "Les phrases au passé composé",
+      "targetPath": "/theorie/syntaxe/les-phrases-au-passe-compose/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/les-phrases-au-passe-compose/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec-verbe-de-modalit%C3%A9",
+      "sourcePath": "/théorie/syntaxe/les-phrases-avec-verbe-de-modalité",
+      "title": "Les phrases avec verbe de modalité",
+      "targetPath": "/theorie/syntaxe/les-phrases-avec-verbe-de-modalite/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/les-phrases-avec-verbe-de-modalite/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions",
+      "sourcePath": "/théorie/syntaxe/les-questions",
+      "title": "Les questions",
+      "targetPath": "/theorie/syntaxe/les-questions/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/les-questions/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions-indirectes",
+      "sourcePath": "/théorie/syntaxe/les-questions-indirectes",
+      "title": "Les questions indirectes",
+      "targetPath": "/theorie/syntaxe/les-questions-indirectes/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/les-questions-indirectes/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-subordonn%C3%A9es-relatives",
+      "sourcePath": "/théorie/syntaxe/les-subordonnées-relatives",
+      "title": "Les subordonnées relatives",
+      "targetPath": "/theorie/syntaxe/les-subordonnees-relatives/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/les-subordonnees-relatives/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb",
+      "sourcePath": "/théorie/syntaxe/trotzdem-deshalb",
+      "title": "trotzdem, deshalb, also",
+      "targetPath": "/theorie/syntaxe/trotzdem-deshalb/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/trotzdem-deshalb/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also",
+      "sourcePath": "/théorie/syntaxe/und-oder-aber-denn-also",
+      "title": "und, oder, aber, denn, also",
+      "targetPath": "/theorie/syntaxe/und-oder-aber-denn-also/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/und-oder-aber-denn-also/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/weil",
+      "sourcePath": "/théorie/syntaxe/weil",
+      "title": "weil",
+      "targetPath": "/theorie/syntaxe/weil/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/weil/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/wenn",
+      "sourcePath": "/théorie/syntaxe/wenn",
+      "title": "wenn",
+      "targetPath": "/theorie/syntaxe/wenn/",
+      "targetUrl": "https://www.allemandbercher.ch/theorie/syntaxe/wenn/",
+      "status": 301,
+      "action": "redirect",
+      "notes": [
+        "slug simplifié sans accents pour URL propre",
+        "chemin cible différent documenté",
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire",
+      "sourcePath": "/vocabulaire",
+      "title": "Vocabulaire",
+      "targetPath": "/vocabulaire/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h",
+      "sourcePath": "/vocabulaire/10h",
+      "title": "Wortschatz 10H",
+      "targetPath": "/vocabulaire/10h/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-1",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-1",
+      "title": "Kapitel 1",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-1/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-1/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-2",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-2",
+      "title": "GK1011 Kapitel 2",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-2/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-2/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-3",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-3",
+      "title": "GK1011 Kapitel 3",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-3/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-3/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-4",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-4",
+      "title": "GK1011 Kapitel 4",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-4/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-4/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-5",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-5",
+      "title": "GK1011 Kapitel 5",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-5/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-5/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-6",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-6",
+      "title": "GK1011 Kapitel 6",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-6/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-6/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-7",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-7",
+      "title": "GK1011 Kapitel 7",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-7/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-7/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-8",
+      "sourcePath": "/vocabulaire/10h/gk1011-kapitel-8",
+      "title": "GK1011 Kapitel 8",
+      "targetPath": "/vocabulaire/10h/gk1011-kapitel-8/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-8/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h",
+      "sourcePath": "/vocabulaire/11h",
+      "title": "Wortschatz 11H",
+      "targetPath": "/vocabulaire/11h/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-1",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-1",
+      "title": "Kapitel 1",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-1/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-1/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-2",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-2",
+      "title": "GK11 Kapitel 2",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-2/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-2/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-3",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-3",
+      "title": "GK11 Kapitel 3",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-3/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-3/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-4",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-4",
+      "title": "Kapitel 4",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-4/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-4/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-5",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-5",
+      "title": "Kapitel 5",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-5/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-5/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-6",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-6",
+      "title": "Kapitel 6",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-6/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-6/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-7",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-7",
+      "title": "Kapitel 7",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-7/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-7/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-8",
+      "sourcePath": "/vocabulaire/11h/gk11-kapitel-8",
+      "title": "Kapitel 8",
+      "targetPath": "/vocabulaire/11h/gk11-kapitel-8/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-8/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h",
+      "sourcePath": "/vocabulaire/9h",
+      "title": "Wortschatz 9H",
+      "targetPath": "/vocabulaire/9h/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-1",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-1",
+      "title": "Geni@l Klick Kapitel 1",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-1/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-1/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-2",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-2",
+      "title": "Geni@l Klick Kapitel 2",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-2/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-2/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-3",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-3",
+      "title": "Geni@l Klick Kapitel 3",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-3/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-3/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-4",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-4",
+      "title": "Geni@l Klick Kapitel 4",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-4/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-4/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-5",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-5",
+      "title": "Geni@l Klick Kapitel 5",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-5/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-5/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-6",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-6",
+      "title": "Geni@l Klick Kapitel 6",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-6/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-6/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-7",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-7",
+      "title": "Geni@l Klick Kapitel 7",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-7/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-7/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    },
+    {
+      "sourceUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-8",
+      "sourcePath": "/vocabulaire/9h/gk9-kapitel-8",
+      "title": "Geni@l Klick Kapitel 8",
+      "targetPath": "/vocabulaire/9h/gk9-kapitel-8/",
+      "targetUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-8/",
+      "status": 200,
+      "action": "keep",
+      "notes": [
+        "slash final normalisé par Astro"
+      ]
+    }
+  ],
+  "unmappedSourceUrls": [],
+  "mappedTargetPaths": [
+    "/",
+    "/conseils/",
+    "/conseils/comprehension-ecrite/",
+    "/conseils/comprehension-orale/",
+    "/conseils/expression-ecrite/",
+    "/conseils/expression-orale/",
+    "/conseils/vocabulaire/",
+    "/exercices/",
+    "/exercices/10h/",
+    "/exercices/10h/k1-los-gehts/",
+    "/exercices/10h/k2-fit-und-sportlich/",
+    "/exercices/10h/k3-wie-gehts-denn-so/",
+    "/exercices/10h/k4-kaufen-verkaufen-leihen/",
+    "/exercices/10h/k5-schmeckts/",
+    "/exercices/10h/k6-lies-mal-wieder/",
+    "/exercices/10h/k7-geld-allein-macht-nicht-glucklich/",
+    "/exercices/10h/k8-talente-gesucht/",
+    "/exercices/11h/",
+    "/exercices/11h/k1-meine-starken-meine-schwachen/",
+    "/exercices/11h/k2-wir-und-die-medien/",
+    "/exercices/11h/k3-fur-die-umwelt/",
+    "/exercices/11h/k4-ich-du-wir/",
+    "/exercices/11h/k5-ich-wunsche-mir/",
+    "/exercices/11h/k6-wir-tun-was/",
+    "/exercices/11h/k7-so-war-es-so-ist-es-jetzt/",
+    "/exercices/11h/k8-wie-gehts-weiter/",
+    "/exercices/9h/",
+    "/exercices/9h/kap-1-die-neue-schule/",
+    "/exercices/9h/kap-2-meine-stadt/",
+    "/exercices/9h/kap-3-meine-familie/",
+    "/exercices/9h/kap-4-alles-gute/",
+    "/exercices/9h/kap-5-wir-fahren-weg/",
+    "/exercices/9h/kap-6-klassenfahrt-nach-basel/",
+    "/exercices/9h/kap-7-freunde-haben-freunde-finden/",
+    "/exercices/9h/kap-8-bei-uns-zu-hause/",
+    "/outils-en-ligne/",
+    "/outils-en-ligne/nad-maschine/",
+    "/theorie/",
+    "/theorie/conjugaison/",
+    "/theorie/conjugaison/futur/",
+    "/theorie/conjugaison/imperatif/",
+    "/theorie/conjugaison/konjunktiv-ii/",
+    "/theorie/conjugaison/les-verbes-reflexifs/",
+    "/theorie/conjugaison/passe-compose/",
+    "/theorie/conjugaison/present/",
+    "/theorie/conjugaison/preterit/",
+    "/theorie/conjugaison/verbes-de-modalite/",
+    "/theorie/grammaire/",
+    "/theorie/grammaire/le-comparatif/",
+    "/theorie/grammaire/le-genitif/",
+    "/theorie/grammaire/le-superlatif/",
+    "/theorie/grammaire/les-adjectifs/",
+    "/theorie/grammaire/les-cas-theorie-de-base/",
+    "/theorie/grammaire/les-prepositions/",
+    "/theorie/grammaire/les-pronoms-personnels/",
+    "/theorie/grammaire/les-pronoms-possessifs/",
+    "/theorie/grammaire/tableaux-de-declinaisons/",
+    "/theorie/syntaxe/",
+    "/theorie/syntaxe/damit-wahrend-bevor-nachdem-als-obwohl/",
+    "/theorie/syntaxe/dass/",
+    "/theorie/syntaxe/la-place-du-verbe-principal/",
+    "/theorie/syntaxe/les-infinitives/",
+    "/theorie/syntaxe/les-phrases-au-passe-compose/",
+    "/theorie/syntaxe/les-phrases-avec-verbe-de-modalite/",
+    "/theorie/syntaxe/les-questions-indirectes/",
+    "/theorie/syntaxe/les-questions/",
+    "/theorie/syntaxe/les-subordonnees-relatives/",
+    "/theorie/syntaxe/trotzdem-deshalb/",
+    "/theorie/syntaxe/und-oder-aber-denn-also/",
+    "/theorie/syntaxe/weil/",
+    "/theorie/syntaxe/wenn/",
+    "/vocabulaire/",
+    "/vocabulaire/10h/",
+    "/vocabulaire/10h/gk1011-kapitel-1/",
+    "/vocabulaire/10h/gk1011-kapitel-2/",
+    "/vocabulaire/10h/gk1011-kapitel-3/",
+    "/vocabulaire/10h/gk1011-kapitel-4/",
+    "/vocabulaire/10h/gk1011-kapitel-5/",
+    "/vocabulaire/10h/gk1011-kapitel-6/",
+    "/vocabulaire/10h/gk1011-kapitel-7/",
+    "/vocabulaire/10h/gk1011-kapitel-8/",
+    "/vocabulaire/11h/",
+    "/vocabulaire/11h/gk11-kapitel-1/",
+    "/vocabulaire/11h/gk11-kapitel-2/",
+    "/vocabulaire/11h/gk11-kapitel-3/",
+    "/vocabulaire/11h/gk11-kapitel-4/",
+    "/vocabulaire/11h/gk11-kapitel-5/",
+    "/vocabulaire/11h/gk11-kapitel-6/",
+    "/vocabulaire/11h/gk11-kapitel-7/",
+    "/vocabulaire/11h/gk11-kapitel-8/",
+    "/vocabulaire/9h/",
+    "/vocabulaire/9h/gk9-kapitel-1/",
+    "/vocabulaire/9h/gk9-kapitel-2/",
+    "/vocabulaire/9h/gk9-kapitel-3/",
+    "/vocabulaire/9h/gk9-kapitel-4/",
+    "/vocabulaire/9h/gk9-kapitel-5/",
+    "/vocabulaire/9h/gk9-kapitel-6/",
+    "/vocabulaire/9h/gk9-kapitel-7/",
+    "/vocabulaire/9h/gk9-kapitel-8/"
+  ]
+}

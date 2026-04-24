@@ -9,7 +9,9 @@
     "preview": "astro preview",
     "audit:source": "node scripts/audit-source-site.mjs",
     "content:generate": "node scripts/migrate-content-from-audit.mjs",
-    "content:migrate": "node scripts/migrate-content-from-audit.mjs"
+    "content:migrate": "node scripts/migrate-content-from-audit.mjs",
+    "urls:map": "node scripts/generate-url-map.mjs",
+    "links:check": "node scripts/check-internal-links.mjs"
   },
   "dependencies": {
     "astro": "^6.1.9"

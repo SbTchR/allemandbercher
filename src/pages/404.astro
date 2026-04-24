@@ -1,0 +1,52 @@
+---
+import Layout from '../components/Layout.astro';
+import urlMap from '../../url-map.json';
+
+const redirectMap = Object.fromEntries(
+  urlMap.redirects
+    .filter((entry) => entry.action === 'redirect')
+    .map((entry) => [entry.sourcePath, entry.targetPath])
+);
+---
+
+<Layout title="Page introuvable" description="Page introuvable sur Allemand Bercher.">
+  <section class="hero compact-hero">
+    <p class="eyebrow">Erreur 404</p>
+    <h1>Page introuvable</h1>
+    <p class="lead">
+      Cette page n’existe pas ou son adresse a changé pendant la migration du site.
+    </p>
+  </section>
+
+  <section class="content-band" aria-labelledby="redirect-title">
+    <h2 id="redirect-title">Redirection automatique</h2>
+    <p id="redirect-status">
+      Si cette adresse correspond à une ancienne page du site, tu vas être redirigé automatiquement.
+    </p>
+    <p>
+      <a class="text-link" href="/">Retour à l’accueil</a>
+    </p>
+  </section>
+
+  <script is:inline define:vars={{ redirectMap }}>
+    const normalizedPath = (() => {
+      try {
+        return decodeURIComponent(window.location.pathname).replace(/\/+$/, '') || '/';
+      } catch {
+        return window.location.pathname.replace(/\/+$/, '') || '/';
+      }
+    })();
+
+    const targetPath = redirectMap[normalizedPath];
+    const status = document.getElementById('redirect-status');
+
+    if (targetPath) {
+      if (status) {
+        status.textContent = `Ancienne page reconnue. Redirection vers ${targetPath}`;
+      }
+      window.location.replace(`${targetPath}${window.location.search}${window.location.hash}`);
+    } else if (status) {
+      status.textContent = 'Aucune correspondance automatique trouvée pour cette adresse.';
+    }
+  </script>
+</Layout>
