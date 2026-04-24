@@ -1,0 +1,802 @@
+[
+  {
+    "url": "https://www.allemandbercher.ch/",
+    "finalUrl": "https://www.allemandbercher.ch/",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/root.html",
+    "bytes": 200567
+  },
+  {
+    "url": "https://www.allemandbercher.ch/accueil",
+    "finalUrl": "https://www.allemandbercher.ch/accueil",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/accueil.html",
+    "bytes": 200813
+  },
+  {
+    "url": "https://www.allemandbercher.ch/conseils",
+    "finalUrl": "https://www.allemandbercher.ch/conseils",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/conseils.html",
+    "bytes": 184400
+  },
+  {
+    "url": "https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite",
+    "finalUrl": "https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/conseils__comprehension-ecrite.html",
+    "bytes": 263220
+  },
+  {
+    "url": "https://www.allemandbercher.ch/conseils/compr%C3%A9hension-orale",
+    "finalUrl": "https://www.allemandbercher.ch/conseils/compr%C3%A9hension-orale",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/conseils__comprehension-orale.html",
+    "bytes": 236610
+  },
+  {
+    "url": "https://www.allemandbercher.ch/conseils/expression-%C3%A9crite",
+    "finalUrl": "https://www.allemandbercher.ch/conseils/expression-%C3%A9crite",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/conseils__expression-ecrite.html",
+    "bytes": 286336
+  },
+  {
+    "url": "https://www.allemandbercher.ch/conseils/expression-orale",
+    "finalUrl": "https://www.allemandbercher.ch/conseils/expression-orale",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/conseils__expression-orale.html",
+    "bytes": 219981
+  },
+  {
+    "url": "https://www.allemandbercher.ch/conseils/vocabulaire",
+    "finalUrl": "https://www.allemandbercher.ch/conseils/vocabulaire",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/conseils__vocabulaire.html",
+    "bytes": 235636
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices",
+    "finalUrl": "https://www.allemandbercher.ch/exercices",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices.html",
+    "bytes": 181340
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h.html",
+    "bytes": 188247
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k1-los-gehts",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k1-los-gehts",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k1-los-gehts.html",
+    "bytes": 216635
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k2-fit-und-sportlich",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k2-fit-und-sportlich",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k2-fit-und-sportlich.html",
+    "bytes": 221654
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k3-wie-gehts-denn-so",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k3-wie-gehts-denn-so",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k3-wie-gehts-denn-so.html",
+    "bytes": 201382
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k4-kaufen-verkaufen-leihen",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k4-kaufen-verkaufen-leihen",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k4-kaufen-verkaufen-leihen.html",
+    "bytes": 198115
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k5-schmeckts",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k5-schmeckts",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k5-schmeckts.html",
+    "bytes": 211230
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k6-lies-mal-wieder",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k6-lies-mal-wieder",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k6-lies-mal-wieder.html",
+    "bytes": 198452
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k7-geld-allein-macht-nicht-gl%C3%BCcklich",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k7-geld-allein-macht-nicht-gl%C3%BCcklich",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k7-geld-allein-macht-nicht-glucklich.html",
+    "bytes": 204374
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/10h/k8-talente-gesucht",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/10h/k8-talente-gesucht",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__10h__k8-talente-gesucht.html",
+    "bytes": 198291
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h.html",
+    "bytes": 188243
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k1-meine-st%C3%A4rken-meine-schw%C3%A4chen",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k1-meine-st%C3%A4rken-meine-schw%C3%A4chen",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k1-meine-starken-meine-schwachen.html",
+    "bytes": 198177
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k2-wir-und-die-medien",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k2-wir-und-die-medien",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k2-wir-und-die-medien.html",
+    "bytes": 202649
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k3-f%C3%BCr-die-umwelt",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k3-f%C3%BCr-die-umwelt",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k3-fur-die-umwelt.html",
+    "bytes": 200541
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k4-ich-du-wir",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k4-ich-du-wir",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k4-ich-du-wir.html",
+    "bytes": 198455
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k5-ich-w%C3%BCnsche-mir",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k5-ich-w%C3%BCnsche-mir",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k5-ich-wunsche-mir.html",
+    "bytes": 214492
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k6-wir-tun-was",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k6-wir-tun-was",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k6-wir-tun-was.html",
+    "bytes": 198807
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k7-so-war-es-so-ist-es-jetzt",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k7-so-war-es-so-ist-es-jetzt",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k7-so-war-es-so-ist-es-jetzt.html",
+    "bytes": 206247
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/11h/k8-wie-gehts-weiter",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/11h/k8-wie-gehts-weiter",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__11h__k8-wie-gehts-weiter.html",
+    "bytes": 198761
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h.html",
+    "bytes": 186121
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-1-die-neue-schule",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-1-die-neue-schule",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-1-die-neue-schule.html",
+    "bytes": 263322
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-2-meine-stadt",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-2-meine-stadt",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-2-meine-stadt.html",
+    "bytes": 224103
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-3-meine-familie",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-3-meine-familie",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-3-meine-familie.html",
+    "bytes": 217220
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-4-alles-gute",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-4-alles-gute",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-4-alles-gute.html",
+    "bytes": 205980
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-5-wir-fahren-weg",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-5-wir-fahren-weg",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-5-wir-fahren-weg.html",
+    "bytes": 222097
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-6-klassenfahrt-nach-basel",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-6-klassenfahrt-nach-basel",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-6-klassenfahrt-nach-basel.html",
+    "bytes": 223847
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-7-freunde-haben-freunde-finden",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-7-freunde-haben-freunde-finden",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-7-freunde-haben-freunde-finden.html",
+    "bytes": 234934
+  },
+  {
+    "url": "https://www.allemandbercher.ch/exercices/9h/kap-8-bei-uns-zu-hause",
+    "finalUrl": "https://www.allemandbercher.ch/exercices/9h/kap-8-bei-uns-zu-hause",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/exercices__9h__kap-8-bei-uns-zu-hause.html",
+    "bytes": 213534
+  },
+  {
+    "url": "https://www.allemandbercher.ch/nad-maschine",
+    "finalUrl": "https://www.allemandbercher.ch/nad-maschine",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/nad-maschine.html",
+    "bytes": 187841
+  },
+  {
+    "url": "https://www.allemandbercher.ch/outils-en-ligne",
+    "finalUrl": "https://www.allemandbercher.ch/outils-en-ligne",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/outils-en-ligne.html",
+    "bytes": 223244
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie.html",
+    "bytes": 233479
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison.html",
+    "bytes": 195697
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire.html",
+    "bytes": 233618
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe.html",
+    "bytes": 233364
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire.html",
+    "bytes": 220798
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h.html",
+    "bytes": 188133
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h.html",
+    "bytes": 188158
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h.html",
+    "bytes": 188110
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec-verbe-de-modalit%C3%A9",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec-verbe-de-modalit%C3%A9",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__les-phrases-avec-verbe-de-modalite.html",
+    "bytes": 199856
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-subordonn%C3%A9es-relatives",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-subordonn%C3%A9es-relatives",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__les-subordonnees-relatives.html",
+    "bytes": 191321
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/weil",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/weil",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__weil.html",
+    "bytes": 195103
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-comparatif",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-comparatif",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__le-comparatif.html",
+    "bytes": 190976
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-superlatif",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-superlatif",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__le-superlatif.html",
+    "bytes": 200948
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/les-verbes-r%C3%A9flexifs",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/les-verbes-r%C3%A9flexifs",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__les-verbes-reflexifs.html",
+    "bytes": 190267
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/verbes-de-modalit%C3%A9",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/verbes-de-modalit%C3%A9",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__verbes-de-modalite.html",
+    "bytes": 223451
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/wenn",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/wenn",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__wenn.html",
+    "bytes": 193373
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/imp%C3%A9ratif",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/imp%C3%A9ratif",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__imperatif.html",
+    "bytes": 210159
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__les-questions.html",
+    "bytes": 202314
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9sent",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9sent",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__present.html",
+    "bytes": 223837
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__les-pronoms-possessifs.html",
+    "bytes": 198309
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pass%C3%A9-compos%C3%A9",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pass%C3%A9-compos%C3%A9",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__passe-compose.html",
+    "bytes": 209731
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__les-prepositions.html",
+    "bytes": 213663
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-personnels",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-personnels",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__les-pronoms-personnels.html",
+    "bytes": 202645
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/futur",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/futur",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__futur.html",
+    "bytes": 186587
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/konjunktiv-ii",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/konjunktiv-ii",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__konjunktiv-ii.html",
+    "bytes": 236654
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9t%C3%A9rit",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9t%C3%A9rit",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__conjugaison__preterit.html",
+    "bytes": 202443
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9nitif",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9nitif",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__le-genitif.html",
+    "bytes": 194005
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-adjectifs",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-adjectifs",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__les-adjectifs.html",
+    "bytes": 195887
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__les-cas-theorie-de-base.html",
+    "bytes": 232941
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/tableaux-de-d%C3%A9clinaisons",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/tableaux-de-d%C3%A9clinaisons",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__grammaire__tableaux-de-declinaisons.html",
+    "bytes": 192948
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/damit-w%C3%A4hrend-bevor-nachdem-als-obwohl",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/damit-w%C3%A4hrend-bevor-nachdem-als-obwohl",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__damit-wahrend-bevor-nachdem-als-obwohl.html",
+    "bytes": 200083
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/dass",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/dass",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__dass.html",
+    "bytes": 203789
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__la-place-du-verbe-principal.html",
+    "bytes": 197748
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-infinitives",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-infinitives",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__les-infinitives.html",
+    "bytes": 202399
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-au-pass%C3%A9-compos%C3%A9",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-au-pass%C3%A9-compos%C3%A9",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__les-phrases-au-passe-compose.html",
+    "bytes": 182202
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions-indirectes",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions-indirectes",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__les-questions-indirectes.html",
+    "bytes": 187505
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__trotzdem-deshalb.html",
+    "bytes": 192301
+  },
+  {
+    "url": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also",
+    "finalUrl": "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/theorie__syntaxe__und-oder-aber-denn-also.html",
+    "bytes": 189749
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-1",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-1",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-1.html",
+    "bytes": 190869
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-2",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-2",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-2.html",
+    "bytes": 191068
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-3",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-3",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-3.html",
+    "bytes": 190691
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-4",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-4",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-4.html",
+    "bytes": 190818
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-5",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-5",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-5.html",
+    "bytes": 190756
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-6",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-6",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-6.html",
+    "bytes": 190655
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-7",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-7",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-7.html",
+    "bytes": 190908
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-8",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/10h/gk1011-kapitel-8",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__10h__gk1011-kapitel-8.html",
+    "bytes": 190982
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-1",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-1",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-1.html",
+    "bytes": 191164
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-2",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-2",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-2.html",
+    "bytes": 190963
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-3",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-3",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-3.html",
+    "bytes": 190990
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-4",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-4",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-4.html",
+    "bytes": 191247
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-5",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-5",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-5.html",
+    "bytes": 190789
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-6",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-6",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-6.html",
+    "bytes": 191121
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-7",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-7",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-7.html",
+    "bytes": 191101
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-8",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/11h/gk11-kapitel-8",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__11h__gk11-kapitel-8.html",
+    "bytes": 191201
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-1",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-1",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-1.html",
+    "bytes": 191124
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-2",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-2",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-2.html",
+    "bytes": 190744
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-3",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-3",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-3.html",
+    "bytes": 191625
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-4",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-4",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-4.html",
+    "bytes": 190831
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-5",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-5",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-5.html",
+    "bytes": 190888
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-6",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-6",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-6.html",
+    "bytes": 190859
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-7",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-7",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-7.html",
+    "bytes": 190966
+  },
+  {
+    "url": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-8",
+    "finalUrl": "https://www.allemandbercher.ch/vocabulaire/9h/gk9-kapitel-8",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "rawPath": "raw/source-site/html/vocabulaire__9h__gk9-kapitel-8.html",
+    "bytes": 190902
+  }
+]
