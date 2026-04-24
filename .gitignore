@@ -1,0 +1,8 @@
+.astro/
+dist/
+node_modules/
+.DS_Store
+npm-debug.log*
+
+# Source brute de migration Google Sites, conservée localement seulement.
+raw/

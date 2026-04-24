@@ -1,0 +1,32 @@
+---
+import Nav from './Nav.astro';
+import '../styles/global.css';
+
+type Props = {
+  title: string;
+  description?: string;
+};
+
+const { title, description = 'Ressources pour apprendre et enseigner l’allemand à Bercher.' } = Astro.props;
+const pageTitle = title === 'Accueil' ? 'Allemand Bercher' : `${title} | Allemand Bercher`;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Nav />
+    <main class="page-shell">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>Allemand Bercher - site statique maintenable pour les élèves et l’enseignant.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+---
+type Item = {
+  label: string;
+  href: string;
+  description: string;
+};
+
+type Props = {
+  items: Item[];
+};
+
+const { items } = Astro.props;
+---
+
+<div class="section-grid">
+  {
+    items.map((item) => (
+      <a class="section-card" href={item.href}>
+        <span>{item.label}</span>
+        <p>{item.description}</p>
+      </a>
+    ))
+  }
+</div>

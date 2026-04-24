@@ -1,0 +1,27 @@
+---
+import Layout from '../components/Layout.astro';
+import SectionList from '../components/SectionList.astro';
+import { navigationItems } from '../data/navigation';
+import { chapterLevels } from '../data/chapters';
+---
+
+<Layout title="Accueil" description="Site de ressources d’allemand pour les élèves de Bercher.">
+  <section class="hero">
+    <p class="eyebrow">Ressources d’allemand</p>
+    <h1>Allemand Bercher</h1>
+    <p class="lead">
+      Une base propre pour retrouver les conseils, exercices, notions de théorie, vocabulaires et
+      outils utiles, sans les éléments techniques de Google Sites.
+    </p>
+  </section>
+
+  <section class="content-band" aria-labelledby="sections-title">
+    <h2 id="sections-title">Sections principales</h2>
+    <SectionList items={navigationItems.filter((item) => item.href !== '/')} />
+  </section>
+
+  <section class="content-band" aria-labelledby="chapters-title">
+    <h2 id="chapters-title">Chapitres par année</h2>
+    <SectionList items={chapterLevels.map(({ level, href, description }) => ({ label: level, href, description }))} />
+  </section>
+</Layout>

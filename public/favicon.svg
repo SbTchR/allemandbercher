@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Allemand Bercher">
+  <rect width="64" height="64" rx="12" fill="#101820"/>
+  <path d="M17 47V17h8.5c9.6 0 16.2 6.1 16.2 15s-6.6 15-16.2 15H17Zm7-6.4h1.2c5.9 0 9.3-3.2 9.3-8.6s-3.4-8.6-9.3-8.6H24v17.2Z" fill="#ffffff"/>
+  <path d="M45 47V17h7v30h-7Z" fill="#f2c94c"/>
+</svg>

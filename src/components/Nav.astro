@@ -1,0 +1,21 @@
+---
+import { navigationItems } from '../data/navigation';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Retour à l’accueil">
+    <span class="brand-mark" aria-hidden="true">AB</span>
+    <span>Allemand Bercher</span>
+  </a>
+  <nav class="main-nav" aria-label="Navigation principale">
+    {
+      navigationItems.map((item) => (
+        <a class:list={{ active: currentPath === item.href }} href={item.href}>
+          {item.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
