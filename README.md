@@ -4,6 +4,8 @@ Migration du site `https://www.allemandbercher.ch` vers un site statique Astro p
 
 ## Lancer le site en local
 
+Prérequis : Node.js 22 ou plus récent. La version attendue est indiquée dans `.nvmrc`.
+
 Installer les dépendances :
 
 ```bash
@@ -31,9 +33,9 @@ Pour ajouter une page simple, créer un fichier `.astro` dans `src/pages/`. Le n
 
 Exemples :
 
-- `src/pages/conseils.astro` devient `/conseils/`
-- `src/pages/outils-en-ligne.astro` devient `/outils-en-ligne/`
-- `src/pages/chapitres/9h/index.astro` devient `/chapitres/9h/`
+- `src/pages/conseils/index.astro` devient `/conseils/`
+- `src/pages/outils-en-ligne/index.astro` devient `/outils-en-ligne/`
+- `src/pages/404.astro` devient `/404.html`
 
 ## Modèle de contenu
 
@@ -69,10 +71,22 @@ Pendant la migration :
 
 ## Vérifier avant publication
 
+Mettre à jour la carte des anciennes et nouvelles URLs :
+
+```bash
+npm run urls:map
+```
+
 Construire le site :
 
 ```bash
 npm run build
+```
+
+Vérifier les liens internes du build :
+
+```bash
+npm run links:check
 ```
 
 Prévisualiser le résultat généré :
@@ -81,9 +95,19 @@ Prévisualiser le résultat généré :
 npm run preview
 ```
 
+Le rapport de liens est écrit dans `link-check-report.md`. La carte de redirection est écrite dans `url-map.json`.
+
 ## Publier avec GitHub Pages
 
-Le workflow `.github/workflows/deploy.yml` construit le site à chaque push sur la branche `main` et publie le dossier généré par Astro sur GitHub Pages.
+Le workflow `.github/workflows/deploy.yml` construit le site à chaque push sur la branche `main` et publie le dossier `dist/` généré par Astro sur GitHub Pages.
+
+Le déploiement automatique exécute :
+
+1. installation des dépendances avec `npm ci`;
+2. génération de `url-map.json`;
+3. build Astro avec `npm run build`;
+4. vérification des liens internes avec `npm run links:check`;
+5. publication du dossier `dist/` sur GitHub Pages.
 
 Dans GitHub :
 
@@ -91,3 +115,12 @@ Dans GitHub :
 2. aller dans **Pages**;
 3. choisir **GitHub Actions** comme source de déploiement;
 4. pousser les changements sur `main`.
+
+Configuration de production :
+
+- `astro.config.mjs` définit le site comme `https://www.allemandbercher.ch`, en sortie statique.
+- `public/CNAME` conserve le domaine personnalisé `www.allemandbercher.ch`.
+- `public/.nojekyll` évite les erreurs GitHub Pages avec les dossiers générés par Astro, notamment `_astro`.
+- la page `src/pages/404.astro` sécurise les anciennes URLs connues grâce à `url-map.json`.
+
+Si le dépôt est publié sans domaine personnalisé, il faudra adapter `site` et éventuellement `base` dans `astro.config.mjs` avant la mise en ligne.

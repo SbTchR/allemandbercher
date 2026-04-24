@@ -157,3 +157,7 @@ await writeFile(REPORT_PATH, report);
 console.log(`Checked ${checkedLinks.length} internal links across ${htmlFiles.length} HTML pages.`);
 console.log(`Broken internal links: ${brokenLinks.length}.`);
 console.log(`Missing mapped targets: ${brokenMappedTargets.length}.`);
+
+if (brokenLinks.length || brokenMappedTargets.length) {
+  process.exitCode = 1;
+}
