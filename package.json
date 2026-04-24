@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "audit:source": "node scripts/audit-source-site.mjs",
-    "content:generate": "node scripts/generate-content-from-audit.mjs"
+    "content:generate": "node scripts/migrate-content-from-audit.mjs",
+    "content:migrate": "node scripts/migrate-content-from-audit.mjs"
   },
   "dependencies": {
     "astro": "^6.1.9"

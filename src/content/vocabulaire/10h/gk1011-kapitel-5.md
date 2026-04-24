@@ -14,18 +14,15 @@ externalLinks:
   - url: "http://www.gimkit.com/join"
   - url: "https://www.blooket.com/set/62b16f6283ceb40018c20f68"
   - url: "https://www.gimkit.com/view/61e972d543c8290023573df8"
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUBA0EhUlRsQvPANYtRMoGjaZx36QmnMZOEvk9e4XDIqOc5qk1_xIWP4IJsdhCGL8MQ8RKKHhiO-pfgZnDPXPjUE8V437YlZPct59p9P6KB4y4GcrEIkgsN8RqGnK4kNRVQl9gWTiwQ79k5Okq8D93SAZTxMQkJZ=w16383"
+images: []
 migrationNotes: []
 ---
 
-GK1011 Kapitel 5
-
-Nouvelle application "faite-maison"
+## Nouvelle application "faite-maison"
 
 ⚠️En cliquant en bas à droite de la fenêtre ci-dessus sur "Choisissez un mode d'apprentissage", vous pouvez choisir différents types de jeux (dictée, test, cartes, etc.) !
 
-Gimkit
+## Gimkit
 
 Ce site est vachement plus fun que Quizlet ! Créé ton compte gratuit sur www.gimkit.com , puis c lique sur ce lien pour accéder à la liste de voc.
 
@@ -33,7 +30,7 @@ Clique ensuite sur "Play" (à gauche) et choisis un mode de jeu. Lorsque que tu 
 
 Tu peux même défier tes copains en direct dans les jeux !
 
-Blooket
+## Blooket
 
 Ce site propose aussi des jeux sympas pour réviser le voc. Utilise-le plutôt pour commencer à apprendre un nouveau voc car il n'y a que des questions à choix multiples. Elles sont pratiques pour voir le voc une première fois mais pas suffisantes pour bien apprendre à écrire les mots.
 

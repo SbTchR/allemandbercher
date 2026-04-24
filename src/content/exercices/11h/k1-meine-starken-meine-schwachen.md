@@ -1,6 +1,6 @@
 ---
 title: "K1 - Meine Stärken, meine Schwächen"
-description: "K1 - Meine Stärken, meine Schwächen"
+description: "L'élève est capable de..."
 section: "exercices"
 level: "11H"
 category: "general"
@@ -9,17 +9,15 @@ pageType: "chapitre"
 order: 1
 objectives: []
 externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUB5ou6PoAvELSKxvOqVAjGZTMp1spEPg-HL83sS55Tnj5EXR4M-vse5-5FdBFeRJv_8tm56ZHRGA-MVaW6_97E6ubeSZoNEcl5EaPDrEsnelysYaopceHET0_Cuj0NhG76QvzC97i5_KoWOaTZ-Xnr99Z-woBQGzao55qC6BoEBpvfNenku3cUpb9E=w16383"
-migrationNotes: []
+images: []
+migrationNotes: 
+  - "à vérifier: contenu extrait très court ou probablement incomplet"
 ---
 
-K1 - Meine Stärken, meine Schwächen
+## Objectifs
 
-Objectifs
-
-Communication
+## Communication
 
 L'élève est capable de...
 
-Langue
+## Langue

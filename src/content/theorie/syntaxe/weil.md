@@ -6,13 +6,22 @@ category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/weil"
 pageType: "theorie"
 objectives: []
-externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUDuwzrihOw9Mv64WRRyvrGBT0yd_UdatKsnsshwjMPc7ZDVXPWbT_ci8OjV02YR9Fo-QujFNjhRasCJbxvV4rueg9gnQ66ezNCqLfUHfUoi0g1EDjhe0SxudCHZAh424il5bqlGFrqy79XE85EdKOtKLpRi9G-EsRgVJ4WYjmNqyF75GmgnBJ9z=w16383"
+externalLinks: 
+  - url: "http://www.lehrerlenz.de/ist_das_eine_gute_erziehung_2.html"
+  - url: "http://www.lehrerlenz.de/ist_das_eine_gute_erziehung1.html"
+  - url: "http://www.lehrerlenz.de/ist_das_eine_gute_erziehung3.html"
+  - url: "http://www.lehrerlenz.de/strafe_muss_sein.html"
+  - url: "http://www.lehrerlenz.de/weil_oder_denn.html"
+  - url: "https://einstufungstests.klett-sprachen.de/eks/dafunternehmen/fragebogen.php?jsstatus=js&questname=dafunternehmen&questclass=A2&status=dafunternehmen&questblock=14"
+  - url: "https://lingvico.net/bilden-sie-weil-saetze-1-a2/"
+  - url: "https://mein-deutschbuch.de/grammatikuebungen-kausalsaetze.html"
+  - url: "https://www.grammatiktraining.de/kausalesaetze/schreibuebung-saetze-mit-weil-verbinden.html"
+  - url: "https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap3_nebensaetze.htm"
+  - url: "https://www.schubert-verlag.de/aufgaben/xg/xg07_12.htm"
+  - url: "https://www.schubert-verlag.de/aufgaben/xg/xg07_13a.htm"
+images: []
 migrationNotes: []
 ---
-
-weil
 
 Subordonnées
 
@@ -46,32 +55,8 @@ weil = parce que
 
 wenn = quand / si
 
-Exercice
+## Exercice
 
-Quelques exercices pour entrainer les phrases avec weil .
-
-https://www.schubert-verlag.de/aufgaben/xg/xg07_12.htm
-
-https://www.schubert-verlag.de/aufgaben/xg/xg07_13a.htm
-
-https://www.grammatiktraining.de/kausalesaetze/schreibuebung-saetze-mit-weil-verbinden.html
-
-https://mein-deutschbuch.de/grammatikuebungen-kausalsaetze.html
-
-https://lingvico.net/bilden-sie-weil-saetze-1-a2/
-
-https://einstufungstests.klett-sprachen.de/eks/dafunternehmen/fragebogen.php?jsstatus=js&questname=dafunternehmen&questclass=A2&status=dafunternehmen&questblock=14
-
-http://www.lehrerlenz.de/weil_oder_denn.html
-
-http://www.lehrerlenz.de/ist_das_eine_gute_erziehung_2.html
+## Quelques exercices pour entrainer les phrases avec weil .
 
 Exercices mix (dass, weil ,denn, ...)
-
-http://www.lehrerlenz.de/ist_das_eine_gute_erziehung1.html
-
-http://www.lehrerlenz.de/ist_das_eine_gute_erziehung3.html
-
-http://www.lehrerlenz.de/strafe_muss_sein.html
-
-https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap3_nebensaetze.htm

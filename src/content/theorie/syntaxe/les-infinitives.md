@@ -1,18 +1,23 @@
 ---
 title: "Les phrases infinitives"
-description: "Les phrases infinitives"
+description: "Une phrase infinitive est une phrase qui contient un verbe à l’infinitif en plus du verbe conjugué. Par exemple, les phrases avec un verbe de modalité sont des phrases infinitiv..."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-infinitives"
 pageType: "theorie"
 objectives: []
-externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUBg5huKY0a7LrxJh5NxcpVOtkeyz7ZVZ-Zru2h3BQKkpicZQub-NRA4pvvWvSD4K7wPPqANIDZ-jW9xR1iJuI_P8XvUvDrbNYmHzMP9TqrFyCO6XAqB1y1QM8oACEd8-7FG9lbJiqOPoNcitVnja1PMYFBDmIY1w08AwZFu7ipkG6Qiohwn-iRqRlE=w16383"
+externalLinks: 
+  - url: "http://lernox.de/lernmaterial/infinitivsaetze-mit-oder-ohne-zu-rsr1535"
+  - url: "https://deutsch.lingolia.com/de/grammatik/satzbau/nebensaetze/infinitivsaetze/uebungen"
+  - url: "https://deutsch.lingolia.com/de/grammatik/verben/infinitiv/uebungen"
+  - url: "https://lingvico.net/zuinfinitiv-i-b1/"
+  - url: "https://mein-deutschbuch.de/grammatikuebungen-infinitivsaetze.html"
+  - url: "https://schulminator.com/community/germanikus/128"
+  - url: "https://sprachekulturkommunikation.com/ergaenzungsaetze-infinitivsaetze-mit-zu-tipps-und-beispielsaetze/"
+  - url: "https://www.schubert-verlag.de/aufgaben/xg/xg11_02.htm"
+images: []
 migrationNotes: []
 ---
-
-Les phrases infinitives
 
 Une phrase infinitive est une phrase qui contient un verbe à l’infinitif en plus du verbe conjugué. Par exemple, les phrases avec un verbe de modalité sont des phrases infinitives. Il existe d’autres types d’infinitives:
 
@@ -80,22 +85,6 @@ Exemples: Er spielt draussen, anstatt seine Hausaufgaben zu machen .
 
 Il joue dehors, au lieu de faire ses devoirs.
 
-Exercice
+## Exercice
 
-Quelques exercices en ligne pour entrainer les infinitives:
-
-https://deutsch.lingolia.com/de/grammatik/satzbau/nebensaetze/infinitivsaetze/uebungen
-
-https://www.schubert-verlag.de/aufgaben/xg/xg11_02.htm
-
-https://sprachekulturkommunikation.com/ergaenzungsaetze-infinitivsaetze-mit-zu-tipps-und-beispielsaetze/
-
-https://mein-deutschbuch.de/grammatikuebungen-infinitivsaetze.html
-
-https://deutsch.lingolia.com/de/grammatik/verben/infinitiv/uebungen
-
-http://lernox.de/lernmaterial/infinitivsaetze-mit-oder-ohne-zu-rsr1535
-
-https://schulminator.com/community/germanikus/128
-
-https://lingvico.net/zuinfinitiv-i-b1/
+## Quelques exercices en ligne pour entrainer les infinitives:

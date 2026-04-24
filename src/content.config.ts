@@ -8,14 +8,14 @@ const externalLinkSchema = z.object({
 });
 
 const imageSchema = z.object({
-  src: z.url(),
+  src: z.string(),
   alt: z.string().optional(),
 });
 
 const resourceSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
-  section: z.enum(['exercices', 'theorie', 'vocabulaire', 'outils']),
+  section: z.enum(['conseils', 'exercices', 'theorie', 'vocabulaire', 'outils']),
   level: z.enum(['9H', '10H', '11H']).optional(),
   category: z.enum(['grammaire', 'syntaxe', 'conjugaison', 'general']).default('general'),
   sourceUrl: z.url().optional(),
@@ -33,6 +33,14 @@ const exercices = defineCollection({
     section: z.literal('exercices'),
     level: z.enum(['9H', '10H', '11H']),
     pageType: z.enum(['index', 'chapitre']),
+  }),
+});
+
+const conseils = defineCollection({
+  loader: glob({ base: './src/content/conseils', pattern: '**/*.md' }),
+  schema: resourceSchema.extend({
+    section: z.literal('conseils'),
+    pageType: z.literal('autre'),
   }),
 });
 
@@ -63,6 +71,7 @@ const outils = defineCollection({
 });
 
 export const collections = {
+  conseils,
   exercices,
   theorie,
   vocabulaire,

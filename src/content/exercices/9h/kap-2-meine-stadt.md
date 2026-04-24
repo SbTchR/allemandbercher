@@ -7,7 +7,12 @@ category: "general"
 sourceUrl: "https://www.allemandbercher.ch/exercices/9h/kap-2-meine-stadt"
 pageType: "chapitre"
 order: 2
-objectives: []
+objectives: 
+  - "décrire une ville/un village (différents lieux)"
+  - "demander à quelqu'un où il se trouve"
+  - "indiquer un chemin"
+  - "indicateurs de lieux (prépositions)"
+  - "impératif"
 externalLinks: 
   - url: "http://donnerwetter.kielikeskus.helsinki.fi/DVG/Praepos/Praep-Ueb-alle/Wegnachfrage/Weg-fragen-HV-1-Luecke.htm"
   - url: "http://donnerwetter.kielikeskus.helsinki.fi/DVG/Praepos/Praep-Ueb-alle/Wegnachfrage/Weg-fragen-HV-1-sa-q.htm"
@@ -32,32 +37,29 @@ externalLinks:
   - url: "https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_hoeren2.htm"
   - url: "https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_zuhause.htm"
   - url: "https://www.schubert-verlag.de/aufgaben/xg/xg06_12.htm"
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUA1jUZKHShKpl8pI9-QlEetW_bwXAZCdZGl_8h2Pbw1dUmufOiyEcITZ0fti_ZbIZiOKJEQabHf79UEwNWYyCN-ZL6vZmESU4V7dznPziDwzielIeU-eVGldIdq6vKwO3mU989GJuSMmCybQv3E7gaxkfzSNN5VaBh980ZyqV56xFCA-2pdcVSRmys=w16383"
+images: []
 migrationNotes: []
 ---
 
-K2 - Meine Stadt
+## Objectifs
 
-Objectifs
-
-Communication
+## Communication
 
 L'élève est capable de...
 
-décrire une ville/un village (différents lieux)
+- décrire une ville/un village (différents lieux)
 
-demander à quelqu'un où il se trouve
+- demander à quelqu'un où il se trouve
 
-indiquer un chemin
+- indiquer un chemin
 
-Langue
+## Langue
 
 indicateurs de lieux (prépositions)
 
 impératif
 
-Expression
+## Expression
 
 Indiquer un endroit
 
@@ -73,11 +75,7 @@ Exemple: Das Kino ist neben dem Supermarkt. (neben = préposition)
 
 Le groupe nominal qui suit une de ces préposition est décliné au datif lorsqu'il n'y a pas de déplacement. (ici, le cinéma ne se déplace pas).
 
-Quelques exercices pour entrainer les prépositions.
-
-http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html
-
-https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_zuhause.htm
+## Quelques exercices pour entrainer les prépositions.
 
 Indiquer un chemin
 
@@ -89,23 +87,7 @@ Attention, on traduit le verbe "passer" du français par "gehen" en allemand (ex
 
 Clique sur ce lien pour lire la théorie sur l'impératif.
 
-Quelques exercices en ligne pour entrainer l'impératif.
-
-https://mein-deutschbuch.de/grammatikuebungen-imperativ.html
-
-https://deutsch.lingolia.com/de/grammatik/verben/imperativ/uebungen
-
-https://www.schubert-verlag.de/aufgaben/xg/xg06_12.htm
-
-http://lerngrammatik.de/uebung_verb_imperativ_1.htm
-
-https://www.hueber.de/shared/uebungen/delfin/lerner/uebungen/fset.php?Volume=1&Lection=8&Exercise=6&SubExercise=1
-
-http://www.lehrerlenz.de/imperativ__bungen.html
-
-https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-22234.php
-
-https://learngerman.dw.com/de/der-weg-zum-fahrradladen-1/l-40461211/e-40461214
+## Quelques exercices en ligne pour entrainer l'impératif.
 
 Nous avons aussi besoin des mots suivants pour exprimer les directions...
 
@@ -119,36 +101,10 @@ an ... vorbei = par devant ex: Geh an der Post vorbei. (Passe devant la poste.)
 
 bis zu = jusqu'à ex: Geh bis zur Ampel. (Va jusqu'aux feux.)
 
-Quelques exercices pour s'entrainer à décrire un chemin.
-
-http://www.akadaf.com/HotPot/Kapitel02/Wegbeschreibung1_2.htm
-
-http://www.akadaf.com/HotPot/Kapitel02/Wegbeschreibung3_4.htm
-
-http://donnerwetter.kielikeskus.helsinki.fi/DVG/Praepos/Praep-Ueb-alle/Wegnachfrage/Weg-fragen-HV-1-sa-q.htm
-
-http://donnerwetter.kielikeskus.helsinki.fi/DVG/Praepos/Praep-Ueb-alle/Wegnachfrage/Weg-fragen-HV-1-Luecke.htm
-
-https://courseware.nus.edu.sg/e-daf/cwm/la2201gr/e16/aachen.html
-
-https://www.germancenter-st.com/de/deutsch-online-uebungen/wortschatz/189-wegbeschreibungen-orte
-
-https://www.lehrerlenz.de/eine_wegbeschreibung.html
+## Quelques exercices pour s'entrainer à décrire un chemin.
 
 Compréhension
 
 Exercices de compréhension orale en ligne:
 
-https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_hoeren2.htm
-
-https://learningapps.org/1995372
-
-https://learningapps.org/4537376
-
-https://learningapps.org/4619835
-
 Exercices de compréhension écrite en ligne:
-
-https://learningapps.org/2012870
-
-https://fr.educaplay.com/ressources-pedagogiques/3275779-orientierung_in_der_stadt.html

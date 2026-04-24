@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import ResourcePage from '../../components/ResourcePage.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('conseils');
+  return entries.map((entry) => ({
+    params: {
+      slug: entry.id.split('/').pop(),
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+---
+
+<ResourcePage entry={entry} />

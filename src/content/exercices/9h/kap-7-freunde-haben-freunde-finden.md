@@ -1,13 +1,23 @@
 ---
 title: "K7 - Freunde haben - Freunde finden"
-description: "K7 - Freunde haben - Freunde finden"
+description: "L'élève est capable de..."
 section: "exercices"
 level: "9H"
 category: "general"
 sourceUrl: "https://www.allemandbercher.ch/exercices/9h/kap-7-freunde-haben-freunde-finden"
 pageType: "chapitre"
 order: 7
-objectives: []
+objectives: 
+  - "décrire ses amis"
+  - "dire ce qu'il a fait avec ses amis"
+  - "faire des compliments"
+  - "dire ce qu'il se passe à une fête"
+  - "passé composé des verbes irréguliers"
+  - "pronoms personnels au datif ( mir, dir, ihm, ... )"
+  - "quelques verbes importants qui sont suivis du datif ( schmecken, gefallen, helfen, ... )"
+  - "Personalpronomen im Akkusativ und im Dativ"
+  - "Clique sur ce lien pour accéder à la théorie sur les pronoms personnels"
+  - "http://www.sprachenwegweiser.de/deutsch-personalpronomen-uumlbungen.html (plusieurs exercices, à faire dans l'ordre)"
 externalLinks: 
   - url: "http://www.lehrerlenz.de/personalpronomen_1.html"
   - url: "http://www.michaelster.ch/lueckentexte/index.php?lid=286&id=11&variante=1"
@@ -25,28 +35,25 @@ externalLinks:
   - url: "https://www.grammatiktraining.de/pronomen/schreibuebung-saetze-mit-personalpronomen-bilden.html"
   - url: "https://www.hueber.de/shared/uebungen/themen-aktuell/lerner/uebungen/fset.php?Volume=1&Lection=9&Exercise=3&SubExercise=1"
   - url: "https://www.schubert-verlag.de/aufgaben/xg/xg03_10.htm"
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUAwnAvWlfUsNviwl2rTDcblzw0wg0JjNkHs0egBSxvYz5XUuGKkN9BHyP5vFdCiNoUQFJmKtbCi13maK9gLuRIGbbzVncJGbk2wxo7jSoKt4QuzCE4GlYtuVcOz9WvNjk6vus76Wo6UYZE6S7KkDzuFRqHlSsCNk4D-0fBIzRBlDRyK45vrMgwmd7k=w16383"
+images: []
 migrationNotes: []
 ---
 
-K7 - Freunde haben - Freunde finden
+## Objectifs
 
-Objectifs
-
-Communication
+## Communication
 
 L'élève est capable de...
 
-décrire ses amis
+- décrire ses amis
 
-dire ce qu'il a fait avec ses amis
+- dire ce qu'il a fait avec ses amis
 
-faire des compliments
+- faire des compliments
 
-dire ce qu'il se passe à une fête
+- dire ce qu'il se passe à une fête
 
-Langue
+## Langue
 
 passé composé des verbes irréguliers
 
@@ -57,36 +64,6 @@ quelques verbes importants qui sont suivis du datif ( schmecken, gefallen, helfe
 Personalpronomen im Akkusativ und im Dativ
 
 Clique sur ce lien pour accéder à la théorie sur les pronoms personnels.
-
-http://www.lehrerlenz.de/personalpronomen_1.html
-
-https://mein-deutschbuch.de/grammatikuebungen-personalpronomen.html
-
-https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/27_pronomen/30_satzteile_durch_pronomen_ersetzen.htm
-
-http://www.michaelster.ch/lueckentexte/index.php?variante=0&lid=759&id=11
-
-http://www.michaelster.ch/lueckentexte/index.php?lid=760&id=11&variante=0
-
-http://www.michaelster.ch/lueckentexte/index.php?lid=762&id=11&variante=1
-
-http://www.michaelster.ch/lueckentexte/index.php?lid=761&id=11&variante=1
-
-http://www.michaelster.ch/lueckentexte/index.php?lid=286&id=11&variante=1
-
-https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ergaenzen.html
-
-https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ersetzen.html
-
-https://deutsch.lingolia.com/de/grammatik/pronomen/personalpronomen/uebungen
-
-https://deutschlernerblog.de/deklination-personalpronomen-online-uebungen-grammatikuebungen/
-
-https://www.schubert-verlag.de/aufgaben/xg/xg03_10.htm
-
-https://www.grammatiktraining.de/pronomen/schreibuebung-saetze-mit-personalpronomen-bilden.html
-
-https://www.hueber.de/shared/uebungen/themen-aktuell/lerner/uebungen/fset.php?Volume=1&Lection=9&Exercise=3&SubExercise=1
 
 http://www.sprachenwegweiser.de/deutsch-personalpronomen-uumlbungen.html (plusieurs exercices, à faire dans l'ordre)
 

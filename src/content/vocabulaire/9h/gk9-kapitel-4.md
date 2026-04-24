@@ -1,6 +1,6 @@
 ---
 title: "Geni@l Klick Kapitel 4"
-description: "Geni@l Klick Kapitel 4"
+description: "Nouvelle application \"faite-maison\""
 section: "vocabulaire"
 level: "9H"
 category: "general"
@@ -14,18 +14,15 @@ externalLinks:
   - url: "http://www.gimkit.com/join"
   - url: "https://www.blooket.com/set/62b169b883ceb40018c20c54"
   - url: "https://www.gimkit.com/view/61e96443f5896c002340bb19"
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUCT93t8ExwShgwgo_iKIQNiG2CT_2lkjds7lg8BsCFr2PtvXLpRZza4QibpMq6KiGRV-ITbD8qjfqoemlc4AA9YVThXRR78-oyMe0a7a5gLHW2Qv5S9boJZ9yjVI5FhkAaSOspf30qxoUYIlFAo-1-YVO8t1gfu6R4=w16383"
+images: []
 migrationNotes: []
 ---
 
-Geni@l Klick Kapitel 4
-
-Nouvelle application "faite-maison"
+## Nouvelle application "faite-maison"
 
 ⚠️En cliquant en bas à droite de la fenêtre ci-dessus sur "Choisissez un mode d'apprentissage", vous pouvez choisir différents types de jeux (dictée, test, cartes, etc.) !
 
-Gimkit
+## Gimkit
 
 Ce site est vachement plus fun que Quizlet ! Créé ton compte gratuit sur www.gimkit.com , puis c lique sur ce lien pour accéder à la liste de voc.
 
@@ -33,7 +30,7 @@ Clique ensuite sur "Play" (à gauche) et choisis un mode de jeu. Lorsque que tu 
 
 Tu peux même défier tes copains en direct dans les jeux !
 
-Blooket
+## Blooket
 
 Ce site propose aussi des jeux sympas pour réviser le voc. Utilise-le plutôt pour commencer à apprendre un nouveau voc car il n'y a que des questions à choix multiples. Elles sont pratiques pour voir le voc une première fois mais pas suffisantes pour bien apprendre à écrire les mots.
 

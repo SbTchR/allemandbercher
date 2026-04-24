@@ -14,20 +14,17 @@ externalLinks:
   - url: "http://www.gimkit.com/join"
   - url: "https://www.blooket.com/set/62b172cd4f941d8a369bf7e0"
   - url: "https://www.gimkit.com/view/61e97ad8847ce40023e5acd3"
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUDh4mBBwn0UYx7IPkH8A5d-d45o0EWaxJKhXB8TLadNM04_i2KHTkuce6S-NMxUKyZocTzQxxA5071Rf9oWPtJJ8Z5fz9qVYPn3F3MBlhBUkO_5-NzZfJ7NwO_hMWhPRswRZA-gv2OtW-sElSqpeaAB4uD0UOT9=w16383"
+images: []
 migrationNotes: []
 ---
 
-Kapitel 7
-
 Wortschatz - 11H
 
-Nouvelle application "faite-maison"
+## Nouvelle application "faite-maison"
 
 ⚠️En cliquant en bas à droite des fenêtres ci-dessous sur "Choisissez un mode d'apprentissage", vous pouvez choisir différents types de jeux (dictée, test, cartes, etc.) !
 
-Gimkit
+## Gimkit
 
 Ce site est vachement plus fun que Quizlet ! Créé ton compte gratuit sur www.gimkit.com , puis c lique sur ce lien pour accéder à la liste de voc.
 
@@ -35,7 +32,7 @@ Clique ensuite sur "Play" (à gauche) et choisis un mode de jeu. Lorsque que tu 
 
 Tu peux même défier tes copains en direct dans les jeux !
 
-Blooket
+## Blooket
 
 Ce site propose aussi des jeux sympas pour réviser le voc. Utilise-le plutôt pour commencer à apprendre un nouveau voc car il n'y a que des questions à choix multiples. Elles sont pratiques pour voir le voc une première fois mais pas suffisantes pour bien apprendre à écrire les mots.
 

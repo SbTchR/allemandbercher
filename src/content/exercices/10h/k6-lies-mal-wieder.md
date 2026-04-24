@@ -1,6 +1,6 @@
 ---
 title: "K6 - Lies mal wieder !"
-description: "K6 - Lies mal wieder !"
+description: "L'élève est capable de..."
 section: "exercices"
 level: "10H"
 category: "general"
@@ -9,18 +9,16 @@ pageType: "chapitre"
 order: 6
 objectives: []
 externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUALs9-eaSc7WVV-ycnVtYX_av7-V-TgJ6WeN9yeI1vb5WbVy5tqMurl1pLWa6pUL2P5mUArhrO4FQ8AJe9_NGDteSdKR29IJCZajB5foLjKAk1eDnNSwPuzIiO6tfzlmKklW_cR5i7mBpAJGm3JqMEgml8b7zTawkebxFi6uDrneGSU6oBCN-NO8D8=w16383"
+images: []
 migrationNotes: 
   - "texte principal très court"
+  - "à vérifier: contenu extrait très court ou probablement incomplet"
 ---
 
-K6 - Lies mal wieder !
+## Objectifs
 
-Objectifs
-
-Communication
+## Communication
 
 L'élève est capable de...
 
-Langue
+## Langue

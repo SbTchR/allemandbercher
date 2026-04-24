@@ -6,13 +6,14 @@ category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/wenn"
 pageType: "theorie"
 objectives: []
-externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUAKrcdCcocTHSid99OrAl5ZU5BvNGodd64f53gyy4Tva4DbETL3SUxIHerdsoORPFOkh3MTi20IePREp0jqsa4AxeEJsIjURtCQ7aBiBIdAy6Q60pJFACshAOWCwzbZJAotKFWQvwlKNH4ljlnHjQpTrh7lbXmzMBxutcpwumXPXYnPwqEYJtlsc5E=w16383"
+externalLinks: 
+  - url: "http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul11_erg/nebensaetze4.htm"
+  - url: "http://lerngrammatik.de/uebung_satz_konditionalsatz_1.htm"
+  - url: "https://deutsch.lingolia.com/de/grammatik/satzbau/konditionalsaetze/uebungen"
+  - url: "https://www.schubert-verlag.de/aufgaben/xg/xg08_05.htm"
+images: []
 migrationNotes: []
 ---
-
-wenn
 
 Subordonnées
 
@@ -60,14 +61,6 @@ phrase subordonnée phrase principale
 
 v. à la fin v. en 2e p.
 
-Exercice
+## Exercice
 
-Quelques exercices pour entrainer les phrases avec wenn :
-
-https://deutsch.lingolia.com/de/grammatik/satzbau/konditionalsaetze/uebungen
-
-https://www.schubert-verlag.de/aufgaben/xg/xg08_05.htm
-
-http://lerngrammatik.de/uebung_satz_konditionalsatz_1.htm
-
-http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul11_erg/nebensaetze4.htm
+## Quelques exercices pour entrainer les phrases avec wenn :

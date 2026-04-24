@@ -1,10 +1,11 @@
 import type { CollectionEntry } from 'astro:content';
 
 export type ExerciseEntry = CollectionEntry<'exercices'>;
+export type AdviceEntry = CollectionEntry<'conseils'>;
 export type TheoryEntry = CollectionEntry<'theorie'>;
 export type VocabularyEntry = CollectionEntry<'vocabulaire'>;
 export type ToolEntry = CollectionEntry<'outils'>;
-export type ResourceEntry = ExerciseEntry | TheoryEntry | VocabularyEntry | ToolEntry;
+export type ResourceEntry = AdviceEntry | ExerciseEntry | TheoryEntry | VocabularyEntry | ToolEntry;
 
 const levelRank = { '9H': 1, '10H': 2, '11H': 3 };
 const categoryRank = { general: 0, grammaire: 1, syntaxe: 2, conjugaison: 3 };
@@ -38,6 +39,10 @@ export function resourceUrl(entry: ResourceEntry) {
 
   if (entry.collection === 'exercices') {
     return `/exercices/${entry.data.level.toLowerCase()}/${slug}/`;
+  }
+
+  if (entry.collection === 'conseils') {
+    return `/conseils/${slug}/`;
   }
 
   if (entry.collection === 'theorie') {

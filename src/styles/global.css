@@ -310,7 +310,8 @@ h2 {
 
 .objective-box,
 .link-box,
-.source-box {
+.source-box,
+.review-box {
   padding: 18px;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -319,17 +320,24 @@ h2 {
 
 .objective-box h2,
 .link-box h2,
-.source-box h2 {
+.source-box h2,
+.review-box h2 {
   margin-bottom: 10px;
   font-size: 1.05rem;
 }
 
 .objective-box ul,
-.link-box ul {
+.link-box ul,
+.review-box ul {
   display: grid;
   gap: 8px;
   margin: 0;
   padding-left: 18px;
+}
+
+.review-box {
+  border-color: #e6c76a;
+  background: #fff9e8;
 }
 
 .link-box a,

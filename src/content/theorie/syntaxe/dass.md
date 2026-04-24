@@ -6,13 +6,15 @@ category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/dass"
 pageType: "theorie"
 objectives: []
-externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUA1AldcFMUoyJGpv-MrdQalBilVpvkQBIeywRC5I2a3COj6Yp9bmyJ6HrltftyAYzKL8Z6VW2zAr2B5cC0ljsLYiRbJZWkGW8nDkmW-NEeh9s8sQV1MfEQ9y-1yJLOOmGJBFVGshmmX8h1OmPZ0LTmOA0I7p_QXLvxOONVIPMNKKq8-RNHCDNTtLwg=w16383"
+externalLinks: 
+  - url: "http://lerngrammatik.de/uebung_satz_dass_1.htm"
+  - url: "https://learningapps.org/view1318482"
+  - url: "https://learningapps.org/view39468"
+  - url: "https://learningapps.org/view43391"
+  - url: "https://www.das-dass.de/das-dass-uebungen.php"
+images: []
 migrationNotes: []
 ---
-
-dass
 
 Subordonnées
 
@@ -60,7 +62,7 @@ penser = denken croire = glauben
 
 trouver = finden savoir = wissen
 
-Exercice
+## Exercice
 
 Dass-Fragen
 
@@ -110,14 +112,4 @@ Keine Ahnung.
 
 (= aucune idée
 
-Quelques exercices pour entrainer les phrases avec dass .
-
-http://lerngrammatik.de/uebung_satz_dass_1.htm
-
-https://www.das-dass.de/das-dass-uebungen.php
-
-https://learningapps.org/view39468
-
-https://learningapps.org/view1318482
-
-https://learningapps.org/view43391
+## Quelques exercices pour entrainer les phrases avec dass .

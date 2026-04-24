@@ -40,19 +40,20 @@ Exemples :
 Les ressources migrées depuis l’audit sont organisées en collections Astro :
 
 - `src/content/exercices/9h/`, `10h/`, `11h/`
+- `src/content/conseils/`
 - `src/content/theorie/grammaire/`, `syntaxe/`, `conjugaison/`
 - `src/content/vocabulaire/9h/`, `10h/`, `11h/`
 - `src/content/outils/`
 
 Chaque fichier Markdown contient un en-tête simple : titre, section, niveau ou catégorie, URL source, liens externes, images et notes de migration.
 
-Pour régénérer ces fichiers depuis `data/source-site-map.json` :
+Pour régénérer ces fichiers depuis `data/source-site-map.json` et mettre à jour le journal de migration :
 
 ```bash
-npm run content:generate
+npm run content:migrate
 ```
 
-Attention : cette commande remplace le dossier `src/content/`. Ne pas l’utiliser après des corrections manuelles sans sauvegarder les modifications utiles.
+Attention : cette commande remplace le dossier `src/content/` et réécrit `migration-log.md`. Ne pas l’utiliser après des corrections manuelles sans sauvegarder les modifications utiles.
 
 ## Règles de migration
 

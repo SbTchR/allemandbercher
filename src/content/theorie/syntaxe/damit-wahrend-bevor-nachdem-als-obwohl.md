@@ -1,18 +1,17 @@
 ---
 title: "damit, während, bevor, nachdem, als, ..."
-description: "damit, während, bevor, nachdem, als, ..."
+description: "damit = pour que während = pendant que"
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/damit-w%C3%A4hrend-bevor-nachdem-als-obwohl"
 pageType: "theorie"
 objectives: []
-externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUB26DbTov87xD0GNF_Lxr8GTy5CwooDR12YprFegx6WyXmB-u4KMsqIPHbIiiXop7pcPSjdnp7ARCCQe4V3N3wN6HGlO7t5fiDc5teYBO7GdQNdgo-cwGpFStHolW1anIbl0POhVs1qDnNeDWdEDLc-kex1oiDC_dayDdESjEgb6LbX8cqWDysD3YE=w16383"
+externalLinks: 
+  - url: "https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen"
+  - url: "https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html"
+images: []
 migrationNotes: []
 ---
-
-damit, während, bevor, nachdem, als, ...
 
 Subordonnées
 
@@ -64,8 +63,4 @@ phrase subordonnée phrase principale
 
 v. à la fin v. en 2e p.
 
-Exercices
-
-https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html
-
-https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen
+## Exercices

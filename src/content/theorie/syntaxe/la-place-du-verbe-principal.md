@@ -1,19 +1,15 @@
 ---
 title: "La place du verbe principal"
-description: "La place du verbe principal"
+description: "Par verbe « principal », on entend le verbe qui est conjugué avec le sujet (il y a parfois plusieurs formes verbales dans certaines phrases)."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal"
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUBkB5KrFSsZXi-iq3J7uk1bAoXx2PwzSJQOAHKIg1YIeT6Fyupg-llCh6iWbdf55HNt4yc_Ri1a3rW6kyYrtRhP68lziChalPzfBxUn1HTjUdaLWXRcjulGN357oq_ypBu8g3joHn96xOhFEmq7Birv7UKxvsQjAMBxKVEY9C7ZQaA3tUeiC71HSItZP_Kyu30TTKz6YlozkQs=w1280"
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUCRppUu4A6b0LUNGryCEq6PuP2r2swjrezF8XYPL5jEPJtouCPat-7lDXdZxCLrn3vJvsDwC1lYb_J2LztRoB4ZrOStrpa32tw0pPlg7RgRdj-Z5KhW6YhOQAIdW07vS0I_W9v42Ejcm-k7Y0OxPyDWH95sOil4m23xffTTKVkGkKSVm8n56YM2SRg=w16383"
+images: []
 migrationNotes: []
 ---
-
-La place du verbe principal
 
 Par verbe « principal », on entend le verbe qui est conjugué avec le sujet (il y a parfois plusieurs formes verbales dans certaines phrases).
 
@@ -75,7 +71,7 @@ Der Schüler hat sein Buch vergessen.
 
 —> suite dans le même ordre mais participe passé à la fin (vergessen)
 
-Le principe est le même pour tous les types de phrases:
+## Le principe est le même pour tous les types de phrases:
 
 Passé composé avec complément: Gestern hat der Schüler sein Buch vergessen.
 
@@ -85,4 +81,4 @@ Verbe de modalité avec complément: Heute will der Schüler nicht in die Schule
 
 etc.
 
-Exercice
+## Exercice

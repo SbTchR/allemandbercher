@@ -9,18 +9,16 @@ pageType: "chapitre"
 order: 6
 objectives: []
 externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUB8MoE_55huEtFNCDaKNy7roEQwwOBH_ErtBj5fVPB_gzEeL6cL7atCnQ6c5zPDh-u5aQKAYurJauWvizDees6skfVbJ7wQGqdKKX2BEpWnmI67_kHMWCDU--m31F14EbxBJCkLzyTRttGpOveCwDPNaTTQAIllbNkbQwcV6OswzqqeUeZU3kI1=w16383"
+images: []
 migrationNotes: 
   - "texte principal très court"
+  - "à vérifier: contenu extrait très court ou probablement incomplet"
 ---
 
-K6 - Wir tun was!
+## Objectifs
 
-Objectifs
-
-Communication
+## Communication
 
 L'élève est capable de...
 
-Langue
+## Langue

@@ -1,18 +1,15 @@
 ---
 title: "trotzdem, deshalb, also"
-description: "trotzdem, deshalb, also"
+description: "trotzdem = malgré que"
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb"
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUAKd3GZHhTeSaoaqq2XaNx8eZAmG4XWKG3SC83tQaLHg0bzh5sHCN1B6fMkjwL629H5YM1bGpUHQtvq6baClinR9QioPBOSnBtLB-uj_mu9kPj3XjyCPaF__I02VB_L7yKwCKzpb3kVeedH7Vtt38U4ZW4WkM1exeSYR6ThlTzUOaNdbBpsUI4O6_o=w16383"
+images: []
 migrationNotes: []
 ---
-
-trotzdem, deshalb, also
 
 Subordonnées
 
@@ -38,4 +35,4 @@ PS: Le mot « trotzdem » peut aussi signifier « quand même » et ainsi être 
 
 Exemple: Ich bin krank, aber ich gehe trotzdem in die Schule.
 
-Exercice
+## Exercice

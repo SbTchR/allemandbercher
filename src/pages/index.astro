@@ -10,8 +10,22 @@ import { chapterLevels } from '../data/chapters';
     <p class="eyebrow">Ressources d’allemand</p>
     <h1>Allemand Bercher</h1>
     <p class="lead">
-      Une base propre pour retrouver les conseils, exercices, notions de théorie, vocabulaires et
-      outils utiles, sans les éléments techniques de Google Sites.
+      Ce site fournit une aide à l’apprentissage de l’allemand aux élèves de 9H à 11H, tous niveaux
+      confondus.
+    </p>
+  </section>
+
+  <section class="content-band" aria-labelledby="home-purpose-title">
+    <h2 id="home-purpose-title">Ce que tu peux trouver ici</h2>
+    <ul class="resource-list">
+      <li>Des conseils pour préparer les tests.</li>
+      <li>Des exercices interactifs auto-corrigés pour les chapitres vus en classe.</li>
+      <li>Des rappels de théorie pour les thèmes de grammaire, syntaxe et conjugaison.</li>
+      <li>Des ressources pour apprendre le vocabulaire avec des outils comme Quizlet.</li>
+    </ul>
+    <p class="notice">
+      Les exercices en ligne ne sont pas toujours triés par difficulté. Pense à utiliser un
+      dictionnaire en ligne lorsque tu fais des exercices.
     </p>
   </section>
 
@@ -20,8 +34,34 @@ import { chapterLevels } from '../data/chapters';
     <SectionList items={navigationItems.filter((item) => item.href !== '/')} />
   </section>
 
-  <section class="content-band" aria-labelledby="chapters-title">
-    <h2 id="chapters-title">Chapitres par année</h2>
-    <SectionList items={chapterLevels.map(({ level, href, description }) => ({ label: level, href, description }))} />
+  <section class="content-band" aria-labelledby="exchange-title">
+    <h2 id="exchange-title">Échanges linguistiques cantonaux</h2>
+    <p>
+      Les élèves du canton de Vaud peuvent faire un échange linguistique avec des élèves allemands,
+      autrichiens ou suisse-allemands.
+    </p>
+    <ul class="resource-list">
+      <li>
+        <strong>Allemagne / Autriche</strong>
+        <p>Deux semaines, dates selon destination, voyage accompagné, 440.-</p>
+        <a href="http://www.elev.ch/" rel="noreferrer" target="_blank">www.elev.ch</a>
+      </li>
+      <li>
+        <strong>Suisse allemande</strong>
+        <p>Une à deux semaines, en principe durant les vacances, gratuit sauf frais de transport.</p>
+        <a href="http://www.movetia.ch/" rel="noreferrer" target="_blank">www.movetia.ch</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="content-band" aria-labelledby="levels-title">
+    <h2 id="levels-title">Accès par année</h2>
+    <SectionList
+      items={chapterLevels.map(({ level, description }) => ({
+        label: level,
+        href: `/exercices/${level.toLowerCase()}/`,
+        description,
+      }))}
+    />
   </section>
 </Layout>

@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../components/Layout.astro';
+import ResourceGrid from '../../../components/ResourceGrid.astro';
+import TheoryBox from '../../../components/TheoryBox.astro';
+import { byOrderThenTitle } from '../../../lib/resources';
+
+const labels = {
+  grammaire: 'Grammaire',
+  syntaxe: 'Syntaxe',
+  conjugaison: 'Conjugaison',
+};
+
+export async function getStaticPaths() {
+  return ['grammaire', 'syntaxe', 'conjugaison'].map((category) => ({ params: { category } }));
+}
+
+const category = Astro.params.category as keyof typeof labels;
+const entries = (await getCollection('theorie', (entry) => entry.data.category === category)).sort(byOrderThenTitle);
+---
+
+<Layout title={labels[category]} description={`Ressources de ${labels[category].toLowerCase()} pour le cours d’allemand.`}>
+  <section class="hero compact-hero">
+    <p class="eyebrow">Théorie</p>
+    <h1>{labels[category]}</h1>
+    <p class="lead">Pages migrées depuis le site source et prêtes à être relues.</p>
+  </section>
+
+  <section class="content-band">
+    <TheoryBox category={category}>
+      <ResourceGrid entries={entries} />
+    </TheoryBox>
+  </section>
+</Layout>

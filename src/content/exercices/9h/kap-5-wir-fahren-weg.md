@@ -7,28 +7,35 @@ category: "general"
 sourceUrl: "https://www.allemandbercher.ch/exercices/9h/kap-5-wir-fahren-weg"
 pageType: "chapitre"
 order: 5
-objectives: []
+objectives: 
+  - "écrire une carte postale à propos d'un voyage"
+  - "faire des propositions"
+  - "commander à boire et à manger"
+  - "indicateurs de direction (prépositions)"
+  - "verbe de modalité: möchten"
+  - "prétérit de sein et haben"
+  - "Les indicateurs de direction"
+  - "Wohin fährst du ? Où vas-tu ? (dans quel direction)"
+  - "Pour indiquer où l'on va, on utilise:"
+  - "nach pour les villes et les pays"
 externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUAbnOU9MjDX0V2DK3A-f7Lsa7xOiSGa2VfzdmQ90s5RFWTXlgk7GXmC1qyDs329wH91aJGoccsINqJhyVNCGOVprVB5l_55dr9Lpo5XZcUgcBcpEidGVHMneYP6B92yElS4eQEOCzO8-XbSYBQu5x_XDmbeA_bqj76gknjPO-fxs0bODJtNc1lc=w16383"
+images: []
 migrationNotes: []
 ---
 
-K5 - Wir fahren weg!
+## Objectifs
 
-Objectifs
-
-Communication
+## Communication
 
 L'élève est capable de...
 
-écrire une carte postale à propos d'un voyage
+- écrire une carte postale à propos d'un voyage
 
-faire des propositions
+- faire des propositions
 
-commander à boire et à manger
+- commander à boire et à manger
 
-Langue
+## Langue
 
 indicateurs de direction (prépositions)
 
@@ -36,7 +43,7 @@ verbe de modalité: möchten
 
 prétérit de sein et haben
 
-Les indicateurs de direction
+## Les indicateurs de direction
 
 Wohin fährst du ? Où vas-tu ? (dans quel direction)
 

@@ -35,7 +35,7 @@ Les ressources 9H, 10H et 11H doivent rester simples à maintenir.
 ## Contenus migrés
 
 - Garder le schéma dans `src/content.config.ts` minimal et stable.
-- Utiliser les collections `exercices`, `theorie`, `vocabulaire` et `outils`.
+- Utiliser les collections `conseils`, `exercices`, `theorie`, `vocabulaire` et `outils`.
 - Ne pas coller du HTML Google Sites dans les fichiers Markdown.
 - Mettre les liens externes dans `externalLinks` quand ils doivent être conservés.
 - Mettre les images à récupérer dans `images`, puis remplacer progressivement les URLs Google par des fichiers locaux dans `public/`.

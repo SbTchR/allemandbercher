@@ -40,6 +40,18 @@ const { Content } = await render(entry);
 
       <aside class="resource-aside">
         <ObjectiveBox objectives={entry.data.objectives} />
+        {
+          entry.data.migrationNotes.length > 0 && (
+            <div class="review-box">
+              <h2>À vérifier</h2>
+              <ul>
+                {entry.data.migrationNotes.map((note) => (
+                  <li>{note}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
         <ExternalLinks links={entry.data.externalLinks} />
         {
           entry.data.sourceUrl && (

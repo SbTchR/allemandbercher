@@ -1,24 +1,21 @@
 ---
 title: "und, oder, aber, denn, also"
-description: "und, oder, aber, denn, also"
+description: "Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also"
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "https://lh3.googleusercontent.com/sitesv/AA5AbUDyb8MPeM5YehR1PYEMEzlCoPbfYRKOjYa5vtX4wn8Pn7EhEI76Li8HN7LCs379PkTYZgnNU6tTQAs0TOWI2j9g94bhnDUWxUsEZ-mfH63VdMIS4Pe4dOaGtnQby3oMZETZyTJDUtbWjweqDrPJg_1ZNUDaW8INMX5rQXAduwxc0pxgMUeJLLdX=w16383"
+images: []
 migrationNotes: []
 ---
-
-und, oder, aber, denn, also
 
 Subordonnées
 
 Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
 
-Les subordonnants suivants sont très utiles :
+## Les subordonnants suivants sont très utiles :
 
 und = et aber = mais
 
@@ -36,7 +33,7 @@ Eva mag Fussball spielen, aber Max mag Tennis.
 
 p.1 p.2 p.0 p.1 p.2
 
-Am Montag esse ich Nudeln und am Dienstag esse ich Kartoffeln.
+## Am Montag esse ich Nudeln und am Dienstag esse ich Kartoffeln.
 
 Jetzt gehe ich ins Bett, denn ich bin müde.
 
@@ -50,4 +47,4 @@ Exemple:
 
 Eva spielt gern Fussball, aber (sie) mag nicht Tennis.
 
-Exercice
+## Exercice
