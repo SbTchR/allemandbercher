@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/paths';
+
 type Item = {
   label: string;
   href: string;
@@ -15,7 +17,7 @@ const { items } = Astro.props;
 <div class="section-grid">
   {
     items.map((item) => (
-      <a class="section-card" href={item.href}>
+      <a class="section-card" href={withBase(item.href)}>
         <span>{item.label}</span>
         <p>{item.description}</p>
       </a>

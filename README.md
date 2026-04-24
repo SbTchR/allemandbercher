@@ -118,9 +118,14 @@ Dans GitHub :
 
 Configuration de production :
 
-- `astro.config.mjs` définit le site comme `https://www.allemandbercher.ch`, en sortie statique.
-- `public/CNAME` conserve le domaine personnalisé `www.allemandbercher.ch`.
+- `astro.config.mjs` définit le site comme un site statique publié sur GitHub Pages.
+- par défaut, le build utilise `https://sbtchr.github.io/allemandbercher/` avec `base: /allemandbercher`.
+- `public/CNAME` conserve le domaine personnalisé `www.allemandbercher.ch` pour la bascule DNS finale.
 - `public/.nojekyll` évite les erreurs GitHub Pages avec les dossiers générés par Astro, notamment `_astro`.
 - la page `src/pages/404.astro` sécurise les anciennes URLs connues grâce à `url-map.json`.
 
-Si le dépôt est publié sans domaine personnalisé, il faudra adapter `site` et éventuellement `base` dans `astro.config.mjs` avant la mise en ligne.
+Pour publier directement à la racine d’un domaine personnalisé, lancer le build avec :
+
+```bash
+PUBLIC_SITE_URL=https://www.allemandbercher.ch PUBLIC_BASE_PATH=/ npm run build
+```

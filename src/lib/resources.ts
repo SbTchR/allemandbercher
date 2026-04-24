@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import { withBase } from './paths';
 
 export type ExerciseEntry = CollectionEntry<'exercices'>;
 export type AdviceEntry = CollectionEntry<'conseils'>;
@@ -38,24 +39,24 @@ export function resourceUrl(entry: ResourceEntry) {
   const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
 
   if (entry.collection === 'exercices') {
-    return `/exercices/${entry.data.level.toLowerCase()}/${slug}/`;
+    return withBase(`/exercices/${entry.data.level.toLowerCase()}/${slug}/`);
   }
 
   if (entry.collection === 'conseils') {
-    return `/conseils/${slug}/`;
+    return withBase(`/conseils/${slug}/`);
   }
 
   if (entry.collection === 'theorie') {
     const category = entry.data.category === 'general' ? '' : `${entry.data.category}/`;
-    return `/theorie/${category}${slug}/`;
+    return withBase(`/theorie/${category}${slug}/`);
   }
 
   if (entry.collection === 'vocabulaire') {
     const level = entry.data.level ? `${entry.data.level.toLowerCase()}/` : '';
-    return `/vocabulaire/${level}${slug}/`;
+    return withBase(`/vocabulaire/${level}${slug}/`);
   }
 
-  return `/outils-en-ligne/${slug}/`;
+  return withBase(`/outils-en-ligne/${slug}/`);
 }
 
 export function excerptFromBody(body: string, maxLength = 170) {

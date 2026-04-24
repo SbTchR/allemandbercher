@@ -1,7 +1,9 @@
 ---
 import { navigationItems } from '../data/navigation';
+import { withBase } from '../lib/paths';
 
-const currentPath = Astro.url.pathname;
+const basePath = import.meta.env.BASE_URL.replace(/\/+$/, '');
+const currentPath = Astro.url.pathname.replace(basePath, '') || '/';
 
 function isActive(href: string) {
   if (href === '/') return currentPath === '/';
@@ -10,14 +12,14 @@ function isActive(href: string) {
 ---
 
 <header class="site-header">
-  <a class="brand" href="/" aria-label="Retour à l’accueil">
+  <a class="brand" href={withBase('/')} aria-label="Retour à l’accueil">
     <span class="brand-mark" aria-hidden="true">AB</span>
     <span>Allemand Bercher</span>
   </a>
   <nav class="main-nav" aria-label="Navigation principale">
     {
       navigationItems.map((item) => (
-        <a class:list={{ active: isActive(item.href) }} href={item.href}>
+        <a class:list={{ active: isActive(item.href) }} href={withBase(item.href)}>
           {item.label}
         </a>
       ))

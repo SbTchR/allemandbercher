@@ -1,5 +1,6 @@
 ---
 import Layout from '../components/Layout.astro';
+import { withBase } from '../lib/paths';
 import urlMap from '../../url-map.json';
 
 const redirectMap = Object.fromEntries(
@@ -24,16 +25,24 @@ const redirectMap = Object.fromEntries(
       Si cette adresse correspond à une ancienne page du site, tu vas être redirigé automatiquement.
     </p>
     <p>
-      <a class="text-link" href="/">Retour à l’accueil</a>
+      <a class="text-link" href={withBase('/')}>Retour à l’accueil</a>
     </p>
   </section>
 
   <script is:inline define:vars={{ redirectMap }}>
+    const basePath = import.meta.env.BASE_URL.replace(/\/+$/, '');
     const normalizedPath = (() => {
       try {
-        return decodeURIComponent(window.location.pathname).replace(/\/+$/, '') || '/';
+        const decodedPath = decodeURIComponent(window.location.pathname);
+        const pathWithoutBase = basePath && decodedPath.startsWith(basePath)
+          ? decodedPath.slice(basePath.length) || '/'
+          : decodedPath;
+        return pathWithoutBase.replace(/\/+$/, '') || '/';
       } catch {
-        return window.location.pathname.replace(/\/+$/, '') || '/';
+        const pathWithoutBase = basePath && window.location.pathname.startsWith(basePath)
+          ? window.location.pathname.slice(basePath.length) || '/'
+          : window.location.pathname;
+        return pathWithoutBase.replace(/\/+$/, '') || '/';
       }
     })();
 
@@ -44,7 +53,8 @@ const redirectMap = Object.fromEntries(
       if (status) {
         status.textContent = `Ancienne page reconnue. Redirection vers ${targetPath}`;
       }
-      window.location.replace(`${targetPath}${window.location.search}${window.location.hash}`);
+      const targetWithBase = `${basePath}${targetPath}`;
+      window.location.replace(`${targetWithBase}${window.location.search}${window.location.hash}`);
     } else if (status) {
       status.textContent = 'Aucune correspondance automatique trouvée pour cette adresse.';
     }

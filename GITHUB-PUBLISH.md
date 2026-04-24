@@ -104,13 +104,19 @@ Dans GitHub :
    - `Check internal links`;
    - `Deploy to GitHub Pages`.
 
-Le site est configuré pour le domaine personnalisé :
+Tant que le domaine personnalisé n’est pas relié, l’adresse de test GitHub Pages est :
+
+```text
+https://sbtchr.github.io/allemandbercher/
+```
+
+Le site prévoit ensuite le domaine personnalisé :
 
 ```text
 www.allemandbercher.ch
 ```
 
-Ce domaine est déclaré dans `public/CNAME` et sera publié automatiquement avec le site.
+Ce domaine est déclaré dans `public/CNAME`. Pour un déploiement final directement à la racine du domaine personnalisé, il faudra construire avec `PUBLIC_SITE_URL=https://www.allemandbercher.ch` et `PUBLIC_BASE_PATH=/`.
 
 ## 7. En cas d’erreur classique
 
@@ -133,4 +139,3 @@ Ne pas remplacer le remote sans vérifier l’URL. Pour changer volontairement l
 ```bash
 git remote set-url origin https://github.com/SbTchR/allemandbercher.git
 ```
-

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
 import ResourceGrid from '../../components/ResourceGrid.astro';
 import { byLevelThenOrder } from '../../lib/resources';
+import { withBase } from '../../lib/paths';
 
 const entries = (await getCollection('vocabulaire')).sort(byLevelThenOrder);
 const levels = ['9H', '10H', '11H'] as const;
@@ -23,7 +24,7 @@ const levels = ['9H', '10H', '11H'] as const;
             <p class="eyebrow">Niveau</p>
             <h2 id={`vocabulaire-${level}`}>{level}</h2>
           </div>
-          <a class="text-link" href={`/vocabulaire/${level.toLowerCase()}/`}>Voir l’index {level}</a>
+          <a class="text-link" href={withBase(`/vocabulaire/${level.toLowerCase()}/`)}>Voir l’index {level}</a>
         </div>
         <ResourceGrid entries={entries.filter((entry) => entry.data.level === level)} />
       </section>

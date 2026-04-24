@@ -5,6 +5,7 @@ import path from 'node:path';
 const DIST_DIR = 'dist';
 const URL_MAP_PATH = 'url-map.json';
 const REPORT_PATH = 'link-check-report.md';
+const BASE_PATH = (process.env.PUBLIC_BASE_PATH || '/allemandbercher').replace(/\/+$/, '');
 
 function walk(dir) {
   const files = [];
@@ -54,7 +55,10 @@ function internalUrl(rawUrl) {
 }
 
 function distPathFor(pathname) {
-  const cleanPath = pathname === '/' ? '/' : pathname.replace(/\/+$/, '');
+  const pathnameWithoutBase = BASE_PATH && pathname.startsWith(BASE_PATH)
+    ? pathname.slice(BASE_PATH.length) || '/'
+    : pathname;
+  const cleanPath = pathnameWithoutBase === '/' ? '/' : pathnameWithoutBase.replace(/\/+$/, '');
   if (cleanPath === '/') return path.join(DIST_DIR, 'index.html');
 
   const withoutLeadingSlash = cleanPath.replace(/^\//, '');
@@ -65,6 +69,13 @@ function distPathFor(pathname) {
 
 function pageExists(pathname) {
   return existsSync(distPathFor(pathname));
+}
+
+function routeFor(pathname) {
+  const pathnameWithoutBase = BASE_PATH && pathname.startsWith(BASE_PATH)
+    ? pathname.slice(BASE_PATH.length) || '/'
+    : pathname;
+  return pathnameWithoutBase.endsWith('/') ? pathnameWithoutBase : `${pathnameWithoutBase}/`;
 }
 
 function extractIds(html) {
@@ -102,7 +113,7 @@ for (const [route, page] of pages) {
   for (const link of page.links) {
     const exists = pageExists(link.pathname);
     const targetPath = distPathFor(link.pathname);
-    const targetRoute = link.pathname.endsWith('/') ? link.pathname : `${link.pathname}/`;
+    const targetRoute = routeFor(link.pathname);
     const targetIds = pages.get(targetRoute)?.ids || pages.get(link.pathname)?.ids;
     const anchorOk = !link.hash || link.hash.length === 0 || targetIds?.has(link.hash);
     const ok = exists && anchorOk;
