@@ -1,11 +1,11 @@
 # Rapport de vérification des liens
 
-Rapport généré le 2026-04-28T13:38:40.050Z.
+Rapport généré le 2026-04-28T14:03:50.823Z.
 
 ## Résumé
 
-- Pages HTML vérifiées : 104
-- Liens internes vérifiés : 1170
+- Pages HTML vérifiées : 108
+- Liens internes vérifiés : 1166
 - Liens internes cassés : 0
 - Cibles manquantes dans `url-map.json` : 0
 

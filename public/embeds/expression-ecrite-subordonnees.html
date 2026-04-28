@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice Subordonnées</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: #f9f9f9;
+        color: #222;
+        font-family: Arial, sans-serif;
+      }
+
+      .exercise-container {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .phrase {
+        margin-bottom: 20px;
+      }
+
+      .words,
+      .answer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .word,
+      .answer span {
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .word {
+        background: #007bff;
+        color: white;
+      }
+
+      .word.used {
+        background: #ddd;
+        color: #777;
+        cursor: not-allowed;
+      }
+
+      .answer {
+        min-height: 34px;
+        margin-top: 10px;
+        padding: 6px;
+        border: 1px dashed #bbb;
+      }
+
+      .answer span {
+        background: #f0f0f0;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 5px;
+        background: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      .correct {
+        color: green;
+        font-weight: bold;
+      }
+
+      .incorrect {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="exercise-container">
+      <h1>Exercice Subordonnées</h1>
+      <p>Remettez les phrases dans le bon ordre en respectant la structure des subordonnées en allemand.</p>
+      <div id="exercises"></div>
+    </div>
+
+    <script>
+      const phrases = [
+        { german: 'Ich bin sicher, dass sie die Prüfung bestehen wird.', french: "Je suis sûr qu'elle réussira l'examen." },
+        { german: 'Er bleibt zu Hause, weil es regnet.', french: "Il reste à la maison parce qu'il pleut." },
+        { german: 'Wenn ich Zeit habe, gehe ich ins Kino.', french: "Quand j'ai le temps, je vais au cinéma." },
+        { german: 'Wir lernen Deutsch, damit wir in Deutschland studieren können.', french: "Nous apprenons l'allemand pour pouvoir étudier en Allemagne." },
+        { german: 'Bevor ich zur Arbeit gehe, trinke ich einen Kaffee.', french: "Avant d'aller au travail, je bois un café." },
+      ];
+
+      function shuffle(words) {
+        return [...words].sort(() => Math.random() - 0.5);
+      }
+
+      function validate(index) {
+        const userAnswer = Array.from(document.getElementById(`answer-${index}`).children)
+          .map((span) => span.textContent)
+          .join(' ')
+          .trim();
+        const correctAnswer = phrases[index].german.replace('.', '').trim();
+        const feedback = document.getElementById(`feedback-${index}`);
+        if (userAnswer === correctAnswer) {
+          feedback.textContent = 'Bonne réponse !';
+          feedback.className = 'correct';
+        } else {
+          feedback.textContent = `Faux ! Essayez encore. Correct: ${correctAnswer}`;
+          feedback.className = 'incorrect';
+        }
+      }
+
+      const container = document.getElementById('exercises');
+      phrases.forEach((phrase, index) => {
+        const div = document.createElement('div');
+        div.className = 'phrase';
+        div.innerHTML = `
+          <p><strong>Phrase ${index + 1}:</strong> ${phrase.french}</p>
+          <div class="words" id="words-${index}"></div>
+          <div class="answer" id="answer-${index}"></div>
+          <button type="button">Valider</button>
+          <p id="feedback-${index}"></p>
+        `;
+        container.appendChild(div);
+        const wordsContainer = div.querySelector('.words');
+        shuffle(phrase.german.replace('.', '').split(' ')).forEach((word) => {
+          const wordElement = document.createElement('span');
+          wordElement.className = 'word';
+          wordElement.textContent = word;
+          wordElement.addEventListener('click', () => {
+            if (wordElement.classList.contains('used')) return;
+            const answerContainer = document.getElementById(`answer-${index}`);
+            const answerWord = document.createElement('span');
+            answerWord.textContent = word;
+            answerWord.addEventListener('click', () => {
+              answerWord.remove();
+              wordElement.classList.remove('used');
+            });
+            answerContainer.appendChild(answerWord);
+            wordElement.classList.add('used');
+          });
+          wordsContainer.appendChild(wordElement);
+        });
+        div.querySelector('button').addEventListener('click', () => validate(index));
+      });
+    </script>
+  </body>
+</html>

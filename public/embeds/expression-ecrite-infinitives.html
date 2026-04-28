@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice sur les Infinitives</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        background: #f9f9f9;
+        color: #222;
+        font-family: Arial, sans-serif;
+      }
+
+      .exercise-container {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .phrase {
+        margin-bottom: 20px;
+      }
+
+      .words,
+      .answer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .word,
+      .answer span {
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .word {
+        background: #007bff;
+        color: white;
+      }
+
+      .word.used {
+        background: #ddd;
+        color: #777;
+        cursor: not-allowed;
+      }
+
+      .answer {
+        min-height: 34px;
+        margin-top: 10px;
+        padding: 6px;
+        border: 1px dashed #bbb;
+      }
+
+      .answer span {
+        background: #f0f0f0;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: 0;
+        border-radius: 5px;
+        background: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      .correct {
+        color: green;
+        font-weight: bold;
+      }
+
+      .incorrect {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="exercise-container">
+      <h1>Exercice sur les Infinitives</h1>
+      <p>Remettez les phrases dans le bon ordre en respectant les structures avec "zu", "um zu" et "anstatt zu".</p>
+      <div id="exercises"></div>
+    </div>
+
+    <script>
+      const phrases = [
+        { german: "Ich habe keine Zeit, um heute einzukaufen.", french: "Je n'ai pas le temps de faire les courses aujourd'hui." },
+        { german: 'Er lernt viel, um gute Noten zu bekommen.', french: 'Il étudie beaucoup pour avoir de bonnes notes.' },
+        { german: 'Wir gehen ins Restaurant, anstatt zu Hause zu essen.', french: 'Nous allons au restaurant au lieu de manger à la maison.' },
+        { german: 'Sie hat beschlossen, früher ins Bett zu gehen.', french: "Elle a décidé d'aller se coucher plus tôt." },
+        { german: 'Er macht Sport, um fit zu bleiben.', french: 'Il fait du sport pour rester en forme.' },
+        { german: 'Ich versuche, jeden Tag früh aufzustehen.', french: "J'essaie de me lever tôt tous les jours." },
+        { german: 'Wir sparen Geld, um in den Urlaub zu fahren.', french: "Nous économisons de l'argent pour partir en vacances." },
+        { german: 'Sie hat den Bus genommen, um pünktlich zu sein.', french: "Elle a pris le bus pour être à l'heure." },
+        { german: 'Er hat Musik gehört, anstatt für die Prüfung zu lernen.', french: "Il a écouté de la musique au lieu d'étudier pour l'examen." },
+        { german: 'Es ist wichtig, regelmäßig Deutsch zu üben.', french: "Il est important de pratiquer l'allemand régulièrement." },
+      ];
+
+      function shuffle(words) {
+        return [...words].sort(() => Math.random() - 0.5);
+      }
+
+      function validate(index) {
+        const userAnswer = Array.from(document.getElementById(`answer-${index}`).children)
+          .map((span) => span.textContent)
+          .join(' ')
+          .trim();
+        const correctAnswer = phrases[index].german.replace('.', '').trim();
+        const feedback = document.getElementById(`feedback-${index}`);
+        if (userAnswer === correctAnswer) {
+          feedback.textContent = 'Bonne réponse !';
+          feedback.className = 'correct';
+        } else {
+          feedback.textContent = `Faux ! Essayez encore. Correct: ${correctAnswer}`;
+          feedback.className = 'incorrect';
+        }
+      }
+
+      const container = document.getElementById('exercises');
+      phrases.forEach((phrase, index) => {
+        const div = document.createElement('div');
+        div.className = 'phrase';
+        div.innerHTML = `
+          <p><strong>Phrase ${index + 1}:</strong> ${phrase.french}</p>
+          <div class="words" id="words-${index}"></div>
+          <div class="answer" id="answer-${index}"></div>
+          <button type="button">Valider</button>
+          <p id="feedback-${index}"></p>
+        `;
+        container.appendChild(div);
+        const wordsContainer = div.querySelector('.words');
+        shuffle(phrase.german.replace('.', '').split(' ')).forEach((word) => {
+          const wordElement = document.createElement('span');
+          wordElement.className = 'word';
+          wordElement.textContent = word;
+          wordElement.addEventListener('click', () => {
+            if (wordElement.classList.contains('used')) return;
+            const answerContainer = document.getElementById(`answer-${index}`);
+            const answerWord = document.createElement('span');
+            answerWord.textContent = word;
+            answerWord.addEventListener('click', () => {
+              answerWord.remove();
+              wordElement.classList.remove('used');
+            });
+            answerContainer.appendChild(answerWord);
+            wordElement.classList.add('used');
+          });
+          wordsContainer.appendChild(wordElement);
+        });
+        div.querySelector('button').addEventListener('click', () => validate(index));
+      });
+    </script>
+  </body>
+</html>

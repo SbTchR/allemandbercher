@@ -1,20 +1,27 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
-import ResourceGrid from '../../components/ResourceGrid.astro';
 import { byOrderThenTitle } from '../../lib/resources';
+import { resourceUrl } from '../../lib/resources';
 
 const conseils = (await getCollection('conseils')).sort(byOrderThenTitle);
 ---
 
 <Layout title="Conseils" description="Conseils pour améliorer ses compétences communicatives et préparer les tests.">
   <section class="hero compact-hero">
-    <p class="eyebrow">Méthodes</p>
     <h1>Conseils</h1>
-    <p class="lead">Méthodes et stratégies classées par compétence pour préparer les tests.</p>
+    <p class="lead">Pour améliorer ses compétences communicatives et bien se préparer aux tests</p>
   </section>
 
   <section class="content-band">
-    <ResourceGrid entries={conseils} />
+    <ul class="resource-list">
+      {
+        conseils.map((entry) => (
+          <li>
+            <a href={resourceUrl(entry)}>{entry.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 </Layout>

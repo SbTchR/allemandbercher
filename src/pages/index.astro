@@ -1,76 +1,91 @@
 ---
 import Layout from '../components/Layout.astro';
-import SectionList from '../components/SectionList.astro';
-import { navigationItems } from '../data/navigation';
-import { chapterLevels } from '../data/chapters';
+import { withBase } from '../lib/paths';
 ---
 
 <Layout title="Accueil" description="Site de ressources d’allemand pour les élèves de Bercher.">
   <section class="hero">
-    <p class="eyebrow">Ressources d’allemand</p>
     <h1>Allemand Bercher</h1>
-    <p class="lead">
-      Ce site fournit une aide à l’apprentissage de l’allemand aux élèves de 9H à 11H, tous niveaux
-      confondus.
-    </p>
   </section>
 
   <section class="content-band" aria-labelledby="home-purpose-title">
-    <h2 id="home-purpose-title">Ce que tu peux trouver ici</h2>
+    <h2 id="home-purpose-title">Allemandbercher.ch</h2>
     <ul class="resource-list">
-      <li>Des conseils pour préparer les tests.</li>
-      <li>Des exercices interactifs auto-corrigés pour les chapitres vus en classe.</li>
-      <li>Des rappels de théorie pour les thèmes de grammaire, syntaxe et conjugaison.</li>
-      <li>Des ressources pour apprendre le vocabulaire avec des outils comme Quizlet.</li>
+      <li>
+        <a href={withBase('/conseils/')}>📑 Trouve des conseils pour préparer les tests.</a>
+      </li>
+      <li>
+        <a href={withBase('/exercices/')}>
+          💪 Exerce-toi en ligne avec des exercices interactifs auto-corrigés pour chaque chapitre
+          vu en classe.
+        </a>
+      </li>
+      <li>
+        <a href={withBase('/theorie/')}>
+          🧑‍🎓 Revois la théorie de tous les thèmes de grammaire et entraine-toi grâce à des
+          exercices de drill.
+        </a>
+      </li>
+      <li>
+        <a href={withBase('/vocabulaire/')}>
+          👾 Apprends le vocabulaire à l'aide d'applications comme Quizlet et de conseils pour
+          apprendre plus facilement.
+        </a>
+      </li>
     </ul>
-    <p class="notice">
-      Les exercices en ligne ne sont pas toujours triés par difficulté. Pense à utiliser un
-      <a href="http://www.leo.org/" rel="noreferrer" target="_blank">dictionnaire en ligne</a>
-      lorsque tu fais des exercices.
+    <p>
+      Ce site a pour but de fournir une aide à l'apprentissage de l'allemand aux élèves de 9-11H
+      tous niveaux confondus.
     </p>
-  </section>
-
-  <section class="content-band" aria-labelledby="sections-title">
-    <h2 id="sections-title">Sections principales</h2>
-    <SectionList items={navigationItems.filter((item) => item.href !== '/')} />
+    <p class="notice">
+      ⚠️Les exercices en ligne proposés ne sont donc pas toujours triés par difficulté, ils peuvent
+      parfois ne pas être adaptés à votre niveau.
+    </p>
+    <p>
+      Pensez à utiliser un
+      <a href="http://www.leo.org/" rel="noreferrer" target="_blank">dictionnaire en ligne</a>
+      lorsque vous faites des exercices !
+    </p>
   </section>
 
   <section class="content-band" aria-labelledby="exchange-title">
-    <h2 id="exchange-title">Échanges linguistiques cantonaux</h2>
+    <h2 id="exchange-title">Echanges linguistiques cantonaux (hors partenariat avec Brugg)</h2>
     <p>
-      Les élèves du canton de Vaud peuvent faire un échange linguistique avec des élèves allemands,
-      autrichiens ou suisse-allemands.
+      Les élèves du canton de Vaud ont la possibilité de faire un échange linguistique avec des
+      élèves allemands, autrichiens ou suisse-allemands. Voici quelques informations brièvement
+      résumées pour les deux possibilités d'échanges. Pour des informations plus précises ou pour
+      obtenir de l'aide pour l'organisation d'un échange, visitez les sites internet indiqués.
     </p>
     <ul class="resource-list">
       <li>
-        <strong>Allemagne / Autriche</strong>
-        <p>Deux semaines, dates selon destination, voyage accompagné, 440.-</p>
-        <a href="http://www.elev.ch/" rel="noreferrer" target="_blank">www.elev.ch</a>
+        <strong>Allemagne / Autriche:</strong>
+        <ul>
+          <li>2 semaines</li>
+          <li>dates selon destination</li>
+          <li>voyage accompagné</li>
+          <li>440.-</li>
+          <li><a href="http://www.elev.ch/" rel="noreferrer" target="_blank">www.elev.ch</a></li>
+        </ul>
       </li>
       <li>
-        <strong>Suisse allemande</strong>
-        <p>Une à deux semaines, en principe durant les vacances, gratuit sauf frais de transport.</p>
-        <a href="http://www.movetia.ch/" rel="noreferrer" target="_blank">www.movetia.ch</a>
+        <strong>Suisse-allemande :</strong>
+        <ul>
+          <li>1-2 semaines</li>
+          <li>en principe durant les vacances</li>
+          <li>gratuit (sauf frais de transport)</li>
+          <li>
+            <a href="http://www.movetia.ch/" rel="noreferrer" target="_blank">www.movetia.ch</a>
+          </li>
+        </ul>
       </li>
     </ul>
-  </section>
-
-  <section class="content-band" aria-labelledby="levels-title">
-    <h2 id="levels-title">Accès par année</h2>
-    <SectionList
-      items={chapterLevels.map(({ level, description }) => ({
-        label: level,
-        href: `/chapitres/${level.toLowerCase()}/`,
-        description,
-      }))}
-    />
   </section>
 
   <section class="content-band" aria-labelledby="contact-title">
     <h2 id="contact-title">Contact</h2>
     <p>
-      Tu peux signaler une erreur ou proposer une ressource supplémentaire avec le formulaire de
-      contact.
+      N'hésitez pas à me contacter via ce formulaire si vous constatez une erreur ou que vous
+      aimeriez me suggérer d'ajouter du contenu supplémentaire.
     </p>
     <p>
       <a

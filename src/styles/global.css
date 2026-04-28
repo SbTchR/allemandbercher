@@ -543,6 +543,24 @@ h2 {
   background: rgba(242, 246, 255, 0.9);
 }
 
+.content-embed {
+  display: block;
+  width: 100%;
+  min-height: 520px;
+  margin: 1.25em 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+}
+
+.content-embed.short {
+  min-height: 360px;
+}
+
+.content-embed.tall {
+  min-height: 760px;
+}
+
 .objective-box h2,
 .link-box h2,
 .source-box h2,
