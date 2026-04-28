@@ -10,6 +10,19 @@ export type ResourceEntry = AdviceEntry | ExerciseEntry | TheoryEntry | Vocabula
 
 const levelRank = { '9H': 1, '10H': 2, '11H': 3 };
 const categoryRank = { general: 0, grammaire: 1, syntaxe: 2, conjugaison: 3 };
+const sectionLabels = {
+  conseils: 'Conseils',
+  exercices: 'Exercices',
+  theorie: 'Théorie',
+  vocabulaire: 'Vocabulaire',
+  outils: 'Outils en ligne',
+};
+const categoryLabels = {
+  general: 'Théorie',
+  grammaire: 'Grammaire',
+  syntaxe: 'Syntaxe',
+  conjugaison: 'Conjugaison',
+};
 
 export function byOrderThenTitle<T extends ResourceEntry>(a: T, b: T) {
   const orderA = a.data.order ?? 999;
@@ -57,6 +70,25 @@ export function resourceUrl(entry: ResourceEntry) {
   }
 
   return withBase(`/outils-en-ligne/${slug}/`);
+}
+
+export function sectionLabel(section: ResourceEntry['data']['section']) {
+  return sectionLabels[section];
+}
+
+export function categoryLabel(category: ResourceEntry['data']['category']) {
+  return categoryLabels[category];
+}
+
+export function resourceKicker(entry: ResourceEntry) {
+  if (entry.data.level) return entry.data.level;
+  if (entry.collection === 'theorie') return categoryLabel(entry.data.category);
+  return sectionLabel(entry.data.section);
+}
+
+export function resourceEyebrow(entry: ResourceEntry) {
+  const label = sectionLabel(entry.data.section);
+  return entry.data.level ? `${label} - ${entry.data.level}` : label;
 }
 
 export function excerptFromBody(body: string, maxLength = 170) {
