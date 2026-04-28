@@ -1,8 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../../components/Layout.astro';
-import ResourceGrid from '../../../components/ResourceGrid.astro';
-import { byOrderThenTitle } from '../../../lib/resources';
+import { byOrderThenTitle, resourceUrl } from '../../../lib/resources';
 
 export async function getStaticPaths() {
   return ['9h', '10h', '11h'].map((level) => ({ params: { level } }));
@@ -14,12 +13,16 @@ const exercices = (await getCollection('exercices', (entry) => entry.data.level 
 
 <Layout title={`Exercices ${level}`} description={`Exercices d’allemand pour le niveau ${level}.`}>
   <section class="hero compact-hero">
-    <p class="eyebrow">Exercices</p>
     <h1>{level}</h1>
-    <p class="lead">Chapitres et activités pour t’entraîner sur les notions vues en classe.</p>
   </section>
 
   <section class="content-band">
-    <ResourceGrid entries={exercices} />
+    <ul class="resource-list">
+      {exercices.map((entry) => (
+        <li>
+          <a href={resourceUrl(entry)}>{`Kapitel ${entry.data.order ?? ''}`.trim()}</a>
+        </li>
+      ))}
+    </ul>
   </section>
 </Layout>

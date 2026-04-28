@@ -11,13 +11,6 @@ objectives:
   - "écrire une carte postale à propos d'un voyage"
   - "faire des propositions"
   - "commander à boire et à manger"
-  - "indicateurs de direction (prépositions)"
-  - "verbe de modalité: möchten"
-  - "prétérit de sein et haben"
-  - "Les indicateurs de direction"
-  - "Wohin fährst du ? Où vas-tu ? (dans quel direction)"
-  - "Pour indiquer où l'on va, on utilise:"
-  - "nach pour les villes et les pays"
 externalLinks: []
 images: []
 migrationNotes: []
@@ -25,7 +18,7 @@ migrationNotes: []
 
 ## Objectifs
 
-## Communication
+### Communication
 
 L'élève est capable de...
 
@@ -35,17 +28,17 @@ L'élève est capable de...
 
 - commander à boire et à manger
 
-## Langue
+### Langue
 
-indicateurs de direction (prépositions)
+- indicateurs de direction (prépositions)
 
-verbe de modalité: möchten
+- verbe de modalité: möchten
 
-prétérit de sein et haben
+- prétérit de sein et haben
 
 ## Les indicateurs de direction
 
-Wohin fährst du ? Où vas-tu ? (dans quel direction)
+## Wohin fährst du ? Où vas-tu ? (dans quel direction)
 
 Pour indiquer où l'on va, on utilise:
 
@@ -69,16 +62,16 @@ Ich fahre an den Strand.
 
 Ich fahre ans Meer.
 
-Möchten
+## Möchten
 
 Ce verbe correspond au conditionnel du verbe "mögen" (= aimer). On l'utilise souvent par mesure de politesse (on ne dit pas je veux, mais j'aimerais).
 
-Präteritum von sein und haben
+## Präteritum von sein und haben
 
 On appelle "prétérit" le temps verbal en allemand qui correspond à la fois à l'imparfait et au passé simple du français.
 
 ex: "er war" = "il était" ou "il fut" (selon le contexte)
 
-Exercice - Meine Klassenfahrt
+## Exercice - Meine Klassenfahrt
 
 Tu es en course d'école à Berlin. Complète la carte postale.

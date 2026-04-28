@@ -12,36 +12,14 @@ objectives:
   - "dire ce qu'il a fait avec ses amis"
   - "faire des compliments"
   - "dire ce qu'il se passe à une fête"
-  - "passé composé des verbes irréguliers"
-  - "pronoms personnels au datif ( mir, dir, ihm, ... )"
-  - "quelques verbes importants qui sont suivis du datif ( schmecken, gefallen, helfen, ... )"
-  - "Personalpronomen im Akkusativ und im Dativ"
-  - "Clique sur ce lien pour accéder à la théorie sur les pronoms personnels"
-  - "http://www.sprachenwegweiser.de/deutsch-personalpronomen-uumlbungen.html (plusieurs exercices, à faire dans l'ordre)"
-externalLinks: 
-  - url: "http://www.lehrerlenz.de/personalpronomen_1.html"
-  - url: "http://www.michaelster.ch/lueckentexte/index.php?lid=286&id=11&variante=1"
-  - url: "http://www.michaelster.ch/lueckentexte/index.php?lid=760&id=11&variante=0"
-  - url: "http://www.michaelster.ch/lueckentexte/index.php?lid=761&id=11&variante=1"
-  - url: "http://www.michaelster.ch/lueckentexte/index.php?lid=762&id=11&variante=1"
-  - url: "http://www.michaelster.ch/lueckentexte/index.php?variante=0&lid=759&id=11"
-  - url: "http://www.sprachenwegweiser.de/deutsch-personalpronomen-uumlbungen.html"
-  - url: "https://deutsch.lingolia.com/de/grammatik/pronomen/personalpronomen/uebungen"
-  - url: "https://deutschlernerblog.de/deklination-personalpronomen-online-uebungen-grammatikuebungen/"
-  - url: "https://mein-deutschbuch.de/grammatikuebungen-personalpronomen.html"
-  - url: "https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/27_pronomen/30_satzteile_durch_pronomen_ersetzen.htm"
-  - url: "https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ergaenzen.html"
-  - url: "https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ersetzen.html"
-  - url: "https://www.grammatiktraining.de/pronomen/schreibuebung-saetze-mit-personalpronomen-bilden.html"
-  - url: "https://www.hueber.de/shared/uebungen/themen-aktuell/lerner/uebungen/fset.php?Volume=1&Lection=9&Exercise=3&SubExercise=1"
-  - url: "https://www.schubert-verlag.de/aufgaben/xg/xg03_10.htm"
+externalLinks: []
 images: []
 migrationNotes: []
 ---
 
 ## Objectifs
 
-## Communication
+### Communication
 
 L'élève est capable de...
 
@@ -53,25 +31,55 @@ L'élève est capable de...
 
 - dire ce qu'il se passe à une fête
 
-## Langue
+### Langue
 
-passé composé des verbes irréguliers
+- passé composé des verbes irréguliers
 
-pronoms personnels au datif ( mir, dir, ihm, ... )
+- pronoms personnels au datif ( mir, dir, ihm, ... )
 
-quelques verbes importants qui sont suivis du datif ( schmecken, gefallen, helfen, ... )
+- quelques verbes importants qui sont suivis du datif ( schmecken, gefallen, helfen, ... )
 
-Personalpronomen im Akkusativ und im Dativ
+## Personalpronomen im Akkusativ und im Dativ
 
 Clique sur ce lien pour accéder à la théorie sur les pronoms personnels.
 
-http://www.sprachenwegweiser.de/deutsch-personalpronomen-uumlbungen.html (plusieurs exercices, à faire dans l'ordre)
+- [http://www.lehrerlenz.de/personalpronomen_1.html](http://www.lehrerlenz.de/personalpronomen_1.html)
 
-Neue Freunde in Berlin
+- [https://mein-deutschbuch.de/grammatikuebungen-personalpronomen.html](https://mein-deutschbuch.de/grammatikuebungen-personalpronomen.html)
+
+- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/27_pronomen/30_satzteile_durch_pronomen_ersetzen.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/27_pronomen/30_satzteile_durch_pronomen_ersetzen.htm)
+
+- [http://www.michaelster.ch/lueckentexte/index.php?variante=0&lid=759&id=11](http://www.michaelster.ch/lueckentexte/index.php?variante=0&lid=759&id=11)
+
+- [http://www.michaelster.ch/lueckentexte/index.php?lid=760&id=11&variante=0](http://www.michaelster.ch/lueckentexte/index.php?lid=760&id=11&variante=0)
+
+- [http://www.michaelster.ch/lueckentexte/index.php?lid=762&id=11&variante=1](http://www.michaelster.ch/lueckentexte/index.php?lid=762&id=11&variante=1)
+
+- [http://www.michaelster.ch/lueckentexte/index.php?lid=761&id=11&variante=1](http://www.michaelster.ch/lueckentexte/index.php?lid=761&id=11&variante=1)
+
+- [http://www.michaelster.ch/lueckentexte/index.php?lid=286&id=11&variante=1](http://www.michaelster.ch/lueckentexte/index.php?lid=286&id=11&variante=1)
+
+- [https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ergaenzen.html](https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ergaenzen.html)
+
+- [https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ersetzen.html](https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ersetzen.html)
+
+- [https://deutsch.lingolia.com/de/grammatik/pronomen/personalpronomen/uebungen](https://deutsch.lingolia.com/de/grammatik/pronomen/personalpronomen/uebungen)
+
+- [https://deutschlernerblog.de/deklination-personalpronomen-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-personalpronomen-online-uebungen-grammatikuebungen/)
+
+- [https://www.schubert-verlag.de/aufgaben/xg/xg03_10.htm](https://www.schubert-verlag.de/aufgaben/xg/xg03_10.htm)
+
+- [https://www.grammatiktraining.de/pronomen/schreibuebung-saetze-mit-personalpronomen-bilden.html](https://www.grammatiktraining.de/pronomen/schreibuebung-saetze-mit-personalpronomen-bilden.html)
+
+- [https://www.hueber.de/shared/uebungen/themen-aktuell/lerner/uebungen/fset.php?Volume=1&Lection=9&Exercise=3&SubExercise=1](https://www.hueber.de/shared/uebungen/themen-aktuell/lerner/uebungen/fset.php?Volume=1&Lection=9&Exercise=3&SubExercise=1)
+
+- [http://www.sprachenwegweiser.de/deutsch-personalpronomen-uumlbungen.html](http://www.sprachenwegweiser.de/deutsch-personalpronomen-uumlbungen.html) (plusieurs exercices, à faire dans l'ordre)
+
+## Neue Freunde in Berlin
 
 Hallo! Ich heiße Max und ich bin 12 Jahre alt. Ich bin nach Berlin gezogen und gehe jetzt in eine neue Schule. Heute erzähle ich euch, wie ich neue Freunde gefunden habe.
 
-Ein neues Zuhause und eine neue Schule
+## Ein neues Zuhause und eine neue Schule
 
 Als ich nach Berlin gekommen bin, war alles neu für mich: das Haus, die Straßen, die Schule. Am ersten Schultag war ich sehr nervös. Die Schule war groß und ich kannte niemanden. Aber ich habe schnell gemerkt, dass die anderen Kinder auch freundlich sind. In der Pause habe ich mit ein paar Kindern Fußball gespielt. Das war super!
 
@@ -83,6 +91,6 @@ Die Klassenfahrt und neue Hobbys
 
 Letzte Woche sind wir auf Klassenfahrt gegangen. Wir waren im Wald und haben viele Spiele gemacht. Wir haben auch gelernt, wie man Zelte aufbaut. Das hat Spaß gemacht. Ich habe auch ein neues Hobby gefunden: Wandern. Mit meinen Freunden gehe ich jetzt oft wandern.
 
-Fazit
+## Fazit
 
 Jetzt, nach ein paar Monaten in Berlin, fühle ich mich hier sehr wohl. Ich habe viele neue Freunde und tolle Erinnerungen. In Berlin zu wohnen ist wirklich toll!

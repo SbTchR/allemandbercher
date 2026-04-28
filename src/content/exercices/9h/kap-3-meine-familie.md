@@ -11,29 +11,16 @@ objectives:
   - "se présenter et présenter sa famille"
   - "parler de son chez-soi"
   - "décrire une journée de son quotidien"
-  - "déterminants possessifs ( mein, dein, sein, .. .)"
-  - "verbes irréguliers"
-  - "Les déterminants possessifs"
-externalLinks: 
-  - url: "http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm"
-  - url: "http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm"
-  - url: "http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_ue.htm"
-  - url: "http://www.deutsch-a-z.de/index.php/possessivartikel-akkusativ.html"
-  - url: "http://www.deutsch-a-z.de/index.php/Possessivartikel-Nominativ.html"
-  - url: "http://www.lehrerlenz.de/possessivpronomen.html"
-  - url: "https://deutsch.lingolia.com/de/grammatik/pronomen/possessivpronomen/uebungen"
-  - url: "https://deutschlernerblog.de/deklination-possessivartikel-online-uebungen-grammatikuebungen/"
-  - url: "https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/02_possessivpronomen_deutsch_uebung.htm"
-  - url: "https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/04_possessivpronomen_test_uebung.htm"
-  - url: "https://www.grammatiktraining.de/pronomen/grammatikuebung-possessivpronomen-ergaenzen.html"
-  - url: "https://www.grammatiktraining.de/pronomen/schreibuebung-possessivpronomen-in-saetzen-ergaenzen.html"
-images: []
+externalLinks: []
+images: 
+  - src: "../../../assets/source-site/exercices/9h-kap-3-meine-familie-1.png"
+    alt: "Image 1 - K3 - Meine Familie"
 migrationNotes: []
 ---
 
 ## Objectifs
 
-## Communication
+### Communication
 
 L'élève est capable de...
 
@@ -43,11 +30,11 @@ L'élève est capable de...
 
 - décrire une journée de son quotidien
 
-## Langue
+### Langue
 
-déterminants possessifs ( mein, dein, sein, .. .)
+- déterminants possessifs ( mein, dein, sein, .. .)
 
-verbes irréguliers
+- verbes irréguliers
 
 ## Les déterminants possessifs
 
@@ -73,4 +60,28 @@ gefallen (= plaire) Das blaue Jeans gefällt der jungen Frau.
 
 helfen (= aider) Kannst du mir helfen ?
 
-## Quelques exercices pour entrainer les pronoms possessifs:
+Quelques exercices pour entrainer les pronoms possessifs:
+
+- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/02_possessivpronomen_deutsch_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/02_possessivpronomen_deutsch_uebung.htm)
+
+- [https://deutsch.lingolia.com/de/grammatik/pronomen/possessivpronomen/uebungen](https://deutsch.lingolia.com/de/grammatik/pronomen/possessivpronomen/uebungen)
+
+- [https://www.grammatiktraining.de/pronomen/grammatikuebung-possessivpronomen-ergaenzen.html](https://www.grammatiktraining.de/pronomen/grammatikuebung-possessivpronomen-ergaenzen.html)
+
+- [http://www.lehrerlenz.de/possessivpronomen.html](http://www.lehrerlenz.de/possessivpronomen.html)
+
+- [https://www.grammatiktraining.de/pronomen/schreibuebung-possessivpronomen-in-saetzen-ergaenzen.html](https://www.grammatiktraining.de/pronomen/schreibuebung-possessivpronomen-in-saetzen-ergaenzen.html)
+
+- [http://www.deutsch-a-z.de/index.php/Possessivartikel-Nominativ.html](http://www.deutsch-a-z.de/index.php/Possessivartikel-Nominativ.html)
+
+- [http://www.deutsch-a-z.de/index.php/possessivartikel-akkusativ.html](http://www.deutsch-a-z.de/index.php/possessivartikel-akkusativ.html)
+
+- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/04_possessivpronomen_test_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/04_possessivpronomen_test_uebung.htm)
+
+- [https://deutschlernerblog.de/deklination-possessivartikel-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-possessivartikel-online-uebungen-grammatikuebungen/)
+
+- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_ue.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_ue.htm)
+
+- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm)
+
+- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm)

@@ -13,34 +13,14 @@ objectives:
   - "dire où quelque chose se trouve"
   - "donner des conseils"
   - "décrire où il habite"
-  - "verbes de position et de déplacement ( liegen - legen, stehen - stellen, ... )"
-  - "prépositions mixtes"
-  - "Quelques exercices pour entrainer le thème de la maison:"
-  - "Quelques exercices de compréhension écrite sur le thème de la maison en ligne:"
-  - "Liste quizlet du voc entier \"Kapitel 8\": https://quizlet.com/387027721/genil-klick-9h-kapitel-8-flash-cards/"
-externalLinks: 
-  - url: "http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html"
-  - url: "https://eucbeniki.sio.si/nem7/2932/index2.html"
-  - url: "https://eucbeniki.sio.si/nem7/2933/index2.html"
-  - url: "https://eucbeniki.sio.si/nem7/2933/index3.html"
-  - url: "https://eucbeniki.sio.si/nem7/2933/index4.html"
-  - url: "https://eucbeniki.sio.si/nem7/2933/index6.html"
-  - url: "https://eucbeniki.sio.si/nem7/2933/index7.html"
-  - url: "https://eucbeniki.sio.si/nem7/3000/index6.html"
-  - url: "https://learningapps.org/1061334"
-  - url: "https://learningapps.org/3488161"
-  - url: "https://learningapps.org/display?v=p32fv73kk19"
-  - url: "https://learningapps.org/display?v=paaadmitn19"
-  - url: "https://learningapps.org/display?v=pb4rk8aic19"
-  - url: "https://learningapps.org/view425509"
-  - url: "https://quizlet.com/387027721/genil-klick-9h-kapitel-8-flash-cards/"
+externalLinks: []
 images: []
 migrationNotes: []
 ---
 
 ## Objectifs
 
-## Communication
+### Communication
 
 L'élève est capable de...
 
@@ -54,16 +34,44 @@ L'élève est capable de...
 
 - décrire où il habite
 
-## Langue
+### Langue
 
-verbes de position et de déplacement ( liegen - legen, stehen - stellen, ... )
+- verbes de position et de déplacement ( liegen - legen, stehen - stellen, ... )
 
-prépositions mixtes
+- prépositions mixtes
 
-## Quelques exercices pour entrainer le thème de la maison:
+- Quelques exercices pour entrainer le thème de la maison:
 
-## Quelques exercices de compréhension écrite sur le thème de la maison en ligne:
+- [https://learningapps.org/3488161](https://learningapps.org/3488161)
 
-Liste quizlet du voc entier "Kapitel 8": https://quizlet.com/387027721/genil-klick-9h-kapitel-8-flash-cards/
+- [http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html](http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html)
+
+- [https://learningapps.org/view425509](https://learningapps.org/view425509)
+
+- [https://learningapps.org/1061334](https://learningapps.org/1061334)
+
+- [https://learningapps.org/display?v=pb4rk8aic19](https://learningapps.org/display?v=pb4rk8aic19)
+
+- [https://learningapps.org/display?v=paaadmitn19](https://learningapps.org/display?v=paaadmitn19)
+
+- [https://learningapps.org/display?v=p32fv73kk19](https://learningapps.org/display?v=p32fv73kk19)
+
+Quelques exercices de compréhension écrite sur le thème de la maison en ligne:
+
+- [https://eucbeniki.sio.si/nem7/3000/index6.html](https://eucbeniki.sio.si/nem7/3000/index6.html)
+
+- [https://eucbeniki.sio.si/nem7/2932/index2.html](https://eucbeniki.sio.si/nem7/2932/index2.html)
+
+- [https://eucbeniki.sio.si/nem7/2933/index7.html](https://eucbeniki.sio.si/nem7/2933/index7.html)
+
+- [https://eucbeniki.sio.si/nem7/2933/index2.html](https://eucbeniki.sio.si/nem7/2933/index2.html)
+
+- [https://eucbeniki.sio.si/nem7/2933/index6.html](https://eucbeniki.sio.si/nem7/2933/index6.html)
+
+- [https://eucbeniki.sio.si/nem7/2933/index3.html](https://eucbeniki.sio.si/nem7/2933/index3.html)
+
+- [https://eucbeniki.sio.si/nem7/2933/index4.html](https://eucbeniki.sio.si/nem7/2933/index4.html)
+
+Liste quizlet du voc entier "Kapitel 8": [https://quizlet.com/387027721/genil-klick-9h-kapitel-8-flash-cards/](https://quizlet.com/387027721/genil-klick-9h-kapitel-8-flash-cards/)
 
 Un jeu quizlet pour driller quelques phrases simples.

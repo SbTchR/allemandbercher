@@ -10,14 +10,13 @@ order: 4
 objectives: []
 externalLinks: []
 images: []
-migrationNotes: 
-  - "à vérifier: contenu extrait très court ou probablement incomplet"
+migrationNotes: []
 ---
 
 ## Objectifs
 
-## Communication
+### Communication
 
 L'élève est capable de...
 
-## Langue
+### Langue
