@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrases à bien connaître</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, rgba(255, 250, 229, 0.9), rgba(255, 250, 229, 0.9));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .exercise-container {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #FF8C00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .phrase {
+            margin-bottom: 30px;
+        }
+        .phrase p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #444;
+        }
+        .words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .word {
+            background: rgba(255, 165, 0, 0.4);
+            color: black;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            user-select: none;
+            border: 1px solid rgba(255, 165, 0, 0.7);
+        }
+        .word:hover {
+            background: rgba(255, 165, 0, 0.7);
+            transform: scale(1.1);
+        }
+        .word.used {
+            background: #ddd;
+            color: #999;
+            cursor: not-allowed;
+        }
+        .answer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            min-height: 30px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            background: rgba(240, 240, 240, 0.8);
+            border-radius: 5px;
+        }
+        .btn-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .btn-validate {
+            padding: 10px 15px;
+            background: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-validate:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-validate:hover:not(:disabled) {
+            background: #FF8C00;
+        }
+        .feedback {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .feedback.correct {
+            color: green;
+        }
+        .feedback.incorrect {
+            color: red;
+        }
+        .score {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Phrases à bien connaître</h1>
+        <p>Remets les phrases dans le bon ordre en cliquant sur les mots. Tu as 3 tentatives par phrase.</p>
+
+        <div id="exercises">
+            <!-- Les phrases seront insérées ici dynamiquement -->
+        </div>
+
+        <div class="score" id="score-container" style="display: none;">
+            <p>🏆Score final :</p>
+            <p>🥇Réussies du premier coup : <span id="score-first">0</span></p>
+            <p>🥈Réussies au deuxième coup : <span id="score-second">0</span></p>
+            <p>🥉Réussies au troisième coup : <span id="score-third">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        const phrases = [
+            { german: ["Wann ist die Klassenfahrt nach Basel?"], french: "Quand a lieu le voyage scolaire à Bâle ?" },
+            { german: ["Die Klassenfahrt ist nächste Woche."], french: "Le voyage scolaire est la semaine prochaine." },
+            { german: ["Wie lange dauert die Klassenfahrt?"], french: "Combien de temps dure le voyage scolaire ?" },
+            { german: ["Wir bleiben drei Tage in Basel."], french: "Nous restons trois jours à Bâle." },
+            { german: ["Wo übernachten wir?"], french: "Où dormons-nous ?" },
+            { german: ["Wir übernachten in einem Hostel."], french: "Nous logeons dans une auberge." },
+            { german: ["Gibt es Regeln für die Klassenfahrt?"], french: "Y a-t-il des règles pour le voyage scolaire ?" },
+            { german: ["Ja, wir dürfen nicht zu spät ins Bett gehen."], french: "Oui, nous ne devons pas nous coucher trop tard." },
+            { german: ["Handys sind während der Besichtigungen verboten."], french: "Les téléphones portables sont interdits pendant les visites." },
+            { german: ["Pünktlichkeit ist sehr wichtig."], french: "La ponctualité est très importante." },
+            { german: ["Was sollen wir mitnehmen?"], french: "Que devons-nous apporter ?" },
+            { german: ["Bringt eure Schwimmsachen und festes Schuhwerk mit."], french: "Apportez vos affaires de piscine et des chaussures solides." },
+            { german: ["Was machen wir in Basel?"], french: "Que faisons-nous à Bâle ?" },
+            { german: ["Wir besuchen das Kunstmuseum und den Zoo."], french: "Nous visitons le musée d'art et le zoo." },
+            { german: ["Es gibt eine Führung durch die Altstadt."], french: "Il y a une visite guidée de la vieille ville." },
+            { german: ["Wir machen auch eine Bootsfahrt auf dem Rhein."], french: "Nous faisons aussi une promenade en bateau sur le Rhin." },
+            { german: ["Wann treffen wir uns?"], french: "Quand nous retrouvons-nous ?" },
+            { german: ["Wir treffen uns um 8 Uhr vor der Schule."], french: "Nous nous retrouvons à 8 heures devant l'école." },
+            { german: ["Was kostet die Klassenfahrt?"], french: "Combien coûte le voyage scolaire ?" },
+            { german: ["Die Klassenfahrt kostet 150 Franken."], french: "Le voyage scolaire coûte 150 francs." },
+            { german: ["Kannst du Fotos machen?"], french: "Peux-tu prendre des photos ?" },
+            { german: ["Ja, ich habe meine Kamera dabei."], french: "Oui, j'ai mon appareil photo avec moi." },
+            { german: ["Was machen wir am Abend?"], french: "Que faisons-nous le soir ?" },
+            { german: ["Am Abend spielen wir Spiele und schauen einen Film."], french: "Le soir, nous jouons à des jeux et regardons un film." },
+            { german: ["Ich freue mich auf die Klassenfahrt."], french: "Je me réjouis du voyage scolaire." },
+            { german: ["Der Ausflug nach Basel wird toll!"], french: "L'excursion à Bâle sera géniale !" },
+            { german: ["Wir haben viele Sehenswürdigkeiten besichtigt."], french: "Nous avons visité beaucoup de monuments." },
+            { german: ["Ich habe ein Souvenir für meine Familie gekauft."], french: "J'ai acheté un souvenir pour ma famille." },
+            { german: ["Wir haben die beste Pizza in einem Restaurant gegessen."], french: "Nous avons mangé la meilleure pizza dans un restaurant." },
+            { german: ["Die Bootsfahrt war mein Lieblingsmoment."], french: "La promenade en bateau était mon moment préféré." },
+            { german: ["Ich bin müde, aber es hat viel Spaß gemacht."], french: "Je suis fatigué(e), mais c'était très amusant." },
+            
+        ];
+
+        const container = document.getElementById('exercises');
+        const scoreContainer = document.getElementById('score-container');
+        const scoreFirstElem = document.getElementById('score-first');
+        const scoreSecondElem = document.getElementById('score-second');
+        const scoreThirdElem = document.getElementById('score-third');
+
+        let scoreFirst = 0, scoreSecond = 0, scoreThird = 0;
+
+        phrases.forEach((phrase, index) => {
+            const words = phrase.german[0].replace('.', '').split(' ').sort(() => Math.random() - 0.5);
+            let lastAnswer = '';
+            let attempts = 0;
+
+            const div = document.createElement('div');
+            div.classList.add('phrase');
+            div.innerHTML = `
+               <p><strong>${index + 1})</strong> ${phrase.french}</p>
+                <div class="words" id="words-${index}">
+                    ${words.map(word => `<span class="word">${word}</span>`).join('')}
+                </div>
+                <div class="answer" id="answer-${index}"></div>
+                <div class="btn-container">
+                    <button class="btn-validate" id="validate-${index}" disabled>Valider</button>
+                    <p id="feedback-${index}" class="feedback"></p>
+                </div>
+            `;
+            container.appendChild(div);
+
+            const validateBtn = document.getElementById(`validate-${index}`);
+            const answerContainer = document.getElementById(`answer-${index}`);
+            const feedback = document.getElementById(`feedback-${index}`);
+
+            document.querySelectorAll(`#words-${index} .word`).forEach(wordElement => {
+                wordElement.addEventListener('click', () => {
+                    if (!wordElement.classList.contains('used')) {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.textContent = wordElement.textContent;
+                        wordSpan.onclick = () => {
+                            answerContainer.removeChild(wordSpan);
+                            wordElement.classList.remove('used');
+                            toggleValidateButton();
+                        };
+                        answerContainer.appendChild(wordSpan);
+                        wordElement.classList.add('used');
+                        toggleValidateButton();
+                    }
+                });
+            });
+
+            function toggleValidateButton() {
+                const currentAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const isComplete = answerContainer.children.length === words.length;
+                validateBtn.disabled = !isComplete || currentAnswer === lastAnswer;
+            }
+
+            validateBtn.addEventListener('click', () => {
+                const userAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const correctAnswer = phrase.german[0].replace('.', '').trim();
+                attempts++;
+                lastAnswer = userAnswer;
+
+                if (userAnswer === correctAnswer) {
+                    feedback.textContent = "Bonne réponse !";
+                    feedback.className = "feedback correct";
+                    validateBtn.disabled = true;
+                    document.querySelector(`#words-${index}`).classList.add('disabled');
+                    scoreByAttempts(attempts);
+                } else {
+                    feedback.textContent = `Faux ! Tentative ${attempts}/3. Essayez encore.`;
+                    feedback.className = "feedback incorrect";
+                    if (attempts >= 3) {
+                        feedback.textContent = `Faux ! Réponse correcte : "${phrase.german[0]}". Vous pouvez réessayer.`;
+                        attempts = 0;
+                    }
+                }
+                toggleValidateButton();
+            });
+        });
+
+        function scoreByAttempts(attempts) {
+            if (attempts === 1) scoreFirst++;
+            else if (attempts === 2) scoreSecond++;
+            else if (attempts === 3) scoreThird++;
+
+            if (scoreFirst + scoreSecond + scoreThird === phrases.length) {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            scoreFirstElem.textContent = scoreFirst;
+            scoreSecondElem.textContent = scoreSecond;
+            scoreThirdElem.textContent = scoreThird;
+            scoreContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

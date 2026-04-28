@@ -18,6 +18,10 @@ images: []
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-8-bei-uns-zu-hause-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication
@@ -75,3 +79,7 @@ Quelques exercices de compréhension écrite sur le thème de la maison en ligne
 Liste quizlet du voc entier "Kapitel 8": [https://quizlet.com/387027721/genil-klick-9h-kapitel-8-flash-cards/](https://quizlet.com/387027721/genil-klick-9h-kapitel-8-flash-cards/)
 
 Un jeu quizlet pour driller quelques phrases simples.
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://quizlet.com/411411391/match/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>

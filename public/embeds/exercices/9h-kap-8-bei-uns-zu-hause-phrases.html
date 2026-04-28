@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrases à bien connaître</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, rgba(255, 250, 229, 0.9), rgba(255, 250, 229, 0.9));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .exercise-container {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #FF8C00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .phrase {
+            margin-bottom: 30px;
+        }
+        .phrase p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #444;
+        }
+        .words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .word {
+            background: rgba(255, 165, 0, 0.4);
+            color: black;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            user-select: none;
+            border: 1px solid rgba(255, 165, 0, 0.7);
+        }
+        .word:hover {
+            background: rgba(255, 165, 0, 0.7);
+            transform: scale(1.1);
+        }
+        .word.used {
+            background: #ddd;
+            color: #999;
+            cursor: not-allowed;
+        }
+        .answer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            min-height: 30px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            background: rgba(240, 240, 240, 0.8);
+            border-radius: 5px;
+        }
+        .btn-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .btn-validate {
+            padding: 10px 15px;
+            background: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-validate:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-validate:hover:not(:disabled) {
+            background: #FF8C00;
+        }
+        .feedback {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .feedback.correct {
+            color: green;
+        }
+        .feedback.incorrect {
+            color: red;
+        }
+        .score {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Phrases à bien connaître</h1>
+        <p>Remets les phrases dans le bon ordre en cliquant sur les mots. Tu as 3 tentatives par phrase.</p>
+
+        <div id="exercises">
+            <!-- Les phrases seront insérées ici dynamiquement -->
+        </div>
+
+        <div class="score" id="score-container" style="display: none;">
+            <p>🏆Score final :</p>
+            <p>🥇Réussies du premier coup : <span id="score-first">0</span></p>
+            <p>🥈Réussies au deuxième coup : <span id="score-second">0</span></p>
+            <p>🥉Réussies au troisième coup : <span id="score-third">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        const phrases = [
+            { german: ["Wo wohnst du?"], french: "Où habites-tu ?" },
+            { german: ["Ich wohne in einem Haus mit Garten."], french: "J'habite dans une maison avec un jardin." },
+            { german: ["Meine Familie wohnt in einer Wohnung im dritten Stock."], french: "Ma famille habite dans un appartement au troisième étage." },
+            { german: ["Wie ist dein Zuhause?"], french: "Comment est ta maison ?" },
+            { german: ["Unser Haus ist groß und modern."], french: "Notre maison est grande et moderne." },
+            { german: ["Es gibt vier Zimmer in unserer Wohnung."], french: "Il y a quatre pièces dans notre appartement." },
+            { german: ["Mein Lieblingsplatz ist mein Zimmer."], french: "Mon endroit préféré est ma chambre." },
+            { german: ["In meinem Zimmer gibt es ein Bett, einen Schreibtisch und einen Schrank."], french: "Dans ma chambre, il y a un lit, un bureau et une armoire." },
+            { german: ["Die Küche ist neben dem Wohnzimmer."], french: "La cuisine est à côté du salon." },
+            { german: ["Das Badezimmer ist am Ende des Flurs."], french: "La salle de bain est au bout du couloir." },
+            { german: ["Wir haben auch einen Balkon mit Blick auf den Garten."], french: "Nous avons aussi un balcon avec vue sur le jardin." },
+            { german: ["Wie sieht dein Zimmer aus?"], french: "À quoi ressemble ta chambre ?" },
+            { german: ["Mein Zimmer ist hell und hat ein großes Fenster."], french: "Ma chambre est lumineuse et a une grande fenêtre." },
+            { german: ["Was machst du in deinem Zimmer?"], french: "Que fais-tu dans ta chambre ?" },
+            { german: ["Ich lese Bücher, höre Musik und chatte mit Freunden."], french: "Je lis des livres, j'écoute de la musique et je discute avec des amis." },
+            { german: ["Wer hilft beim Putzen zu Hause?"], french: "Qui aide au ménage à la maison ?" },
+            { german: ["Ich räume mein Zimmer jede Woche auf."], french: "Je range ma chambre chaque semaine." },
+            { german: ["Mein Vater saugt Staub und meine Mutter kocht."], french: "Mon père passe l'aspirateur et ma mère cuisine." },
+            { german: ["Wir essen zusammen im Esszimmer."], french: "Nous mangeons ensemble dans la salle à manger." },
+            { german: ["Gibt es viele Möbel in deinem Wohnzimmer?"], french: "Y a-t-il beaucoup de meubles dans ton salon ?" },
+            { german: ["Ja, es gibt ein Sofa, einen Fernseher und einen kleinen Tisch."], french: "Oui, il y a un canapé, une télévision et une petite table." },
+            { german: ["Was gefällt dir an deinem Zuhause?"], french: "Qu'est-ce que tu aimes dans ta maison ?" },
+            { german: ["Mir gefällt der Garten, weil er groß ist."], french: "J'aime le jardin parce qu'il est grand." },
+            { german: ["Gibt es ein Arbeitszimmer?"], french: "Y a-t-il un bureau ?" },
+            { german: ["Ja, das Arbeitszimmer ist zwischen der Küche und dem Schlafzimmer."], french: "Oui, le bureau est entre la cuisine et la chambre." },
+            { german: ["Wie ist die Aussicht aus deinem Fenster?"], french: "Comment est la vue depuis ta fenêtre ?" },
+            { german: ["Aus meinem Fenster sehe ich den Park und die Berge."], french: "Depuis ma fenêtre, je vois le parc et les montagnes." },
+            { german: ["Wir spielen oft zusammen im Wohnzimmer."], french: "Nous jouons souvent ensemble dans le salon." },
+            { german: ["Ich helfe manchmal in der Küche."], french: "J'aide parfois dans la cuisine." },
+            { german: ["Unser Keller ist groß und wir haben dort viele Sachen."], french: "Notre cave est grande et nous y avons beaucoup de choses." },
+            { german: ["Gibt es in deiner Nähe ein Einkaufszentrum?"], french: "Y a-t-il un centre commercial près de chez toi ?" },
+            { german: ["Ja, das Einkaufszentrum ist fünf Minuten von uns entfernt."], french: "Oui, le centre commercial est à cinq minutes de chez nous." },
+            { german: ["Unsere Nachbarn sind sehr nett."], french: "Nos voisins sont très gentils." },
+            
+        ];
+
+        const container = document.getElementById('exercises');
+        const scoreContainer = document.getElementById('score-container');
+        const scoreFirstElem = document.getElementById('score-first');
+        const scoreSecondElem = document.getElementById('score-second');
+        const scoreThirdElem = document.getElementById('score-third');
+
+        let scoreFirst = 0, scoreSecond = 0, scoreThird = 0;
+
+        phrases.forEach((phrase, index) => {
+            const words = phrase.german[0].replace('.', '').split(' ').sort(() => Math.random() - 0.5);
+            let lastAnswer = '';
+            let attempts = 0;
+
+            const div = document.createElement('div');
+            div.classList.add('phrase');
+            div.innerHTML = `
+               <p><strong>${index + 1})</strong> ${phrase.french}</p>
+                <div class="words" id="words-${index}">
+                    ${words.map(word => `<span class="word">${word}</span>`).join('')}
+                </div>
+                <div class="answer" id="answer-${index}"></div>
+                <div class="btn-container">
+                    <button class="btn-validate" id="validate-${index}" disabled>Valider</button>
+                    <p id="feedback-${index}" class="feedback"></p>
+                </div>
+            `;
+            container.appendChild(div);
+
+            const validateBtn = document.getElementById(`validate-${index}`);
+            const answerContainer = document.getElementById(`answer-${index}`);
+            const feedback = document.getElementById(`feedback-${index}`);
+
+            document.querySelectorAll(`#words-${index} .word`).forEach(wordElement => {
+                wordElement.addEventListener('click', () => {
+                    if (!wordElement.classList.contains('used')) {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.textContent = wordElement.textContent;
+                        wordSpan.onclick = () => {
+                            answerContainer.removeChild(wordSpan);
+                            wordElement.classList.remove('used');
+                            toggleValidateButton();
+                        };
+                        answerContainer.appendChild(wordSpan);
+                        wordElement.classList.add('used');
+                        toggleValidateButton();
+                    }
+                });
+            });
+
+            function toggleValidateButton() {
+                const currentAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const isComplete = answerContainer.children.length === words.length;
+                validateBtn.disabled = !isComplete || currentAnswer === lastAnswer;
+            }
+
+            validateBtn.addEventListener('click', () => {
+                const userAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const correctAnswer = phrase.german[0].replace('.', '').trim();
+                attempts++;
+                lastAnswer = userAnswer;
+
+                if (userAnswer === correctAnswer) {
+                    feedback.textContent = "Bonne réponse !";
+                    feedback.className = "feedback correct";
+                    validateBtn.disabled = true;
+                    document.querySelector(`#words-${index}`).classList.add('disabled');
+                    scoreByAttempts(attempts);
+                } else {
+                    feedback.textContent = `Faux ! Tentative ${attempts}/3. Essayez encore.`;
+                    feedback.className = "feedback incorrect";
+                    if (attempts >= 3) {
+                        feedback.textContent = `Faux ! Réponse correcte : "${phrase.german[0]}". Vous pouvez réessayer.`;
+                        attempts = 0;
+                    }
+                }
+                toggleValidateButton();
+            });
+        });
+
+        function scoreByAttempts(attempts) {
+            if (attempts === 1) scoreFirst++;
+            else if (attempts === 2) scoreSecond++;
+            else if (attempts === 3) scoreThird++;
+
+            if (scoreFirst + scoreSecond + scoreThird === phrases.length) {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            scoreFirstElem.textContent = scoreFirst;
+            scoreSecondElem.textContent = scoreSecond;
+            scoreThirdElem.textContent = scoreThird;
+            scoreContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

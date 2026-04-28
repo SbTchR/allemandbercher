@@ -18,6 +18,10 @@ images:
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-3-meine-familie-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication
@@ -85,3 +89,7 @@ Quelques exercices pour entrainer les pronoms possessifs:
 - [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm)
 
 - [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm)
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://www.learningsnacks.de/embed/248076/" title="LearningSnack intégré" loading="lazy" allowfullscreen></iframe>

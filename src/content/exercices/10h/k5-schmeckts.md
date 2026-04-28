@@ -15,6 +15,10 @@ images: []
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/10h-k5-schmeckts-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication

@@ -13,6 +13,10 @@ images: []
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/11h-k5-ich-wunsche-mir-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication
@@ -22,6 +26,10 @@ L'élève est capable de...
 ### Langue
 
 - Hörverstehen
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/11h-k5-ich-wunsche-mir-02-questionnaire.html" title="Questionnaire" loading="lazy" allowfullscreen></iframe>
 
 ## Contenu intégré
 

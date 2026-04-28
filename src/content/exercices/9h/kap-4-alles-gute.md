@@ -17,6 +17,10 @@ images: []
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-4-alles-gute-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication

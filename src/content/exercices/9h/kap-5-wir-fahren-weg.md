@@ -16,6 +16,10 @@ images: []
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-5-wir-fahren-weg-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication
@@ -75,3 +79,11 @@ ex: "er war" = "il était" ou "il fut" (selon le contexte)
 ## Exercice - Meine Klassenfahrt
 
 Tu es en course d'école à Berlin. Complète la carte postale.
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://quizlet.com/379060768/flashcards/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://quizlet.com/379058535/flashcards/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://learningapps.org/watch?v=p9nznt69j19" title="LearningApps intégré" loading="lazy" allowfullscreen></iframe>

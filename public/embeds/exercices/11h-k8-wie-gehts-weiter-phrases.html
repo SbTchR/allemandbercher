@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrases à bien connaître</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, rgba(255, 250, 229, 0.9), rgba(255, 250, 229, 0.9));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .exercise-container {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #FF8C00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .phrase {
+            margin-bottom: 30px;
+        }
+        .phrase p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #444;
+        }
+        .words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .word {
+            background: rgba(255, 165, 0, 0.4);
+            color: black;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            user-select: none;
+            border: 1px solid rgba(255, 165, 0, 0.7);
+        }
+        .word:hover {
+            background: rgba(255, 165, 0, 0.7);
+            transform: scale(1.1);
+        }
+        .word.used {
+            background: #ddd;
+            color: #999;
+            cursor: not-allowed;
+        }
+        .answer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            min-height: 30px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            background: rgba(240, 240, 240, 0.8);
+            border-radius: 5px;
+        }
+        .btn-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .btn-validate {
+            padding: 10px 15px;
+            background: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-validate:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-validate:hover:not(:disabled) {
+            background: #FF8C00;
+        }
+        .feedback {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .feedback.correct {
+            color: green;
+        }
+        .feedback.incorrect {
+            color: red;
+        }
+        .score {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Phrases à bien connaître</h1>
+        <p>Remets les phrases dans le bon ordre en cliquant sur les mots. Tu as 3 tentatives par phrase.</p>
+
+        <div id="exercises">
+            <!-- Les phrases seront insérées ici dynamiquement -->
+        </div>
+
+        <div class="score" id="score-container" style="display: none;">
+            <p>🏆Score final :</p>
+            <p>🥇Réussies du premier coup : <span id="score-first">0</span></p>
+            <p>🥈Réussies au deuxième coup : <span id="score-second">0</span></p>
+            <p>🥉Réussies au troisième coup : <span id="score-third">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        const phrases = [
+            { german: ["Nach der Schule möchte ich die Welt entdecken."], french: "Après l’école, je veux découvrir le monde." },
+            { german: ["Was sind deine Pläne für die Zukunft?"], french: "Quels sont tes projets pour l’avenir ?" },
+            { german: ["Ich träume davon, eines Tages ein eigenes Unternehmen zu gründen."], french: "Je rêve de créer ma propre entreprise un jour." },
+            { german: ["Nach meinem Studium möchte ich im Ausland arbeiten."], french: "Après mes études, je veux travailler à l’étranger." },
+            { german: ["Ich habe vor, ein Jahr Pause zu machen und zu reisen."], french: "J’ai l’intention de prendre une année sabbatique pour voyager." },
+            { german: ["Welche Berufe interessieren dich?"], french: "Quels métiers t’intéressent ?" },
+            { german: ["In zehn Jahren sehe ich mich als Arzt."], french: "Dans dix ans, je me vois médecin." },
+            { german: ["Nach dem Abitur möchte ich eine Ausbildung machen."], french: "Après le bac, je veux faire une formation professionnelle." },
+            { german: ["Mein größter Traum ist es, einmal mit dem Zug durch Europa zu reisen."], french: "Mon plus grand rêve est de voyager à travers l’Europe en train." },
+            { german: ["Ich weiß noch nicht genau, was ich nach der Schule machen möchte."], french: "Je ne sais pas encore exactement ce que je veux faire après l’école." },
+            { german: ["Hast du schon einmal von einem Work-and-Travel-Programm gehört?"], french: "As-tu déjà entendu parler d’un programme Work and Travel ?" },
+            { german: ["Ich möchte später eine Familie gründen."], french: "Je veux fonder une famille plus tard." },
+            { german: ["Mein Plan ist es, ein Praktikum im Ausland zu machen."], french: "Mon plan est de faire un stage à l’étranger." },
+            { german: ["Ich finde, dass man seine Zukunft gut planen sollte."], french: "Je pense qu’on devrait bien planifier son avenir." },
+            { german: ["Wenn ich reich wäre, würde ich eine Weltreise machen."], french: "Si j’étais riche, je ferais un tour du monde." },
+            { german: ["Welche Reiseziele möchtest du unbedingt besuchen?"], french: "Quels sont les lieux que tu veux absolument visiter ?" },
+            { german: ["Ich möchte mehr über andere Kulturen lernen."], french: "Je veux en apprendre davantage sur d’autres cultures." },
+            { german: ["Meine Freunde und ich planen einen Interrail-Trip."], french: "Mes amis et moi planifions un voyage Interrail." },
+            { german: ["Es ist wichtig, Ziele im Leben zu haben."], french: "Il est important d’avoir des objectifs dans la vie." },
+            { german: ["Ich bin gespannt, wie mein Leben in 20 Jahren aussieht."], french: "Je suis curieux de voir à quoi ressemblera ma vie dans 20 ans." },
+            { german: ["Mein Traumurlaub wäre auf einer tropischen Insel."], french: "Mes vacances de rêve seraient sur une île tropicale." },
+            { german: ["Nach der Schule werde ich ein Souvenirbuch mit meinen Erinnerungen machen."], french: "Après l’école, je vais créer un album souvenir avec mes souvenirs." },
+            { german: ["Es gibt so viele Möglichkeiten, die Zukunft zu gestalten."], french: "Il y a tant de possibilités de construire l’avenir." },
+            { german: ["Mein Ziel ist es, glücklich und zufrieden zu leben."], french: "Mon objectif est de vivre heureux et satisfait." },
+            { german: ["Ich werde mich für ein Stipendium bewerben, um im Ausland zu studieren."], french: "Je vais postuler pour une bourse afin d’étudier à l’étranger." },
+            { german: ["Welche Fähigkeiten möchtest du in der Zukunft entwickeln?"], french: "Quelles compétences veux-tu développer à l’avenir ?" },
+            { german: ["Ich freue mich auf die neuen Herausforderungen nach der Schule."], french: "Je me réjouis des nouveaux défis après l’école." },
+            { german: ["Es gibt viele spannende Berufe, die ich ausprobieren möchte."], french: "Il y a beaucoup de métiers passionnants que je voudrais essayer." },
+            { german: ["In der Zukunft möchte ich eine Arbeit, die mir Spaß macht."], french: "À l’avenir, je veux un travail qui me plaît." },
+            { german: ["Ich habe einen genauen Plan für meine Karriere."], french: "J’ai un plan précis pour ma carrière." },
+            { german: ["Wo siehst du dich in fünf Jahren?"], french: "Où te vois-tu dans cinq ans ?" },
+            { german: ["Ich träume von einer Zukunft, in der alle Menschen gleich behandelt werden."], french: "Je rêve d’un avenir où tous les gens sont traités de manière égale." },
+            
+        ];
+
+        const container = document.getElementById('exercises');
+        const scoreContainer = document.getElementById('score-container');
+        const scoreFirstElem = document.getElementById('score-first');
+        const scoreSecondElem = document.getElementById('score-second');
+        const scoreThirdElem = document.getElementById('score-third');
+
+        let scoreFirst = 0, scoreSecond = 0, scoreThird = 0;
+
+        phrases.forEach((phrase, index) => {
+            const words = phrase.german[0].replace('.', '').split(' ').sort(() => Math.random() - 0.5);
+            let lastAnswer = '';
+            let attempts = 0;
+
+            const div = document.createElement('div');
+            div.classList.add('phrase');
+            div.innerHTML = `
+               <p><strong>${index + 1})</strong> ${phrase.french}</p>
+                <div class="words" id="words-${index}">
+                    ${words.map(word => `<span class="word">${word}</span>`).join('')}
+                </div>
+                <div class="answer" id="answer-${index}"></div>
+                <div class="btn-container">
+                    <button class="btn-validate" id="validate-${index}" disabled>Valider</button>
+                    <p id="feedback-${index}" class="feedback"></p>
+                </div>
+            `;
+            container.appendChild(div);
+
+            const validateBtn = document.getElementById(`validate-${index}`);
+            const answerContainer = document.getElementById(`answer-${index}`);
+            const feedback = document.getElementById(`feedback-${index}`);
+
+            document.querySelectorAll(`#words-${index} .word`).forEach(wordElement => {
+                wordElement.addEventListener('click', () => {
+                    if (!wordElement.classList.contains('used')) {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.textContent = wordElement.textContent;
+                        wordSpan.onclick = () => {
+                            answerContainer.removeChild(wordSpan);
+                            wordElement.classList.remove('used');
+                            toggleValidateButton();
+                        };
+                        answerContainer.appendChild(wordSpan);
+                        wordElement.classList.add('used');
+                        toggleValidateButton();
+                    }
+                });
+            });
+
+            function toggleValidateButton() {
+                const currentAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const isComplete = answerContainer.children.length === words.length;
+                validateBtn.disabled = !isComplete || currentAnswer === lastAnswer;
+            }
+
+            validateBtn.addEventListener('click', () => {
+                const userAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const correctAnswer = phrase.german[0].replace('.', '').trim();
+                attempts++;
+                lastAnswer = userAnswer;
+
+                if (userAnswer === correctAnswer) {
+                    feedback.textContent = "Bonne réponse !";
+                    feedback.className = "feedback correct";
+                    validateBtn.disabled = true;
+                    document.querySelector(`#words-${index}`).classList.add('disabled');
+                    scoreByAttempts(attempts);
+                } else {
+                    feedback.textContent = `Faux ! Tentative ${attempts}/3. Essayez encore.`;
+                    feedback.className = "feedback incorrect";
+                    if (attempts >= 3) {
+                        feedback.textContent = `Faux ! Réponse correcte : "${phrase.german[0]}". Vous pouvez réessayer.`;
+                        attempts = 0;
+                    }
+                }
+                toggleValidateButton();
+            });
+        });
+
+        function scoreByAttempts(attempts) {
+            if (attempts === 1) scoreFirst++;
+            else if (attempts === 2) scoreSecond++;
+            else if (attempts === 3) scoreThird++;
+
+            if (scoreFirst + scoreSecond + scoreThird === phrases.length) {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            scoreFirstElem.textContent = scoreFirst;
+            scoreSecondElem.textContent = scoreSecond;
+            scoreThirdElem.textContent = scoreThird;
+            scoreContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

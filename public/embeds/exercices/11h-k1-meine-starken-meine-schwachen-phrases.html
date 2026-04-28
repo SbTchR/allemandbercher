@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrases à bien connaître</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, rgba(255, 250, 229, 0.9), rgba(255, 250, 229, 0.9));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .exercise-container {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #FF8C00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .phrase {
+            margin-bottom: 30px;
+        }
+        .phrase p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #444;
+        }
+        .words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .word {
+            background: rgba(255, 165, 0, 0.4);
+            color: black;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            user-select: none;
+            border: 1px solid rgba(255, 165, 0, 0.7);
+        }
+        .word:hover {
+            background: rgba(255, 165, 0, 0.7);
+            transform: scale(1.1);
+        }
+        .word.used {
+            background: #ddd;
+            color: #999;
+            cursor: not-allowed;
+        }
+        .answer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            min-height: 30px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            background: rgba(240, 240, 240, 0.8);
+            border-radius: 5px;
+        }
+        .btn-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .btn-validate {
+            padding: 10px 15px;
+            background: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-validate:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-validate:hover:not(:disabled) {
+            background: #FF8C00;
+        }
+        .feedback {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .feedback.correct {
+            color: green;
+        }
+        .feedback.incorrect {
+            color: red;
+        }
+        .score {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Phrases à bien connaître</h1>
+        <p>Remets les phrases dans le bon ordre en cliquant sur les mots. Tu as 3 tentatives par phrase.</p>
+
+        <div id="exercises">
+            <!-- Les phrases seront insérées ici dynamiquement -->
+        </div>
+
+        <div class="score" id="score-container" style="display: none;">
+            <p>🏆Score final :</p>
+            <p>🥇Réussies du premier coup : <span id="score-first">0</span></p>
+            <p>🥈Réussies au deuxième coup : <span id="score-second">0</span></p>
+            <p>🥉Réussies au troisième coup : <span id="score-third">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        const phrases = [
+            { german: ["Ich bin sehr mutig, aber manchmal auch ein bisschen schüchtern."], french: "Je suis très courageux, mais parfois un peu timide." },
+            { german: ["Ehrlichkeit ist mir sehr wichtig."], french: "L'honnêteté est très importante pour moi." },
+            { german: ["Sie engagiert sich für die Umwelt."], french: "Elle s'engage pour l'environnement." },
+            { german: ["Er ist neugierig und offen für neue Ideen."], french: "Il est curieux et ouvert à de nouvelles idées." },
+            { german: ["Ich finde meinen Lehrer sehr hilfsbereit."], french: "Je trouve mon professeur très serviable." },
+            { german: ["Mein Vorbild ist ein berühmter Sänger."], french: "Mon modèle est un chanteur célèbre." },
+            { german: ["Sie kämpft für die Rechte der Frauen."], french: "Elle se bat pour les droits des femmes." },
+            { german: ["Ich bewundere meinen Vater, weil er sehr geduldig ist."], french: "J’admire mon père parce qu’il est très patient." },
+            { german: ["Freundlichkeit steht bei mir an der ersten Stelle."], french: "La gentillesse est en première place pour moi." },
+            { german: ["Ich möchte eines Tages ein großes Ziel erreichen."], french: "Je veux atteindre un grand objectif un jour." },
+            { german: ["Ich habe vor, mehr Zeit mit meiner Familie zu verbringen."], french: "J’ai l’intention de passer plus de temps avec ma famille." },
+            { german: ["Für mich ist es wichtig, dass alle fair behandelt werden."], french: "Pour moi, il est important que tout le monde soit traité équitablement." },
+            { german: ["Ich habe Ausdauer und arbeite immer hart."], french: "J’ai de l’endurance et je travaille toujours dur." },
+            { german: ["Ich finde Sprachenlernen sehr spannend."], french: "Je trouve l’apprentissage des langues très passionnant." },
+            { german: ["Sie ist eine Schauspielerin, die ich sehr bewundere."], french: "C’est une actrice que j’admire beaucoup." },
+            { german: ["Ich möchte Jura studieren, um Menschen zu helfen."], french: "Je veux étudier le droit pour aider les gens." },
+            { german: ["Meine Ziele sind, selbstbewusster zu werden und eine gute Ausbildung zu machen."], french: "Mes objectifs sont de devenir plus sûr de moi et de faire une bonne formation." },
+            { german: ["Was ist dir wichtiger: Ehrlichkeit oder Erfolg?"], french: "Qu’est-ce qui est plus important pour toi : l’honnêteté ou le succès ?" },
+            { german: ["Ich bin stolz auf meinen Erfolg im letzten Jahr."], french: "Je suis fier de mon succès de l’année dernière." },
+            { german: ["Sie macht immer einen genauen Plan."], french: "Elle fait toujours un plan précis." },
+            { german: ["Ich bin der Meinung, dass Teamfähigkeit sehr wichtig ist."], french: "Je pense que la capacité de travailler en équipe est très importante." },
+            { german: ["Im Gegensatz zu anderen finde ich Freiheit wichtiger als Geld."], french: "Contrairement à d’autres, je trouve la liberté plus importante que l’argent." },
+            { german: ["Er hat alles ausprobiert, aber es hat nicht geklappt."], french: "Il a tout essayé, mais ça n’a pas marché." },
+            { german: ["Ehrgeiz hilft mir, meine Ziele zu erreichen."], french: "L’ambition m’aide à atteindre mes objectifs." },
+            { german: ["Sie studiert an der Universität in Berlin."], french: "Elle étudie à l’université de Berlin." },
+            { german: ["Warum bewunderst du deinen Lieblingssportler?"], french: "Pourquoi admires-tu ton sportif préféré ?" },
+            { german: ["Meine größte Stärke ist meine Kreativität."], french: "Ma plus grande force est ma créativité." },
+            { german: ["Mein Freund ist sehr spontan und humorvoll."], french: "Mon ami est très spontané et plein d’humour." },
+            { german: ["Zusammenleben in einer festen Beziehung ist mir wichtig."], french: "Vivre ensemble dans une relation stable est important pour moi." },
+            
+        ];
+
+        const container = document.getElementById('exercises');
+        const scoreContainer = document.getElementById('score-container');
+        const scoreFirstElem = document.getElementById('score-first');
+        const scoreSecondElem = document.getElementById('score-second');
+        const scoreThirdElem = document.getElementById('score-third');
+
+        let scoreFirst = 0, scoreSecond = 0, scoreThird = 0;
+
+        phrases.forEach((phrase, index) => {
+            const words = phrase.german[0].replace('.', '').split(' ').sort(() => Math.random() - 0.5);
+            let lastAnswer = '';
+            let attempts = 0;
+
+            const div = document.createElement('div');
+            div.classList.add('phrase');
+            div.innerHTML = `
+               <p><strong>${index + 1})</strong> ${phrase.french}</p>
+                <div class="words" id="words-${index}">
+                    ${words.map(word => `<span class="word">${word}</span>`).join('')}
+                </div>
+                <div class="answer" id="answer-${index}"></div>
+                <div class="btn-container">
+                    <button class="btn-validate" id="validate-${index}" disabled>Valider</button>
+                    <p id="feedback-${index}" class="feedback"></p>
+                </div>
+            `;
+            container.appendChild(div);
+
+            const validateBtn = document.getElementById(`validate-${index}`);
+            const answerContainer = document.getElementById(`answer-${index}`);
+            const feedback = document.getElementById(`feedback-${index}`);
+
+            document.querySelectorAll(`#words-${index} .word`).forEach(wordElement => {
+                wordElement.addEventListener('click', () => {
+                    if (!wordElement.classList.contains('used')) {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.textContent = wordElement.textContent;
+                        wordSpan.onclick = () => {
+                            answerContainer.removeChild(wordSpan);
+                            wordElement.classList.remove('used');
+                            toggleValidateButton();
+                        };
+                        answerContainer.appendChild(wordSpan);
+                        wordElement.classList.add('used');
+                        toggleValidateButton();
+                    }
+                });
+            });
+
+            function toggleValidateButton() {
+                const currentAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const isComplete = answerContainer.children.length === words.length;
+                validateBtn.disabled = !isComplete || currentAnswer === lastAnswer;
+            }
+
+            validateBtn.addEventListener('click', () => {
+                const userAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const correctAnswer = phrase.german[0].replace('.', '').trim();
+                attempts++;
+                lastAnswer = userAnswer;
+
+                if (userAnswer === correctAnswer) {
+                    feedback.textContent = "Bonne réponse !";
+                    feedback.className = "feedback correct";
+                    validateBtn.disabled = true;
+                    document.querySelector(`#words-${index}`).classList.add('disabled');
+                    scoreByAttempts(attempts);
+                } else {
+                    feedback.textContent = `Faux ! Tentative ${attempts}/3. Essayez encore.`;
+                    feedback.className = "feedback incorrect";
+                    if (attempts >= 3) {
+                        feedback.textContent = `Faux ! Réponse correcte : "${phrase.german[0]}". Vous pouvez réessayer.`;
+                        attempts = 0;
+                    }
+                }
+                toggleValidateButton();
+            });
+        });
+
+        function scoreByAttempts(attempts) {
+            if (attempts === 1) scoreFirst++;
+            else if (attempts === 2) scoreSecond++;
+            else if (attempts === 3) scoreThird++;
+
+            if (scoreFirst + scoreSecond + scoreThird === phrases.length) {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            scoreFirstElem.textContent = scoreFirst;
+            scoreSecondElem.textContent = scoreSecond;
+            scoreThirdElem.textContent = scoreThird;
+            scoreContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

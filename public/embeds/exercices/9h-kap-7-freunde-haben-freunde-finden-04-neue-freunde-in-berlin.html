@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Neue Freunde in Berlin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .quiz-container {
+            width: 70%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .question {
+            background-color: #f2f2f2;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .question p {
+            font-size: 18px;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #submit:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Neue Freunde in Berlin</h1>
+        <p class="instruction">Kreuze die richtige Antwort an.</p>   
+    </div>
+    <div class="quiz-container">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>Wie alt ist Max?</p>
+            <div>
+                <input type="radio" id="age1" name="age" value="10">
+                <label for="age1">a) 10 Jahre alt</label><br>
+                <input type="radio" id="age2" name="age" value="11">
+                <label for="age2">b) 11 Jahre alt</label><br>
+                <input type="radio" id="age3" name="age" value="12">
+                <label for="age3">c) 12 Jahre alt</label>
+            </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="question">
+            <p>Warum war Max am ersten Schultag nervös?</p>
+            <div>
+                <input type="radio" id="nervous1" name="nervous" value="geburtstag">
+                <label for="nervous1">a) Weil er seinen Geburtstag feiern wollte</label><br>
+                <input type="radio" id="nervous2" name="nervous" value="schule">
+                <label for="nervous2">b) Weil die Schule groß war und er niemanden kannte</label><br>
+                <input type="radio" id="nervous3" name="nervous" value="fussball">
+                <label for="nervous3">c) Weil er Fußball spielen musste</label>
+            </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="question">
+            <p>Was hat Max auf seiner Geburtstagsparty gemacht?</p>
+            <div>
+                <input type="radio" id="party1" name="party" value="lesen">
+                <label for="party1">a) Er hat Bücher gelesen</label><br>
+                <input type="radio" id="party2" name="party" value="fussball">
+                <label for="party2">b) Er hat Fußball gespielt</label><br>
+                <input type="radio" id="party3" name="party" value="tanzen">
+                <label for="party3">c) Er hat getanzt und Spiele gespielt</label>
+            </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="question">
+            <p>Was hat Max auf der Klassenfahrt gelernt?</p>
+            <div>
+                <input type="radio" id="classTrip1" name="classTrip" value="kochen">
+                <label for="classTrip1">a) Wie man kocht</label><br>
+                <input type="radio" id="classTrip2" name="classTrip" value="zelte">
+                <label for="classTrip2">b) Wie man Zelte aufbaut</label><br>
+                <input type="radio" id="classTrip3" name="classTrip" value="schwimmen">
+                <label for="classTrip3">c) Wie man schwimmt</label>
+            </div>
+        </div>
+        <!-- Question 5 -->
+        <div class="question">
+            <p>Was ist Max' neues Hobby?</p>
+            <div>
+                <input type="radio" id="hobby1" name="hobby" value="fussball">
+                <label for="hobby1">a) Fußball</label><br>
+                <input type="radio" id="hobby2" name="hobby" value="wandern">
+                <label for="hobby2">b) Wandern</label><br>
+                <input type="radio" id="hobby3" name="hobby" value="radfahren">
+                <label for="hobby3">c) Radfahren</label>
+            </div>
+        </div>
+        <!-- Question 6 -->
+        <div class="question">
+            <p>Wie fühlt sich Max nach ein paar Monaten in Berlin?</p>
+            <div>
+                <input type="radio" id="feeling1" name="feeling" value="nervoes">
+                <label for="feeling1">a) Er ist immer noch nervös</label><br>
+                <input type="radio" id="feeling2" name="feeling" value="wohl">
+                <label for="feeling2">b) Er fühlt sich dort sehr wohl</label><br>
+                <input type="radio" id="feeling3" name="feeling" value="zurueckziehen">
+                <label for="feeling3">c) Er möchte zurückziehen</label>
+            </div>
+        </div>
+
+        <button id="submit">Antworten überprüfen</button>
+        <div class="score" id="score">Score: 0/6</div>
+    </div>
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            const correctAnswers = {
+                'age': '12',
+                'nervous': 'schule',
+                'party': 'tanzen',
+                'classTrip': 'zelte',
+                'hobby': 'wandern',
+                'feeling': 'wohl'
+            };
+            let score = 0;
+
+            Object.keys(correctAnswers).forEach(question => {
+                const answers = document.querySelectorAll(`input[name="${question}"]`);
+
+                answers.forEach(answer => {
+                    const label = answer.labels[0];
+                    label.style.color = 'black';
+                    label.style.fontWeight = 'normal';
+                    label.style.fontSize = '16px';
+                });
+
+                const selectedAnswer = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedAnswer) {
+                    const label = selectedAnswer.labels[0];
+                    if (selectedAnswer.value === correctAnswers[question]) {
+                        label.style.color = 'green';
+                        label.style.fontWeight = 'bold';
+                        label.style.fontSize = '24px';
+                        score++;
+                    } else {
+                        label.style.color = 'red';
+                    }
+                }
+            });
+
+            const scoreElement = document.getElementById('score');
+            scoreElement.textContent = `Score: ${score}/${Object.keys(correctAnswers).length}`;
+        });
+    </script>
+</body>
+</html>

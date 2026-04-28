@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrases à bien connaître</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, rgba(255, 250, 229, 0.9), rgba(255, 250, 229, 0.9));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .exercise-container {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #FF8C00;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .phrase {
+            margin-bottom: 30px;
+        }
+        .phrase p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #444;
+        }
+        .words {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .word {
+            background: rgba(255, 165, 0, 0.4);
+            color: black;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            user-select: none;
+            border: 1px solid rgba(255, 165, 0, 0.7);
+        }
+        .word:hover {
+            background: rgba(255, 165, 0, 0.7);
+            transform: scale(1.1);
+        }
+        .word.used {
+            background: #ddd;
+            color: #999;
+            cursor: not-allowed;
+        }
+        .answer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            min-height: 30px;
+            border: 1px dashed #ccc;
+            padding: 10px;
+            background: rgba(240, 240, 240, 0.8);
+            border-radius: 5px;
+        }
+        .btn-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .btn-validate {
+            padding: 10px 15px;
+            background: #FFA500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-validate:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .btn-validate:hover:not(:disabled) {
+            background: #FF8C00;
+        }
+        .feedback {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .feedback.correct {
+            color: green;
+        }
+        .feedback.incorrect {
+            color: red;
+        }
+        .score {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-container">
+        <h1>Phrases à bien connaître</h1>
+        <p>Remets les phrases dans le bon ordre en cliquant sur les mots. Tu as 3 tentatives par phrase.</p>
+
+        <div id="exercises">
+            <!-- Les phrases seront insérées ici dynamiquement -->
+        </div>
+
+        <div class="score" id="score-container" style="display: none;">
+            <p>🏆Score final :</p>
+            <p>🥇Réussies du premier coup : <span id="score-first">0</span></p>
+            <p>🥈Réussies au deuxième coup : <span id="score-second">0</span></p>
+            <p>🥉Réussies au troisième coup : <span id="score-third">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        const phrases = [
+            { german: ["Ich engagiere mich in meiner Freizeit für den Tierschutz."], french: "Je m’engage dans ma vie privée pour la protection des animaux." },
+            { german: ["Warum ist dir Engagement so wichtig?"], french: "Pourquoi l’engagement est-il si important pour toi ?" },
+            { german: ["Wir haben eine Petition für den Klimaschutz organisiert."], french: "Nous avons organisé une pétition pour la protection du climat." },
+            { german: ["In unserer Schule gibt es viele Möglichkeiten, sich zu engagieren."], french: "Dans notre école, il y a beaucoup de possibilités de s’engager." },
+            { german: ["Er ist ehrenamtlich in einem Jugendzentrum tätig."], french: "Il travaille bénévolement dans un centre pour jeunes." },
+            { german: ["Was kann man tun, wenn es einen Konflikt gibt?"], french: "Que peut-on faire quand il y a un conflit ?" },
+            { german: ["Es ist wichtig, in schwierigen Situationen ruhig zu bleiben."], french: "Il est important de rester calme dans les situations difficiles." },
+            { german: ["Wir haben gemeinsam an einem sozialen Projekt gearbeitet."], french: "Nous avons travaillé ensemble sur un projet social." },
+            { german: ["Wie kann man anderen helfen, ohne viel Geld auszugeben?"], french: "Comment peut-on aider les autres sans dépenser beaucoup d’argent ?" },
+            { german: ["Wir müssen Verantwortung übernehmen."], french: "Nous devons assumer des responsabilités." },
+            { german: ["Es geht mir darum, anderen zu helfen."], french: "Ce qui compte pour moi, c’est d’aider les autres." },
+            { german: ["Er hat sich bei einem Konflikt als Streitschlichter engagiert."], french: "Il s’est engagé comme médiateur dans un conflit." },
+            { german: ["Was hast du aus dieser Situation gelernt?"], french: "Qu’as-tu appris de cette situation ?" },
+            { german: ["Sie hat uns gezeigt, wie man Konflikte lösen kann."], french: "Elle nous a montré comment résoudre des conflits." },
+            { german: ["Manchmal ist es schwierig, einen Kompromiss zu finden."], french: "Parfois, il est difficile de trouver un compromis." },
+            { german: ["Der Klassensprecher hat eine wichtige Rolle in der Schule."], french: "Le délégué de classe joue un rôle important à l’école." },
+            { german: ["Was sind für dich die wichtigsten Werte im Zusammenleben?"], french: "Quels sont pour toi les valeurs les plus importantes pour vivre ensemble ?" },
+            { german: ["Wir haben eine Diskussion über soziale Verantwortung geführt."], french: "Nous avons mené une discussion sur la responsabilité sociale." },
+            { german: ["Sie arbeitet in ihrer Freizeit bei einer Organisation für Kinderrechte."], french: "Elle travaille pendant son temps libre pour une organisation pour les droits des enfants." },
+            { german: ["Es ist wichtig, anderen zuzuhören, bevor man eine Entscheidung trifft."], french: "Il est important d’écouter les autres avant de prendre une décision." },
+            { german: ["Hast du schon einmal freiwillig an einer Aktion teilgenommen?"], french: "As-tu déjà participé volontairement à une action ?" },
+            { german: ["Er hat eine Idee vorgeschlagen, um den Konflikt zu lösen."], french: "Il a proposé une idée pour résoudre le conflit." },
+            { german: ["Es macht mir Spaß, Verantwortung zu übernehmen."], french: "J’aime assumer des responsabilités." },
+            { german: ["Wie können wir die Zusammenarbeit in der Klasse verbessern?"], french: "Comment pouvons-nous améliorer la collaboration en classe ?" },
+            { german: ["Ich finde es unfair, wenn nur wenige Leute sich engagieren."], french: "Je trouve injuste que seulement quelques personnes s’engagent." },
+            { german: ["Wir haben einen Flyer gestaltet, um über unser Projekt zu informieren."], french: "Nous avons conçu un flyer pour informer sur notre projet." },
+            { german: ["Konflikte können gelöst werden, wenn man miteinander spricht."], french: "Les conflits peuvent être résolus si on se parle." },
+            { german: ["Manchmal reicht es, wenn jemand den ersten Schritt macht."], french: "Parfois, il suffit que quelqu’un fasse le premier pas." },
+            { german: ["Sie hilft immer ihren Mitschülern, wenn sie ein Problem haben."], french: "Elle aide toujours ses camarades quand ils ont un problème." },
+            { german: ["Verantwortung in der Schule zu übernehmen, ist eine gute Übung fürs Leben."], french: "Prendre des responsabilités à l’école est un bon entraînement pour la vie." },
+            { german: ["Es ist schön zu sehen, wie viele Menschen sich für die Umwelt engagieren."], french: "C’est beau de voir combien de gens s’engagent pour l’environnement." },
+            
+        ];
+
+        const container = document.getElementById('exercises');
+        const scoreContainer = document.getElementById('score-container');
+        const scoreFirstElem = document.getElementById('score-first');
+        const scoreSecondElem = document.getElementById('score-second');
+        const scoreThirdElem = document.getElementById('score-third');
+
+        let scoreFirst = 0, scoreSecond = 0, scoreThird = 0;
+
+        phrases.forEach((phrase, index) => {
+            const words = phrase.german[0].replace('.', '').split(' ').sort(() => Math.random() - 0.5);
+            let lastAnswer = '';
+            let attempts = 0;
+
+            const div = document.createElement('div');
+            div.classList.add('phrase');
+            div.innerHTML = `
+               <p><strong>${index + 1})</strong> ${phrase.french}</p>
+                <div class="words" id="words-${index}">
+                    ${words.map(word => `<span class="word">${word}</span>`).join('')}
+                </div>
+                <div class="answer" id="answer-${index}"></div>
+                <div class="btn-container">
+                    <button class="btn-validate" id="validate-${index}" disabled>Valider</button>
+                    <p id="feedback-${index}" class="feedback"></p>
+                </div>
+            `;
+            container.appendChild(div);
+
+            const validateBtn = document.getElementById(`validate-${index}`);
+            const answerContainer = document.getElementById(`answer-${index}`);
+            const feedback = document.getElementById(`feedback-${index}`);
+
+            document.querySelectorAll(`#words-${index} .word`).forEach(wordElement => {
+                wordElement.addEventListener('click', () => {
+                    if (!wordElement.classList.contains('used')) {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.textContent = wordElement.textContent;
+                        wordSpan.onclick = () => {
+                            answerContainer.removeChild(wordSpan);
+                            wordElement.classList.remove('used');
+                            toggleValidateButton();
+                        };
+                        answerContainer.appendChild(wordSpan);
+                        wordElement.classList.add('used');
+                        toggleValidateButton();
+                    }
+                });
+            });
+
+            function toggleValidateButton() {
+                const currentAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const isComplete = answerContainer.children.length === words.length;
+                validateBtn.disabled = !isComplete || currentAnswer === lastAnswer;
+            }
+
+            validateBtn.addEventListener('click', () => {
+                const userAnswer = Array.from(answerContainer.children).map(span => span.textContent).join(' ').trim();
+                const correctAnswer = phrase.german[0].replace('.', '').trim();
+                attempts++;
+                lastAnswer = userAnswer;
+
+                if (userAnswer === correctAnswer) {
+                    feedback.textContent = "Bonne réponse !";
+                    feedback.className = "feedback correct";
+                    validateBtn.disabled = true;
+                    document.querySelector(`#words-${index}`).classList.add('disabled');
+                    scoreByAttempts(attempts);
+                } else {
+                    feedback.textContent = `Faux ! Tentative ${attempts}/3. Essayez encore.`;
+                    feedback.className = "feedback incorrect";
+                    if (attempts >= 3) {
+                        feedback.textContent = `Faux ! Réponse correcte : "${phrase.german[0]}". Vous pouvez réessayer.`;
+                        attempts = 0;
+                    }
+                }
+                toggleValidateButton();
+            });
+        });
+
+        function scoreByAttempts(attempts) {
+            if (attempts === 1) scoreFirst++;
+            else if (attempts === 2) scoreSecond++;
+            else if (attempts === 3) scoreThird++;
+
+            if (scoreFirst + scoreSecond + scoreThird === phrases.length) {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            scoreFirstElem.textContent = scoreFirst;
+            scoreSecondElem.textContent = scoreSecond;
+            scoreThirdElem.textContent = scoreThird;
+            scoreContainer.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

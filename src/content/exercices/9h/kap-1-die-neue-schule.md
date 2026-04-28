@@ -18,6 +18,10 @@ images:
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-1-die-neue-schule-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication
@@ -125,6 +129,10 @@ Exercice de compréhension orale en ligne:
 Exercice de compréhension écrite en ligne:
 
 - [https://www.schubert-verlag.de/aufgaben/xg/xg04_13.htm](https://www.schubert-verlag.de/aufgaben/xg/xg04_13.htm)
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-1-die-neue-schule-02-exercice-integre.html" title="Exercice intégré" loading="lazy" allowfullscreen></iframe>
 
 ## Contenu intégré
 

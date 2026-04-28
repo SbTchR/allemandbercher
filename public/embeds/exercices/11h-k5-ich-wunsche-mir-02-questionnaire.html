@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Questionnaire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            font-size: 18px;
+        }
+.correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #submit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #submit:hover {
+            background-color: #45a049;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Was machst du mit deinem Leben?</h1>
+        <p class="instruction">Kreuze die richtige Antwort an.</p>
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>Wie wird das Leben im Video verglichen?</p>
+                <label><input type="radio" name="question1" value="a"> Mit einem großen Berg</label>
+                <label><input type="radio" name="question1" value="b"> Mit dem Ozean</label>
+                <label><input type="radio" name="question1" value="c"> Mit einem weiten Feld</label>
+            </div>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>Was ist eine der Ablenkungen, die im Video erwähnt werden?</p>
+                <label><input type="radio" name="question2" value="a"> Reisen</label>
+                <label><input type="radio" name="question2" value="b"> Sport</label>
+                <label><input type="radio" name="question2" value="c"> Videospiele</label>
+            </div>
+            <!-- Question 3 -->
+            <div class="question">
+                <p>In welchem Alter befindet sich das durchschnittliche "Kurzgesagt"-Publikum?</p>
+                <label><input type="radio" name="question3" value="a"> Etwa 15 Jahre</label>
+                <label><input type="radio" name="question3" value="b"> Etwa 40 Jahre</label>
+                <label><input type="radio" name="question3" value="c"> Etwa 25 Jahre</label>
+            </div>
+            <!-- Question 4 -->
+            <div class="question">
+                <p>Was ist eine mögliche Lebensphase einer Person im Alter von 25 Jahren?</p>
+                <label><input type="radio" name="question4" value="a"> Pensionierung</label>
+                <label><input type="radio" name="question4" value="b"> Schüler sein</label>
+                <label><input type="radio" name="question4" value="c"> Studium</label>
+            </div>
+            <!-- Question 5 -->
+            <div class="question">
+                <p>Wie viele Wochen Lebenszeit erhält man bei der Geburt, wenn man 100 Jahre alt wird?</p>
+                <label><input type="radio" name="question5" value="a"> 10.000 Wochen</label>
+                <label><input type="radio" name="question5" value="b"> 5.200 Wochen</label>
+                <label><input type="radio" name="question5" value="c"> 3.600 Wochen</label>
+            </div>
+            <!-- Question 6 -->
+            <div class="question">
+                <p>In welchem Alter beginnt man meistens, ernsthaft zu arbeiten?</p>
+                <label><input type="radio" name="question6" value="a"> Zwischen 20 und 30</label>
+                <label><input type="radio" name="question6" value="b"> Zwischen 10 und 20</label>
+                <label><input type="radio" name="question6" value="c"> Nach 70 Jahren</label>
+            </div>
+            <!-- Question 7 -->
+            <div class="question">
+                <p>Wie lange arbeiten die meisten Menschen?</p>
+                <label><input type="radio" name="question7" value="a"> Bis sie 50 sind</label>
+                <label><input type="radio" name="question7" value="b"> Bis sie 75 sind</label>
+                <label><input type="radio" name="question7" value="c"> Bis sie 65 sind</label>
+            </div>
+            <!-- Question 8 -->
+            <div class="question">
+                <p>Was kann passieren, wenn man nur darauf setzt, im Ruhestand Spaß zu haben?</p>
+                <label><input type="radio" name="question8" value="a"> Man wird berühmt</label>
+                <label><input type="radio" name="question8" value="b"> Man wird enttäuscht</label>
+                <label><input type="radio" name="question8" value="c"> Man bleibt jung</label>
+            </div>
+            <!-- Question 9 -->
+            <div class="question">
+                <p>Was wurde den Menschen während der Coronapandemie bewusst?</p>
+                <label><input type="radio" name="question9" value="a"> Die Bedeutung des Geldes</label>
+                <label><input type="radio" name="question9" value="b"> Die Wichtigkeit von Social Distancing</label>
+                <label><input type="radio" name="question9" value="c"> Die Wichtigkeit von Entscheidungen</label>
+            </div>
+            <!-- Question 10 -->
+            <div class="question">
+                <p>Wie lange kann man nach dem Ruhestand leben, wenn man 100 Jahre alt wird?</p>
+                <label><input type="radio" name="question10" value="a"> Für etwa 400 Wochen</label>
+                <label><input type="radio" name="question10" value="b"> Für bis zu 1.800 Wochen</label>
+                <label><input type="radio" name="question10" value="c"> Für über 2.000 Wochen</label>
+            </div>
+
+            <button type="button" id="submit">Valider les réponses</button>
+        </form>
+        <div class="score" id="score">Score: 0/10</div>
+    </div>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            const correctAnswers = ['b', 'c', 'c', 'c', 'b', 'a', 'c', 'b', 'c', 'b'];
+            const form = document.getElementById('quizForm');
+            let score = 0;
+
+            for (let i = 1; i <= correctAnswers.length; i++) {
+                const radios = form['question' + i];
+                let answerGiven = false;
+
+                for (let radio of radios) {
+                    if (radio.checked) {
+                        answerGiven = true;
+                        if (radio.value === correctAnswers[i - 1]) {
+                            score++;
+                            radio.parentNode.classList.add('correct');
+                        } else {
+                            radio.parentNode.classList.add('incorrect');
+                        }
+                    }
+                    radio.disabled = true; // Disable the option after submission
+                }
+
+                if (!answerGiven) {
+                    // If no answer is given, mark all options as incorrect
+                    for (let radio of radios) {
+                        radio.parentNode.classList.add('incorrect');
+                    }
+                }
+            }
+
+            document.getElementById('score').textContent = `Score: ${score}/10`;
+        });
+    </script>
+</body>
+</html>

@@ -16,6 +16,10 @@ images: []
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-6-klassenfahrt-nach-basel-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication
@@ -101,3 +105,7 @@ Quelques exercices pour entrainer les pronoms personnels à l'accusatif.
 - [http://www.michaelster.ch/lueckentexte/index.php?lid=761&id=11&variante=1](http://www.michaelster.ch/lueckentexte/index.php?lid=761&id=11&variante=1)
 
 - [https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ergaenzen.html](https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ergaenzen.html)
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://view.genial.ly/5ea156e62381030d8078f69b" title="Genially intégré" loading="lazy" allowfullscreen></iframe>

@@ -17,6 +17,10 @@ images: []
 migrationNotes: []
 ---
 
+## Phrases à bien connaître
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-7-freunde-haben-freunde-finden-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
+
 ## Objectifs
 
 ### Communication
@@ -94,3 +98,11 @@ Letzte Woche sind wir auf Klassenfahrt gegangen. Wir waren im Wald und haben vie
 ## Fazit
 
 Jetzt, nach ein paar Monaten in Berlin, fühle ich mich hier sehr wohl. Ich habe viele neue Freunde und tolle Erinnerungen. In Berlin zu wohnen ist wirklich toll!
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://learningapps.org/watch?v=p2r0g2kfj19" title="LearningApps intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://learningapps.org/watch?v=p9162k9oa19" title="LearningApps intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-7-freunde-haben-freunde-finden-04-neue-freunde-in-berlin.html" title="Neue Freunde in Berlin" loading="lazy" allowfullscreen></iframe>
