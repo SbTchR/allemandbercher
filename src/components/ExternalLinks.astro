@@ -9,7 +9,26 @@ type Props = {
   title?: string;
 };
 
-const { links = [], title = 'Liens externes' } = Astro.props;
+const { links = [], title = 'Ressources en ligne' } = Astro.props;
+
+function linkLabel(link: Link) {
+  if (link.label?.trim()) return link.label;
+
+  try {
+    const url = new URL(link.url);
+    const host = url.hostname.replace(/^www\./, '');
+    const path = decodeURIComponent(url.pathname).replace(/\/+$/, '');
+    const usefulPath = path
+      .split('/')
+      .filter(Boolean)
+      .slice(0, 2)
+      .join('/');
+
+    return usefulPath ? `${host}/${usefulPath}` : host;
+  } catch {
+    return link.url;
+  }
+}
 ---
 
 {
@@ -20,7 +39,7 @@ const { links = [], title = 'Liens externes' } = Astro.props;
         {links.map((link) => (
           <li>
             <a href={link.url} rel="noreferrer" target="_blank">
-              {link.label || link.url}
+              {linkLabel(link)}
             </a>
           </li>
         ))}

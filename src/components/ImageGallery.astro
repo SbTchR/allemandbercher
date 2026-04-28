@@ -14,7 +14,7 @@ const { images = [] } = Astro.props;
 {
   images.length > 0 && (
     <section class="image-gallery" aria-labelledby="images-title">
-      <h2 id="images-title">Images à récupérer</h2>
+      <h2 id="images-title">Images de la page</h2>
       <div>
         {images.map((image) => (
           <figure>

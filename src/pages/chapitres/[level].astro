@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import { chapterLevels, type ChapterLevel } from '../../data/chapters';
+import { withBase } from '../../lib/paths';
+import { resourceUrl, type ResourceEntry } from '../../lib/resources';
+
+export async function getStaticPaths() {
+  return chapterLevels.map((levelData) => ({
+    params: { level: levelData.level.toLowerCase() },
+    props: { levelData },
+  }));
+}
+
+type Props = {
+  levelData: ChapterLevel;
+};
+
+const { levelData } = Astro.props;
+const exercices = await getCollection('exercices', (entry) => entry.data.level === levelData.level);
+const vocabulaire = await getCollection('vocabulaire', (entry) => entry.data.level === levelData.level);
+
+function bySlug(entries: ResourceEntry[]) {
+  return new Map(entries.map((entry) => [entry.id.split('/').pop()?.replace(/\.md$/, ''), entry]));
+}
+
+const exercicesBySlug = bySlug(exercices);
+const vocabulaireBySlug = bySlug(vocabulaire);
+---
+
+<Layout title={`Chapitres ${levelData.level}`} description={`Exercices et vocabulaire pour le niveau ${levelData.level}.`}>
+  <section class="hero compact-hero">
+    <p class="eyebrow">Chapitres</p>
+    <h1>{levelData.level}</h1>
+    <p class="lead">{levelData.description}</p>
+  </section>
+
+  <section class="content-band" aria-labelledby="chapter-overview-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Accès rapide</p>
+        <h2 id="chapter-overview-title">Exercices et vocabulaire</h2>
+      </div>
+      <div class="quick-links">
+        <a class="text-link" href={withBase(levelData.exerciseHref)}>Tous les exercices</a>
+        <a class="text-link" href={withBase(levelData.vocabularyHref)}>Tout le vocabulaire</a>
+      </div>
+    </div>
+
+    <div class="chapter-overview-list">
+      {
+        levelData.chapters.map((chapter) => {
+          const exercise = exercicesBySlug.get(chapter.exerciseSlug);
+          const vocabulary = vocabulaireBySlug.get(chapter.vocabularySlug);
+
+          return (
+            <article class="chapter-overview-row">
+              <div>
+                <p class="card-kicker">{chapter.label}</p>
+                <h3>{chapter.title}</h3>
+              </div>
+              <div class="chapter-actions">
+                {exercise && <a href={resourceUrl(exercise)}>Exercices</a>}
+                {vocabulary && <a href={resourceUrl(vocabulary)}>Vocabulaire</a>}
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </section>
+</Layout>

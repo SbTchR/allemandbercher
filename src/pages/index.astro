@@ -25,7 +25,8 @@ import { chapterLevels } from '../data/chapters';
     </ul>
     <p class="notice">
       Les exercices en ligne ne sont pas toujours triés par difficulté. Pense à utiliser un
-      dictionnaire en ligne lorsque tu fais des exercices.
+      <a href="http://www.leo.org/" rel="noreferrer" target="_blank">dictionnaire en ligne</a>
+      lorsque tu fais des exercices.
     </p>
   </section>
 
@@ -59,9 +60,27 @@ import { chapterLevels } from '../data/chapters';
     <SectionList
       items={chapterLevels.map(({ level, description }) => ({
         label: level,
-        href: `/exercices/${level.toLowerCase()}/`,
+        href: `/chapitres/${level.toLowerCase()}/`,
         description,
       }))}
     />
+  </section>
+
+  <section class="content-band" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
+    <p>
+      Tu peux signaler une erreur ou proposer une ressource supplémentaire avec le formulaire de
+      contact.
+    </p>
+    <p>
+      <a
+        class="text-link"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSd2jsM64vlFrAqTfsiuAESwYUN5QQzY2Rj2Vi0cdr7-qHqQCQ/viewform"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Ouvrir le formulaire
+      </a>
+    </p>
   </section>
 </Layout>

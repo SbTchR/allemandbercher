@@ -1,0 +1,26 @@
+---
+import Layout from '../../components/Layout.astro';
+import SectionList from '../../components/SectionList.astro';
+import { chapterLevels } from '../../data/chapters';
+---
+
+<Layout title="Chapitres" description="Accès aux ressources d’allemand par année et par chapitre.">
+  <section class="hero compact-hero">
+    <p class="eyebrow">Par année</p>
+    <h1>Chapitres</h1>
+    <p class="lead">
+      Retrouve rapidement les exercices et le vocabulaire correspondant à ton année.
+    </p>
+  </section>
+
+  <section class="content-band" aria-labelledby="chapters-levels-title">
+    <h2 id="chapters-levels-title">Choisis ton année</h2>
+    <SectionList
+      items={chapterLevels.map((item) => ({
+        label: item.level,
+        href: item.href,
+        description: `${item.chapters.length} chapitres avec accès direct aux exercices et au vocabulaire.`,
+      }))}
+    />
+  </section>
+</Layout>
