@@ -10,13 +10,27 @@ export async function getStaticPaths() {
 
 const level = Astro.params.level?.toUpperCase() as '9H' | '10H' | '11H';
 const entries = (await getCollection('vocabulaire', (entry) => entry.data.level === level)).sort(byOrderThenTitle);
+
+const levelSubtitles = {
+  '9H': 'Geni@l Klick 9. Klasse',
+  '10H': 'Geni@l Klick 10. und 11. Klasse Band 1',
+  '11H': 'Geni@l Klick 10. und 11. Klasse Band 2',
+} as const;
 ---
 
 <Layout title={`Vocabulaire ${level}`} description={`Vocabulaire d’allemand pour le niveau ${level}.`}>
   <section class="hero compact-hero">
     <p class="eyebrow">Vocabulaire</p>
     <h1>{level}</h1>
-    <p class="lead">Chapitres de vocabulaire pour réviser les mots et expressions de l’année.</p>
+    <p class="lead">{levelSubtitles[level]}</p>
+  </section>
+
+  <section class="content-band">
+    <div class="source-intro prose">
+      <h2>Wortschatz {level}</h2>
+      <p>{levelSubtitles[level]}</p>
+      <p>Kapitel 1 à Kapitel 8</p>
+    </div>
   </section>
 
   <section class="content-band">
