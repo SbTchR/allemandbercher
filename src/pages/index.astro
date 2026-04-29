@@ -4,89 +4,145 @@ import { withBase } from '../lib/paths';
 ---
 
 <Layout title="Accueil" description="Site de ressources d’allemand pour les élèves de Bercher.">
-  <section class="hero">
-    <h1>Allemand Bercher</h1>
+  <section class="hero home-hero">
+    <div>
+      <h1>Allemandbercher.ch</h1>
+    </div>
+    <aside class="hero-callout" aria-label="Phrase d'accroche">
+      <p>Une aide à l'apprentissage de l'allemand aux élèves de 9-11H tous niveaux confondus.</p>
+    </aside>
   </section>
 
-  <section class="content-band" aria-labelledby="home-purpose-title">
-    <h2 id="home-purpose-title">Allemandbercher.ch</h2>
-    <ul class="resource-list">
-      <li>
-        <a href={withBase('/conseils/')}>📑 Trouve des conseils pour préparer les tests.</a>
-      </li>
-      <li>
-        <a href={withBase('/exercices/')}>
-          💪 Exerce-toi en ligne avec des exercices interactifs auto-corrigés pour chaque chapitre
-          vu en classe.
-        </a>
-      </li>
-      <li>
-        <a href={withBase('/theorie/')}>
-          🧑‍🎓 Revois la théorie de tous les thèmes de grammaire et entraine-toi grâce à des
-          exercices de drill.
-        </a>
-      </li>
-      <li>
-        <a href={withBase('/vocabulaire/')}>
-          👾 Apprends le vocabulaire à l'aide d'applications comme Quizlet et de conseils pour
-          apprendre plus facilement.
-        </a>
-      </li>
-    </ul>
-    <p>
-      Ce site a pour but de fournir une aide à l'apprentissage de l'allemand aux élèves de 9-11H
-      tous niveaux confondus.
-    </p>
-    <p class="notice">
-      ⚠️Les exercices en ligne proposés ne sont donc pas toujours triés par difficulté, ils peuvent
-      parfois ne pas être adaptés à votre niveau.
-    </p>
-    <p>
-      Pensez à utiliser un
-      <a href="http://www.leo.org/" rel="noreferrer" target="_blank">dictionnaire en ligne</a>
-      lorsque vous faites des exercices !
-    </p>
+  <section class="content-band home-main-panel" aria-labelledby="home-routes-title">
+    <div class="home-section-head">
+      <p class="home-section-label">Carte de départ</p>
+      <h2 id="home-routes-title">Choisis ta prochaine étape</h2>
+    </div>
+
+    <div class="quest-grid">
+      <a class="quest-card" href={withBase('/conseils/')}>
+        <span class="quest-rank">01</span>
+        <span class="quest-title">Conseils</span>
+        <span class="quest-copy">Trouve des conseils pour préparer les tests.</span>
+        <span class="quest-action">Ouvrir la piste</span>
+      </a>
+
+      <a class="quest-card" href={withBase('/exercices/')}>
+        <span class="quest-rank">02</span>
+        <span class="quest-title">Exercices</span>
+        <span class="quest-copy">
+          Exerce-toi en ligne avec des exercices interactifs auto-corrigés pour chaque chapitre vu en classe.
+        </span>
+        <span class="quest-action">S'entraîner</span>
+      </a>
+
+      <a class="quest-card" href={withBase('/theorie/')}>
+        <span class="quest-rank">03</span>
+        <span class="quest-title">Théorie</span>
+        <span class="quest-copy">
+          Revois la théorie de tous les thèmes de grammaire et entraine-toi grâce à des exercices de drill.
+        </span>
+        <span class="quest-action">Consulter</span>
+      </a>
+
+      <a class="quest-card" href={withBase('/vocabulaire/')}>
+        <span class="quest-rank">04</span>
+        <span class="quest-title">Vocabulaire</span>
+        <span class="quest-copy">
+          Apprends le vocabulaire à l'aide d'applications comme Quizlet et de conseils pour apprendre plus facilement.
+        </span>
+        <span class="quest-action">Réviser</span>
+      </a>
+    </div>
+
+    <div class="home-info-grid" aria-label="Informations utiles">
+      <div class="info-panel warning-panel">
+        <h3>À garder en tête</h3>
+        <p>
+          Les exercices en ligne proposés ne sont donc pas toujours triés par difficulté, ils peuvent parfois ne pas
+          être adaptés à votre niveau.
+        </p>
+      </div>
+
+      <div class="info-panel tool-panel">
+        <h3>Équipement utile</h3>
+        <p>
+          Pensez à utiliser un
+          <a href="http://www.leo.org/" rel="noreferrer" target="_blank">dictionnaire en ligne</a>
+          lorsque vous faites des exercices !
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section class="content-band" aria-labelledby="exchange-title">
-    <h2 id="exchange-title">Echanges linguistiques cantonaux (hors partenariat avec Brugg)</h2>
-    <p>
-      Les élèves du canton de Vaud ont la possibilité de faire un échange linguistique avec des
-      élèves allemands, autrichiens ou suisse-allemands. Voici quelques informations brièvement
-      résumées pour les deux possibilités d'échanges. Pour des informations plus précises ou pour
-      obtenir de l'aide pour l'organisation d'un échange, visitez les sites internet indiqués.
+  <section class="content-band exchange-panel" aria-labelledby="exchange-title">
+    <div class="home-section-head">
+      <p class="home-section-label">Voyage linguistique</p>
+      <h2 id="exchange-title">Echanges linguistiques cantonaux</h2>
+      <p>Hors partenariat avec Brugg</p>
+    </div>
+
+    <p class="section-intro">
+      Les élèves du canton de Vaud ont la possibilité de faire un échange linguistique avec des élèves allemands,
+      autrichiens ou suisse-allemands. Voici quelques informations brièvement résumées pour les deux possibilités
+      d'échanges. Pour des informations plus précises ou pour obtenir de l'aide pour l'organisation d'un échange,
+      visitez les sites internet indiqués.
     </p>
-    <ul class="resource-list">
-      <li>
-        <strong>Allemagne / Autriche:</strong>
-        <ul>
-          <li>2 semaines</li>
-          <li>dates selon destination</li>
-          <li>voyage accompagné</li>
-          <li>440.-</li>
-          <li><a href="http://www.elev.ch/" rel="noreferrer" target="_blank">www.elev.ch</a></li>
-        </ul>
-      </li>
-      <li>
-        <strong>Suisse-allemande :</strong>
-        <ul>
-          <li>1-2 semaines</li>
-          <li>en principe durant les vacances</li>
-          <li>gratuit (sauf frais de transport)</li>
-          <li>
-            <a href="http://www.movetia.ch/" rel="noreferrer" target="_blank">www.movetia.ch</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+
+    <div class="exchange-grid">
+      <article class="exchange-card">
+        <h3>Allemagne / Autriche</h3>
+        <dl>
+          <div>
+            <dt>Durée</dt>
+            <dd>2 semaines</dd>
+          </div>
+          <div>
+            <dt>Dates</dt>
+            <dd>selon destination</dd>
+          </div>
+          <div>
+            <dt>Voyage</dt>
+            <dd>accompagné</dd>
+          </div>
+          <div>
+            <dt>Coût</dt>
+            <dd>440.-</dd>
+          </div>
+        </dl>
+        <a class="text-link" href="http://www.elev.ch/" rel="noreferrer" target="_blank">www.elev.ch</a>
+      </article>
+
+      <article class="exchange-card">
+        <h3>Suisse-allemande</h3>
+        <dl>
+          <div>
+            <dt>Durée</dt>
+            <dd>1-2 semaines</dd>
+          </div>
+          <div>
+            <dt>Dates</dt>
+            <dd>en principe durant les vacances</dd>
+          </div>
+          <div>
+            <dt>Coût</dt>
+            <dd>gratuit, sauf frais de transport</dd>
+          </div>
+        </dl>
+        <a class="text-link" href="http://www.movetia.ch/" rel="noreferrer" target="_blank">www.movetia.ch</a>
+      </article>
+    </div>
   </section>
 
-  <section class="content-band" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact</h2>
-    <p>
-      N'hésitez pas à me contacter via ce formulaire si vous constatez une erreur ou que vous
-      aimeriez me suggérer d'ajouter du contenu supplémentaire.
-    </p>
+  <section class="content-band contact-panel" aria-labelledby="contact-title">
+    <div>
+      <p class="home-section-label">Message au prof</p>
+      <h2 id="contact-title">Contact</h2>
+      <p>
+        N'hésitez pas à me contacter via ce formulaire si vous constatez une erreur ou que vous aimeriez me suggérer
+        d'ajouter du contenu supplémentaire.
+      </p>
+    </div>
     <p>
       <a
         class="text-link"
