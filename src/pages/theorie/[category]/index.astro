@@ -33,6 +33,23 @@ const introLines = theoryCategoryIntros[category] ?? [];
     <SourceIntro lines={introLines} />
   </section>
 
+  {
+    category === 'conjugaison' && (
+      <section class="content-band">
+        <div class="prose">
+          <h2>103 verbes essentiels</h2>
+          <iframe
+            class="content-embed tall"
+            src="https://quizlet.com/355592036/learn/embed?i=g2phv&x=1jj1"
+            title="Quizlet - 103 verbes essentiels"
+            loading="lazy"
+            allowfullscreen
+          />
+        </div>
+      </section>
+    )
+  }
+
   <section class="content-band">
     <TheoryBox category={category}>
       <ResourceGrid entries={entries} />

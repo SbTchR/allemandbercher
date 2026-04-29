@@ -1,20 +1,162 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
-import ResourceGrid from '../../components/ResourceGrid.astro';
-import { byOrderThenTitle } from '../../lib/resources';
-
-const outils = (await getCollection('outils')).sort(byOrderThenTitle);
+import { withBase } from '../../lib/paths';
 ---
 
 <Layout title="Outils en ligne" description="Outils en ligne utiles pour apprendre l’allemand.">
   <section class="hero compact-hero">
     <p class="eyebrow">Ressources externes</p>
     <h1>Outils en ligne</h1>
-    <p class="lead">Liens et outils à vérifier puis intégrer proprement dans le futur site.</p>
+    <p class="lead">Pour s'entrainer efficacement et progresser rapidement...</p>
   </section>
 
   <section class="content-band">
-    <ResourceGrid entries={outils} />
+    <div class="prose">
+      <h2>Geni@l Klick online</h2>
+      <p>
+        Sur le site <a href="http://www.genialklick.ch/">www.genialklick.ch</a>, tu trouves des exercices
+        complémentaires en lien avec les chapitres de la méthode utilisée en classe.
+      </p>
+      <p>Il faut sélectionner ton année en haut de la page, puis le chapitre sur la gauche.</p>
+      <p>
+        Il y a presque à chaque fois 3 versions de chaque exercice, choisi donc la version qui correspond à ton niveau
+        (carré gris: niveau1, carré bleu clair: niveau 2, carré bleu foncé: VP).
+      </p>
+      <p>
+        Sous l'onglet "Hörtexte" en haut de la page, tu trouves également les fichiers audio pour les exercices de
+        l'Arbeitsbuch.
+      </p>
+
+      <h2>Nouvelle application "faite-maison" pour le voc</h2>
+      <p>
+        <a href="https://sites.google.com/view/vocallemand/accueil">Accéder à l'application de vocabulaire</a>
+      </p>
+
+      <h2>Quizlet</h2>
+      <p>
+        Le site internet <a href="http://www.quizlet.com/">www.quizlet.com</a>, aussi disponible sous forme
+        d'application pour smartphone, permet d'apprendre le vocabulaire à l'aide de différents exercices. Tout le
+        vocabulaire de la méthode Geni@l Klick y a été ajouté sous forme de listes par chapitre. Les mots sont écrits
+        au singulier et au pluriel en toutes lettres et les formes conjuguées des verbes aussi.
+      </p>
+      <p>Clique sur les liens suivant pour y accéder:</p>
+      <ul>
+        <li>
+          <a href="https://quizlet.com/Sbovat/folders/genil-klick-9h?x=1xqt&i=g2phv">Geni@l Klick 9H</a>
+        </li>
+        <li>
+          <a href="https://quizlet.com/Sbovat/folders/genil-klick-10-11h?x=1xqt&i=g2phv">Geni@l Klick 10H</a>
+        </li>
+        <li>
+          <a href="https://quizlet.com/Sbovat/folders/genil-klick-11h/sets">Geni@l Klick 11H</a>
+        </li>
+      </ul>
+
+      <h3>Inscription à une classe</h3>
+      <p>
+        Afin de profiter du suivi de progression et de voir directement les listes que tu es supposé travailler, il est
+        nécessaire de te créer un compte et d'adhérer à la classe virtuelle sur le site. Utilise ton prénom pour créer
+        ton pseudo pour que l'enseignant puisse savoir de quel élève il s'agit lorsqu'il doit accepter la demande
+        d'adhésion à la classe.
+      </p>
+      <p>Une fois ton compte créé, clique sur le lien qui correspond à ta classe et fais une demande d'adhésion.</p>
+
+      <h3>Utilisation</h3>
+      <p>Tu peux créer toi-même tes propres listes !</p>
+      <p>
+        En cliquant sur les petites étoiles à droites des mots, tu peux entrainer une petite partie du vocabulaire de la
+        liste à la fois. Une fois les mots sélectionner, il faut cliquer sur l'étoile turquoise à droite de "tout" en
+        haut de la liste.
+      </p>
+      <p>
+        Privilégie les modes "apprendre" et "écrire" pour apprendre efficacement. Les jeux "associer" et "gravité" sont
+        certes plus ludiques mais peu adaptés à l'apprentissage du voc.
+      </p>
+      <p>Télécharge l'application pour réviser dès que tu as un petit moment !</p>
+
+      <h2>Duolingo</h2>
+      <p>
+        Le site internet <a href="http://www.duolingo.com/">www.duolingo.com</a>, aussi disponible sous forme
+        d'application, permet d'entrainer les structures de la langue tout en apprenant du vocabulaire de manière
+        instinctive et très ludique. C'est un très bon complément au cours d'allemand car il permet de développer la
+        spontanéité le côté "instinctif" de la langue.
+      </p>
+
+      <h2>Dictionnaires en ligne</h2>
+      <h3><a href="http://www.leo.org/">www.leo.org</a></h3>
+      <p>
+        Ce dictionnaire en ligne est très complet et possède un forum de discussion pour la traduction d'expressions
+        spécifiques ou l'utilisation contextuelle des différentes traductions d'un mot. Il existe aussi sous forme
+        d'application.
+      </p>
+
+      <h3><a href="http://www.pons.com/">www.pons.com</a></h3>
+      <p>Ce dictionnaire est aussi très complet et propose aussi des exemples d'expressions, mais pas de forum.</p>
+
+      <h3><a href="http://translate.google.com/">translate.google.com</a></h3>
+      <p>
+        Il faut l'avouer, cet outil est très performant, mais il faut savoir l'utiliser. Pour obtenir une bonne
+        traduction du français à l'allemand, il faut faire très attention à la formulation de ses phrases en français
+        (ne pas utiliser d'expressions spécifiques, orthographe parfaitement correcte, éviter les phrases trop longues
+        ou trop complexes, etc.). C'est pourquoi il n'est pas recommandé de l'utiliser pour la traduction du français
+        vers l'allemand à ton niveau !
+      </p>
+      <p>
+        Pour la traduction d'un mot seul, il est aussi très limité. L'intelligence artificielle de google est efficace
+        pour la traduction en contexte (phrases, texte), mais google ne propose qu'une traduction lorsqu'on y entre un
+        mot seul.
+      </p>
+      <p>
+        Utilisation intelligente de google traduction: Lorsque tu veux comprendre rapidement le contenu d'un site
+        internet en allemand par exemple, tu peux copier-coller le texte en allemand et lire la traduction en français,
+        mais cela ne va pas te faire travailler la compréhension écrite...
+      </p>
+
+      <h2>Nico's Weg - des vidéos pour chaque thème</h2>
+      <p>
+        Créée par Deutsche Welle, cette série te propose de suivre les aventures de Nico, une jeune homme qui décide de
+        partir en Allemagne rendre visite à sa tante alors qu'il ne connait pas un mot d'allemand. Les épisodes sont
+        très courts et axés chacun sur un thème spécifique. Des exercices de compréhension écrite et orale, de
+        vocabulaire et de grammaire sont à faire en ligne (et auto-corrigés) après chaque vidéo.
+      </p>
+      <p>
+        Cette série est accessible à tous les niveaux, elle commence avec les bases élémentaires. Il est possible de
+        sauter des épisodes mais il vaut mieux les regarder à la suite pour bien comprendre l'histoire.
+      </p>
+      <p>Le site existe aussi sous forme d'application pour smartphone !</p>
+      <ul>
+        <li>
+          <a href="https://learngerman.dw.com/en/beginners/c-36519789">Débutant - A1, niveau début 9H</a>
+        </li>
+        <li>
+          <a href="https://learngerman.dw.com/en/beginners-with-prior-knowledge/c-36519797">
+            Intermédiaire - A2, niveau 9-10H
+          </a>
+        </li>
+        <li>
+          <a href="https://learngerman.dw.com/en/fortgeschrittene/c-36519718">Avancé - B1, niveau 11H</a>
+        </li>
+      </ul>
+
+      <h2>Applications pour smartphone</h2>
+      <ul>
+        <li>duolingo</li>
+        <li>quizlet</li>
+        <li>leo</li>
+        <li>DWLearnGerman, Nico's Weg en version smartphone</li>
+        <li>
+          Mein Weg nach Deutschland (vidéos et exercices sur les besoins de la vie quotidienne en Allemagne, p. ex.
+          faire un abo de téléphone, trouver des amis, postuler pour un travail, ...)
+        </li>
+        <li>Lernabenteuer Deutsch (B1, escape game pour apprendre à chercher un logement, un travail, etc. en Allemagne)</li>
+        <li>LyricsTraining (entraine ton allemand avec les paroles de tes chansons préférées, super fun!)</li>
+        <li>Chatgpt ou Google Gemini (idéal pour entrainer l'expression orale grâce au chat vocal)</li>
+      </ul>
+
+      <h2>NAD-Maschine</h2>
+      <p>
+        <a href={withBase('/outils-en-ligne/nad-maschine/')}>Accéder à la NAD-Maschine</a>
+      </p>
+    </div>
   </section>
 </Layout>

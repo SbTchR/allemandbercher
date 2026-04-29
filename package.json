@@ -14,7 +14,8 @@
     "content:generate": "node scripts/migrate-content-from-audit.mjs",
     "content:migrate": "node scripts/migrate-content-from-audit.mjs",
     "urls:map": "node scripts/generate-url-map.mjs",
-    "links:check": "node scripts/check-internal-links.mjs"
+    "links:check": "node scripts/check-internal-links.mjs",
+    "content:audit": "node scripts/audit-content-completeness.mjs"
   },
   "dependencies": {
     "astro": "^6.1.9"
