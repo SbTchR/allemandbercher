@@ -39,13 +39,9 @@ body {
   color: var(--text);
   line-height: 1.6;
   background:
-    linear-gradient(90deg, rgba(15, 26, 49, 0.028) 1px, transparent 1px),
-    linear-gradient(rgba(15, 26, 49, 0.025) 1px, transparent 1px),
     linear-gradient(135deg, rgba(255, 201, 40, 0.18) 0 10%, transparent 10% 100%),
     linear-gradient(180deg, #eef6ff 0%, #f7fbff 48%, #fff7df 100%);
   background-size:
-    36px 36px,
-    36px 36px,
     100% 100%,
     100% 100%;
   background-attachment: fixed;
@@ -56,28 +52,17 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='760' height='520' viewBox='0 0 760 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23152649' stroke-width='2' stroke-linecap='round' opacity='.105'%3E%3Cpath d='M-30 116C72 44 142 42 244 104s169 68 274 24 170-23 273 54'/%3E%3Cpath d='M-24 176c130-58 236-47 318 34s191 76 286 13 143-62 216-7'/%3E%3Cpath d='M38 405c83-72 169-75 259-8s190 72 286 8 150-62 208 12'/%3E%3Cpath d='M95 72c39 34 34 82-13 115s-34 82 38 105'/%3E%3Cpath d='M642 38c-44 29-58 68-40 116s5 92-38 131'/%3E%3C/g%3E%3Cg fill='none' stroke='%23d90429' stroke-width='2.4' stroke-linecap='round' stroke-dasharray='10 14' opacity='.14'%3E%3Cpath d='M58 332c90-54 171-58 243-11s139 54 201 20 116-29 170 14'/%3E%3C/g%3E%3Cg fill='none' stroke='%23ffc928' stroke-width='3' stroke-linecap='round' opacity='.18'%3E%3Cpath d='M122 238c34-28 70-31 108-8s75 19 112-12'/%3E%3Cpath d='M502 108c35 24 75 27 120 8s81-10 109 25'/%3E%3C/g%3E%3Cg fill='%23152649' opacity='.10'%3E%3Cpath d='M178 342l11 19-22 0z'/%3E%3Cpath d='M585 263l9 16-18 0z'/%3E%3C/g%3E%3Cg fill='%23d90429' opacity='.16'%3E%3Cpath d='M410 70l11 11-11 11-11-11z'/%3E%3Cpath d='M681 390l10 10-10 10-10-10z'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 760px 520px;
-  opacity: 1;
+  background-image: url("../../backgroundmap.svg");
+  background-position: center top;
+  background-repeat: repeat-y;
+  background-size: min(1700px, 180vw) auto;
+  mix-blend-mode: multiply;
+  opacity: 0.16;
   content: "";
 }
 
 body::after {
-  position: fixed;
-  right: 5vw;
-  bottom: 4vh;
-  z-index: -1;
-  width: 170px;
-  height: 170px;
-  pointer-events: none;
-  border: 2px solid rgba(15, 26, 49, 0.05);
-  border-radius: 22px;
-  background:
-    linear-gradient(45deg, transparent 48%, rgba(217, 4, 41, 0.07) 48% 52%, transparent 52%),
-    linear-gradient(-45deg, transparent 48%, rgba(255, 201, 40, 0.12) 48% 52%, transparent 52%);
-  opacity: 0.7;
-  content: "";
+  content: none;
 }
 
 a {
@@ -873,12 +858,43 @@ h2 {
   padding: 22px 0 12px;
 }
 
+.resource-header-with-callout {
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 330px);
+  align-items: center;
+  max-width: none;
+  gap: 28px;
+}
+
+.resource-title-block {
+  display: grid;
+  gap: 14px;
+}
+
 .resource-header h1 {
   font-size: clamp(2rem, 5vw, 4.25rem);
 }
 
 .resource-header .lead {
   margin-bottom: 0;
+}
+
+.resource-header .objective-box {
+  align-self: center;
+  padding: 20px 22px;
+  border-color: rgba(15, 26, 49, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 201, 40, 0.26), transparent 38%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(246, 249, 255, 0.84));
+  box-shadow: 0 10px 0 rgba(15, 26, 49, 0.08), 0 20px 36px rgba(21, 36, 72, 0.12);
+  transform: rotate(1.2deg);
+}
+
+.resource-header .objective-box h2 {
+  margin-bottom: 10px;
+}
+
+.resource-header .objective-box li {
+  line-height: 1.35;
 }
 
 .resource-layout {
@@ -1098,6 +1114,13 @@ h2 {
 
 .content-embed.tall {
   min-height: 760px;
+}
+
+.content-embed.integrated-exercise {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .objective-box h2,
@@ -1321,12 +1344,14 @@ h2 {
 
 @media (max-width: 980px) {
   .home-hero,
+  .resource-header-with-callout,
   .home-info-grid,
   .contact-panel {
     grid-template-columns: 1fr;
   }
 
-  .hero-callout {
+  .hero-callout,
+  .resource-header .objective-box {
     width: min(100%, 420px);
     transform: rotate(0deg);
   }
