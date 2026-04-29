@@ -15,37 +15,37 @@ Par verbe « principal », on entend le verbe qui est conjugué avec le sujet (i
 
 Rappel: Une phrase est composée de plusieurs groupes grammaticaux.
 
-le verbe
+**le verbe**
 
-le sujet
+**le sujet**
 
-le complément du verbe direct (CVD)
+**le complément du verbe direct (CVD)**
 
-le complément du verbe indirect (CVI)
+**le complément du verbe indirect (CVI)**
 
-le groupe prépositionnel
+**le groupe prépositionnel**
 
 Chaque groupe occupe une position dans la phrase.
 
 En allemand, le verbe a une position bien précise selon le type de la phrase.
 
-Voici les différents types de phrases:
+## Voici les différents types de phrases:
 
-la phrase affirmative (normale)
+**la phrase affirmative (normale)**
 
-la question
+**la question**
 
-la phrase impérative (ordre)
+**la phrase impérative (ordre)**
 
-la subordonnée (phrase dans la phrase)
+**la subordonnée (phrase dans la phrase)**
 
 ⚠️Dans une phrase affirmative, le verbe se place toujours en 2 ème position !
 
 Ces 3 types de phrases sont détaillés sur des pages spécifiques (clique sur les mots soulignés).
 
-Exemples:
+## Exemples:
 
-Phrase basique ( Sujet - Verbe - CVD)
+## Phrase basique ( Sujet - Verbe - CVD)
 
 Der Schüler vergisst sein Buch.
 
@@ -53,7 +53,7 @@ Der Schüler vergisst sein Buch.
 
 —> 2ème position: « vergisst » (= verbe au présent)
 
-Phrase avec complément de temps
+## Phrase avec complément de temps
 
 Heute vergisst der Schüler sein Buch.
 
@@ -63,7 +63,7 @@ Heute vergisst der Schüler sein Buch.
 
 ⚠️Dans les phrases qui contiennent plusieurs formes verbales (p. ex. au passé composé ou avec un verbe de modalité ), c’est le verbe qui est conjugué avec le sujet qui est mis en 2ème position!
 
-Phrase basique au passé composé
+## Phrase basique au passé composé
 
 Der Schüler hat sein Buch vergessen.
 
@@ -71,7 +71,7 @@ Der Schüler hat sein Buch vergessen.
 
 —> suite dans le même ordre mais participe passé à la fin (vergessen)
 
-## Le principe est le même pour tous les types de phrases:
+Le principe est le même pour tous les types de phrases:
 
 Passé composé avec complément: Gestern hat der Schüler sein Buch vergessen.
 
@@ -82,3 +82,7 @@ Verbe de modalité avec complément: Heute will der Schüler nicht in die Schule
 etc.
 
 ## Exercice
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5267113-place_du_verbe_principal.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

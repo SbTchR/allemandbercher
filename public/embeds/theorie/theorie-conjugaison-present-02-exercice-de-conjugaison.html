@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Exercice de conjugaison</title>
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(to bottom right, rgba(255,228,196,0.5), rgba(255,215,0,0.3));
+        color: #333;
+        margin: 20px;
+    }
+    h1, h2, h3 {
+        font-weight: 600;
+    }
+    .exercise-container {
+        max-width: 900px;
+        margin: auto;
+        background: rgba(255,255,255,0.6);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 15px;
+    }
+    .instructions {
+        margin-bottom: 20px;
+    }
+
+    .story-container {
+        margin-bottom: 40px;
+        background: rgba(255,255,255,0.4);
+        padding: 15px;
+        border-radius: 10px;
+        position: relative;
+    }
+
+    .word, .verb-list span {
+        position: relative;
+        cursor: help;
+        display: inline-block;
+    }
+
+    /* Tooltip style */
+    .word:hover::after, .verb-list span:hover::after, .infinitive:hover::after {
+        content: attr(data-translation);
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0,0,0,0.75);
+        color: #fff;
+        padding: 5px 8px;
+        border-radius: 5px;
+        white-space: nowrap;
+        z-index: 999;
+        font-size: 0.9em;
+        pointer-events: none;
+    }
+
+    .word:hover::before, .verb-list span:hover::before, .infinitive:hover::before {
+        content: '';
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: rgba(0,0,0,0.75);
+        z-index: 998;
+    }
+
+    .infinitive-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .verb-list {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .verb-list span {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .story-text {
+        line-height: 1.6;
+    }
+
+    input[type="text"] {
+        width: 80px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 3px 5px;
+        font-size: 1em;
+    }
+
+    input[type="text"].incorrect {
+        border-color: red;
+    }
+    input[type="text"].correct {
+        border-color: green;
+    }
+    input[type="text"]:disabled {
+        background: #eee;
+        color: #555;
+    }
+
+    .validate-button {
+        background: #FFA500;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 2px 5px;
+        margin-left: 5px;
+    }
+
+    .validate-button:disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    .score-container {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.2em;
+    }
+
+    .final-score {
+        margin-top: 20px;
+        background: rgba(255,255,255,0.4);
+        padding: 10px;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="exercise-container">
+    <h1>Exercice de conjugaison allemande</h1>
+    <div class="instructions">
+        <p><strong>Consigne :</strong> Conjugue correctement les verbes au présent en allemand dans les 4 histoires. Complète les champs de texte avec la bonne forme du verbe. Trois tentatives par verbe. Au bout de trois tentatives échouées, la réponse correcte s’affichera. Survole un mot ou un verbe avec la souris pour voir sa traduction.</p>
+    </div>
+
+    <!-- Histoire 1 -->
+    <h2>Histoire 1</h2>
+    <div class="infinitive-list">
+        <div class="verb-list">
+            <span class="infinitive" data-translation="aller">gehen</span>
+            <span class="infinitive" data-translation="aimer (apprécier)">mögen</span>
+            <span class="infinitive" data-translation="trouver">finden</span>
+            <span class="infinitive" data-translation="apprendre">lernen</span>
+        </div>
+        <div class="verb-list">
+            <span class="infinitive" data-translation="jouer">spielen</span>
+            <span class="infinitive" data-translation="avoir">haben</span>
+            <span class="infinitive" data-translation="demander">fragen</span>
+            <span class="infinitive" data-translation="s'appeler">heißen</span>
+            <span class="infinitive" data-translation="répondre">antworten</span>
+        </div>
+    </div>
+    <div class="story-container">
+        <p class="story-text">
+            <span class="word" data-translation="Anna (nom propre)">Anna</span> 
+            <span class="word" data-translation="et">und</span> 
+            <span class="word" data-translation="Paul (nom propre)">Paul</span> 
+            <input type="text" data-answer="gehen" placeholder="g"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="chaque">jeden</span> 
+            <span class="word" data-translation="matin">Morgen</span> 
+            <span class="word" data-translation="à la (vers la)">zur</span> 
+            <span class="word" data-translation="école">Schule.</span> 
+            <span class="word" data-translation="Anna (nom propre)">Anna</span> 
+            <input type="text" data-answer="mag" data-alt="mögen" placeholder="m"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="Maths">Mathe,</span> 
+            <span class="word" data-translation="mais">aber</span> 
+            <span class="word" data-translation="Paul (nom propre)">Paul</span> 
+            <input type="text" data-answer="findet" data-alt="finden" placeholder="f"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="Sport">Sport</span>
+            <span class="word" data-translation="mieux">besser.</span>
+            <span class="word" data-translation="Dans">In</span> 
+            <span class="word" data-translation="l' (datif fém.)">der</span> 
+            <span class="word" data-translation="école">Schule</span> 
+            <input type="text" data-answer="lernen" placeholder="l"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="ils/elles">sie</span>
+            <span class="word" data-translation="ensemble">zusammen.</span>
+            <span class="word" data-translation="Après">Nach</span> 
+            <span class="word" data-translation="l' (datif fém.)">der</span> 
+            <span class="word" data-translation="école">Schule</span> 
+            <input type="text" data-answer="spielen" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="ils/elles">sie</span>
+            <span class="word" data-translation="dans le">im</span> 
+            <span class="word" data-translation="parc">Park.</span> 
+            <span class="word" data-translation="Anna (nom propre)">Anna</span> 
+            <input type="text" data-answer="hat" data-alt="haben" placeholder="h"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="un (acc.)">einen</span> 
+            <span class="word" data-translation="chien">Hund,</span> 
+            <span class="word" data-translation="qui">der</span> 
+            <span class="word" data-translation="souvent">oft</span> 
+            <span class="word" data-translation="vient avec">mitkommt.</span>
+            <span class="word" data-translation="Paul (nom propre)">Paul</span> 
+            <input type="text" data-answer="fragt" data-alt="fragen" placeholder="f"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="Anna (nom propre)">Anna:</span> 
+            <span class="word" data-translation="Comment">"Wie</span> 
+            <input type="text" data-answer="heißt" data-alt="heißen" placeholder="h"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="ton">dein</span> 
+            <span class="word" data-translation="chien">Hund?"</span> 
+            <span class="word" data-translation="Anna (nom propre)">Anna</span> 
+            <input type="text" data-answer="antwortet" data-alt="antworten" placeholder="a"> <button class="validate-button">✔</button>
+            <span class="word" data-translation=":">:</span> 
+            <span class="word" data-translation="Max (nom propre)">"Max."</span>
+        </p>
+    </div>
+
+    <!-- Histoire 2 -->
+    <h2>Histoire 2</h2>
+    <div class="infinitive-list">
+        <div class="verb-list">
+            <span class="infinitive" data-translation="acheter">kaufen</span>
+            <span class="infinitive" data-translation="dire">sagen</span>
+            <span class="infinitive" data-translation="prendre">nehmen</span>
+        </div>
+        <div class="verb-list">
+            <span class="infinitive" data-translation="laver">waschen</span>
+            <span class="infinitive" data-translation="couper">schneiden</span>
+            <span class="infinitive" data-translation="manger">essen</span>
+        </div>
+    </div>
+    <div class="story-container">
+        <p class="story-text">
+            <span class="word" data-translation="Je (1ère pers. sing.)">Ich</span>
+            <input type="text" data-answer="kaufe" data-alt="kaufen" placeholder="k"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="fruits">Obst</span>
+            <span class="word" data-translation="et">und</span>
+            <span class="word" data-translation="légumes">Gemüse</span>
+            <span class="word" data-translation="sur le">auf dem</span>
+            <span class="word" data-translation="marché">Markt.</span>
+            <span class="word" data-translation="Le vendeur">Der Verkäufer</span>
+            <input type="text" data-answer="sagt" data-alt="sagen" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation=":">:</span>
+            <span class="word" data-translation="Pommes fraîches">"Frische Äpfel</span>
+            <span class="word" data-translation="sont">sind</span>
+            <span class="word" data-translation="en promotion">im Angebot!"</span>
+            <span class="word" data-translation="Je">Ich</span>
+            <input type="text" data-answer="nehme" data-alt="nehmen" placeholder="n"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="deux">zwei</span>
+            <span class="word" data-translation="kilos">Kilo.</span>
+            <span class="word" data-translation="A la maison">Zu Hause</span>
+            <input type="text" data-answer="wasche" data-alt="waschen" placeholder="w"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="je (1ère pers.)">ich</span>
+            <span class="word" data-translation="les (acc.)">die</span>
+            <span class="word" data-translation="pommes">Äpfel</span>
+            <span class="word" data-translation="et">und</span>
+            <input type="text" data-answer="schneide" data-alt="schneiden" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="je (1ère pers.)">sie</span>
+            <span class="word" data-translation="en">in</span>
+            <span class="word" data-translation="morceaux">Stücke.</span>
+            <span class="word" data-translation="Mon frère">Mein Bruder</span>
+            <input type="text" data-answer="isst" data-alt="essen" placeholder="e"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="les (acc.)">sie</span>
+            <span class="word" data-translation="volontiers">gern</span>
+            <span class="word" data-translation="avec">mit</span>
+            <span class="word" data-translation="miel">Honig.</span>
+        </p>
+    </div>
+
+    <!-- Histoire 3 -->
+    <h2>Histoire 3</h2>
+    <div class="infinitive-list">
+        <div class="verb-list">
+            <span class="infinitive" data-translation="courir">rennen</span>
+            <span class="infinitive" data-translation="s'asseoir">sitzen</span>
+            <span class="infinitive" data-translation="sauter">springen</span>
+        </div>
+        <div class="verb-list">
+            <span class="infinitive" data-translation="parler">reden</span>
+            <span class="infinitive" data-translation="tomber">fallen</span>
+            <span class="infinitive" data-translation="rire">lachen</span>
+        </div>
+    </div>
+    <div class="story-container">
+        <p class="story-text">
+            <span class="word" data-translation="Les enfants">Die Kinder</span>
+            <input type="text" data-answer="rennen" placeholder="r"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="au">zum</span>
+            <span class="word" data-translation="terrain de jeux">Spielplatz.</span>
+            <span class="word" data-translation="Lisa (nom propre)">Lisa</span>
+            <input type="text" data-answer="sitzt" data-alt="sitzen" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="sur">auf</span>
+            <span class="word" data-translation="la balançoire">der Schaukel,</span>
+            <span class="word" data-translation="et">und</span>
+            <span class="word" data-translation="Max (nom propre)">Max</span>
+            <input type="text" data-answer="springt" data-alt="springen" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="sur le">auf das</span>
+            <span class="word" data-translation="portique d'escalade">Klettergerüst.</span>
+            <span class="word" data-translation="Leurs">Ihre</span>
+            <span class="word" data-translation="parents">Eltern</span>
+            <input type="text" data-answer="reden" placeholder="r"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="sur un (banc)">auf einer Bank.</span>
+            <span class="word" data-translation="Max (nom propre)">Max</span>
+            <input type="text" data-answer="fällt" data-alt="fallen" placeholder="f"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="soudainement">plötzlich,</span>
+            <span class="word" data-translation="mais">aber</span>
+            <span class="word" data-translation="il">er</span>
+            <input type="text" data-answer="lacht" data-alt="lachen" placeholder="l"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="fort">laut</span>
+            <span class="word" data-translation='et dit: "Ça fait plaisir!"'>und sagt: "Das macht Spaß!"</span>
+        </p>
+    </div>
+
+    <!-- Histoire 4 -->
+    <h2>Histoire 4</h2>
+    <div class="infinitive-list">
+        <div class="verb-list">
+            <span class="infinitive" data-translation="regarder">schauen</span>
+            <span class="infinitive" data-translation="écrire">schreiben</span>
+            <span class="infinitive" data-translation="cuisiner">kochen</span>
+        </div>
+        <div class="verb-list">
+            <span class="infinitive" data-translation="mettre la table">decken</span>
+            <span class="infinitive" data-translation="jouer">spielen</span>
+            <span class="infinitive" data-translation="gagner">gewinnen</span>
+            <span class="infinitive" data-translation="sourire">lächeln</span>
+        </div>
+    </div>
+    <div class="story-container">
+        <p class="story-text">
+            <span class="word" data-translation="Le soir">Am Abend</span>
+            <input type="text" data-answer="schauen" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="nous">wir</span>
+            <span class="word" data-translation="un">einen</span>
+            <span class="word" data-translation="film">Film.</span>
+            <span class="word" data-translation="Ma sœur">Meine Schwester</span>
+            <input type="text" data-answer="schreibt" data-alt="schreiben" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="un message">eine Nachricht</span>
+            <span class="word" data-translation="à sa">an ihre</span>
+            <span class="word" data-translation="amie (f.)">Freundin.</span>
+            <span class="word" data-translation="Maman">Mama</span>
+            <input type="text" data-answer="kocht" data-alt="kochen" placeholder="k"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="spaghetti">Spaghetti,</span>
+            <span class="word" data-translation="et">und</span>
+            <span class="word" data-translation="Papa">Papa</span>
+            <input type="text" data-answer="deckt" data-alt="decken" placeholder="d"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="la table">den Tisch.</span>
+            <span class="word" data-translation="Après le repas">Nach dem Essen</span>
+            <input type="text" data-answer="spielen" placeholder="s"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="nous">wir</span>
+            <span class="word" data-translation="un">ein</span>
+            <span class="word" data-translation="jeu de cartes">Kartenspiel.</span>
+            <span class="word" data-translation="Qui">"Wer</span>
+            <input type="text" data-answer="gewinnt" data-alt="gewinnen" placeholder="g"> <button class="validate-button">✔</button>
+            <span class="word" data-translation="aujourd'hui?">heute?"</span>
+            <span class="word" data-translation='je demande'>frage ich.</span>
+            <span class="word" data-translation="Papa">Papa</span>
+            <input type="text" data-answer="lächelt" data-alt="lächeln" placeholder="l"> <button class="validate-button">✔</button>
+            <span class="word" data-translation=': "Moi!"'>: "Ich!"</span>
+        </p>
+    </div>
+
+    <div class="score-container">
+        <button id="show-score" style="background:#FFA500;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;">Afficher le score</button>
+        <div class="final-score" style="display:none;">
+            <p>Verbes trouvés au 1er essai : <span id="score-first"></span></p>
+            <p>Verbes trouvés au 2ème essai : <span id="score-second"></span></p>
+            <p>Verbes trouvés au 3ème essai : <span id="score-third"></span></p>
+            <p>Verbes non trouvés (solutions affichées) : <span id="score-fail"></span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+// Gestion des tentatives, de la validation et du score
+
+// Chaque input a data-answer qui indique la forme attendue du verbe
+// data-alt (optionnel) indique le verbe infinitif dont la réponse dérive (utile pour s'assurer de la bonne forme)
+
+// 3 tentatives par input
+// Après 3 erreurs, on affiche la solution et on désactive l'input
+// On track combien de tentatives ont été nécessaires
+
+const inputs = document.querySelectorAll('input[type="text"]');
+const buttons = document.querySelectorAll('.validate-button');
+let attemptData = []; // stocke {input: HTMLElement, attempts: number, solved: boolean}
+
+inputs.forEach((inp, index) => {
+    attemptData.push({input: inp, attempts: 0, solved: false});
+});
+
+buttons.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+        const relatedInput = attemptData[i].input;
+        const expected = relatedInput.dataset.answer;
+        const userVal = relatedInput.value.trim();
+        if (attemptData[i].solved || relatedInput.disabled) return; // déjà résolu
+
+        attemptData[i].attempts++;
+        if (userVal.toLowerCase() === expected.toLowerCase()) {
+            // correct
+            relatedInput.classList.remove('incorrect');
+            relatedInput.classList.add('correct');
+            attemptData[i].solved = true;
+            btn.disabled = true;
+        } else {
+            // incorrect
+            relatedInput.classList.remove('correct');
+            relatedInput.classList.add('incorrect');
+            if (attemptData[i].attempts >= 3) {
+                // montrer la solution
+                relatedInput.value = expected;
+                relatedInput.disabled = true;
+                btn.disabled = true;
+            }
+        }
+    });
+});
+
+document.getElementById('show-score').addEventListener('click', () => {
+    let firstTry = 0;
+    let secondTry = 0;
+    let thirdTry = 0;
+    let failed = 0;
+
+    attemptData.forEach(item => {
+        if (item.solved) {
+            if (item.attempts === 1) firstTry++;
+            else if (item.attempts === 2) secondTry++;
+            else if (item.attempts === 3) thirdTry++;
+        } else {
+            // Non résolu => après 3 tentatives, solution affichée
+            if (item.attempts >= 3 && !item.solved) {
+                failed++;
+            }
+        }
+    });
+
+    document.getElementById('score-first').textContent = firstTry;
+    document.getElementById('score-second').textContent = secondTry;
+    document.getElementById('score-third').textContent = thirdTry;
+    document.getElementById('score-fail').textContent = failed;
+
+    document.querySelector('.final-score').style.display = 'block';
+});
+</script>
+
+</body>
+</html>

@@ -11,13 +11,13 @@ images: []
 migrationNotes: []
 ---
 
-Subordonnées
+## Subordonnées
 
-trotzdem = malgré que
+**trotzdem = malgré que**
 
-deshalb = c’est pourquoi
+**deshalb = c’est pourquoi**
 
-also = donc, alors
+**also = donc, alors**
 
 Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
 
@@ -27,7 +27,7 @@ Contrairement à « und, aber, denn et also », ces subordonnant comptent pour u
 
 Exemples: Ich habe ein gute Note, deshalb bin ich glücklich.
 
-p.1 p.2 p.1 p.2
+**p.1 p.2 p.1 p.2**
 
 Das Eis ist teuer, trotzdem kaufe ich es.
 
@@ -36,3 +36,7 @@ PS: Le mot « trotzdem » peut aussi signifier « quand même » et ainsi être 
 Exemple: Ich bin krank, aber ich gehe trotzdem in die Schule.
 
 ## Exercice
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447822-trotzdem_deshalb.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

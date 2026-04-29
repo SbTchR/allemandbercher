@@ -648,6 +648,22 @@ h2 {
   color: var(--ink);
 }
 
+.source-intro {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.source-intro .intro-prompt {
+  width: fit-content;
+  margin: 0.25rem 0 0.4rem;
+  padding: 10px 13px;
+  border: 2px solid rgba(255, 201, 40, 0.48);
+  border-radius: 12px;
+  background: rgba(255, 201, 40, 0.18);
+  color: var(--ink);
+  font-weight: 900;
+}
+
 .prose :where(blockquote) {
   margin: 1.25em 0;
   padding: 16px 18px;

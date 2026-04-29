@@ -2,7 +2,9 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
 import ResourceGrid from '../../components/ResourceGrid.astro';
+import SourceIntro from '../../components/SourceIntro.astro';
 import TheoryBox from '../../components/TheoryBox.astro';
+import { theoryLandingIntro } from '../../data/theoryPages';
 import { byCategoryThenOrder } from '../../lib/resources';
 
 const entries = (await getCollection('theorie')).sort(byCategoryThenOrder);
@@ -17,7 +19,11 @@ const categories = [
   <section class="hero compact-hero">
     <p class="eyebrow">Références</p>
     <h1>Théorie</h1>
-    <p class="lead">Les notions sont classées en trois blocs simples pour trouver rapidement une explication.</p>
+    <p class="lead">Rappels de grammaire, syntaxe et conjugaison pour le cours d’allemand.</p>
+  </section>
+
+  <section class="content-band">
+    <SourceIntro lines={theoryLandingIntro} />
   </section>
 
   {

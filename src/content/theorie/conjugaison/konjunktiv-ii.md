@@ -1,14 +1,15 @@
 ---
 title: "Konjunktiv II"
-description: "Le Konjunktiv II est employé pour exprimer la condition ou l’irréalité (p. ex. un souhait). On l’utilise aussi au discours indirect et dans des formulations particulièrement pol..."
+description: "Le Konjunktiv II est employé pour exprimer la condition ou l’irréalité (p. ex. un souhait). On l’utilise aussi au discours indirect et dans des formulations particulièrement polies. Il est souvent traduit en français par le conditionnel ."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/konjunktiv-ii"
 pageType: "theorie"
 objectives: []
-externalLinks: 
-  - url: "https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel"
-images: []
+externalLinks: []
+images: 
+  - src: "../../../assets/source-site/theorie/theorie-conjugaison-konjunktiv-ii-1.png"
+    alt: "Image 1 - Konjunktiv II"
 migrationNotes: []
 ---
 
@@ -26,37 +27,37 @@ Könntest du mir dein Buch leihen, bitte ?
 
 formule polie
 
-## Le Konjunktiv II dans le présent
+Le Konjunktiv II dans le présent
 
 Il y a deux possibilités pour former ce temps verbal.
 
-## La forme conjuguée
+La forme conjuguée
 
 On forme le Konjunktiv II à partir du prétérit (imparfait) du verbe. On rattache au radical du prétérit la terminaison du Konjunktiv II (voir le tableau ci-dessous). Les verbes irréguliers prennent un Umlaut .
 
-Ex. er fand —> er f ä nd e er ging —> er ging e er fuhr —> er f ü hr e
+**Ex. er fand —> er f ä nd e er ging —> er ging e er fuhr —> er f ü hr e**
 
-## La forme avec würden + Infinitiv
+La forme avec würden + Infinitiv
 
 Les verbes réguliers et les verbes mixtes ne se distinguent pas au Konjunktiv II du prétérit. Pour éviter une confusion, on forme habituellement leur Konjunktiv II avec würden (Konjunktiv II de werden ) et le verbe à l’infinitif. Bien sûr, l’infinitif vient se placer à la fin de la phrase.
 
-Ex. er machte —> er würde … machen er wartete —> er würde … warten
+**Ex. er machte —> er würde … machen er wartete —> er würde … warten**
 
 Par ailleurs, on emploie aussi souvent à l’oral la forme avec würden pour de nombreux verbes irréguliers.
 
-Ex. er ginge / würde … gehen er führe / würde … fahren
+**Ex. er ginge / würde … gehen er führe / würde … fahren**
 
 ## Conjugaison
 
-## Le Konjunktiv II dans le passé
+Le Konjunktiv II dans le passé
 
 Pour exprimer une situation irréelle au passé, on utilise l’auxiliaire sein ou haben au Konjunktiv II, suivi du participe passé.
 
-Ex. er hätte gesagt ich wäre gefahren
+**Ex. er hätte gesagt ich wäre gefahren**
 
 il aurait dit je serais allé
 
-## La phrase conditionnelle
+La phrase conditionnelle
 
 Comme en allemand on utilise le Konjunktiv II autant pour une condition que pour une irréalité, il faut noter une différence d’utilisation des temps verbaux entre le français et l’allemand.
 
@@ -77,3 +78,18 @@ Wenn ich gestern Abend Zeit gehabt hätte , wäre ich ins Kino gegangen .
 Konj. II. du passé Konj. II du passé
 
 Übungen
+
+## Liens externes conservés
+
+- [https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel](https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel)
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332730-konjunktiv_ii_a.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="../../../embeds/theorie/theorie-conjugaison-konjunktiv-ii-02-konjunktiv-ii-kapitel-5-texte-a-trous.html" title="Konjunktiv II – Kapitel 5 (Texte à trous)" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332744-konjunktiv_ii_b.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332784-konjunktiv_ii_c.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332813-konjunktiv_ii_d.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

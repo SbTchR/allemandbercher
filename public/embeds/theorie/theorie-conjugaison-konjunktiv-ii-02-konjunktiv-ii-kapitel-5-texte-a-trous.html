@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Konjunktiv II – Kapitel 5 (Texte à trous)</title>
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --ok:#16a34a;
+      --bad:#dc2626;
+      --btn:#4CAF50;
+      --btn2:#2563eb;
+      --shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .header{
+      max-width: 980px;
+      margin: 28px auto 14px;
+      padding: 0 16px;
+      text-align:center;
+    }
+    h1{ margin:0 0 8px; font-size:26px; }
+    .subtitle{
+      margin: 0 auto;
+      max-width: 920px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 18px auto 34px;
+      padding: 0 16px;
+    }
+
+    .scorebar{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      justify-content:space-between;
+      margin: 12px 0 14px;
+    }
+    .score{
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .hint{
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.3;
+      max-width: 700px;
+    }
+
+    .toolbar{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content:center;
+      margin: 12px 0 18px;
+    }
+    button{
+      border:none;
+      border-radius: 10px;
+      padding: 12px 16px;
+      cursor:pointer;
+      font-size: 16px;
+      box-shadow: var(--shadow);
+    }
+    #reset{
+      background: var(--btn2);
+      color:white;
+    }
+    #reset:hover{ filter: brightness(0.95); }
+
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+
+    .item{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .item-top{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .num{
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #eef2ff;
+      color: #3730a3;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:bold;
+    }
+    .content{ flex:1 1 auto; min-width:0; }
+
+    .fr{
+      margin: 0 0 8px;
+      color: #111827;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+    .fr span{
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .de{
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.7;
+      word-wrap: break-word;
+    }
+
+    input.blank{
+      display:inline-block;
+      vertical-align: baseline;
+      margin: 0 4px;
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 16px;
+      outline: none;
+      min-width: 110px;
+      background: #fff;
+    }
+    input.blank:focus{
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 3px rgba(96,165,250,.25);
+    }
+
+    .row-actions{
+      margin-top: 10px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-correct{
+      background: var(--btn);
+      color:white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 15px;
+      box-shadow: var(--shadow);
+    }
+    .btn-correct:hover{ filter: brightness(0.95); }
+
+    .attempts{
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .feedback{
+      margin-top: 10px;
+      display:none;
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
+    }
+    .feedback b{ color: var(--text); }
+
+    .pill{
+      display:inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      margin: 0 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .notice{
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 600px){
+      .num{ width: 36px; height: 36px; border-radius: 10px; }
+      input.blank{ min-width: 95px; }
+      .de{ font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Konjunktiv II – Kapitel 5</h1>
+    <p class="subtitle">
+      Consigne : Complète uniquement <b>les formes verbales</b> au Konjunktiv II (sein, haben, Modalverben, würde + Infinitiv).
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="notice">
+      <div style="margin-bottom:8px;">
+        Règles :
+        <span class="pill">Correction phrase par phrase</span>
+        <span class="pill">Solution affichée à la 3e tentative</span>
+        <span class="pill">…uniquement si TOUT est rempli</span>
+      </div>
+      <div>
+        Clique sur <b>Corriger cette phrase</b> sous la phrase que tu veux vérifier. Les réponses correctes deviennent vertes, les incorrectes rouges.
+        La <b>solution</b> ne s’affiche qu’à la <b>3e fois</b> où tu corriges la <b>même phrase</b>, et seulement si tu as rempli <b>tous les verbes</b> de l’exercice.
+      </div>
+    </div>
+
+    <div class="scorebar">
+      <div class="score" id="score">Score : 0/0</div>
+      <div class="hint" id="globalHint">Astuce : remplis tous les trous, puis corrige phrase par phrase.</div>
+    </div>
+
+    <div class="toolbar">
+      <button id="reset" type="button">Réinitialiser</button>
+    </div>
+
+    <div class="list" id="list"></div>
+  </div>
+
+  <script>
+    function normalize(str){
+      return (str || "")
+        .trim()
+        .toLowerCase()
+        .replaceAll("ä","ae").replaceAll("ö","oe").replaceAll("ü","ue")
+        .replaceAll("ß","ss")
+        .replace(/\s+/g," ");
+    }
+
+    // Données : trous = verbes uniquement
+    const items = [
+      { fr:"J’aimerais avoir une grande chambre, mais j’ai (très) peu de place.",
+        de:["Ich ",{a:"hätte"}," gern ein grosses Zimmer, aber ich habe (sehr) wenig Platz."] },
+      { fr:"J’aimerais avoir plus d’argent pour pouvoir payer le permis.",
+        de:["Ich ",{a:"hätte"}," gern mehr Geld, damit ich mir den Führerschein bezahlen kann."] },
+      { fr:"Si j’avais plus d’argent de poche, j’achèterais plus souvent du maquillage.",
+        de:["Wenn ich mehr Taschengeld ",{a:"hätte"},", ",{a:"würde"}," ich mir öfter Make-up kaufen."] },
+      { fr:"Est-ce que tu m’offrirais un bon pour mon anniversaire ?",
+        de:[{a:"würdest"}," du mir zum Geburtstag einen Gutschein schenken?"] },
+      { fr:"Je souhaiterais un chien, mais mes parents sont contre.",
+        de:["Ich ",{a:"wünschte"}," mir einen Hund, aber meine Eltern sind dagegen."] },
+      { fr:"Si le shopping en ligne était encore plus confortable, je commanderais tout en ligne.",
+        de:["Wenn Online-Shopping noch bequemer ",{a:"wäre"},", ",{a:"würde"}," ich alles online bestellen."] },
+      { fr:"Je ne pourrais pas payer le prix si la veste était si chère.",
+        de:["Ich ",{a:"könnte"}," den Preis nicht bezahlen, wenn die Jacke so teuer ",{a:"wäre"},"."] },
+      { fr:"Si la vendeuse me conseillait mieux, je pourrais trouver le bon cadeau.",
+        de:["Wenn die Verkäuferin mich besser beraten ",{a:"würde"},", ",{a:"könnte"}," ich das richtige Geschenk finden."] },
+      { fr:"Nous pourrions économiser davantage si nous dépensions moins d’argent.",
+        de:["Wir ",{a:"könnten"}," mehr sparen, wenn wir weniger Geld ",{a:"ausgeben würden"},"."] },
+      { fr:"Si je n’avais pas de devoirs, je “chillerais” aujourd’hui avec des amis.",
+        de:["Wenn ich keine Hausaufgaben ",{a:"hätte"},", ",{a:"würde"}," ich heute mit Freunden chillen."] },
+      { fr:"Je ne voudrais pas renoncer à ma musique, même si je veux vivre consciemment.",
+        de:["Ich ",{a:"möchte"}," nicht auf meine Musik verzichten, auch wenn ich bewusst leben will."] },
+      { fr:"Tu devrais d’abord essayer les chaussures avant de les commander.",
+        de:["Du ",{a:"solltest"}," die Schuhe zuerst anprobieren, bevor du sie bestellst."] },
+      { fr:"Si la livraison était plus rapide, je commanderais plus souvent en ligne.",
+        de:["Wenn die Lieferung schneller ",{a:"wäre"},", ",{a:"würde"}," ich öfter online bestellen."] },
+      { fr:"Ce serait assez gênant pour moi si j’oubliais le cadeau à la maison.",
+        de:["Das ",{a:"wäre"}," mir ziemlich peinlich, wenn ich das Geschenk zu Hause vergessen würde."] },
+      { fr:"Je ne dépenserais jamais autant d’argent pour des vêtements.",
+        de:["Ich ",{a:"würde"}," nie so viel Geld für Kleidung ausgeben."] },
+      { fr:"Si le prix était plus bas, je commanderais le maquillage tout de suite.",
+        de:["Wenn der Preis niedriger ",{a:"wäre"},", ",{a:"würde"}," ich das Make-up sofort bestellen."] },
+      { fr:"Si j’avais plus d’argent, je commanderais plus souvent une pizza pour mes amis.",
+        de:["Wenn ich mehr Geld ",{a:"hätte"},", ",{a:"würde"}," ich meinen Freunden öfter eine Pizza bestellen."] },
+      { fr:"Je serais follement content(e) si je recevais une super surprise.",
+        de:["Ich ",{a:"würde"}," mich wahnsinnig freuen, wenn ich eine tolle Überraschung bekommen würde."] },
+      { fr:"Si les chaussures ne me plaisaient pas, je ne les achèterais pas.",
+        de:["Wenn mir die Schuhe nicht ",{a:"gefielen"},", ",{a:"würde"}," ich sie nicht kaufen."] },
+      { fr:"Si tu oubliais mon anniversaire, je serais vexé(e).",
+        de:["Wenn du meinen Geburtstag vergessen ",{a:"würdest"},", ",{a:"wäre"}," ich beleidigt."] },
+      { fr:"Si je recevais une mauvaise note, je serais très déçu(e).",
+        de:["Wenn ich eine schlechte Note bekommen würde, ",{a:"wäre"}," ich total enttäuscht."] },
+      { fr:"Si je possédais une tiny house, j’aurais (très) peu de place, mais je serais quand même heureux/heureuse.",
+        de:["Wenn ich ein Tiny House ",{a:"besäße"},", ",{a:"hätte"}," ich (sehr) wenig Platz, aber ich ",{a:"wäre"}," trotzdem glücklich."] },
+      { fr:"Si j’avais une maison, je ne vivrais plus chez mes parents.",
+        de:["Wenn ich ein Haus ",{a:"hätte"},", ",{a:"würde"}," ich nicht mehr bei meinen Eltern wohnen."] },
+      { fr:"Je ne pourrais pas supporter ça si je restais toujours à la maison.",
+        de:["Ich ",{a:"könnte"}," das nicht aushalten, wenn ich immer nur zu Hause wäre."] },
+      { fr:"Vous pourriez aller dans la zone piétonne si les magasins restaient ouverts plus longtemps.",
+        de:["Ihr ",{a:"könntet"}," in die Fussgängerzone gehen, wenn die Geschäfte länger offen ",{a:"wären"},"."] },
+      { fr:"Si les magasins étaient toujours ouverts, on pourrait faire des achats partout.",
+        de:["Wenn die Geschäfte immer offen ",{a:"wären"},", ",{a:"könnte"}," man überall einkaufen."] },
+      { fr:"Tu ne devrais pas dépenser autant d’argent ; tu devrais économiser davantage.",
+        de:["Du ",{a:"dürftest"}," nicht so viel Geld ausgeben; du ",{a:"müsstest"}," mehr sparen."] },
+      { fr:"Je te donnerais volontiers tous les livres, mais j’en ai encore besoin.",
+        de:["Ich ",{a:"würde"}," dir gern alle Bücher verschenken, aber ich brauche sie noch."] },
+      { fr:"Si nous partagions davantage nos vêtements, nous dépenserions moins d’argent.",
+        de:["Wenn wir unsere Kleidung mehr ",{a:"teilen würden"},", ",{a:"würden"}," wir weniger Geld ausgeben."] },
+      { fr:"Si je voulais faire le tour du monde, je devrais gagner beaucoup d’argent.",
+        de:["Wenn ich um die Welt reisen ",{a:"wollte"},", ",{a:"müsste"}," ich sehr viel Geld verdienen."] },
+    ];
+
+    const list = document.getElementById("list");
+    const globalHint = document.getElementById("globalHint");
+
+    // tentatives par phrase (1..30)
+    const attempts = new Array(items.length).fill(0);
+
+    function makeInput(answer, qIndex, blankIdx){
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "blank";
+      input.dataset.answer = answer;
+      input.id = `q${qIndex}_b${blankIdx}`;
+      input.autocomplete = "off";
+      input.spellcheck = false;
+
+      // largeur adaptée
+      const w = Math.min(240, Math.max(110, answer.length * 11));
+      input.style.width = w + "px";
+      return input;
+    }
+
+    function render(){
+      list.innerHTML = "";
+      items.forEach((it, idx0) => {
+        const q = idx0 + 1;
+
+        const card = document.createElement("div");
+        card.className = "item";
+
+        const top = document.createElement("div");
+        top.className = "item-top";
+
+        const num = document.createElement("div");
+        num.className = "num";
+        num.textContent = q;
+
+        const content = document.createElement("div");
+        content.className = "content";
+
+        const fr = document.createElement("p");
+        fr.className = "fr";
+        fr.innerHTML = `<span>→ ${it.fr}</span>`;
+
+        const de = document.createElement("p");
+        de.className = "de";
+
+        let blankCount = 0;
+        it.de.forEach(seg => {
+          if (typeof seg === "string") {
+            de.append(document.createTextNode(seg));
+          } else {
+            blankCount++;
+            de.appendChild(makeInput(seg.a, q, blankCount));
+          }
+        });
+
+        const actions = document.createElement("div");
+        actions.className = "row-actions";
+
+        const btn = document.createElement("button");
+        btn.className = "btn-correct";
+        btn.type = "button";
+        btn.textContent = "Corriger cette phrase";
+        btn.addEventListener("click", () => correctOne(q));
+
+        const att = document.createElement("div");
+        att.className = "attempts";
+        att.id = `att_${q}`;
+        att.textContent = "Tentatives : 0/3";
+
+        actions.appendChild(btn);
+        actions.appendChild(att);
+
+        const feedback = document.createElement("div");
+        feedback.className = "feedback";
+        feedback.id = `fb_${q}`;
+        feedback.innerHTML = `Solutions : <b></b>`;
+
+        content.appendChild(fr);
+        content.appendChild(de);
+        content.appendChild(actions);
+        content.appendChild(feedback);
+
+        top.appendChild(num);
+        top.appendChild(content);
+        card.appendChild(top);
+
+        list.appendChild(card);
+      });
+
+      updateScore();
+      updateGlobalHint();
+    }
+
+    function getAllInputs(){
+      return Array.from(document.querySelectorAll("input.blank"));
+    }
+
+    function isAllFilled(){
+      const inputs = getAllInputs();
+      return inputs.every(i => i.value.trim() !== "");
+    }
+
+    function updateGlobalHint(){
+      if (!isAllFilled()){
+        globalHint.textContent = "Astuce : la solution ne peut apparaître qu’après avoir rempli TOUS les trous de l’exercice.";
+      } else {
+        globalHint.textContent = "Tu as tout rempli ✅ Tu peux corriger phrase par phrase. La solution apparaît à la 3e tentative (si nécessaire).";
+      }
+    }
+
+    function updateScore(){
+      const inputs = getAllInputs();
+      let score = 0;
+      inputs.forEach(inp => {
+        const ua = normalize(inp.value);
+        const ca = normalize(inp.dataset.answer);
+        if (ua && ua === ca) score++;
+      });
+      document.getElementById("score").textContent = `Score : ${score}/${inputs.length}`;
+    }
+
+    function inputsOfQuestion(q){
+      return Array.from(document.querySelectorAll(`input[id^="q${q}_"]`));
+    }
+
+    function correctOne(q){
+      // Incrémente tentatives de cette phrase
+      attempts[q-1] = Math.min(3, attempts[q-1] + 1);
+      document.getElementById(`att_${q}`).textContent = `Tentatives : ${attempts[q-1]}/3`;
+
+      const inputs = inputsOfQuestion(q);
+
+      // Coloration (ok/ko) à chaque tentative
+      let allCorrect = true;
+      inputs.forEach(inp => {
+        const ua = normalize(inp.value);
+        const ca = normalize(inp.dataset.answer);
+
+        // reset minimal
+        inp.style.backgroundColor = "#fff";
+        inp.style.borderColor = "#cbd5e1";
+
+        if (ua && ua === ca){
+          inp.style.backgroundColor = "#dcfce7";
+          inp.style.borderColor = "#16a34a";
+        } else {
+          inp.style.backgroundColor = "#fee2e2";
+          inp.style.borderColor = "#dc2626";
+          allCorrect = false;
+        }
+      });
+
+      // Affichage solution UNIQUEMENT si :
+      // - 3e clic sur corriger pour cette phrase
+      // - ET tous les trous de l'exercice sont remplis
+      // - ET la phrase n'est pas déjà entièrement correcte (sinon inutile)
+      const fb = document.getElementById(`fb_${q}`);
+      fb.style.display = "none";
+      fb.querySelector("b").textContent = "";
+
+      if (attempts[q-1] >= 3 && isAllFilled() && !allCorrect){
+        const sol = inputs.map(i => i.dataset.answer).join(" / ");
+        fb.querySelector("b").textContent = sol;
+        fb.style.display = "block";
+      }
+
+      updateScore();
+      updateGlobalHint();
+    }
+
+    function resetAll(){
+      getAllInputs().forEach(inp => {
+        inp.value = "";
+        inp.style.backgroundColor = "#fff";
+        inp.style.borderColor = "#cbd5e1";
+      });
+      for (let i=0;i<attempts.length;i++) attempts[i]=0;
+
+      // Reset tentatives + feedback
+      for (let q=1; q<=items.length; q++){
+        document.getElementById(`att_${q}`).textContent = "Tentatives : 0/3";
+        const fb = document.getElementById(`fb_${q}`);
+        fb.style.display = "none";
+        fb.querySelector("b").textContent = "";
+      }
+
+      updateScore();
+      updateGlobalHint();
+      window.scrollTo({top:0, behavior:"smooth"});
+    }
+
+    document.getElementById("reset").addEventListener("click", resetAll);
+
+    // Met à jour l'indication globale quand l'élève tape
+    document.addEventListener("input", (e) => {
+      if (e.target && e.target.classList && e.target.classList.contains("blank")){
+        updateGlobalHint();
+        // pas de recalcul score en permanence (optionnel), mais léger:
+        updateScore();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

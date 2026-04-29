@@ -6,35 +6,30 @@ category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/dass"
 pageType: "theorie"
 objectives: []
-externalLinks: 
-  - url: "http://lerngrammatik.de/uebung_satz_dass_1.htm"
-  - url: "https://learningapps.org/view1318482"
-  - url: "https://learningapps.org/view39468"
-  - url: "https://learningapps.org/view43391"
-  - url: "https://www.das-dass.de/das-dass-uebungen.php"
+externalLinks: []
 images: []
 migrationNotes: []
 ---
 
-Subordonnées
+## Subordonnées
 
-dass = que
+**dass = que**
 
 Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
 
 Exemple: Je pense que Julien est sympa.
 
-Phrase principale: Je pense
+**Phrase principale: Je pense**
 
 Subordonnée: Julien est sympa.
 
-Subordonnant: que
+## Subordonnant: que
 
 La syntaxe de certaines subordonnées en allemand et différente de celle du français. En effet, dans les phrases introduites par dass, tu dois mettre le verbe conjugué tout à la fin.
 
 Le verbe conjugué est celui qui est accordé au sujet (donc pas participe passé, ni infinitif).
 
-Exemples:
+## Exemples:
 
 Au présent: Ich denke, dass Julian nett ist .
 
@@ -56,15 +51,15 @@ Was weisst du über Patrick ?
 
 Ich weiss, dass er stark ist.
 
-Verbes importants à connaître:
+## Verbes importants à connaître:
 
-penser = denken croire = glauben
+**penser = denken croire = glauben**
 
-trouver = finden savoir = wissen
+**trouver = finden savoir = wissen**
 
 ## Exercice
 
-Dass-Fragen
+## Dass-Fragen
 
 Voici une autre façon de demander à quelqu’un ce qu’il pense de quelqu’un ou comment il trouve quelqu’un d’autre.
 
@@ -82,15 +77,15 @@ Findest du, dass Marie intelligent ist ?
 
 Il est possible de répondre à ces questions en montrant qu’on est d’accord, pas d’accord ou qu’on ne sait pas.
 
-Quand on est d’accord:
+## Quand on est d’accord:
 
 Ja, bestimmt.
 
 Ja, sicher !
 
-Ja, genau…
+## Ja, genau…
 
-Quand on n’est pas d’accord:
+## Quand on n’est pas d’accord:
 
 Nein, ich denke nicht.
 
@@ -100,9 +95,9 @@ Nein, sicher nicht.
 
 Nein, es stimmt nicht.
 
-Quand on ne sait pas:
+## Quand on ne sait pas:
 
-Vielleicht… (= peut-être)
+## Vielleicht… (= peut-être)
 
 Ich weiss es nicht.
 
@@ -112,4 +107,20 @@ Keine Ahnung.
 
 (= aucune idée
 
-## Quelques exercices pour entrainer les phrases avec dass .
+Quelques exercices pour entrainer les phrases avec dass .
+
+- [http://lerngrammatik.de/uebung_satz_dass_1.htm](http://lerngrammatik.de/uebung_satz_dass_1.htm)
+
+- [https://www.das-dass.de/das-dass-uebungen.php](https://www.das-dass.de/das-dass-uebungen.php)
+
+- [https://learningapps.org/view39468](https://learningapps.org/view39468)
+
+- [https://learningapps.org/view1318482](https://learningapps.org/view1318482)
+
+- [https://learningapps.org/view43391](https://learningapps.org/view43391)
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5448080-weil_satze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5448880-weil_satze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

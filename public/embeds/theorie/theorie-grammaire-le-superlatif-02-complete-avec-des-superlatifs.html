@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Complète avec des superlatifs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .instructions {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .exercise {
+            width: 80%;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .sentence {
+            margin: 12px 0;
+        }
+
+        input.blank {
+            width: 150px;
+            padding: 6px;
+            margin: 0 4px;
+        }
+
+        .word-bank {
+            margin-top: 20px;
+        }
+
+        .word {
+            display: inline-block;
+            margin: 6px;
+            padding: 8px 14px;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .word:hover {
+            background-color: #e0e0e0;
+        }
+
+        #submit {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #submit:hover {
+            background-color: #45a049;
+        }
+
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Complète avec les superlatifs corrects</h1>
+    <p class="instructions">Clique sur un mot dans la banque pour remplir les champs vides.</p>
+</div>
+
+<div class="exercise">
+    <div class="sentence">1. Dein Auto ist vielleicht schnell, aber meins ist <input class="blank" id="gap1"></div>
+    <div class="sentence">2. Von allen "Harry Potter"-Filmen hat mir der erste <input class="blank" id="gap2"> gefallen.</div>
+    <div class="sentence">3. Zu Hause sitze ich <input class="blank" id="gap3"> im Wohnzimmer.</div>
+    <div class="sentence">4. Ich sehe Filme <input class="blank" id="gap4"> im Kino.</div>
+    <div class="sentence">5. Von allen Bergen auf der Welt ist der Everest <input class="blank" id="gap5">.</div>
+    <div class="sentence">6. Welcher "Herr der Ringe"-Film ist <input class="blank" id="gap6">?</div>
+    <div class="sentence">7. Frau Kehr arbeitet immer <input class="blank" id="gap7">.</div>
+    <div class="sentence">8. Welcher Cousin ist <input class="blank" id="gap8">?</div>
+    <div class="sentence">9. Welches Land in Europa ist <input class="blank" id="gap9">?</div>
+    <div class="sentence">10. Welches Land der Welt hat <input class="blank" id="gap10"> Einwohner?</div>
+</div>
+
+<div class="container word-bank">
+    <div class="word" onclick="fillGap('am kleinsten')">am kleinsten</div>
+    <div class="word" onclick="fillGap('am spätesten')">am spätesten</div>
+    <div class="word" onclick="fillGap('am häufigsten')">am häufigsten</div>
+    <div class="word" onclick="fillGap('am schnellsten')">am schnellsten</div>
+    <div class="word" onclick="fillGap('am jüngsten')">am jüngsten</div>
+    <div class="word" onclick="fillGap('am höchsten')">am höchsten</div>
+    <div class="word" onclick="fillGap('am längsten')">am längsten</div>
+    <div class="word" onclick="fillGap('am besten')">am besten</div>
+    <div class="word" onclick="fillGap('am liebsten')">am liebsten</div>
+
+
+    <div class="word" onclick="fillGap('am meisten')">am meisten</div>
+</div>
+
+<div class="container">
+    <button id="submit" onclick="checkAnswers()">Vérifier</button>
+    <div class="score" id="score"></div>
+</div>
+
+<script>
+    let currentInput = null;
+
+    document.querySelectorAll('.blank').forEach(input => {
+        input.addEventListener('focus', function () {
+            currentInput = this;
+        });
+    });
+
+    function fillGap(word) {
+        if (currentInput) {
+            currentInput.value = word;
+        }
+    }
+
+    function checkAnswers() {
+        const answers = {
+            gap1: 'am schnellsten',
+            gap2: 'am besten',
+            gap3: 'am liebsten',
+            gap4: 'am häufigsten',
+            gap5: 'am höchsten',
+            gap6: 'am längsten',
+            gap7: 'am spätesten',
+            gap8: 'am jüngsten',
+            gap9: 'am kleinsten',
+            gap10: 'am meisten'
+        };
+
+        let score = 0;
+        for (const gap in answers) {
+            const input = document.getElementById(gap);
+            if (input.value.trim() === answers[gap]) {
+                input.style.backgroundColor = 'lightgreen';
+                score++;
+            } else {
+                input.style.backgroundColor = 'lightcoral';
+            }
+        }
+
+        document.getElementById('score').textContent = `Score: ${score}/10`;
+    }
+</script>
+</body>
+</html>

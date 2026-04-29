@@ -6,25 +6,18 @@ category: "grammaire"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base"
 pageType: "theorie"
 objectives: []
-externalLinks: 
-  - url: "http://www.lehrerlenz.de/lektion_14_dativ.html"
-  - url: "http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html"
-  - url: "http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm"
-  - url: "http://www.projectx2002.org/Duits/adjektiv_gemischt.htm"
-  - url: "https://deutsch.lingolia.com/de/grammatik/adjektive/deklination/uebungen"
-  - url: "https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/"
-  - url: "https://deutschlernerblog.de/deklination-unbestimmter-artikel-online-uebungen-grammatikuebungen/"
-  - url: "https://deutschlernerblog.de/uebungen-zur-adjektivdeklination-deutsch-a1-a2/"
-  - url: "https://mein-deutschbuch.de/grammatikuebungen-adjektivdeklination-1.html"
-  - url: "https://www.deutsch-lernen.com/uebungen/dc-ue02_2.php?check=yes"
-  - url: "https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=14"
-  - url: "https://www.grammatiktraining.de/adjektive/grammatikuebung-adjektivkonstruktionen-ergaenzen.html"
-  - url: "https://www.grammatiktraining.de/adjektive/grammatikuebung-die-drei-fahrraeder-endungen-ergaenzen.html"
-  - url: "https://www.grammatiktraining.de/adjektive/grammatikuebung-herr-gelb-und-herr-rot-endungen-ergaenzen.html"
-  - url: "https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html"
-  - url: "https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=4&Lection=2&Exercise=1&SubExercise=1"
-  - url: "https://www.schubert-verlag.de/aufgaben/xg/xg05_15.htm"
-images: []
+externalLinks: []
+images: 
+  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-1.png"
+    alt: "Image 1 - Les cas"
+  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-2.png"
+    alt: "Image 2 - Les cas"
+  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-3.png"
+    alt: "Image 3 - Les cas"
+  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-4.png"
+    alt: "Image 4 - Les cas"
+  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-5.png"
+    alt: "Image 5 - Les cas"
 migrationNotes: []
 ---
 
@@ -74,15 +67,15 @@ Aujourd’hui, la fille envoie une lettre à son amie pour son anniversaire.
 
 Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.
 
-## Le sujet est toujours au nominatif .
+Le sujet est toujours au nominatif .
 
 —> « das Mädchen » (neut.)
 
-## Le CVD est toujours à l’accusatif .
+Le CVD est toujours à l’accusatif .
 
 —> « einen Brief » (masc.)
 
-## Le CVI est toujours au datif .
+Le CVI est toujours au datif .
 
 —> « seiner Freundin » (fém.)
 
@@ -98,9 +91,9 @@ Connaître par coeur les tableaux de déclinaisons.
 
 En 9H, il faut connaître les tableaux de déclinaisons des déterminants ainsi que celui des pronoms personnels.
 
-## Les déclinaisons des adjectifs sont apprises en 10H.
+Les déclinaisons des adjectifs sont apprises en 10H.
 
-Tableaux de déclinaisons
+## Tableaux de déclinaisons
 
 ## Les déterminants
 
@@ -110,6 +103,46 @@ Tableaux de déclinaisons
 
 ## Exercice
 
-Autres exercices à faire en ligne
+## Autres exercices à faire en ligne
+
+- [https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/)
+
+- [https://deutschlernerblog.de/deklination-unbestimmter-artikel-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-unbestimmter-artikel-online-uebungen-grammatikuebungen/)
+
+- [http://www.lehrerlenz.de/lektion_14_dativ.html](http://www.lehrerlenz.de/lektion_14_dativ.html)
+
+- [https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html](https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html)
 
 ## Quelques exercices en ligne pour entrainer l'accord de l'adjectif
+
+- [http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html](http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html)
+
+- [https://mein-deutschbuch.de/grammatikuebungen-adjektivdeklination-1.html](https://mein-deutschbuch.de/grammatikuebungen-adjektivdeklination-1.html)
+
+- [https://deutschlernerblog.de/uebungen-zur-adjektivdeklination-deutsch-a1-a2/](https://deutschlernerblog.de/uebungen-zur-adjektivdeklination-deutsch-a1-a2/)
+
+- [https://www.schubert-verlag.de/aufgaben/xg/xg05_15.htm](https://www.schubert-verlag.de/aufgaben/xg/xg05_15.htm)
+
+- [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=4&Lection=2&Exercise=1&SubExercise=1](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=4&Lection=2&Exercise=1&SubExercise=1)
+
+- [https://www.deutsch-lernen.com/uebungen/dc-ue02_2.php?check=yes](https://www.deutsch-lernen.com/uebungen/dc-ue02_2.php?check=yes)
+
+- [https://deutsch.lingolia.com/de/grammatik/adjektive/deklination/uebungen](https://deutsch.lingolia.com/de/grammatik/adjektive/deklination/uebungen)
+
+- [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=14](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=14)
+
+- [https://www.grammatiktraining.de/adjektive/grammatikuebung-adjektivkonstruktionen-ergaenzen.html](https://www.grammatiktraining.de/adjektive/grammatikuebung-adjektivkonstruktionen-ergaenzen.html)
+
+- [https://www.grammatiktraining.de/adjektive/grammatikuebung-die-drei-fahrraeder-endungen-ergaenzen.html](https://www.grammatiktraining.de/adjektive/grammatikuebung-die-drei-fahrraeder-endungen-ergaenzen.html)
+
+- [https://www.grammatiktraining.de/adjektive/grammatikuebung-herr-gelb-und-herr-rot-endungen-ergaenzen.html](https://www.grammatiktraining.de/adjektive/grammatikuebung-herr-gelb-und-herr-rot-endungen-ergaenzen.html)
+
+- [http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm](http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm)
+
+- [http://www.projectx2002.org/Duits/adjektiv_gemischt.htm](http://www.projectx2002.org/Duits/adjektiv_gemischt.htm)
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://quizlet.com/613523315/learn/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5038069-les_cas.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

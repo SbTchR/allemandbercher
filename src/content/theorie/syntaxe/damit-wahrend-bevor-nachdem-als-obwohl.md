@@ -6,22 +6,20 @@ category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/damit-w%C3%A4hrend-bevor-nachdem-als-obwohl"
 pageType: "theorie"
 objectives: []
-externalLinks: 
-  - url: "https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen"
-  - url: "https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html"
+externalLinks: []
 images: []
 migrationNotes: []
 ---
 
-Subordonnées
+## Subordonnées
 
-damit = pour que während = pendant que
+**damit = pour que während = pendant que**
 
-bevor = avant que als = alors que
+**bevor = avant que als = alors que**
 
-nachdem = après que obwohl = bien que
+**nachdem = après que obwohl = bien que**
 
-sobald = aussitôt (dès) que seitdem = depuis que
+**sobald = aussitôt (dès) que seitdem = depuis que**
 
 Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
 
@@ -31,13 +29,13 @@ Phrase principale: Je lis toujours un livre.
 
 Subordonnée: J’aie au lit.
 
-Subordonnant: avant que
+## Subordonnant: avant que
 
 La syntaxe de certaines subordonnées en allemand et différente de celle du français. En effet, dans les phrases introduites par damit, bevor, nachdem, während, als et obwohl, tu dois mettre le verbe conjugué tout à la fin.
 
 Le verbe conjugué est celui qui est accordé au sujet (donc pas participe passé, ni infinitif).
 
-Exemples:
+## Exemples:
 
 Au présent: Ich lese immer ein Buch, bevor ich ins Bett gehe .
 
@@ -49,18 +47,28 @@ Parfois, il est possible d’inverser la phrase principale et la subordonnée. D
 
 ⚠️ Le verbe de la subordonnée est toujours à la fin de celle-ci !
 
-Exemple :
+## Exemple :
 
 Ich lese immer ein Buch, bevor ich ins Bett gehe .
 
-phrase principale phrase subordonnée
+**phrase principale phrase subordonnée**
 
-v. en 2e p. v. à la fin
+**v. en 2e p. v. à la fin**
 
 Bevor ich ins Bett gehe , lese ich immer ein Buch.
 
-phrase subordonnée phrase principale
+**phrase subordonnée phrase principale**
 
 v. à la fin v. en 2e p.
 
 ## Exercices
+
+- [https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html](https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html)
+
+- [https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen](https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen)
+
+## Exercices interactifs intégrés
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/fr/activiteeducatives/5040909/html5/nebensatze_mit_damit.htm" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
+
+<iframe class="content-embed tall" src="https://fr.educaplay.com/fr/activiteeducatives/5040936/html5/nebensatze_mit_damit_2.htm" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

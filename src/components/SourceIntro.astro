@@ -1,0 +1,46 @@
+---
+type Props = {
+  lines: readonly string[];
+};
+
+const { lines } = Astro.props;
+
+const sectionHeadings = new Set([
+  "Grammaire",
+  "Syntaxe",
+  "Conjugaison",
+  "L'accord des mots dans la phrase",
+  "L'ordre des mots dans la phrase",
+  "Quel est ton problème ?",
+  "Accès direct aux pages de théorie",
+]);
+
+const quickLinkLines = new Set([
+  "Présent",
+  "Prétérit",
+  "Passé composé",
+  "Impératif",
+  "Futur",
+  "Verbes de modalité",
+  "Verbes réflexifs",
+  "Konjunktiv II",
+]);
+
+function lineKind(line: string, index: number) {
+  if (line === 'Commence par lire ceci !' || line.endsWith('☞')) return 'prompt';
+  if (sectionHeadings.has(line)) return 'heading';
+  if (index === 0 && !quickLinkLines.has(line)) return 'heading';
+  return 'paragraph';
+}
+---
+
+<div class="source-intro prose">
+  {
+    lines.map((line, index) => {
+      const kind = lineKind(line, index);
+      if (kind === 'heading') return <h2>{line}</h2>;
+      if (kind === 'prompt') return <p class="intro-prompt">{line}</p>;
+      return <p>{line}</p>;
+    })
+  }
+</div>

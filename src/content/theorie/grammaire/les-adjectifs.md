@@ -7,11 +7,15 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-adjectifs"
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: []
+images: 
+  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-adjectifs-1.png"
+    alt: "Image 1 - Les adjectifs"
+  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-adjectifs-2.png"
+    alt: "Image 2 - Les adjectifs"
 migrationNotes: []
 ---
 
-L’adjectif attributif
+## L’adjectif attributif
 
 Après le verbe sein , l’adjectif ne s’accorde pas.
 
@@ -19,19 +23,19 @@ Exemples: Der Pulli ist schön.
 
 Die Frau ist gross und nett.
 
-L’adjectif épithète
+## L’adjectif épithète
 
 En allemand, l’adjectif épithète se place toujours avant le nom qu’il qualifie.
 
 Exemples: Die grosse Frau hat einen blauen Pulli.
 
-## La grande femme a un pull-over bleu .
+La grande femme a un pull-over bleu .
 
-Déclinaison des adjectifs
+## Déclinaison des adjectifs
 
 Pour savoir quand il faut décliner un groupe nominal au nominatif, quand il faut le mettre à l’accusatif ou au datif, relis la théorie sur les cas !
 
-Pour maîtriser parfaitement ce sujet, tu dois donc…
+## Pour maîtriser parfaitement ce sujet, tu dois donc…
 
 connaître par coeur les deux tableaux de déclinaisons ci-dessus.
 
