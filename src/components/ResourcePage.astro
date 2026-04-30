@@ -5,6 +5,7 @@ import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
 import ObjectiveBox from './ObjectiveBox.astro';
 import TheoryBox from './TheoryBox.astro';
+import { withBase } from '../lib/paths';
 import { resourceEyebrow, type ResourceEntry } from '../lib/resources';
 
 type Props = {
@@ -15,6 +16,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const hasObjectives = entry.data.objectives.length > 0;
 const hasAside = entry.data.externalLinks.length > 0;
+const primaryAction = entry.data.primaryAction;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
@@ -23,7 +25,15 @@ const hasAside = entry.data.externalLinks.length > 0;
       <div class="resource-title-block">
         <p class="eyebrow">{resourceEyebrow(entry)}</p>
         <h1>{entry.data.title}</h1>
-        {entry.data.description && <p class="lead">{entry.data.description}</p>}
+        {
+          primaryAction ? (
+            <button class="quest-launch-button" type="button" data-open-resource-modal>
+              {primaryAction.label}
+            </button>
+          ) : (
+            entry.data.description && <p class="lead">{entry.data.description}</p>
+          )
+        }
       </div>
 
       {hasObjectives && <ObjectiveBox objectives={entry.data.objectives} />}
@@ -52,5 +62,49 @@ const hasAside = entry.data.externalLinks.length > 0;
     </div>
 
     <ImageGallery images={entry.data.images} />
+
+    {
+      primaryAction && (
+        <dialog class="resource-modal" data-resource-modal>
+          <div class="resource-modal-panel">
+            <div class="resource-modal-header">
+              <h2>{primaryAction.title}</h2>
+              <button class="resource-modal-close" type="button" data-close-resource-modal>
+                Fermer
+              </button>
+            </div>
+            <iframe src={withBase(primaryAction.src)} title={primaryAction.title} loading="lazy"></iframe>
+          </div>
+        </dialog>
+      )
+    }
   </article>
+
+  {
+    primaryAction && (
+      <script>
+        const modal = document.querySelector('[data-resource-modal]');
+        const openButton = document.querySelector('[data-open-resource-modal]');
+        const closeButton = document.querySelector('[data-close-resource-modal]');
+
+        openButton?.addEventListener('click', () => {
+          if (modal instanceof HTMLDialogElement) {
+            modal.showModal();
+          }
+        });
+
+        closeButton?.addEventListener('click', () => {
+          if (modal instanceof HTMLDialogElement) {
+            modal.close();
+          }
+        });
+
+        modal?.addEventListener('click', (event) => {
+          if (event.target === modal && modal instanceof HTMLDialogElement) {
+            modal.close();
+          }
+        });
+      </script>
+    )
+  }
 </Layout>

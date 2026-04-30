@@ -12,6 +12,12 @@ const imageSchema = z.object({
   alt: z.string().optional(),
 });
 
+const primaryActionSchema = z.object({
+  label: z.string(),
+  title: z.string(),
+  src: z.string(),
+});
+
 const resourceSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
@@ -25,6 +31,7 @@ const resourceSchema = z.object({
   externalLinks: z.array(externalLinkSchema).default([]),
   images: z.array(imageSchema).default([]),
   migrationNotes: z.array(z.string()).default([]),
+  primaryAction: primaryActionSchema.optional(),
 });
 
 const exercices = defineCollection({
