@@ -56,7 +56,3 @@ Quelques exercices pour entrainer le comparatif.
 - [https://courseware.nus.edu.sg/e-daf/cwm/la2201gr/komparation/komex2.htm](https://courseware.nus.edu.sg/e-daf/cwm/la2201gr/komparation/komex2.htm)
 
 - [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul14_erg/adj_ue2.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul14_erg/adj_ue2.htm)
-
-## Exercices interactifs intégrés
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5040059-komparativ.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

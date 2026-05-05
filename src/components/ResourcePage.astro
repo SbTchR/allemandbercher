@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import ComparativeExercise from './ComparativeExercise.astro';
 import ExternalLinks from './ExternalLinks.astro';
 import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
@@ -17,6 +18,8 @@ const { Content } = await render(entry);
 const hasObjectives = entry.data.objectives.length > 0;
 const hasAside = entry.data.externalLinks.length > 0;
 const primaryAction = entry.data.primaryAction;
+const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
+const hasComparativeExercise = entry.collection === 'theorie' && entry.data.category === 'grammaire' && slug === 'le-comparatif';
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
@@ -60,6 +63,8 @@ const primaryAction = entry.data.primaryAction;
         )
       }
     </div>
+
+    {hasComparativeExercise && <ComparativeExercise />}
 
     <ImageGallery images={entry.data.images} />
 
