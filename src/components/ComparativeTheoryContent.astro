@@ -1,0 +1,190 @@
+---
+const differenceRows = [
+  {
+    french: '<span class="mark-difference">plus</span> <span class="mark-adjective">grand</span> <span class="mark-difference">que</span>',
+    formula: '<span class="mark-adjective">gross</span> + <span class="mark-ending">-er</span> + <span class="mark-difference">als</span>',
+    example: 'Peter ist <span class="mark-adjective">gr<span class="mark-difference">ö</span>ss<span class="mark-ending">er</span></span> <span class="mark-difference">als</span> Paul.',
+  },
+  {
+    french: '<span class="mark-difference">plus</span> <span class="mark-adjective">froid</span> <span class="mark-difference">que</span>',
+    formula: '<span class="mark-adjective">kalt</span> -> <span class="mark-adjective">k<span class="mark-difference">ä</span>lt<span class="mark-ending">er</span></span> + <span class="mark-difference">als</span>',
+    example: 'Draussen ist es <span class="mark-adjective">k<span class="mark-difference">ä</span>lt<span class="mark-ending">er</span></span> <span class="mark-difference">als</span> im Haus.',
+  },
+  {
+    french: '<span class="mark-difference">moins</span> <span class="mark-adjective">froid</span> <span class="mark-difference">que</span>',
+    formula: '<span class="mark-difference">weniger</span> + <span class="mark-adjective">kalt</span> + <span class="mark-difference">als</span>',
+    example: 'Draussen ist es <span class="mark-difference">weniger</span> <span class="mark-adjective">kalt</span> <span class="mark-difference">als</span> im Haus.',
+  },
+];
+
+const equalityRows = [
+  {
+    french: '<span class="mark-equality">aussi</span> <span class="mark-adjective">grand</span> <span class="mark-equality">que</span>',
+    formula: '<span class="mark-equality">genauso</span> + <span class="mark-adjective">gross</span> + <span class="mark-equality">wie</span>',
+    example: 'Peter ist <span class="mark-equality">genauso</span> <span class="mark-adjective">gross</span> <span class="mark-equality">wie</span> Paul.',
+  },
+  {
+    french: '<span class="mark-equality">aussi</span> <span class="mark-adjective">froid</span> <span class="mark-equality">que</span>',
+    formula: '<span class="mark-equality">genauso</span> + <span class="mark-adjective">kalt</span> + <span class="mark-equality">wie</span>',
+    example: 'Draussen ist es <span class="mark-equality">genauso</span> <span class="mark-adjective">kalt</span> <span class="mark-equality">wie</span> im Haus.',
+  },
+];
+
+const choiceRows = [
+  {
+    goal: 'Une différence',
+    french: '<span class="mark-difference">plus</span> <span class="mark-adjective">grand</span> <span class="mark-difference">que</span>',
+    formula: '<span class="mark-adjective">adjectif</span> + <span class="mark-ending">-er</span> + <span class="mark-difference">als</span>',
+  },
+  {
+    goal: 'Une différence négative',
+    french: '<span class="mark-difference">moins</span> <span class="mark-adjective">grand</span> <span class="mark-difference">que</span>',
+    formula: '<span class="mark-difference">weniger</span> + <span class="mark-adjective">adjectif</span> + <span class="mark-difference">als</span>',
+  },
+  {
+    goal: 'Une ressemblance',
+    french: '<span class="mark-equality">aussi</span> <span class="mark-adjective">grand</span> <span class="mark-equality">que</span>',
+    formula: '<span class="mark-equality">genauso</span> + <span class="mark-adjective">adjectif</span> + <span class="mark-equality">wie</span>',
+  },
+  {
+    goal: 'Une préférence',
+    french: 'préférer',
+    formula: '<span class="mark-adjective">lieb</span><span class="mark-ending">er</span> + <span class="mark-difference">als</span>',
+  },
+];
+---
+
+<section class="chapter-dashboard" aria-label="Résumé du comparatif">
+  <article>
+    <strong>Comparer deux éléments</strong>
+    <p>On regarde une différence ou une ressemblance entre deux personnes, objets ou situations.</p>
+  </article>
+  <article>
+    <strong>Différence</strong>
+    <p><span class="comparison-pattern">adjectif + -er</span> puis <span class="comparison-pattern">als</span> : plus <span class="ghost-adjective">grand</span> que.</p>
+  </article>
+  <article>
+    <strong>Égalité</strong>
+    <p><span class="comparison-pattern">genauso</span> avant l’adjectif puis <span class="comparison-pattern">wie</span> : aussi <span class="ghost-adjective">grand</span> que.</p>
+  </article>
+</section>
+
+<details class="lesson-card" open>
+  <summary>1. Dire « plus ... que » ou « moins ... que »</summary>
+  <div class="lesson-card-content">
+    <p>Quand deux éléments sont différents, l’allemand utilise deux constructions possibles. Pour dire « <span class="mark-difference">plus</span> <span class="mark-adjective">grand</span> <span class="mark-difference">que</span> », on ajoute souvent <span class="mark-ending">-er</span> à l’adjectif. Pour dire « <span class="mark-difference">moins</span> <span class="mark-adjective">grand</span> <span class="mark-difference">que</span> », on garde l’adjectif normal et on place <span class="mark-difference">weniger</span> devant.</p>
+
+    <div class="comparative-table" role="table" aria-label="Différence avec plus ou moins">
+      <div class="comparative-table-head" role="row">
+        <span role="columnheader">Français</span>
+        <span role="columnheader">Construction allemande</span>
+        <span role="columnheader">Exemple</span>
+      </div>
+      {
+        differenceRows.map((row) => (
+          <div class="comparative-table-row" role="row">
+            <span role="cell" data-label="Français" set:html={row.french}></span>
+            <span role="cell" data-label="Construction allemande" set:html={row.formula}></span>
+            <strong role="cell" data-label="Exemple" set:html={row.example}></strong>
+          </div>
+        ))
+      }
+    </div>
+
+    <p>Le réflexe à garder : avec « <span class="mark-difference">plus</span> <span class="mark-adjective">adjectif</span> <span class="mark-difference">que</span> », transforme l’adjectif puis ajoute <span class="mark-difference">als</span>. Avec « <span class="mark-difference">moins</span> <span class="mark-adjective">adjectif</span> <span class="mark-difference">que</span> », utilise <span class="mark-difference">weniger ... als</span>.</p>
+  </div>
+</details>
+
+<details class="lesson-card" open>
+  <summary>2. Dire « aussi ... que »</summary>
+  <div class="lesson-card-content">
+    <p>Quand les deux éléments sont semblables, l’adjectif ne change pas. On encadre l’adjectif avec <span class="mark-equality">genauso</span> et <span class="mark-equality">wie</span>.</p>
+
+    <div class="comparative-table" role="table" aria-label="Égalité avec genauso et wie">
+      <div class="comparative-table-head" role="row">
+        <span role="columnheader">Français</span>
+        <span role="columnheader">Construction allemande</span>
+        <span role="columnheader">Exemple</span>
+      </div>
+      {
+        equalityRows.map((row) => (
+          <div class="comparative-table-row" role="row">
+            <span role="cell" data-label="Français" set:html={row.french}></span>
+            <span role="cell" data-label="Construction allemande" set:html={row.formula}></span>
+            <strong role="cell" data-label="Exemple" set:html={row.example}></strong>
+          </div>
+        ))
+      }
+    </div>
+
+    <p>Le réflexe à garder : avec « <span class="mark-equality">aussi</span> <span class="mark-adjective">adjectif</span> <span class="mark-equality">que</span> », ne mets pas <span class="mark-ending">-er</span>. Utilise <span class="mark-equality">genauso ... wie</span>.</p>
+  </div>
+</details>
+
+<details class="lesson-card" open>
+  <summary>3. Les formes à reconnaître</summary>
+  <div class="lesson-card-content">
+    <p>La règle <span class="mark-ending">-er</span> fonctionne souvent, mais certains adjectifs changent un peu. Les adjectifs courts avec <span class="comparison-pattern">a</span>, <span class="comparison-pattern">o</span> ou <span class="comparison-pattern">u</span> prennent parfois un tréma. Quelques mots sont irréguliers.</p>
+
+    <div class="word-map" aria-label="Formes fréquentes du comparatif">
+      <span><strong>klein</strong> -> kleiner</span>
+      <span><strong>alt</strong> -> älter</span>
+      <span><strong>kalt</strong> -> kälter</span>
+      <span><strong>gross</strong> -> grösser</span>
+      <span><strong>gut</strong> -> besser</span>
+      <span><strong>viel</strong> -> mehr</span>
+      <span><strong>gern</strong> -> lieber</span>
+    </div>
+
+    <p>Pour parler de préférence, on utilise très souvent <span class="mark-adjective">lieb</span><span class="mark-ending">er</span> <span class="mark-difference">als</span> : <strong>Ich mag Tee lieber als Kaffee.</strong></p>
+  </div>
+</details>
+
+<details class="lesson-card" open>
+  <summary>4. Choisir rapidement la bonne formule</summary>
+  <div class="lesson-card-content">
+    <div class="comparative-table comparative-table-compact" role="table" aria-label="Choisir la bonne formule">
+      <div class="comparative-table-head" role="row">
+        <span role="columnheader">Ce que je veux dire</span>
+        <span role="columnheader">Signal en français</span>
+        <span role="columnheader">Formule allemande</span>
+      </div>
+      {
+        choiceRows.map((row) => (
+          <div class="comparative-table-row" role="row">
+            <span role="cell" data-label="Ce que je veux dire">{row.goal}</span>
+            <span role="cell" data-label="Signal en français" set:html={row.french}></span>
+            <span role="cell" data-label="Formule allemande" set:html={row.formula}></span>
+          </div>
+        ))
+      }
+    </div>
+
+    <details class="mini-challenge">
+      <summary>Mini-défi</summary>
+      <div>
+        <p>Transforme mentalement ces phrases avant de faire l’exercice intégré plus bas.</p>
+        <ul>
+          <li>Paul est plus grand que Tim. -> <strong>Paul ist grösser als Tim.</strong></li>
+          <li>Anna est aussi sportive que Lea. -> <strong>Anna ist genauso sportlich wie Lea.</strong></li>
+          <li>Le test est moins difficile que l’exercice. -> <strong>Der Test ist weniger schwierig als die Übung.</strong></li>
+          <li>Je préfère le chocolat à la vanille. -> <strong>Ich mag Schokolade lieber als Vanille.</strong></li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</details>
+
+<p>Le superlatif n’est pas traité ici : il se trouve sur une page séparée.</p>
+
+<details class="external-quest">
+  <summary>Exercices externes</summary>
+  <div class="external-button-grid">
+    <a href="https://www.schubert-verlag.de/aufgaben/xg/xg07_06.htm">Schubert : Komparativ</a>
+    <a href="https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap6_komparativ.htm">Schubert A2 : Komparativ</a>
+    <a href="https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_alles_ist_besser.htm">Alles ist besser</a>
+    <a href="http://www.ralf-kinas.de/index.html?http://www.ralf-kinas.de/komp.html">Ralf Kinas : Komparativ</a>
+    <a href="https://courseware.nus.edu.sg/e-daf/cwm/la2201gr/komparation/komex2.htm">NUS : Komparation</a>
+    <a href="http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul14_erg/adj_ue2.htm">Schule.at : Adjektive</a>
+  </div>
+</details>

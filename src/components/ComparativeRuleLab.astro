@@ -4,69 +4,72 @@ const scenarios = [
     key: 'size',
     label: 'Taille',
     prompt: 'Peter / Paul / gross',
+    adjectiveFr: 'grand',
     different: {
       sentence: 'Peter ist grösser als Paul.',
-      sentenceHtml: 'Peter ist <span class="mark-adjective">gröss<span class="mark-ending">er</span></span> <span class="mark-connector">als</span> Paul.',
-      formulaHtml: '<span class="mark-adjective">gross + <span class="mark-ending">-er</span></span> + <span class="mark-connector">als</span>',
-      meaningHtml: 'Peter est <span class="mark-french">plus</span> grand <span class="mark-french">que</span> Paul.',
+      sentenceHtml: 'Peter ist <span class="mark-adjective">gr<span class="mark-difference">ö</span>ss<span class="mark-ending">er</span></span> <span class="mark-difference">als</span> Paul.',
+      formulaHtml: '<span class="mark-adjective">gross</span> + <span class="mark-ending">-er</span> + <span class="mark-difference">als</span>',
+      meaningHtml: 'Peter est <span class="mark-difference">plus</span> <span class="mark-adjective">grand</span> <span class="mark-difference">que</span> Paul.',
     },
     less: {
       sentence: 'Peter ist weniger gross als Paul.',
-      sentenceHtml: 'Peter ist <span class="mark-connector">weniger</span> <span class="mark-adjective">gross</span> <span class="mark-connector">als</span> Paul.',
-      formulaHtml: '<span class="mark-connector">weniger</span> + <span class="mark-adjective">gross</span> + <span class="mark-connector">als</span>',
-      meaningHtml: 'Peter est <span class="mark-french">moins</span> grand <span class="mark-french">que</span> Paul.',
+      sentenceHtml: 'Peter ist <span class="mark-difference">weniger</span> <span class="mark-adjective">gross</span> <span class="mark-difference">als</span> Paul.',
+      formulaHtml: '<span class="mark-difference">weniger</span> + <span class="mark-adjective">gross</span> + <span class="mark-difference">als</span>',
+      meaningHtml: 'Peter est <span class="mark-difference">moins</span> <span class="mark-adjective">grand</span> <span class="mark-difference">que</span> Paul.',
     },
     equal: {
       sentence: 'Peter ist genauso gross wie Paul.',
-      sentenceHtml: 'Peter ist <span class="mark-connector">genauso</span> <span class="mark-adjective">gross</span> <span class="mark-connector">wie</span> Paul.',
-      formulaHtml: '<span class="mark-connector">genauso</span> + <span class="mark-adjective">gross</span> + <span class="mark-connector">wie</span>',
-      meaningHtml: 'Peter est <span class="mark-french">aussi</span> grand <span class="mark-french">que</span> Paul.',
+      sentenceHtml: 'Peter ist <span class="mark-equality">genauso</span> <span class="mark-adjective">gross</span> <span class="mark-equality">wie</span> Paul.',
+      formulaHtml: '<span class="mark-equality">genauso</span> + <span class="mark-adjective">gross</span> + <span class="mark-equality">wie</span>',
+      meaningHtml: 'Peter est <span class="mark-equality">aussi</span> <span class="mark-adjective">grand</span> <span class="mark-equality">que</span> Paul.',
     },
   },
   {
     key: 'weather',
     label: 'Température',
     prompt: 'draussen / im Haus / kalt',
+    adjectiveFr: 'froid',
     different: {
       sentence: 'Draussen ist es kälter als im Haus.',
-      sentenceHtml: 'Draussen ist es <span class="mark-adjective">kält<span class="mark-ending">er</span></span> <span class="mark-connector">als</span> im Haus.',
-      formulaHtml: '<span class="mark-adjective">kalt -> kält<span class="mark-ending">er</span></span> + <span class="mark-connector">als</span>',
-      meaningHtml: 'Dehors, il fait <span class="mark-french">plus</span> froid <span class="mark-french">que</span> dans la maison.',
+      sentenceHtml: 'Draussen ist es <span class="mark-adjective">k<span class="mark-difference">ä</span>lt<span class="mark-ending">er</span></span> <span class="mark-difference">als</span> im Haus.',
+      formulaHtml: '<span class="mark-adjective">kalt</span> -> <span class="mark-adjective">k<span class="mark-difference">ä</span>lt</span><span class="mark-ending">er</span> + <span class="mark-difference">als</span>',
+      meaningHtml: 'Dehors, il fait <span class="mark-difference">plus</span> <span class="mark-adjective">froid</span> <span class="mark-difference">que</span> dans la maison.',
     },
     less: {
       sentence: 'Draussen ist es weniger kalt als im Haus.',
-      sentenceHtml: 'Draussen ist es <span class="mark-connector">weniger</span> <span class="mark-adjective">kalt</span> <span class="mark-connector">als</span> im Haus.',
-      formulaHtml: '<span class="mark-connector">weniger</span> + <span class="mark-adjective">kalt</span> + <span class="mark-connector">als</span>',
-      meaningHtml: 'Dehors, il fait <span class="mark-french">moins</span> froid <span class="mark-french">que</span> dans la maison.',
+      sentenceHtml: 'Draussen ist es <span class="mark-difference">weniger</span> <span class="mark-adjective">kalt</span> <span class="mark-difference">als</span> im Haus.',
+      formulaHtml: '<span class="mark-difference">weniger</span> + <span class="mark-adjective">kalt</span> + <span class="mark-difference">als</span>',
+      meaningHtml: 'Dehors, il fait <span class="mark-difference">moins</span> <span class="mark-adjective">froid</span> <span class="mark-difference">que</span> dans la maison.',
     },
     equal: {
       sentence: 'Draussen ist es genauso kalt wie im Haus.',
-      sentenceHtml: 'Draussen ist es <span class="mark-connector">genauso</span> <span class="mark-adjective">kalt</span> <span class="mark-connector">wie</span> im Haus.',
-      formulaHtml: '<span class="mark-connector">genauso</span> + <span class="mark-adjective">kalt</span> + <span class="mark-connector">wie</span>',
-      meaningHtml: 'Dehors, il fait <span class="mark-french">aussi</span> froid <span class="mark-french">que</span> dans la maison.',
+      sentenceHtml: 'Draussen ist es <span class="mark-equality">genauso</span> <span class="mark-adjective">kalt</span> <span class="mark-equality">wie</span> im Haus.',
+      formulaHtml: '<span class="mark-equality">genauso</span> + <span class="mark-adjective">kalt</span> + <span class="mark-equality">wie</span>',
+      meaningHtml: 'Dehors, il fait <span class="mark-equality">aussi</span> <span class="mark-adjective">froid</span> <span class="mark-equality">que</span> dans la maison.',
     },
   },
   {
     key: 'preference',
     label: 'Préférence',
     prompt: 'Tee / Kaffee / gern',
+    adjectiveFr: 'volontiers',
     different: {
       sentence: 'Ich mag Tee lieber als Kaffee.',
-      sentenceHtml: 'Ich mag Tee <span class="mark-adjective">lieb<span class="mark-ending">er</span></span> <span class="mark-connector">als</span> Kaffee.',
-      formulaHtml: '<span class="mark-adjective">gern -> lieb<span class="mark-ending">er</span></span> + <span class="mark-connector">als</span>',
-      meaningHtml: 'J’aime <span class="mark-french">plus</span> le thé <span class="mark-french">que</span> le café.',
+      sentenceHtml: 'Ich mag Tee <span class="mark-adjective">lieb<span class="mark-ending">er</span></span> <span class="mark-difference">als</span> Kaffee.',
+      formulaHtml: '<span class="mark-adjective">gern</span> -> <span class="mark-adjective">lieb</span><span class="mark-ending">er</span> + <span class="mark-difference">als</span>',
+      meaningHtml: 'J’aime <span class="mark-difference">plus</span> le thé <span class="mark-difference">que</span> le café.',
     },
     less: {
       sentence: 'Ich mag Tee weniger gern als Kaffee.',
-      sentenceHtml: 'Ich mag Tee <span class="mark-connector">weniger</span> <span class="mark-adjective">gern</span> <span class="mark-connector">als</span> Kaffee.',
-      formulaHtml: '<span class="mark-connector">weniger</span> + <span class="mark-adjective">gern</span> + <span class="mark-connector">als</span>',
-      meaningHtml: 'J’aime <span class="mark-french">moins</span> le thé <span class="mark-french">que</span> le café.',
+      sentenceHtml: 'Ich mag Tee <span class="mark-difference">weniger</span> <span class="mark-adjective">gern</span> <span class="mark-difference">als</span> Kaffee.',
+      formulaHtml: '<span class="mark-difference">weniger</span> + <span class="mark-adjective">gern</span> + <span class="mark-difference">als</span>',
+      meaningHtml: 'J’aime <span class="mark-difference">moins</span> le thé <span class="mark-difference">que</span> le café.',
     },
     equal: {
       sentence: 'Ich mag Tee genauso gern wie Kaffee.',
-      sentenceHtml: 'Ich mag Tee <span class="mark-connector">genauso</span> <span class="mark-adjective">gern</span> <span class="mark-connector">wie</span> Kaffee.',
-      formulaHtml: '<span class="mark-connector">genauso</span> + <span class="mark-adjective">gern</span> + <span class="mark-connector">wie</span>',
-      meaningHtml: "J'aime <span class=\"mark-french\">aussi</span> volontiers le thé <span class=\"mark-french\">que</span> le café.",
+      sentenceHtml: 'Ich mag Tee <span class="mark-equality">genauso</span> <span class="mark-adjective">gern</span> <span class="mark-equality">wie</span> Kaffee.',
+      formulaHtml: '<span class="mark-equality">genauso</span> + <span class="mark-adjective">gern</span> + <span class="mark-equality">wie</span>',
+      meaningHtml: "J'aime <span class=\"mark-equality\">aussi</span> volontiers le thé <span class=\"mark-equality\">que</span> le café.",
     },
   },
 ];
@@ -135,14 +138,14 @@ const scenarios = [
 
     const update = () => {
       const current = scenarios[selectedScenario][selectedMode];
-      const promptParts = scenarios[selectedScenario].prompt.split(' / ');
-      const adjective = promptParts[promptParts.length - 1] ?? 'grand';
       if (sentence) sentence.innerHTML = current.sentenceHtml;
       if (formula) formula.innerHTML = current.formulaHtml;
       if (meaning) meaning.innerHTML = current.meaningHtml;
       if (hint) {
+        const adjective = scenarios[selectedScenario].adjectiveFr ?? 'grand';
         const signal = selectedMode === 'different' ? 'plus' : selectedMode === 'less' ? 'moins' : 'aussi';
-        hint.innerHTML = `${signal} <span>${adjective}</span> que`;
+        const signalClass = selectedMode === 'equal' ? 'mark-equality' : 'mark-difference';
+        hint.innerHTML = `<span class="${signalClass}">${signal}</span> <span class="mark-adjective">${adjective}</span> <span class="${signalClass}">que</span>`;
       }
 
       scenarioButtons.forEach((button, index) => {

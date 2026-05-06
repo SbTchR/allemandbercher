@@ -2,6 +2,7 @@
 import { render } from 'astro:content';
 import ComparativeExercise from './ComparativeExercise.astro';
 import ComparativeRuleLab from './ComparativeRuleLab.astro';
+import ComparativeTheoryContent from './ComparativeTheoryContent.astro';
 import ExternalLinks from './ExternalLinks.astro';
 import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
@@ -21,11 +22,12 @@ const hasAside = entry.data.externalLinks.length > 0;
 const primaryAction = entry.data.primaryAction;
 const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
 const hasComparativeExercise = entry.collection === 'theorie' && entry.data.category === 'grammaire' && slug === 'le-comparatif';
+const hasHeaderCallout = hasObjectives || hasComparativeExercise;
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
   <article class="resource-page">
-    <header class:list={['resource-header', { 'resource-header-with-callout': hasObjectives }]}>
+    <header class:list={['resource-header', { 'resource-header-with-callout': hasHeaderCallout }]}>
       <div class="resource-title-block">
         <p class="eyebrow">{resourceEyebrow(entry)}</p>
         <h1>{entry.data.title}</h1>
@@ -35,12 +37,13 @@ const hasComparativeExercise = entry.collection === 'theorie' && entry.data.cate
               {primaryAction.label}
             </button>
           ) : (
-            entry.data.description && <p class="lead">{entry.data.description}</p>
+            entry.data.description && !hasComparativeExercise && <p class="lead">{entry.data.description}</p>
           )
         }
       </div>
 
       {hasObjectives && <ObjectiveBox objectives={entry.data.objectives} />}
+      {hasComparativeExercise && entry.data.description && <ObjectiveBox title="À retenir" objectives={[entry.data.description]} />}
     </header>
 
     <div class:list={['resource-layout', { 'resource-layout-wide': !hasAside }]}>
@@ -48,7 +51,7 @@ const hasComparativeExercise = entry.collection === 'theorie' && entry.data.cate
         {
           entry.collection === 'theorie' ? (
             <TheoryBox category={entry.data.category}>
-              <Content />
+              {hasComparativeExercise ? <ComparativeTheoryContent /> : <Content />}
             </TheoryBox>
           ) : (
             <Content />
