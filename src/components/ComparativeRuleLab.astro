@@ -1,0 +1,145 @@
+---
+const scenarios = [
+  {
+    key: 'size',
+    label: 'Taille',
+    prompt: 'Peter / Paul / klein',
+    different: {
+      sentence: 'Peter ist kleiner als Paul.',
+      formula: 'klein -> kleiner + als',
+      meaning: 'Peter est plus petit que Paul.',
+    },
+    equal: {
+      sentence: 'Peter ist genauso klein wie Paul.',
+      formula: 'genauso + klein + wie',
+      meaning: 'Peter est aussi petit que Paul.',
+    },
+  },
+  {
+    key: 'weather',
+    label: 'Température',
+    prompt: 'draussen / im Haus / kalt',
+    different: {
+      sentence: 'Draussen ist es kälter als im Haus.',
+      formula: 'kalt -> kälter + als',
+      meaning: 'Dehors, il fait plus froid que dans la maison.',
+    },
+    equal: {
+      sentence: 'Draussen ist es genauso kalt wie im Haus.',
+      formula: 'genauso + kalt + wie',
+      meaning: 'Dehors, il fait aussi froid que dans la maison.',
+    },
+  },
+  {
+    key: 'preference',
+    label: 'Préférence',
+    prompt: 'Tee / Kaffee / gern',
+    different: {
+      sentence: 'Ich mag Tee lieber als Kaffee.',
+      formula: 'gern -> lieber + als',
+      meaning: 'Je préfère le thé au café.',
+    },
+    equal: {
+      sentence: 'Ich mag Tee genauso gern wie Kaffee.',
+      formula: 'genauso + gern + wie',
+      meaning: "J'aime autant le thé que le café.",
+    },
+  },
+];
+---
+
+<section class="content-band comparative-lab" aria-labelledby="comparative-lab-title" data-comparative-lab>
+  <div class="comparative-lab-header">
+    <div>
+      <p class="home-section-label">Mini-labo</p>
+      <h2 id="comparative-lab-title">Choisis la bonne comparaison</h2>
+      <p>Change la situation et observe comment la phrase allemande se construit.</p>
+    </div>
+  </div>
+
+  <div class="comparative-lab-grid">
+    <div class="comparative-lab-panel" aria-label="Situations">
+      <p class="comparative-lab-label">1. Choisis une situation</p>
+      <div class="comparative-lab-options">
+        {
+          scenarios.map((scenario, index) => (
+            <button
+              class:list={['comparative-lab-card', { 'is-selected': index === 0 }]}
+              type="button"
+              data-scenario={index}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+            >
+              <strong>{scenario.label}</strong>
+              <span>{scenario.prompt}</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="comparative-lab-panel" aria-label="Type de comparaison">
+      <p class="comparative-lab-label">2. Choisis le type</p>
+      <div class="comparative-lab-toggle">
+        <button class="is-selected" type="button" data-mode="different" aria-pressed="true">Différent</button>
+        <button type="button" data-mode="equal" aria-pressed="false">Semblable</button>
+      </div>
+      <p class="comparative-lab-hint" data-lab-hint>plus ... que</p>
+    </div>
+
+    <div class="comparative-lab-result" aria-live="polite">
+      <p class="comparative-lab-label">3. Observe le résultat</p>
+      <p class="comparative-lab-sentence" data-lab-sentence>{scenarios[0].different.sentence}</p>
+      <p class="comparative-lab-formula" data-lab-formula>{scenarios[0].different.formula}</p>
+      <p class="comparative-lab-meaning" data-lab-meaning>{scenarios[0].different.meaning}</p>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ scenarios }} is:inline>
+  const lab = document.querySelector('[data-comparative-lab]');
+
+  if (lab instanceof HTMLElement) {
+    const scenarioButtons = Array.from(lab.querySelectorAll('[data-scenario]'));
+    const modeButtons = Array.from(lab.querySelectorAll('[data-mode]'));
+    const sentence = lab.querySelector('[data-lab-sentence]');
+    const formula = lab.querySelector('[data-lab-formula]');
+    const meaning = lab.querySelector('[data-lab-meaning]');
+    const hint = lab.querySelector('[data-lab-hint]');
+    let selectedScenario = 0;
+    let selectedMode = 'different';
+
+    const update = () => {
+      const current = scenarios[selectedScenario][selectedMode];
+      if (sentence) sentence.textContent = current.sentence;
+      if (formula) formula.textContent = current.formula;
+      if (meaning) meaning.textContent = current.meaning;
+      if (hint) hint.textContent = selectedMode === 'different' ? 'plus ... que' : 'aussi ... que';
+
+      scenarioButtons.forEach((button, index) => {
+        const isSelected = index === selectedScenario;
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+
+      modeButtons.forEach((button) => {
+        const isSelected = button.dataset.mode === selectedMode;
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+    };
+
+    scenarioButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        selectedScenario = Number(button.dataset.scenario ?? 0);
+        update();
+      });
+    });
+
+    modeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        selectedMode = button.dataset.mode === 'equal' ? 'equal' : 'different';
+        update();
+      });
+    });
+  }
+</script>

@@ -1022,6 +1022,164 @@ h2 {
   content: none;
 }
 
+.comparative-lab {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.comparative-lab-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.comparative-lab-header h2,
+.comparative-lab-header p {
+  margin-bottom: 0;
+}
+
+.comparative-lab-header > div {
+  display: grid;
+  gap: 8px;
+}
+
+.comparative-lab-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.78fr 1.15fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.comparative-lab-panel,
+.comparative-lab-result {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 15px;
+  border: 2px solid rgba(15, 26, 49, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 7px 0 rgba(15, 26, 49, 0.06);
+}
+
+.comparative-lab-result {
+  align-content: start;
+  border-color: rgba(217, 4, 41, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 201, 40, 0.18), transparent 42%),
+    rgba(255, 255, 255, 0.93);
+}
+
+.comparative-lab-label {
+  margin: 0;
+  color: var(--link);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.comparative-lab-options {
+  display: grid;
+  gap: 9px;
+}
+
+.comparative-lab-card,
+.comparative-lab-toggle button {
+  border: 2px solid rgba(31, 42, 68, 0.13);
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 4px 0 rgba(15, 26, 49, 0.06);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease,
+    background-color 160ms ease;
+}
+
+.comparative-lab-card {
+  display: grid;
+  gap: 3px;
+  padding: 11px 12px;
+}
+
+.comparative-lab-card strong {
+  color: var(--ink);
+  font-weight: 950;
+}
+
+.comparative-lab-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 760;
+}
+
+.comparative-lab-card:hover,
+.comparative-lab-toggle button:hover {
+  border-color: rgba(217, 4, 41, 0.28);
+  transform: translateY(-1px);
+}
+
+.comparative-lab-card.is-selected,
+.comparative-lab-toggle button.is-selected {
+  border-color: rgba(217, 4, 41, 0.38);
+  background:
+    linear-gradient(135deg, rgba(255, 201, 40, 0.36), transparent 42%),
+    #ffffff;
+  box-shadow: 0 5px 0 rgba(217, 4, 41, 0.13);
+}
+
+.comparative-lab-toggle {
+  display: grid;
+  gap: 9px;
+}
+
+.comparative-lab-toggle button {
+  min-height: 48px;
+  padding: 10px 12px;
+  font-weight: 950;
+  text-align: center;
+}
+
+.comparative-lab-hint {
+  justify-self: start;
+  margin: 0;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 201, 40, 0.24);
+  color: var(--link);
+  font-size: 0.9rem;
+  font-weight: 950;
+}
+
+.comparative-lab-sentence {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.22rem, 2.2vw, 1.72rem);
+  font-weight: 950;
+  line-height: 1.25;
+}
+
+.comparative-lab-formula {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(15, 26, 49, 0.06);
+  color: var(--link);
+  font-weight: 950;
+}
+
+.comparative-lab-meaning {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 780;
+}
+
 .notice {
   margin: 18px 0 0;
   padding: 16px 18px;
@@ -1948,6 +2106,10 @@ h2 {
   }
 
   .comparative-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .comparative-lab-grid {
     grid-template-columns: 1fr;
   }
 

@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content';
 import ComparativeExercise from './ComparativeExercise.astro';
+import ComparativeRuleLab from './ComparativeRuleLab.astro';
 import ExternalLinks from './ExternalLinks.astro';
 import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
@@ -64,6 +65,7 @@ const hasComparativeExercise = entry.collection === 'theorie' && entry.data.cate
       }
     </div>
 
+    {hasComparativeExercise && <ComparativeRuleLab />}
     {hasComparativeExercise && <ComparativeExercise />}
 
     <ImageGallery images={entry.data.images} />
