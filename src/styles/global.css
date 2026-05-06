@@ -1841,6 +1841,24 @@ h2 {
   max-width: 26ch;
 }
 
+.chapter-dashboard .dashboard-rule {
+  max-width: none;
+}
+
+.dashboard-rule-line,
+.dashboard-example-line {
+  display: block;
+}
+
+.dashboard-rule-line {
+  white-space: nowrap;
+}
+
+.dashboard-example-line {
+  margin-top: 5px;
+  padding-left: 18px;
+}
+
 .lesson-card,
 .mini-challenge,
 .external-quest {
