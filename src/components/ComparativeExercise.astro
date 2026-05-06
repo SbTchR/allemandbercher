@@ -137,7 +137,9 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
         const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.comparative-gap'));
         const revealButton = item.querySelector<HTMLButtonElement>('[data-show-item]');
         if (revealButton) {
-          revealButton.hidden = !itemGaps.every((gap) => normalize(gap.value) !== '');
+          const hasBeenChecked = item.getAttribute('data-checked') === 'true';
+          const isComplete = itemGaps.every((gap) => normalize(gap.value) !== '');
+          revealButton.hidden = !(hasBeenChecked && isComplete);
         }
       });
     };
@@ -201,6 +203,8 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
         const feedback = item.querySelector('[data-comparative-feedback]');
         let itemIsCorrect = true;
 
+        item.setAttribute('data-checked', 'true');
+
         itemGaps.forEach((gap) => {
           const isCorrect = acceptedAnswers(gap).includes(normalize(gap.value));
           gap.classList.toggle('is-correct', isCorrect);
@@ -226,6 +230,9 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
       });
       exercise.querySelectorAll<HTMLButtonElement>('[data-show-item]').forEach((button) => {
         button.hidden = true;
+      });
+      exercise.querySelectorAll('.comparative-item').forEach((item) => {
+        item.removeAttribute('data-checked');
       });
       updateWordUsage();
       gaps[0]?.focus();
