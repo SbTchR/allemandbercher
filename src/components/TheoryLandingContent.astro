@@ -1,0 +1,242 @@
+---
+import type { TheoryEntry } from '../lib/resources';
+import { resourceUrl } from '../lib/resources';
+
+type Props = {
+  entries: TheoryEntry[];
+};
+
+type TheoryItem = {
+  key: string;
+  examples: string[];
+};
+
+type TheoryGroup = {
+  title: string;
+  note: string;
+  items: TheoryItem[];
+};
+
+const { entries } = Astro.props;
+const entryMap = new Map(
+  entries.map((entry) => {
+    const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
+    return [`${entry.data.category}/${slug}`, entry];
+  })
+);
+
+const groups: TheoryGroup[] = [
+  {
+    title: 'Accords, cas et déclinaisons',
+    note: 'Pour comprendre le rôle des groupes dans la phrase et choisir les bonnes terminaisons.',
+    items: [
+      { key: 'grammaire/les-cas-theorie-de-base', examples: ['le sujet', 'le complément direct', 'le complément indirect'] },
+      { key: 'grammaire/tableaux-de-declinaisons', examples: ['mein / meinen / meinem', 'der / den / dem'] },
+      { key: 'grammaire/les-prepositions', examples: ['avec mon ami', 'dans la ville'] },
+      { key: 'grammaire/le-genitif', examples: ['le sac de Anna', 'le livre du prof'] },
+    ],
+  },
+  {
+    title: 'Pronoms et déterminants',
+    note: 'Pour remplacer un nom ou indiquer à qui appartient quelque chose.',
+    items: [
+      { key: 'grammaire/les-pronoms-personnels', examples: ['je / me / moi', 'il / lui'] },
+      { key: 'grammaire/les-pronoms-possessifs', examples: ['mon cahier', 'votre stylo'] },
+    ],
+  },
+  {
+    title: 'Adjectifs et comparaison',
+    note: 'Pour décrire, accorder un adjectif ou comparer plusieurs éléments.',
+    items: [
+      { key: 'grammaire/les-adjectifs', examples: ['un petit chien', 'une grande maison'] },
+      { key: 'grammaire/le-comparatif', examples: ['plus grand que', 'aussi grand que'] },
+      { key: 'grammaire/le-superlatif', examples: ['le plus grand', 'la plus belle'] },
+    ],
+  },
+  {
+    title: 'Phrase simple et place du verbe',
+    note: 'Pour construire une phrase, une question ou une phrase avec deux verbes.',
+    items: [
+      { key: 'syntaxe/la-place-du-verbe-principal', examples: ['Aujourd’hui, je vais...', 'Le verbe est en 2e position.'] },
+      { key: 'syntaxe/les-questions', examples: ['Où habites-tu ?', 'Est-ce que tu viens ?'] },
+      { key: 'syntaxe/les-phrases-avec-verbe-de-modalite', examples: ['Je dois...', 'Je peux...'] },
+      { key: 'syntaxe/les-phrases-au-passe-compose', examples: ['J’ai mangé...', 'Je suis allé...'] },
+    ],
+  },
+  {
+    title: 'Connecteurs et liens entre phrases',
+    note: 'Pour relier deux idées sans perdre la place du verbe.',
+    items: [
+      { key: 'syntaxe/und-oder-aber-denn-also', examples: ['et / ou / mais', 'car / donc'] },
+      { key: 'syntaxe/trotzdem-deshalb', examples: ['pourtant...', 'c’est pourquoi...'] },
+    ],
+  },
+  {
+    title: 'Subordonnées',
+    note: 'Pour mettre une phrase dans une autre phrase, souvent avec le verbe à la fin.',
+    items: [
+      { key: 'syntaxe/dass', examples: ['Je pense que...', 'Je trouve que...'] },
+      { key: 'syntaxe/weil', examples: ['parce que...', 'car...'] },
+      { key: 'syntaxe/wenn', examples: ['quand...', 'si...'] },
+      { key: 'syntaxe/damit-wahrend-bevor-nachdem-als-obwohl', examples: ['pour que...', 'pendant que...', 'bien que...'] },
+      { key: 'syntaxe/les-infinitives', examples: ['pour faire...', 'sans faire...'] },
+      { key: 'syntaxe/les-subordonnees-relatives', examples: ['la personne qui...', 'le livre que...'] },
+      { key: 'syntaxe/les-questions-indirectes', examples: ['où il habite', 'ce qu’elle fait'] },
+    ],
+  },
+  {
+    title: 'Temps et modes',
+    note: 'Pour conjuguer le verbe selon le moment ou l’intention.',
+    items: [
+      { key: 'conjugaison/present', examples: ['je joue', 'il habite'] },
+      { key: 'conjugaison/imperatif', examples: ['Écoute !', 'Ouvrez le livre !'] },
+      { key: 'conjugaison/passe-compose', examples: ['j’ai fait', 'je suis allé'] },
+      { key: 'conjugaison/preterit', examples: ['j’étais', 'il avait'] },
+      { key: 'conjugaison/futur', examples: ['je vais faire', 'il va venir'] },
+      { key: 'conjugaison/konjunktiv-ii', examples: ['je voudrais...', 'ce serait...'] },
+    ],
+  },
+  {
+    title: 'Types de verbes',
+    note: 'Pour utiliser les verbes qui changent la construction de la phrase.',
+    items: [
+      { key: 'conjugaison/verbes-de-modalite', examples: ['je dois...', 'je peux...'] },
+      { key: 'conjugaison/les-verbes-reflexifs', examples: ['je me lève', 'il se douche'] },
+    ],
+  },
+];
+
+const chooserOptions = [
+  {
+    key: 'accords',
+    label: 'Accords',
+    problem: 'Je ne sais pas quelle terminaison choisir.',
+    answer: 'Commence par les cas, puis vérifie les déterminants, adjectifs et prépositions.',
+  },
+  {
+    key: 'ordre',
+    label: 'Ordre des mots',
+    problem: 'Je ne sais pas où placer le verbe.',
+    answer: 'Va vers la syntaxe : phrase simple, question, connecteur ou subordonnée.',
+  },
+  {
+    key: 'verbes',
+    label: 'Verbes',
+    problem: 'Je ne sais pas conjuguer ou utiliser le verbe.',
+    answer: 'Va vers la conjugaison : temps, modes, verbes de modalité ou verbes réflexifs.',
+  },
+];
+---
+
+<section class="content-band theory-chooser" data-theory-chooser aria-labelledby="theory-chooser-title">
+  <div class="theory-chooser-header">
+    <p class="home-section-label">Repère rapide</p>
+    <h2 id="theory-chooser-title">Quel est ton problème ?</h2>
+  </div>
+  <div class="theory-chooser-grid">
+    <div class="theory-chooser-buttons" aria-label="Choisir un problème">
+      {
+        chooserOptions.map((option, index) => (
+          <button
+            class:list={['theory-chooser-button', { 'is-selected': index === 0 }]}
+            type="button"
+            data-choice={index}
+            aria-pressed={index === 0 ? 'true' : 'false'}
+          >
+            <strong>{option.label}</strong>
+            <span>{option.problem}</span>
+          </button>
+        ))
+      }
+    </div>
+    <div class="theory-chooser-result" aria-live="polite">
+      <p class="theory-chooser-kicker" data-choice-label>{chooserOptions[0].label}</p>
+      <p data-choice-answer>{chooserOptions[0].answer}</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-band theory-guide" aria-labelledby="theory-guide-title">
+  <p class="home-section-label">Mode d’emploi</p>
+  <h2 id="theory-guide-title">Trois questions à se poser</h2>
+  <div class="theory-guide-grid">
+    <details class="lesson-card" open>
+      <summary>1. Est-ce un problème d’accord ?</summary>
+      <div class="lesson-card-content">
+        <p>Regarde si tu dois choisir une terminaison pour un déterminant, un pronom ou un adjectif. Dans ce cas, commence par les cas et les déclinaisons.</p>
+      </div>
+    </details>
+    <details class="lesson-card">
+      <summary>2. Est-ce un problème de place du verbe ?</summary>
+      <div class="lesson-card-content">
+        <p>Regarde si ta phrase est une question, une phrase avec deux verbes, une phrase avec connecteur ou une subordonnée.</p>
+      </div>
+    </details>
+    <details class="lesson-card">
+      <summary>3. Est-ce un problème de conjugaison ?</summary>
+      <div class="lesson-card-content">
+        <p>Regarde le temps verbal demandé, puis vérifie si le verbe est régulier, modal, réflexif ou à forme particulière.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="theory-group-list" aria-label="Pages de théorie classées">
+  {
+    groups.map((group, index) => (
+      <details class="content-band theory-page-group" open={index < 3}>
+        <summary>
+          <span>
+            <strong>{group.title}</strong>
+            <small>{group.note}</small>
+          </span>
+        </summary>
+        <div class="theory-card-grid">
+          {
+            group.items.map((item) => {
+              const entry = entryMap.get(item.key);
+              if (!entry) return null;
+              return (
+                <a class="theory-card" href={resourceUrl(entry)}>
+                  <span class="card-kicker">{entry.data.category}</span>
+                  <strong>{entry.data.title}</strong>
+                  <span class="theory-card-examples">
+                    {item.examples.map((example) => <span>{example}</span>)}
+                  </span>
+                </a>
+              );
+            })
+          }
+        </div>
+      </details>
+    ))
+  }
+</section>
+
+<script define:vars={{ chooserOptions }} is:inline>
+  const chooser = document.querySelector('[data-theory-chooser]');
+
+  if (chooser instanceof HTMLElement) {
+    const buttons = Array.from(chooser.querySelectorAll('[data-choice]'));
+    const label = chooser.querySelector('[data-choice-label]');
+    const answer = chooser.querySelector('[data-choice-answer]');
+
+    const update = (selectedIndex) => {
+      const option = chooserOptions[selectedIndex] ?? chooserOptions[0];
+      if (label) label.textContent = option.label;
+      if (answer) answer.textContent = option.answer;
+
+      buttons.forEach((button, index) => {
+        const isSelected = index === selectedIndex;
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+    };
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        update(Number(button.dataset.choice ?? 0));
+      });
+    });
+  }
+</script>
