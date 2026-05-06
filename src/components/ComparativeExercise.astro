@@ -43,7 +43,7 @@ const items = [
   },
 ];
 
-const wordBank = ['kälter', 'älter', 'genauso', 'kurz', 'besser', 'lieber', 'als', 'wie'];
+const wordBank = items.flatMap((item) => item.gaps.map((gap) => gap.answer));
 const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
 ---
 
@@ -57,46 +57,54 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
     <output class="comparative-score" data-comparative-score aria-live="polite">0 / {gapCount}</output>
   </div>
 
-  <div class="comparative-items">
-    {
-      items.map((item, itemIndex) => (
-        <article class="comparative-item">
-          <p class="comparative-prompt">
-            <strong>{itemIndex + 1}.</strong> {item.prompt}
-          </p>
-          <p class="comparative-sentence">
-            {item.parts.map((part, partIndex) => (
-              <>
-                {part}
-                {item.gaps[partIndex] && (
-                  <input
-                    class="comparative-gap"
-                    type="text"
-                    inputmode="text"
-                    autocomplete="off"
-                    autocapitalize="off"
-                    spellcheck="false"
-                    aria-label={`Réponse ${itemIndex + 1}.${partIndex + 1}`}
-                    data-answer={[item.gaps[partIndex].answer, ...item.gaps[partIndex].aliases].join('|')}
-                  />
-                )}
-              </>
-            ))}
-          </p>
-          <p class="comparative-feedback" data-comparative-feedback aria-live="polite"></p>
-        </article>
-      ))
-    }
-  </div>
+  <div class="comparative-workspace">
+    <div class="comparative-items">
+      {
+        items.map((item, itemIndex) => (
+          <article class="comparative-item">
+            <p class="comparative-prompt">
+              <strong>{itemIndex + 1}.</strong> {item.prompt}
+            </p>
+            <p class="comparative-sentence">
+              {item.parts.map((part, partIndex) => (
+                <>
+                  {part}
+                  {item.gaps[partIndex] && (
+                    <input
+                      class="comparative-gap"
+                      type="text"
+                      inputmode="text"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                      aria-label={`Réponse ${itemIndex + 1}.${partIndex + 1}`}
+                      data-answer={[item.gaps[partIndex].answer, ...item.gaps[partIndex].aliases].join('|')}
+                    />
+                  )}
+                </>
+              ))}
+            </p>
+            <div class="comparative-item-footer">
+              <p class="comparative-feedback" data-comparative-feedback aria-live="polite"></p>
+              <button class="text-link comparative-item-reveal" type="button" data-show-item hidden>
+                Afficher la réponse
+              </button>
+            </div>
+          </article>
+        ))
+      }
+    </div>
 
-  <div class="comparative-word-bank" aria-label="Mots disponibles">
-    {wordBank.map((word) => <button type="button" data-word={word}>{word}</button>)}
-  </div>
+    <aside class="comparative-side" aria-label="Mots et actions">
+      <div class="comparative-word-bank" aria-label="Mots disponibles">
+        {wordBank.map((word) => <button type="button" data-word={word}>{word}</button>)}
+      </div>
 
-  <div class="comparative-actions">
-    <button class="quest-launch-button" type="button" data-check-comparative>Vérifier</button>
-    <button class="text-link" type="button" data-reset-comparative>Recommencer</button>
-    <button class="text-link" type="button" data-show-comparative>Afficher les réponses</button>
+      <div class="comparative-actions">
+        <button class="quest-launch-button comparative-check-button" type="button" data-check-comparative>Vérifier</button>
+        <button class="text-link" type="button" data-reset-comparative>Recommencer</button>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -105,6 +113,7 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
 
   if (exercise instanceof HTMLElement) {
     const gaps = Array.from(exercise.querySelectorAll<HTMLInputElement>('.comparative-gap'));
+    const wordButtons = Array.from(exercise.querySelectorAll<HTMLButtonElement>('[data-word]'));
     const score = exercise.querySelector('[data-comparative-score]');
     let activeGap = gaps[0];
 
@@ -123,6 +132,35 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
       if (score) score.textContent = `${correct} / ${gaps.length}`;
     };
 
+    const updateRevealButtons = () => {
+      exercise.querySelectorAll('.comparative-item').forEach((item) => {
+        const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.comparative-gap'));
+        const revealButton = item.querySelector<HTMLButtonElement>('[data-show-item]');
+        if (revealButton) {
+          revealButton.hidden = !itemGaps.every((gap) => normalize(gap.value) !== '');
+        }
+      });
+    };
+
+    const updateWordUsage = () => {
+      const usedButtonIndexes = new Set<number>();
+      const filledValues = gaps.map((gap) => normalize(gap.value)).filter(Boolean);
+
+      filledValues.forEach((value) => {
+        const buttonIndex = wordButtons.findIndex((button, index) => {
+          return !usedButtonIndexes.has(index) && normalize(button.dataset.word ?? '') === value;
+        });
+
+        if (buttonIndex >= 0) {
+          usedButtonIndexes.add(buttonIndex);
+        }
+      });
+
+      wordButtons.forEach((button, index) => {
+        button.classList.toggle('is-used', usedButtonIndexes.has(index));
+      });
+    };
+
     gaps.forEach((gap, index) => {
       gap.addEventListener('focus', () => {
         activeGap = gap;
@@ -132,6 +170,8 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
         gap.classList.remove('is-correct', 'is-wrong');
         const feedback = gap.closest('.comparative-item')?.querySelector('[data-comparative-feedback]');
         if (feedback) feedback.textContent = '';
+        updateRevealButtons();
+        updateWordUsage();
         updateScore();
       });
 
@@ -159,16 +199,20 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
       exercise.querySelectorAll('.comparative-item').forEach((item) => {
         const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.comparative-gap'));
         const feedback = item.querySelector('[data-comparative-feedback]');
-        const itemIsCorrect = itemGaps.every((gap) => {
+        let itemIsCorrect = true;
+
+        itemGaps.forEach((gap) => {
           const isCorrect = acceptedAnswers(gap).includes(normalize(gap.value));
           gap.classList.toggle('is-correct', isCorrect);
           gap.classList.toggle('is-wrong', !isCorrect);
-          return isCorrect;
+          if (!isCorrect) itemIsCorrect = false;
         });
 
         if (feedback) feedback.textContent = itemIsCorrect ? 'Correct.' : 'À corriger.';
       });
 
+      updateRevealButtons();
+      updateWordUsage();
       updateScore();
     });
 
@@ -180,20 +224,35 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
       exercise.querySelectorAll('[data-comparative-feedback]').forEach((feedback) => {
         feedback.textContent = '';
       });
+      exercise.querySelectorAll<HTMLButtonElement>('[data-show-item]').forEach((button) => {
+        button.hidden = true;
+      });
+      updateWordUsage();
       gaps[0]?.focus();
       updateScore();
     });
 
-    exercise.querySelector('[data-show-comparative]')?.addEventListener('click', () => {
-      gaps.forEach((gap) => {
-        gap.value = primaryAnswer(gap);
-        gap.classList.add('is-correct');
-        gap.classList.remove('is-wrong');
+    exercise.querySelectorAll('[data-show-item]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.comparative-item');
+        if (!item) return;
+
+        const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.comparative-gap'));
+        itemGaps.forEach((gap) => {
+          gap.value = primaryAnswer(gap);
+          gap.classList.add('is-correct');
+          gap.classList.remove('is-wrong');
+        });
+
+        const feedback = item.querySelector('[data-comparative-feedback]');
+        if (feedback) feedback.textContent = 'Réponse affichée.';
+        updateRevealButtons();
+        updateWordUsage();
+        updateScore();
       });
-      exercise.querySelectorAll('[data-comparative-feedback]').forEach((feedback) => {
-        feedback.textContent = 'Réponse affichée.';
-      });
-      updateScore();
     });
+
+    updateRevealButtons();
+    updateWordUsage();
   }
 </script>
