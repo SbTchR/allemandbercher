@@ -1,6 +1,6 @@
 ---
 title: "Le comparatif"
-description: "Le comparatif permet de dire plus ... que ou aussi ... que en allemand."
+description: "Le comparatif permet de dire plus ... que, moins ... que ou aussi ... que en allemand."
 section: "theorie"
 category: "grammaire"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-comparatif"
@@ -18,18 +18,18 @@ migrationNotes: []
   </article>
   <article>
     <strong>Différence</strong>
-    <p><code>adjectif + -er</code> puis <code>als</code> : plus ... que.</p>
+    <p><span class="comparison-pattern">adjectif + -er</span> puis <span class="comparison-pattern">als</span> : plus <span class="ghost-adjective">grand</span> que.</p>
   </article>
   <article>
     <strong>Égalité</strong>
-    <p><code>genauso</code> avant l’adjectif puis <code>wie</code> : aussi ... que.</p>
+    <p><span class="comparison-pattern">genauso</span> avant l’adjectif puis <span class="comparison-pattern">wie</span> : aussi <span class="ghost-adjective">grand</span> que.</p>
   </article>
 </section>
 
 <details class="lesson-card" open>
-  <summary>1. Dire « plus ... que »</summary>
+  <summary>1. Dire « plus ... que » ou « moins ... que »</summary>
   <div class="lesson-card-content">
-    <p>Quand deux éléments sont différents, l’allemand ajoute souvent <code>-er</code> à l’adjectif. Le mot <code>als</code> sert ensuite à introduire le deuxième élément comparé.</p>
+    <p>Quand deux éléments sont différents, l’allemand utilise deux constructions possibles. Pour dire « plus <span class="ghost-adjective">grand</span> que », on ajoute souvent <span class="comparison-pattern">-er</span> à l’adjectif. Pour dire « moins <span class="ghost-adjective">grand</span> que », on garde l’adjectif normal et on place <span class="comparison-pattern">weniger</span> devant.</p>
 
     <table class="quest-table grammar-table">
       <thead>
@@ -41,26 +41,31 @@ migrationNotes: []
       </thead>
       <tbody>
         <tr>
-          <td>plus petit que</td>
-          <td><code>klein + er + als</code></td>
-          <td><strong>Peter ist kleiner als Paul.</strong></td>
+          <td>plus <span class="ghost-adjective">grand</span> que</td>
+          <td><span class="comparison-pattern">gross + -er + als</span></td>
+          <td><strong>Peter ist grösser als Paul.</strong></td>
         </tr>
         <tr>
-          <td>plus froid que</td>
-          <td><code>kalt + er + als</code></td>
+          <td>plus <span class="ghost-adjective">froid</span> que</td>
+          <td><span class="comparison-pattern">kalt -> kälter + als</span></td>
           <td><strong>Draussen ist es kälter als im Haus.</strong></td>
+        </tr>
+        <tr>
+          <td>moins <span class="ghost-adjective">froid</span> que</td>
+          <td><span class="comparison-pattern">weniger + kalt + als</span></td>
+          <td><strong>Draussen ist es weniger kalt als im Haus.</strong></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Le réflexe à garder : si la phrase française contient « plus ... que », cherche l’adjectif, transforme-le, puis ajoute <code>als</code>.</p>
+    <p>Le réflexe à garder : avec « plus <span class="ghost-adjective">adjectif</span> que », transforme l’adjectif puis ajoute <span class="comparison-pattern">als</span>. Avec « moins <span class="ghost-adjective">adjectif</span> que », utilise <span class="comparison-pattern">weniger ... als</span>.</p>
   </div>
 </details>
 
 <details class="lesson-card" open>
   <summary>2. Dire « aussi ... que »</summary>
   <div class="lesson-card-content">
-    <p>Quand les deux éléments sont semblables, l’adjectif ne change pas. On encadre l’adjectif avec <code>genauso</code> et <code>wie</code>.</p>
+    <p>Quand les deux éléments sont semblables, l’adjectif ne change pas. On encadre l’adjectif avec <span class="comparison-pattern">genauso</span> et <span class="comparison-pattern">wie</span>.</p>
 
     <table class="quest-table grammar-table">
       <thead>
@@ -72,26 +77,26 @@ migrationNotes: []
       </thead>
       <tbody>
         <tr>
-          <td>aussi petit que</td>
-          <td><code>genauso + klein + wie</code></td>
-          <td><strong>Peter ist genauso klein wie Paul.</strong></td>
+          <td>aussi <span class="ghost-adjective">grand</span> que</td>
+          <td><span class="comparison-pattern">genauso + gross + wie</span></td>
+          <td><strong>Peter ist genauso gross wie Paul.</strong></td>
         </tr>
         <tr>
-          <td>aussi froid que</td>
-          <td><code>genauso + kalt + wie</code></td>
+          <td>aussi <span class="ghost-adjective">froid</span> que</td>
+          <td><span class="comparison-pattern">genauso + kalt + wie</span></td>
           <td><strong>Draussen ist es genauso kalt wie im Haus.</strong></td>
         </tr>
       </tbody>
     </table>
 
-    <p>Le réflexe à garder : avec « aussi ... que », ne mets pas <code>-er</code>. Utilise <code>genauso ... wie</code>.</p>
+    <p>Le réflexe à garder : avec « aussi <span class="ghost-adjective">adjectif</span> que », ne mets pas <span class="comparison-pattern">-er</span>. Utilise <span class="comparison-pattern">genauso ... wie</span>.</p>
   </div>
 </details>
 
 <details class="lesson-card" open>
   <summary>3. Les formes à reconnaître</summary>
   <div class="lesson-card-content">
-    <p>La règle <code>-er</code> fonctionne souvent, mais certains adjectifs changent un peu. Les adjectifs courts avec <code>a</code>, <code>o</code> ou <code>u</code> prennent parfois un tréma. Quelques mots sont irréguliers.</p>
+    <p>La règle <span class="comparison-pattern">-er</span> fonctionne souvent, mais certains adjectifs changent un peu. Les adjectifs courts avec <span class="comparison-pattern">a</span>, <span class="comparison-pattern">o</span> ou <span class="comparison-pattern">u</span> prennent parfois un tréma. Quelques mots sont irréguliers.</p>
 
     <div class="word-map" aria-label="Formes fréquentes du comparatif">
       <span><strong>klein</strong> -> kleiner</span>
@@ -103,7 +108,7 @@ migrationNotes: []
       <span><strong>gern</strong> -> lieber</span>
     </div>
 
-    <p>Pour parler de préférence, on utilise très souvent <code>lieber als</code> : <strong>Ich mag Tee lieber als Kaffee.</strong></p>
+    <p>Pour parler de préférence, on utilise très souvent <span class="comparison-pattern">lieber als</span> : <strong>Ich mag Tee lieber als Kaffee.</strong></p>
   </div>
 </details>
 
@@ -121,18 +126,23 @@ migrationNotes: []
       <tbody>
         <tr>
           <td>Une différence</td>
-          <td>plus ... que</td>
-          <td><code>adjectif + -er + als</code></td>
+          <td>plus <span class="ghost-adjective">grand</span> que</td>
+          <td><span class="comparison-pattern">adjectif + -er + als</span></td>
+        </tr>
+        <tr>
+          <td>Une différence négative</td>
+          <td>moins <span class="ghost-adjective">grand</span> que</td>
+          <td><span class="comparison-pattern">weniger + adjectif + als</span></td>
         </tr>
         <tr>
           <td>Une ressemblance</td>
-          <td>aussi ... que</td>
-          <td><code>genauso + adjectif + wie</code></td>
+          <td>aussi <span class="ghost-adjective">grand</span> que</td>
+          <td><span class="comparison-pattern">genauso + adjectif + wie</span></td>
         </tr>
         <tr>
           <td>Une préférence</td>
           <td>préférer</td>
-          <td><code>lieber + als</code></td>
+          <td><span class="comparison-pattern">lieber + als</span></td>
         </tr>
       </tbody>
     </table>
@@ -144,6 +154,7 @@ migrationNotes: []
         <ul>
           <li>Paul est plus grand que Tim. -> <strong>Paul ist grösser als Tim.</strong></li>
           <li>Anna est aussi sportive que Lea. -> <strong>Anna ist genauso sportlich wie Lea.</strong></li>
+          <li>Le test est moins difficile que l’exercice. -> <strong>Der Test ist weniger schwierig als die Übung.</strong></li>
           <li>Je préfère le chocolat à la vanille. -> <strong>Ich mag Schokolade lieber als Vanille.</strong></li>
         </ul>
       </div>

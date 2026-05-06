@@ -1147,14 +1147,25 @@ h2 {
 }
 
 .comparative-lab-hint {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 0.28em;
   justify-self: start;
   margin: 0;
-  padding: 7px 10px;
+  padding: 4px 12px;
   border-radius: 999px;
   background: rgba(255, 201, 40, 0.24);
   color: var(--link);
   font-size: 0.9rem;
   font-weight: 950;
+  line-height: 1;
+}
+
+.comparative-lab-hint span,
+.ghost-adjective {
+  color: rgba(60, 72, 99, 0.48);
+  font-weight: 850;
 }
 
 .comparative-lab-sentence {
@@ -1165,19 +1176,69 @@ h2 {
   line-height: 1.25;
 }
 
+.comparative-lab-sentence::before,
+.comparative-lab-meaning::before {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.comparative-lab-sentence::before {
+  content: "Allemand";
+}
+
+.comparative-lab-meaning::before {
+  content: "Français";
+}
+
 .comparative-lab-formula {
   margin: 0;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-radius: 12px;
   background: rgba(15, 26, 49, 0.06);
   color: var(--link);
   font-weight: 950;
+  line-height: 1.45;
 }
 
 .comparative-lab-meaning {
   margin: 0;
   color: var(--muted);
   font-weight: 780;
+}
+
+.mark-adjective,
+.mark-french {
+  color: #d90429;
+  font-weight: 950;
+}
+
+.mark-connector {
+  color: #006d77;
+  font-weight: 950;
+}
+
+.mark-ending {
+  border-bottom: 3px solid rgba(217, 4, 41, 0.55);
+}
+
+.comparison-pattern {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.55em;
+  padding: 0.08em 0.42em;
+  border-radius: 999px;
+  background: rgba(15, 26, 49, 0.06);
+  color: var(--link);
+  font-family: inherit;
+  font-size: 0.92em;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .notice {
