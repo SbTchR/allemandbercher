@@ -132,14 +132,17 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
       if (score) score.textContent = `${correct} / ${gaps.length}`;
     };
 
+    const itemIsComplete = (item: Element) => {
+      const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.comparative-gap'));
+      return itemGaps.every((gap) => normalize(gap.value) !== '');
+    };
+
     const updateRevealButtons = () => {
       exercise.querySelectorAll('.comparative-item').forEach((item) => {
-        const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.comparative-gap'));
         const revealButton = item.querySelector<HTMLButtonElement>('[data-show-item]');
         if (revealButton) {
           const hasBeenChecked = item.getAttribute('data-checked') === 'true';
-          const isComplete = itemGaps.every((gap) => normalize(gap.value) !== '');
-          revealButton.hidden = !(hasBeenChecked && isComplete);
+          revealButton.hidden = !(hasBeenChecked && itemIsComplete(item));
         }
       });
     };
@@ -170,7 +173,9 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
 
       gap.addEventListener('input', () => {
         gap.classList.remove('is-correct', 'is-wrong');
-        const feedback = gap.closest('.comparative-item')?.querySelector('[data-comparative-feedback]');
+        const item = gap.closest('.comparative-item');
+        item?.removeAttribute('data-checked');
+        const feedback = item?.querySelector('[data-comparative-feedback]');
         if (feedback) feedback.textContent = '';
         updateRevealButtons();
         updateWordUsage();
@@ -203,7 +208,11 @@ const gapCount = items.reduce((count, item) => count + item.gaps.length, 0);
         const feedback = item.querySelector('[data-comparative-feedback]');
         let itemIsCorrect = true;
 
-        item.setAttribute('data-checked', 'true');
+        if (itemIsComplete(item)) {
+          item.setAttribute('data-checked', 'true');
+        } else {
+          item.removeAttribute('data-checked');
+        }
 
         itemGaps.forEach((gap) => {
           const isCorrect = acceptedAnswers(gap).includes(normalize(gap.value));
