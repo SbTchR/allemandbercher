@@ -23,6 +23,7 @@ const primaryAction = entry.data.primaryAction;
 const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
 const hasComparativeExercise = entry.collection === 'theorie' && entry.data.category === 'grammaire' && slug === 'le-comparatif';
 const hasHeaderCallout = hasObjectives || hasComparativeExercise;
+
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
@@ -43,7 +44,19 @@ const hasHeaderCallout = hasObjectives || hasComparativeExercise;
       </div>
 
       {hasObjectives && <ObjectiveBox objectives={entry.data.objectives} />}
-      {hasComparativeExercise && entry.data.description && <ObjectiveBox title="À retenir" objectives={[entry.data.description]} />}
+      {
+        hasComparativeExercise && (
+          <aside class="objective-box comparative-reminder" aria-labelledby="comparative-reminder-title">
+            <h2 id="comparative-reminder-title">À retenir</h2>
+            <p>Le comparatif permet de dire :</p>
+            <div class="comparative-reminder-lines" aria-label="Exemples de comparatif">
+              <span>plus grand que</span>
+              <span>plus petit que</span>
+              <span>aussi grand que</span>
+            </div>
+          </aside>
+        )
+      }
     </header>
 
     <div class:list={['resource-layout', { 'resource-layout-wide': !hasAside }]}>
