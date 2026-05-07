@@ -42,22 +42,74 @@ function normalizeText(value) {
     .trim();
 }
 
+function normalizeNote(value) {
+  return value
+    .replace(/\[\s+/gu, '[')
+    .replace(/\s+\]/gu, ']')
+    .replace(/\(\s+/gu, '(')
+    .replace(/\s+\)/gu, ')')
+    .replace(/\s+([.;,])/gu, '$1')
+    .trim();
+}
+
 function unique(values) {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
 }
 
-function wordsFromSide(entryXml, lang) {
+function extractTagContent(source, tagName) {
+  const pattern = new RegExp(`<${tagName}\\b[^>]*>([\\s\\S]*?)<\\/${tagName}>`, 'gu');
+  return [...source.matchAll(pattern)].map((match) => match[1]);
+}
+
+function notesFromSide(sideXml) {
+  const repr = sideXml.match(/<repr\b[^>]*>([\s\S]*?)<\/repr>/u)?.[1] ?? '';
+  const notes = [];
+
+  for (const tagName of ['domain', 'flecttabref']) {
+    for (const block of extractTagContent(repr, tagName)) {
+      notes.push(normalizeNote(normalizeText(block)));
+    }
+  }
+
+  const reprWithoutLargeNotes = repr.replace(/<(?:domain|flecttabref)\b[^>]*>[\s\S]*?<\/(?:domain|flecttabref)>/gu, ' ');
+  for (const block of extractTagContent(reprWithoutLargeNotes, 'small')) {
+    notes.push(normalizeNote(normalizeText(block)));
+  }
+
+  return unique(notes).slice(0, 4);
+}
+
+function searchQueryFromSide(sideXml, fallback) {
+  const searchBlock = sideXml.match(/<search>([\s\S]*?)<\/search>/u)?.[1] ?? '';
+  const searchWords = [...searchBlock.matchAll(/<word\b[^>]*>([\s\S]*?)<\/word>/gu)].map((match) =>
+    normalizeText(match[1])
+  );
+  return unique(searchWords).join(' ') || fallback;
+}
+
+function termsFromSide(entryXml, lang) {
   const sideMatch = entryXml.match(new RegExp(`<side\\b[^>]*lang="${lang}"[^>]*>([\\s\\S]*?)<\\/side>`, 'u'));
   if (!sideMatch) return [];
 
   const sideXml = sideMatch[1];
   const wordsBlock = sideXml.match(/<words>([\s\S]*?)<\/words>/u)?.[1] ?? '';
   const words = [...wordsBlock.matchAll(/<word\b[^>]*>([\s\S]*?)<\/word>/gu)].map((match) => normalizeText(match[1]));
+  const notes = notesFromSide(sideXml);
 
-  if (words.length > 0) return unique(words);
+  if (words.length > 0) {
+    return unique(words).map((text) => ({
+      text,
+      notes,
+      query: searchQueryFromSide(sideXml, text),
+    }));
+  }
 
   const repr = sideXml.match(/<repr\b[^>]*>([\s\S]*?)<\/repr>/u)?.[1] ?? '';
-  return unique([normalizeText(repr)]);
+  return unique([normalizeText(repr)]).map((text) => ({
+    text,
+    notes,
+    query: searchQueryFromSide(sideXml, text),
+  }));
 }
 
 function parseSimilar(xml) {
@@ -86,8 +138,8 @@ export function parseLeoXml(xml, query) {
 
     for (const entryMatch of sectionMatch[2].matchAll(/<entry\b[^>]*>([\s\S]*?)<\/entry>/gu)) {
       const entryXml = entryMatch[1];
-      const fr = wordsFromSide(entryXml, 'fr');
-      const de = wordsFromSide(entryXml, 'de');
+      const fr = termsFromSide(entryXml, 'fr');
+      const de = termsFromSide(entryXml, 'de');
 
       if (fr.length === 0 || de.length === 0) continue;
 

@@ -1125,21 +1125,72 @@ h2 {
   box-shadow: 0 4px 0 rgba(15, 26, 49, 0.05);
 }
 
-.leo-result-card > div {
+.leo-result-pair {
   display: grid;
+  gap: 7px;
+}
+
+.leo-result-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.leo-term-button {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px;
+  max-width: 100%;
+  border: 2px solid rgba(15, 26, 49, 0.09);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 850;
+  line-height: 1.2;
+  padding: 6px 8px;
+  text-align: left;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.leo-term-button:hover,
+.leo-term-button:focus-visible {
+  border-color: rgba(217, 4, 41, 0.36);
+  box-shadow: 0 4px 0 rgba(217, 4, 41, 0.08);
+  outline: 0;
+  transform: translateY(-1px);
+}
+
+.leo-result-side:first-child .leo-term-button {
+  color: var(--ink);
+  font-weight: 950;
+}
+
+.leo-term-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.leo-term-notes {
+  display: inline-flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 
-.leo-result-card strong {
-  color: var(--ink);
+.leo-term-notes span {
+  border-radius: 999px;
+  background: rgba(255, 201, 40, 0.26);
+  color: #5f3c00;
+  font-size: 0.72rem;
   font-weight: 950;
-  line-height: 1.2;
-}
-
-.leo-result-card span:not(.card-kicker) {
-  color: var(--text);
-  font-weight: 820;
-  line-height: 1.24;
+  line-height: 1;
+  padding: 3px 5px;
+  white-space: nowrap;
 }
 
 .leo-similar-list {
@@ -1148,14 +1199,22 @@ h2 {
   gap: 8px;
 }
 
-.leo-similar-list span {
+.leo-similar-list button {
   border: 2px solid rgba(15, 26, 49, 0.08);
   border-radius: 999px;
   background: #ffffff;
   color: var(--ink);
+  cursor: pointer;
+  font: inherit;
   font-size: 0.86rem;
   font-weight: 900;
   padding: 5px 9px;
+}
+
+.leo-similar-list button:hover,
+.leo-similar-list button:focus-visible {
+  border-color: rgba(217, 4, 41, 0.36);
+  outline: 0;
 }
 
 .home-main-panel {

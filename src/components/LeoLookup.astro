@@ -38,7 +38,8 @@ const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
     </div>
 
     <p class="leo-lookup-note">
-      LEO bloque l’affichage direct dans une iframe. Les résultats intégrés passent donc par un petit proxy gratuit.
+      Attention : tu dois choisir la bonne traduction selon ton contexte. Si tu n'es pas sûr(e), clique sur le mot pour
+      voir ses autres sens (traduction inverse).
     </p>
     <a class="text-link" href={leoBaseUrl} rel="noreferrer" target="_blank">Ouvrir LEO sans recherche</a>
   </div>
@@ -65,13 +66,40 @@ const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
   };
 
   const escapeHtml = (value) =>
-    value.replace(/[&<>"']/g, (char) => ({
+    String(value).replace(/[&<>"']/g, (char) => ({
       '&': '&amp;',
       '<': '&lt;',
       '>': '&gt;',
       '"': '&quot;',
       "'": '&#39;',
     })[char]);
+
+  const getTermText = (term) => (typeof term === 'string' ? term : term?.text || '');
+  const getTermQuery = (term) => (typeof term === 'string' ? term : term?.query || term?.text || '');
+  const getTermNotes = (term) => (typeof term === 'string' ? [] : term?.notes || []);
+
+  const renderTerm = (term) => {
+    const text = getTermText(term);
+    const query = getTermQuery(term);
+    const notes = getTermNotes(term);
+
+    return `
+      <button class="leo-term-button" type="button" data-leo-query="${escapeHtml(query)}">
+        <span class="leo-term-text">${escapeHtml(text)}</span>
+        ${
+          notes.length
+            ? `<span class="leo-term-notes">${notes.map((note) => `<span>${escapeHtml(note)}</span>`).join('')}</span>`
+            : ''
+        }
+      </button>
+    `;
+  };
+
+  const renderTermGroup = (terms, label) => `
+    <div class="leo-result-side" aria-label="${escapeHtml(label)}">
+      ${(terms ?? []).map(renderTerm).join('')}
+    </div>
+  `;
 
   const renderLeoResults = (data) => {
     if (!(leoResults instanceof HTMLElement)) return;
@@ -80,7 +108,13 @@ const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
       const similar = data.similar?.flatMap((group) => group.words ?? []).slice(0, 8) ?? [];
       leoResults.innerHTML = `
         <p>Aucun résultat direct.</p>
-        ${similar.length ? `<div class="leo-similar-list">${similar.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}
+        ${
+          similar.length
+            ? `<div class="leo-similar-list">${similar
+                .map((word) => `<button type="button" data-leo-query="${escapeHtml(word)}">${escapeHtml(word)}</button>`)
+                .join('')}</div>`
+            : ''
+        }
       `;
       return;
     }
@@ -95,9 +129,9 @@ const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
           .map((result) => `
             <article class="leo-result-card">
               <span class="card-kicker">${escapeHtml(result.category || 'Résultat')}</span>
-              <div>
-                <strong>${(result.de ?? []).map(escapeHtml).join(' / ')}</strong>
-                <span>${(result.fr ?? []).map(escapeHtml).join(' / ')}</span>
+              <div class="leo-result-pair">
+                ${renderTermGroup(result.de, 'Allemand')}
+                ${renderTermGroup(result.fr, 'Français')}
               </div>
             </article>
           `)
@@ -105,6 +139,37 @@ const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
       </div>
       <a class="text-link" href="${escapeHtml(data.sourceUrl || leoSearchUrl())}" rel="noreferrer" target="_blank">Voir tous les résultats sur LEO</a>
     `;
+  };
+
+  const searchLeo = (query) => {
+    const cleanedQuery = query.trim();
+
+    if (!cleanedQuery) {
+      renderLeoStatus('Entre un mot à chercher.');
+      return;
+    }
+
+    if (leoInput instanceof HTMLInputElement) {
+      leoInput.value = cleanedQuery;
+    }
+
+    if (!leoProxyUrl) {
+      renderLeoStatus('Le proxy LEO n’est pas encore configuré. La recherche s’ouvre sur leo.org.');
+      window.open(leoSearchUrl(), '_blank', 'noopener');
+      return;
+    }
+
+    renderLeoStatus('Recherche en cours...');
+
+    fetch(`${leoProxyUrl}?q=${encodeURIComponent(cleanedQuery)}`)
+      .then((response) => {
+        if (!response.ok) throw new Error('La recherche LEO a échoué.');
+        return response.json();
+      })
+      .then(renderLeoResults)
+      .catch(() => {
+        renderLeoStatus('Impossible de charger les résultats intégrés. Ouvre LEO pour voir la recherche complète.');
+      });
   };
 
   leoOpenButton?.addEventListener('click', () => {
@@ -132,29 +197,16 @@ const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
     event.preventDefault();
 
     if (!(leoInput instanceof HTMLInputElement)) return;
-    const query = leoInput.value.trim();
+    searchLeo(leoInput.value);
+  });
 
-    if (!query) {
-      renderLeoStatus('Entre un mot à chercher.');
-      return;
-    }
+  leoResults?.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
 
-    if (!leoProxyUrl) {
-      renderLeoStatus('Le proxy LEO n’est pas encore configuré. La recherche s’ouvre sur leo.org.');
-      window.open(leoSearchUrl(), '_blank', 'noopener');
-      return;
-    }
+    const queryButton = event.target.closest('[data-leo-query]');
+    if (!(queryButton instanceof HTMLElement)) return;
 
-    renderLeoStatus('Recherche en cours...');
-
-    fetch(`${leoProxyUrl}?q=${encodeURIComponent(query)}`)
-      .then((response) => {
-        if (!response.ok) throw new Error('La recherche LEO a échoué.');
-        return response.json();
-      })
-      .then(renderLeoResults)
-      .catch(() => {
-        renderLeoStatus('Impossible de charger les résultats intégrés. Ouvre LEO pour voir la recherche complète.');
-      });
+    const query = queryButton.dataset.leoQuery;
+    if (query) searchLeo(query);
   });
 </script>
