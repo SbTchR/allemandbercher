@@ -16,9 +16,15 @@ const adviceActions: Record<string, string> = {
 ---
 
 <Layout title="Conseils" description="Conseils pour améliorer ses compétences communicatives et préparer les tests.">
-  <section class="hero compact-hero">
-    <h1>Conseils</h1>
-    <p class="lead">Pour améliorer ses compétences communicatives et bien se préparer aux tests</p>
+  <section class="resource-header resource-header-with-callout">
+    <div class="resource-title-block">
+      <h1>Conseils</h1>
+    </div>
+
+    <aside class="objective-box landing-intro-box" aria-labelledby="conseils-intro-title">
+      <h2 id="conseils-intro-title">À retenir</h2>
+      <p>Pour améliorer ses compétences communicatives et bien se préparer aux tests.</p>
+    </aside>
   </section>
 
   <section class="content-band" aria-label="Compétences travaillées">
@@ -27,7 +33,7 @@ const adviceActions: Record<string, string> = {
         conseils.map((entry) => (
           <a class="landing-tile advice-tile" href={resourceUrl(entry)}>
             <h2>{entry.data.title}</h2>
-            <span class="tile-action">{adviceActions[entry.data.title] ?? 'Voir les conseils'}</span>
+            <span class="tile-description">{adviceActions[entry.data.title] ?? 'Voir les conseils'}</span>
           </a>
         ))
       }

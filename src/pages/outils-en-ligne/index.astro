@@ -1,162 +1,195 @@
 ---
 import Layout from '../../components/Layout.astro';
 import { withBase } from '../../lib/paths';
+
+type ToolAction = {
+  label: string;
+  href: string;
+};
+
+type ToolCard = {
+  kicker: string;
+  title: string;
+  summary: string;
+  details: string[];
+  actions: ToolAction[];
+  open?: boolean;
+};
+
+const toolCards: ToolCard[] = [
+  {
+    kicker: 'Exercices',
+    title: 'Geni@l Klick online',
+    summary: 'Des exercices complémentaires liés aux chapitres de la méthode.',
+    details: [
+      'Sélectionne ton année en haut de la page, puis le chapitre sur la gauche.',
+      'Choisis la version adaptée à ton niveau : gris, bleu clair ou bleu foncé.',
+      'L’onglet “Hörtexte” donne accès aux fichiers audio de l’Arbeitsbuch.',
+    ],
+    actions: [{ label: 'Ouvrir Geni@l Klick', href: 'http://www.genialklick.ch/' }],
+    open: true,
+  },
+  {
+    kicker: 'Vocabulaire',
+    title: 'Application faite maison',
+    summary: 'La nouvelle application de vocabulaire pour réviser les listes par chapitre.',
+    details: ['Utilise-la pour retrouver rapidement les vocabulaires Geni@l Klick et t’entraîner régulièrement.'],
+    actions: [{ label: 'Ouvrir AppVoc', href: 'https://sbtchr.github.io/AppVoc/' }],
+  },
+  {
+    kicker: 'Vocabulaire',
+    title: 'Quizlet',
+    summary: 'Des listes par chapitre avec plusieurs modes d’entraînement.',
+    details: [
+      'Crée un compte si tu veux garder ta progression.',
+      'Privilégie les modes “apprendre” et “écrire” pour réviser efficacement.',
+      'Les jeux sont utiles pour varier, mais ils ne remplacent pas une vraie révision.',
+    ],
+    actions: [
+      { label: 'Geni@l Klick 9H', href: 'https://quizlet.com/Sbovat/folders/genil-klick-9h?x=1xqt&i=g2phv' },
+      { label: 'Geni@l Klick 10H', href: 'https://quizlet.com/Sbovat/folders/genil-klick-10-11h?x=1xqt&i=g2phv' },
+      { label: 'Geni@l Klick 11H', href: 'https://quizlet.com/Sbovat/folders/genil-klick-11h/sets' },
+    ],
+  },
+  {
+    kicker: 'Entraînement',
+    title: 'Duolingo',
+    summary: 'Un complément ludique pour automatiser les structures et le vocabulaire.',
+    details: [
+      'Utile pour travailler un peu chaque jour.',
+      'À utiliser comme complément au cours, pas comme remplacement des exercices de chapitre.',
+    ],
+    actions: [{ label: 'Ouvrir Duolingo', href: 'http://www.duolingo.com/' }],
+  },
+  {
+    kicker: 'Vidéo',
+    title: "Nico's Weg",
+    summary: 'De courtes vidéos de Deutsche Welle avec exercices autocorrigés.',
+    details: [
+      'La série commence avec les bases et monte progressivement.',
+      'Regarde les épisodes dans l’ordre quand c’est possible pour suivre l’histoire.',
+    ],
+    actions: [
+      { label: 'Débutant A1', href: 'https://learngerman.dw.com/en/beginners/c-36519789' },
+      { label: 'Intermédiaire A2', href: 'https://learngerman.dw.com/en/beginners-with-prior-knowledge/c-36519797' },
+      { label: 'Avancé B1', href: 'https://learngerman.dw.com/en/fortgeschrittene/c-36519718' },
+    ],
+  },
+  {
+    kicker: 'Outil maison',
+    title: 'NAD-Maschine',
+    summary: 'Un outil pour travailler certaines structures de phrase.',
+    details: ['Accède directement à la page intégrée au site.'],
+    actions: [{ label: 'Ouvrir la NAD-Maschine', href: withBase('/outils-en-ligne/nad-maschine/') }],
+  },
+];
+
+const dictionaries = [
+  {
+    title: 'LEO',
+    href: 'http://www.leo.org/',
+    note: 'Très complet, avec forum pour les traductions et les usages précis.',
+  },
+  {
+    title: 'Pons',
+    href: 'http://www.pons.com/',
+    note: 'Dictionnaire complet avec exemples d’expressions.',
+  },
+  {
+    title: 'Google Traduction',
+    href: 'http://translate.google.com/',
+    note: 'Utile pour comprendre un texte, mais à éviter pour produire une phrase à ton niveau.',
+  },
+];
+
+const smartphoneApps = [
+  'Duolingo',
+  'Quizlet',
+  'LEO',
+  "DW Learn German / Nico's Weg",
+  'Mein Weg nach Deutschland',
+  'Lernabenteuer Deutsch',
+  'LyricsTraining',
+  'ChatGPT ou Google Gemini pour l’expression orale',
+];
 ---
 
 <Layout title="Outils en ligne" description="Outils en ligne utiles pour apprendre l’allemand.">
-  <section class="hero compact-hero">
-    <p class="eyebrow">Ressources externes</p>
-    <h1>Outils en ligne</h1>
-    <p class="lead">Pour s'entrainer efficacement et progresser rapidement...</p>
+  <section class="resource-header resource-header-with-callout">
+    <div class="resource-title-block">
+      <p class="eyebrow">Ressources externes</p>
+      <h1>Outils en ligne</h1>
+    </div>
+
+    <aside class="objective-box landing-intro-box" aria-labelledby="tools-intro-title">
+      <h2 id="tools-intro-title">Choisir le bon outil</h2>
+      <p>Des sites utiles pour s’entraîner, réviser le vocabulaire, vérifier un mot ou compléter le travail fait en classe.</p>
+    </aside>
   </section>
 
-  <section class="content-band">
-    <div class="prose">
-      <h2>Geni@l Klick online</h2>
-      <p>
-        Sur le site <a href="http://www.genialklick.ch/">www.genialklick.ch</a>, tu trouves des exercices
-        complémentaires en lien avec les chapitres de la méthode utilisée en classe.
-      </p>
-      <p>Il faut sélectionner ton année en haut de la page, puis le chapitre sur la gauche.</p>
-      <p>
-        Il y a presque à chaque fois 3 versions de chaque exercice, choisi donc la version qui correspond à ton niveau
-        (carré gris: niveau1, carré bleu clair: niveau 2, carré bleu foncé: VP).
-      </p>
-      <p>
-        Sous l'onglet "Hörtexte" en haut de la page, tu trouves également les fichiers audio pour les exercices de
-        l'Arbeitsbuch.
-      </p>
+  <section class="content-band tools-landing-panel" aria-labelledby="tools-main-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Accès rapide</p>
+        <h2 id="tools-main-title">Outils principaux</h2>
+      </div>
+    </div>
 
-      <h2>Nouvelle application "faite-maison" pour le voc</h2>
-      <p>
-        <a href="https://sbtchr.github.io/AppVoc/">Accéder à l'application de vocabulaire</a>
-      </p>
+    <div class="tool-card-grid">
+      {
+        toolCards.map((tool) => (
+          <details class="tool-card" open={tool.open}>
+            <summary>
+              <span class="card-kicker">{tool.kicker}</span>
+              <strong>{tool.title}</strong>
+              <span>{tool.summary}</span>
+            </summary>
+            <div class="tool-card-content">
+              <ul>
+                {tool.details.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+              <div class="tool-action-grid">
+                {tool.actions.map((action) => (
+                  <a class="text-link" href={action.href}>{action.label}</a>
+                ))}
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </section>
 
-      <h2>Quizlet</h2>
-      <p>
-        Le site internet <a href="http://www.quizlet.com/">www.quizlet.com</a>, aussi disponible sous forme
-        d'application pour smartphone, permet d'apprendre le vocabulaire à l'aide de différents exercices. Tout le
-        vocabulaire de la méthode Geni@l Klick y a été ajouté sous forme de listes par chapitre. Les mots sont écrits
-        au singulier et au pluriel en toutes lettres et les formes conjuguées des verbes aussi.
-      </p>
-      <p>Clique sur les liens suivant pour y accéder:</p>
-      <ul>
-        <li>
-          <a href="https://quizlet.com/Sbovat/folders/genil-klick-9h?x=1xqt&i=g2phv">Geni@l Klick 9H</a>
-        </li>
-        <li>
-          <a href="https://quizlet.com/Sbovat/folders/genil-klick-10-11h?x=1xqt&i=g2phv">Geni@l Klick 10H</a>
-        </li>
-        <li>
-          <a href="https://quizlet.com/Sbovat/folders/genil-klick-11h/sets">Geni@l Klick 11H</a>
-        </li>
-      </ul>
-
-      <h3>Inscription à une classe</h3>
-      <p>
-        Afin de profiter du suivi de progression et de voir directement les listes que tu es supposé travailler, il est
-        nécessaire de te créer un compte et d'adhérer à la classe virtuelle sur le site. Utilise ton prénom pour créer
-        ton pseudo pour que l'enseignant puisse savoir de quel élève il s'agit lorsqu'il doit accepter la demande
-        d'adhésion à la classe.
-      </p>
-      <p>Une fois ton compte créé, clique sur le lien qui correspond à ta classe et fais une demande d'adhésion.</p>
-
-      <h3>Utilisation</h3>
-      <p>Tu peux créer toi-même tes propres listes !</p>
-      <p>
-        En cliquant sur les petites étoiles à droites des mots, tu peux entrainer une petite partie du vocabulaire de la
-        liste à la fois. Une fois les mots sélectionner, il faut cliquer sur l'étoile turquoise à droite de "tout" en
-        haut de la liste.
-      </p>
-      <p>
-        Privilégie les modes "apprendre" et "écrire" pour apprendre efficacement. Les jeux "associer" et "gravité" sont
-        certes plus ludiques mais peu adaptés à l'apprentissage du voc.
-      </p>
-      <p>Télécharge l'application pour réviser dès que tu as un petit moment !</p>
-
-      <h2>Duolingo</h2>
-      <p>
-        Le site internet <a href="http://www.duolingo.com/">www.duolingo.com</a>, aussi disponible sous forme
-        d'application, permet d'entrainer les structures de la langue tout en apprenant du vocabulaire de manière
-        instinctive et très ludique. C'est un très bon complément au cours d'allemand car il permet de développer la
-        spontanéité le côté "instinctif" de la langue.
-      </p>
-
-      <h2>Dictionnaires en ligne</h2>
-      <h3><a href="http://www.leo.org/">www.leo.org</a></h3>
-      <p>
-        Ce dictionnaire en ligne est très complet et possède un forum de discussion pour la traduction d'expressions
-        spécifiques ou l'utilisation contextuelle des différentes traductions d'un mot. Il existe aussi sous forme
-        d'application.
-      </p>
-
-      <h3><a href="http://www.pons.com/">www.pons.com</a></h3>
-      <p>Ce dictionnaire est aussi très complet et propose aussi des exemples d'expressions, mais pas de forum.</p>
-
-      <h3><a href="http://translate.google.com/">translate.google.com</a></h3>
-      <p>
-        Il faut l'avouer, cet outil est très performant, mais il faut savoir l'utiliser. Pour obtenir une bonne
-        traduction du français à l'allemand, il faut faire très attention à la formulation de ses phrases en français
-        (ne pas utiliser d'expressions spécifiques, orthographe parfaitement correcte, éviter les phrases trop longues
-        ou trop complexes, etc.). C'est pourquoi il n'est pas recommandé de l'utiliser pour la traduction du français
-        vers l'allemand à ton niveau !
-      </p>
-      <p>
-        Pour la traduction d'un mot seul, il est aussi très limité. L'intelligence artificielle de google est efficace
-        pour la traduction en contexte (phrases, texte), mais google ne propose qu'une traduction lorsqu'on y entre un
-        mot seul.
-      </p>
-      <p>
-        Utilisation intelligente de google traduction: Lorsque tu veux comprendre rapidement le contenu d'un site
-        internet en allemand par exemple, tu peux copier-coller le texte en allemand et lire la traduction en français,
-        mais cela ne va pas te faire travailler la compréhension écrite...
-      </p>
-
-      <h2>Nico's Weg - des vidéos pour chaque thème</h2>
-      <p>
-        Créée par Deutsche Welle, cette série te propose de suivre les aventures de Nico, une jeune homme qui décide de
-        partir en Allemagne rendre visite à sa tante alors qu'il ne connait pas un mot d'allemand. Les épisodes sont
-        très courts et axés chacun sur un thème spécifique. Des exercices de compréhension écrite et orale, de
-        vocabulaire et de grammaire sont à faire en ligne (et auto-corrigés) après chaque vidéo.
-      </p>
-      <p>
-        Cette série est accessible à tous les niveaux, elle commence avec les bases élémentaires. Il est possible de
-        sauter des épisodes mais il vaut mieux les regarder à la suite pour bien comprendre l'histoire.
-      </p>
-      <p>Le site existe aussi sous forme d'application pour smartphone !</p>
-      <ul>
-        <li>
-          <a href="https://learngerman.dw.com/en/beginners/c-36519789">Débutant - A1, niveau début 9H</a>
-        </li>
-        <li>
-          <a href="https://learngerman.dw.com/en/beginners-with-prior-knowledge/c-36519797">
-            Intermédiaire - A2, niveau 9-10H
+  <section class="content-band" aria-labelledby="dictionary-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Traduction</p>
+        <h2 id="dictionary-title">Dictionnaires en ligne</h2>
+      </div>
+    </div>
+    <div class="dictionary-grid">
+      {
+        dictionaries.map((dictionary) => (
+          <a class="dictionary-card" href={dictionary.href}>
+            <strong>{dictionary.title}</strong>
+            <span>{dictionary.note}</span>
           </a>
-        </li>
-        <li>
-          <a href="https://learngerman.dw.com/en/fortgeschrittene/c-36519718">Avancé - B1, niveau 11H</a>
-        </li>
-      </ul>
+        ))
+      }
+    </div>
+  </section>
 
-      <h2>Applications pour smartphone</h2>
-      <ul>
-        <li>duolingo</li>
-        <li>quizlet</li>
-        <li>leo</li>
-        <li>DWLearnGerman, Nico's Weg en version smartphone</li>
-        <li>
-          Mein Weg nach Deutschland (vidéos et exercices sur les besoins de la vie quotidienne en Allemagne, p. ex.
-          faire un abo de téléphone, trouver des amis, postuler pour un travail, ...)
-        </li>
-        <li>Lernabenteuer Deutsch (B1, escape game pour apprendre à chercher un logement, un travail, etc. en Allemagne)</li>
-        <li>LyricsTraining (entraine ton allemand avec les paroles de tes chansons préférées, super fun!)</li>
-        <li>Chatgpt ou Google Gemini (idéal pour entrainer l'expression orale grâce au chat vocal)</li>
-      </ul>
-
-      <h2>NAD-Maschine</h2>
-      <p>
-        <a href={withBase('/outils-en-ligne/nad-maschine/')}>Accéder à la NAD-Maschine</a>
-      </p>
+  <section class="content-band apps-panel" aria-labelledby="apps-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Smartphone</p>
+        <h2 id="apps-title">Applications utiles</h2>
+      </div>
+    </div>
+    <div class="app-chip-grid">
+      {smartphoneApps.map((app) => <span>{app}</span>)}
     </div>
   </section>
 </Layout>

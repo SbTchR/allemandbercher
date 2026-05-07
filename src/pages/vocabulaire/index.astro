@@ -17,7 +17,7 @@ const vocabularyBySlug = new Map(
 );
 
 function chapterTitle(chapter: ChapterItem) {
-  return `${chapter.label.replace('K', 'Kapitel ')} - ${chapter.title}`;
+  return chapter.label.replace('K', 'Kapitel ');
 }
 ---
 
@@ -29,10 +29,14 @@ function chapterTitle(chapter: ChapterItem) {
     </div>
 
     <aside class="objective-box vocabulary-intro-box" aria-labelledby="vocabulary-intro-title">
-      <h2 id="vocabulary-intro-title">Réviser les mots</h2>
-      <p>Quizlet, Gimkit, Blooket et application de révision pour apprendre les listes par chapitre.</p>
-      <a class="text-link" href="https://sbtchr.github.io/AppVoc/">Application faite maison</a>
-      <p>Application smartphone recommandée : Cabuu</p>
+      <div>
+        <h2 id="vocabulary-intro-title">Réviser les mots</h2>
+        <p>Quizlet, Gimkit, Blooket et application de révision pour apprendre les listes par chapitre.</p>
+      </div>
+      <div class="vocabulary-tool-actions">
+        <a class="text-link" href="https://sbtchr.github.io/AppVoc/">Application faite maison</a>
+        <span>Cabuu recommandé</span>
+      </div>
     </aside>
   </section>
 
@@ -52,7 +56,8 @@ function chapterTitle(chapter: ChapterItem) {
 
             return (
               <a class="landing-tile chapter-title-tile" href={resourceUrl(entry)}>
-                <span>{chapterTitle(chapter)}</span>
+                <h3>{chapterTitle(chapter)}</h3>
+                <span class="tile-description">{chapter.title}</span>
               </a>
             );
           })}

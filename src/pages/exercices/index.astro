@@ -1,57 +1,59 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
-import { byOrderThenTitle, resourceUrl } from '../../lib/resources';
+import { resourceUrl } from '../../lib/resources';
 import { chapterLevels, type ChapterItem } from '../../data/chapters';
 
 const exercices = await getCollection('exercices');
-const byLevel = {
-  'Geni@l Klick 9H': exercices.filter((entry) => entry.data.level === '9H').sort(byOrderThenTitle),
-  'Geni@l 10H': exercices.filter((entry) => entry.data.level === '10H').sort(byOrderThenTitle),
-  'Geni@l 11H': exercices.filter((entry) => entry.data.level === '11H').sort(byOrderThenTitle),
+const levelTitles = {
+  '9H': 'Geni@l Klick 9H',
+  '10H': 'Geni@l 10H',
+  '11H': 'Geni@l 11H',
 };
-
-const sectionId = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const exerciseBySlug = new Map(
   exercices.map((entry) => [entry.id.split('/').pop()?.replace(/\.md$/, ''), entry])
 );
 
-function chapterTitle(chapter: ChapterItem) {
-  return `${chapter.label.replace('K', 'Kapitel ')} - ${chapter.title}`;
+function chapterLabel(chapter: ChapterItem) {
+  return chapter.label.replace('K', 'Kapitel ');
 }
 ---
 
 <Layout title="Exercices" description="Exercices d’allemand classés par niveau et par chapitre.">
-  <section class="hero compact-hero">
-    <h1>Geni@l</h1>
+  <section class="resource-header resource-header-with-callout">
+    <div class="resource-title-block">
+      <p class="eyebrow">Par chapitre</p>
+      <h1>Exercices</h1>
+    </div>
+
+    <aside class="objective-box landing-intro-box" aria-labelledby="exercices-intro-title">
+      <h2 id="exercices-intro-title">Choisir un chapitre</h2>
+      <p>Retrouve les exercices interactifs liés aux chapitres travaillés en classe.</p>
+    </aside>
   </section>
 
   {
-    Object.entries(byLevel).map(([label, entries]) => {
-      const levelData = chapterLevels.find((item) => item.level === entries[0]?.data.level);
-      const chapters = levelData?.chapters ?? [];
-
-      return (
-      <section class="content-band" aria-labelledby={`exercices-${sectionId(label)}`}>
+    chapterLevels.map((levelData) => (
+      <section class="content-band" aria-labelledby={`exercices-${levelData.level}`}>
         <div class="section-heading">
           <div>
-            <h2 id={`exercices-${sectionId(label)}`}>{label}</h2>
+            <h2 id={`exercices-${levelData.level}`}>{levelTitles[levelData.level]}</h2>
           </div>
         </div>
         <div class="landing-tile-grid chapter-tile-grid">
-          {chapters.map((chapter) => {
+          {levelData.chapters.map((chapter) => {
             const entry = exerciseBySlug.get(chapter.exerciseSlug);
             if (!entry) return null;
 
             return (
               <a class="landing-tile chapter-title-tile" href={resourceUrl(entry)}>
-                <span>{chapterTitle(chapter)}</span>
+                <h3>{chapterLabel(chapter)}</h3>
+                <span class="tile-description">{chapter.title}</span>
               </a>
             );
           })}
         </div>
       </section>
-      );
-    })
+    ))
   }
 </Layout>

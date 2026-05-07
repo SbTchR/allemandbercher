@@ -644,27 +644,37 @@ h2 {
 }
 
 .landing-tile h2,
+.landing-tile h3,
 .landing-tile span {
   position: relative;
   margin: 0;
 }
 
-.landing-tile h2 {
+.landing-tile h2,
+.landing-tile h3 {
   max-width: calc(100% - 28px);
   font-size: 1.15rem;
   line-height: 1.16;
 }
 
-.tile-action {
+.landing-tile h3 {
+  color: var(--ink);
+  font-weight: 950;
+}
+
+.tile-action,
+.tile-description {
   width: fit-content;
   max-width: 100%;
-  border-radius: 11px;
-  background: rgba(255, 201, 40, 0.24);
-  color: #6b4b00;
+  border: 2px solid rgba(15, 26, 49, 0.08);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--ink);
   padding: 6px 9px;
   font-size: 0.82rem;
   font-weight: 900;
   line-height: 1.2;
+  box-shadow: 0 4px 0 rgba(15, 26, 49, 0.05);
 }
 
 .chapter-tile-grid {
@@ -672,25 +682,36 @@ h2 {
 }
 
 .chapter-title-tile {
-  min-height: 88px;
-  align-content: center;
+  min-height: 118px;
+  align-content: space-between;
 }
 
 .chapter-title-tile span {
-  max-width: calc(100% - 26px);
-  color: var(--ink);
-  font-size: 1.02rem;
-  font-weight: 950;
-  line-height: 1.18;
+  max-width: 100%;
 }
 
 .vocabulary-landing-header {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 520px);
   margin-bottom: 6px;
+}
+
+.landing-intro-box {
+  display: grid;
+  gap: 8px;
+}
+
+.landing-intro-box p {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 850;
+  line-height: 1.35;
 }
 
 .vocabulary-intro-box {
   display: grid;
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
 }
 
 .vocabulary-intro-box p {
@@ -702,6 +723,351 @@ h2 {
 
 .vocabulary-intro-box .text-link {
   width: fit-content;
+}
+
+.vocabulary-tool-actions {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
+.vocabulary-tool-actions span {
+  width: fit-content;
+  border: 2px solid rgba(15, 26, 49, 0.08);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--ink);
+  padding: 7px 10px;
+  font-size: 0.88rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.tool-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.tool-card {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(15, 26, 49, 0.1);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(244, 248, 255, 0.9)),
+    linear-gradient(180deg, rgba(255, 201, 40, 0.08), transparent);
+  box-shadow: 0 8px 0 rgba(15, 26, 49, 0.07);
+  transition:
+    border-color 170ms ease,
+    box-shadow 170ms ease,
+    transform 170ms ease;
+}
+
+.tool-card:hover {
+  border-color: rgba(217, 4, 41, 0.28);
+  box-shadow: 0 11px 0 rgba(15, 26, 49, 0.07), 0 18px 30px rgba(21, 36, 72, 0.09);
+  transform: translateY(-2px);
+}
+
+.tool-card > summary {
+  display: grid;
+  gap: 10px;
+  min-height: 154px;
+  align-content: start;
+  padding: 18px 48px 18px 18px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tool-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.tool-card > summary::after {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border: 2px solid rgba(15, 26, 49, 0.14);
+  border-radius: 9px;
+  background:
+    linear-gradient(135deg, rgba(255, 201, 40, 0.95) 0 50%, rgba(217, 4, 41, 0.12) 50% 100%);
+  box-shadow: 0 4px 0 rgba(15, 26, 49, 0.08);
+  color: var(--ink);
+  content: "+";
+  font-weight: 950;
+}
+
+.tool-card[open] > summary::after {
+  content: "-";
+}
+
+.tool-card > summary strong {
+  color: var(--ink);
+  font-size: 1.16rem;
+  font-weight: 950;
+  line-height: 1.16;
+}
+
+.tool-card > summary > span:not(.card-kicker) {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.32;
+}
+
+.tool-card-content {
+  display: grid;
+  gap: 14px;
+  padding: 0 18px 18px;
+}
+
+.tool-card-content ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.tool-card-content li {
+  color: var(--text);
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.tool-card-content li::marker {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.tool-action-grid,
+.dictionary-grid,
+.app-chip-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.tool-action-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.tool-action-grid .text-link {
+  justify-content: center;
+  text-align: center;
+}
+
+.dictionary-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.dictionary-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 8px;
+  min-height: 118px;
+  padding: 17px;
+  border: 2px solid rgba(15, 26, 49, 0.1);
+  border-radius: 15px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.97), rgba(244, 248, 255, 0.9)),
+    linear-gradient(180deg, rgba(255, 201, 40, 0.08), transparent);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 7px 0 rgba(15, 26, 49, 0.07);
+  transition:
+    border-color 170ms ease,
+    box-shadow 170ms ease,
+    transform 170ms ease;
+}
+
+.dictionary-card::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  content: "";
+  transform: scaleX(0.28);
+  transform-origin: left;
+  transition: transform 170ms ease;
+}
+
+.dictionary-card:hover {
+  border-color: rgba(217, 4, 41, 0.34);
+  box-shadow: 0 10px 0 rgba(15, 26, 49, 0.07), 0 18px 30px rgba(21, 36, 72, 0.1);
+  transform: translateY(-3px);
+}
+
+.dictionary-card:hover::after {
+  transform: scaleX(1);
+}
+
+.dictionary-card strong {
+  font-size: 1.08rem;
+  font-weight: 950;
+}
+
+.dictionary-card span {
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.32;
+}
+
+.app-chip-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.app-chip-grid span {
+  border: 2px solid rgba(15, 26, 49, 0.09);
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 5px 0 rgba(15, 26, 49, 0.06);
+  color: var(--ink);
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 11px 12px;
+}
+
+.leo-lookup-button {
+  position: fixed;
+  right: 18px;
+  bottom: 86px;
+  z-index: 80;
+  display: grid;
+  gap: 0;
+  min-width: 84px;
+  min-height: 54px;
+  place-items: center;
+  border: 2px solid rgba(15, 26, 49, 0.18);
+  border-radius: 15px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0 30%, transparent 30% 100%),
+    linear-gradient(180deg, #d90429, #a9001f);
+  box-shadow: 0 8px 0 rgba(15, 26, 49, 0.16), 0 18px 28px rgba(217, 4, 41, 0.2);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  padding: 8px 12px;
+  text-shadow: 0 2px 0 rgba(15, 26, 49, 0.22);
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.leo-lookup-button span {
+  font-size: 1.04rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.leo-lookup-button small {
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.leo-lookup-button:hover {
+  box-shadow: 0 11px 0 rgba(15, 26, 49, 0.16), 0 22px 34px rgba(217, 4, 41, 0.24);
+  filter: saturate(1.08);
+  transform: translateY(-3px);
+}
+
+.leo-lookup-modal {
+  width: min(540px, calc(100vw - 28px));
+  max-width: none;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+}
+
+.leo-lookup-modal::backdrop {
+  background:
+    radial-gradient(circle at 24% 16%, rgba(255, 201, 40, 0.28), transparent 28%),
+    rgba(15, 26, 49, 0.64);
+  backdrop-filter: blur(5px);
+}
+
+.leo-lookup-panel {
+  display: grid;
+  gap: 16px;
+  overflow: hidden;
+  padding: 18px;
+  border: 3px solid rgba(15, 26, 49, 0.2);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 201, 40, 0.14), transparent 32%),
+    linear-gradient(180deg, #ffffff, #f6f9ff);
+  box-shadow: 0 16px 0 rgba(15, 26, 49, 0.16), 0 30px 70px rgba(15, 26, 49, 0.34);
+}
+
+.leo-lookup-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.leo-lookup-header h2 {
+  margin: 8px 0 0;
+  font-size: clamp(1.25rem, 3vw, 1.7rem);
+}
+
+.leo-lookup-form {
+  display: grid;
+  gap: 9px;
+}
+
+.leo-lookup-form label {
+  color: var(--ink);
+  font-weight: 950;
+}
+
+.leo-lookup-form > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.leo-lookup-form input {
+  width: 100%;
+  min-height: 50px;
+  border: 2px solid rgba(31, 42, 68, 0.18);
+  border-radius: 13px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 850;
+  padding: 10px 12px;
+}
+
+.leo-lookup-form input:focus {
+  outline: 3px solid rgba(255, 201, 40, 0.5);
+  outline-offset: 2px;
+  border-color: rgba(217, 4, 41, 0.5);
+}
+
+.leo-lookup-form .quest-launch-button {
+  min-height: 50px;
+  width: 100%;
+  background: linear-gradient(180deg, #d90429, #a9001f);
+}
+
+.leo-lookup-form .quest-launch-button::after {
+  content: none;
+}
+
+.leo-lookup-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  font-weight: 760;
+  line-height: 1.35;
 }
 
 .home-main-panel {
@@ -2861,6 +3227,26 @@ h2 {
 
   .resource-modal-close {
     width: 100%;
+  }
+
+  .vocabulary-intro-box,
+  .leo-lookup-form > div {
+    grid-template-columns: 1fr;
+  }
+
+  .vocabulary-tool-actions {
+    justify-items: stretch;
+  }
+
+  .vocabulary-tool-actions .text-link,
+  .vocabulary-tool-actions span,
+  .leo-lookup-form .quest-launch-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .leo-lookup-header {
+    flex-direction: column;
   }
 
   .lesson-card-content {

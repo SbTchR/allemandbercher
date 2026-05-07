@@ -1,0 +1,73 @@
+---
+const leoBaseUrl = 'https://dict.leo.org/allemand-fran%C3%A7ais/';
+---
+
+<button class="leo-lookup-button" type="button" data-open-leo>
+  <span>LEO</span>
+  <small>Dictionnaire</small>
+</button>
+
+<dialog class="leo-lookup-modal" data-leo-modal>
+  <div class="leo-lookup-panel">
+    <div class="leo-lookup-header">
+      <div>
+        <p class="eyebrow">Dictionnaire</p>
+        <h2>LEO allemand-français</h2>
+      </div>
+      <button class="resource-modal-close" type="button" data-close-leo>Fermer</button>
+    </div>
+
+    <form class="leo-lookup-form" data-leo-form>
+      <label for="leo-query">Mot à chercher</label>
+      <div>
+        <input id="leo-query" name="q" type="search" autocomplete="off" data-leo-input />
+        <button class="quest-launch-button" type="submit">Rechercher sur LEO</button>
+      </div>
+    </form>
+
+    <p class="leo-lookup-note">
+      LEO bloque l’affichage direct dans une page externe. La recherche s’ouvre donc sur leo.org.
+    </p>
+    <a class="text-link" href={leoBaseUrl} rel="noreferrer" target="_blank">Ouvrir LEO sans recherche</a>
+  </div>
+</dialog>
+
+<script define:vars={{ leoBaseUrl }} is:inline>
+  const leoModal = document.querySelector('[data-leo-modal]');
+  const leoOpenButton = document.querySelector('[data-open-leo]');
+  const leoCloseButton = document.querySelector('[data-close-leo]');
+  const leoForm = document.querySelector('[data-leo-form]');
+  const leoInput = document.querySelector('[data-leo-input]');
+
+  const leoSearchUrl = () => {
+    if (!(leoInput instanceof HTMLInputElement)) return leoBaseUrl;
+    const query = leoInput.value.trim();
+    return query ? `${leoBaseUrl}${encodeURIComponent(query)}` : leoBaseUrl;
+  };
+
+  leoOpenButton?.addEventListener('click', () => {
+    if (leoModal instanceof HTMLDialogElement) {
+      leoModal.showModal();
+      if (leoInput instanceof HTMLInputElement) {
+        leoInput.focus();
+      }
+    }
+  });
+
+  leoCloseButton?.addEventListener('click', () => {
+    if (leoModal instanceof HTMLDialogElement) {
+      leoModal.close();
+    }
+  });
+
+  leoModal?.addEventListener('click', (event) => {
+    if (event.target === leoModal && leoModal instanceof HTMLDialogElement) {
+      leoModal.close();
+    }
+  });
+
+  leoForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    window.open(leoSearchUrl(), '_blank', 'noopener');
+  });
+</script>
