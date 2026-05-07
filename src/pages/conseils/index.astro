@@ -5,6 +5,14 @@ import { byOrderThenTitle } from '../../lib/resources';
 import { resourceUrl } from '../../lib/resources';
 
 const conseils = (await getCollection('conseils')).sort(byOrderThenTitle);
+
+const adviceActions: Record<string, string> = {
+  'Expression écrite': 'Préparer un texte clair et complet',
+  'Expression orale': 'Parler avec des phrases utiles',
+  'Compréhension écrite': 'Trouver les informations importantes dans un texte',
+  'Compréhension orale': 'Repérer l’essentiel à l’écoute',
+  Vocabulaire: 'Mémoriser les mots sur la durée',
+};
 ---
 
 <Layout title="Conseils" description="Conseils pour améliorer ses compétences communicatives et préparer les tests.">
@@ -13,15 +21,16 @@ const conseils = (await getCollection('conseils')).sort(byOrderThenTitle);
     <p class="lead">Pour améliorer ses compétences communicatives et bien se préparer aux tests</p>
   </section>
 
-  <section class="content-band">
-    <ul class="resource-list">
+  <section class="content-band" aria-label="Compétences travaillées">
+    <div class="landing-tile-grid advice-tile-grid">
       {
         conseils.map((entry) => (
-          <li>
-            <a href={resourceUrl(entry)}>{entry.data.title}</a>
-          </li>
+          <a class="landing-tile advice-tile" href={resourceUrl(entry)}>
+            <h2>{entry.data.title}</h2>
+            <span class="tile-action">{adviceActions[entry.data.title] ?? 'Voir les conseils'}</span>
+          </a>
         ))
       }
-    </ul>
+    </div>
   </section>
 </Layout>

@@ -13,7 +13,7 @@ images: []
 migrationNotes: []
 ---
 
-[Nouvelle application "faite-maison"](https://sites.google.com/view/vocallemand/accueil)
+[Nouvelle application "faite-maison"](https://sbtchr.github.io/AppVoc/)
 
 ## Quizlet
 

@@ -13,7 +13,7 @@ migrationNotes: []
 
 ⚠️ Révise tous les jours un petit peu à la fois. ⚠️
 
-[Application "faite-maison" pour tous les vocs de Genial Klick](https://sites.google.com/view/vocallemand/accueil)
+[Application "faite-maison" pour tous les vocs de Genial Klick](https://sbtchr.github.io/AppVoc/)
 
 App pour smartphone recommandée : Cabuu
 

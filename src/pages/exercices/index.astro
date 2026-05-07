@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../components/Layout.astro';
 import { byOrderThenTitle, resourceUrl } from '../../lib/resources';
-import { withBase } from '../../lib/paths';
+import { chapterLevels, type ChapterItem } from '../../data/chapters';
 
 const exercices = await getCollection('exercices');
 const byLevel = {
@@ -12,6 +12,13 @@ const byLevel = {
 };
 
 const sectionId = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const exerciseBySlug = new Map(
+  exercices.map((entry) => [entry.id.split('/').pop()?.replace(/\.md$/, ''), entry])
+);
+
+function chapterTitle(chapter: ChapterItem) {
+  return `${chapter.label.replace('K', 'Kapitel ')} - ${chapter.title}`;
+}
 ---
 
 <Layout title="Exercices" description="Exercices d’allemand classés par niveau et par chapitre.">
@@ -20,24 +27,31 @@ const sectionId = (label: string) => label.toLowerCase().replace(/[^a-z0-9]+/g, 
   </section>
 
   {
-    Object.entries(byLevel).map(([label, entries]) => (
+    Object.entries(byLevel).map(([label, entries]) => {
+      const levelData = chapterLevels.find((item) => item.level === entries[0]?.data.level);
+      const chapters = levelData?.chapters ?? [];
+
+      return (
       <section class="content-band" aria-labelledby={`exercices-${sectionId(label)}`}>
         <div class="section-heading">
           <div>
             <h2 id={`exercices-${sectionId(label)}`}>{label}</h2>
           </div>
-          <a class="text-link" href={withBase(`/exercices/${entries[0]?.data.level.toLowerCase()}/`)}>
-            Voir l’index {entries[0]?.data.level}
-          </a>
         </div>
-        <ul class="resource-list">
-          {entries.map((entry) => (
-            <li>
-              <a href={resourceUrl(entry)}>{entry.data.title.replace(/^K(\d+)\\s*-\\s*/u, 'Kapitel $1 - ')}</a>
-            </li>
-          ))}
-        </ul>
+        <div class="landing-tile-grid chapter-tile-grid">
+          {chapters.map((chapter) => {
+            const entry = exerciseBySlug.get(chapter.exerciseSlug);
+            if (!entry) return null;
+
+            return (
+              <a class="landing-tile chapter-title-tile" href={resourceUrl(entry)}>
+                <span>{chapterTitle(chapter)}</span>
+              </a>
+            );
+          })}
+        </div>
       </section>
-    ))
+      );
+    })
   }
 </Layout>
