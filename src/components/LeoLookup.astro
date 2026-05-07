@@ -1,6 +1,7 @@
 ---
 const leoBaseUrl = 'https://dict.leo.org/allemand-fran%C3%A7ais/';
-const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? '';
+const defaultLeoProxyUrl = 'https://allemandbercher-leo-proxy.classmanager-bovs.workers.dev';
+const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
 ---
 
 <button class="leo-lookup-button" type="button" data-open-leo>
