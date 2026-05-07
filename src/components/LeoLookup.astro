@@ -1,5 +1,6 @@
 ---
 const leoBaseUrl = 'https://dict.leo.org/allemand-fran%C3%A7ais/';
+const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? '';
 ---
 
 <button class="leo-lookup-button" type="button" data-open-leo>
@@ -21,28 +22,88 @@ const leoBaseUrl = 'https://dict.leo.org/allemand-fran%C3%A7ais/';
       <label for="leo-query">Mot à chercher</label>
       <div>
         <input id="leo-query" name="q" type="search" autocomplete="off" data-leo-input />
-        <button class="quest-launch-button" type="submit">Rechercher sur LEO</button>
+        <button class="quest-launch-button" type="submit">Chercher</button>
       </div>
     </form>
 
+    <div class="leo-lookup-results" data-leo-results aria-live="polite">
+      <p>
+        {
+          leoProxyUrl
+            ? 'Entre un mot en français ou en allemand pour afficher les premiers résultats LEO ici.'
+            : 'La recherche intégrée attend le déploiement du proxy LEO gratuit.'
+        }
+      </p>
+    </div>
+
     <p class="leo-lookup-note">
-      LEO bloque l’affichage direct dans une page externe. La recherche s’ouvre donc sur leo.org.
+      LEO bloque l’affichage direct dans une iframe. Les résultats intégrés passent donc par un petit proxy gratuit.
     </p>
     <a class="text-link" href={leoBaseUrl} rel="noreferrer" target="_blank">Ouvrir LEO sans recherche</a>
   </div>
 </dialog>
 
-<script define:vars={{ leoBaseUrl }} is:inline>
+<script define:vars={{ leoBaseUrl, leoProxyUrl }} is:inline>
   const leoModal = document.querySelector('[data-leo-modal]');
   const leoOpenButton = document.querySelector('[data-open-leo]');
   const leoCloseButton = document.querySelector('[data-close-leo]');
   const leoForm = document.querySelector('[data-leo-form]');
   const leoInput = document.querySelector('[data-leo-input]');
+  const leoResults = document.querySelector('[data-leo-results]');
 
   const leoSearchUrl = () => {
     if (!(leoInput instanceof HTMLInputElement)) return leoBaseUrl;
     const query = leoInput.value.trim();
     return query ? `${leoBaseUrl}${encodeURIComponent(query)}` : leoBaseUrl;
+  };
+
+  const renderLeoStatus = (message) => {
+    if (leoResults instanceof HTMLElement) {
+      leoResults.innerHTML = `<p>${message}</p>`;
+    }
+  };
+
+  const escapeHtml = (value) =>
+    value.replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    })[char]);
+
+  const renderLeoResults = (data) => {
+    if (!(leoResults instanceof HTMLElement)) return;
+
+    if (!data.results?.length) {
+      const similar = data.similar?.flatMap((group) => group.words ?? []).slice(0, 8) ?? [];
+      leoResults.innerHTML = `
+        <p>Aucun résultat direct.</p>
+        ${similar.length ? `<div class="leo-similar-list">${similar.map((word) => `<span>${escapeHtml(word)}</span>`).join('')}</div>` : ''}
+      `;
+      return;
+    }
+
+    leoResults.innerHTML = `
+      <div class="leo-result-summary">
+        <strong>${escapeHtml(data.canonicalSearch || data.query || '')}</strong>
+        <span>${Number(data.hitCount || 0)} résultat(s) sur LEO</span>
+      </div>
+      <div class="leo-result-list">
+        ${data.results
+          .map((result) => `
+            <article class="leo-result-card">
+              <span class="card-kicker">${escapeHtml(result.category || 'Résultat')}</span>
+              <div>
+                <strong>${(result.de ?? []).map(escapeHtml).join(' / ')}</strong>
+                <span>${(result.fr ?? []).map(escapeHtml).join(' / ')}</span>
+              </div>
+            </article>
+          `)
+          .join('')}
+      </div>
+      <a class="text-link" href="${escapeHtml(data.sourceUrl || leoSearchUrl())}" rel="noreferrer" target="_blank">Voir tous les résultats sur LEO</a>
+    `;
   };
 
   leoOpenButton?.addEventListener('click', () => {
@@ -68,6 +129,31 @@ const leoBaseUrl = 'https://dict.leo.org/allemand-fran%C3%A7ais/';
 
   leoForm?.addEventListener('submit', (event) => {
     event.preventDefault();
-    window.open(leoSearchUrl(), '_blank', 'noopener');
+
+    if (!(leoInput instanceof HTMLInputElement)) return;
+    const query = leoInput.value.trim();
+
+    if (!query) {
+      renderLeoStatus('Entre un mot à chercher.');
+      return;
+    }
+
+    if (!leoProxyUrl) {
+      renderLeoStatus('Le proxy LEO n’est pas encore configuré. La recherche s’ouvre sur leo.org.');
+      window.open(leoSearchUrl(), '_blank', 'noopener');
+      return;
+    }
+
+    renderLeoStatus('Recherche en cours...');
+
+    fetch(`${leoProxyUrl}?q=${encodeURIComponent(query)}`)
+      .then((response) => {
+        if (!response.ok) throw new Error('La recherche LEO a échoué.');
+        return response.json();
+      })
+      .then(renderLeoResults)
+      .catch(() => {
+        renderLeoStatus('Impossible de charger les résultats intégrés. Ouvre LEO pour voir la recherche complète.');
+      });
   });
 </script>

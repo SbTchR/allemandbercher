@@ -996,6 +996,7 @@ h2 {
 .leo-lookup-panel {
   display: grid;
   gap: 16px;
+  max-height: calc(100dvh - 34px);
   overflow: hidden;
   padding: 18px;
   border: 3px solid rgba(15, 26, 49, 0.2);
@@ -1068,6 +1069,93 @@ h2 {
   font-size: 0.93rem;
   font-weight: 760;
   line-height: 1.35;
+}
+
+.leo-lookup-results {
+  display: grid;
+  gap: 12px;
+  min-height: 52px;
+  max-height: min(360px, 42dvh);
+  overflow-y: auto;
+  padding: 12px;
+  border: 2px solid rgba(15, 26, 49, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+.leo-lookup-results p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.leo-result-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.leo-result-summary strong {
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 950;
+}
+
+.leo-result-summary span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.leo-result-list {
+  display: grid;
+  gap: 9px;
+}
+
+.leo-result-card {
+  display: grid;
+  gap: 8px;
+  padding: 11px;
+  border: 2px solid rgba(15, 26, 49, 0.08);
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 4px 0 rgba(15, 26, 49, 0.05);
+}
+
+.leo-result-card > div {
+  display: grid;
+  gap: 4px;
+}
+
+.leo-result-card strong {
+  color: var(--ink);
+  font-weight: 950;
+  line-height: 1.2;
+}
+
+.leo-result-card span:not(.card-kicker) {
+  color: var(--text);
+  font-weight: 820;
+  line-height: 1.24;
+}
+
+.leo-similar-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.leo-similar-list span {
+  border: 2px solid rgba(15, 26, 49, 0.08);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 900;
+  padding: 5px 9px;
 }
 
 .home-main-panel {

@@ -1,0 +1,3 @@
+name = "allemandbercher-leo-proxy"
+main = "src/index.js"
+compatibility_date = "2026-05-07"
