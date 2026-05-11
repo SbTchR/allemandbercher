@@ -1,66 +1,55 @@
 ---
 title: "K4 - Alles Gute"
-description: "L'élève est capable de..."
+description: "Parcours pour écrire une invitation, formuler des voeux et raconter une fête."
 section: "exercices"
 level: "9H"
 category: "general"
 sourceUrl: "https://www.allemandbercher.ch/exercices/9h/kap-4-alles-gute"
 pageType: "chapitre"
 order: 4
-objectives: 
-  - "écrire une carte d'invitation"
-  - "exprimer des voeux à quelqu'un"
-  - "raconter une fête"
-  - "dire comment il va (humeurs)"
+objectives:
+  - "Écrire une carte d'invitation"
+  - "Exprimer des voeux"
+  - "Raconter une fête"
+  - "Dire comment on va"
+communicationObjectives:
+  - "Écrire une invitation"
+  - "Exprimer des voeux à quelqu’un"
+  - "Raconter une fête et parler des humeurs"
+languageFocus:
+  - "Verbes de modalité müssen et dürfen"
+  - "Prétérit de sein et haben"
+finalMission: "Préparer une invitation et raconter une fête avec quelques détails."
 externalLinks: []
 images: []
 migrationNotes: []
+primaryAction:
+  label: "Lancer le défi phrases"
+  title: "Phrases à bien connaître"
+  src: "/embeds/exercices/9h-kap-4-alles-gute-phrases.html"
 ---
 
-## Phrases à bien connaître
-
-<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-4-alles-gute-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
-
-## Objectifs
-
-### Communication
-
-L'élève est capable de...
-
-- écrire une carte d'invitation
-
-- exprimer des voeux à quelqu'un
-
-- raconter une fête
-
-- dire comment il va (humeurs)
-
-### Langue
-
-- verbes de modalité ( müssen et dürfen)
-
-- prétérit des verbes sein et haben
-
-## Les verbes de modalité
-
-Quelques exercices pour entrainer les verbes de modalité.
-
-- [https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php](https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php)
-
-- [https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_modalverben.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_modalverben.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg03_07.htm](https://www.schubert-verlag.de/aufgaben/xg/xg03_07.htm)
-
-- [http://www.lehrerlenz.de/lektion_13_modalverben.html](http://www.lehrerlenz.de/lektion_13_modalverben.html)
-
-- [https://deutsch.lingolia.com/de/grammatik/verben/modalverben/uebungen](https://deutsch.lingolia.com/de/grammatik/verben/modalverben/uebungen)
-
-- [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=241](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=241)
-
-- [https://www.grammatiktraining.de/modalverben/schreibuebung-saetze-mit-modalverben-bilden.html](https://www.grammatiktraining.de/modalverben/schreibuebung-saetze-mit-modalverben-bilden.html)
-
-- [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&Lection=6&SubExercise=1&Volume=3](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&Lection=6&SubExercise=1&Volume=3)
-
-Exercice de compréhension orale en ligne:
-
-- [https://lingvico.net/einladung-zur-geburtstagsparty-hv-a1-a2/](https://lingvico.net/einladung-zur-geburtstagsparty-hv-a1-a2/)
+<details class="lesson-card">
+<summary>Les verbes de modalité</summary>
+<div class="lesson-card-content">
+<p>Ces exercices permettent d'entraîner les verbes de modalité avant de les réutiliser dans une invitation ou un récit de fête.</p>
+<div class="external-button-grid">
+<a href="https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php" target="_blank" rel="noreferrer">Deutsch lernen</a>
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_modalverben.htm" target="_blank" rel="noreferrer">Schubert A2</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg03_07.htm" target="_blank" rel="noreferrer">Schubert xg</a>
+<a href="http://www.lehrerlenz.de/lektion_13_modalverben.html" target="_blank" rel="noreferrer">Lehrerlenz</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/verben/modalverben/uebungen" target="_blank" rel="noreferrer">Lingolia</a>
+<a href="https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=241" target="_blank" rel="noreferrer">DeutschAkademie</a>
+<a href="https://www.grammatiktraining.de/modalverben/schreibuebung-saetze-mit-modalverben-bilden.html" target="_blank" rel="noreferrer">Phrases avec modaux</a>
+<a href="https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&amp;Lection=6&amp;SubExercise=1&amp;Volume=3" target="_blank" rel="noreferrer">Hueber</a>
+</div>
+</div>
+</details>
+<details class="lesson-card">
+<summary>Compréhension orale</summary>
+<div class="lesson-card-content">
+<div class="external-button-grid">
+<a href="https://lingvico.net/einladung-zur-geburtstagsparty-hv-a1-a2/" target="_blank" rel="noreferrer">Invitation à une fête</a>
+</div>
+</div>
+</details>

@@ -1,0 +1,367 @@
+---
+const exerciseSets = [
+  {
+    title: 'Phrases simples',
+    shortTitle: 'Phrases 1',
+    description: 'Place le complément au bon endroit et garde le verbe conjugué en 2e position.',
+    tip: 'Le groupe placé au début compte comme position 1. Le verbe conjugué vient juste après.',
+    items: [
+      { german: 'Morgen gehe ich ins Kino.', french: 'Demain, je vais au cinéma.' },
+      { german: 'Heute haben wir keine Schule.', french: "Aujourd'hui, nous n'avons pas école." },
+      { german: 'Jeden Tag isst er einen Apfel.', french: 'Chaque jour, il mange une pomme.' },
+      { german: 'Heute ist das Wetter sehr schön.', french: "Aujourd'hui, le temps est très beau." },
+      { german: 'Am Abend liest sie gerne spannende Bücher.', french: 'Le soir, elle aime lire des livres passionnants.' },
+      { german: 'Morgens trinke ich immer einen heißen Kaffee.', french: 'Le matin, je bois toujours un café chaud.' },
+      { german: 'Nächste Woche fahren wir mit dem Zug nach Berlin.', french: 'La semaine prochaine, nous allons à Berlin en train.' },
+      { german: 'Im Garten spielen die Kinder fröhlich mit dem Hund.', french: 'Dans le jardin, les enfants jouent joyeusement avec le chien.' },
+      { german: 'Am Computer arbeitet er oft bis spät in die Nacht.', french: "Sur l'ordinateur, il travaille souvent tard dans la nuit." },
+      { german: 'Im Sommer liebe ich es, draußen im Park zu sein.', french: "En été, j'aime être dehors dans le parc." },
+    ],
+  },
+  {
+    title: 'Phrases plus longues',
+    shortTitle: 'Phrases 2',
+    description: 'Repère les groupes de mots et reconstruis une phrase plus complète.',
+    tip: 'Cherche d’abord le sujet et le verbe conjugué, puis ajoute les compléments.',
+    items: [
+      { german: 'Ich möchte heute Abend ins Kino gehen.', french: 'Je veux aller au cinéma ce soir.' },
+      { german: 'Wir können morgen zusammen Fußball spielen.', french: 'Nous pouvons jouer au football ensemble demain.' },
+      { german: 'Er hat gestern eine Pizza gegessen.', french: 'Il a mangé une pizza hier.' },
+      { german: 'Sie ist letzte Woche nach Berlin gefahren.', french: 'Elle est allée à Berlin la semaine dernière.' },
+      { german: 'Am Morgen habe ich die Zeitung gelesen.', french: "Le matin, j'ai lu le journal." },
+      { german: 'Peter macht jeden Tag sein Zimmer sauber.', french: 'Peter nettoie sa chambre tous les jours.' },
+      { german: 'Ich habe meine Freunde gestern angerufen.', french: "J'ai appelé mes amis hier." },
+      { german: 'Heute früh bin ich sehr früh aufgestanden.', french: 'Ce matin, je me suis levé très tôt.' },
+      { german: 'Wir möchten im Sommer ans Meer fahren.', french: 'Nous voulons aller à la mer cet été.' },
+      { german: 'Er hat mir eine E-Mail geschrieben.', french: "Il m'a écrit un e-mail." },
+    ],
+  },
+  {
+    title: 'Subordonnées',
+    shortTitle: 'Subordonnées',
+    description: 'Respecte la place du verbe dans les phrases avec dass, weil, wenn, damit ou bevor.',
+    tip: 'Dans une subordonnée allemande, le verbe conjugué va à la fin du groupe subordonné.',
+    items: [
+      { german: 'Ich bin sicher, dass sie die Prüfung bestehen wird.', french: "Je suis sûr qu'elle réussira l'examen." },
+      { german: 'Er bleibt zu Hause, weil es regnet.', french: "Il reste à la maison parce qu'il pleut." },
+      { german: 'Wenn ich Zeit habe, gehe ich ins Kino.', french: "Quand j'ai le temps, je vais au cinéma." },
+      { german: 'Wir lernen Deutsch, damit wir in Deutschland studieren können.', french: "Nous apprenons l'allemand pour pouvoir étudier en Allemagne." },
+      { german: 'Bevor ich zur Arbeit gehe, trinke ich einen Kaffee.', french: "Avant d'aller au travail, je bois un café." },
+    ],
+  },
+  {
+    title: 'Infinitives',
+    shortTitle: 'Infinitives',
+    description: 'Travaille les structures avec zu, um zu et anstatt zu.',
+    tip: 'Avec um ... zu ou anstatt ... zu, repère le bloc infinitif et garde l’infinitif à la fin.',
+    items: [
+      { german: 'Ich habe keine Zeit, um heute einzukaufen.', french: "Je n'ai pas le temps de faire les courses aujourd'hui." },
+      { german: 'Er lernt viel, um gute Noten zu bekommen.', french: 'Il étudie beaucoup pour avoir de bonnes notes.' },
+      { german: 'Wir gehen ins Restaurant, anstatt zu Hause zu essen.', french: 'Nous allons au restaurant au lieu de manger à la maison.' },
+      { german: 'Sie hat beschlossen, früher ins Bett zu gehen.', french: "Elle a décidé d'aller se coucher plus tôt." },
+      { german: 'Er macht Sport, um fit zu bleiben.', french: 'Il fait du sport pour rester en forme.' },
+      { german: 'Ich versuche, jeden Tag früh aufzustehen.', french: "J'essaie de me lever tôt tous les jours." },
+      { german: 'Wir sparen Geld, um in den Urlaub zu fahren.', french: "Nous économisons de l'argent pour partir en vacances." },
+      { german: 'Sie hat den Bus genommen, um pünktlich zu sein.', french: "Elle a pris le bus pour être à l'heure." },
+      { german: 'Er hat Musik gehört, anstatt für die Prüfung zu lernen.', french: "Il a écouté de la musique au lieu d'étudier pour l'examen." },
+      { german: 'Es ist wichtig, regelmäßig Deutsch zu üben.', french: "Il est important de pratiquer l'allemand régulièrement." },
+    ],
+  },
+];
+
+const totalItemCount = exerciseSets.reduce((count, set) => count + set.items.length, 0);
+---
+
+<section id="exercices-interactifs" class="content-band writing-exercise-lab" aria-labelledby="writing-exercise-title" data-writing-exercise>
+  <div class="writing-exercise-header">
+    <div>
+      <p class="home-section-label">Exercices intégrés</p>
+      <h2 id="writing-exercise-title">Construire des phrases</h2>
+      <p>Remets les mots dans l’ordre directement dans la page, puis vérifie ta phrase.</p>
+    </div>
+    <output class="writing-exercise-score" data-writing-score aria-live="polite">0 / {totalItemCount}</output>
+  </div>
+
+  <div class="writing-exercise-tabs" role="tablist" aria-label="Séries d'exercices">
+    {
+      exerciseSets.map((set, index) => (
+        <button
+          class:list={['writing-exercise-tab', { 'is-selected': index === 0 }]}
+          type="button"
+          role="tab"
+          aria-selected={index === 0 ? 'true' : 'false'}
+          data-set-index={index}
+        >
+          {set.shortTitle}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="writing-exercise-layout">
+    <article class="writing-exercise-card">
+      <div class="writing-exercise-card-head">
+        <div>
+          <p class="writing-exercise-kicker" data-writing-set-title>{exerciseSets[0].title}</p>
+          <h3 data-writing-progress>Phrase 1 / {exerciseSets[0].items.length}</h3>
+        </div>
+        <p class="writing-exercise-tip" data-writing-tip>{exerciseSets[0].tip}</p>
+      </div>
+
+      <p class="writing-exercise-description" data-writing-description>{exerciseSets[0].description}</p>
+      <p class="writing-exercise-prompt"><strong>À traduire :</strong> <span data-writing-prompt>{exerciseSets[0].items[0].french}</span></p>
+
+      <div class="writing-answer-zone" aria-label="Ta phrase" data-writing-answer></div>
+      <div class="writing-word-bank" aria-label="Mots disponibles" data-writing-bank></div>
+
+      <div class="writing-exercise-feedback" data-writing-feedback aria-live="polite"></div>
+
+      <div class="writing-exercise-actions">
+        <button class="quest-launch-button writing-check-button" type="button" data-writing-check>Vérifier</button>
+        <button class="text-link" type="button" data-writing-clear>Effacer</button>
+        <button class="text-link" type="button" data-writing-hint>Indice</button>
+        <button class="text-link" type="button" data-writing-reveal hidden>Révéler la réponse</button>
+        <button class="text-link" type="button" data-writing-previous>Phrase précédente</button>
+        <button class="text-link" type="button" data-writing-next>Phrase suivante</button>
+      </div>
+    </article>
+
+    <aside class="writing-exercise-side" aria-label="Aide">
+      <h3>Routine de construction</h3>
+      <ol>
+        <li>Repère le verbe conjugué.</li>
+        <li>Place les groupes de temps et de lieu.</li>
+        <li>Vérifie la fin de phrase: infinitif, participe passé ou verbe subordonné.</li>
+      </ol>
+      <p data-writing-solution hidden></p>
+    </aside>
+  </div>
+</section>
+
+<script define:vars={{ exerciseSets }} is:inline>
+  const writingExercise = document.querySelector('[data-writing-exercise]');
+
+  if (writingExercise instanceof HTMLElement) {
+    const tabs = Array.from(writingExercise.querySelectorAll('[data-set-index]'));
+    const scoreOutput = writingExercise.querySelector('[data-writing-score]');
+    const setTitle = writingExercise.querySelector('[data-writing-set-title]');
+    const progress = writingExercise.querySelector('[data-writing-progress]');
+    const description = writingExercise.querySelector('[data-writing-description]');
+    const prompt = writingExercise.querySelector('[data-writing-prompt]');
+    const tip = writingExercise.querySelector('[data-writing-tip]');
+    const answerZone = writingExercise.querySelector('[data-writing-answer]');
+    const wordBank = writingExercise.querySelector('[data-writing-bank]');
+    const feedback = writingExercise.querySelector('[data-writing-feedback]');
+    const solution = writingExercise.querySelector('[data-writing-solution]');
+    const checkButton = writingExercise.querySelector('[data-writing-check]');
+    const clearButton = writingExercise.querySelector('[data-writing-clear]');
+    const hintButton = writingExercise.querySelector('[data-writing-hint]');
+    const revealButton = writingExercise.querySelector('[data-writing-reveal]');
+    const previousButton = writingExercise.querySelector('[data-writing-previous]');
+    const nextButton = writingExercise.querySelector('[data-writing-next]');
+    const solved = new Set();
+    let activeSetIndex = 0;
+    let activeItemIndex = 0;
+    let selectedTokens = [];
+
+    const normalize = (value) =>
+      value
+        .trim()
+        .normalize('NFC')
+        .replace(/\.$/, '')
+        .replace(/\s+/g, ' ');
+
+    const itemKey = () => `${activeSetIndex}-${activeItemIndex}`;
+    const currentSet = () => exerciseSets[activeSetIndex];
+    const currentItem = () => currentSet().items[activeItemIndex];
+    const currentAnswer = () => normalize(currentItem().german);
+    const tokenId = (index) => `${activeSetIndex}-${activeItemIndex}-${index}`;
+
+    const shuffleTokens = (tokens) => {
+      const mixed = [...tokens];
+      for (let index = mixed.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(((index * 37 + activeSetIndex * 11 + activeItemIndex * 17) % (index + 1)));
+        [mixed[index], mixed[swapIndex]] = [mixed[swapIndex], mixed[index]];
+      }
+      return mixed;
+    };
+
+    const updateScore = () => {
+      const total = exerciseSets.reduce((count, set) => count + set.items.length, 0);
+      if (scoreOutput) scoreOutput.textContent = `${solved.size} / ${total}`;
+    };
+
+    const updateTabs = () => {
+      tabs.forEach((tab) => {
+        if (!(tab instanceof HTMLButtonElement)) return;
+        const isSelected = Number(tab.dataset.setIndex ?? 0) === activeSetIndex;
+        tab.classList.toggle('is-selected', isSelected);
+        tab.setAttribute('aria-selected', String(isSelected));
+      });
+    };
+
+    const renderAnswer = () => {
+      if (!(answerZone instanceof HTMLElement)) return;
+      answerZone.innerHTML = '';
+
+      if (selectedTokens.length === 0) {
+        const empty = document.createElement('span');
+        empty.className = 'writing-answer-placeholder';
+        empty.textContent = 'Clique sur les mots dans le bon ordre.';
+        answerZone.append(empty);
+        return;
+      }
+
+      selectedTokens.forEach((token) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'writing-token writing-token-answer';
+        button.textContent = token.word;
+        button.addEventListener('click', () => {
+          selectedTokens = selectedTokens.filter((selected) => selected.id !== token.id);
+          renderAnswer();
+          renderWordBank();
+          resetFeedback();
+        });
+        answerZone.append(button);
+      });
+    };
+
+    const renderWordBank = () => {
+      if (!(wordBank instanceof HTMLElement)) return;
+      wordBank.innerHTML = '';
+      const usedIds = new Set(selectedTokens.map((token) => token.id));
+      const words = currentAnswer().split(' ').map((word, index) => ({ id: tokenId(index), word }));
+      shuffleTokens(words).forEach((token) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'writing-token';
+        button.textContent = token.word;
+        button.disabled = usedIds.has(token.id);
+        button.addEventListener('click', () => {
+          selectedTokens = [...selectedTokens, token];
+          renderAnswer();
+          renderWordBank();
+          resetFeedback();
+        });
+        wordBank.append(button);
+      });
+    };
+
+    const resetFeedback = () => {
+      writingExercise.classList.remove('is-correct', 'is-wrong');
+      if (feedback) {
+        feedback.textContent = '';
+        feedback.className = 'writing-exercise-feedback';
+      }
+      if (solution instanceof HTMLElement) {
+        solution.hidden = true;
+        solution.textContent = '';
+      }
+      if (revealButton instanceof HTMLButtonElement) {
+        revealButton.hidden = true;
+      }
+    };
+
+    const renderExercise = () => {
+      const set = currentSet();
+      const item = currentItem();
+      selectedTokens = [];
+      if (setTitle) setTitle.textContent = set.title;
+      if (progress) progress.textContent = `Phrase ${activeItemIndex + 1} / ${set.items.length}`;
+      if (description) description.textContent = set.description;
+      if (prompt) prompt.textContent = item.french;
+      if (tip) tip.textContent = set.tip;
+      updateTabs();
+      renderAnswer();
+      renderWordBank();
+      resetFeedback();
+      updateScore();
+    };
+
+    const showSolution = () => {
+      if (solution instanceof HTMLElement) {
+        solution.hidden = false;
+        solution.innerHTML = `<strong>Réponse :</strong> ${currentItem().german}`;
+      }
+      if (revealButton instanceof HTMLButtonElement) {
+        revealButton.hidden = true;
+      }
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        if (!(tab instanceof HTMLButtonElement)) return;
+        activeSetIndex = Number(tab.dataset.setIndex ?? 0);
+        activeItemIndex = 0;
+        renderExercise();
+      });
+    });
+
+    checkButton?.addEventListener('click', () => {
+      const userAnswer = normalize(selectedTokens.map((token) => token.word).join(' '));
+      const isCorrect = userAnswer === currentAnswer();
+      writingExercise.classList.toggle('is-correct', isCorrect);
+      writingExercise.classList.toggle('is-wrong', !isCorrect);
+
+      if (feedback) {
+        feedback.className = `writing-exercise-feedback ${isCorrect ? 'is-correct' : 'is-wrong'}`;
+        feedback.textContent = isCorrect
+          ? 'Correct. La phrase est bien construite.'
+          : 'Pas encore. Tu peux corriger ou révéler la réponse si tu es bloqué.';
+      }
+
+      if (isCorrect) {
+        solved.add(itemKey());
+        updateScore();
+        if (revealButton instanceof HTMLButtonElement) {
+          revealButton.hidden = true;
+        }
+      } else if (revealButton instanceof HTMLButtonElement) {
+        revealButton.hidden = false;
+      }
+    });
+
+    clearButton?.addEventListener('click', () => {
+      selectedTokens = [];
+      renderAnswer();
+      renderWordBank();
+      resetFeedback();
+    });
+
+    hintButton?.addEventListener('click', () => {
+      const firstTokens = currentAnswer()
+        .split(' ')
+        .slice(0, 2)
+        .map((word, index) => ({ id: tokenId(index), word }));
+
+      selectedTokens = firstTokens;
+      renderAnswer();
+      renderWordBank();
+      resetFeedback();
+
+      if (feedback) {
+        feedback.className = 'writing-exercise-feedback';
+        feedback.textContent = 'Les deux premiers mots sont placés. Continue la phrase.';
+      }
+    });
+
+    revealButton?.addEventListener('click', () => {
+      showSolution();
+    });
+
+    previousButton?.addEventListener('click', () => {
+      const set = currentSet();
+      activeItemIndex = (activeItemIndex - 1 + set.items.length) % set.items.length;
+      renderExercise();
+    });
+
+    nextButton?.addEventListener('click', () => {
+      const set = currentSet();
+      activeItemIndex = (activeItemIndex + 1) % set.items.length;
+      renderExercise();
+    });
+
+    renderExercise();
+  }
+</script>

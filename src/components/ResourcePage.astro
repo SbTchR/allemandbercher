@@ -8,6 +8,7 @@ import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
 import ObjectiveBox from './ObjectiveBox.astro';
 import TheoryBox from './TheoryBox.astro';
+import WritingExerciseLab from './WritingExerciseLab.astro';
 import { withBase } from '../lib/paths';
 import { resourceEyebrow, type ResourceEntry } from '../lib/resources';
 
@@ -22,7 +23,12 @@ const hasAside = entry.data.externalLinks.length > 0;
 const primaryAction = entry.data.primaryAction;
 const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
 const hasComparativeExercise = entry.collection === 'theorie' && entry.data.category === 'grammaire' && slug === 'le-comparatif';
+const hasWritingExerciseLab = entry.collection === 'conseils' && slug === 'expression-ecrite';
 const hasHeaderCallout = hasObjectives || hasComparativeExercise;
+const isExerciseChapter = entry.collection === 'exercices' && entry.data.pageType === 'chapitre';
+const hasChapterDashboard =
+  isExerciseChapter &&
+  (entry.data.communicationObjectives.length > 0 || entry.data.languageFocus.length > 0 || Boolean(entry.data.finalMission));
 
 ---
 
@@ -43,7 +49,7 @@ const hasHeaderCallout = hasObjectives || hasComparativeExercise;
         }
       </div>
 
-      {hasObjectives && <ObjectiveBox objectives={entry.data.objectives} />}
+      {hasObjectives && <ObjectiveBox title={isExerciseChapter ? 'Objectifs du chapitre' : 'Objectifs'} objectives={entry.data.objectives} />}
       {
         hasComparativeExercise && (
           <aside class="objective-box comparative-reminder" aria-labelledby="comparative-reminder-title">
@@ -58,6 +64,45 @@ const hasHeaderCallout = hasObjectives || hasComparativeExercise;
         )
       }
     </header>
+
+    {
+      hasChapterDashboard && (
+        <section class="chapter-dashboard" aria-label="Repères du chapitre">
+          <article>
+            <strong>Communication</strong>
+            {
+              entry.data.communicationObjectives.length > 0 ? (
+                <ul>
+                  {entry.data.communicationObjectives.map((objective) => (
+                    <li>{objective}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>À compléter avec la méthode.</p>
+              )
+            }
+          </article>
+          <article>
+            <strong>Langue</strong>
+            {
+              entry.data.languageFocus.length > 0 ? (
+                <ul>
+                  {entry.data.languageFocus.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>À compléter avec la méthode.</p>
+              )
+            }
+          </article>
+          <article>
+            <strong>Mission finale</strong>
+            <p>{entry.data.finalMission || 'À compléter avec la méthode.'}</p>
+          </article>
+        </section>
+      )
+    }
 
     <div class:list={['resource-layout', { 'resource-layout-wide': !hasAside }]}>
       <div class="prose">
@@ -83,6 +128,7 @@ const hasHeaderCallout = hasObjectives || hasComparativeExercise;
 
     {hasComparativeExercise && <ComparativeRuleLab />}
     {hasComparativeExercise && <ComparativeExercise />}
+    {hasWritingExerciseLab && <WritingExerciseLab />}
 
     <ImageGallery images={entry.data.images} />
 
@@ -126,6 +172,16 @@ const hasHeaderCallout = hasObjectives || hasComparativeExercise;
           if (event.target === modal && modal instanceof HTMLDialogElement) {
             modal.close();
           }
+        });
+      </script>
+    )
+  }
+
+  {
+    isExerciseChapter && (
+      <script>
+        document.querySelectorAll('.resource-page details[open]').forEach((details) => {
+          details.removeAttribute('open');
         });
       </script>
     )

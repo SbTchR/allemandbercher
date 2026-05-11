@@ -11,85 +11,127 @@ images: []
 migrationNotes: []
 ---
 
-## 1. Se préparer
+<section class="advice-dashboard" aria-label="Méthode d'expression orale">
+<article>
+<strong>Préparer</strong>
+<p>Construire une réserve de mots, de phrases-types et d’idées sur le thème.</p>
+</article>
+<article>
+<strong>S'entraîner</strong>
+<p>Parler à haute voix, simuler des situations et s’habituer à réagir.</p>
+</article>
+<article>
+<strong>Réussir</strong>
+<p>Produire un message complet, compréhensible, cohérent et fluide.</p>
+</article>
+</section>
 
-Prépare des listes de vocabulaire en fonction du thème qui est évalué :
+<details class="lesson-card" open>
+<summary>1. Se préparer</summary>
+<div class="lesson-card-content">
+<p>Prépare des listes de vocabulaire en fonction du thème évalué.</p>
+<div class="advice-grid three-columns">
+<article><strong>Vocabulaire</strong><p>Verbes, adjectifs, noms spécifiques au thème et mots fréquents.</p></article>
+<article><strong>Phrases-types</strong><p>Utilise les encadrés bleus du Kursbuch ou ton dossier de cours.</p></article>
+<article><strong>Réactions</strong><p>Prépare aussi des questions, relances et réponses courtes.</p></article>
+</div>
+<p>Tu trouves une liste de mots fréquents sur <a href="../vocabulaire/">cette page</a>.</p>
+<div class="mini-note warning-note">
+<strong>À retenir</strong>
+<p>Lors du test, tu devras te forcer à utiliser les phrases-types et le vocabulaire que tu as préparés.</p>
+</div>
+</div>
+</details>
 
-- une liste de verbes fréquemment utilisés et/ou spécifiques au thème
-- une liste d'adjectifs
-- une liste de noms spécifiques au thème, un peu compliqués (ex. pour le thème du Sport : der Verein, die Mannschaft, ... )
-- une liste de quelques adverbes (peut-être, probablement, parfois, certainement...)
-- une liste de mots très fréquents (quelque chose, quelqu'un, personne, ces, chaque, aussi, seulement, encore, ...). Tu en trouves une sur [cette page](../vocabulaire/).
-- une liste de phrases-types que tu trouves dans le Kursbuch (encadrés bleus) ou dans ton dossier de cours
-
-⚠️ Lors du test, tu devras te "forcer" à utiliser les phrases-types et le voc que tu as préparés.
-
-## 2. S'entrainer
-
-On n'apprend pas à parler la bouche fermée comme on n'apprend pas à marcher en restant assis...
-
-Entraine-toi à parler à haute voix ou au moins dans ta tête en t'imaginant des situations de la vie quotidienne dans lesquelles tu devrais réagir spontanément.
-
-Les assistants vocaux IA comme Chatgpt ou Google Gemini peuvent mener une conversation naturelle en allemand avec toi.
-
-Demande leur seulement :
-
-> "J'ai 12 ans, j'ai un niveau A2 en allemand et j'aimerais m'entrainer à parler dans cette langue. Discute avec moi de [thème choisi] et corrige-moi quand je n'utilise pas les bons mots ou que je fais des erreurs de prononciation."
-
+<details class="lesson-card" open>
+<summary>2. S'entraîner</summary>
+<div class="lesson-card-content">
+<p>On n'apprend pas à parler la bouche fermée, comme on n'apprend pas à marcher en restant assis.</p>
+<p>Entraîne-toi à parler à haute voix ou au moins dans ta tête en t'imaginant des situations de la vie quotidienne dans lesquelles tu devrais réagir spontanément.</p>
+<details class="mini-challenge" open>
+<summary>Mission IA: conversation guidée</summary>
+<div>
+<p>Les assistants vocaux IA comme ChatGPT ou Google Gemini peuvent mener une conversation naturelle en allemand avec toi.</p>
+<blockquote>J'ai 12 ans, j'ai un niveau A2 en allemand et j'aimerais m'entraîner à parler dans cette langue. Discute avec moi de [thème choisi] et corrige-moi quand je n'utilise pas les bons mots ou que je fais des erreurs de prononciation.</blockquote>
+</div>
+</details>
+<section class="embed-panel compact-embed-panel" aria-label="Outil d'enregistrement">
+<h2>S'enregistrer</h2>
+<p>Utilise un enregistreur pour t’écouter et repérer les hésitations.</p>
 <iframe class="content-embed short" src="https://vocaroo.com" title="Vocaroo" loading="lazy"></iframe>
+</section>
+</div>
+</details>
 
-# Pour bien réussir un exercice d'expression orale, le message doit être...
+<section class="advice-section-title">
+<h2>Pour réussir un exercice d'expression orale, le message doit être...</h2>
+</section>
 
-## ... complet
+<details class="lesson-card" open>
+<summary>... complet</summary>
+<div class="lesson-card-content">
+<p>Le contenu du message est l'élément le plus important. Sans contenu, il n'est pas possible de juger la qualité.</p>
+<ul class="advice-checklist">
+<li>Donne toutes les informations demandées par la consigne.</li>
+<li>Ajoute des informations supplémentaires si tu peux viser plus haut.</li>
+<li>Dans un dialogue, ajoute une réplique ou une question liée.</li>
+<li>Dans un monologue, précise une information de base.</li>
+</ul>
+</div>
+</details>
 
-Le contenu du message est l'élément le plus important. Sans contenu, il n'est pas possible de juger la qualité. Généralement, la consigne impose un minimum d'informations à donner. Il faut impérativement donner toutes ces informations, sans quoi le message n'est pas complet et donc insuffisant !
+<details class="lesson-card">
+<summary>... compréhensible</summary>
+<div class="lesson-card-content">
+<p>Pour qu'un message passe entre deux interlocuteurs, il doit être compréhensible. Une information incompréhensible est inutile et ne compte pas.</p>
+<div class="before-after">
+<article>
+<strong>Phrase trop complexe</strong>
+<p>Je pense que mon ami Patrick qui sait parler deux langues a de la chance, car il peut voyager et découvrir d'autres pays.</p>
+</article>
+<article>
+<strong>Version plus sûre</strong>
+<p>Mon ami Patrick parle deux langues. Il a de la chance. Il peut voyager et découvrir d'autres pays.</p>
+</article>
+</div>
+<p>Ne cherche pas à traduire les expressions françaises à la lettre.</p>
+<blockquote>Est-ce que M. Müller est gentil ? → <strong>Ist Herr Müller nett ?</strong></blockquote>
+<p>Il ne faut pas se focaliser uniquement sur la grammaire. Ce n'est pas très grave s'il y a des fautes tant qu'elles ne gênent pas la compréhension.</p>
+</div>
+</details>
 
-Pour viser plus haut que le minimum, il faut penser à ajouter des informations supplémentaires. Il est toujours possible de rajouter une réplique à un dialogue ou de préciser une information de base, voir éventuellement de dévier un peu du sujet pour montrer que l'on est capable d'exprimer plus que le minimum.
+<details class="lesson-card">
+<summary>... cohérent</summary>
+<div class="lesson-card-content">
+<p>Les phrases doivent être liées entre elles au niveau du sens. Il ne doit pas y avoir de contradiction.</p>
+<div class="advice-grid two-columns">
+<article>
+<strong>Dans un dialogue</strong>
+<p>Les réponses doivent correspondre aux questions. Enchaîne parfois avec une question liée à ta réponse.</p>
+</article>
+<article>
+<strong>Dans un monologue</strong>
+<p>Les informations doivent suivre un ordre logique et avoir un lien entre elles.</p>
+</article>
+</div>
+<blockquote>Aimes-tu l'allemand ? → Oui bien sûr, j'adore ça ! Sais-tu quand nous avons la prochaine période d'allemand ?</blockquote>
+</div>
+</details>
 
-## ... compréhensible
-
-Bien entendu, pour qu'un message passe entre deux interlocuteurs, il est indispensable qu'il soit compréhensible. Une information donnée qui n'est pas compréhensible est inutile et donc ne compte pas.
-
-Si l'on n'est pas très à l'aise, il faut éviter les phrases trop complexes.
-
-ex: Je pense que mon ami Patrick qui sait parler deux langues a de la chance, car il peut voyager et découvrir d'autres pays.
-
---> Mon ami Patrick parle deux langues. Il a de la chance. Il peut voyager et découvrir d'autres pays.
-
-Ne pas oublier que certaines structures de la langue française ne sont pas traduisible à la lettre en allemand.
-
-ex: Est-ce que M. Müller est gentil ? --> Ist Herr Müller nett ?
-
-Ne pas chercher à utiliser des expressions.
-
-ex: porter = tragen / le bonheur = das Glück ---> porter bonheur = Glück bringen
-
-Il ne faut pas se focaliser sur la grammaire. Ce n'est pas très grave s'il y a des fautes de grammaire tant qu'elles ne gênent pas la compréhension.
-
-ex: Ich trage einen schwarzen Pullover.
-
---> On comprend quand même si tu dis "Ich trage ein schwarz Pullover. "
-
-## ... cohérent
-
-Les phrases doivent être liées entre elles au niveau du sens. Il ne doit pas y avoir de contradiction.
-
-Dans un dialogue, les réponses doivent correspondre aux questions et vice-versa. En effet, un dialogue n'est pas un interrogatoire, ce n'est pas toujours le même qui pose les questions. Lorsque tu réponds à une question de ton partenaire, tu peux enchainer avec une question en lien avec ta réponse.
-
-ex: Aimes-tu l'allemand ? --> Oui bien sûr, j'adore ça ! Sais-tu quand nous avons la prochaine période d'allemand ?
-
-Dans un monologue, les informations que tu donnes doivent suivre un ordre logique et si possible avoir un lien.
-
-ex: Ma branche préférée est le sport. J'aime courir et jouer au foot. J'ai l'entrainement de foot tous les mardis et les jeudis après l'école. etc...
-
-## ... fluide
-
-Il est nécessaire de s'exprimer de manière relativement fluide afin de ne pas ennuyer l'interlocuteur et d'être compréhensible. Pour être le plus fluide possible, il faut:
-
-- connaître le vocabulaire relatif au thème abordé
-- se préparer à l'aide de petites phrases types
-- utiliser un vocabulaire simple et maîtrisé lors de l'expression orale
-- éventuellement constituer la phrase dans sa tête avant de la dire oralement
-- essayer de formuler ses phrases directement en allemand plutôt que de les formuler en français et de les traduire. Cela évite une étape (gain de temps) et permet d'éviter des erreurs de traduction (expressions, mots inconnus, phrases trop complexes, etc.)
-
-Lorsqu'on remarque que l'on est incapable d'exprimer ce que l'on a envie de dire, il ne faut pas se bloquer. Il faut essayer de trouver une autre façon de le dire ou simplement trouver autre chose à dire.
+<details class="lesson-card">
+<summary>... fluide</summary>
+<div class="lesson-card-content">
+<p>Il est nécessaire de s'exprimer de manière relativement fluide afin de ne pas ennuyer l'interlocuteur et d'être compréhensible.</p>
+<ul class="advice-checklist">
+<li>Connais le vocabulaire relatif au thème abordé.</li>
+<li>Prépare de petites phrases-types.</li>
+<li>Utilise un vocabulaire simple et maîtrisé.</li>
+<li>Construis la phrase dans ta tête avant de la dire si nécessaire.</li>
+<li>Essaie de formuler directement en allemand plutôt que de traduire depuis le français.</li>
+</ul>
+<div class="mini-note">
+<strong>Quand tu bloques</strong>
+<p>Ne t’arrête pas. Trouve une autre façon de dire la même chose ou choisis simplement une autre information à donner.</p>
+</div>
+</div>
+</details>

@@ -1,95 +1,72 @@
 ---
 title: "K3 - Meine Familie"
-description: "L'élève est capable de..."
+description: "Parcours pour présenter sa famille, parler de son quotidien et travailler les possessifs."
 section: "exercices"
 level: "9H"
 category: "general"
 sourceUrl: "https://www.allemandbercher.ch/exercices/9h/kap-3-meine-familie"
 pageType: "chapitre"
 order: 3
-objectives: 
-  - "se présenter et présenter sa famille"
-  - "parler de son chez-soi"
-  - "décrire une journée de son quotidien"
+objectives:
+  - "Présenter sa famille"
+  - "Parler de son chez-soi"
+  - "Décrire une journée de son quotidien"
+communicationObjectives:
+  - "Se présenter et présenter sa famille"
+  - "Parler de son logement"
+  - "Décrire une journée habituelle"
+languageFocus:
+  - "Déterminants possessifs"
+  - "Verbes irréguliers"
+finalMission: "Présenter sa famille et raconter une journée de son quotidien."
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/exercices/9h-kap-3-meine-familie-1.png"
-    alt: "Image 1 - K3 - Meine Familie"
+images: []
 migrationNotes: []
+primaryAction:
+  label: "Lancer le défi phrases"
+  title: "Phrases à bien connaître"
+  src: "/embeds/exercices/9h-kap-3-meine-familie-phrases.html"
 ---
 
-## Phrases à bien connaître
-
-<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-3-meine-familie-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
-
-## Objectifs
-
-### Communication
-
-L'élève est capable de...
-
-- se présenter et présenter sa famille
-
-- parler de son chez-soi
-
-- décrire une journée de son quotidien
-
-### Langue
-
-- déterminants possessifs ( mein, dein, sein, .. .)
-
-- verbes irréguliers
-
-## Les déterminants possessifs
-
-Les déterminants possessifs sont les déterminants qui indiquent à qui appartient le nom qu'il précèdent. Chaque personne (je, tu, il, elle, etc.) a un déterminant possessif qui lui est propre en français comme en allemand.
-
-Les déterminants possessifs sont des déterminants définis. En allemand, ils se déclinent au nominatif, accusatif ou datif selon la place qu'ils occupent dans la phrase. Tu trouves les tableaux de déclinaisons des déterminants en cliquant sur ce lien .
-
-En bref, ces déterminants sont au datif lorsque le groupe nominal dont ils font partie est:
-
-en position de CVI (complément du verbe indirect)
-
-derrière une préposition qui prend le datif (aus, bei, mit, nach, seit von, zu, gegenüber)
-
-derrière une préposition mixte (an, auf, in, etc.) s'il n'y a pas de déplacement
-
-Pour accéder à la théorie complète sur le datif, clique sur ce lien.
-
-Attention ! Il existe quelques verbes qui sont automatiquement suivi du datif en allemand:
-
-schmecken (= avoir bon goût) Pizza schmeckt mein er Mutter gut.
-
-gefallen (= plaire) Das blaue Jeans gefällt der jungen Frau.
-
-helfen (= aider) Kannst du mir helfen ?
-
-Quelques exercices pour entrainer les pronoms possessifs:
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/02_possessivpronomen_deutsch_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/02_possessivpronomen_deutsch_uebung.htm)
-
-- [https://deutsch.lingolia.com/de/grammatik/pronomen/possessivpronomen/uebungen](https://deutsch.lingolia.com/de/grammatik/pronomen/possessivpronomen/uebungen)
-
-- [https://www.grammatiktraining.de/pronomen/grammatikuebung-possessivpronomen-ergaenzen.html](https://www.grammatiktraining.de/pronomen/grammatikuebung-possessivpronomen-ergaenzen.html)
-
-- [http://www.lehrerlenz.de/possessivpronomen.html](http://www.lehrerlenz.de/possessivpronomen.html)
-
-- [https://www.grammatiktraining.de/pronomen/schreibuebung-possessivpronomen-in-saetzen-ergaenzen.html](https://www.grammatiktraining.de/pronomen/schreibuebung-possessivpronomen-in-saetzen-ergaenzen.html)
-
-- [http://www.deutsch-a-z.de/index.php/Possessivartikel-Nominativ.html](http://www.deutsch-a-z.de/index.php/Possessivartikel-Nominativ.html)
-
-- [http://www.deutsch-a-z.de/index.php/possessivartikel-akkusativ.html](http://www.deutsch-a-z.de/index.php/possessivartikel-akkusativ.html)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/04_possessivpronomen_test_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/04_possessivpronomen_test_uebung.htm)
-
-- [https://deutschlernerblog.de/deklination-possessivartikel-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-possessivartikel-online-uebungen-grammatikuebungen/)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_ue.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_ue.htm)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm)
-
-## Exercices interactifs intégrés
-
+<details class="lesson-card">
+<summary>Les déterminants possessifs</summary>
+<div class="lesson-card-content">
+<p>Les déterminants possessifs indiquent à qui appartient le nom qui suit.</p>
+<table class="quest-table">
+<thead><tr><th>Personne</th><th>Pronom FR</th><th>Pronom ALL</th><th>Possessif FR</th><th>Possessif ALL</th></tr></thead>
+<tbody>
+<tr><th>1ère sing.</th><td>je</td><td>ich</td><td>mon</td><td>mein</td></tr>
+<tr><th>2ème sing.</th><td>tu</td><td>du</td><td>ton</td><td>dein</td></tr>
+<tr><th>3ème masc.</th><td>il</td><td>er</td><td>son</td><td>sein</td></tr>
+<tr><th>3ème fém.</th><td>elle</td><td>sie</td><td>son</td><td>ihr</td></tr>
+<tr><th>3ème neutre</th><td>-</td><td>es</td><td>son</td><td>sein</td></tr>
+<tr><th>1ère plur.</th><td>nous</td><td>wir</td><td>notre</td><td>unser</td></tr>
+<tr><th>2ème plur.</th><td>vous</td><td>ihr</td><td>votre</td><td>euer</td></tr>
+<tr><th>3ème plur.</th><td>ils / elles</td><td>sie</td><td>leur</td><td>ihr</td></tr>
+<tr><th>Forme polie</th><td>vous</td><td>Sie</td><td>votre</td><td>Ihr</td></tr>
+</tbody>
+</table>
+<p>Comme les autres déterminants, ils se déclinent selon le cas du groupe nominal.</p>
+<ul class="mission-list"><li>CVI : <strong>Ich helfe meiner Mutter.</strong></li><li>Préposition au datif : <strong>Ich fahre mit meinem Bruder.</strong></li><li>Préposition mixte sans déplacement : <strong>Das Buch liegt auf meinem Tisch.</strong></li></ul>
+<div class="external-button-grid">
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/02_possessivpronomen_deutsch_uebung.htm" target="_blank" rel="noreferrer">Possessifs 1</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/pronomen/possessivpronomen/uebungen" target="_blank" rel="noreferrer">Lingolia</a>
+<a href="https://www.grammatiktraining.de/pronomen/grammatikuebung-possessivpronomen-ergaenzen.html" target="_blank" rel="noreferrer">Grammatiktraining</a>
+<a href="http://www.lehrerlenz.de/possessivpronomen.html" target="_blank" rel="noreferrer">Lehrerlenz</a>
+<a href="https://www.grammatiktraining.de/pronomen/schreibuebung-possessivpronomen-in-saetzen-ergaenzen.html" target="_blank" rel="noreferrer">Phrases à compléter</a>
+<a href="http://www.deutsch-a-z.de/index.php/Possessivartikel-Nominativ.html" target="_blank" rel="noreferrer">Nominatif</a>
+<a href="http://www.deutsch-a-z.de/index.php/possessivartikel-akkusativ.html" target="_blank" rel="noreferrer">Accusatif</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/22_possessivpronomen/04_possessivpronomen_test_uebung.htm" target="_blank" rel="noreferrer">Test</a>
+<a href="https://deutschlernerblog.de/deklination-possessivartikel-online-uebungen-grammatikuebungen/" target="_blank" rel="noreferrer">Blog exercices</a>
+<a href="http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_ue.htm" target="_blank" rel="noreferrer">DAF Tibs 1</a>
+<a href="http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07_erg/possessiv_ue1.htm" target="_blank" rel="noreferrer">DAF Tibs 2</a>
+<a href="http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul07/possessiv_detektiv.htm" target="_blank" rel="noreferrer">Détective possessif</a>
+</div>
+</div>
+</details>
+<details class="lesson-card">
+<summary>LearningSnack intégré</summary>
+<div class="lesson-card-content">
 <iframe class="content-embed tall" src="https://www.learningsnacks.de/embed/248076/" title="LearningSnack intégré" loading="lazy" allowfullscreen></iframe>
+</div>
+</details>

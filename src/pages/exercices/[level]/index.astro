@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../../components/Layout.astro';
 import { byOrderThenTitle, resourceUrl } from '../../../lib/resources';
+import { chapterLevels } from '../../../data/chapters';
 
 export async function getStaticPaths() {
   return ['9h', '10h', '11h'].map((level) => ({ params: { level } }));
@@ -9,6 +10,12 @@ export async function getStaticPaths() {
 
 const level = Astro.params.level?.toUpperCase() as '9H' | '10H' | '11H';
 const exercices = (await getCollection('exercices', (entry) => entry.data.level === level)).sort(byOrderThenTitle);
+const exerciseBySlug = new Map(exercices.map((entry) => [entry.id.split('/').pop()?.replace(/\.md$/, ''), entry]));
+const levelData = chapterLevels.find((item) => item.level === level);
+const listedExercises =
+  levelData?.chapters
+    .map((chapter) => exerciseBySlug.get(chapter.exerciseSlug))
+    .filter((entry): entry is (typeof exercices)[number] => Boolean(entry)) ?? exercices;
 ---
 
 <Layout title={`Exercices ${level}`} description={`Exercices d’allemand pour le niveau ${level}.`}>
@@ -18,7 +25,7 @@ const exercices = (await getCollection('exercices', (entry) => entry.data.level 
 
   <section class="content-band">
     <ul class="resource-list">
-      {exercices.map((entry) => (
+      {listedExercises.map((entry) => (
         <li>
           <a href={resourceUrl(entry)}>{`Kapitel ${entry.data.order ?? ''}`.trim()}</a>
         </li>

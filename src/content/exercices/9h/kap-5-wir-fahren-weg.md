@@ -1,89 +1,66 @@
 ---
 title: "K5 - Wir fahren weg!"
-description: "L'élève est capable de..."
+description: "Parcours pour écrire une carte postale, proposer une activité et commander poliment."
 section: "exercices"
 level: "9H"
 category: "general"
 sourceUrl: "https://www.allemandbercher.ch/exercices/9h/kap-5-wir-fahren-weg"
 pageType: "chapitre"
 order: 5
-objectives: 
-  - "écrire une carte postale à propos d'un voyage"
-  - "faire des propositions"
-  - "commander à boire et à manger"
+objectives:
+  - "Écrire une carte postale de voyage"
+  - "Faire des propositions"
+  - "Commander à boire et à manger"
+communicationObjectives:
+  - "Raconter un voyage sur une carte postale"
+  - "Faire une proposition"
+  - "Commander poliment"
+languageFocus:
+  - "Indicateurs de direction"
+  - "möchten"
+  - "Prétérit de sein et haben"
+finalMission: "Compléter ou écrire une carte postale de course d’école."
 externalLinks: []
 images: []
 migrationNotes: []
+primaryAction:
+  label: "Lancer le défi phrases"
+  title: "Phrases à bien connaître"
+  src: "/embeds/exercices/9h-kap-5-wir-fahren-weg-phrases.html"
 ---
 
-## Phrases à bien connaître
-
-<iframe class="content-embed tall" src="../../../embeds/exercices/9h-kap-5-wir-fahren-weg-phrases.html" title="Phrases à bien connaître" loading="lazy"></iframe>
-
-## Objectifs
-
-### Communication
-
-L'élève est capable de...
-
-- écrire une carte postale à propos d'un voyage
-
-- faire des propositions
-
-- commander à boire et à manger
-
-### Langue
-
-- indicateurs de direction (prépositions)
-
-- verbe de modalité: möchten
-
-- prétérit de sein et haben
-
-## Les indicateurs de direction
-
-## Wohin fährst du ? Où vas-tu ? (dans quel direction)
-
-Pour indiquer où l'on va, on utilise:
-
-nach pour les villes et les pays
-
-ex: Ich fahre nach Deutschland.
-
-Ich fahre nach Basel.
-
-in pour les pays qui possèdent un déterminant ( die Schweiz, die Türkei, die USA )
-
-ex: Ich fahre in die Schweiz.
-
-Ich fahre in die Türkei.
-
-an pour les endroits liés à l'eau (lac, mer, plage, ...)
-
-ex: Ich fahre an den See.
-
-Ich fahre an den Strand.
-
-Ich fahre ans Meer.
-
-## Möchten
-
-Ce verbe correspond au conditionnel du verbe "mögen" (= aimer). On l'utilise souvent par mesure de politesse (on ne dit pas je veux, mais j'aimerais).
-
-## Präteritum von sein und haben
-
-On appelle "prétérit" le temps verbal en allemand qui correspond à la fois à l'imparfait et au passé simple du français.
-
-ex: "er war" = "il était" ou "il fut" (selon le contexte)
-
-## Exercice - Meine Klassenfahrt
-
-Tu es en course d'école à Berlin. Complète la carte postale.
-
-## Exercices interactifs intégrés
-
-<iframe class="content-embed tall" src="https://quizlet.com/379060768/flashcards/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://quizlet.com/379058535/flashcards/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
-
+<details class="lesson-card">
+<summary>Les indicateurs de direction</summary>
+<div class="lesson-card-content">
+<p>Pour dire où l'on va, on choisit la préposition selon le type de lieu.</p>
+<div class="mini-table-grid">
+<article><strong>nach</strong><p>Villes et la plupart des pays : Ich fahre nach Deutschland.</p></article>
+<article><strong>in</strong><p>Pays avec déterminant : Ich fahre in die Schweiz.</p></article>
+<article><strong>an</strong><p>Lieux liés à l'eau : Ich fahre an den See.</p></article>
+</div>
+</div>
+</details>
+<details class="lesson-card">
+<summary>Möchten et prétérit</summary>
+<div class="lesson-card-content">
+<p><strong>möchten</strong> correspond à une demande polie : on dit plutôt “j'aimerais” que “je veux”.</p>
+<div class="mini-note">
+<strong>Prétérit</strong>
+<p>Le prétérit allemand correspond selon le contexte à l’imparfait ou au passé simple français : er war = il était / il fut.</p>
+</div>
+</div>
+</details>
+<details class="lesson-card">
+<summary>Exercice - Meine Klassenfahrt</summary>
+<div class="lesson-card-content">
+<p>Tu es en course d'école à Berlin. Complète la carte postale.</p>
+</div>
+</details>
+<details class="lesson-card">
+<summary>Exercices interactifs intégrés</summary>
+<div class="lesson-card-content">
+<iframe class="content-embed tall" src="https://quizlet.com/379060768/flashcards/embed?i=g2phv&amp;x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
+<iframe class="content-embed tall" src="https://quizlet.com/379058535/flashcards/embed?i=g2phv&amp;x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
 <iframe class="content-embed tall" src="https://learningapps.org/watch?v=p9nznt69j19" title="LearningApps intégré" loading="lazy" allowfullscreen></iframe>
+</div>
+</details>
