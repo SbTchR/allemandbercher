@@ -3696,6 +3696,483 @@ h2 {
   margin: 0;
 }
 
+.grammar-page {
+  display: grid;
+  gap: 18px;
+}
+
+.grammar-dashboard {
+  margin-bottom: 4px;
+}
+
+.grammar-callout {
+  display: grid;
+  gap: 5px;
+  margin: 16px 0;
+  padding: 14px 16px;
+  border: 2px solid rgba(20, 112, 86, 0.18);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(20, 112, 86, 0.11), rgba(255, 255, 255, 0.92));
+  box-shadow: 0 6px 0 rgba(15, 26, 49, 0.06);
+}
+
+.grammar-callout p {
+  margin: 0;
+}
+
+.case-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7em;
+  margin: 0 0.08em;
+  padding: 0.08em 0.48em;
+  border: 2px solid rgba(15, 26, 49, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 3px 0 rgba(15, 26, 49, 0.06);
+  font-weight: 950;
+  line-height: 1.1;
+  vertical-align: baseline;
+  animation: grammarTextPop 420ms ease both;
+}
+
+.case-chip-determiner {
+  color: #76520b;
+  background: rgba(255, 201, 40, 0.22);
+}
+
+.case-chip-adjective,
+.case-chip-preposition {
+  color: #5b4d9a;
+  background: rgba(111, 98, 188, 0.14);
+}
+
+.case-chip-noun,
+.case-chip-nominative {
+  color: #1f5d8f;
+  background: rgba(47, 132, 199, 0.13);
+}
+
+.case-chip-accusative {
+  color: #b40f2e;
+  background: rgba(217, 4, 41, 0.12);
+}
+
+.case-chip-dative {
+  color: #147056;
+  background: rgba(20, 112, 86, 0.13);
+}
+
+.grammar-steps {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding-left: 0 !important;
+  counter-reset: grammar-step;
+  list-style: none;
+}
+
+.grammar-steps li {
+  display: grid;
+  grid-template-columns: 44px minmax(120px, 0.76fr) minmax(160px, 1fr);
+  gap: 10px;
+  align-items: center;
+  margin: 0 !important;
+  padding: 12px 14px !important;
+  border: 2px solid rgba(15, 26, 49, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 0 rgba(15, 26, 49, 0.06);
+  counter-increment: grammar-step;
+}
+
+.grammar-steps li::before {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--link);
+  color: white;
+  content: counter(grammar-step);
+  font-weight: 950;
+}
+
+.grammar-steps span {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.grammar-steps strong {
+  color: var(--ink);
+}
+
+.grammar-steps small {
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 760;
+}
+
+.sentence-lab {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 2px dashed rgba(15, 26, 49, 0.18);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(246, 249, 255, 0.88), rgba(255, 255, 255, 0.96));
+}
+
+.sentence-lab p {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 820;
+  line-height: 1.65;
+}
+
+.sentence-lab p > span:first-child:not(.case-chip) {
+  display: inline-flex;
+  min-width: 132px;
+  margin-right: 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.grammar-table-stack {
+  display: grid;
+  gap: 18px;
+  margin: 18px 0;
+}
+
+.grammar-matrix-card {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.grammar-matrix-card figcaption {
+  display: grid;
+  gap: 4px;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.grammar-matrix-card figcaption strong {
+  font-size: 1.02rem;
+}
+
+.grammar-matrix-card figcaption span {
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 720;
+}
+
+.grammar-matrix-scroll {
+  overflow-x: auto;
+  border: 2px solid rgba(15, 26, 49, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 8px 0 rgba(15, 26, 49, 0.07);
+  scrollbar-color: rgba(31, 93, 143, 0.34) rgba(255, 255, 255, 0.72);
+}
+
+.grammar-matrix {
+  display: table !important;
+  width: max(100%, 760px);
+  min-width: 760px;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: 0.95rem;
+}
+
+.grammar-matrix-card-compact .grammar-matrix {
+  width: max(100%, 560px);
+  min-width: 560px;
+}
+
+.grammar-matrix th,
+.grammar-matrix td {
+  min-width: 0;
+  padding: 12px 14px;
+  border-right: 1px solid rgba(15, 26, 49, 0.1);
+  border-bottom: 1px solid rgba(15, 26, 49, 0.1);
+  overflow-wrap: anywhere;
+  text-align: left;
+  vertical-align: top;
+}
+
+.grammar-matrix th:last-child,
+.grammar-matrix td:last-child {
+  border-right: 0;
+}
+
+.grammar-matrix tbody tr:last-child th,
+.grammar-matrix tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.grammar-matrix thead th {
+  background: linear-gradient(180deg, rgba(255, 201, 40, 0.46), rgba(255, 201, 40, 0.24));
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.grammar-matrix tbody th {
+  background: rgba(246, 249, 255, 0.92);
+  color: var(--link);
+  font-weight: 950;
+}
+
+.grammar-matrix tbody td {
+  color: var(--ink);
+  font-weight: 820;
+}
+
+.grammar-matrix tbody tr:nth-child(even) td {
+  background: rgba(246, 249, 255, 0.48);
+}
+
+.movement-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.movement-switch article {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 2px solid rgba(15, 26, 49, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 6px 0 rgba(15, 26, 49, 0.06);
+}
+
+.movement-switch strong,
+.movement-switch p {
+  margin: 0;
+}
+
+.external-link-sections {
+  display: grid;
+  gap: 18px;
+}
+
+.external-link-sections h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.grammar-practice {
+  display: grid;
+  gap: 18px;
+}
+
+.grammar-practice-header {
+  display: flex;
+  gap: 18px;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.grammar-practice-header h2 {
+  margin: 3px 0 6px;
+}
+
+.grammar-practice-header p {
+  margin: 0;
+}
+
+.grammar-score {
+  display: inline-flex;
+  min-width: 84px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(20, 112, 86, 0.18);
+  border-radius: 14px;
+  background: rgba(20, 112, 86, 0.1);
+  color: #147056;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.grammar-practice-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.grammar-practice-item {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 2px solid rgba(15, 26, 49, 0.1);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 201, 40, 0.08), transparent 32%),
+    rgba(255, 255, 255, 0.94);
+  box-shadow: 0 7px 0 rgba(15, 26, 49, 0.06);
+}
+
+.grammar-practice-item-head {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.grammar-practice-item-head > strong {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--link);
+  color: white;
+}
+
+.grammar-practice-item p {
+  margin: 0;
+}
+
+.grammar-practice-item blockquote {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-left: 4px solid rgba(31, 93, 143, 0.3);
+  background: rgba(246, 249, 255, 0.78);
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.grammar-choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.grammar-choice {
+  min-height: 42px;
+  border: 2px solid rgba(15, 26, 49, 0.13);
+  border-radius: 13px;
+  background: white;
+  box-shadow: 0 5px 0 rgba(15, 26, 49, 0.07);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 950;
+  line-height: 1.1;
+  padding: 9px 14px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.grammar-choice:hover,
+.grammar-choice:focus-visible {
+  border-color: rgba(31, 93, 143, 0.38);
+  box-shadow: 0 8px 0 rgba(15, 26, 49, 0.08);
+  transform: translateY(-2px);
+}
+
+.grammar-choice.is-correct {
+  border-color: rgba(20, 112, 86, 0.5);
+  background: rgba(20, 112, 86, 0.12);
+  color: #147056;
+}
+
+.grammar-choice.is-wrong {
+  border-color: rgba(217, 4, 41, 0.45);
+  background: rgba(217, 4, 41, 0.1);
+  color: #b40f2e;
+}
+
+.grammar-practice-footer {
+  display: flex;
+  min-height: 32px;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grammar-feedback {
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.grammar-feedback.is-correct {
+  color: #147056;
+}
+
+.grammar-feedback.is-wrong {
+  color: #b40f2e;
+}
+
+.grammar-practice-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.grammar-hint-dialog {
+  width: min(460px, calc(100vw - 32px));
+  border: 0;
+  border-radius: 16px;
+  padding: 0;
+  background: transparent;
+}
+
+.grammar-hint-dialog::backdrop {
+  background: rgba(15, 26, 49, 0.38);
+}
+
+.grammar-hint-dialog > div {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 2px solid rgba(15, 26, 49, 0.14);
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 18px 42px rgba(15, 26, 49, 0.24);
+}
+
+.grammar-hint-dialog-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grammar-hint-dialog h3,
+.grammar-hint-dialog p {
+  margin: 0;
+}
+
+@keyframes grammarTextPop {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .objective-box h2,
 .link-box h2,
 .source-box h2,
@@ -4108,6 +4585,43 @@ h2 {
   .resource-layout,
   .chapter-overview-row {
     grid-template-columns: 1fr;
+  }
+
+  .grammar-steps li,
+  .grammar-practice-item-head {
+    grid-template-columns: 1fr;
+  }
+
+  .grammar-steps li::before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .movement-switch,
+  .grammar-practice-header {
+    grid-template-columns: 1fr;
+  }
+
+  .movement-switch {
+    display: grid;
+  }
+
+  .grammar-practice-header {
+    display: grid;
+  }
+
+  .grammar-score,
+  .grammar-practice-actions .quest-launch-button {
+    width: 100%;
+  }
+
+  .grammar-choice-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .grammar-choice {
+    width: 100%;
   }
 
   .chapter-actions a {

@@ -1,0 +1,43 @@
+---
+import type { GrammarTable } from '../data/grammarTheory';
+
+type Props = {
+  table: GrammarTable;
+  compact?: boolean;
+};
+
+const { table, compact = false } = Astro.props;
+---
+
+<figure class:list={['grammar-matrix-card', { 'grammar-matrix-card-compact': compact }]}>
+  <figcaption>
+    <strong>{table.title}</strong>
+    {table.note && <span>{table.note}</span>}
+  </figcaption>
+  <div class="grammar-matrix-scroll">
+    <table class="grammar-matrix">
+      <thead>
+        <tr>
+          {table.columns.map((column) => <th scope="col">{column}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {
+          table.rows.map((row) => (
+            <tr>
+              {row.map((cell, index) =>
+                index === 0 ? (
+                  <th scope="row" data-label={table.columns[index]}>
+                    {cell}
+                  </th>
+                ) : (
+                  <td data-label={table.columns[index]}>{cell}</td>
+                )
+              )}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</figure>

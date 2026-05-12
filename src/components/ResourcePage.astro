@@ -4,11 +4,14 @@ import ComparativeExercise from './ComparativeExercise.astro';
 import ComparativeRuleLab from './ComparativeRuleLab.astro';
 import ComparativeTheoryContent from './ComparativeTheoryContent.astro';
 import ExternalLinks from './ExternalLinks.astro';
+import GrammarPracticeLab from './GrammarPracticeLab.astro';
+import GrammarTheoryContent from './GrammarTheoryContent.astro';
 import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
 import ObjectiveBox from './ObjectiveBox.astro';
 import TheoryBox from './TheoryBox.astro';
 import WritingExerciseLab from './WritingExerciseLab.astro';
+import { grammarTheoryPageSlugs, type GrammarTheoryPageSlug } from '../data/grammarTheory';
 import { withBase } from '../lib/paths';
 import { resourceEyebrow, type ResourceEntry } from '../lib/resources';
 
@@ -23,6 +26,13 @@ const hasAside = entry.data.externalLinks.length > 0;
 const primaryAction = entry.data.primaryAction;
 const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
 const hasComparativeExercise = entry.collection === 'theorie' && entry.data.category === 'grammaire' && slug === 'le-comparatif';
+const customGrammarSlug =
+  entry.collection === 'theorie' &&
+  entry.data.category === 'grammaire' &&
+  slug &&
+  grammarTheoryPageSlugs.includes(slug as GrammarTheoryPageSlug)
+    ? (slug as GrammarTheoryPageSlug)
+    : undefined;
 const hasWritingExerciseLab = entry.collection === 'conseils' && slug === 'expression-ecrite';
 const hasHeaderCallout = hasObjectives || hasComparativeExercise;
 const isExerciseChapter = entry.collection === 'exercices' && entry.data.pageType === 'chapitre';
@@ -109,7 +119,15 @@ const hasChapterDashboard =
         {
           entry.collection === 'theorie' ? (
             <TheoryBox category={entry.data.category}>
-              {hasComparativeExercise ? <ComparativeTheoryContent /> : <Content />}
+              {
+                hasComparativeExercise ? (
+                  <ComparativeTheoryContent />
+                ) : customGrammarSlug ? (
+                  <GrammarTheoryContent slug={customGrammarSlug} />
+                ) : (
+                  <Content />
+                )
+              }
             </TheoryBox>
           ) : (
             <Content />
@@ -128,9 +146,10 @@ const hasChapterDashboard =
 
     {hasComparativeExercise && <ComparativeRuleLab />}
     {hasComparativeExercise && <ComparativeExercise />}
+    {customGrammarSlug && <GrammarPracticeLab slug={customGrammarSlug} />}
     {hasWritingExerciseLab && <WritingExerciseLab />}
 
-    <ImageGallery images={entry.data.images} />
+    <ImageGallery images={customGrammarSlug ? [] : entry.data.images} />
 
     {
       primaryAction && (

@@ -1,0 +1,142 @@
+---
+import { grammarPractices, type GrammarTheoryPageSlug } from '../data/grammarTheory';
+
+type Props = {
+  slug: GrammarTheoryPageSlug;
+};
+
+const { slug } = Astro.props;
+const practice = grammarPractices[slug];
+const itemCount = practice.items.length;
+---
+
+<section class="content-band grammar-practice" aria-labelledby={`grammar-practice-${slug}`} data-grammar-practice>
+  <div class="grammar-practice-header">
+    <div>
+      <p class="home-section-label">Exercice intégré</p>
+      <h2 id={`grammar-practice-${slug}`}>{practice.title}</h2>
+      <p>{practice.intro}</p>
+    </div>
+    <output class="grammar-score" data-grammar-score aria-live="polite">0 / {itemCount}</output>
+  </div>
+
+  <div class="grammar-practice-grid">
+    {
+      practice.items.map((item, index) => (
+        <article class="grammar-practice-item" data-practice-item>
+          <div class="grammar-practice-item-head">
+            <strong>{index + 1}</strong>
+            <div>
+              <p>{item.prompt}</p>
+              <blockquote>{item.sentence}</blockquote>
+            </div>
+          </div>
+
+          <div class="grammar-choice-row" role="group" aria-label={`Réponses pour la question ${index + 1}`}>
+            {
+              item.choices.map((choice) => (
+                <button class="grammar-choice" type="button" data-choice data-correct={choice === item.answer ? 'true' : 'false'}>
+                  {choice}
+                </button>
+              ))
+            }
+          </div>
+
+          <div class="grammar-practice-footer">
+            <button class="text-link grammar-hint-button" type="button" data-open-hint data-hint={item.hint}>
+              Indice
+            </button>
+            <p class="grammar-feedback" data-feedback data-success={item.feedback} aria-live="polite"></p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <div class="grammar-practice-actions">
+    <button class="quest-launch-button" type="button" data-reset-grammar>Recommencer</button>
+  </div>
+
+  <dialog class="grammar-hint-dialog" data-hint-dialog>
+    <div>
+      <div class="grammar-hint-dialog-header">
+        <h3>Indice</h3>
+        <button class="resource-modal-close" type="button" data-close-hint>Fermer</button>
+      </div>
+      <p data-hint-content></p>
+    </div>
+  </dialog>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-grammar-practice]').forEach((practice) => {
+    const items = Array.from(practice.querySelectorAll<HTMLElement>('[data-practice-item]'));
+    const score = practice.querySelector<HTMLOutputElement>('[data-grammar-score]');
+    const dialog = practice.querySelector<HTMLDialogElement>('[data-hint-dialog]');
+    const hintContent = practice.querySelector<HTMLElement>('[data-hint-content]');
+
+    const updateScore = () => {
+      const correctCount = items.filter((item) => item.dataset.state === 'correct').length;
+      if (score) score.textContent = `${correctCount} / ${items.length}`;
+    };
+
+    items.forEach((item) => {
+      const feedback = item.querySelector<HTMLElement>('[data-feedback]');
+      const buttons = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-choice]'));
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const isCorrect = button.dataset.correct === 'true';
+
+          buttons.forEach((choice) => {
+            choice.classList.remove('is-selected', 'is-correct', 'is-wrong');
+          });
+
+          button.classList.add('is-selected', isCorrect ? 'is-correct' : 'is-wrong');
+          item.dataset.state = isCorrect ? 'correct' : 'wrong';
+
+          if (feedback) {
+            feedback.textContent = isCorrect ? feedback.dataset.success ?? 'Correct.' : 'Pas encore. Ouvre l’indice, puis réessaie.';
+            feedback.classList.toggle('is-correct', isCorrect);
+            feedback.classList.toggle('is-wrong', !isCorrect);
+          }
+
+          updateScore();
+        });
+      });
+    });
+
+    practice.querySelectorAll<HTMLButtonElement>('[data-open-hint]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!dialog || !hintContent) return;
+        hintContent.textContent = button.dataset.hint ?? '';
+        dialog.showModal();
+      });
+    });
+
+    practice.querySelector<HTMLButtonElement>('[data-close-hint]')?.addEventListener('click', () => {
+      dialog?.close();
+    });
+
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    practice.querySelector<HTMLButtonElement>('[data-reset-grammar]')?.addEventListener('click', () => {
+      items.forEach((item) => {
+        delete item.dataset.state;
+        item.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach((button) => {
+          button.classList.remove('is-selected', 'is-correct', 'is-wrong');
+        });
+        const feedback = item.querySelector<HTMLElement>('[data-feedback]');
+        if (feedback) {
+          feedback.textContent = '';
+          feedback.classList.remove('is-correct', 'is-wrong');
+        }
+      });
+      updateScore();
+    });
+
+    updateScore();
+  });
+</script>
