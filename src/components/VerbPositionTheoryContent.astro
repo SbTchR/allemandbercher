@@ -1,0 +1,190 @@
+---
+import { withBase } from '../lib/paths';
+
+const phraseTypes = [
+  {
+    label: 'Phrase affirmative',
+    detail: 'Phrase normale : le verbe principal est en 2e position.',
+    href: null,
+  },
+  {
+    label: 'Question',
+    detail: 'La place du verbe dépend du type de question.',
+    href: withBase('/theorie/syntaxe/les-questions/'),
+  },
+  {
+    label: 'Phrase impérative',
+    detail: 'L’ordre se construit comme une consigne.',
+    href: withBase('/theorie/conjugaison/imperatif/'),
+  },
+  {
+    label: 'Subordonnée',
+    detail: 'Phrase dans la phrase : certaines subordonnées déplacent le verbe.',
+    href: withBase('/theorie/syntaxe/'),
+  },
+];
+
+const groupRows = [
+  ['Verbe', 'Que fait-on ? Quel mot est conjugué ?', 'vergisst'],
+  ['Sujet', 'Qui est-ce qui ... ?', 'Der Schüler'],
+  ['CVD', 'Qui ? Quoi ?', 'sein Buch'],
+  ['CVI', 'À qui ? À quoi ?', 'dem Lehrer'],
+  ['Groupe prépositionnel', 'Où ? Quand ? Avec qui ?...', 'in der Schule'],
+];
+
+const exampleRows = [
+  {
+    title: 'Phrase basique',
+    structure: 'Sujet - Verbe - CVD',
+    sentence:
+      '<span class="mark-subject">Der Schüler</span> <span class="mark-verb">vergisst</span> <span class="mark-object">sein Buch</span>.',
+    notes: ['1ère position : Der Schüler, le sujet.', '2e position : vergisst, le verbe au présent.'],
+  },
+  {
+    title: 'Phrase avec complément de temps',
+    structure: 'Temps - Verbe - Sujet - CVD',
+    sentence:
+      '<span class="mark-time">Heute</span> <span class="mark-verb">vergisst</span> <span class="mark-subject">der Schüler</span> <span class="mark-object">sein Buch</span>.',
+    notes: ['1ère position : Heute, le complément de temps.', '2e position : vergisst, toujours le verbe principal.'],
+  },
+  {
+    title: 'Passé composé',
+    structure: 'Sujet - Auxiliaire - CVD - Participe passé',
+    sentence:
+      '<span class="mark-subject">Der Schüler</span> <span class="mark-verb">hat</span> <span class="mark-object">sein Buch</span> <span class="mark-verbal-tail">vergessen</span>.',
+    notes: ['2e position : hat, l’auxiliaire conjugué avec le sujet.', 'Le participe passé vergessen reste à la fin.'],
+  },
+  {
+    title: 'Verbe de modalité',
+    structure: 'Sujet - Verbe de modalité - Complément - Infinitif',
+    sentence:
+      '<span class="mark-subject">Der Schüler</span> <span class="mark-verb">will</span> <span class="mark-object">nicht in die Schule</span> <span class="mark-verbal-tail">gehen</span>.',
+    notes: ['2e position : will, le verbe conjugué avec le sujet.', 'L’infinitif gehen reste à la fin.'],
+  },
+];
+---
+
+<section class="chapter-dashboard verb-position-dashboard" aria-label="À retenir sur la place du verbe principal">
+  <article>
+    <strong>Phrase affirmative</strong>
+    <p class="dashboard-rule">
+      <span class="dashboard-rule-line"><span class="mark-verb">verbe principal</span> en 2e position</span>
+      <span class="dashboard-example-line">Der Schüler <span class="mark-verb">vergisst</span> sein Buch.</span>
+    </p>
+  </article>
+  <article>
+    <strong>Plusieurs verbes</strong>
+    <p>Le verbe conjugué avec le sujet est le verbe principal. Les autres formes restent souvent à la fin.</p>
+  </article>
+  <article>
+    <strong>1ère position variable</strong>
+    <p>Le sujet peut être en 1ère position, mais un complément peut aussi prendre cette place.</p>
+  </article>
+</section>
+
+<p>
+  Par verbe « principal », on entend le verbe qui est conjugué avec le sujet. Il peut y avoir plusieurs formes
+  verbales dans une phrase, mais une seule porte vraiment l’accord avec le sujet.
+</p>
+
+<div class="syntax-role-legend" aria-label="Code couleur de la page">
+  <span><span class="role-chip mark-subject">sujet</span> jaune</span>
+  <span><span class="role-chip mark-verb">verbe principal</span> rouge</span>
+  <span><span class="role-chip mark-object">complément</span> bleu</span>
+  <span><span class="role-chip mark-verbal-tail">forme verbale finale</span> violet</span>
+</div>
+
+<details class="lesson-card">
+  <summary>1. Revoir les groupes de la phrase</summary>
+  <div class="lesson-card-content">
+    <p>Une phrase est composée de plusieurs groupes grammaticaux. Chaque groupe occupe une position dans la phrase.</p>
+
+    <table class="syntax-table">
+      <thead>
+        <tr>
+          <th>Groupe</th>
+          <th>Question utile</th>
+          <th>Exemple</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          groupRows.map(([group, question, example]) => (
+            <tr>
+              <th scope="row">{group}</th>
+              <td>{question}</td>
+              <td>{example}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<details class="lesson-card">
+  <summary>2. Identifier le type de phrase</summary>
+  <div class="lesson-card-content">
+    <p>En allemand, la place du verbe dépend du type de phrase. La règle travaillée ici concerne surtout la phrase affirmative.</p>
+
+    <div class="phrase-type-grid">
+      {
+        phraseTypes.map((type) => (
+          <article>
+            <strong>{type.href ? <a href={type.href}>{type.label}</a> : type.label}</strong>
+            <p>{type.detail}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</details>
+
+<details class="lesson-card">
+  <summary>3. Observer la règle dans des exemples</summary>
+  <div class="lesson-card-content">
+    <p>
+      Dans une phrase affirmative, le verbe principal se place toujours en 2e position. Le groupe placé en 1ère
+      position peut changer, mais le verbe conjugué garde sa place.
+    </p>
+
+    <div class="verb-example-list">
+      {
+        exampleRows.map((example) => (
+          <article class="verb-example-card">
+            <div>
+              <p class="verb-example-kicker">{example.structure}</p>
+              <h3>{example.title}</h3>
+            </div>
+            <p class="verb-example-sentence" set:html={example.sentence}></p>
+            <ul>
+              {example.notes.map((note) => (
+                <li>{note}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+
+    <p>
+      Le principe reste le même avec un complément en première position :
+      <strong><span class="mark-time">Gestern</span> <span class="mark-verb">hat</span> der Schüler sein Buch <span class="mark-verbal-tail">vergessen</span>.</strong>
+    </p>
+  </div>
+</details>
+
+<details class="mini-challenge">
+  <summary>Le réflexe à garder</summary>
+  <div>
+    <p>
+      Dans une phrase affirmative, compte les groupes. Le verbe principal doit être le 2e groupe, même si la phrase
+      commence par un complément comme <strong>Heute</strong> ou <strong>Gestern</strong>.
+    </p>
+    <p>
+      Pour aller plus loin, compare avec les pages sur le
+      <a href={withBase('/theorie/syntaxe/les-phrases-au-passe-compose/')}>passé composé</a> et les
+      <a href={withBase('/theorie/syntaxe/les-phrases-avec-verbe-de-modalite/')}>verbes de modalité</a>.
+    </p>
+  </div>
+</details>

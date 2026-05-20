@@ -39,6 +39,7 @@ Les ressources 9H, 10H et 11H doivent rester simples à maintenir.
 - Ne pas coller du HTML Google Sites dans les fichiers Markdown.
 - Mettre les liens externes dans `externalLinks` quand ils doivent être conservés.
 - Mettre les images à récupérer dans `images`, puis remplacer progressivement les URLs Google par des fichiers locaux dans `public/`.
+- Quand le site source contient un tableau sous forme d’image, le reconstituer dans le nouveau site sous forme de vrai tableau HTML ou de structure sémantique équivalente, pas comme une simple image.
 - Noter les ambiguïtés dans `migrationNotes` au lieu d’inventer du contenu.
 
 ## Amélioration des pages
@@ -47,6 +48,7 @@ Ces règles doivent guider chaque reprise ou amélioration d’une page déjà m
 
 - Toujours comparer la page Astro locale avec la page équivalente du site source `https://www.allemandbercher.ch` avant de finaliser.
 - Vérifier que tout le contenu utile du site source est intégré : titres, consignes, exemples, exercices, tableaux, images, liens et ordre général de la page.
+- Reconstituer les tableaux du site source en vrais tableaux modifiables quand ils n’existent que sous forme d’image.
 - Utiliser le site Google Sites comme référence de contenu et de structure, mais recoder la mise en page avec les composants et styles du nouveau site.
 - Ne jamais laisser sur le site public des notes adressées au développeur ou à l’enseignant développeur, par exemple des commentaires sur le fait que le site est statique, maintenable ou en migration.
 - Le haut des pages doit garder une structure régulière : titre clair, courte introduction, puis encadré d’objectifs, résumé ou bloc `À retenir` selon le type de page.
