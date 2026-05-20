@@ -1,0 +1,327 @@
+---
+import { externalLinkGroups } from '../data/grammarTheory';
+
+const flashcards = [
+  {
+    front: 'Sujet',
+    back: 'Nominatif. Question : qui est-ce qui fait l’action ?',
+  },
+  {
+    front: 'CVD',
+    back: 'Accusatif. Question : le sujet + le verbe + qui ou quoi ?',
+  },
+  {
+    front: 'CDI',
+    back: 'Datif. Question : le sujet + le verbe + à qui ou à quoi ?',
+  },
+  {
+    front: 'Groupe prépositionnel',
+    back: 'Le cas dépend de la préposition : certaines imposent l’accusatif, d’autres le datif.',
+  },
+  {
+    front: 'der Lehrer -> je vois le professeur',
+    back: 'Ich sehe den Lehrer. Masculin + accusatif = den.',
+  },
+  {
+    front: 'das Kind -> j’aide l’enfant',
+    back: 'Ich helfe dem Kind. Neutre + datif = dem.',
+  },
+  {
+    front: 'ich -> quelqu’un m’aide',
+    back: 'Er hilft mir. Le datif de ich est mir.',
+  },
+  {
+    front: 'er -> je le connais',
+    back: 'Ich kenne ihn. L’accusatif de er est ihn.',
+  },
+];
+
+const sortingItems = [
+  {
+    sentence: 'Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.',
+    target: 'schickt',
+    answer: 'verbe',
+    feedback: 'schickt est le verbe conjugué. On commence par lui.',
+  },
+  {
+    sentence: 'Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.',
+    target: 'das Mädchen',
+    answer: 'sujet',
+    feedback: 'das Mädchen fait l’action : c’est le sujet, donc le nominatif.',
+  },
+  {
+    sentence: 'Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.',
+    target: 'einen Brief',
+    answer: 'cvd',
+    feedback: 'das Mädchen schickt quoi ? einen Brief. C’est le CVD, donc l’accusatif.',
+  },
+  {
+    sentence: 'Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.',
+    target: 'seiner Freundin',
+    answer: 'cdi',
+    feedback: 'das Mädchen schickt einen Brief à qui ? seiner Freundin. C’est le CDI, donc le datif.',
+  },
+  {
+    sentence: 'Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.',
+    target: 'für seinen Geburtstag',
+    answer: 'prep',
+    feedback: 'Le groupe commence par für : c’est un groupe prépositionnel. Ici für impose l’accusatif.',
+  },
+];
+
+const quizItems = [
+  {
+    prompt: 'Quelle forme complète la phrase ?',
+    sentence: 'Ich sehe ___ Lehrer.',
+    choices: ['der', 'den', 'dem'],
+    answer: 'den',
+    feedback: 'Lehrer est masculin et CVD : accusatif masculin = den.',
+  },
+  {
+    prompt: 'Quel cas faut-il pour le sujet ?',
+    sentence: '___ Mädchen spielt Fussball.',
+    choices: ['Nominatif', 'Accusatif', 'Datif'],
+    answer: 'Nominatif',
+    feedback: 'Le sujet est toujours au nominatif.',
+  },
+  {
+    prompt: 'Quelle forme complète la phrase ?',
+    sentence: 'Wir helfen ___ Kind.',
+    choices: ['das', 'dem', 'den'],
+    answer: 'dem',
+    feedback: 'helfen demande le datif : neutre datif = dem.',
+  },
+  {
+    prompt: 'Quel pronom complète la phrase ?',
+    sentence: 'Kannst du ___ helfen?',
+    choices: ['mich', 'mir', 'ich'],
+    answer: 'mir',
+    feedback: 'helfen demande le datif. Le datif de ich est mir.',
+  },
+];
+
+const caseExternalGroups = externalLinkGroups['les-cas-theorie-de-base'];
+---
+
+<section class="content-band cases-practice-suite" aria-labelledby="cases-practice-title">
+  <div class="cases-practice-header">
+    <p class="home-section-label">Exercices intégrés</p>
+    <h2 id="cases-practice-title">S’entraîner comme sur Quizlet et Educaplay, mais directement ici</h2>
+    <p>
+      Les exercices externes de la page originale sont remplacés par des activités locales : cartes mémoire, tri des groupes
+      et mini-quiz. Les liens originaux restent disponibles en secours.
+    </p>
+  </div>
+
+  <div class="cases-practice-layout">
+    <article class="case-flashcards" data-case-flashcards>
+      <div class="case-practice-title-row">
+        <div>
+          <p class="case-practice-kicker">Mode Quizlet</p>
+          <h3>Cartes mémoire</h3>
+        </div>
+        <output data-flash-progress>1 / {flashcards.length}</output>
+      </div>
+
+      <div class="case-flashcard-stage">
+        {
+          flashcards.map((card, index) => (
+            <button class="case-flashcard" type="button" data-flash-card data-index={index} hidden={index !== 0}>
+              <span class="case-flashcard-side case-flashcard-front">{card.front}</span>
+              <span class="case-flashcard-side case-flashcard-back">{card.back}</span>
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="case-practice-actions">
+        <button class="text-link" type="button" data-flash-prev>Précédente</button>
+        <button class="quest-launch-button" type="button" data-flash-flip>Retourner</button>
+        <button class="text-link" type="button" data-flash-next>Suivante</button>
+      </div>
+    </article>
+
+    <article class="case-sort-game" data-case-sort>
+      <div class="case-practice-title-row">
+        <div>
+          <p class="case-practice-kicker">Mode Educaplay</p>
+          <h3>Trie les groupes</h3>
+        </div>
+        <output data-sort-score>0 / {sortingItems.length}</output>
+      </div>
+
+      <div class="case-sort-items">
+        {
+          sortingItems.map((item, index) => (
+            <section class="case-sort-item" data-sort-item data-answer={item.answer}>
+              <p>
+                <strong>{index + 1}.</strong> Dans la phrase, quel est le rôle de <mark>{item.target}</mark> ?
+              </p>
+              <blockquote>{item.sentence}</blockquote>
+              <div class="case-role-choice-row">
+                <button type="button" data-sort-choice="verbe">Verbe</button>
+                <button type="button" data-sort-choice="sujet">Sujet</button>
+                <button type="button" data-sort-choice="cvd">CVD</button>
+                <button type="button" data-sort-choice="cdi">CDI</button>
+                <button type="button" data-sort-choice="prep">Groupe prép.</button>
+              </div>
+              <p class="case-sort-feedback" data-sort-feedback data-success={item.feedback} aria-live="polite"></p>
+            </section>
+          ))
+        }
+      </div>
+    </article>
+  </div>
+
+  <article class="case-final-quiz" data-case-final-quiz>
+    <div class="case-practice-title-row">
+      <div>
+        <p class="case-practice-kicker">Challenge final</p>
+        <h3>Choisis la bonne forme</h3>
+      </div>
+      <output data-final-score>0 / {quizItems.length}</output>
+    </div>
+
+    <div class="case-final-grid">
+      {
+        quizItems.map((item, index) => (
+          <section class="case-final-item" data-final-item>
+            <p>
+              <strong>{index + 1}.</strong> {item.prompt}
+            </p>
+            <blockquote>{item.sentence}</blockquote>
+            <div class="grammar-choice-row">
+              {
+                item.choices.map((choice) => (
+                  <button class="grammar-choice" type="button" data-final-choice data-correct={choice === item.answer ? 'true' : 'false'}>
+                    {choice}
+                  </button>
+                ))
+              }
+            </div>
+            <p class="grammar-feedback" data-final-feedback data-success={item.feedback} aria-live="polite"></p>
+          </section>
+        ))
+      }
+    </div>
+
+    <div class="case-original-links" aria-label="Liens vers les exercices originaux">
+      <a href="https://quizlet.com/613523315/learn/embed?i=g2phv&x=1jj1" target="_blank" rel="noreferrer">Quizlet original</a>
+      <a href="https://fr.educaplay.com/jeu/5038069-les_cas.html" target="_blank" rel="noreferrer">Educaplay original</a>
+    </div>
+  </article>
+
+  <details class="external-quest case-external-quest">
+    <summary>Exercices externes supplémentaires</summary>
+    <div class="external-link-sections">
+      {
+        caseExternalGroups.map((group) => (
+          <section>
+            <h3>{group.title}</h3>
+            <div class="external-button-grid">
+              {group.links.map((link) => (
+                <a href={link.url} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+      }
+    </div>
+  </details>
+</section>
+
+<script>
+  const flashRoot = document.querySelector<HTMLElement>('[data-case-flashcards]');
+  if (flashRoot) {
+    const cards = Array.from(flashRoot.querySelectorAll<HTMLElement>('[data-flash-card]'));
+    const progress = flashRoot.querySelector<HTMLOutputElement>('[data-flash-progress]');
+    let currentCard = 0;
+
+    const showCard = () => {
+      cards.forEach((card, index) => {
+        card.hidden = index !== currentCard;
+        card.classList.remove('is-flipped');
+      });
+      if (progress) progress.textContent = `${currentCard + 1} / ${cards.length}`;
+    };
+
+    flashRoot.querySelector('[data-flash-flip]')?.addEventListener('click', () => {
+      cards[currentCard]?.classList.toggle('is-flipped');
+    });
+
+    flashRoot.querySelector('[data-flash-prev]')?.addEventListener('click', () => {
+      currentCard = (currentCard - 1 + cards.length) % cards.length;
+      showCard();
+    });
+
+    flashRoot.querySelector('[data-flash-next]')?.addEventListener('click', () => {
+      currentCard = (currentCard + 1) % cards.length;
+      showCard();
+    });
+
+    cards.forEach((card) => {
+      card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+    });
+
+    showCard();
+  }
+
+  const updateChoiceScore = (root: HTMLElement, itemSelector: string, scoreSelector: string) => {
+    const items = Array.from(root.querySelectorAll<HTMLElement>(itemSelector));
+    const score = root.querySelector<HTMLOutputElement>(scoreSelector);
+    const correct = items.filter((item) => item.dataset.state === 'correct').length;
+    if (score) score.textContent = `${correct} / ${items.length}`;
+  };
+
+  const sortRoot = document.querySelector<HTMLElement>('[data-case-sort]');
+  if (sortRoot) {
+    sortRoot.querySelectorAll<HTMLElement>('[data-sort-item]').forEach((item) => {
+      const buttons = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-sort-choice]'));
+      const feedback = item.querySelector<HTMLElement>('[data-sort-feedback]');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const isCorrect = button.dataset.sortChoice === item.dataset.answer;
+          buttons.forEach((choice) => choice.classList.remove('is-correct', 'is-wrong'));
+          button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+          item.dataset.state = isCorrect ? 'correct' : 'wrong';
+          if (feedback) {
+            feedback.textContent = isCorrect ? feedback.dataset.success ?? 'Correct.' : 'Pas encore : recommence par la question du rôle.';
+            feedback.classList.toggle('is-correct', isCorrect);
+            feedback.classList.toggle('is-wrong', !isCorrect);
+          }
+          updateChoiceScore(sortRoot, '[data-sort-item]', '[data-sort-score]');
+        });
+      });
+    });
+
+    updateChoiceScore(sortRoot, '[data-sort-item]', '[data-sort-score]');
+  }
+
+  const finalRoot = document.querySelector<HTMLElement>('[data-case-final-quiz]');
+  if (finalRoot) {
+    finalRoot.querySelectorAll<HTMLElement>('[data-final-item]').forEach((item) => {
+      const buttons = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-final-choice]'));
+      const feedback = item.querySelector<HTMLElement>('[data-final-feedback]');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const isCorrect = button.dataset.correct === 'true';
+          buttons.forEach((choice) => choice.classList.remove('is-correct', 'is-wrong'));
+          button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+          item.dataset.state = isCorrect ? 'correct' : 'wrong';
+          if (feedback) {
+            feedback.textContent = isCorrect ? feedback.dataset.success ?? 'Correct.' : 'Pas encore. Vérifie d’abord le rôle du groupe.';
+            feedback.classList.toggle('is-correct', isCorrect);
+            feedback.classList.toggle('is-wrong', !isCorrect);
+          }
+          updateChoiceScore(finalRoot, '[data-final-item]', '[data-final-score]');
+        });
+      });
+    });
+
+    updateChoiceScore(finalRoot, '[data-final-item]', '[data-final-score]');
+  }
+</script>

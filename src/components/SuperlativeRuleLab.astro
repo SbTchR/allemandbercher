@@ -1,0 +1,174 @@
+---
+const scenarios = [
+  {
+    key: 'running',
+    label: 'Course',
+    prompt: 'Tomy / laufen / schnell',
+    adjectiveFr: 'vite',
+    adjectiveBase: 'schnell',
+    standalone: {
+      sentenceHtml: 'Tomy läuft <span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-ending">sten</span>.',
+      formulaHtml: '<span class="mark-superlative">am</span> + <span class="mark-adjective">schnell</span> + <span class="mark-ending">-sten</span>',
+      meaningHtml: 'Tomy court <span class="mark-superlative">le plus vite</span>.',
+    },
+    noun: {
+      sentenceHtml: '<span class="mark-superlative">Der</span> <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> Läufer ist Tomy.',
+      formulaHtml: '<span class="mark-superlative">der</span> + <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> + nom',
+      meaningHtml: 'Tomy est <span class="mark-superlative">le coureur le plus rapide</span>.',
+    },
+  },
+  {
+    key: 'car',
+    label: 'Voiture',
+    prompt: 'Ferrari / Auto / schnell',
+    adjectiveFr: 'rapide',
+    adjectiveBase: 'schnell',
+    standalone: {
+      sentenceHtml: 'Der Ferrari fährt <span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-ending">sten</span>.',
+      formulaHtml: '<span class="mark-superlative">am</span> + <span class="mark-adjective">schnell</span> + <span class="mark-ending">-sten</span>',
+      meaningHtml: 'La Ferrari roule <span class="mark-superlative">le plus vite</span>.',
+    },
+    noun: {
+      sentenceHtml: '<span class="mark-superlative">Das</span> <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> Auto ist der Ferrari.',
+      formulaHtml: '<span class="mark-superlative">das</span> + <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> + nom',
+      meaningHtml: 'La Ferrari est <span class="mark-superlative">la voiture la plus rapide</span>.',
+    },
+  },
+  {
+    key: 'mountain',
+    label: 'Montagne',
+    prompt: 'Everest / Berg / hoch',
+    adjectiveFr: 'haut',
+    adjectiveBase: 'hoch',
+    standalone: {
+      sentenceHtml: 'Der Everest ist <span class="mark-superlative">am höchsten</span>.',
+      formulaHtml: '<span class="mark-adjective">hoch</span> -> <span class="mark-superlative">am höchsten</span>',
+      meaningHtml: 'L’Everest est <span class="mark-superlative">le plus haut</span>.',
+    },
+    noun: {
+      sentenceHtml: 'Der Everest ist <span class="mark-superlative">der</span> <span class="mark-adjective">höch</span><span class="mark-ending">ste</span> Berg.',
+      formulaHtml: '<span class="mark-superlative">der</span> + <span class="mark-adjective">höch</span><span class="mark-ending">ste</span> + nom',
+      meaningHtml: 'L’Everest est <span class="mark-superlative">la montagne la plus haute</span>.',
+    },
+  },
+  {
+    key: 'math',
+    label: 'Math',
+    prompt: 'Sarah / Mathe / gut',
+    adjectiveFr: 'bon',
+    adjectiveBase: 'gut',
+    standalone: {
+      sentenceHtml: 'Sarah ist in Mathe <span class="mark-superlative">am besten</span>.',
+      formulaHtml: '<span class="mark-adjective">gut</span> -> <span class="mark-superlative">am besten</span>',
+      meaningHtml: 'Sarah est <span class="mark-superlative">la meilleure</span> en math.',
+    },
+    noun: {
+      sentenceHtml: 'Sarah ist <span class="mark-superlative">die beste</span> Schülerin in Mathe.',
+      formulaHtml: '<span class="mark-superlative">die</span> + <span class="mark-adjective">beste</span> + nom',
+      meaningHtml: 'Sarah est <span class="mark-superlative">la meilleure élève</span> en math.',
+    },
+  },
+];
+---
+
+<section class="content-band comparative-lab superlative-lab" aria-labelledby="superlative-lab-title" data-superlative-lab>
+  <div class="comparative-lab-header">
+    <div>
+      <p class="home-section-label">Mini-labo</p>
+      <h2 id="superlative-lab-title">Choisis la forme du superlatif</h2>
+      <p>Change la situation et observe quand il faut utiliser <strong>am ... -sten</strong> ou un adjectif devant un nom.</p>
+    </div>
+  </div>
+
+  <div class="comparative-lab-grid">
+    <div class="comparative-lab-panel" aria-label="Situations">
+      <p class="comparative-lab-label">1. Choisis une situation</p>
+      <div class="comparative-lab-options">
+        {
+          scenarios.map((scenario, index) => (
+            <button
+              class:list={['comparative-lab-card', { 'is-selected': index === 0 }]}
+              type="button"
+              data-scenario={index}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+            >
+              <strong>{scenario.label}</strong>
+              <span>{scenario.prompt}</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="comparative-lab-panel" aria-label="Type de superlatif">
+      <p class="comparative-lab-label">2. Choisis le type</p>
+      <div class="comparative-lab-toggle">
+        <button class="is-selected" type="button" data-mode="standalone" aria-pressed="true">Sans nom</button>
+        <button type="button" data-mode="noun" aria-pressed="false">Avec un nom</button>
+      </div>
+      <p class="comparative-lab-hint" data-superlative-hint><span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-ending">-sten</span></p>
+    </div>
+
+    <div class="comparative-lab-result" aria-live="polite">
+      <p class="comparative-lab-label">3. Observe le résultat</p>
+      <p class="comparative-lab-formula" data-lab-formula set:html={scenarios[0].standalone.formulaHtml}></p>
+      <p class="comparative-lab-sentence" data-lab-sentence set:html={scenarios[0].standalone.sentenceHtml}></p>
+      <p class="comparative-lab-meaning" data-lab-meaning set:html={scenarios[0].standalone.meaningHtml}></p>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ scenarios }} is:inline>
+  const lab = document.querySelector('[data-superlative-lab]');
+
+  if (lab instanceof HTMLElement) {
+    const scenarioButtons = Array.from(lab.querySelectorAll('[data-scenario]'));
+    const modeButtons = Array.from(lab.querySelectorAll('[data-mode]'));
+    const sentence = lab.querySelector('[data-lab-sentence]');
+    const formula = lab.querySelector('[data-lab-formula]');
+    const meaning = lab.querySelector('[data-lab-meaning]');
+    const hint = lab.querySelector('[data-superlative-hint]');
+    let selectedScenario = 0;
+    let selectedMode = 'standalone';
+
+    const update = () => {
+      const current = scenarios[selectedScenario][selectedMode];
+      if (sentence) sentence.innerHTML = current.sentenceHtml;
+      if (formula) formula.innerHTML = current.formulaHtml;
+      if (meaning) meaning.innerHTML = current.meaningHtml;
+      if (hint) {
+        const adjective = scenarios[selectedScenario].adjectiveBase ?? 'schnell';
+        hint.innerHTML =
+          selectedMode === 'noun'
+            ? `<span class="mark-superlative">déterminant</span> <span class="mark-adjective">${adjective}</span><span class="mark-ending">-ste</span> + nom`
+            : `<span class="mark-superlative">am</span> <span class="mark-adjective">${adjective}</span><span class="mark-ending">-sten</span>`;
+      }
+
+      scenarioButtons.forEach((button, index) => {
+        const isSelected = index === selectedScenario;
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+
+      modeButtons.forEach((button) => {
+        const isSelected = button.dataset.mode === selectedMode;
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+    };
+
+    scenarioButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        selectedScenario = Number(button.dataset.scenario ?? 0);
+        update();
+      });
+    });
+
+    modeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        selectedMode = button.dataset.mode === 'noun' ? 'noun' : 'standalone';
+        update();
+      });
+    });
+  }
+</script>

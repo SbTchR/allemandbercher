@@ -3,12 +3,16 @@ import { render } from 'astro:content';
 import ComparativeExercise from './ComparativeExercise.astro';
 import ComparativeRuleLab from './ComparativeRuleLab.astro';
 import ComparativeTheoryContent from './ComparativeTheoryContent.astro';
+import CasesPracticeSuite from './CasesPracticeSuite.astro';
 import ExternalLinks from './ExternalLinks.astro';
 import GrammarPracticeLab from './GrammarPracticeLab.astro';
 import GrammarTheoryContent from './GrammarTheoryContent.astro';
 import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
 import ObjectiveBox from './ObjectiveBox.astro';
+import SuperlativePracticeSuite from './SuperlativePracticeSuite.astro';
+import SuperlativeRuleLab from './SuperlativeRuleLab.astro';
+import SuperlativeTheoryContent from './SuperlativeTheoryContent.astro';
 import TheoryBox from './TheoryBox.astro';
 import WritingExerciseLab from './WritingExerciseLab.astro';
 import { grammarTheoryPageSlugs, type GrammarTheoryPageSlug } from '../data/grammarTheory';
@@ -26,6 +30,7 @@ const hasAside = entry.data.externalLinks.length > 0;
 const primaryAction = entry.data.primaryAction;
 const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
 const hasComparativeExercise = entry.collection === 'theorie' && entry.data.category === 'grammaire' && slug === 'le-comparatif';
+const hasSuperlativeExercise = entry.collection === 'theorie' && entry.data.category === 'grammaire' && slug === 'le-superlatif';
 const customGrammarSlug =
   entry.collection === 'theorie' &&
   entry.data.category === 'grammaire' &&
@@ -34,7 +39,7 @@ const customGrammarSlug =
     ? (slug as GrammarTheoryPageSlug)
     : undefined;
 const hasWritingExerciseLab = entry.collection === 'conseils' && slug === 'expression-ecrite';
-const hasHeaderCallout = hasObjectives || hasComparativeExercise;
+const hasHeaderCallout = hasObjectives || hasComparativeExercise || hasSuperlativeExercise;
 const isExerciseChapter = entry.collection === 'exercices' && entry.data.pageType === 'chapitre';
 const hasChapterDashboard =
   isExerciseChapter &&
@@ -54,7 +59,7 @@ const hasChapterDashboard =
               {primaryAction.label}
             </button>
           ) : (
-            entry.data.description && !hasComparativeExercise && <p class="lead">{entry.data.description}</p>
+            entry.data.description && !hasComparativeExercise && !hasSuperlativeExercise && <p class="lead">{entry.data.description}</p>
           )
         }
       </div>
@@ -69,6 +74,19 @@ const hasChapterDashboard =
               <span>plus grand que</span>
               <span>plus petit que</span>
               <span>aussi grand que</span>
+            </div>
+          </aside>
+        )
+      }
+      {
+        hasSuperlativeExercise && (
+          <aside class="objective-box comparative-reminder superlative-reminder" aria-labelledby="superlative-reminder-title">
+            <h2 id="superlative-reminder-title">À retenir</h2>
+            <p>Le superlatif permet de dire :</p>
+            <div class="comparative-reminder-lines" aria-label="Exemples de superlatif">
+              <span>am schnellsten</span>
+              <span>das schnellste Auto</span>
+              <span>am besten</span>
             </div>
           </aside>
         )
@@ -122,6 +140,8 @@ const hasChapterDashboard =
               {
                 hasComparativeExercise ? (
                   <ComparativeTheoryContent />
+                ) : hasSuperlativeExercise ? (
+                  <SuperlativeTheoryContent />
                 ) : customGrammarSlug ? (
                   <GrammarTheoryContent slug={customGrammarSlug} />
                 ) : (
@@ -146,7 +166,15 @@ const hasChapterDashboard =
 
     {hasComparativeExercise && <ComparativeRuleLab />}
     {hasComparativeExercise && <ComparativeExercise />}
-    {customGrammarSlug && <GrammarPracticeLab slug={customGrammarSlug} />}
+    {hasSuperlativeExercise && <SuperlativeRuleLab />}
+    {hasSuperlativeExercise && <SuperlativePracticeSuite />}
+    {
+      customGrammarSlug === 'les-cas-theorie-de-base' ? (
+        <CasesPracticeSuite />
+      ) : (
+        customGrammarSlug && <GrammarPracticeLab slug={customGrammarSlug} />
+      )
+    }
     {hasWritingExerciseLab && <WritingExerciseLab />}
 
     <ImageGallery images={customGrammarSlug ? [] : entry.data.images} />

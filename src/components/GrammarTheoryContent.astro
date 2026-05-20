@@ -6,6 +6,7 @@ import {
   prepositionTables,
   type GrammarTheoryPageSlug,
 } from '../data/grammarTheory';
+import { withBase } from '../lib/paths';
 import GrammarMatrix from './GrammarMatrix.astro';
 
 type Props = {
@@ -24,18 +25,26 @@ const isGenitive = slug === 'le-genitif';
   {
     isCases && (
       <>
-        <section class="chapter-dashboard grammar-dashboard" aria-label="Résumé des cas">
-          <article>
-            <strong>Nominatif</strong>
-            <p>Le groupe qui fait l’action : le sujet.</p>
+        <section class="case-role-legend" aria-label="Code couleur des groupes">
+          <article class="case-role-card case-role-card-verb">
+            <strong>Verbe</strong>
+            <p>Il donne l’action et sert de point de départ.</p>
           </article>
-          <article>
-            <strong>Accusatif</strong>
-            <p>Le groupe qui répond à « qui ? » ou « quoi ? » après le verbe.</p>
+          <article class="case-role-card case-role-card-nominative">
+            <strong>Sujet</strong>
+            <p>Nominatif : qui fait l’action ?</p>
           </article>
-          <article>
-            <strong>Datif</strong>
-            <p>Le groupe qui répond souvent à « à qui ? » ou « à quoi ? ».</p>
+          <article class="case-role-card case-role-card-accusative">
+            <strong>CVD</strong>
+            <p>Accusatif : qui ou quoi ?</p>
+          </article>
+          <article class="case-role-card case-role-card-dative">
+            <strong>CDI</strong>
+            <p>Datif : à qui ou à quoi ?</p>
+          </article>
+          <article class="case-role-card case-role-card-preposition">
+            <strong>Groupe prépositionnel</strong>
+            <p>Le cas dépend de la préposition.</p>
           </article>
         </section>
 
@@ -51,9 +60,14 @@ const isGenitive = slug === 'le-genitif';
               En allemand, ce groupe change de forme selon son rôle dans la phrase. C’est ce rôle qu’on appelle le cas :
               <strong> nominatif</strong>, <strong>accusatif</strong> ou <strong>datif</strong>.
             </p>
-            <div class="grammar-callout">
-              <strong>Réflexe utile</strong>
-              <p>Avant de chercher une terminaison, cherche d’abord le rôle du groupe dans la phrase.</p>
+            <div class="case-tool-callout">
+              <div>
+                <strong>Réflexe utile</strong>
+                <p>Avant de chercher une terminaison, cherche d’abord le rôle du groupe dans la phrase.</p>
+              </div>
+              <a class="case-tool-link" href={withBase('/outils-en-ligne/nad-maschine/')}>
+                Ouvrir la NAD-Maschine
+              </a>
             </div>
           </div>
         </details>
@@ -61,34 +75,63 @@ const isGenitive = slug === 'le-genitif';
         <details class="lesson-card" open>
           <summary>2. Trouver les groupes dans une phrase</summary>
           <div class="lesson-card-content">
-            <p>Phrase de départ : <strong>Aujourd’hui, la fille envoie une lettre à son amie pour son anniversaire.</strong></p>
-            <ol class="grammar-steps">
-              <li>
-                <span>Verbe principal</span>
-                <strong>envoie</strong>
-                <small>On commence toujours par le verbe conjugué.</small>
-              </li>
-              <li>
-                <span>Sujet</span>
-                <strong>la fille</strong>
-                <small>Qui est-ce qui envoie ?</small>
-              </li>
-              <li>
-                <span>CVD</span>
-                <strong>une lettre</strong>
-                <small>La fille envoie quoi ?</small>
-              </li>
-              <li>
-                <span>CVI</span>
-                <strong>à son amie</strong>
-                <small>La fille envoie une lettre à qui ?</small>
-              </li>
-              <li>
-                <span>Groupe prépositionnel</span>
-                <strong>pour son anniversaire</strong>
-                <small>Il commence par une préposition : pour.</small>
-              </li>
-            </ol>
+            <p>
+              On ne cherche pas les cas au hasard. On démonte d’abord la phrase française, puis on traduit les groupes
+              avec le bon cas.
+            </p>
+            <div class="case-analysis-board">
+              <div class="case-sentence-strip" aria-label="Phrase analysée">
+                <span class="case-token case-token-time">Aujourd’hui,</span>
+                <span class="case-token case-chip-nominative">la fille</span>
+                <span class="case-token case-chip-verb">envoie</span>
+                <span class="case-token case-chip-accusative">une lettre</span>
+                <span class="case-token case-chip-dative">à son amie</span>
+                <span class="case-token case-chip-preposition">pour son anniversaire</span>
+              </div>
+
+              <div class="case-question-grid">
+                <article class="case-question-card case-question-card-verb">
+                  <span>1</span>
+                  <div>
+                    <strong>Verbe principal</strong>
+                    <p>Quel mot est conjugué ?</p>
+                    <mark>envoie</mark>
+                  </div>
+                </article>
+                <article class="case-question-card case-question-card-nominative">
+                  <span>2</span>
+                  <div>
+                    <strong>Sujet</strong>
+                    <p>Qui est-ce qui envoie ?</p>
+                    <mark>la fille</mark>
+                  </div>
+                </article>
+                <article class="case-question-card case-question-card-accusative">
+                  <span>3</span>
+                  <div>
+                    <strong>CVD</strong>
+                    <p>La fille envoie quoi ?</p>
+                    <mark>une lettre</mark>
+                  </div>
+                </article>
+                <article class="case-question-card case-question-card-dative">
+                  <span>4</span>
+                  <div>
+                    <strong>CDI</strong>
+                    <p>La fille envoie une lettre à qui ?</p>
+                    <mark>à son amie</mark>
+                  </div>
+                </article>
+                <article class="case-question-card case-question-card-preposition">
+                  <span>5</span>
+                  <div>
+                    <strong>Groupe prépositionnel</strong>
+                    <p>Quel groupe commence par une préposition ?</p>
+                    <mark>pour son anniversaire</mark>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
         </details>
 
@@ -97,13 +140,15 @@ const isGenitive = slug === 'le-genitif';
           <div class="lesson-card-content">
             <div class="sentence-lab" aria-label="Passage du français à l'allemand">
               <p>
-                <span class="case-chip case-chip-nominative">la fille</span> envoie{' '}
+                Aujourd’hui, <span class="case-chip case-chip-nominative">la fille</span>{' '}
+                <span class="case-chip case-chip-verb">envoie</span>{' '}
                 <span class="case-chip case-chip-accusative">une lettre</span>{' '}
                 <span class="case-chip case-chip-dative">à son amie</span>{' '}
                 <span class="case-chip case-chip-preposition">pour son anniversaire</span>.
               </p>
               <p>
-                Heute schickt <span class="case-chip case-chip-nominative">das Mädchen</span>{' '}
+                Heute <span class="case-chip case-chip-verb">schickt</span>{' '}
+                <span class="case-chip case-chip-nominative">das Mädchen</span>{' '}
                 <span class="case-chip case-chip-accusative">einen Brief</span>{' '}
                 <span class="case-chip case-chip-dative">seiner Freundin</span>{' '}
                 <span class="case-chip case-chip-preposition">für seinen Geburtstag</span>.
@@ -119,12 +164,15 @@ const isGenitive = slug === 'le-genitif';
                 <p><span class="case-chip case-chip-accusative">accusatif</span> : einen Brief</p>
               </article>
               <article>
-                <strong>CVI</strong>
+                <strong>CDI</strong>
                 <p><span class="case-chip case-chip-dative">datif</span> : seiner Freundin</p>
               </article>
               <article>
                 <strong>Groupe prépositionnel</strong>
-                <p>Le cas dépend de la préposition : für impose ici l’accusatif.</p>
+                <p>
+                  Le cas dépend de la préposition. Ici, <strong>für</strong> impose l’accusatif.
+                  <a href={withBase('/theorie/grammaire/les-prepositions/')}>Voir la page des prépositions</a>.
+                </p>
               </article>
             </div>
             <GrammarMatrix table={declensionTables.shortcut} compact />
@@ -135,7 +183,7 @@ const isGenitive = slug === 'le-genitif';
           <summary>4. Ce qu’il faut connaître pour décliner</summary>
           <div class="lesson-card-content">
             <ul class="mission-list">
-              <li>Déterminer le groupe : sujet, CVD, CVI ou groupe prépositionnel.</li>
+              <li>Déterminer le groupe : verbe, sujet, CVD, CDI ou groupe prépositionnel.</li>
               <li>Connaître le genre du nom : masculin, neutre, féminin ou pluriel.</li>
               <li>Connaître les tableaux de déclinaisons des déterminants.</li>
               <li>Ajouter les adjectifs quand la notion a été travaillée en classe.</li>
@@ -352,7 +400,7 @@ const isGenitive = slug === 'le-genitif';
   }
 
   {
-    linkGroups.length > 0 && (
+    linkGroups.length > 0 && !isCases && (
       <details class="external-quest">
         <summary>Exercices externes supplémentaires</summary>
         <div class="external-link-sections">

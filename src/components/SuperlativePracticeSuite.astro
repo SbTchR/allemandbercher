@@ -1,0 +1,364 @@
+---
+const educaplayItems = [
+  {
+    prompt: 'Das Wetter war gestern schön.',
+    parts: ['Das Wetter war gestern am ', '.'],
+    gaps: [{ answer: 'schönsten', aliases: ['schoensten'] }],
+  },
+  {
+    prompt: 'Dieser Fehler war schlimm.',
+    parts: ['Dieser Fehler war ', '.'],
+    gaps: [{ answer: 'am schlimmsten', aliases: [] }],
+  },
+  {
+    prompt: 'Der Februar ist oft kalt.',
+    parts: ['Der Februar ist oft ', '.'],
+    gaps: [{ answer: 'am kältesten', aliases: ['am kaeltesten'] }],
+  },
+  {
+    prompt: 'Peter isst immer viel.',
+    parts: ['Peter isst immer ', '.'],
+    gaps: [{ answer: 'am meisten', aliases: [] }],
+  },
+  {
+    prompt: 'Der Sportler aus Kenia springt hoch.',
+    parts: ['Der Sportler aus Kenia springt ', '.'],
+    gaps: [{ answer: 'am höchsten', aliases: ['am hoechsten'] }],
+  },
+  {
+    prompt: 'Diese Schuhe sind billig.',
+    parts: ['Diese Schuhe sind ', '.'],
+    gaps: [{ answer: 'am billigsten', aliases: [] }],
+  },
+  {
+    prompt: 'Sarah ist gut in Mathe.',
+    parts: ['Sarah ist in Mathe ', '.'],
+    gaps: [{ answer: 'am besten', aliases: [] }],
+  },
+];
+
+const wordBankItems = [
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Dein Auto ist vielleicht schnell, aber meins ist ', '.'],
+    gaps: [{ answer: 'am schnellsten', aliases: [] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Von allen "Harry Potter"-Filmen hat mir der erste ', ' gefallen.'],
+    gaps: [{ answer: 'am besten', aliases: [] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Zu Hause sitze ich ', ' im Wohnzimmer.'],
+    gaps: [{ answer: 'am liebsten', aliases: [] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Ich sehe Filme ', ' im Kino.'],
+    gaps: [{ answer: 'am häufigsten', aliases: ['am haeufigsten'] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Von allen Bergen auf der Welt ist der Everest ', '.'],
+    gaps: [{ answer: 'am höchsten', aliases: ['am hoechsten'] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Welcher "Herr der Ringe"-Film ist ', '?'],
+    gaps: [{ answer: 'am längsten', aliases: ['am laengsten'] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Frau Kehr arbeitet immer ', '.'],
+    gaps: [{ answer: 'am spätesten', aliases: ['am spaetesten'] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Welcher Cousin ist ', '?'],
+    gaps: [{ answer: 'am jüngsten', aliases: ['am juengsten'] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Welches Land in Europa ist ', '?'],
+    gaps: [{ answer: 'am kleinsten', aliases: [] }],
+  },
+  {
+    prompt: 'Choisis le superlatif qui complète la phrase.',
+    parts: ['Welches Land der Welt hat ', ' Einwohner?'],
+    gaps: [{ answer: 'am meisten', aliases: [] }],
+  },
+];
+
+const educaplayGapCount = educaplayItems.reduce((count, item) => count + item.gaps.length, 0);
+const bankGapCount = wordBankItems.reduce((count, item) => count + item.gaps.length, 0);
+const wordBank = wordBankItems.flatMap((item) => item.gaps.map((gap) => gap.answer));
+---
+
+<section class="content-band comparative-exercise superlative-gap-exercise" aria-labelledby="superlative-transform-title" data-superlative-gap-exercise>
+  <div class="comparative-exercise-header">
+    <div>
+      <p class="home-section-label">Exercice intégré</p>
+      <h2 id="superlative-transform-title">Transforme comme dans l’Educaplay</h2>
+      <p>Transforme chaque phrase pour obtenir le superlatif. Les équivalents ae, oe et ue sont acceptés.</p>
+    </div>
+    <output class="comparative-score" data-superlative-score aria-live="polite">0 / {educaplayGapCount}</output>
+  </div>
+
+  <div class="comparative-workspace superlative-single-workspace">
+    <div class="comparative-items">
+      {
+        educaplayItems.map((item, itemIndex) => (
+          <article class="comparative-item" data-superlative-item>
+            <p class="comparative-prompt">
+              <strong>{itemIndex + 1}.</strong> {item.prompt}
+            </p>
+            <p class="comparative-sentence">
+              {item.parts.map((part, partIndex) => (
+                <>
+                  {part}
+                  {item.gaps[partIndex] && (
+                    <input
+                      class="comparative-gap superlative-gap"
+                      type="text"
+                      inputmode="text"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                      aria-label={`Réponse ${itemIndex + 1}.${partIndex + 1}`}
+                      data-answer={[item.gaps[partIndex].answer, ...item.gaps[partIndex].aliases].join('|')}
+                    />
+                  )}
+                </>
+              ))}
+            </p>
+            <div class="comparative-item-footer">
+              <p class="comparative-feedback" data-superlative-feedback aria-live="polite"></p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <aside class="comparative-side superlative-side-note" aria-label="Actions de l'exercice">
+      <p class="superlative-origin-note">Cet exercice remplace l’embed Educaplay original par un drill local, sans publicité ni iframe.</p>
+      <div class="comparative-actions">
+        <button class="quest-launch-button comparative-check-button" type="button" data-check-superlative>Vérifier</button>
+        <button class="text-link" type="button" data-reveal-superlative>Afficher les réponses</button>
+        <button class="text-link" type="button" data-reset-superlative>Recommencer</button>
+      </div>
+      <a class="superlative-fallback-link" href="https://fr.educaplay.com/jeu/5040065-superlativ.html" target="_blank" rel="noreferrer">Ouvrir l’Educaplay original</a>
+    </aside>
+  </div>
+</section>
+
+<section class="content-band comparative-exercise superlative-gap-exercise" aria-labelledby="superlative-bank-title" data-superlative-gap-exercise>
+  <div class="comparative-exercise-header">
+    <div>
+      <p class="home-section-label">Exercice intégré</p>
+      <h2 id="superlative-bank-title">Complète avec la banque de mots</h2>
+      <p>L’ancien exercice HTML est intégré ici avec score, banque de mots, correction et remise à zéro.</p>
+    </div>
+    <output class="comparative-score" data-superlative-score aria-live="polite">0 / {bankGapCount}</output>
+  </div>
+
+  <div class="comparative-workspace">
+    <div class="comparative-items">
+      {
+        wordBankItems.map((item, itemIndex) => (
+          <article class="comparative-item" data-superlative-item>
+            <p class="comparative-prompt">
+              <strong>{itemIndex + 1}.</strong> {item.prompt}
+            </p>
+            <p class="comparative-sentence">
+              {item.parts.map((part, partIndex) => (
+                <>
+                  {part}
+                  {item.gaps[partIndex] && (
+                    <input
+                      class="comparative-gap superlative-gap"
+                      type="text"
+                      inputmode="text"
+                      autocomplete="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                      aria-label={`Réponse ${itemIndex + 1}.${partIndex + 1}`}
+                      data-answer={[item.gaps[partIndex].answer, ...item.gaps[partIndex].aliases].join('|')}
+                    />
+                  )}
+                </>
+              ))}
+            </p>
+            <div class="comparative-item-footer">
+              <p class="comparative-feedback" data-superlative-feedback aria-live="polite"></p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <aside class="comparative-side" aria-label="Mots et actions">
+      <div class="comparative-word-bank" aria-label="Mots disponibles">
+        {wordBank.map((word) => <button type="button" data-superlative-word={word}>{word}</button>)}
+      </div>
+
+      <div class="comparative-actions">
+        <button class="quest-launch-button comparative-check-button" type="button" data-check-superlative>Vérifier</button>
+        <button class="text-link" type="button" data-reveal-superlative>Afficher les réponses</button>
+        <button class="text-link" type="button" data-reset-superlative>Recommencer</button>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-superlative-gap-exercise]').forEach((exercise) => {
+    const gaps = Array.from(exercise.querySelectorAll<HTMLInputElement>('.superlative-gap'));
+    const wordButtons = Array.from(exercise.querySelectorAll<HTMLButtonElement>('[data-superlative-word]'));
+    const score = exercise.querySelector<HTMLOutputElement>('[data-superlative-score]');
+    let activeGap = gaps[0];
+
+    const normalize = (value: string) => {
+      const compact = value.trim().toLowerCase().normalize('NFC').replace(/\s+/g, ' ');
+      return compact.replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
+    };
+
+    const acceptedAnswers = (input: HTMLInputElement) =>
+      String(input.dataset.answer ?? '')
+        .split('|')
+        .filter(Boolean)
+        .flatMap((answer) => [answer, normalize(answer)])
+        .map(normalize);
+
+    const primaryAnswer = (input: HTMLInputElement) => String(input.dataset.answer ?? '').split('|')[0] ?? '';
+
+    const itemIsComplete = (item: Element) => {
+      const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.superlative-gap'));
+      return itemGaps.every((gap) => normalize(gap.value) !== '');
+    };
+
+    const updateScore = () => {
+      const correct = gaps.filter((gap) => gap.classList.contains('is-correct')).length;
+      if (score) score.textContent = `${correct} / ${gaps.length}`;
+    };
+
+    const updateWordUsage = () => {
+      const usedButtonIndexes = new Set<number>();
+      const filledValues = gaps.map((gap) => normalize(gap.value)).filter(Boolean);
+
+      filledValues.forEach((value) => {
+        const buttonIndex = wordButtons.findIndex((button, index) => {
+          return !usedButtonIndexes.has(index) && normalize(button.dataset.superlativeWord ?? '') === value;
+        });
+
+        if (buttonIndex >= 0) {
+          usedButtonIndexes.add(buttonIndex);
+        }
+      });
+
+      wordButtons.forEach((button, index) => {
+        button.classList.toggle('is-used', usedButtonIndexes.has(index));
+      });
+    };
+
+    const resetFeedback = (gap: HTMLInputElement) => {
+      gap.classList.remove('is-correct', 'is-wrong');
+      const item = gap.closest('[data-superlative-item]');
+      item?.removeAttribute('data-checked');
+      const feedback = item?.querySelector('[data-superlative-feedback]');
+      if (feedback) feedback.textContent = '';
+    };
+
+    gaps.forEach((gap, index) => {
+      gap.addEventListener('focus', () => {
+        activeGap = gap;
+      });
+
+      gap.addEventListener('input', () => {
+        resetFeedback(gap);
+        updateWordUsage();
+        updateScore();
+      });
+
+      gap.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          gaps[index + 1]?.focus();
+        }
+      });
+    });
+
+    wordButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!(activeGap instanceof HTMLInputElement)) return;
+        activeGap.value = button.dataset.superlativeWord ?? '';
+        activeGap.dispatchEvent(new Event('input', { bubbles: true }));
+        const nextGap = gaps[gaps.indexOf(activeGap) + 1];
+        if (nextGap instanceof HTMLInputElement) nextGap.focus();
+      });
+    });
+
+    exercise.querySelector('[data-check-superlative]')?.addEventListener('click', () => {
+      exercise.querySelectorAll('[data-superlative-item]').forEach((item) => {
+        const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.superlative-gap'));
+        const feedback = item.querySelector('[data-superlative-feedback]');
+        let isCorrectItem = true;
+
+        if (itemIsComplete(item)) {
+          item.setAttribute('data-checked', 'true');
+        } else {
+          item.removeAttribute('data-checked');
+        }
+
+        itemGaps.forEach((gap) => {
+          const isCorrect = acceptedAnswers(gap).includes(normalize(gap.value));
+          gap.classList.toggle('is-correct', isCorrect);
+          gap.classList.toggle('is-wrong', !isCorrect);
+          if (!isCorrect) isCorrectItem = false;
+        });
+
+        if (feedback) feedback.textContent = isCorrectItem ? 'Correct.' : 'À corriger.';
+      });
+
+      updateWordUsage();
+      updateScore();
+    });
+
+    exercise.querySelector('[data-reveal-superlative]')?.addEventListener('click', () => {
+      gaps.forEach((gap) => {
+        gap.value = primaryAnswer(gap);
+        gap.classList.add('is-correct');
+        gap.classList.remove('is-wrong');
+      });
+
+      exercise.querySelectorAll('[data-superlative-feedback]').forEach((feedback) => {
+        feedback.textContent = 'Réponse affichée.';
+      });
+
+      updateWordUsage();
+      updateScore();
+    });
+
+    exercise.querySelector('[data-reset-superlative]')?.addEventListener('click', () => {
+      gaps.forEach((gap) => {
+        gap.value = '';
+        gap.classList.remove('is-correct', 'is-wrong');
+      });
+
+      exercise.querySelectorAll('[data-superlative-feedback]').forEach((feedback) => {
+        feedback.textContent = '';
+      });
+
+      exercise.querySelectorAll('[data-superlative-item]').forEach((item) => {
+        item.removeAttribute('data-checked');
+      });
+
+      updateWordUsage();
+      updateScore();
+      gaps[0]?.focus();
+    });
+
+    updateWordUsage();
+    updateScore();
+  });
+</script>

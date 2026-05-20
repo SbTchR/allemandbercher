@@ -1,0 +1,223 @@
+---
+const standaloneRows = [
+  {
+    french: '<span class="mark-superlative">le/la plus</span> <span class="mark-adjective">rapide</span>',
+    formula: '<span class="mark-superlative">am</span> + <span class="mark-adjective">schnell</span> + <span class="mark-ending">-sten</span>',
+    example: 'Tomy läuft <span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-ending">sten</span>.',
+  },
+  {
+    french: '<span class="mark-superlative">le mieux</span> / <span class="mark-superlative">le meilleur</span>',
+    formula: '<span class="mark-adjective">gut</span> -> <span class="mark-superlative">am besten</span>',
+    example: 'Sarah ist in Mathe <span class="mark-superlative">am besten</span>.',
+  },
+  {
+    french: '<span class="mark-superlative">le plus haut</span>',
+    formula: '<span class="mark-adjective">hoch</span> -> <span class="mark-superlative">am höchsten</span>',
+    example: 'Der Everest ist <span class="mark-superlative">am höchsten</span>.',
+  },
+];
+
+const nounRows = [
+  {
+    french: '<span class="mark-superlative">la plus jolie</span> fille',
+    formula: '<span class="mark-superlative">déterminant</span> + adjectif + <span class="mark-ending">-ste</span> + nom',
+    example: '<span class="mark-superlative">Das</span> <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> Auto ist der Ferrari.',
+  },
+  {
+    french: '<span class="mark-superlative">les plus grandes</span> chaussures',
+    formula: '<span class="mark-superlative">die</span> + adjectif + <span class="mark-ending">-sten</span> + pluriel',
+    example: 'Markus hat <span class="mark-superlative">die</span> <span class="mark-adjective">grös</span><span class="mark-ending">sten</span> Schuhe.',
+  },
+];
+
+const exceptionRows = [
+  ['gut', 'besser', 'am besten', 'der / die / das beste'],
+  ['viel', 'mehr', 'am meisten', 'die meisten'],
+  ['gern', 'lieber', 'am liebsten', 'der / die / das liebste'],
+  ['hoch', 'höher', 'am höchsten', 'der / die / das höchste'],
+  ['weit', 'weiter', 'am weitesten', 'der / die / das weiteste'],
+];
+---
+
+<section class="chapter-dashboard superlative-dashboard" aria-label="Résumé du superlatif">
+  <article>
+    <strong>Idée</strong>
+    <p>On ne compare plus seulement deux éléments : on cherche le degré le plus fort dans un groupe.</p>
+  </article>
+  <article>
+    <strong>Sans nom</strong>
+    <p class="dashboard-rule">
+      <span class="dashboard-rule-line"><span class="mark-superlative">am</span> + <span class="mark-adjective">adjectif</span> + <span class="mark-ending">-sten</span></span>
+      <span class="dashboard-example-line">Tomy läuft <span class="mark-superlative">am schnellsten</span>.</span>
+    </p>
+  </article>
+  <article>
+    <strong>Avec un nom</strong>
+    <p class="dashboard-rule">
+      <span class="dashboard-rule-line"><span class="mark-superlative">der / die / das</span> + adjectif + <span class="mark-ending">-ste</span></span>
+      <span class="dashboard-example-line"><span class="mark-superlative">das schnellste</span> Auto.</span>
+    </p>
+  </article>
+</section>
+
+<details class="lesson-card" open>
+  <summary>1. Quand l’adjectif est seul</summary>
+  <div class="lesson-card-content">
+    <p>
+      Quand le superlatif ne se place pas directement devant un nom, on utilise la construction
+      <span class="mark-superlative">am</span> + adjectif + <span class="mark-ending">-sten</span>. En français, cela
+      correspond souvent à « le/la plus » ou à une idée comme « le mieux ».
+    </p>
+
+    <div class="comparative-table" role="table" aria-label="Superlatif avec am et -sten">
+      <div class="comparative-table-head" role="row">
+        <span role="columnheader">Français</span>
+        <span role="columnheader">Construction allemande</span>
+        <span role="columnheader">Exemple</span>
+      </div>
+      {
+        standaloneRows.map((row) => (
+          <div class="comparative-table-row" role="row">
+            <span role="cell" data-label="Français" set:html={row.french}></span>
+            <span role="cell" data-label="Construction allemande" set:html={row.formula}></span>
+            <strong role="cell" data-label="Exemple" set:html={row.example}></strong>
+          </div>
+        ))
+      }
+    </div>
+
+    <p>Le réflexe à garder : si aucun nom ne suit directement le superlatif, commence par chercher la forme avec <span class="mark-superlative">am</span>.</p>
+  </div>
+</details>
+
+<details class="lesson-card" open>
+  <summary>2. Quand le superlatif accompagne un nom</summary>
+  <div class="lesson-card-content">
+    <p>
+      Si le superlatif est placé devant un nom, il fonctionne comme un adjectif. On garde donc le déterminant
+      et on ajoute la terminaison de l’adjectif.
+    </p>
+
+    <div class="comparative-table" role="table" aria-label="Superlatif avec un nom">
+      <div class="comparative-table-head" role="row">
+        <span role="columnheader">Français</span>
+        <span role="columnheader">Construction allemande</span>
+        <span role="columnheader">Exemple</span>
+      </div>
+      {
+        nounRows.map((row) => (
+          <div class="comparative-table-row" role="row">
+            <span role="cell" data-label="Français" set:html={row.french}></span>
+            <span role="cell" data-label="Construction allemande" set:html={row.formula}></span>
+            <strong role="cell" data-label="Exemple" set:html={row.example}></strong>
+          </div>
+        ))
+      }
+    </div>
+
+    <p>
+      Le réflexe à garder : si un nom arrive juste après, n’utilise pas <span class="mark-superlative">am</span>.
+      Utilise le déterminant et l’adjectif accordé.
+    </p>
+  </div>
+</details>
+
+<details class="lesson-card" open>
+  <summary>3. Les formes à reconnaître</summary>
+  <div class="lesson-card-content">
+    <p>
+      La règle <span class="mark-ending">-sten</span> fonctionne souvent, mais plusieurs adjectifs changent un peu.
+      Certains prennent un tréma, d’autres ont une forme irrégulière.
+    </p>
+
+    <div class="comparative-table comparative-table-compact" role="table" aria-label="Formes fréquentes du superlatif">
+      <div class="comparative-table-head" role="row">
+        <span role="columnheader">Adjectif</span>
+        <span role="columnheader">Comparatif utile</span>
+        <span role="columnheader">Superlatif</span>
+      </div>
+      {
+        exceptionRows.map(([base, comparative, standalone, nounForm]) => (
+          <div class="comparative-table-row" role="row">
+            <span role="cell" data-label="Adjectif"><strong>{base}</strong></span>
+            <span role="cell" data-label="Comparatif utile">{comparative}</span>
+            <strong role="cell" data-label="Superlatif">{standalone} / {nounForm}</strong>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="word-map" aria-label="Autres formes régulières utiles">
+      <span><strong>schnell</strong>am schnellsten</span>
+      <span><strong>kalt</strong>am kältesten</span>
+      <span><strong>billig</strong>am billigsten</span>
+      <span><strong>jung</strong>am jüngsten</span>
+      <span><strong>klein</strong>am kleinsten</span>
+      <span><strong>lang</strong>am längsten</span>
+    </div>
+  </div>
+</details>
+
+<details class="lesson-card" open>
+  <summary>4. Choisir rapidement la bonne formule</summary>
+  <div class="lesson-card-content">
+    <div class="comparative-table comparative-table-compact" role="table" aria-label="Choisir la bonne formule du superlatif">
+      <div class="comparative-table-head" role="row">
+        <span role="columnheader">Situation</span>
+        <span role="columnheader">Signal</span>
+        <span role="columnheader">Formule allemande</span>
+      </div>
+      <div class="comparative-table-row" role="row">
+        <span role="cell" data-label="Situation">Adjectif seul</span>
+        <span role="cell" data-label="Signal">Le nom ne suit pas directement.</span>
+        <strong role="cell" data-label="Formule allemande"><span class="mark-superlative">am</span> + adjectif + <span class="mark-ending">-sten</span></strong>
+      </div>
+      <div class="comparative-table-row" role="row">
+        <span role="cell" data-label="Situation">Adjectif devant un nom</span>
+        <span role="cell" data-label="Signal">Un nom arrive juste après.</span>
+        <strong role="cell" data-label="Formule allemande">déterminant + adjectif + <span class="mark-ending">-ste</span> + nom</strong>
+      </div>
+      <div class="comparative-table-row" role="row">
+        <span role="cell" data-label="Situation">Mot irrégulier</span>
+        <span role="cell" data-label="Signal">gut, viel, gern, hoch...</span>
+        <strong role="cell" data-label="Formule allemande">apprendre la forme complète : <span class="mark-superlative">am besten</span>, <span class="mark-superlative">am meisten</span>...</strong>
+      </div>
+    </div>
+
+    <details class="mini-challenge">
+      <summary>Mini-défi</summary>
+      <div>
+        <p>Transforme mentalement ces phrases avant de faire les exercices intégrés plus bas.</p>
+        <ul>
+          <li>Tomy court le plus vite. -> <strong>Tomy läuft am schnellsten.</strong></li>
+          <li>Le Ferrari est la voiture la plus rapide. -> <strong>Das schnellste Auto ist der Ferrari.</strong></li>
+          <li>Sarah est la meilleure en math. -> <strong>Sarah ist in Mathe am besten.</strong></li>
+          <li>L’Everest est la montagne la plus haute. -> <strong>Der Everest ist der höchste Berg.</strong></li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</details>
+
+<details class="external-quest">
+  <summary>Exercices externes de la page originale</summary>
+  <div class="external-link-sections">
+    <section>
+      <h3>Superlatif</h3>
+      <div class="external-button-grid">
+        <a href="https://www.schubert-verlag.de/aufgaben/xg/xg07_09.htm" target="_blank" rel="noreferrer">Schubert : Superlativ</a>
+        <a href="http://www.hueber.de/shared/uebungen/themen-aktuell/lerner/uebungen/fset.php?Volume=2&amp;Lection=4&amp;Exercise=2&amp;SubExercise=1" target="_blank" rel="noreferrer">Hueber : Themen aktuell</a>
+        <a href="http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul14_erg/adj_ue3.htm" target="_blank" rel="noreferrer">Schule.at : Superlativ</a>
+      </div>
+    </section>
+    <section>
+      <h3>Comparatif et superlatif</h3>
+      <div class="external-button-grid">
+        <a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/25_steigerung_komparation/07_komparativ_uebungen.htm" target="_blank" rel="noreferrer">Levrai : Komparation</a>
+        <a href="https://deutsch.lingolia.com/de/grammatik/adjektive/steigerungsformen/uebungen" target="_blank" rel="noreferrer">Lingolia : Steigerungsformen</a>
+        <a href="http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul14/adj_ue.htm" target="_blank" rel="noreferrer">Schule.at : Adjektive 1</a>
+        <a href="http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul14/adj_ue1.htm" target="_blank" rel="noreferrer">Schule.at : Adjektive 2</a>
+      </div>
+    </section>
+  </div>
+</details>
