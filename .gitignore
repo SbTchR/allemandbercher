@@ -8,6 +8,9 @@ npm-debug.log*
 raw/site/
 raw/.DS_Store
 
+# Sources locales Genial Klick: PDF et CSV sous droits, non publies ni versionnes.
+genial_klick/
+
 # Les captures d'audit reproductibles sont versionnées.
 !raw/source-site/
 !raw/source-site/**

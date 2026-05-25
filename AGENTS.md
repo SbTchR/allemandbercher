@@ -42,6 +42,19 @@ Les ressources 9H, 10H et 11H doivent rester simples à maintenir.
 - Quand le site source contient un tableau sous forme d’image, le reconstituer dans le nouveau site sous forme de vrai tableau HTML ou de structure sémantique équivalente, pas comme une simple image.
 - Noter les ambiguïtés dans `migrationNotes` au lieu d’inventer du contenu.
 
+## Méthode Genial Klick
+
+Les PDF et CSV Genial Klick placés dans `genial_klick/` sont des sources locales privées. Ce dossier ne doit pas être publié ni versionné. Les synthèses internes exploitables sont dans `docs/genial-klick/`.
+
+- Utiliser `docs/genial-klick/progression-9h.md`, `progression-10h.md`, `progression-11h.md` et `structures-grammaticales.md` pour choisir des exemples adaptés au niveau et au chapitre.
+- Utiliser les mots isolés, champs lexicaux, structures grammaticales et phrases-types courtes de la méthode pour calibrer les exercices et explications.
+- Créer des phrases, mini-dialogues, textes courts, consignes et exercices originaux.
+- Ne jamais recopier un exercice, un texte long, un dialogue complet, une page, une image, une suite d’activités ou une mise en scène complète des manuels Genial Klick.
+- Ne pas publier d’extraits longs issus des PDF ou de captures/scans des manuels.
+- Quand un exemple de théorie ou un exercice interactif est créé, vérifier que la structure grammaticale est déjà connue au niveau visé, ou indiquer clairement qu’il s’agit d’une révision ou d’un approfondissement.
+- Pour les exercices interactifs, préférer des situations nouvelles construites avec le vocabulaire connu des élèves plutôt qu’une adaptation directe d’une activité du manuel.
+- En cas de doute sur les droits d’auteur, réduire l’emprunt à des mots isolés, patrons syntaxiques ou phrases-types très courtes, puis reformuler entièrement l’activité.
+
 ## Amélioration des pages
 
 Ces règles doivent guider chaque reprise ou amélioration d’une page déjà migrée.
