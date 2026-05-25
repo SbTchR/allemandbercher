@@ -25,7 +25,7 @@ La syntaxe des phrases qui contiennent un verbe de modalité est différente en 
 
 Les verbes de modalité au présent
 
-Comme on utilise ces verbes très souvent, il vaut la peine d’apprendre leur conjugaison par coeur. Aide-toi de quizlet:
+Comme on utilise ces verbes très souvent, il vaut la peine d’apprendre leur conjugaison par coeur. Utilise les exercices intégrés ci-dessous pour t’entraîner sans dépendre d’un site externe.
 
 ## Exercice
 
@@ -70,15 +70,3 @@ Autres exercices en ligne sur les verbes de modalité au prétérit.
 - [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=205](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=205)
 
 ## Exercices interactifs intégrés
-
-<iframe class="content-embed tall" src="https://quizlet.com/366208307/match/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/ressources-pedagogiques/5458016-modalverben_1.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="../../../embeds/theorie/theorie-conjugaison-verbes-de-modalite-03-ubung-modalverben-erganzen.html" title="Übung: Modalverben ergänzen" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://quizlet.com/417967219/match/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5458058-modalverben_im_prateritum.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5458044-modalverben_im_prateritum.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

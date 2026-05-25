@@ -127,4 +127,3 @@ Quelques exercices pour entrainer les groupes prépositionnels avec verbes de po
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5265954-prapositionen.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

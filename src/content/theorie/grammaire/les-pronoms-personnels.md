@@ -79,4 +79,3 @@ Quelques exercices sur les pronoms personnels au nominatif, à l'accusatif et au
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5039483-personalpronomen.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

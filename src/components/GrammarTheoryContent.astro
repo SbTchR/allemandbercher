@@ -48,7 +48,7 @@ const isGenitive = slug === 'le-genitif';
           </article>
         </section>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>1. Le groupe nominal, c’est quoi ?</summary>
           <div class="lesson-card-content">
             <p>
@@ -59,6 +59,15 @@ const isGenitive = slug === 'le-genitif';
             <p>
               En allemand, ce groupe change de forme selon son rôle dans la phrase. C’est ce rôle qu’on appelle le cas :
               <strong> nominatif</strong>, <strong>accusatif</strong> ou <strong>datif</strong>.
+            </p>
+            <p>
+              Pour comprendre à quoi correspondent les cas, il faut d’abord être capable de déterminer les groupes de
+              la phrase. Si tu connais déjà la théorie mais que tu hésites sur les déclinaisons, utilise aussi la
+              NAD-Maschine.
+            </p>
+            <p>
+              Si tu connais déjà plus ou moins la théorie mais que tu as de la peine à déterminer les déclinaisons des
+              mots, utilise la NAD-Maschine !
             </p>
             <div class="case-tool-callout">
               <div>
@@ -72,7 +81,7 @@ const isGenitive = slug === 'le-genitif';
           </div>
         </details>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>2. Trouver les groupes dans une phrase</summary>
           <div class="lesson-card-content">
             <p>
@@ -102,7 +111,7 @@ const isGenitive = slug === 'le-genitif';
                   <span>2</span>
                   <div>
                     <strong>Sujet</strong>
-                    <p>Qui est-ce qui envoie ?</p>
+                    <p>On pose la question « Qui est-ce qui ... ? » suivie du verbe : qui est-ce qui envoie ?</p>
                     <mark>la fille</mark>
                   </div>
                 </article>
@@ -110,7 +119,7 @@ const isGenitive = slug === 'le-genitif';
                   <span>3</span>
                   <div>
                     <strong>CVD</strong>
-                    <p>La fille envoie quoi ?</p>
+                    <p>On pose la question « Qui ? / Quoi ? » précédée du sujet et du verbe : la fille envoie quoi ?</p>
                     <mark>une lettre</mark>
                   </div>
                 </article>
@@ -131,11 +140,15 @@ const isGenitive = slug === 'le-genitif';
                   </div>
                 </article>
               </div>
+              <p>
+                S’il reste des éléments de la phrase qui ne sont ni verbe, ni sujet, ni CDV, ni CVI, alors ils peuvent
+                être soit un complément de temps ou de lieu, soit un groupe prépositionnel.
+              </p>
             </div>
           </div>
         </details>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>3. Passer du rôle au cas</summary>
           <div class="lesson-card-content">
             <div class="sentence-lab" aria-label="Passage du français à l'allemand">
@@ -157,11 +170,11 @@ const isGenitive = slug === 'le-genitif';
             <div class="mini-table-grid">
               <article>
                 <strong>Sujet</strong>
-                <p><span class="case-chip case-chip-nominative">nominatif</span> : das Mädchen</p>
+                <p>Le sujet est toujours au nominatif : <span class="case-chip case-chip-nominative">das Mädchen</span> (neut.).</p>
               </article>
               <article>
                 <strong>CVD</strong>
-                <p><span class="case-chip case-chip-accusative">accusatif</span> : einen Brief</p>
+                <p>Le CVD est toujours à l’accusatif : <span class="case-chip case-chip-accusative">einen Brief</span> (masc.).</p>
               </article>
               <article>
                 <strong>CDI</strong>
@@ -217,7 +230,7 @@ const isGenitive = slug === 'le-genitif';
           </article>
         </section>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>1. Les déterminants</summary>
           <div class="lesson-card-content">
             <p>
@@ -231,7 +244,7 @@ const isGenitive = slug === 'le-genitif';
           </div>
         </details>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>2. Les adjectifs</summary>
           <div class="lesson-card-content">
             <p>
@@ -245,7 +258,7 @@ const isGenitive = slug === 'le-genitif';
           </div>
         </details>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>3. Les pronoms personnels</summary>
           <div class="lesson-card-content">
             <p>
@@ -277,7 +290,7 @@ const isGenitive = slug === 'le-genitif';
           </article>
         </section>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>1. Les prépositions qui imposent toujours un cas</summary>
           <div class="lesson-card-content">
             <p>
@@ -291,18 +304,31 @@ const isGenitive = slug === 'le-genitif';
           </div>
         </details>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>2. Les prépositions mixtes : wo ou wohin ?</summary>
           <div class="lesson-card-content">
             <p>
               Avec les prépositions mixtes, la question n’est pas « quelle préposition ? », mais « que fait le verbe ? ».
               Un déplacement vers un endroit donne l’accusatif. Une position déjà installée donne le datif.
             </p>
+            <p>
+              Les autres prépositions sont mixtes, c’est-à-dire qu’elles sont parfois suivies du datif et parfois de
+              l’accusatif. Pour savoir quel cas choisir, demande-toi si le verbe implique un déplacement ou une position.
+            </p>
+            <p>
+              Il s’agit de toutes les autres prépositions. Dans le tableau se trouvent les plus importantes, soit celles
+              que tu dois connaître. Pour savoir s’il faut accorder le groupe nominal qui suit une de ces préposition à
+              l’accusatif ou au datif, il faut se demander si le verbe implique un déplacement ou non.
+            </p>
+            <p>
+              Pour maîtriser ce thème, tu dois connaître par coeur la liste des prépositions + Acc. et celle des
+              prépositions + Dat., puis reconnaître les exemples de déplacement ou de position.
+            </p>
             <div class="movement-switch">
               <article>
                 <span class="case-chip case-chip-accusative">Déplacement</span>
                 <strong>Peter legt das Blatt neben den Schrank.</strong>
-                <p>La feuille va vers un nouvel endroit : accusatif.</p>
+                <p>La feuille va vers un nouvel endroit : accusatif. Peter pose la feuille à côté de l’armoire.</p>
               </article>
               <article>
                 <span class="case-chip case-chip-dative">Position</span>
@@ -320,11 +346,12 @@ const isGenitive = slug === 'le-genitif';
             <div class="word-map">
               <span><strong>stellen</strong>poser debout vers un endroit</span>
               <span><strong>legen</strong>poser à plat vers un endroit</span>
-              <span><strong>hängen</strong>accrocher vers un endroit</span>
+              <span><strong>hängen</strong>suspendre, accrocher : Peter hängt das Poster an die Wand.</span>
               <span><strong>stehen</strong>être debout quelque part</span>
               <span><strong>liegen</strong>être couché quelque part</span>
               <span><strong>hängen</strong>être accroché quelque part</span>
             </div>
+            <p>Peter suspend le poster contre le mur : il y a un mouvement vers le mur, donc l’accusatif.</p>
             <GrammarMatrix table={declensionTables.shortcut} compact />
           </div>
         </details>
@@ -350,7 +377,7 @@ const isGenitive = slug === 'le-genitif';
           </article>
         </section>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>1. À quoi sert le génitif ?</summary>
           <div class="lesson-card-content">
             <p>
@@ -368,7 +395,7 @@ const isGenitive = slug === 'le-genitif';
           </div>
         </details>
 
-        <details class="lesson-card" open>
+        <details class="lesson-card">
           <summary>2. Décliner au génitif</summary>
           <div class="lesson-card-content">
             <p>
@@ -384,14 +411,18 @@ const isGenitive = slug === 'le-genitif';
           <div class="lesson-card-content">
             <ul class="mission-list">
               <li>Quelques noms masculins prennent <strong>-(e)n</strong> au génitif : des Jungen, des Präsidenten, des Herrn.</li>
+              <li>Quelques noms masculin prennent la terminaison <strong>-(e)n</strong> au lieu de <strong>-(e)s</strong>.</li>
               <li>Le mot interrogatif du génitif est <strong>Wessen ?</strong></li>
               <li>Certaines prépositions peuvent être suivies du génitif : während, trotz, wegen.</li>
+              <li>Quelques prépositions sont aussi suivies du génitif.</li>
+              <li>À l’oral, on remplace souvent le génitif par la préposition <strong>von</strong> suivie du datif.</li>
+              <li>Les pronoms personnels se déclinent aussi au génitif, mais on les utilise très rarement : <strong>meinetwegen</strong>.</li>
             </ul>
             <div class="word-map">
-              <span><strong>während</strong>während des Tages</span>
+              <span><strong>während</strong>während des Tages (pendant)</span>
               <span><strong>trotz</strong>trotz meiner guten Noten</span>
               <span><strong>wegen</strong>wegen des schlechten Wetters</span>
-              <span><strong>links / rechts</strong>rechts der Strasse</span>
+              <span><strong>links / rechts</strong>links/rechts der Strasse (à gauche/à droite de)</span>
             </div>
           </div>
         </details>

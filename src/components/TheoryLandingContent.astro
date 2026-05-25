@@ -156,11 +156,49 @@ const chooserOptions = [
   </div>
 </section>
 
+<section class="content-band theory-guide" aria-labelledby="theory-agreement-title">
+  <p class="home-section-label">À retenir</p>
+  <h2 id="theory-agreement-title">Accords et déclinaisons</h2>
+  <p>
+    Voici les types de mots qui s’accordent ou se déclinent : les noms, les déterminants, les pronoms et les adjectifs.
+    Comme en français, ces mots s’accordent en genre (masculin, féminin, neutre) et en nombre (singulier, pluriel).
+  </p>
+  <p>
+    Mais en allemand, ils se déclinent également selon le rôle qu’ils ont dans la phrase : sujet, CVD, CVI ou groupe
+    prépositionnel. C’est pour cela que les pages de cas, de tableaux et de prépositions sont le point de départ.
+  </p>
+  <p><strong>Exemple :</strong> Der Hund ist nett. Ich mag den Hund. Le chien est gentil. J’aime le chien.</p>
+  <p>
+    Il peut y avoir de nombreux groupes dans une phrase, mais ceux que tu dois savoir reconnaître sont les suivants :
+    verbe, sujet, CVD, CVI et groupe prépositionnel.
+  </p>
+  <p>
+    Un rappel de la technique pour déterminer les groupes de la phrase est fait sur la page des cas. Le groupe nominal
+    comprend un nom, un déterminant et éventuellement un adjectif.
+  </p>
+  <p>
+    La syntaxe règle la question de l’ordre des mots dans la phrase. En allemand, la difficulté principale réside dans
+    le fait de mettre le verbe au bon endroit.
+  </p>
+  <p>
+    Les types de phrases de base sont la phrase affirmative (phrase « normale »), la phrase interrogative (question)
+    et la phrase impérative (ordre). Pour chaque type de phrase, il y a des règles différentes quant à la place du verbe.
+  </p>
+  <p>
+    La place du verbe change aussi quand la phrase est au passé composé (auxiliaire + participe passé), par exemple
+    <strong>Peter hat einen Apfel gegessen.</strong> Peter a mangé une pomme.
+  </p>
+  <p>
+    Même principe quand la phrase contient un verbe de modalité (verbe de modalité + infinitif), par exemple
+    <strong>Peter muss sein Zimmer aufräumen.</strong> Peter doit ranger sa chambre.
+  </p>
+</section>
+
 <section class="content-band theory-guide" aria-labelledby="theory-guide-title">
   <p class="home-section-label">Mode d’emploi</p>
   <h2 id="theory-guide-title">Trois questions à se poser</h2>
   <div class="theory-guide-grid">
-    <details class="lesson-card" open>
+    <details class="lesson-card">
       <summary>1. Est-ce un problème d’accord ?</summary>
       <div class="lesson-card-content">
         <p>Regarde si tu dois choisir une terminaison pour un déterminant, un pronom ou un adjectif. Dans ce cas, commence par les cas et les déclinaisons.</p>
@@ -183,8 +221,8 @@ const chooserOptions = [
 
 <section class="theory-group-list" aria-label="Pages de théorie classées">
   {
-    groups.map((group, index) => (
-      <details class="content-band theory-page-group" open={index < 3}>
+    groups.map((group) => (
+      <details class="content-band theory-page-group">
         <summary>
           <span>
             <strong>{group.title}</strong>

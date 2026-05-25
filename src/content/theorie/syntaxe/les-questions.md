@@ -73,8 +73,3 @@ Il y a ... = Es gibt ... donc Y a-t'il ... ? = Gibt es ... ?
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447622-fragen_1.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447651-fragen_1.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447657-fragen_1.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

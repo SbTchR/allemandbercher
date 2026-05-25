@@ -1,0 +1,575 @@
+---
+import { theoryPracticePages } from '../data/theoryPractice';
+
+type Props = {
+  category: string;
+  slug: string;
+};
+
+const { category, slug } = Astro.props;
+const practiceKey = `${category}/${slug}`;
+const practice = theoryPracticePages[practiceKey];
+const sectionId = `theory-practice-${practiceKey.replace(/[^a-z0-9]+/gi, '-')}`;
+const sortActivity = practice?.sort;
+---
+
+{
+  practice && (
+    <section class="content-band theory-practice-suite" id={sectionId} data-theory-practice>
+      <div class="theory-practice-hero">
+        <div>
+          <p class="home-section-label">Exercices intégrés</p>
+          <h2>{practice.title}</h2>
+          <p>{practice.intro}</p>
+        </div>
+        <span>{practice.level}</span>
+      </div>
+
+      {practice.lab && (
+        <article class="theory-activity theory-lab" data-theory-lab>
+          <div class="theory-activity-head">
+            <div>
+              <p class="theory-activity-kicker">Observation active</p>
+              <h3>{practice.lab.title}</h3>
+              <p>{practice.lab.intro}</p>
+            </div>
+          </div>
+          <div class="theory-lab-grid">
+            <div class="theory-lab-options" aria-label="Choix d’exemples">
+              {practice.lab.options.map((option, index) => (
+                <button class:list={[{ 'is-selected': index === 0 }]} type="button" data-lab-option={index} aria-pressed={index === 0 ? 'true' : 'false'}>
+                  {option.label}
+                </button>
+              ))}
+            </div>
+            <div class="theory-lab-result" aria-live="polite">
+              <p data-lab-sentence set:html={practice.lab.options[0].sentenceHtml}></p>
+              <p data-lab-note>{practice.lab.options[0].note}</p>
+            </div>
+          </div>
+        </article>
+      )}
+
+      {practice.cards && (
+        <article class="theory-activity theory-flashcards" data-theory-cards>
+          <div class="theory-activity-head">
+            <div>
+              <p class="theory-activity-kicker">Cartes mémoire</p>
+              <h3>{practice.cards.title}</h3>
+              <p>{practice.cards.intro}</p>
+            </div>
+            <output data-card-progress>1 / {practice.cards.items.length}</output>
+          </div>
+          <div class="theory-card-stage">
+            {practice.cards.items.map((card, index) => (
+              <button class="theory-flashcard" type="button" data-card={index} hidden={index !== 0}>
+                <span>{card.front}</span>
+                <strong>{card.back}</strong>
+              </button>
+            ))}
+          </div>
+          <div class="theory-action-row">
+            <button class="text-link" type="button" data-card-prev>Précédente</button>
+            <button class="quest-launch-button" type="button" data-card-flip>Retourner</button>
+            <button class="text-link" type="button" data-card-next>Suivante</button>
+          </div>
+        </article>
+      )}
+
+      {practice.choices && (
+        <article class="theory-activity theory-choice-activity" data-theory-choice>
+          <div class="theory-activity-head">
+            <div>
+              <p class="theory-activity-kicker">Choix guidé</p>
+              <h3>{practice.choices.title}</h3>
+              <p>{practice.choices.intro}</p>
+            </div>
+            <output data-choice-score>0 / {practice.choices.items.length}</output>
+          </div>
+          <div class="theory-item-grid">
+            {practice.choices.items.map((item, index) => (
+              <section class="theory-practice-item" data-choice-item>
+                <p class="theory-item-prompt">
+                  <strong>{index + 1}.</strong> {item.prompt}
+                </p>
+                <blockquote>{item.sentence}</blockquote>
+                <div class="theory-choice-row" role="group" aria-label={`Réponses pour ${index + 1}`}>
+                  {item.choices.map((choice) => (
+                    <button type="button" data-choice-button data-answer={item.answer} data-feedback={item.feedback} data-choice={choice}>
+                      {choice}
+                    </button>
+                  ))}
+                </div>
+                <div class="theory-feedback-row">
+                  <button class="text-link" type="button" data-open-theory-hint data-hint={item.hint}>Indice</button>
+                  <p data-feedback aria-live="polite"></p>
+                </div>
+              </section>
+            ))}
+          </div>
+        </article>
+      )}
+
+      {practice.gaps && (
+        <article class="theory-activity theory-gap-activity" data-theory-gaps>
+          <div class="theory-activity-head">
+            <div>
+              <p class="theory-activity-kicker">Phrases à compléter</p>
+              <h3>{practice.gaps.title}</h3>
+              <p>{practice.gaps.intro}</p>
+            </div>
+            <output data-gap-score>0 / {practice.gaps.items.length}</output>
+          </div>
+          <div class="theory-item-grid">
+            {practice.gaps.items.map((item, itemIndex) => (
+              <section class="theory-practice-item" data-gap-item>
+                <p class="theory-item-prompt">
+                  <strong>{itemIndex + 1}.</strong> {item.prompt}
+                </p>
+                <p class="theory-gap-sentence">
+                  {item.parts.map((part, partIndex) => (
+                    <>
+                      {part}
+                      {item.gaps[partIndex] && (
+                        <input
+                          type="text"
+                          autocomplete="off"
+                          autocapitalize="off"
+                          spellcheck="false"
+                          data-gap-input
+                          data-answer={[item.gaps[partIndex].answer, ...(item.gaps[partIndex].aliases ?? [])].join('|')}
+                          aria-label={`Réponse ${itemIndex + 1}.${partIndex + 1}`}
+                        />
+                      )}
+                    </>
+                  ))}
+                </p>
+                <div class="theory-feedback-row">
+                  <button class="text-link" type="button" data-check-gap>Vérifier cette phrase</button>
+                  <button class="text-link" type="button" data-open-theory-hint data-hint={item.hint}>Indice</button>
+                  <button class="text-link" type="button" data-show-gap-answer hidden>Voir le corrigé</button>
+                  <p data-feedback aria-live="polite"></p>
+                </div>
+              </section>
+            ))}
+          </div>
+        </article>
+      )}
+
+      {sortActivity && (
+        <article class="theory-activity theory-sort-activity" data-theory-sort>
+          <div class="theory-activity-head">
+            <div>
+              <p class="theory-activity-kicker">Tri grammatical</p>
+              <h3>{sortActivity.title}</h3>
+              <p>{sortActivity.intro}</p>
+            </div>
+            <output data-sort-score>0 / {sortActivity.items.length}</output>
+          </div>
+          <div class="theory-item-grid">
+            {sortActivity.items.map((item, index) => (
+              <section class="theory-practice-item" data-sort-item data-answer={item.answer} data-success={item.feedback}>
+                <p class="theory-item-prompt">
+                  <strong>{index + 1}.</strong> Quel choix correspond à <mark>{item.label}</mark> ?
+                </p>
+                <blockquote>{item.sentence}</blockquote>
+                <div class="theory-choice-row" role="group" aria-label={`Catégories pour ${index + 1}`}>
+                  {sortActivity.categories.map((category) => (
+                    <button type="button" data-sort-choice={category.key}>{category.label}</button>
+                  ))}
+                </div>
+                <p data-feedback aria-live="polite"></p>
+              </section>
+            ))}
+          </div>
+        </article>
+      )}
+
+      {practice.order && (
+        <article class="theory-activity theory-order-activity" data-theory-order>
+          <div class="theory-activity-head">
+            <div>
+              <p class="theory-activity-kicker">Ordre des mots</p>
+              <h3>{practice.order.title}</h3>
+              <p>{practice.order.intro}</p>
+            </div>
+            <output data-order-score>0 / {practice.order.items.length}</output>
+          </div>
+          <div class="theory-item-grid">
+            {practice.order.items.map((item, index) => (
+              <section class="theory-practice-item" data-order-item data-answer={item.answer}>
+                <p class="theory-item-prompt">
+                  <strong>{index + 1}.</strong> {item.prompt}
+                </p>
+                <div class="theory-token-bank" aria-label={`Mots disponibles ${index + 1}`}>
+                  {item.tokens.map((token) => (
+                    <button type="button" data-order-token={token}>{token}</button>
+                  ))}
+                </div>
+                <p class="theory-built-sentence" data-order-built aria-live="polite"></p>
+                <div class="theory-feedback-row">
+                  <button class="text-link" type="button" data-check-order>Vérifier</button>
+                  <button class="text-link" type="button" data-reset-order>Effacer</button>
+                  <button class="text-link" type="button" data-open-theory-hint data-hint={item.hint}>Indice</button>
+                  <button class="text-link" type="button" data-show-order-answer hidden>Voir le corrigé</button>
+                  <p data-feedback aria-live="polite"></p>
+                </div>
+              </section>
+            ))}
+          </div>
+        </article>
+      )}
+
+      <div class="theory-action-row theory-suite-actions">
+        <button class="text-link" type="button" data-reset-theory-practice>Recommencer les exercices de cette page</button>
+      </div>
+
+      <dialog class="grammar-hint-dialog theory-hint-dialog" data-theory-hint-dialog>
+        <div>
+          <div class="grammar-hint-dialog-header">
+            <h3>Indice</h3>
+            <button class="resource-modal-close" type="button" data-close-theory-hint>Fermer</button>
+          </div>
+          <p data-theory-hint-content></p>
+        </div>
+      </dialog>
+    </section>
+  )
+}
+
+{
+  practice && (
+    <script define:vars={{ practice }} is:inline>
+      const normalizeTheoryAnswer = (value) =>
+        String(value ?? '')
+          .trim()
+          .toLowerCase()
+          .normalize('NFC')
+          .replace(/ä/g, 'ae')
+          .replace(/ö/g, 'oe')
+          .replace(/ü/g, 'ue')
+          .replace(/ß/g, 'ss')
+          .replace(/[?!.,;:]+$/g, '')
+          .replace(/\s+/g, ' ');
+
+      document.querySelectorAll('[data-theory-practice]').forEach((root) => {
+        const hintDialog = root.querySelector('[data-theory-hint-dialog]');
+        const hintContent = root.querySelector('[data-theory-hint-content]');
+
+        root.querySelectorAll('[data-open-theory-hint]').forEach((button) => {
+          button.addEventListener('click', () => {
+            if (hintContent) hintContent.textContent = button.dataset.hint ?? '';
+            if (hintDialog instanceof HTMLDialogElement) hintDialog.showModal();
+          });
+        });
+
+        root.querySelector('[data-close-theory-hint]')?.addEventListener('click', () => {
+          if (hintDialog instanceof HTMLDialogElement) hintDialog.close();
+        });
+
+        hintDialog?.addEventListener('click', (event) => {
+          if (event.target === hintDialog && hintDialog instanceof HTMLDialogElement) hintDialog.close();
+        });
+
+        root.querySelectorAll('[data-theory-lab]').forEach((lab) => {
+          const sentence = lab.querySelector('[data-lab-sentence]');
+          const note = lab.querySelector('[data-lab-note]');
+          const buttons = Array.from(lab.querySelectorAll('[data-lab-option]'));
+          const options = practice.lab?.options ?? [];
+
+          buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+              const index = Number(button.dataset.labOption ?? 0);
+              const option = options[index] ?? options[0];
+              if (!option) return;
+              if (sentence) sentence.innerHTML = option.sentenceHtml;
+              if (note) note.textContent = option.note;
+              buttons.forEach((choice, choiceIndex) => {
+                const selected = choiceIndex === index;
+                choice.classList.toggle('is-selected', selected);
+                choice.setAttribute('aria-pressed', String(selected));
+              });
+            });
+          });
+        });
+
+        root.querySelectorAll('[data-theory-cards]').forEach((cardsRoot) => {
+          const cards = Array.from(cardsRoot.querySelectorAll('[data-card]'));
+          const progress = cardsRoot.querySelector('[data-card-progress]');
+          let current = 0;
+
+          const show = () => {
+            cards.forEach((card, index) => {
+              card.hidden = index !== current;
+              card.classList.remove('is-flipped');
+            });
+            if (progress) progress.textContent = `${current + 1} / ${cards.length}`;
+          };
+
+          cardsRoot.querySelector('[data-card-flip]')?.addEventListener('click', () => {
+            cards[current]?.classList.toggle('is-flipped');
+          });
+          cardsRoot.querySelector('[data-card-prev]')?.addEventListener('click', () => {
+            current = (current - 1 + cards.length) % cards.length;
+            show();
+          });
+          cardsRoot.querySelector('[data-card-next]')?.addEventListener('click', () => {
+            current = (current + 1) % cards.length;
+            show();
+          });
+          cardsRoot.addEventListener('theory-practice-reset', () => {
+            current = 0;
+            show();
+          });
+          show();
+        });
+
+        root.querySelectorAll('[data-theory-choice]').forEach((activity) => {
+          const items = Array.from(activity.querySelectorAll('[data-choice-item]'));
+          const score = activity.querySelector('[data-choice-score]');
+          const updateScore = () => {
+            const correct = items.filter((item) => item.dataset.state === 'correct').length;
+            if (score) score.textContent = `${correct} / ${items.length}`;
+          };
+
+          items.forEach((item) => {
+            const feedback = item.querySelector('[data-feedback]');
+            const buttons = Array.from(item.querySelectorAll('[data-choice-button]'));
+            buttons.forEach((button) => {
+              button.addEventListener('click', () => {
+                const isCorrect = normalizeTheoryAnswer(button.dataset.choice) === normalizeTheoryAnswer(button.dataset.answer);
+                buttons.forEach((choice) => choice.classList.remove('is-correct', 'is-wrong'));
+                button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+                item.dataset.state = isCorrect ? 'correct' : 'wrong';
+                if (feedback) {
+                  feedback.textContent = isCorrect ? button.dataset.feedback ?? 'Correct.' : 'Pas encore. Ouvre l’indice, puis réessaie.';
+                  feedback.classList.toggle('is-correct', isCorrect);
+                  feedback.classList.toggle('is-wrong', !isCorrect);
+                }
+                updateScore();
+              });
+            });
+          });
+          updateScore();
+        });
+
+        root.querySelectorAll('[data-theory-gaps]').forEach((activity) => {
+          const items = Array.from(activity.querySelectorAll('[data-gap-item]'));
+          const score = activity.querySelector('[data-gap-score]');
+          const updateScore = () => {
+            const correct = items.filter((item) => item.dataset.state === 'correct').length;
+            if (score) score.textContent = `${correct} / ${items.length}`;
+          };
+          const accepted = (input) => String(input.dataset.answer ?? '').split('|').map(normalizeTheoryAnswer);
+          const primary = (input) => String(input.dataset.answer ?? '').split('|')[0] ?? '';
+
+          const checkItem = (item) => {
+            const inputs = Array.from(item.querySelectorAll('[data-gap-input]'));
+            const feedback = item.querySelector('[data-feedback]');
+            const reveal = item.querySelector('[data-show-gap-answer]');
+            const complete = inputs.every((input) => normalizeTheoryAnswer(input.value));
+            if (!complete) {
+              item.dataset.state = 'wrong';
+              if (feedback) feedback.textContent = 'Complète la phrase avant de vérifier.';
+              if (reveal) reveal.hidden = true;
+              updateScore();
+              return;
+            }
+
+            let isCorrect = true;
+            inputs.forEach((input) => {
+              const ok = accepted(input).includes(normalizeTheoryAnswer(input.value));
+              input.classList.toggle('is-correct', ok);
+              input.classList.toggle('is-wrong', !ok);
+              if (!ok) isCorrect = false;
+            });
+
+            item.dataset.state = isCorrect ? 'correct' : 'wrong';
+            if (feedback) {
+              feedback.textContent = isCorrect ? 'Correct.' : 'À corriger. Vérifie l’indice avant d’afficher le corrigé.';
+              feedback.classList.toggle('is-correct', isCorrect);
+              feedback.classList.toggle('is-wrong', !isCorrect);
+            }
+            if (reveal) reveal.hidden = false;
+            updateScore();
+          };
+
+          items.forEach((item) => {
+            item.querySelector('[data-check-gap]')?.addEventListener('click', () => checkItem(item));
+            item.querySelectorAll('[data-gap-input]').forEach((input) => {
+              input.addEventListener('input', () => {
+                input.classList.remove('is-correct', 'is-wrong');
+                item.removeAttribute('data-state');
+                const feedback = item.querySelector('[data-feedback]');
+                if (feedback) feedback.textContent = '';
+                updateScore();
+              });
+              input.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter') {
+                  event.preventDefault();
+                  checkItem(item);
+                }
+              });
+            });
+            item.querySelector('[data-show-gap-answer]')?.addEventListener('click', () => {
+              item.querySelectorAll('[data-gap-input]').forEach((input) => {
+                input.value = primary(input);
+                input.classList.add('is-correct');
+                input.classList.remove('is-wrong');
+              });
+              item.dataset.state = 'correct';
+              const feedback = item.querySelector('[data-feedback]');
+              if (feedback) {
+                feedback.textContent = 'Corrigé affiché pour cette phrase.';
+                feedback.classList.add('is-correct');
+                feedback.classList.remove('is-wrong');
+              }
+              updateScore();
+            });
+          });
+          updateScore();
+        });
+
+        root.querySelectorAll('[data-theory-sort]').forEach((activity) => {
+          const items = Array.from(activity.querySelectorAll('[data-sort-item]'));
+          const score = activity.querySelector('[data-sort-score]');
+          const updateScore = () => {
+            const correct = items.filter((item) => item.dataset.state === 'correct').length;
+            if (score) score.textContent = `${correct} / ${items.length}`;
+          };
+
+          items.forEach((item) => {
+            const feedback = item.querySelector('[data-feedback]');
+            const buttons = Array.from(item.querySelectorAll('[data-sort-choice]'));
+            buttons.forEach((button) => {
+              button.addEventListener('click', () => {
+                const isCorrect = button.dataset.sortChoice === item.dataset.answer;
+                buttons.forEach((choice) => choice.classList.remove('is-correct', 'is-wrong'));
+                button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+                item.dataset.state = isCorrect ? 'correct' : 'wrong';
+                if (feedback) {
+                  feedback.textContent = isCorrect ? item.dataset.success ?? 'Correct.' : 'Pas encore. Regarde le rôle ou le sens du mot.';
+                  feedback.classList.toggle('is-correct', isCorrect);
+                  feedback.classList.toggle('is-wrong', !isCorrect);
+                }
+                updateScore();
+              });
+            });
+          });
+          updateScore();
+        });
+
+        root.querySelectorAll('[data-theory-order]').forEach((activity) => {
+          const items = Array.from(activity.querySelectorAll('[data-order-item]'));
+          const score = activity.querySelector('[data-order-score]');
+          const updateScore = () => {
+            const correct = items.filter((item) => item.dataset.state === 'correct').length;
+            if (score) score.textContent = `${correct} / ${items.length}`;
+          };
+
+          items.forEach((item) => {
+            const built = item.querySelector('[data-order-built]');
+            const feedback = item.querySelector('[data-feedback]');
+            const reveal = item.querySelector('[data-show-order-answer]');
+            const tokenButtons = Array.from(item.querySelectorAll('[data-order-token]'));
+            let tokens = [];
+
+            const render = () => {
+              if (built) built.textContent = tokens.join(' ');
+            };
+
+            tokenButtons.forEach((button) => {
+              button.addEventListener('click', () => {
+                tokens.push(button.dataset.orderToken ?? '');
+                button.disabled = true;
+                item.removeAttribute('data-state');
+                if (feedback) feedback.textContent = '';
+                render();
+                updateScore();
+              });
+            });
+
+            item.querySelector('[data-check-order]')?.addEventListener('click', () => {
+              const isCorrect = normalizeTheoryAnswer(tokens.join(' ')) === normalizeTheoryAnswer(item.dataset.answer);
+              item.dataset.state = isCorrect ? 'correct' : 'wrong';
+              if (feedback) {
+                feedback.textContent = isCorrect ? 'Correct.' : 'À corriger : vérifie la place du verbe.';
+                feedback.classList.toggle('is-correct', isCorrect);
+                feedback.classList.toggle('is-wrong', !isCorrect);
+              }
+              if (reveal) reveal.hidden = false;
+              updateScore();
+            });
+
+            item.querySelector('[data-reset-order]')?.addEventListener('click', () => {
+              tokens = [];
+              tokenButtons.forEach((button) => {
+                button.disabled = false;
+                button.classList.remove('is-correct', 'is-wrong');
+              });
+              item.removeAttribute('data-state');
+              if (feedback) feedback.textContent = '';
+              if (reveal) reveal.hidden = true;
+              render();
+              updateScore();
+            });
+
+            reveal?.addEventListener('click', () => {
+              tokens = String(item.dataset.answer ?? '').split(' ');
+              tokenButtons.forEach((button) => {
+                button.disabled = true;
+              });
+              item.dataset.state = 'correct';
+              if (feedback) {
+                feedback.textContent = 'Corrigé affiché.';
+                feedback.classList.add('is-correct');
+                feedback.classList.remove('is-wrong');
+              }
+              render();
+              updateScore();
+            });
+
+            render();
+          });
+          updateScore();
+        });
+
+        root.querySelector('[data-reset-theory-practice]')?.addEventListener('click', () => {
+          root.querySelectorAll('[data-theory-cards]').forEach((cardsRoot) => {
+            cardsRoot.dispatchEvent(new CustomEvent('theory-practice-reset'));
+          });
+          root.querySelectorAll('[data-reset-order]').forEach((button) => {
+            button.click();
+          });
+          root.querySelectorAll('input[data-gap-input]').forEach((input) => {
+            input.value = '';
+            input.classList.remove('is-correct', 'is-wrong');
+          });
+          root.querySelectorAll('.is-correct, .is-wrong').forEach((element) => {
+            element.classList.remove('is-correct', 'is-wrong');
+          });
+          root.querySelectorAll('[data-state]').forEach((element) => {
+            element.removeAttribute('data-state');
+          });
+          root.querySelectorAll('[data-feedback]').forEach((feedback) => {
+            feedback.textContent = '';
+            feedback.classList.remove('is-correct', 'is-wrong');
+          });
+          root.querySelectorAll('[data-show-gap-answer], [data-show-order-answer]').forEach((button) => {
+            button.hidden = true;
+          });
+          root.querySelectorAll('[data-order-built]').forEach((built) => {
+            built.textContent = '';
+          });
+          root.querySelectorAll('[data-order-token]').forEach((button) => {
+            button.disabled = false;
+          });
+          root.querySelectorAll('output').forEach((output) => {
+            const total = output.textContent?.split('/')[1]?.trim();
+            if (total) output.textContent = output.matches('[data-card-progress]') ? `1 / ${total}` : `0 / ${total}`;
+          });
+        });
+      });
+    </script>
+  )
+}

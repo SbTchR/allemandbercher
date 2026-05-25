@@ -57,4 +57,3 @@ Le verbe de modalité étant la forme verbale qui est conjuguée avec le sujet s
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447686-satze_mit_modalverben.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

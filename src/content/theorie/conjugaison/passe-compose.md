@@ -135,4 +135,3 @@ Quelques exercices pour entrainer le passé composé.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://quizlet.com/356912973/spell/embed" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>

@@ -27,4 +27,3 @@ migrationNotes: []
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://quizlet.com/613523315/learn/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>

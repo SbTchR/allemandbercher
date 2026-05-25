@@ -49,6 +49,3 @@ Quelques exercices pour entrainer la conjugaison des verbes au présent.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://quizlet.com/355592284/match/embed" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="../../../embeds/theorie/theorie-conjugaison-present-02-exercice-de-conjugaison.html" title="Exercice de conjugaison" loading="lazy" allowfullscreen></iframe>

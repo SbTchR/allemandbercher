@@ -14,6 +14,7 @@ import SuperlativePracticeSuite from './SuperlativePracticeSuite.astro';
 import SuperlativeRuleLab from './SuperlativeRuleLab.astro';
 import SuperlativeTheoryContent from './SuperlativeTheoryContent.astro';
 import TheoryBox from './TheoryBox.astro';
+import TheoryPracticeSuite from './TheoryPracticeSuite.astro';
 import VerbPositionPracticeSuite from './VerbPositionPracticeSuite.astro';
 import VerbPositionTheoryContent from './VerbPositionTheoryContent.astro';
 import WritingExerciseLab from './WritingExerciseLab.astro';
@@ -183,6 +184,7 @@ const hasChapterDashboard =
       )
     }
     {hasWritingExerciseLab && <WritingExerciseLab />}
+    {entry.collection === 'theorie' && slug && <TheoryPracticeSuite category={entry.data.category} slug={slug} />}
 
     <ImageGallery images={customGrammarSlug ? [] : entry.data.images} />
 
@@ -231,13 +233,9 @@ const hasChapterDashboard =
     )
   }
 
-  {
-    isExerciseChapter && (
-      <script>
-        document.querySelectorAll('.resource-page details[open]').forEach((details) => {
-          details.removeAttribute('open');
-        });
-      </script>
-    )
-  }
+  <script>
+    document.querySelectorAll('.resource-page details[open]').forEach((details) => {
+      details.removeAttribute('open');
+    });
+  </script>
 </Layout>

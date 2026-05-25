@@ -75,4 +75,3 @@ Quelques exercices pour entrainer les phrases avec weil .
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447937-weil_satze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

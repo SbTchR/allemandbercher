@@ -4898,6 +4898,352 @@ h2 {
   gap: 10px;
 }
 
+.theory-practice-suite {
+  display: grid;
+  gap: 18px;
+}
+
+.theory-practice-suite [hidden] {
+  display: none !important;
+}
+
+.theory-practice-hero,
+.theory-activity {
+  border: 2px solid rgba(31, 42, 68, 0.1);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 255, 0.92)),
+    #fff;
+  box-shadow: 0 8px 0 rgba(15, 26, 49, 0.06), 0 18px 40px rgba(21, 36, 72, 0.1);
+}
+
+.theory-practice-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px;
+}
+
+.theory-practice-hero h2,
+.theory-practice-hero p {
+  margin: 0;
+}
+
+.theory-practice-hero h2 {
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.08;
+}
+
+.theory-practice-hero > span,
+.theory-activity-head output {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 2px solid rgba(15, 26, 49, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 201, 40, 0.25);
+  color: var(--ink);
+  font-weight: 950;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.theory-activity {
+  padding: 20px;
+}
+
+.theory-activity-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.theory-activity-head h3,
+.theory-activity-head p {
+  margin: 0;
+}
+
+.theory-activity-head h3 {
+  color: var(--ink);
+  font-size: clamp(1.18rem, 2vw, 1.45rem);
+  line-height: 1.15;
+}
+
+.theory-activity-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.theory-lab-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.3fr);
+  gap: 14px;
+}
+
+.theory-lab-options,
+.theory-choice-row,
+.theory-token-bank,
+.theory-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.theory-lab-options {
+  align-content: flex-start;
+  flex-direction: column;
+}
+
+.theory-lab-options button,
+.theory-choice-row button,
+.theory-token-bank button {
+  border: 2px solid rgba(31, 42, 68, 0.13);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 0 rgba(15, 26, 49, 0.06);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  padding: 9px 12px;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.theory-lab-options button:hover,
+.theory-choice-row button:hover,
+.theory-token-bank button:hover {
+  border-color: rgba(217, 4, 41, 0.28);
+  transform: translateY(-1px);
+}
+
+.theory-lab-options button.is-selected,
+.theory-choice-row button.is-correct,
+.theory-token-bank button.is-correct {
+  border-color: rgba(20, 112, 86, 0.34);
+  background: rgba(20, 112, 86, 0.12);
+  color: #116142;
+}
+
+.theory-choice-row button.is-wrong,
+.theory-token-bank button.is-wrong {
+  border-color: rgba(217, 4, 41, 0.35);
+  background: rgba(217, 4, 41, 0.08);
+  color: #9f1239;
+}
+
+.theory-token-bank button:disabled {
+  cursor: default;
+  opacity: 0.55;
+  transform: none;
+}
+
+.theory-lab-result,
+.theory-practice-item,
+.theory-card-stage {
+  border: 2px solid rgba(31, 42, 68, 0.09);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(249, 252, 255, 0.92));
+}
+
+.theory-lab-result {
+  display: grid;
+  gap: 8px;
+  min-height: 140px;
+  padding: 18px;
+}
+
+.theory-lab-result p {
+  margin: 0;
+}
+
+.theory-lab-result [data-lab-sentence] {
+  color: var(--ink);
+  font-size: clamp(1.16rem, 2.4vw, 1.55rem);
+  font-weight: 950;
+  line-height: 1.45;
+}
+
+.theory-item-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.theory-practice-item {
+  padding: 16px;
+}
+
+.theory-item-prompt,
+.theory-practice-item blockquote,
+.theory-practice-item p {
+  margin: 0;
+}
+
+.theory-item-prompt {
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.theory-practice-item blockquote,
+.theory-built-sentence {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-left: 5px solid rgba(255, 201, 40, 0.75);
+  border-radius: 10px;
+  background: rgba(255, 201, 40, 0.16);
+  color: var(--ink);
+  font-weight: 850;
+}
+
+.theory-choice-row,
+.theory-token-bank,
+.theory-feedback-row {
+  margin-top: 12px;
+}
+
+.theory-feedback-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+.theory-feedback-row p {
+  flex: 1 1 220px;
+  color: var(--muted);
+  font-weight: 850;
+}
+
+.theory-feedback-row p.is-correct {
+  color: #116142;
+}
+
+.theory-feedback-row p.is-wrong {
+  color: #9f1239;
+}
+
+.theory-gap-sentence {
+  margin-top: 12px !important;
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 850;
+  line-height: 1.9;
+}
+
+.theory-gap-sentence input {
+  width: min(170px, 48vw);
+  min-height: 38px;
+  margin: 0 4px;
+  border: 2px solid rgba(31, 42, 68, 0.16);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 900;
+  padding: 5px 10px;
+}
+
+.theory-gap-sentence input:focus {
+  border-color: rgba(217, 4, 41, 0.45);
+  outline: 3px solid rgba(217, 4, 41, 0.14);
+}
+
+.theory-gap-sentence input.is-correct {
+  border-color: rgba(20, 112, 86, 0.48);
+  background: rgba(20, 112, 86, 0.1);
+}
+
+.theory-gap-sentence input.is-wrong {
+  border-color: rgba(217, 4, 41, 0.48);
+  background: rgba(217, 4, 41, 0.08);
+}
+
+.theory-card-stage {
+  display: grid;
+  min-height: 190px;
+  place-items: center;
+  padding: 18px;
+}
+
+.theory-flashcard {
+  display: grid;
+  width: min(520px, 100%);
+  min-height: 145px;
+  place-items: center;
+  border: 2px solid rgba(217, 4, 41, 0.18);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(255, 201, 40, 0.2), transparent 42%),
+    #ffffff;
+  box-shadow: 0 8px 0 rgba(15, 26, 49, 0.08);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  padding: 20px;
+  text-align: center;
+}
+
+.theory-flashcard span,
+.theory-flashcard strong {
+  font-size: clamp(1.2rem, 3vw, 1.65rem);
+  line-height: 1.25;
+}
+
+.theory-flashcard strong {
+  display: none;
+  color: #116142;
+}
+
+.theory-flashcard.is-flipped span {
+  display: none;
+}
+
+.theory-flashcard.is-flipped strong {
+  display: block;
+}
+
+.theory-suite-actions {
+  justify-content: flex-end;
+}
+
+.theory-hint-dialog p {
+  margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+  .theory-practice-hero,
+  .theory-activity-head,
+  .theory-lab-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .theory-practice-hero,
+  .theory-activity-head {
+    display: grid;
+  }
+
+  .theory-lab-options {
+    flex-direction: row;
+  }
+
+  .theory-feedback-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 @keyframes grammarTextPop {
   from {
     opacity: 0;

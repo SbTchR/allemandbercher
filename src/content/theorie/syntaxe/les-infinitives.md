@@ -99,4 +99,3 @@ Il joue dehors, au lieu de faire ses devoirs.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5449618-infinitivsatze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

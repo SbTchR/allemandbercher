@@ -1,45 +1,365 @@
 # Audit contenu site complet
 
-Généré le 2026-04-29T07:24:05.475Z.
+Généré le 2026-05-25T09:28:54.238Z.
 
 ## Résumé
 
 - Pages source vérifiées : 100
-- Alertes bloquantes de contenu : 0
-- Avertissements images à revoir visuellement : 2
+- Alertes bloquantes de contenu : 29
+- Avertissements images à revoir visuellement : 13
 - Contrôle bloquant : existence des pages cibles, couverture du texte principal, iframes/embeds intégrés et liens externes conservés.
 - Contrôle image : les images Google Sites récurrentes ou décoratives sont traitées comme avertissements, pas comme manque de contenu textuel.
 
 ## Par section
 
 - Accueil: 2/2 sans alerte bloquante, 0 avec avertissement image
-- Conseils: 6/6 sans alerte bloquante, 0 avec avertissement image
-- Exercices: 28/28 sans alerte bloquante, 0 avec avertissement image
-- Outils en ligne: 2/2 sans alerte bloquante, 0 avec avertissement image
-- Théorie: 34/34 sans alerte bloquante, 2 avec avertissement image
-- Vocabulaire: 28/28 sans alerte bloquante, 0 avec avertissement image
+- Conseils: 1/6 sans alerte bloquante, 3 avec avertissement image
+- Exercices: 6/28 sans alerte bloquante, 4 avec avertissement image
+- Outils en ligne: 1/2 sans alerte bloquante, 0 avec avertissement image
+- Théorie: 34/34 sans alerte bloquante, 6 avec avertissement image
+- Vocabulaire: 27/28 sans alerte bloquante, 0 avec avertissement image
 
 ## Alertes bloquantes
 
-Aucune alerte bloquante détectée.
+### Compréhension écrite (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite
+- Cible : /conseils/comprehension-ecrite/
+- Alertes : couverture texte 86%
+- Couverture texte : 86% (66 lignes source)
+- Exemples de lignes non retrouvées : `Il est parfois déconcertant de se retrouver face à un texte de plusieurs paragraphes en allemand, qui de plus comporte beaucoup de mots que l’on ne comprend pas. Mais il y a quelques techniques à garder en tête qui te permettront probablement de t’en sortir.` ; `Voici des sites qui proposent quelques exercices de compréhension écrite de différents niveaux.` ; `Repère les indicateurs temporels, qui marquent souvent la structure d’un texte (ordre chronologique).` ; `P. ex.: der Brieffreund —> Brief = lettre / Freund = ami —> le correspondant`
+
+### Compréhension orale (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/compr%C3%A9hension-orale
+- Cible : /conseils/comprehension-orale/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (66 lignes source)
+- Exemples de lignes non retrouvées : `La seule façon de s'améliorer en compréhension orale est l'entraînement. Cependant, il y a quelques techniques qui pourraient t'aider à comprendre l'essentiel d'un message que tu ne peux pas comprendre totalement avec ton bagage langagier. En effet, il n'est pas toujours nécessaire de tout comprendre, la plupart du temps il suffit de repérer quelques informations parmi ce qui est dis...` ; `Quand tu es face à un exercice de CO, il faut tout d'abord repérer de quel type de compréhension il s'agit.` ; `Je lis le(s) titre(s) et la consigne . Je me demande:` ; `ce que je connais déjà sur le thème (ce qui a été fait dans les exercices précédents, culture générale)`
+
+### Expression écrite (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/expression-%C3%A9crite
+- Cible : /conseils/expression-ecrite/
+- Alertes : couverture texte 81%
+- Couverture texte : 81% (63 lignes source)
+- Exemples de lignes non retrouvées : `une liste de quelques adverbes (peut-être, probablement, parfois, certainement...)` ; `Plus tu donnes d'informations dans ton texte, pour autant qu'elles soient compréhensibles, plus tu as de chances de "marquer des points". La difficulté est généralement de trouver des idées car souvent on "ne sait pas quoi dire"... Voilà donc des exemples d'éléments que tu peux ajouter pour rendre ton texte le plus complet possible:` ; `Lorsque tu mentionne un objet ou une personne, tu peux le/la décrire à l'aide d'adjectifs (couleur, taille, caractère, etc.) ou d'une phrase relative (p. ex. "le chien qui est gentil").` ; `Pour illustrer tes propos, tu peux donner des exemples, si possible sous forme de phrases complètes. --> p. ex. "J'aime faire du sport. Après l'école, je joue au football avec mes amis et le samedi, je vais nager."`
+
+### Expression orale (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/expression-orale
+- Cible : /conseils/expression-orale/
+- Alertes : couverture texte 63%
+- Couverture texte : 63% (46 lignes source)
+- Exemples de lignes non retrouvées : `une liste de verbes fréquemment utilisés et/ou spécifiques au thème` ; `une liste de noms spécifiques au thème, un peu compliqués (ex. pour le thème du Sport : der Verein, die Mannschaft, ... )` ; `une liste de quelques adverbes (peut-être, probablement, parfois, certainement...)` ; `une liste de mots très fréquents (quelque chose, quelqu'un, personne, ces, chaque, aussi, seulement, encore, ...). Tu en trouves une sur cette page .`
+
+### Vocabulaire (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/vocabulaire
+- Cible : /conseils/vocabulaire/
+- Alertes : couverture texte 51%
+- Couverture texte : 51% (41 lignes source)
+- Exemples de lignes non retrouvées : `App pour smartphone recommandée : Cabuu` ; `Il nous est donc impossible de retenir une grande quantité de mots en une seule fois, même pour un bref instant. C’est pourquoi il est nécessaire de découper la liste de voc en plusieurs petites parties (5-6 mots) et de se concentrer sur une partie à la foi. Cela n’empêche pas d’apprendre plusieurs parties le même jour, il faut juste les entrainer l’une après l’autre.` ; `Le vocabulaire ne s’enregistre pas sous forme de liste dans notre cerveau. De manière naturelle, chaque mot est intégré dans un réseau qui comprends tous les autres mots que l’on connait, dans n’importe quelle langue, ainsi que les représentations concrètes de ces mots (images).` ; `Il est donc indispensable d ’associer une image , un mouvement, une émotion, un ressenti, etc. à chaque mot que l’on veut retenir à long terme.`
+
+### K1 - Los geht's (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k1-los-gehts
+- Cible : /exercices/10h/k1-los-gehts/
+- Alertes : couverture texte 82%
+- Couverture texte : 82% (38 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `raconter ses vacances ou un échange linguistique par oral ou par écrit.` ; `Pour raconter tes vacances, tu as besoin des phrases-types suivantes:` ; `Exercices de compréhension écrite en ligne sur le thème des vacances ou échanges linguistiques.`
+
+### K2 - Fit und sportlich ! (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k2-fit-und-sportlich
+- Cible : /exercices/10h/k2-fit-und-sportlich/
+- Alertes : couverture texte 73%
+- Couverture texte : 73% (44 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `décrire son sport et de dire ce dont on a besoin pour le pratiquer.` ; `les nombres ordinaux (premier, deuxième, ...)` ; `Pour parler d'un sport, tu auras besoin de ces phrases-types:`
+
+### K3 - Wie geht's denn so ? (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k3-wie-gehts-denn-so
+- Cible : /exercices/10h/k3-wie-gehts-denn-so/
+- Alertes : couverture texte 50%
+- Couverture texte : 50% (12 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `de parler de ses émotions dans différentes situations.` ; `d'expliquer pourquoi il se sent heureux, triste, ...` ; `Subordonnées avec " wenn " (= quand, si)`
+
+### K4 - Kaufen, verkaufen, leihen (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k4-kaufen-verkaufen-leihen
+- Cible : /exercices/10h/k4-kaufen-verkaufen-leihen/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (5 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K5 - Schmeckt's ? (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k5-schmeckts
+- Cible : /exercices/10h/k5-schmeckts/
+- Alertes : couverture texte 82%
+- Couverture texte : 82% (33 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `déterminants possessifs au datif ( meinem, deinem, seinem, etc. )` ; `Commander quelque chose à boire ou à manger` ; `Quelques exercices en ligne pour entrainer le vocabulaire et la formulation de phrases sur ce sujet:`
+
+### K6 - Lies mal wieder ! (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k6-lies-mal-wieder
+- Cible : /exercices/10h/k6-lies-mal-wieder/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (5 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K7 - Geld allein macht nicht glücklich (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k7-geld-allein-macht-nicht-gl%C3%BCcklich
+- Cible : /exercices/10h/k7-geld-allein-macht-nicht-glucklich/
+- Alertes : couverture texte 55%
+- Couverture texte : 55% (11 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `Exercices à faire pendant les passages du test` ; `Fais les exercices suivants dans l'ordre . Tu peux t'aider de www.leo.org` ; `1) Lis l'article sur ce site et répond sur le forum à la question "Gagnes-tu de l'argent de poche? Par qui? Pourquoi?" à l'aide du formulaire qui est en bas de la page.`
+
+### K8 - Talente gesucht (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k8-talente-gesucht
+- Cible : /exercices/10h/k8-talente-gesucht/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (5 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K1 - Meine Stärken, meine Schwächen (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/11h/k1-meine-st%C3%A4rken-meine-schw%C3%A4chen
+- Cible : /exercices/11h/k1-meine-starken-meine-schwachen/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (5 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K3 - Für die Umwelt (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/11h/k3-f%C3%BCr-die-umwelt
+- Cible : /exercices/11h/k3-fur-die-umwelt/
+- Alertes : couverture texte 75%
+- Couverture texte : 75% (8 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `Exercices divers à faire en ligne:`
+
+### K4 - Ich, du, wir (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/11h/k4-ich-du-wir
+- Cible : /exercices/11h/k4-ich-du-wir/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (5 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K5 - Ich wünsche mir... (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/11h/k5-ich-w%C3%BCnsche-mir
+- Cible : /exercices/11h/k5-ich-wunsche-mir/
+- Alertes : couverture texte 83%
+- Couverture texte : 83% (6 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K6 - Wir tun was! (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/11h/k6-wir-tun-was
+- Cible : /exercices/11h/k6-wir-tun-was/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (5 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K7 - So war es - so ist es jetzt (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/11h/k7-so-war-es-so-ist-es-jetzt
+- Cible : /exercices/11h/k7-so-war-es-so-ist-es-jetzt/
+- Alertes : couverture texte 89%
+- Couverture texte : 89% (18 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `Exercice de compréhension écrite en ligne`
+
+### K8 - Wie geht's weiter? (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/11h/k8-wie-gehts-weiter
+- Cible : /exercices/11h/k8-wie-gehts-weiter/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (5 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...`
+
+### K1 - Die neue Schule (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-1-die-neue-schule
+- Cible : /exercices/9h/kap-1-die-neue-schule/
+- Alertes : couverture texte 73%
+- Couverture texte : 73% (55 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `rassembler et échanger des informations` ; `parler de sa nouvelle école/classe et de son nouveau prof` ; `Sich vorstellen (se présenter)`
+
+### K2 - Meine Stadt (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-2-meine-stadt
+- Cible : /exercices/9h/kap-2-meine-stadt/
+- Alertes : couverture texte 72%
+- Couverture texte : 72% (58 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `indicateurs de lieux (prépositions)` ; `Expression` ; `Pour indiquer où se trouve un lieu, on utilise un groupe prépositionnel. Nous avons besoin des mêmes prépositions que pour indiquer où se trouve une salle (voir Kapitel1).`
+
+### K3 - Meine Familie (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-3-meine-familie
+- Cible : /exercices/9h/kap-3-meine-familie/
+- Alertes : couverture texte 63%
+- Couverture texte : 63% (35 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `Les déterminants possessifs sont les déterminants qui indiquent à qui appartient le nom qu'il précèdent. Chaque personne (je, tu, il, elle, etc.) a un déterminant possessif qui lui est propre en français comme en allemand.` ; `Les déterminants possessifs sont des déterminants définis. En allemand, ils se déclinent au nominatif, accusatif ou datif selon la place qu'ils occupent dans la phrase. Tu trouves les tableaux de déclinaisons des déterminants en cliquant sur ce lien .` ; `En bref, ces déterminants sont au datif lorsque le groupe nominal dont ils font partie est:`
+
+### K5 - Wir fahren weg! (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-5-wir-fahren-weg
+- Cible : /exercices/9h/kap-5-wir-fahren-weg/
+- Alertes : couverture texte 55%
+- Couverture texte : 55% (31 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `indicateurs de direction (prépositions)` ; `verbe de modalité: möchten` ; `Wohin fährst du ? Où vas-tu ? (dans quel direction)`
+
+### K6 - Klassenfahrt nach Basel (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-6-klassenfahrt-nach-basel
+- Cible : /exercices/9h/kap-6-klassenfahrt-nach-basel/
+- Alertes : couverture texte 75%
+- Couverture texte : 75% (44 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `pronoms personnels à l'accusatif ( mich, dich, ihn, ... )` ; `prépositions de direction ( zum Bahnhof, ... )` ; `Petit jeu pour entrainer le voc et les structures du chapitre`
+
+### K7 - Freunde haben - Freunde finden (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-7-freunde-haben-freunde-finden
+- Cible : /exercices/9h/kap-7-freunde-haben-freunde-finden/
+- Alertes : couverture texte 88%
+- Couverture texte : 88% (40 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `pronoms personnels au datif ( mir, dir, ihm, ... )` ; `quelques verbes importants qui sont suivis du datif ( schmecken, gefallen, helfen, ... )` ; `Personalpronomen im Akkusativ und im Dativ`
+
+### K8 - Bei uns zu Hause (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-8-bei-uns-zu-hause
+- Cible : /exercices/9h/kap-8-bei-uns-zu-hause/
+- Alertes : couverture texte 80%
+- Couverture texte : 80% (30 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `verbes de position et de déplacement ( liegen - legen, stehen - stellen, ... )` ; `Quelques exercices pour entrainer le thème de la maison:` ; `Quelques exercices de compréhension écrite sur le thème de la maison en ligne:`
+
+### Outils en ligne (Outils en ligne)
+
+- Source : https://www.allemandbercher.ch/outils-en-ligne
+- Cible : /outils-en-ligne/
+- Alertes : couverture texte 46%; liens externes manquants 1
+- Couverture texte : 46% (48 lignes source)
+- Exemples de lignes non retrouvées : `Sur le site www.genialklick.ch , tu trouves des exercices complémentaires en lien avec les chapitres de la méthode utilisée en classe.` ; `Il y a presque à chaque fois 3 versions de chaque exercice, choisi donc la version qui correspond à ton niveau (carré gris: niveau1, carré bleu clair: niveau 2, carré bleu foncé: VP).` ; `Le site internet www.quizlet.com (aussi disponible sous forme d'application pour smartphone) permet d'apprendre le vocabulaire à l'aide de différents exercices. Tout le vocabulaire de la méthode Geni@l Klick y a été ajouté sous forme de listes par chapitre. Les mots sont écrits au singulier et au pluriel en toutes lettres et les formes conjuguées des verbes aussi. Clique sur les liens suivant pour y accéder:` ; `Inscription à une classe`
+
+### Vocabulaire (Vocabulaire)
+
+- Source : https://www.allemandbercher.ch/vocabulaire
+- Cible : /vocabulaire/
+- Alertes : couverture texte 86%
+- Couverture texte : 86% (14 lignes source)
+- Exemples de lignes non retrouvées : `Nouvelle application "faite-maison"` ; `Application smartphone recommandée : Cabuu`
+
 
 ## Avertissements images
 
 Ces points ne signalent pas un manque de texte, de lien ou d’exercice interactif. Ils indiquent seulement que la source Google Sites contient des images qui devront être arbitrées lors de la phase de finition visuelle.
+
+### Compréhension écrite (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite
+- Cible : /conseils/comprehension-ecrite/
+- Alertes : images Google Sites possibles à arbitrer 5
+- Couverture texte : 86% (66 lignes source)
+- Exemples de lignes non retrouvées : `Il est parfois déconcertant de se retrouver face à un texte de plusieurs paragraphes en allemand, qui de plus comporte beaucoup de mots que l’on ne comprend pas. Mais il y a quelques techniques à garder en tête qui te permettront probablement de t’en sortir.` ; `Voici des sites qui proposent quelques exercices de compréhension écrite de différents niveaux.` ; `Repère les indicateurs temporels, qui marquent souvent la structure d’un texte (ordre chronologique).` ; `P. ex.: der Brieffreund —> Brief = lettre / Freund = ami —> le correspondant`
+
+### Expression écrite (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/expression-%C3%A9crite
+- Cible : /conseils/expression-ecrite/
+- Alertes : images Google Sites possibles à arbitrer 4
+- Couverture texte : 81% (63 lignes source)
+- Exemples de lignes non retrouvées : `une liste de quelques adverbes (peut-être, probablement, parfois, certainement...)` ; `Plus tu donnes d'informations dans ton texte, pour autant qu'elles soient compréhensibles, plus tu as de chances de "marquer des points". La difficulté est généralement de trouver des idées car souvent on "ne sait pas quoi dire"... Voilà donc des exemples d'éléments que tu peux ajouter pour rendre ton texte le plus complet possible:` ; `Lorsque tu mentionne un objet ou une personne, tu peux le/la décrire à l'aide d'adjectifs (couleur, taille, caractère, etc.) ou d'une phrase relative (p. ex. "le chien qui est gentil").` ; `Pour illustrer tes propos, tu peux donner des exemples, si possible sous forme de phrases complètes. --> p. ex. "J'aime faire du sport. Après l'école, je joue au football avec mes amis et le samedi, je vais nager."`
+
+### Vocabulaire (Conseils)
+
+- Source : https://www.allemandbercher.ch/conseils/vocabulaire
+- Cible : /conseils/vocabulaire/
+- Alertes : images Google Sites possibles à arbitrer 1
+- Couverture texte : 51% (41 lignes source)
+- Exemples de lignes non retrouvées : `App pour smartphone recommandée : Cabuu` ; `Il nous est donc impossible de retenir une grande quantité de mots en une seule fois, même pour un bref instant. C’est pourquoi il est nécessaire de découper la liste de voc en plusieurs petites parties (5-6 mots) et de se concentrer sur une partie à la foi. Cela n’empêche pas d’apprendre plusieurs parties le même jour, il faut juste les entrainer l’une après l’autre.` ; `Le vocabulaire ne s’enregistre pas sous forme de liste dans notre cerveau. De manière naturelle, chaque mot est intégré dans un réseau qui comprends tous les autres mots que l’on connait, dans n’importe quelle langue, ainsi que les représentations concrètes de ces mots (images).` ; `Il est donc indispensable d ’associer une image , un mouvement, une émotion, un ressenti, etc. à chaque mot que l’on veut retenir à long terme.`
+
+### K1 - Los geht's (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k1-los-gehts
+- Cible : /exercices/10h/k1-los-gehts/
+- Alertes : images Google Sites possibles à arbitrer 1
+- Couverture texte : 82% (38 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `raconter ses vacances ou un échange linguistique par oral ou par écrit.` ; `Pour raconter tes vacances, tu as besoin des phrases-types suivantes:` ; `Exercices de compréhension écrite en ligne sur le thème des vacances ou échanges linguistiques.`
+
+### K2 - Fit und sportlich ! (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/10h/k2-fit-und-sportlich
+- Cible : /exercices/10h/k2-fit-und-sportlich/
+- Alertes : images Google Sites possibles à arbitrer 2
+- Couverture texte : 73% (44 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `décrire son sport et de dire ce dont on a besoin pour le pratiquer.` ; `les nombres ordinaux (premier, deuxième, ...)` ; `Pour parler d'un sport, tu auras besoin de ces phrases-types:`
+
+### K1 - Die neue Schule (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-1-die-neue-schule
+- Cible : /exercices/9h/kap-1-die-neue-schule/
+- Alertes : images Google Sites possibles à arbitrer 1
+- Couverture texte : 73% (55 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `rassembler et échanger des informations` ; `parler de sa nouvelle école/classe et de son nouveau prof` ; `Sich vorstellen (se présenter)`
+
+### K3 - Meine Familie (Exercices)
+
+- Source : https://www.allemandbercher.ch/exercices/9h/kap-3-meine-familie
+- Cible : /exercices/9h/kap-3-meine-familie/
+- Alertes : images Google Sites possibles à arbitrer 1
+- Couverture texte : 63% (35 lignes source)
+- Exemples de lignes non retrouvées : `L'élève est capable de...` ; `Les déterminants possessifs sont les déterminants qui indiquent à qui appartient le nom qu'il précèdent. Chaque personne (je, tu, il, elle, etc.) a un déterminant possessif qui lui est propre en français comme en allemand.` ; `Les déterminants possessifs sont des déterminants définis. En allemand, ils se déclinent au nominatif, accusatif ou datif selon la place qu'ils occupent dans la phrase. Tu trouves les tableaux de déclinaisons des déterminants en cliquant sur ce lien .` ; `En bref, ces déterminants sont au datif lorsque le groupe nominal dont ils font partie est:`
 
 ### Théorie (Théorie)
 
 - Source : https://www.allemandbercher.ch/th%C3%A9orie
 - Cible : /theorie/
 - Alertes : images Google Sites possibles à arbitrer 3
-- Couverture texte : 100% (54 lignes source)
+- Couverture texte : 91% (54 lignes source)
+- Exemples de lignes non retrouvées : `Dans ces cas de figure, il y a toujours:` ; `un verbe principal (celui qui est conjugué avec le sujet)` ; `une forme verbale invariable (qui ne change pas en fonction du sujet, soit le participe passé ou un verbe à l’infinitif)` ; `⚠️ Il est donc important de garder en tête que lorsqu’on parle de « verbe principal » il s’agit toujours du verbe qui est conjugué avec le sujet !`
+
+### Le génitif (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9nitif
+- Cible : /theorie/grammaire/le-genitif/
+- Alertes : images Google Sites possibles à arbitrer 1
+- Couverture texte : 92% (24 lignes source)
+- Exemples de lignes non retrouvées : `Übung` ; `Autres exercices à faire en ligne`
+
+### Les cas (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base
+- Cible : /theorie/grammaire/les-cas-theorie-de-base/
+- Alertes : images Google Sites possibles à arbitrer 5
+- Couverture texte : 92% (61 lignes source)
+- Exemples de lignes non retrouvées : `—> « seiner Freundin » (fém.)` ; `Pour le groupe prépositionnel , cela va dépendre de la préposition. Les explications se trouvent sur la page des prépositions .` ; `Que faut-t-il donc connaître pour accorder correctement un groupe dans une phrase ?` ; `Les déclinaisons des adjectifs sont apprises en 10H.`
+
+### Les prépositions (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions
+- Cible : /theorie/grammaire/les-prepositions/
+- Alertes : images Google Sites possibles à arbitrer 4
+- Couverture texte : 93% (54 lignes source)
+- Exemples de lignes non retrouvées : `être capable de définir si un verbe implique un déplacement ou non.` ; `connaître le genre et le nombre des mots qui sont utilisés (féminin, masculin, neutre, pluriel).` ; `avoir en tête les tableaux de déclinaisons des déterminants et adjectifs (à partir de 10H) --> les savoir par coeur !` ; `Quelques exercices pour entrainer les groupes prépositionnels avec verbes de position et de mouvement .`
+
+### Tableaux de déclinaisons (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/tableaux-de-d%C3%A9clinaisons
+- Cible : /theorie/grammaire/tableaux-de-declinaisons/
+- Alertes : images Google Sites possibles à arbitrer 4
+- Couverture texte : 100% (4 lignes source)
 
 ### La place du verbe principal (Théorie)
 
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal
 - Cible : /theorie/syntaxe/la-place-du-verbe-principal/
 - Alertes : images Google Sites possibles à arbitrer 1
-- Couverture texte : 100% (37 lignes source)
+- Couverture texte : 92% (37 lignes source)
+- Exemples de lignes non retrouvées : `Ces 3 types de phrases sont détaillés sur des pages spécifiques (clique sur les mots soulignés).` ; `—> suite dans le même ordre` ; `etc.`
 
 
 ## Pages vérifiées
@@ -47,41 +367,41 @@ Ces points ne signalent pas un manque de texte, de lien ou d’exercice interact
 - [OK] Accueil - Accueil -> /
 - [OK] Accueil - Accueil -> /
 - [OK] Conseils - Conseils -> /conseils/
-- [OK] Conseils - Compréhension écrite -> /conseils/comprehension-ecrite/
-- [OK] Conseils - Compréhension orale -> /conseils/comprehension-orale/
-- [OK] Conseils - Expression écrite -> /conseils/expression-ecrite/
-- [OK] Conseils - Expression orale -> /conseils/expression-orale/
-- [OK] Conseils - Vocabulaire -> /conseils/vocabulaire/
+- [À corriger + image à revoir] Conseils - Compréhension écrite -> /conseils/comprehension-ecrite/
+- [À corriger] Conseils - Compréhension orale -> /conseils/comprehension-orale/
+- [À corriger + image à revoir] Conseils - Expression écrite -> /conseils/expression-ecrite/
+- [À corriger] Conseils - Expression orale -> /conseils/expression-orale/
+- [À corriger + image à revoir] Conseils - Vocabulaire -> /conseils/vocabulaire/
 - [OK] Exercices - Geni@l -> /exercices/
 - [OK] Exercices - 10H -> /exercices/10h/
-- [OK] Exercices - K1 - Los geht's -> /exercices/10h/k1-los-gehts/
-- [OK] Exercices - K2 - Fit und sportlich ! -> /exercices/10h/k2-fit-und-sportlich/
-- [OK] Exercices - K3 - Wie geht's denn so ? -> /exercices/10h/k3-wie-gehts-denn-so/
-- [OK] Exercices - K4 - Kaufen, verkaufen, leihen -> /exercices/10h/k4-kaufen-verkaufen-leihen/
-- [OK] Exercices - K5 - Schmeckt's ? -> /exercices/10h/k5-schmeckts/
-- [OK] Exercices - K6 - Lies mal wieder ! -> /exercices/10h/k6-lies-mal-wieder/
-- [OK] Exercices - K7 - Geld allein macht nicht glücklich -> /exercices/10h/k7-geld-allein-macht-nicht-glucklich/
-- [OK] Exercices - K8 - Talente gesucht -> /exercices/10h/k8-talente-gesucht/
+- [À corriger + image à revoir] Exercices - K1 - Los geht's -> /exercices/10h/k1-los-gehts/
+- [À corriger + image à revoir] Exercices - K2 - Fit und sportlich ! -> /exercices/10h/k2-fit-und-sportlich/
+- [À corriger] Exercices - K3 - Wie geht's denn so ? -> /exercices/10h/k3-wie-gehts-denn-so/
+- [À corriger] Exercices - K4 - Kaufen, verkaufen, leihen -> /exercices/10h/k4-kaufen-verkaufen-leihen/
+- [À corriger] Exercices - K5 - Schmeckt's ? -> /exercices/10h/k5-schmeckts/
+- [À corriger] Exercices - K6 - Lies mal wieder ! -> /exercices/10h/k6-lies-mal-wieder/
+- [À corriger] Exercices - K7 - Geld allein macht nicht glücklich -> /exercices/10h/k7-geld-allein-macht-nicht-glucklich/
+- [À corriger] Exercices - K8 - Talente gesucht -> /exercices/10h/k8-talente-gesucht/
 - [OK] Exercices - 11H -> /exercices/11h/
-- [OK] Exercices - K1 - Meine Stärken, meine Schwächen -> /exercices/11h/k1-meine-starken-meine-schwachen/
+- [À corriger] Exercices - K1 - Meine Stärken, meine Schwächen -> /exercices/11h/k1-meine-starken-meine-schwachen/
 - [OK] Exercices - K2 - Wir und die Medien -> /exercices/11h/k2-wir-und-die-medien/
-- [OK] Exercices - K3 - Für die Umwelt -> /exercices/11h/k3-fur-die-umwelt/
-- [OK] Exercices - K4 - Ich, du, wir -> /exercices/11h/k4-ich-du-wir/
-- [OK] Exercices - K5 - Ich wünsche mir... -> /exercices/11h/k5-ich-wunsche-mir/
-- [OK] Exercices - K6 - Wir tun was! -> /exercices/11h/k6-wir-tun-was/
-- [OK] Exercices - K7 - So war es - so ist es jetzt -> /exercices/11h/k7-so-war-es-so-ist-es-jetzt/
-- [OK] Exercices - K8 - Wie geht's weiter? -> /exercices/11h/k8-wie-gehts-weiter/
+- [À corriger] Exercices - K3 - Für die Umwelt -> /exercices/11h/k3-fur-die-umwelt/
+- [À corriger] Exercices - K4 - Ich, du, wir -> /exercices/11h/k4-ich-du-wir/
+- [À corriger] Exercices - K5 - Ich wünsche mir... -> /exercices/11h/k5-ich-wunsche-mir/
+- [À corriger] Exercices - K6 - Wir tun was! -> /exercices/11h/k6-wir-tun-was/
+- [À corriger] Exercices - K7 - So war es - so ist es jetzt -> /exercices/11h/k7-so-war-es-so-ist-es-jetzt/
+- [À corriger] Exercices - K8 - Wie geht's weiter? -> /exercices/11h/k8-wie-gehts-weiter/
 - [OK] Exercices - 9H -> /exercices/9h/
-- [OK] Exercices - K1 - Die neue Schule -> /exercices/9h/kap-1-die-neue-schule/
-- [OK] Exercices - K2 - Meine Stadt -> /exercices/9h/kap-2-meine-stadt/
-- [OK] Exercices - K3 - Meine Familie -> /exercices/9h/kap-3-meine-familie/
+- [À corriger + image à revoir] Exercices - K1 - Die neue Schule -> /exercices/9h/kap-1-die-neue-schule/
+- [À corriger] Exercices - K2 - Meine Stadt -> /exercices/9h/kap-2-meine-stadt/
+- [À corriger + image à revoir] Exercices - K3 - Meine Familie -> /exercices/9h/kap-3-meine-familie/
 - [OK] Exercices - K4 - Alles Gute -> /exercices/9h/kap-4-alles-gute/
-- [OK] Exercices - K5 - Wir fahren weg! -> /exercices/9h/kap-5-wir-fahren-weg/
-- [OK] Exercices - K6 - Klassenfahrt nach Basel -> /exercices/9h/kap-6-klassenfahrt-nach-basel/
-- [OK] Exercices - K7 - Freunde haben - Freunde finden -> /exercices/9h/kap-7-freunde-haben-freunde-finden/
-- [OK] Exercices - K8 - Bei uns zu Hause -> /exercices/9h/kap-8-bei-uns-zu-hause/
+- [À corriger] Exercices - K5 - Wir fahren weg! -> /exercices/9h/kap-5-wir-fahren-weg/
+- [À corriger] Exercices - K6 - Klassenfahrt nach Basel -> /exercices/9h/kap-6-klassenfahrt-nach-basel/
+- [À corriger] Exercices - K7 - Freunde haben - Freunde finden -> /exercices/9h/kap-7-freunde-haben-freunde-finden/
+- [À corriger] Exercices - K8 - Bei uns zu Hause -> /exercices/9h/kap-8-bei-uns-zu-hause/
 - [OK] Outils en ligne - NAD-Maschine -> /outils-en-ligne/nad-maschine/
-- [OK] Outils en ligne - Outils en ligne -> /outils-en-ligne/
+- [À corriger] Outils en ligne - Outils en ligne -> /outils-en-ligne/
 - [OK + image à revoir] Théorie - Théorie -> /theorie/
 - [OK] Théorie - Conjugaison -> /theorie/conjugaison/
 - [OK] Théorie - Futur -> /theorie/conjugaison/futur/
@@ -94,14 +414,14 @@ Ces points ne signalent pas un manque de texte, de lien ou d’exercice interact
 - [OK] Théorie - Verbes de modalité -> /theorie/conjugaison/verbes-de-modalite/
 - [OK] Théorie - Grammaire -> /theorie/grammaire/
 - [OK] Théorie - Le comparatif et le superlatif -> /theorie/grammaire/le-comparatif/
-- [OK] Théorie - Le génitif -> /theorie/grammaire/le-genitif/
+- [OK + image à revoir] Théorie - Le génitif -> /theorie/grammaire/le-genitif/
 - [OK] Théorie - Le superlatif -> /theorie/grammaire/le-superlatif/
 - [OK] Théorie - Les adjectifs -> /theorie/grammaire/les-adjectifs/
-- [OK] Théorie - Les cas -> /theorie/grammaire/les-cas-theorie-de-base/
-- [OK] Théorie - Les prépositions -> /theorie/grammaire/les-prepositions/
+- [OK + image à revoir] Théorie - Les cas -> /theorie/grammaire/les-cas-theorie-de-base/
+- [OK + image à revoir] Théorie - Les prépositions -> /theorie/grammaire/les-prepositions/
 - [OK] Théorie - Les pronoms personnels -> /theorie/grammaire/les-pronoms-personnels/
 - [OK] Théorie - Les déterminants possessifs -> /theorie/grammaire/les-pronoms-possessifs/
-- [OK] Théorie - Tableaux de déclinaisons -> /theorie/grammaire/tableaux-de-declinaisons/
+- [OK + image à revoir] Théorie - Tableaux de déclinaisons -> /theorie/grammaire/tableaux-de-declinaisons/
 - [OK] Théorie - Syntaxe -> /theorie/syntaxe/
 - [OK] Théorie - damit, während, bevor, nachdem, als, ... -> /theorie/syntaxe/damit-wahrend-bevor-nachdem-als-obwohl/
 - [OK] Théorie - dass -> /theorie/syntaxe/dass/
@@ -116,7 +436,7 @@ Ces points ne signalent pas un manque de texte, de lien ou d’exercice interact
 - [OK] Théorie - und, oder, aber, denn, also -> /theorie/syntaxe/und-oder-aber-denn-also/
 - [OK] Théorie - weil -> /theorie/syntaxe/weil/
 - [OK] Théorie - wenn -> /theorie/syntaxe/wenn/
-- [OK] Vocabulaire - Vocabulaire -> /vocabulaire/
+- [À corriger] Vocabulaire - Vocabulaire -> /vocabulaire/
 - [OK] Vocabulaire - Wortschatz 10H -> /vocabulaire/10h/
 - [OK] Vocabulaire - Kapitel 1 -> /vocabulaire/10h/gk1011-kapitel-1/
 - [OK] Vocabulaire - GK1011 Kapitel 2 -> /vocabulaire/10h/gk1011-kapitel-2/

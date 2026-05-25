@@ -37,4 +37,3 @@ Il faut aussi faire attention à la pronominalisation lorsqu’on passe d’une 
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5449467-indirekte_fragen.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

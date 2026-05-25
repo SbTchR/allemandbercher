@@ -71,4 +71,3 @@ v. à la fin v. en 2e p.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447976-weil_satze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

@@ -57,4 +57,3 @@ Quelques exercices pour entrainer les phrases relatives.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5449021-relativsatze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

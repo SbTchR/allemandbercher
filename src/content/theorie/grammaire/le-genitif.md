@@ -61,4 +61,3 @@ Les pronoms personnels se déclinent aussi au génitif, mais on ne les utilise q
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5309138-genitiv.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

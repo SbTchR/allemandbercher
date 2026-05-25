@@ -84,12 +84,3 @@ Konj. II. du passé Konj. II du passé
 - [https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel](https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel)
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332730-konjunktiv_ii_a.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="../../../embeds/theorie/theorie-conjugaison-konjunktiv-ii-02-konjunktiv-ii-kapitel-5-texte-a-trous.html" title="Konjunktiv II – Kapitel 5 (Texte à trous)" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332744-konjunktiv_ii_b.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332784-konjunktiv_ii_c.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5332813-konjunktiv_ii_d.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

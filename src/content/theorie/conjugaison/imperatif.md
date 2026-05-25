@@ -91,6 +91,3 @@ Quelques exercices en ligne pour entrainer l'impératif.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5449750-imperativsatze_2.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5044744-imperativsatze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

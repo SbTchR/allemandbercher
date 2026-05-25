@@ -69,6 +69,3 @@ v. à la fin v. en 2e p.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/fr/activiteeducatives/5040909/html5/nebensatze_mit_damit.htm" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/fr/activiteeducatives/5040936/html5/nebensatze_mit_damit_2.htm" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

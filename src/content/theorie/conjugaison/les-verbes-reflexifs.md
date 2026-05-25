@@ -33,4 +33,3 @@ Exemple: Je me lave les cheveux . = Ich wasche mir die Haare .
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5458084-reflexive_verben.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

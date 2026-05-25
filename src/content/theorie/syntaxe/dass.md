@@ -121,6 +121,3 @@ Quelques exercices pour entrainer les phrases avec dass .
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5448080-weil_satze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5448880-weil_satze.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

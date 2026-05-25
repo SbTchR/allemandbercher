@@ -143,6 +143,3 @@ Les déclinaisons des adjectifs sont apprises en 10H.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://quizlet.com/613523315/learn/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5038069-les_cas.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

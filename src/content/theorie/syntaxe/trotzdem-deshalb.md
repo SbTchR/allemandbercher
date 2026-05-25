@@ -39,4 +39,3 @@ Exemple: Ich bin krank, aber ich gehe trotzdem in die Schule.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447822-trotzdem_deshalb.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

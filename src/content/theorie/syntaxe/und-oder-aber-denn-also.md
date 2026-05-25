@@ -51,4 +51,3 @@ Eva spielt gern Fussball, aber (sie) mag nicht Tennis.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5447792-und_aber_denn_also_oder.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

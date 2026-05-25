@@ -73,6 +73,3 @@ Quelques exercices pour entrainer le prétérit des verbes réguliers et irrégu
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://quizlet.com/379058535/learn/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>
-
-<iframe class="content-embed tall" src="https://quizlet.com/382875729/match/embed?i=g2phv&x=1jj1" title="Quizlet intégré" loading="lazy" allowfullscreen></iframe>

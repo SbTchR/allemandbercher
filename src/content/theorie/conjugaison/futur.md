@@ -25,4 +25,3 @@ ex: Je mangerai une pomme. = Ich werde einen Apfel essen.
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5457992-futur.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>

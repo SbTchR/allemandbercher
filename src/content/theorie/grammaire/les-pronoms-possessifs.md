@@ -71,4 +71,3 @@ Pour maîtriser l’accord et la déclinaison des pronoms possessifs, tu dois do
 
 ## Exercices interactifs intégrés
 
-<iframe class="content-embed tall" src="https://fr.educaplay.com/jeu/5039470-possessivartikel.html" title="Educaplay intégré" loading="lazy" allowfullscreen></iframe>
