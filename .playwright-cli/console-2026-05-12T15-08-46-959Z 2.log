@@ -1,0 +1,7 @@
+[ 3798191ms] [LOG] [vite] server connection lost. Polling for restart... @ http://127.0.0.1:4321/@vite/client:1598
+[ 3798493ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4321/backgroundmap.svg:0
+[ 3798493ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4321/@vite/client:0
+[ 3798494ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:4321/@id/astro/runtime/client/dev-toolbar/entrypoint.js:0
+[ 3798494ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:4321/src/styles/global.css:0
+[ 3798494ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_RESET @ http://127.0.0.1:4321/src/components/CasesPracticeSuite.astro?astro&type=script&index=0&lang.ts:0
+[ 3798508ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:4321/allemandbercher/favicon.svg:0
