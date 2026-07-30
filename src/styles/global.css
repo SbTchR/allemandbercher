@@ -6378,6 +6378,10 @@ h2 {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .theory-feedback-row p {
+    flex-basis: auto;
+  }
 }
 
 @keyframes grammarTextPop {

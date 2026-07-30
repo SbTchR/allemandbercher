@@ -1,434 +1,173 @@
 ---
-const labOptions = [
+const items = [
   {
-    label: 'Sujet en premier',
-    sentence:
-      '<span class="mark-subject">Der Schüler</span> <span class="mark-verb">vergisst</span> <span class="mark-object">sein Buch</span>.',
-    note: 'Le sujet occupe la 1ère position. Le verbe principal reste en 2e position.',
+    prompt: 'Après l’école, nous jouons au football.',
+    options: [
+      'Nach der Schule wir spielen Fussball.',
+      'Nach der Schule spielen wir Fussball.',
+      'Nach spielen der Schule wir Fussball.',
+    ],
+    answer: 1,
+    hint: 'Nach der Schule forme tout le premier groupe. Le verbe conjugué vient juste après.',
+    solution:
+      '<span class="mark-time">Nach der Schule</span> <span class="mark-verb">spielen</span> <span class="mark-subject">wir</span> Fussball.',
   },
   {
-    label: 'Temps en premier',
-    sentence:
-      '<span class="mark-time">Heute</span> <span class="mark-verb">vergisst</span> <span class="mark-subject">der Schüler</span> <span class="mark-object">sein Buch</span>.',
-    note: 'Le complément de temps prend la 1ère position. Le sujet passe après le verbe.',
-  },
-  {
-    label: 'Passé composé',
-    sentence:
-      '<span class="mark-time">Gestern</span> <span class="mark-verb">hat</span> <span class="mark-subject">der Schüler</span> <span class="mark-object">sein Buch</span> <span class="mark-verbal-tail">vergessen</span>.',
-    note: 'L’auxiliaire conjugué est en 2e position. Le participe passé reste à la fin.',
-  },
-];
-
-const identifyItems = [
-  {
-    prompt: 'Clique sur le verbe principal.',
-    tokens: ['Der Schüler', 'hat', 'sein Buch', 'vergessen'],
-    answer: 'hat',
-    hint: 'Le participe passé n’est pas conjugué avec le sujet.',
-  },
-  {
-    prompt: 'Clique sur le verbe principal.',
-    tokens: ['Heute', 'will', 'der Schüler', 'nicht in die Schule', 'gehen'],
-    answer: 'will',
-    hint: 'Avec un verbe de modalité, l’infinitif se place à la fin.',
-  },
-  {
-    prompt: 'Clique sur le verbe principal.',
-    tokens: ['Morgen', 'machen', 'wir', 'eine Übung'],
-    answer: 'machen',
-    hint: 'Cherche le verbe qui change si le sujet change.',
-  },
-  {
-    prompt: 'Clique sur le verbe principal.',
-    tokens: ['Anna', 'muss', 'ihr Zimmer', 'aufräumen'],
-    answer: 'muss',
-    hint: 'L’infinitif reste à la fin de la phrase.',
-  },
-];
-
-const gapItems = [
-  {
-    prompt: 'Aujourd’hui, l’élève oublie son livre.',
-    parts: ['Heute ', ' der Schüler sein Buch.'],
-    gaps: [{ answer: 'vergisst', aliases: [] }],
+    prompt: 'Aujourd’hui, Anna veut lire ce livre.',
+    options: [
+      'Heute Anna will dieses Buch lesen.',
+      'Heute will Anna lesen dieses Buch.',
+      'Heute will Anna dieses Buch lesen.',
+    ],
+    answer: 2,
+    hint: 'Le modal conjugué occupe la position 2 et l’infinitif reste à la fin.',
+    solution:
+      '<span class="mark-time">Heute</span> <span class="mark-verb">will</span> <span class="mark-subject">Anna</span> dieses Buch <span class="mark-verbal-tail">lesen</span>.',
   },
   {
     prompt: 'Hier, l’élève a oublié son livre.',
-    parts: ['Gestern ', ' der Schüler sein Buch ', '.'],
-    gaps: [
-      { answer: 'hat', aliases: [] },
-      { answer: 'vergessen', aliases: [] },
+    options: [
+      'Gestern hat der Schüler sein Buch vergessen.',
+      'Gestern der Schüler hat sein Buch vergessen.',
+      'Gestern hat vergessen der Schüler sein Buch.',
     ],
-  },
-  {
-    prompt: 'L’élève veut aller à l’école.',
-    parts: ['Der Schüler ', ' in die Schule ', '.'],
-    gaps: [
-      { answer: 'will', aliases: [] },
-      { answer: 'gehen', aliases: [] },
-    ],
-  },
-  {
-    prompt: 'Demain, Anna doit ranger sa chambre.',
-    parts: ['Morgen ', ' Anna ihr Zimmer ', '.'],
-    gaps: [
-      { answer: 'muss', aliases: [] },
-      { answer: 'aufräumen', aliases: ['aufraeumen'] },
-    ],
-  },
-  {
-    prompt: 'Après l’école, les enfants jouent au foot.',
-    parts: ['Nach der Schule ', ' die Kinder Fussball.'],
-    gaps: [{ answer: 'spielen', aliases: [] }],
+    answer: 0,
+    hint: 'L’auxiliaire conjugué est en position 2 ; le participe passé ferme la phrase.',
+    solution:
+      '<span class="mark-time">Gestern</span> <span class="mark-verb">hat</span> <span class="mark-subject">der Schüler</span> sein Buch <span class="mark-verbal-tail">vergessen</span>.',
   },
 ];
-
-const identifyCount = identifyItems.length;
-const gapCount = gapItems.length;
 ---
 
-<section class="content-band verb-position-lab" aria-labelledby="verb-position-lab-title" data-verb-position-lab>
-  <div class="comparative-exercise-header">
-    <div>
-      <p class="home-section-label">Observation active</p>
-      <h2 id="verb-position-lab-title">Change le premier groupe</h2>
-      <p>Observe ce qui bouge quand la phrase commence par le sujet, par un complément ou par une phrase au passé composé.</p>
-    </div>
-  </div>
-
-  <div class="verb-position-lab-grid">
-    <div class="verb-position-choice-row" aria-label="Situations à observer">
-      {
-        labOptions.map((option, index) => (
-          <button class:list={[{ 'is-selected': index === 0 }]} type="button" data-lab-option={index}>
-            {option.label}
-          </button>
-        ))
-      }
-    </div>
-
-    <div class="verb-position-lab-result" aria-live="polite">
-      <p class="verb-position-sentence" data-lab-sentence set:html={labOptions[0].sentence}></p>
-      <p data-lab-note>{labOptions[0].note}</p>
-    </div>
-  </div>
-</section>
-
-<section class="content-band comparative-exercise verb-identify-exercise" aria-labelledby="verb-identify-title" data-verb-identify-exercise>
-  <div class="comparative-exercise-header">
+<section
+  class="content-band theory-practice-suite"
+  aria-labelledby="verb-position-practice-title"
+  data-verb-position-practice
+>
+  <div class="theory-practice-hero">
     <div>
       <p class="home-section-label">Exercice intégré</p>
-      <h2 id="verb-identify-title">Repère le verbe principal</h2>
-      <p>Valide chaque phrase séparément. Une réponse complète n’apparaît que si tu la demandes.</p>
+      <h2 id="verb-position-practice-title">Garde le verbe à sa place</h2>
+      <p>Trois phrases suffisent pour vérifier le réflexe de la position 2.</p>
     </div>
-    <output class="comparative-score" data-identify-score aria-live="polite">0 / {identifyCount}</output>
+    <span>9H</span>
   </div>
 
-  <div class="verb-token-grid">
-    {
-      identifyItems.map((item, index) => (
-        <article class="verb-token-item" data-identify-item data-answer={item.answer} data-hint={item.hint}>
-          <p class="comparative-prompt">
-            <strong>{index + 1}.</strong> {item.prompt}
-          </p>
-          <div class="verb-token-row" aria-label={`Phrase ${index + 1}`}>
-            {
-              item.tokens.map((token) => (
-                <button type="button" data-token-choice={token}>
-                  {token}
-                </button>
-              ))
-            }
-          </div>
-          <div class="comparative-item-footer">
-            <p class="comparative-feedback" data-identify-feedback aria-live="polite"></p>
-            <button class="text-link comparative-item-reveal" type="button" data-show-identify-answer hidden>
-              Afficher la réponse
-            </button>
-          </div>
-        </article>
-      ))
-    }
-  </div>
-</section>
-
-<section class="content-band comparative-exercise verb-gap-exercise" aria-labelledby="verb-gap-title" data-verb-gap-exercise>
-  <div class="comparative-exercise-header">
-    <div>
-      <p class="home-section-label">Exercice intégré</p>
-      <h2 id="verb-gap-title">Place le verbe principal</h2>
-      <p>Complète chaque phrase, puis vérifie-la seule. Le bouton de réponse apparaît phrase par phrase après une tentative.</p>
+  <article class="theory-activity">
+    <div class="theory-activity-head">
+      <div>
+        <p class="theory-activity-kicker">Choix guidé</p>
+        <h3>Choisis la phrase bien construite</h3>
+        <p>Valide chaque situation séparément. Le corrigé reste caché jusqu’à ta tentative.</p>
+      </div>
+      <output data-verb-position-score aria-live="polite">0 / {items.length}</output>
     </div>
-    <output class="comparative-score" data-gap-score aria-live="polite">0 / {gapCount}</output>
-  </div>
 
-  <div class="comparative-workspace verb-gap-workspace">
-    <div class="comparative-items">
+    <div class="theory-item-grid">
       {
-        gapItems.map((item, itemIndex) => (
-          <article class="comparative-item" data-verb-gap-item>
-            <p class="comparative-prompt">
+        items.map((item, itemIndex) => (
+          <section
+            class="theory-practice-item"
+            data-verb-position-item
+            data-answer={item.answer}
+            data-hint={item.hint}
+          >
+            <p class="theory-item-prompt">
               <strong>{itemIndex + 1}.</strong> {item.prompt}
             </p>
-            <p class="comparative-sentence">
-              {item.parts.map((part, partIndex) => (
-                <>
-                  {part}
-                  {item.gaps[partIndex] && (
-                    <input
-                      class="comparative-gap verb-position-gap"
-                      type="text"
-                      inputmode="text"
-                      autocomplete="off"
-                      autocapitalize="off"
-                      spellcheck="false"
-                      aria-label={`Réponse ${itemIndex + 1}.${partIndex + 1}`}
-                      data-answer={[item.gaps[partIndex].answer, ...item.gaps[partIndex].aliases].join('|')}
-                    />
-                  )}
-                </>
-              ))}
-            </p>
-            <div class="comparative-item-footer verb-gap-actions">
-              <p class="comparative-feedback" data-verb-gap-feedback aria-live="polite"></p>
-              <div>
-                <button class="text-link" type="button" data-check-verb-gap>Vérifier cette phrase</button>
-                <button class="text-link comparative-item-reveal" type="button" data-show-verb-gap-answer hidden>
-                  Afficher la réponse
-                </button>
-              </div>
+            <div class="theory-choice-row" role="group" aria-label={`Réponses pour la phrase ${itemIndex + 1}`}>
+              {
+                item.options.map((option, optionIndex) => (
+                  <button type="button" data-verb-position-choice={optionIndex} aria-pressed="false">
+                    {option}
+                  </button>
+                ))
+              }
             </div>
-          </article>
+            <div class="theory-feedback-row">
+              <button class="text-link" type="button" data-show-verb-position-solution hidden>
+                Voir le corrigé
+              </button>
+              <p data-verb-position-feedback aria-live="polite"></p>
+            </div>
+            <p class="theory-built-sentence" data-verb-position-solution hidden set:html={item.solution}></p>
+          </section>
         ))
       }
     </div>
 
-    <aside class="comparative-side" aria-label="Méthode">
-      <p class="superlative-origin-note">Méthode rapide</p>
-      <ol class="verb-method-list">
-        <li>Repère le premier groupe.</li>
-        <li>Place le verbe conjugué juste après.</li>
-        <li>Envoie l’infinitif ou le participe passé à la fin.</li>
-      </ol>
-      <div class="comparative-actions">
-        <button class="text-link" type="button" data-reset-verb-gaps>Recommencer</button>
-      </div>
-    </aside>
-  </div>
+    <div class="theory-action-row theory-suite-actions">
+      <button class="text-link" type="button" data-reset-verb-position-practice>Recommencer</button>
+    </div>
+  </article>
 </section>
 
-<details class="external-quest">
-  <summary>Ancien exercice externe</summary>
-  <div>
-    <p>Tu peux aussi ouvrir l’exercice Educaplay original si tu veux t’entraîner avec l’ancienne version.</p>
-    <div class="external-button-grid">
-      <a href="https://fr.educaplay.com/jeu/5267113-place_du_verbe_principal.html" target="_blank" rel="noreferrer">
-        Ouvrir l’exercice Educaplay
-      </a>
-    </div>
-  </div>
-</details>
-
 <script>
-  const normalizeVerbAnswer = (value: string) => {
-    const compact = value.trim().toLowerCase().normalize('NFC').replace(/\s+/g, ' ');
-    return compact.replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
-  };
-
-  const labData = [
-    {
-      sentence:
-        '<span class="mark-subject">Der Schüler</span> <span class="mark-verb">vergisst</span> <span class="mark-object">sein Buch</span>.',
-      note: 'Le sujet occupe la 1ère position. Le verbe principal reste en 2e position.',
-    },
-    {
-      sentence:
-        '<span class="mark-time">Heute</span> <span class="mark-verb">vergisst</span> <span class="mark-subject">der Schüler</span> <span class="mark-object">sein Buch</span>.',
-      note: 'Le complément de temps prend la 1ère position. Le sujet passe après le verbe.',
-    },
-    {
-      sentence:
-        '<span class="mark-time">Gestern</span> <span class="mark-verb">hat</span> <span class="mark-subject">der Schüler</span> <span class="mark-object">sein Buch</span> <span class="mark-verbal-tail">vergessen</span>.',
-      note: 'L’auxiliaire conjugué est en 2e position. Le participe passé reste à la fin.',
-    },
-  ];
-
-  document.querySelectorAll<HTMLElement>('[data-verb-position-lab]').forEach((lab) => {
-    const sentence = lab.querySelector<HTMLElement>('[data-lab-sentence]');
-    const note = lab.querySelector<HTMLElement>('[data-lab-note]');
-    const buttons = Array.from(lab.querySelectorAll<HTMLButtonElement>('[data-lab-option]'));
-
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const index = Number(button.dataset.labOption ?? 0);
-        const option = labData[index] ?? labData[0];
-        if (sentence) sentence.innerHTML = option.sentence;
-        if (note) note.textContent = option.note;
-        buttons.forEach((choice) => choice.classList.toggle('is-selected', choice === button));
-      });
-    });
-  });
-
-  document.querySelectorAll<HTMLElement>('[data-verb-identify-exercise]').forEach((exercise) => {
-    const items = Array.from(exercise.querySelectorAll<HTMLElement>('[data-identify-item]'));
-    const score = exercise.querySelector<HTMLOutputElement>('[data-identify-score]');
+  document.querySelectorAll<HTMLElement>('[data-verb-position-practice]').forEach((practice) => {
+    const items = Array.from(practice.querySelectorAll<HTMLElement>('[data-verb-position-item]'));
+    const score = practice.querySelector<HTMLOutputElement>('[data-verb-position-score]');
 
     const updateScore = () => {
-      const correct = items.filter((item) => item.getAttribute('data-correct') === 'true').length;
+      const correct = items.filter((item) => item.dataset.state === 'correct').length;
       if (score) score.textContent = `${correct} / ${items.length}`;
     };
 
     items.forEach((item) => {
-      const answer = normalizeVerbAnswer(item.dataset.answer ?? '');
-      const feedback = item.querySelector<HTMLElement>('[data-identify-feedback]');
-      const revealButton = item.querySelector<HTMLButtonElement>('[data-show-identify-answer]');
-      const tokenButtons = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-token-choice]'));
+      const answer = Number(item.dataset.answer ?? -1);
+      const choices = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-verb-position-choice]'));
+      const feedback = item.querySelector<HTMLElement>('[data-verb-position-feedback]');
+      const revealButton = item.querySelector<HTMLButtonElement>('[data-show-verb-position-solution]');
+      const solution = item.querySelector<HTMLElement>('[data-verb-position-solution]');
 
-      tokenButtons.forEach((button) => {
+      choices.forEach((button) => {
         button.addEventListener('click', () => {
-          const choice = normalizeVerbAnswer(button.dataset.tokenChoice ?? '');
-          const isCorrect = choice === answer;
-          item.setAttribute('data-correct', String(isCorrect));
-          item.setAttribute('data-attempted', 'true');
+          const isCorrect = Number(button.dataset.verbPositionChoice ?? -1) === answer;
 
-          tokenButtons.forEach((tokenButton) => {
-            tokenButton.classList.remove('is-correct', 'is-wrong');
+          choices.forEach((choice) => {
+            choice.classList.remove('is-correct', 'is-wrong');
+            choice.setAttribute('aria-pressed', String(choice === button));
           });
           button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+          item.dataset.state = isCorrect ? 'correct' : 'wrong';
 
           if (feedback) {
-            feedback.textContent = isCorrect ? 'Correct.' : item.dataset.hint ?? 'Regarde le verbe conjugué avec le sujet.';
+            feedback.textContent = isCorrect
+              ? 'Correct : le verbe conjugué occupe le deuxième groupe.'
+              : item.dataset.hint ?? 'Réessaie.';
+            feedback.classList.toggle('is-correct', isCorrect);
+            feedback.classList.toggle('is-wrong', !isCorrect);
           }
           if (revealButton) revealButton.hidden = false;
+          if (solution) solution.hidden = true;
           updateScore();
         });
       });
 
       revealButton?.addEventListener('click', () => {
-        tokenButtons.forEach((button) => {
-          const isAnswer = normalizeVerbAnswer(button.dataset.tokenChoice ?? '') === answer;
-          button.classList.toggle('is-correct', isAnswer);
-          button.classList.remove('is-wrong');
-        });
-        item.setAttribute('data-correct', 'true');
-        if (feedback) feedback.textContent = `Réponse : ${item.dataset.answer}.`;
-        updateScore();
+        if (solution) solution.hidden = false;
+        revealButton.hidden = true;
       });
     });
 
-    updateScore();
-  });
-
-  document.querySelectorAll<HTMLElement>('[data-verb-gap-exercise]').forEach((exercise) => {
-    const items = Array.from(exercise.querySelectorAll<HTMLElement>('[data-verb-gap-item]'));
-    const gaps = Array.from(exercise.querySelectorAll<HTMLInputElement>('.verb-position-gap'));
-    const score = exercise.querySelector<HTMLOutputElement>('[data-gap-score]');
-
-    const acceptedAnswers = (input: HTMLInputElement) =>
-      String(input.dataset.answer ?? '')
-        .split('|')
-        .filter(Boolean)
-        .flatMap((answer) => [answer, normalizeVerbAnswer(answer)])
-        .map(normalizeVerbAnswer);
-
-    const primaryAnswer = (input: HTMLInputElement) => String(input.dataset.answer ?? '').split('|')[0] ?? '';
-
-    const itemIsComplete = (item: HTMLElement) => {
-      const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.verb-position-gap'));
-      return itemGaps.every((gap) => normalizeVerbAnswer(gap.value) !== '');
-    };
-
-    const updateScore = () => {
-      const correct = items.filter((item) => item.getAttribute('data-correct') === 'true').length;
-      if (score) score.textContent = `${correct} / ${items.length}`;
-    };
-
-    const checkItem = (item: HTMLElement) => {
-      const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.verb-position-gap'));
-      const feedback = item.querySelector<HTMLElement>('[data-verb-gap-feedback]');
-      const revealButton = item.querySelector<HTMLButtonElement>('[data-show-verb-gap-answer]');
-
-      if (!itemIsComplete(item)) {
-        item.setAttribute('data-correct', 'false');
-        if (feedback) feedback.textContent = 'Complète la phrase avant de la vérifier.';
-        if (revealButton) revealButton.hidden = true;
-        updateScore();
-        return;
-      }
-
-      let isItemCorrect = true;
-      itemGaps.forEach((gap) => {
-        const isGapCorrect = acceptedAnswers(gap).includes(normalizeVerbAnswer(gap.value));
-        gap.classList.toggle('is-correct', isGapCorrect);
-        gap.classList.toggle('is-wrong', !isGapCorrect);
-        if (!isGapCorrect) isItemCorrect = false;
-      });
-
-      item.setAttribute('data-correct', String(isItemCorrect));
-      item.setAttribute('data-attempted', 'true');
-      if (feedback) {
-        feedback.textContent = isItemCorrect ? 'Correct.' : 'À corriger : vérifie la 2e position et la fin de phrase.';
-      }
-      if (revealButton) revealButton.hidden = false;
-      updateScore();
-    };
-
-    gaps.forEach((gap) => {
-      gap.addEventListener('input', () => {
-        const item = gap.closest<HTMLElement>('[data-verb-gap-item]');
-        gap.classList.remove('is-correct', 'is-wrong');
-        if (item) {
-          item.removeAttribute('data-correct');
-          const feedback = item.querySelector<HTMLElement>('[data-verb-gap-feedback]');
-          if (feedback) feedback.textContent = '';
-        }
-        updateScore();
-      });
-
-      gap.addEventListener('keydown', (event) => {
-        if ((event as KeyboardEvent).key === 'Enter') {
-          event.preventDefault();
-          const item = gap.closest<HTMLElement>('[data-verb-gap-item]');
-          if (item) checkItem(item);
-        }
-      });
-    });
-
-    items.forEach((item) => {
-      item.querySelector<HTMLButtonElement>('[data-check-verb-gap]')?.addEventListener('click', () => {
-        checkItem(item);
-      });
-
-      item.querySelector<HTMLButtonElement>('[data-show-verb-gap-answer]')?.addEventListener('click', () => {
-        const itemGaps = Array.from(item.querySelectorAll<HTMLInputElement>('.verb-position-gap'));
-        itemGaps.forEach((gap) => {
-          gap.value = primaryAnswer(gap);
-          gap.classList.add('is-correct');
-          gap.classList.remove('is-wrong');
-        });
-        item.setAttribute('data-correct', 'true');
-        const feedback = item.querySelector<HTMLElement>('[data-verb-gap-feedback]');
-        if (feedback) feedback.textContent = 'Réponse affichée pour cette phrase.';
-        updateScore();
-      });
-    });
-
-    exercise.querySelector<HTMLButtonElement>('[data-reset-verb-gaps]')?.addEventListener('click', () => {
-      gaps.forEach((gap) => {
-        gap.value = '';
-        gap.classList.remove('is-correct', 'is-wrong');
-      });
+    practice.querySelector('[data-reset-verb-position-practice]')?.addEventListener('click', () => {
       items.forEach((item) => {
-        item.removeAttribute('data-correct');
-        item.removeAttribute('data-attempted');
-        const feedback = item.querySelector<HTMLElement>('[data-verb-gap-feedback]');
-        const revealButton = item.querySelector<HTMLButtonElement>('[data-show-verb-gap-answer]');
-        if (feedback) feedback.textContent = '';
+        item.removeAttribute('data-state');
+        item.querySelectorAll<HTMLButtonElement>('[data-verb-position-choice]').forEach((choice) => {
+          choice.classList.remove('is-correct', 'is-wrong');
+          choice.setAttribute('aria-pressed', 'false');
+        });
+        const feedback = item.querySelector<HTMLElement>('[data-verb-position-feedback]');
+        const revealButton = item.querySelector<HTMLButtonElement>('[data-show-verb-position-solution]');
+        const solution = item.querySelector<HTMLElement>('[data-verb-position-solution]');
+        if (feedback) {
+          feedback.textContent = '';
+          feedback.classList.remove('is-correct', 'is-wrong');
+        }
         if (revealButton) revealButton.hidden = true;
+        if (solution) solution.hidden = true;
       });
-      gaps[0]?.focus();
       updateScore();
+      practice.querySelector<HTMLButtonElement>('[data-verb-position-choice]')?.focus();
     });
 
     updateScore();

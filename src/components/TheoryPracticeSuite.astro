@@ -90,7 +90,7 @@ const sortActivity = practice?.sort;
             {practice.choices.items.map((item, index) => (
               <section class="theory-practice-item" data-choice-item>
                 <p class="theory-item-prompt">
-                  <strong>{index + 1}.</strong> {item.prompt}
+                  <strong>{index + 1}.</strong>{' '}{item.prompt}
                 </p>
                 <blockquote>{item.sentence}</blockquote>
                 <div class="theory-choice-row" role="group" aria-label={`Réponses pour ${index + 1}`}>

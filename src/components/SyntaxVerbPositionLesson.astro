@@ -1,0 +1,535 @@
+---
+import { withBase } from '../lib/paths';
+
+const examples = [
+  { id: 'subject', label: 'Sujet en premier' },
+  { id: 'time', label: 'Temps en premier' },
+  { id: 'object', label: 'Objet en premier' },
+];
+
+const sentenceTypes = [
+  { label: 'Phrase affirmative', note: 'verbe en position 2', href: null },
+  { label: 'Question', note: 'position 1 ou 2 selon le type', href: withBase('/theorie/syntaxe/les-questions/') },
+  { label: 'Impératif', note: 'verbe au début', href: withBase('/theorie/conjugaison/imperatif/') },
+  { label: 'Subordonnée', note: 'règle propre au connecteur', href: withBase('/theorie/syntaxe/') },
+];
+
+const sentenceGroups = [
+  ['Verbe', 'la forme conjuguée'],
+  ['Sujet', 'qui fait l’action'],
+  ['CVD', 'qui ? quoi ?'],
+  ['CVI', 'à qui ? à quoi ?'],
+  ['Groupe prépositionnel', 'où ? quand ? avec qui ?'],
+];
+---
+
+<section class="syntax-lesson verb-position-lesson" aria-labelledby="verb-position-rule-title">
+  <div class="verb-rule">
+    <div>
+      <h2 id="verb-position-rule-title">Le verbe conjugué garde la place 2</h2>
+      <p>
+        Dans une <strong>proposition affirmative indépendante</strong>, le premier groupe peut changer. La forme
+        verbale conjuguée reste le deuxième groupe.
+      </p>
+    </div>
+
+    <div
+      class="position-strip"
+      aria-label="Structure d’une proposition affirmative indépendante"
+      data-source-image-replacement="schéma de position du verbe"
+    >
+      <span>
+        <small>Position 1</small>
+        un groupe au choix
+      </span>
+      <span class="position-verb">
+        <small>Position 2</small>
+        verbe conjugué
+      </span>
+      <span>
+        <small>Suite</small>
+        autres groupes
+      </span>
+    </div>
+  </div>
+
+  <p class="verb-definition">
+    Dans cette fiche, « verbe principal » désigne la <strong>forme verbale conjuguée avec le sujet</strong>,
+    aussi appelée <strong>verbe fini</strong>.
+  </p>
+
+  <div class="syntax-role-legend" aria-label="Code couleur des exemples">
+    <span><span class="role-chip mark-subject">sujet</span></span>
+    <span><span class="role-chip mark-verb">verbe conjugué</span></span>
+    <span><span class="role-chip mark-object">complément</span></span>
+    <span><span class="role-chip mark-time">temps</span></span>
+    <span><span class="role-chip mark-verbal-tail">forme finale</span></span>
+  </div>
+
+  <nav class="sentence-type-strip" aria-label="Place du verbe selon le type de phrase">
+    {
+      sentenceTypes.map((type) =>
+        type.href ? (
+          <a href={type.href}>
+            <strong>{type.label}</strong>
+            <span>{type.note}</span>
+          </a>
+        ) : (
+          <span class="is-current">
+            <strong>{type.label}</strong>
+            <span>{type.note}</span>
+          </span>
+        ),
+      )
+    }
+  </nav>
+
+  <section class="position-demo" aria-labelledby="position-demo-title" data-position-demo>
+    <div class="position-demo-heading">
+      <div>
+        <h3 id="position-demo-title">Change le premier groupe</h3>
+        <p>Les quatre groupes restent les mêmes. Observe la position du verbe et du sujet.</p>
+      </div>
+    </div>
+
+    <div class="position-demo-buttons" role="group" aria-label="Choisir le premier groupe">
+      {
+        examples.map((example, index) => (
+          <button
+            class:list={{ 'is-selected': index === 0 }}
+            type="button"
+            aria-controls={`position-example-${example.id}`}
+            aria-pressed={index === 0 ? 'true' : 'false'}
+            data-position-choice={example.id}
+          >
+            {example.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="position-demo-panels" aria-live="polite">
+      <article id="position-example-subject" data-position-panel="subject">
+        <p class="position-sentence" lang="de">
+          <span class="mark-subject">Anna</span>
+          <span class="mark-verb">liest</span>
+          <span class="mark-time">heute</span>
+          <span class="mark-object">dieses Buch</span>.
+        </p>
+        <p><strong>Anna</strong> prend la position 1 ; <strong>liest</strong> reste en position 2.</p>
+      </article>
+
+      <article id="position-example-time" data-position-panel="time" hidden>
+        <p class="position-sentence" lang="de">
+          <span class="mark-time">Heute</span>
+          <span class="mark-verb">liest</span>
+          <span class="mark-subject">Anna</span>
+          <span class="mark-object">dieses Buch</span>.
+        </p>
+        <p><strong>Heute</strong> passe devant ; le sujet <strong>Anna</strong> se place après le verbe.</p>
+      </article>
+
+      <article id="position-example-object" data-position-panel="object" hidden>
+        <p class="position-sentence" lang="de">
+          <span class="mark-object">Dieses Buch</span>
+          <span class="mark-verb">liest</span>
+          <span class="mark-subject">Anna</span>
+          <span class="mark-time">heute</span>.
+        </p>
+        <p><strong>Dieses Buch</strong> est mis en valeur ; le verbe reste le deuxième groupe.</p>
+      </article>
+    </div>
+  </section>
+
+  <aside class="group-reminder" aria-label="Point important">
+    <strong>2e position ne veut pas dire 2e mot.</strong>
+    <span><span lang="de">Nach der Schule</span> forme un seul groupe et occupe toute la position 1.</span>
+  </aside>
+
+  <details class="lesson-card">
+    <summary>Revoir les groupes d’une phrase</summary>
+    <div class="lesson-card-content">
+      <p>Une position accueille un groupe complet. Voici les cinq groupes à reconnaître en priorité.</p>
+      <dl class="sentence-group-list">
+        {
+          sentenceGroups.map(([group, clue]) => (
+            <div>
+              <dt>{group}</dt>
+              <dd>{clue}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </details>
+
+  <section class="two-form-content" aria-labelledby="two-form-title">
+    <div>
+      <h3 id="two-form-title">Quand la phrase contient deux formes verbales</h3>
+      <p>Seule la forme conjuguée occupe la position 2. L’infinitif ou le participe passé ferme la phrase.</p>
+    </div>
+
+    <div class="two-form-list">
+      <article>
+        <strong>Passé composé</strong>
+        <p lang="de">
+          <span class="mark-subject">Anna</span>
+          <span class="mark-verb">hat</span>
+          <span class="mark-object">das Buch</span>
+          <span class="mark-verbal-tail">gelesen</span>.
+        </p>
+        <small><span lang="de">hat</span> est conjugué ; <span lang="de">gelesen</span> reste à la fin.</small>
+      </article>
+
+      <article>
+        <strong>Verbe de modalité</strong>
+        <p lang="de">
+          <span class="mark-subject">Anna</span>
+          <span class="mark-verb">will</span>
+          <span class="mark-object">das Buch</span>
+          <span class="mark-verbal-tail">lesen</span>.
+        </p>
+        <small><span lang="de">will</span> est conjugué ; <span lang="de">lesen</span> reste à la fin.</small>
+      </article>
+    </div>
+
+    <p class="related-links">
+      Voir aussi :
+      <a href={withBase('/theorie/syntaxe/les-phrases-au-passe-compose/')}>le passé composé</a>
+      et
+      <a href={withBase('/theorie/syntaxe/les-phrases-avec-verbe-de-modalite/')}>les verbes de modalité</a>.
+    </p>
+  </section>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-position-demo]').forEach((demo) => {
+    const buttons = Array.from(demo.querySelectorAll<HTMLButtonElement>('[data-position-choice]'));
+    const panels = Array.from(demo.querySelectorAll<HTMLElement>('[data-position-panel]'));
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selectedId = button.dataset.positionChoice;
+
+        buttons.forEach((choice) => {
+          const isSelected = choice === button;
+          choice.classList.toggle('is-selected', isSelected);
+          choice.setAttribute('aria-pressed', String(isSelected));
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.positionPanel !== selectedId;
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .syntax-lesson {
+    display: grid;
+    gap: 18px;
+  }
+
+  .verb-rule {
+    display: grid;
+    gap: 22px;
+    padding: clamp(20px, 4vw, 30px);
+    border: 2px solid rgba(169, 15, 47, 0.16);
+    border-radius: 20px;
+    background:
+      linear-gradient(120deg, var(--grammar-verb-soft), transparent 44%),
+      rgba(255, 255, 255, 0.92);
+  }
+
+  .verb-rule h2,
+  .position-demo h3 {
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .verb-rule p,
+  .position-demo-heading p,
+  .position-demo-panels p,
+  .two-form-content p {
+    margin-bottom: 0;
+  }
+
+  .position-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .position-strip span {
+    display: grid;
+    min-height: 86px;
+    align-content: center;
+    gap: 4px;
+    padding: 14px;
+    color: var(--ink);
+    font-weight: 900;
+  }
+
+  .position-strip span + span {
+    border-left: 2px solid var(--border);
+  }
+
+  .position-strip small {
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .position-strip .position-verb {
+    background: var(--grammar-verb-soft);
+    color: var(--grammar-verb);
+  }
+
+  .verb-definition {
+    margin: 0;
+    padding-left: 15px;
+    border-left: 4px solid var(--grammar-verb);
+  }
+
+  .syntax-role-legend {
+    margin: 0;
+  }
+
+  .sentence-type-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .sentence-type-strip > a,
+  .sentence-type-strip > span {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+    padding: 12px;
+    border: 2px solid var(--border);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .sentence-type-strip > a {
+    transition:
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .sentence-type-strip > a:hover {
+    border-color: rgba(169, 15, 47, 0.38);
+    transform: translateY(-1px);
+  }
+
+  .sentence-type-strip > a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .sentence-type-strip .is-current {
+    border-color: rgba(169, 15, 47, 0.26);
+    background: var(--grammar-verb-soft);
+  }
+
+  .sentence-type-strip strong {
+    font-size: 0.92rem;
+  }
+
+  .sentence-type-strip span span,
+  .sentence-type-strip a span {
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .position-demo {
+    overflow: hidden;
+    border: 2px solid rgba(31, 42, 68, 0.12);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 0 rgba(15, 26, 49, 0.06);
+  }
+
+  .position-demo-heading {
+    display: grid;
+    gap: 4px;
+    padding: 20px 20px 14px;
+  }
+
+  .position-demo-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 20px 18px;
+  }
+
+  .position-demo-buttons button {
+    min-height: 42px;
+    padding: 9px 13px;
+    border: 2px solid var(--border);
+    border-radius: 11px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 850;
+    cursor: pointer;
+    transition:
+      border-color 160ms ease,
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .position-demo-buttons button:hover {
+    border-color: rgba(169, 15, 47, 0.38);
+    transform: translateY(-1px);
+  }
+
+  .position-demo-buttons button.is-selected {
+    border-color: var(--grammar-verb);
+    background: var(--grammar-verb-soft);
+    color: var(--grammar-verb);
+  }
+
+  .position-demo-buttons button:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .position-demo-panels {
+    min-height: 150px;
+    padding: clamp(20px, 4vw, 28px);
+    border-top: 2px solid var(--border);
+    background: linear-gradient(180deg, rgba(246, 249, 255, 0.78), rgba(255, 255, 255, 0.96));
+  }
+
+  .position-demo-panels article[hidden] {
+    display: none;
+  }
+
+  .position-sentence {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.18rem, 3vw, 1.65rem);
+    font-weight: 850;
+    line-height: 1.9;
+  }
+
+  .group-reminder {
+    display: grid;
+    gap: 2px;
+    padding: 14px 16px;
+    border-left: 5px solid var(--grammar-accusative);
+    border-radius: 0 14px 14px 0;
+    background: var(--grammar-accusative-soft);
+  }
+
+  .group-reminder strong {
+    color: var(--ink);
+  }
+
+  .group-reminder span {
+    color: var(--muted);
+  }
+
+  .two-form-content {
+    display: grid;
+    gap: 14px;
+    padding: clamp(18px, 3vw, 24px);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.78);
+  }
+
+  .two-form-content h3 {
+    margin: 0;
+  }
+
+  .two-form-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .two-form-list article {
+    padding: 14px;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.84);
+  }
+
+  .two-form-list article > p {
+    margin: 8px 0 4px;
+    font-size: 1.06rem;
+    line-height: 1.9;
+  }
+
+  .two-form-list small {
+    color: var(--muted);
+  }
+
+  .related-links {
+    margin-top: 0;
+  }
+
+  .related-links a {
+    color: var(--link);
+    font-weight: 850;
+  }
+
+  .sentence-group-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0;
+  }
+
+  .sentence-group-list > div {
+    display: grid;
+    gap: 2px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--surface-soft);
+  }
+
+  .sentence-group-list dt {
+    color: var(--ink);
+    font-weight: 900;
+  }
+
+  .sentence-group-list dd {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 680px) {
+    .position-strip,
+    .sentence-type-strip,
+    .sentence-group-list,
+    .two-form-list {
+      grid-template-columns: 1fr;
+    }
+
+    .position-strip span + span {
+      border-top: 2px solid var(--border);
+      border-left: 0;
+    }
+
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .position-demo-buttons button,
+    .sentence-type-strip > a {
+      transition: none;
+    }
+  }
+</style>

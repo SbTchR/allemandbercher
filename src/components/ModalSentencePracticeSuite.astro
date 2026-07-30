@@ -1,0 +1,171 @@
+---
+const items = [
+  {
+    prompt: 'Je peux jouer au football aujourd’hui.',
+    options: [
+      'Ich kann heute Fussball spielen.',
+      'Ich heute kann Fussball spielen.',
+      'Ich kann heute spielen Fussball.',
+    ],
+    answer: 0,
+    hint: 'Le verbe conjugué vient en 2e position ; l’infinitif ferme la phrase.',
+    solution:
+      '<span class="mark-subject">Ich</span> <span class="mark-verb">kann</span> heute Fussball <span class="mark-verbal-tail">spielen</span>.',
+  },
+  {
+    prompt: 'Ce soir, Peter a le droit de sortir.',
+    options: [
+      'Heute Abend Peter darf ausgehen.',
+      'Heute Abend darf Peter ausgehen.',
+      'Heute Abend darf ausgehen Peter.',
+    ],
+    answer: 1,
+    hint: 'Heute Abend occupe la 1re position. Le verbe conjugué doit venir juste après.',
+    solution:
+      '<span class="mark-time">Heute Abend</span> <span class="mark-verb">darf</span> <span class="mark-subject">Peter</span> <span class="mark-verbal-tail">ausgehen</span>.',
+  },
+  {
+    prompt: 'Nous devons ranger la salle de classe.',
+    options: [
+      'Wir müssen aufräumen das Klassenzimmer.',
+      'Wir das Klassenzimmer müssen aufräumen.',
+      'Wir müssen das Klassenzimmer aufräumen.',
+    ],
+    answer: 2,
+    hint: 'Avec le sujet en premier, müssen vient en 2e position et aufräumen à la fin.',
+    solution:
+      '<span class="mark-subject">Wir</span> <span class="mark-verb">müssen</span> das Klassenzimmer <span class="mark-verbal-tail">aufräumen</span>.',
+  },
+];
+---
+
+<section
+  class="content-band theory-practice-suite"
+  aria-labelledby="modal-sentence-practice-title"
+  data-modal-sentence-practice
+>
+  <div class="theory-practice-hero">
+    <div>
+      <p class="home-section-label">Exercice intégré</p>
+      <h2 id="modal-sentence-practice-title">Ferme la pince verbale</h2>
+      <p>Une seule activité courte pour vérifier la place des deux verbes.</p>
+    </div>
+    <span>9H</span>
+  </div>
+
+  <article class="theory-activity">
+    <div class="theory-activity-head">
+      <div>
+        <p class="theory-activity-kicker">Choix guidé</p>
+        <h3>Choisis la phrase bien construite</h3>
+        <p>Choisis la phrase correcte. Tu peux corriger chaque situation séparément.</p>
+      </div>
+      <output data-modal-score aria-live="polite">0 / {items.length}</output>
+    </div>
+
+    <div class="theory-item-grid">
+      {
+        items.map((item, itemIndex) => (
+          <section
+            class="theory-practice-item"
+            data-modal-item
+            data-answer={item.answer}
+            data-hint={item.hint}
+          >
+            <p class="theory-item-prompt">
+              <strong>{itemIndex + 1}.</strong> {item.prompt}
+            </p>
+            <div class="theory-choice-row" role="group" aria-label={`Réponses pour la phrase ${itemIndex + 1}`}>
+              {
+                item.options.map((option, optionIndex) => (
+                  <button type="button" lang="de" data-modal-choice={optionIndex} aria-pressed="false">
+                    {option}
+                  </button>
+                ))
+              }
+            </div>
+            <div class="theory-feedback-row">
+              <button class="text-link" type="button" data-show-modal-solution hidden>Voir le corrigé</button>
+              <p data-modal-feedback aria-live="polite"></p>
+            </div>
+            <p class="theory-built-sentence" lang="de" data-modal-solution hidden set:html={item.solution}></p>
+          </section>
+        ))
+      }
+    </div>
+
+    <div class="theory-action-row theory-suite-actions">
+      <button class="text-link" type="button" data-reset-modal-practice>Recommencer</button>
+    </div>
+  </article>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-modal-sentence-practice]').forEach((practice) => {
+    const items = Array.from(practice.querySelectorAll<HTMLElement>('[data-modal-item]'));
+    const score = practice.querySelector<HTMLOutputElement>('[data-modal-score]');
+
+    const updateScore = () => {
+      const correct = items.filter((item) => item.dataset.state === 'correct').length;
+      if (score) score.textContent = `${correct} / ${items.length}`;
+    };
+
+    items.forEach((item) => {
+      const answer = Number(item.dataset.answer ?? -1);
+      const choices = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-modal-choice]'));
+      const feedback = item.querySelector<HTMLElement>('[data-modal-feedback]');
+      const revealButton = item.querySelector<HTMLButtonElement>('[data-show-modal-solution]');
+      const solution = item.querySelector<HTMLElement>('[data-modal-solution]');
+
+      choices.forEach((button) => {
+        button.addEventListener('click', () => {
+          const isCorrect = Number(button.dataset.modalChoice ?? -1) === answer;
+
+          choices.forEach((choice) => {
+            choice.classList.remove('is-correct', 'is-wrong');
+            choice.setAttribute('aria-pressed', String(choice === button));
+          });
+          button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+          item.dataset.state = isCorrect ? 'correct' : 'wrong';
+
+          if (feedback) {
+            feedback.textContent = isCorrect ? 'Correct : les deux verbes encadrent la phrase.' : item.dataset.hint ?? 'Réessaie.';
+            feedback.classList.toggle('is-correct', isCorrect);
+            feedback.classList.toggle('is-wrong', !isCorrect);
+          }
+          if (revealButton) revealButton.hidden = false;
+          if (solution) solution.hidden = true;
+          updateScore();
+        });
+      });
+
+      revealButton?.addEventListener('click', () => {
+        if (solution) solution.hidden = false;
+        revealButton.hidden = true;
+      });
+    });
+
+    practice.querySelector('[data-reset-modal-practice]')?.addEventListener('click', () => {
+      items.forEach((item) => {
+        item.removeAttribute('data-state');
+        item.querySelectorAll<HTMLButtonElement>('[data-modal-choice]').forEach((choice) => {
+          choice.classList.remove('is-correct', 'is-wrong');
+          choice.setAttribute('aria-pressed', 'false');
+        });
+        const feedback = item.querySelector<HTMLElement>('[data-modal-feedback]');
+        const revealButton = item.querySelector<HTMLButtonElement>('[data-show-modal-solution]');
+        const solution = item.querySelector<HTMLElement>('[data-modal-solution]');
+        if (feedback) {
+          feedback.textContent = '';
+          feedback.classList.remove('is-correct', 'is-wrong');
+        }
+        if (revealButton) revealButton.hidden = true;
+        if (solution) solution.hidden = true;
+      });
+      updateScore();
+      practice.querySelector<HTMLButtonElement>('[data-modal-choice]')?.focus();
+    });
+
+    updateScore();
+  });
+</script>

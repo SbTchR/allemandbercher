@@ -36,6 +36,22 @@ const SOURCE_CORRECTION_EXCLUSIONS = new Map([
       'être capable de définir si un verbe implique un déplacement ou non.',
     ],
   ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions',
+    [
+      'En allemand, il n’y a que deux types de questions:',
+      'En allemand, les questions qui commencent par un mot interrogatif (qui, quoi, quand,…) se construisent exactement comme en français.',
+      'En allemand, on ne répète jamais le sujet avec un pronom.',
+    ],
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec-verbe-de-modalit%C3%A9',
+    [
+      'Les verbes de modalité sont les verbes auxquels on peut ajouter un autre verbe à l’infinitif.',
+      '⚠️ Le verbe aimer peut être normal (aimer qch ou qn) ou modal (aimer faire qch).',
+      'Le verbe "mögen" est très souvent utilisé au conditionnel. Nous ne voyons pas le conditionnel à notre niveau, sauf pour ce verbe-ci. Voici donc comment il se conjugue.',
+    ],
+  ],
 ]);
 const MANUALLY_REVIEWED_REWRITES = new Map([
   [
@@ -77,6 +93,22 @@ const MANUALLY_REVIEWED_REWRITES = new Map([
   [
     'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs',
     'Deux tableaux conservés et méthode réorganisée autour du possesseur puis de la terminaison.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal',
+    'Règle V2, groupes, types de phrases et cas à deux verbes conservés dans une fiche plus courte avec entraînement natif.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions',
+    'Deux modèles, quatorze interrogatifs, exemples et ressources utiles conservés ; les formulations trop absolues sont corrigées.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec-verbe-de-modalit%C3%A9',
+    'Tableaux et schémas de la source reconstruits en HTML ; möchte et la nuance müssen-sollen sont clarifiés.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-au-pass%C3%A9-compos%C3%A9',
+    'Règle de la pince verbale et exemples conservés, avec un exercice recentré sur l’ordre des mots.',
   ],
 ]);
 

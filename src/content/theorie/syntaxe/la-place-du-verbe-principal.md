@@ -1,19 +1,24 @@
 ---
 title: "La place du verbe principal"
-description: "Par verbe « principal », on entend le verbe qui est conjugué avec le sujet (il y a parfois plusieurs formes verbales dans certaines phrases)."
+description: "Dans une proposition affirmative indépendante, le verbe conjugué occupe la 2e position, même si la phrase commence par un complément."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal"
 pageType: "theorie"
 objectives:
-  - "repérer le verbe principal, c’est-à-dire le verbe conjugué avec le sujet"
-  - "placer le verbe principal en 2e position dans une phrase affirmative"
-  - "distinguer le verbe principal des formes verbales placées à la fin"
+  - "repérer la forme verbale conjuguée avec le sujet"
+  - "la placer en 2e position dans une proposition affirmative indépendante"
 externalLinks: []
 images: []
 migrationNotes: []
 ---
 
-Dans une phrase affirmative, le verbe principal se place toujours en 2e position. Quand une phrase contient plusieurs formes verbales, le verbe principal est celui qui est conjugué avec le sujet ; les formes comme l’infinitif ou le participe passé se placent généralement à la fin.
+## La règle
 
-Entraîne-toi ensuite à repérer le verbe principal et à compléter des phrases où il doit rester en 2e position.
+Dans une proposition affirmative indépendante, la forme verbale conjuguée occupe la **2e position**. Une position correspond à un groupe de mots, pas forcément à un seul mot.
+
+**Anna** liest heute dieses Buch.
+
+**Heute** liest Anna dieses Buch.
+
+Quand la phrase contient plusieurs formes verbales, seule la forme conjuguée occupe la 2e position. L’infinitif ou le participe passé se place à la fin.

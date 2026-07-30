@@ -1,28 +1,21 @@
 ---
 title: "Les phrases au passé composé"
-description: "En allemand, le passé composé se compose, comme en français, d’un auxiliaire (être ou avoir) et d’un participe passé. La phrase au passé composé ne se compose cependant pas de la même manière !"
+description: "Dans une phrase affirmative au passé composé, l’auxiliaire est conjugué en 2e position et le participe passé se place à la fin."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-au-pass%C3%A9-compos%C3%A9"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "repérer l’auxiliaire conjugué et le participe passé"
+  - "placer l’auxiliaire en 2e position et le participe passé à la fin"
+  - "construire une phrase commençant par le sujet ou un complément"
 externalLinks: []
 images: []
 migrationNotes: []
 ---
 
-L’auxiliaire, étant la forme verbale conjuguée avec le sujet, est considéré comme le verbe principal et se place donc en 2e position dans une phrase affirmative.
+Dans une phrase affirmative au passé composé, **haben** ou **sein** est conjugué avec le sujet et occupe la 2e position. Le participe passé ferme la phrase.
 
-Le participe passé, lui, se place à la fin de la phrase !
+Exemple : **Am Montag habe ich mein Zimmer aufgeräumt.**
 
-## Exemple :
-
-Ich habe mein Zimmer aufgeräumt .
-
-Am Montag habe ich mein Zimmer aufgeräumt .
-
---> habe = auxiliaire
-
---> aufgeräumt = participe passé
-
-Consulte aussi la page consacrée à la [conjugaison des verbes au passé composé](../../conjugaison/passe-compose/).
+Pour revoir le choix de l’auxiliaire et la formation du participe passé, consulte la page sur la [conjugaison au passé composé](../../conjugaison/passe-compose/).

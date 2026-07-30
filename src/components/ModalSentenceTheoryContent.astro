@@ -1,0 +1,199 @@
+---
+import { withBase } from '../lib/paths';
+
+const modalRows = [
+  { meaning: 'pouvoir, savoir faire', infinitive: 'können', forms: 'kann · kannst · kann' },
+  { meaning: 'avoir le droit de', infinitive: 'dürfen', forms: 'darf · darfst · darf' },
+  { meaning: 'vouloir', infinitive: 'wollen', forms: 'will · willst · will' },
+  { meaning: 'aimer', infinitive: 'mögen', forms: 'mag · magst · mag' },
+  { meaning: 'devoir, être obligé de', infinitive: 'müssen', forms: 'muss · musst · muss' },
+  { meaning: 'être censé, devoir selon une consigne', infinitive: 'sollen', forms: 'soll · sollst · soll' },
+];
+
+const moechteRows = [
+  ['ich', 'möchte'],
+  ['du', 'möchtest'],
+  ['er / sie / es', 'möchte'],
+  ['wir', 'möchten'],
+  ['ihr', 'möchtet'],
+  ['sie / Sie', 'möchten'],
+];
+---
+
+<section class="chapter-dashboard" aria-label="À retenir sur les phrases avec un verbe de modalité">
+  <article>
+    <strong>En 2e position</strong>
+    <p class="dashboard-rule">
+      <span class="dashboard-rule-line"><span class="mark-verb">verbe de modalité conjugué</span></span>
+      <span class="dashboard-example-line" lang="de">Julia <span class="mark-verb">muss</span> ihr Zimmer aufräumen.</span>
+    </p>
+  </article>
+
+  <article>
+    <strong>À la fin</strong>
+    <p class="dashboard-rule">
+      <span class="dashboard-rule-line"><span class="mark-verbal-tail">infinitif sans zu</span></span>
+      <span class="dashboard-example-line" lang="de">Julia muss ihr Zimmer <span class="mark-verbal-tail">aufräumen</span>.</span>
+    </p>
+  </article>
+
+  <article>
+    <strong>Une pince verbale</strong>
+    <p>Les deux formes verbales encadrent le reste de la phrase.</p>
+  </article>
+</section>
+
+<div class="grammar-callout">
+  <strong>Le réflexe</strong>
+  <p>
+    Conjugue seulement le verbe de modalité. Place l’autre verbe à l’infinitif, sans <strong>zu</strong>, tout à la fin.
+  </p>
+</div>
+
+<div class="syntax-role-legend" aria-label="Code couleur de la page">
+  <span><span class="role-chip mark-verb">verbe conjugué</span> en 2e position</span>
+  <span><span class="role-chip mark-verbal-tail">infinitif</span> à la fin</span>
+</div>
+
+<div class="category-example-board" aria-label="Phrase modèle">
+  <p lang="de">
+    <span class="mark-time">Heute Abend</span> <span class="mark-verb">darf</span>
+    <span class="mark-subject">Peter</span> <span class="mark-verbal-tail">ausgehen</span>.
+  </p>
+  <small>
+    « Ce soir, Peter a le droit de sortir. » Le complément <strong lang="de">Heute Abend</strong> occupe la 1re position ;
+    le sujet passe donc après le verbe conjugué.
+  </small>
+</div>
+
+<div
+  class="syntax-two-verb-grid"
+  aria-label="Deux exemples analysés"
+  data-source-image-replacement="exemples de phrases avec un verbe de modalité"
+>
+  <article>
+    <span>Sujet en premier</span>
+    <p lang="de">
+      <span class="mark-subject">Julia</span> <span class="mark-verb">muss</span> ihr Zimmer
+      <span class="mark-verbal-tail">aufräumen</span>.
+    </p>
+    <small>Julia doit ranger sa chambre.</small>
+  </article>
+
+  <article>
+    <span>Temps en premier</span>
+    <p lang="de">
+      <span class="mark-time">Morgen</span> <span class="mark-verb">möchte</span>
+      <span class="mark-subject">ich</span> nach Basel <span class="mark-verbal-tail">fahren</span>.
+    </p>
+    <small>Demain, j’aimerais aller à Bâle.</small>
+  </article>
+</div>
+
+<details class="lesson-card">
+  <summary>Revoir les six verbes et leurs nuances</summary>
+  <div class="lesson-card-content">
+    <p>
+      Voici les formes <strong>ich · du · er/sie/es</strong> les plus utiles pour démarrer.
+      La conjugaison complète se trouve sur la page
+      <a href={withBase('/theorie/conjugaison/verbes-de-modalite/')}>Verbes de modalité</a>.
+    </p>
+
+    <table class="syntax-table" data-source-image-replacement="les six verbes de modalité">
+      <caption>Les six verbes de modalité au présent</caption>
+      <thead>
+        <tr>
+          <th scope="col">Sens</th>
+          <th scope="col">Infinitif</th>
+          <th scope="col">ich · du · er/sie/es</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          modalRows.map((row) => (
+            <tr>
+              <td>{row.meaning}</td>
+              <th scope="row" lang="de">{row.infinitive}</th>
+              <td lang="de">{row.forms}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+
+    <div class="modal-reference-grid">
+      <section>
+        <h3><span lang="de">möchte</span> · « voudrais »</h3>
+        <p>
+          <strong>möchte</strong> est une forme de <em>Konjunktiv II</em> de <strong>mögen</strong>, très utilisée
+          pour exprimer poliment un souhait.
+        </p>
+        <table class="syntax-table modal-mini-table" data-source-image-replacement="conjugaison de möchte">
+          <caption>Formes de möchte</caption>
+          <thead>
+            <tr>
+              <th scope="col">Sujet</th>
+              <th scope="col">Forme</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              moechteRows.map(([subject, form]) => (
+                <tr>
+                  <th scope="row" lang="de">{subject}</th>
+                  <td lang="de">{form}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </section>
+
+      <section data-source-image-replacement="comparaison de müssen et sollen">
+        <h3><span lang="de">müssen</span>, <span lang="de">sollen</span> ou <span lang="de">sollte</span> ?</h3>
+        <p>
+          <strong lang="de">Er muss sein Zimmer aufräumen.</strong> exprime une nécessité ou une obligation.
+        </p>
+        <p>
+          <strong lang="de">Er soll sein Zimmer aufräumen.</strong> signifie qu’on le lui demande ou qu’il est
+          censé le faire.
+        </p>
+        <p>
+          Pour donner un conseil clair : <strong lang="de">Er sollte sein Zimmer aufräumen.</strong>
+          (« Il devrait ranger sa chambre. »)
+        </p>
+      </section>
+    </div>
+  </div>
+</details>
+
+<style>
+  .modal-reference-grid {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.8fr) minmax(280px, 1.2fr);
+    gap: 14px;
+    align-items: start;
+  }
+
+  .modal-reference-grid > section {
+    padding: 14px;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .modal-reference-grid h3 {
+    margin-top: 0;
+  }
+
+  .modal-reference-grid p:last-child,
+  .modal-mini-table {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 720px) {
+    .modal-reference-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,548 @@
+---
+const questionWords = [
+  { word: 'Wer?', meaning: 'Qui ?', example: 'Wer kommt heute?', translation: 'Qui vient aujourd’hui ?' },
+  { word: 'Was?', meaning: 'Quoi ? / Que ?', example: 'Was machst du?', translation: 'Que fais-tu ?' },
+  { word: 'Wann?', meaning: 'Quand ?', example: 'Wann beginnt die Schule?', translation: 'Quand l’école commence-t-elle ?' },
+  { word: 'Warum?', meaning: 'Pourquoi ?', example: 'Warum bist du zu spät?', translation: 'Pourquoi es-tu en retard ?' },
+  { word: 'Wie?', meaning: 'Comment ?', example: 'Wie geht es dir?', translation: 'Comment vas-tu ?' },
+  {
+    word: 'Wie viel? / Wie viele?',
+    meaning: 'Combien ?',
+    example: 'Wie viele Schüler sind in der Klasse?',
+    translation: 'Combien y a-t-il d’élèves dans la classe ?',
+  },
+  { word: 'Wie gross?', meaning: 'Quelle taille ?', example: 'Wie gross ist er?', translation: 'Quelle taille fait-il ?' },
+  {
+    word: 'Wie lange?',
+    meaning: 'Combien de temps ?',
+    example: 'Wie lange dauert der Film?',
+    translation: 'Combien de temps le film dure-t-il ?',
+  },
+  { word: 'Wie alt?', meaning: 'Quel âge ?', example: 'Wie alt bist du?', translation: 'Quel âge as-tu ?' },
+  {
+    word: 'Wie oft?',
+    meaning: 'À quelle fréquence ?',
+    example: 'Wie oft trainierst du?',
+    translation: 'À quelle fréquence t’entraînes-tu ?',
+  },
+  {
+    word: 'Welcher? / Welche? / Welches?',
+    meaning: 'Quel ? / Quelle ?',
+    example: 'Welche Sprachen sprichst du?',
+    translation: 'Quelles langues parles-tu ?',
+  },
+  { word: 'Woher?', meaning: 'D’où ?', example: 'Woher kommst du?', translation: 'D’où viens-tu ?' },
+  { word: 'Wo?', meaning: 'Où ?', example: 'Wo bist du?', translation: 'Où es-tu ?' },
+  { word: 'Wohin?', meaning: 'Vers où ?', example: 'Wohin gehst du?', translation: 'Où vas-tu ?' },
+];
+
+const demoChoices = [
+  { id: 'place', label: 'Je cherche le lieu' },
+  { id: 'time', label: 'Je cherche le moment' },
+  { id: 'confirm', label: 'Je veux confirmer' },
+];
+
+const externalExercises = [
+  {
+    label: 'W-Fragen · niveau débutant',
+    url: 'https://www.schubert-verlag.de/aufgaben/xg/xg01_04.htm',
+  },
+  {
+    label: 'Former des questions · niveau A2',
+    url: 'https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap1_fragen.htm',
+  },
+  {
+    label: 'Questions en W et oui/non',
+    url: 'https://deutsch.lingolia.com/de/grammatik/satzbau/fragen/uebungen',
+  },
+  {
+    label: 'Ja/Nein-Fragen · niveau débutant',
+    url: 'https://www.schubert-verlag.de/aufgaben/xg/xg04_02.htm',
+  },
+];
+---
+
+<section class="syntax-lesson questions-lesson" aria-labelledby="question-patterns-title">
+  <div class="question-intro">
+    <h2 id="question-patterns-title">Deux constructions essentielles</h2>
+    <p>Choisis la construction selon le type de réponse que tu attends.</p>
+  </div>
+
+  <div class="question-patterns">
+    <article>
+      <div class="pattern-heading">
+        <strong>W-Frage</strong>
+        <span>une information précise</span>
+      </div>
+      <p class="pattern-formula">
+        <span class="question-word">mot en W</span>
+        <span class="mark-verb">verbe</span>
+        <span class="mark-subject">sujet</span>
+        <span class="mark-object">complément</span>
+      </p>
+      <p class="pattern-example" lang="de">
+        <span class="question-word">Wo</span>
+        <span class="mark-verb">wohnt</span>
+        <span class="mark-subject">Mia</span>?
+      </p>
+      <small class="pattern-caveat">
+        Si <span lang="de">wer</span> ou <span lang="de">was</span> est déjà le sujet, aucun autre sujet ne suit :
+        <span lang="de">Wer kommt?</span>
+      </small>
+    </article>
+
+    <article>
+      <div class="pattern-heading">
+        <strong>Ja/Nein-Frage</strong>
+        <span>oui ou non</span>
+      </div>
+      <p class="pattern-formula">
+        <span class="mark-verb">verbe</span>
+        <span class="mark-subject">sujet</span>
+        <span class="mark-object">complément</span>
+      </p>
+      <p class="pattern-example" lang="de">
+        <span class="mark-verb">Wohnt</span>
+        <span class="mark-subject">Mia</span>
+        <span class="mark-object">in Bern</span>?
+      </p>
+    </article>
+  </div>
+
+  <div class="syntax-role-legend" aria-label="Code couleur des exemples">
+    <span><span class="role-chip mark-subject">sujet</span></span>
+    <span><span class="role-chip mark-verb">verbe conjugué</span></span>
+    <span><span class="role-chip mark-object">complément</span></span>
+  </div>
+
+  <section class="question-demo" aria-labelledby="question-demo-title" data-question-demo>
+    <div class="question-demo-heading">
+      <h3 id="question-demo-title">Choisis ce que tu veux savoir</h3>
+      <p>Le sens recherché détermine le début de la question.</p>
+    </div>
+
+    <div class="question-demo-buttons" role="group" aria-label="Choisir l’information recherchée">
+      {
+        demoChoices.map((choice, index) => (
+          <button
+            class:list={{ 'is-selected': index === 0 }}
+            type="button"
+            aria-controls={`question-example-${choice.id}`}
+            aria-pressed={index === 0 ? 'true' : 'false'}
+            data-question-choice={choice.id}
+          >
+            {choice.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="question-demo-panels" aria-live="polite">
+      <article id="question-example-place" data-question-panel="place">
+        <p class="question-demo-sentence" lang="de">
+          <span class="question-word">Wo</span>
+          <span class="mark-verb">wohnt</span>
+          <span class="mark-subject">Mia</span>?
+        </p>
+        <p><strong>Wo</strong> demande un lieu. Le verbe vient juste après le mot interrogatif.</p>
+      </article>
+
+      <article id="question-example-time" data-question-panel="time" hidden>
+        <p class="question-demo-sentence" lang="de">
+          <span class="question-word">Wann</span>
+          <span class="mark-verb">beginnt</span>
+          <span class="mark-subject">der Kurs</span>?
+        </p>
+        <p><strong>Wann</strong> demande un moment. Le sujet suit le verbe.</p>
+      </article>
+
+      <article id="question-example-confirm" data-question-panel="confirm" hidden>
+        <p class="question-demo-sentence" lang="de">
+          <span class="mark-verb">Wohnt</span>
+          <span class="mark-subject">Mia</span>
+          <span class="mark-object">in Bern</span>?
+        </p>
+        <p>Pour obtenir oui ou non, la question commence directement par le verbe.</p>
+      </article>
+    </div>
+  </section>
+
+  <aside class="question-trap" aria-labelledby="question-trap-title">
+    <h3 id="question-trap-title">Pas de formule « est-ce que »</h3>
+    <p>
+      On déplace simplement le verbe :
+      <span lang="de"><span class="mark-subject">Du</span> <span class="mark-verb">kommst</span> morgen.</span>
+      devient
+      <span lang="de"><span class="mark-verb">Kommst</span> <span class="mark-subject">du</span> morgen?</span>
+    </p>
+    <p>
+      Avec un nom sujet, ne le double pas par un pronom :
+      <strong lang="de"><span class="mark-verb">Ist</span> <span class="mark-subject">Monika</span> nett?</strong>
+    </p>
+    <p class="question-exception">
+      Construction à mémoriser : <span lang="de">Es gibt …</span> devient <strong lang="de">Gibt es …?</strong>
+    </p>
+  </aside>
+
+  <details class="lesson-card">
+    <summary>Mots interrogatifs et exercices complémentaires</summary>
+    <div class="lesson-card-content question-reference">
+      <p>
+        Le mot interrogatif indique l’information recherchée. Avec <strong lang="de">wer?</strong> sujet, il n’y a
+        pas de deuxième sujet : <span lang="de">Wer kommt?</span>
+      </p>
+      <p>
+        <strong lang="de">Wie viel?</strong> demande une quantité non comptée ;
+        <strong lang="de">wie viele?</strong> précède un nom que l’on peut compter.
+      </p>
+
+      <div
+        class="question-table-scroll"
+        role="region"
+        tabindex="0"
+        aria-labelledby="question-word-table-caption"
+      >
+        <table class="question-word-table" data-source-image-replacement="tableau des mots interrogatifs">
+          <caption id="question-word-table-caption">Mots interrogatifs fréquents</caption>
+          <thead>
+            <tr>
+              <th scope="col">Mot</th>
+              <th scope="col">Sens</th>
+              <th scope="col">Exemple</th>
+              <th scope="col">Traduction</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              questionWords.map((item) => (
+                <tr>
+                  <th scope="row" lang="de">{item.word}</th>
+                  <td>{item.meaning}</td>
+                  <td lang="de">{item.example}</td>
+                  <td>{item.translation}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="question-exercise-links" aria-label="Exercices externes">
+        {
+          externalExercises.map((exercise) => (
+            <a href={exercise.url} target="_blank" rel="noreferrer">{exercise.label}</a>
+          ))
+        }
+      </div>
+    </div>
+  </details>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-question-demo]').forEach((demo) => {
+    const buttons = Array.from(demo.querySelectorAll<HTMLButtonElement>('[data-question-choice]'));
+    const panels = Array.from(demo.querySelectorAll<HTMLElement>('[data-question-panel]'));
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const selectedId = button.dataset.questionChoice;
+
+        buttons.forEach((choice) => {
+          const isSelected = choice === button;
+          choice.classList.toggle('is-selected', isSelected);
+          choice.setAttribute('aria-pressed', String(isSelected));
+        });
+
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.questionPanel !== selectedId;
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .syntax-lesson {
+    display: grid;
+    gap: 18px;
+  }
+
+  .question-intro h2,
+  .question-intro p,
+  .question-demo h3,
+  .question-demo-heading p,
+  .question-trap h3 {
+    margin: 0;
+  }
+
+  .question-intro {
+    display: grid;
+    gap: 5px;
+  }
+
+  .question-patterns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .question-patterns article {
+    display: grid;
+    gap: 14px;
+    padding: clamp(18px, 3vw, 24px);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 7px 0 rgba(15, 26, 49, 0.05);
+  }
+
+  .question-patterns article:first-child {
+    border-top: 5px solid var(--grammar-preposition);
+  }
+
+  .question-patterns article:last-child {
+    border-top: 5px solid var(--grammar-verb);
+  }
+
+  .pattern-heading {
+    display: grid;
+    gap: 2px;
+  }
+
+  .pattern-heading strong {
+    color: var(--ink);
+    font-size: 1.15rem;
+  }
+
+  .pattern-heading span {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .pattern-formula {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+  }
+
+  .pattern-formula > span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .question-word {
+    border-radius: 8px;
+    padding: 0.08em 0.32em;
+    border-bottom: 3px solid currentColor;
+    background: rgba(71, 85, 105, 0.1);
+    color: var(--grammar-preposition);
+    font-weight: 950;
+  }
+
+  .pattern-example {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.15rem, 2.8vw, 1.45rem);
+    font-weight: 850;
+    line-height: 1.9;
+  }
+
+  .pattern-caveat {
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .syntax-role-legend {
+    margin: 0;
+  }
+
+  .question-demo {
+    overflow: hidden;
+    border: 2px solid rgba(31, 42, 68, 0.12);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 0 rgba(15, 26, 49, 0.06);
+  }
+
+  .question-demo-heading {
+    display: grid;
+    gap: 4px;
+    padding: 20px 20px 14px;
+  }
+
+  .question-demo-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 20px 18px;
+  }
+
+  .question-demo-buttons button {
+    min-height: 42px;
+    padding: 9px 13px;
+    border: 2px solid var(--border);
+    border-radius: 11px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 850;
+    cursor: pointer;
+    transition:
+      border-color 160ms ease,
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .question-demo-buttons button:hover {
+    border-color: rgba(31, 93, 143, 0.38);
+    transform: translateY(-1px);
+  }
+
+  .question-demo-buttons button.is-selected {
+    border-color: var(--grammar-accusative);
+    background: var(--grammar-accusative-soft);
+    color: var(--grammar-accusative);
+  }
+
+  .question-demo-buttons button:focus-visible,
+  .question-table-scroll:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .question-demo-panels {
+    min-height: 150px;
+    padding: clamp(20px, 4vw, 28px);
+    border-top: 2px solid var(--border);
+    background: linear-gradient(180deg, rgba(246, 249, 255, 0.78), rgba(255, 255, 255, 0.96));
+  }
+
+  .question-demo-panels article[hidden] {
+    display: none;
+  }
+
+  .question-demo-panels article > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .question-demo-sentence {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.18rem, 3vw, 1.65rem);
+    font-weight: 850;
+    line-height: 1.9;
+  }
+
+  .question-trap {
+    display: grid;
+    gap: 8px;
+    padding: clamp(17px, 3vw, 22px);
+    border-left: 5px solid var(--grammar-verb);
+    border-radius: 0 16px 16px 0;
+    background:
+      linear-gradient(105deg, var(--grammar-verb-soft), transparent 56%),
+      rgba(255, 255, 255, 0.86);
+  }
+
+  .question-trap p {
+    margin: 0;
+  }
+
+  .question-exception {
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .question-reference {
+    display: grid;
+    gap: 15px;
+  }
+
+  .question-reference > p {
+    margin-bottom: 0;
+  }
+
+  .question-table-scroll {
+    overflow-x: auto;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    background: #fff;
+  }
+
+  .question-word-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  .question-word-table caption {
+    padding: 13px 14px;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: left;
+  }
+
+  .question-word-table th,
+  .question-word-table td {
+    padding: 10px 12px;
+    border-top: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .question-word-table thead th {
+    background: rgba(71, 85, 105, 0.09);
+    color: var(--ink);
+  }
+
+  .question-word-table tbody th {
+    color: var(--grammar-preposition);
+    font-weight: 950;
+    white-space: nowrap;
+  }
+
+  .question-word-table tbody tr:nth-child(even) {
+    background: rgba(246, 249, 255, 0.7);
+  }
+
+  .question-exercise-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .question-exercise-links a {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 10px 12px;
+    border: 2px solid var(--border);
+    border-radius: 11px;
+    background: #fff;
+    color: var(--link);
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .question-exercise-links a:hover {
+    border-color: rgba(169, 15, 47, 0.3);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 720px) {
+    .question-patterns,
+    .question-exercise-links {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .question-demo-buttons button {
+      transition: none;
+    }
+  }
+</style>

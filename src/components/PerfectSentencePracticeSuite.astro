@@ -1,0 +1,171 @@
+---
+const items = [
+  {
+    prompt: 'Lundi, j’ai rangé ma chambre.',
+    options: [
+      'Am Montag habe ich mein Zimmer aufgeräumt.',
+      'Am Montag ich habe mein Zimmer aufgeräumt.',
+      'Am Montag habe aufgeräumt ich mein Zimmer.',
+    ],
+    answer: 0,
+    hint: 'Am Montag occupe la 1re position. L’auxiliaire habe doit venir juste après.',
+    solution:
+      '<span class="mark-time">Am Montag</span> <span class="mark-verb">habe</span> <span class="mark-subject">ich</span> mein Zimmer <span class="mark-verbal-tail">aufgeräumt</span>.',
+  },
+  {
+    prompt: 'Hier, nous sommes allés à Berne.',
+    options: [
+      'Gestern wir sind nach Bern gefahren.',
+      'Gestern sind gefahren wir nach Bern.',
+      'Gestern sind wir nach Bern gefahren.',
+    ],
+    answer: 2,
+    hint: 'L’auxiliaire sind vient en 2e position ; gefahren ferme la phrase.',
+    solution:
+      '<span class="mark-time">Gestern</span> <span class="mark-verb">sind</span> <span class="mark-subject">wir</span> nach Bern <span class="mark-verbal-tail">gefahren</span>.',
+  },
+  {
+    prompt: 'Mia a mangé une pomme.',
+    options: [
+      'Mia einen Apfel hat gegessen.',
+      'Mia hat einen Apfel gegessen.',
+      'Mia hat gegessen einen Apfel.',
+    ],
+    answer: 1,
+    hint: 'Avec le sujet en premier, hat vient en 2e position et gegessen à la fin.',
+    solution:
+      '<span class="mark-subject">Mia</span> <span class="mark-verb">hat</span> einen Apfel <span class="mark-verbal-tail">gegessen</span>.',
+  },
+];
+---
+
+<section
+  class="content-band theory-practice-suite"
+  aria-labelledby="perfect-sentence-practice-title"
+  data-perfect-sentence-practice
+>
+  <div class="theory-practice-hero">
+    <div>
+      <p class="home-section-label">Exercice intégré</p>
+      <h2 id="perfect-sentence-practice-title">Construis le cadre du passé</h2>
+      <p>Une seule activité courte pour vérifier la place de l’auxiliaire et du participe passé.</p>
+    </div>
+    <span>9H</span>
+  </div>
+
+  <article class="theory-activity">
+    <div class="theory-activity-head">
+      <div>
+        <p class="theory-activity-kicker">Choix guidé</p>
+        <h3>Choisis la phrase bien construite</h3>
+        <p>Choisis la phrase correcte. Observe surtout la place de l’auxiliaire et du participe passé.</p>
+      </div>
+      <output data-perfect-score aria-live="polite">0 / {items.length}</output>
+    </div>
+
+    <div class="theory-item-grid">
+      {
+        items.map((item, itemIndex) => (
+          <section
+            class="theory-practice-item"
+            data-perfect-item
+            data-answer={item.answer}
+            data-hint={item.hint}
+          >
+            <p class="theory-item-prompt">
+              <strong>{itemIndex + 1}.</strong> {item.prompt}
+            </p>
+            <div class="theory-choice-row" role="group" aria-label={`Réponses pour la phrase ${itemIndex + 1}`}>
+              {
+                item.options.map((option, optionIndex) => (
+                  <button type="button" lang="de" data-perfect-choice={optionIndex} aria-pressed="false">
+                    {option}
+                  </button>
+                ))
+              }
+            </div>
+            <div class="theory-feedback-row">
+              <button class="text-link" type="button" data-show-perfect-solution hidden>Voir le corrigé</button>
+              <p data-perfect-feedback aria-live="polite"></p>
+            </div>
+            <p class="theory-built-sentence" lang="de" data-perfect-solution hidden set:html={item.solution}></p>
+          </section>
+        ))
+      }
+    </div>
+
+    <div class="theory-action-row theory-suite-actions">
+      <button class="text-link" type="button" data-reset-perfect-practice>Recommencer</button>
+    </div>
+  </article>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-perfect-sentence-practice]').forEach((practice) => {
+    const items = Array.from(practice.querySelectorAll<HTMLElement>('[data-perfect-item]'));
+    const score = practice.querySelector<HTMLOutputElement>('[data-perfect-score]');
+
+    const updateScore = () => {
+      const correct = items.filter((item) => item.dataset.state === 'correct').length;
+      if (score) score.textContent = `${correct} / ${items.length}`;
+    };
+
+    items.forEach((item) => {
+      const answer = Number(item.dataset.answer ?? -1);
+      const choices = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-perfect-choice]'));
+      const feedback = item.querySelector<HTMLElement>('[data-perfect-feedback]');
+      const revealButton = item.querySelector<HTMLButtonElement>('[data-show-perfect-solution]');
+      const solution = item.querySelector<HTMLElement>('[data-perfect-solution]');
+
+      choices.forEach((button) => {
+        button.addEventListener('click', () => {
+          const isCorrect = Number(button.dataset.perfectChoice ?? -1) === answer;
+
+          choices.forEach((choice) => {
+            choice.classList.remove('is-correct', 'is-wrong');
+            choice.setAttribute('aria-pressed', String(choice === button));
+          });
+          button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
+          item.dataset.state = isCorrect ? 'correct' : 'wrong';
+
+          if (feedback) {
+            feedback.textContent = isCorrect ? 'Correct : l’auxiliaire ouvre et le participe ferme la pince verbale.' : item.dataset.hint ?? 'Réessaie.';
+            feedback.classList.toggle('is-correct', isCorrect);
+            feedback.classList.toggle('is-wrong', !isCorrect);
+          }
+          if (revealButton) revealButton.hidden = false;
+          if (solution) solution.hidden = true;
+          updateScore();
+        });
+      });
+
+      revealButton?.addEventListener('click', () => {
+        if (solution) solution.hidden = false;
+        revealButton.hidden = true;
+      });
+    });
+
+    practice.querySelector('[data-reset-perfect-practice]')?.addEventListener('click', () => {
+      items.forEach((item) => {
+        item.removeAttribute('data-state');
+        item.querySelectorAll<HTMLButtonElement>('[data-perfect-choice]').forEach((choice) => {
+          choice.classList.remove('is-correct', 'is-wrong');
+          choice.setAttribute('aria-pressed', 'false');
+        });
+        const feedback = item.querySelector<HTMLElement>('[data-perfect-feedback]');
+        const revealButton = item.querySelector<HTMLButtonElement>('[data-show-perfect-solution]');
+        const solution = item.querySelector<HTMLElement>('[data-perfect-solution]');
+        if (feedback) {
+          feedback.textContent = '';
+          feedback.classList.remove('is-correct', 'is-wrong');
+        }
+        if (revealButton) revealButton.hidden = true;
+        if (solution) solution.hidden = true;
+      });
+      updateScore();
+      practice.querySelector<HTMLButtonElement>('[data-perfect-choice]')?.focus();
+    });
+
+    updateScore();
+  });
+</script>

@@ -1,14 +1,14 @@
 # Audit contenu site complet
 
-Généré le 2026-07-30T15:19:55.516Z.
+Généré le 2026-07-30T15:54:26.456Z.
 
 ## Résumé
 
 - Pages source vérifiées : 100
 - Alertes bloquantes de contenu : 24
 - Avertissements images à revoir visuellement : 4
-- Pages avec correction pédagogique assumée du site source : 3
-- Pages avec réécriture éditoriale contrôlée : 10
+- Pages avec correction pédagogique assumée du site source : 5
+- Pages avec réécriture éditoriale contrôlée : 14
 - Contrôle bloquant : existence des pages cibles, couverture du texte principal, iframes/embeds intégrés et liens externes conservés.
 - Contrôle image : les images Google Sites récurrentes ou décoratives sont traitées comme avertissements, pas comme manque de contenu textuel.
 
@@ -262,6 +262,16 @@ Ces lignes du site source ne sont pas attendues dans la nouvelle version, car el
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions
 - Lignes volontairement remplacées : `Les autres prépositions sont mixtes, c’est-à-dire qu’elles sont parfois suivies du datif et parfois de l’accusatif.` ; `Il s’agit de toutes les autres prépositions. Dans ce tableau se trouvent les plus importantes, soit celles que tu dois connaître.` ; `Pour savoir s’il faut accorder le groupe nominal qui suit une de ces préposition à l’accusatif ou au datif, il faut se demander si le verbe implique un déplacement ou non.` ; `Elles sont suivies de l’accusatif quand elles sont utilisées avec un verbe de déplacement .` ; `Elles sont suivies du datif quand elles sont utilisées avec un verbe de position .` ; `être capable de définir si un verbe implique un déplacement ou non.`
 
+### Les phrases avec verbe de modalité (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec-verbe-de-modalit%C3%A9
+- Lignes volontairement remplacées : `Les verbes de modalité sont les verbes auxquels on peut ajouter un autre verbe à l’infinitif.` ; `⚠️ Le verbe aimer peut être normal (aimer qch ou qn) ou modal (aimer faire qch).` ; `Le verbe "mögen" est très souvent utilisé au conditionnel. Nous ne voyons pas le conditionnel à notre niveau, sauf pour ce verbe-ci. Voici donc comment il se conjugue.`
+
+### Les questions (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions
+- Lignes volontairement remplacées : `En allemand, il n’y a que deux types de questions:` ; `En allemand, les questions qui commencent par un mot interrogatif (qui, quoi, quand,…) se construisent exactement comme en français.` ; `En allemand, on ne répète jamais le sujet avec un pronom.`
+
 ### trotzdem, deshalb, also (Théorie)
 
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb
@@ -336,6 +346,30 @@ Ces pages ont été comparées manuellement à la source. Leur formulation a ét
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs
 - Contrôle : Deux tableaux conservés et méthode réorganisée autour du possesseur puis de la terminaison.
 - Similarité textuelle indicative : 57%
+
+### La place du verbe principal (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal
+- Contrôle : Règle V2, groupes, types de phrases et cas à deux verbes conservés dans une fiche plus courte avec entraînement natif.
+- Similarité textuelle indicative : 49%
+
+### Les phrases au passé composé (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-au-pass%C3%A9-compos%C3%A9
+- Contrôle : Règle de la pince verbale et exemples conservés, avec un exercice recentré sur l’ordre des mots.
+- Similarité textuelle indicative : 60%
+
+### Les phrases avec verbe de modalité (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec-verbe-de-modalit%C3%A9
+- Contrôle : Tableaux et schémas de la source reconstruits en HTML ; möchte et la nuance müssen-sollen sont clarifiés.
+- Similarité textuelle indicative : 38%
+
+### Les questions (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-questions
+- Contrôle : Deux modèles, quatorze interrogatifs, exemples et ressources utiles conservés ; les formulations trop absolues sont corrigées.
+- Similarité textuelle indicative : 59%
 
 
 ## Pages vérifiées

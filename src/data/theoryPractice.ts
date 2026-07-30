@@ -410,9 +410,9 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
         { key: 'ja-nein', label: 'Oui / non' },
       ],
       items: [
-        { label: 'Wo wohnst du?', sentence: 'Wo wohnst du?', answer: 'w', feedback: 'Wo est le mot interrogatif.' },
-        { label: 'Spielst du Tennis?', sentence: 'Spielst du Tennis?', answer: 'ja-nein', feedback: 'Le verbe commence la question : réponse oui/non.' },
-        { label: 'Was ist dein Lieblingsfach?', sentence: 'Was ist dein Lieblingsfach?', answer: 'w', feedback: 'Was introduit une question précise.' },
+        { label: 'Wo wohnst du', sentence: 'Wo wohnst du?', answer: 'w', feedback: 'Wo est le mot interrogatif.' },
+        { label: 'Spielst du Tennis', sentence: 'Spielst du Tennis?', answer: 'ja-nein', feedback: 'Le verbe commence la question : réponse oui/non.' },
+        { label: 'Was ist dein Lieblingsfach', sentence: 'Was ist dein Lieblingsfach?', answer: 'w', feedback: 'Was introduit une question précise.' },
       ],
     },
     order: {
