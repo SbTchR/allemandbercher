@@ -7,11 +7,24 @@ export const grammarTheoryPageSlugs = [
 
 export type GrammarTheoryPageSlug = (typeof grammarTheoryPageSlugs)[number];
 
+export type GrammarTone = 'nominative' | 'accusative' | 'dative' | 'genitive' | 'preposition';
+
+export type GrammarTableCell =
+  | string
+  | {
+      text: string;
+      html?: string;
+      tone?: GrammarTone;
+    };
+
 export type GrammarTable = {
   title: string;
   note?: string;
   columns: string[];
-  rows: string[][];
+  rows: GrammarTableCell[][];
+  tone?: GrammarTone;
+  rowTones?: (GrammarTone | undefined)[];
+  columnTones?: (GrammarTone | undefined)[];
 };
 
 export type GrammarPracticeItem = {
@@ -33,87 +46,160 @@ export type ExternalLinkGroup = {
 
 const genderColumns = ['Cas', 'Masculin', 'Neutre', 'Féminin', 'Pluriel'];
 
+const possessiveForm = (stem: string, ending = ''): GrammarTableCell => ({
+  text: `${stem}${ending}`,
+  html: `<span class="mark-determiner">${stem}${ending ? `<span class="mark-ending">${ending}</span>` : ''}</span>`,
+});
+
+const adjectiveExample = (
+  determiner: string,
+  adjectiveStem: string,
+  ending: string,
+  noun: string,
+): GrammarTableCell => ({
+  text: `${determiner} ${adjectiveStem}${ending} ${noun}`,
+  html: `<span class="mark-determiner">${determiner}</span> <span class="mark-adjective">${adjectiveStem}<span class="mark-ending">${ending}</span></span> ${noun}`,
+});
+
+const genitiveExample = (
+  determiner: string,
+  adjectiveStem: string,
+  adjectiveEnding: string,
+  nounStem: string,
+  nounEnding = '',
+): GrammarTableCell => ({
+  text: `${determiner} ${adjectiveStem}${adjectiveEnding} ${nounStem}${nounEnding}`,
+  html: `<span class="mark-determiner">${determiner}</span> <span class="mark-adjective">${adjectiveStem}<span class="mark-ending">${adjectiveEnding}</span></span> ${nounStem}${nounEnding ? `<span class="mark-ending">${nounEnding}</span>` : ''}`,
+});
+
 export const declensionTables = {
   shortcut: {
-    title: 'Raccourci des déterminants',
-    note: 'Ce tableau reprend les terminaisons à connaître en priorité pour passer du rôle dans la phrase à la forme correcte.',
+    title: 'Repère rapide des déterminants',
+    note: 'Trouve le cas, puis le genre ou le nombre du nom.',
     columns: genderColumns,
     rows: [
       ['Nominatif', 'der / ein', 'das / ein', 'die / eine', 'die'],
       ['Accusatif', 'den / einen', 'das / ein', 'die / eine', 'die'],
       ['Datif', 'dem / einem', 'dem / einem', 'der / einer', 'den'],
     ],
+    rowTones: ['nominative', 'accusative', 'dative'],
   },
   definiteDeterminers: {
     title: 'Déterminants définis',
+    note: 'der, das et die changent de forme selon le cas.',
     columns: genderColumns,
     rows: [
       ['Nominatif', 'der', 'das', 'die', 'die'],
       ['Accusatif', 'den', 'das', 'die', 'die'],
       ['Datif', 'dem', 'dem', 'der', 'den'],
     ],
+    rowTones: ['nominative', 'accusative', 'dative'],
   },
   possessiveDeterminers: {
-    title: 'Déterminants possessifs et indéfinis',
-    note: 'Le modèle avec mein montre les terminaisons. Les déterminants comme ein ou dein suivent le même réflexe.',
+    title: 'Modèle ein, kein et possessifs',
+    note: 'Le tableau utilise mein. Ein, kein, dein, sein, ihr, unser et euer suivent le même modèle.',
     columns: genderColumns,
     rows: [
-      ['Nominatif', 'mein', 'mein', 'meine', 'meine'],
-      ['Accusatif', 'meinen', 'mein', 'meine', 'meine'],
-      ['Datif', 'meinem', 'meinem', 'meiner', 'meinen'],
+      ['Nominatif', possessiveForm('mein'), possessiveForm('mein'), possessiveForm('mein', 'e'), possessiveForm('mein', 'e')],
+      ['Accusatif', possessiveForm('mein', 'en'), possessiveForm('mein'), possessiveForm('mein', 'e'), possessiveForm('mein', 'e')],
+      ['Datif', possessiveForm('mein', 'em'), possessiveForm('mein', 'em'), possessiveForm('mein', 'er'), possessiveForm('mein', 'en')],
     ],
+    rowTones: ['nominative', 'accusative', 'dative'],
   },
   adjectiveAfterDefinite: {
     title: 'Adjectif après un déterminant défini',
-    note: 'Après der, das, die, den, dem, der, les adjectifs prennent presque toujours -e ou -en.',
+    note: 'Observe la terminaison soulignée de l’adjectif.',
     columns: genderColumns,
     rows: [
-      ['Nominatif', 'der rote Schal', 'das rote Hemd', 'die rote Jacke', 'die roten Schuhe'],
-      ['Accusatif', 'den roten Schal', 'das rote Hemd', 'die rote Jacke', 'die roten Schuhe'],
-      ['Datif', 'dem roten Schal', 'dem roten Hemd', 'der roten Jacke', 'den roten Schuhen'],
+      [
+        'Nominatif',
+        adjectiveExample('der', 'rot', 'e', 'Schal'),
+        adjectiveExample('das', 'rot', 'e', 'Hemd'),
+        adjectiveExample('die', 'rot', 'e', 'Jacke'),
+        adjectiveExample('die', 'rot', 'en', 'Schuhe'),
+      ],
+      [
+        'Accusatif',
+        adjectiveExample('den', 'rot', 'en', 'Schal'),
+        adjectiveExample('das', 'rot', 'e', 'Hemd'),
+        adjectiveExample('die', 'rot', 'e', 'Jacke'),
+        adjectiveExample('die', 'rot', 'en', 'Schuhe'),
+      ],
+      [
+        'Datif',
+        adjectiveExample('dem', 'rot', 'en', 'Schal'),
+        adjectiveExample('dem', 'rot', 'en', 'Hemd'),
+        adjectiveExample('der', 'rot', 'en', 'Jacke'),
+        adjectiveExample('den', 'rot', 'en', 'Schuhen'),
+      ],
     ],
+    rowTones: ['nominative', 'accusative', 'dative'],
   },
   adjectiveAfterPossessive: {
-    title: 'Adjectif après un déterminant possessif',
-    note: 'Avec mein, dein, sein, ihr, unser, euer, la terminaison de l’adjectif complète parfois l’information du déterminant.',
+    title: 'Adjectif après ein ou un possessif',
+    note: 'Quand le déterminant ne porte pas de terminaison, l’adjectif donne davantage d’informations.',
     columns: genderColumns,
     rows: [
-      ['Nominatif', 'mein roter Schal', 'mein rotes Hemd', 'meine rote Jacke', 'meine roten Schuhe'],
-      ['Accusatif', 'meinen roten Schal', 'mein rotes Hemd', 'meine rote Jacke', 'meine roten Schuhe'],
-      ['Datif', 'meinem roten Schal', 'meinem roten Hemd', 'meiner roten Jacke', 'meinen roten Schuhen'],
+      [
+        'Nominatif',
+        adjectiveExample('mein', 'rot', 'er', 'Schal'),
+        adjectiveExample('mein', 'rot', 'es', 'Hemd'),
+        adjectiveExample('meine', 'rot', 'e', 'Jacke'),
+        adjectiveExample('meine', 'rot', 'en', 'Schuhe'),
+      ],
+      [
+        'Accusatif',
+        adjectiveExample('meinen', 'rot', 'en', 'Schal'),
+        adjectiveExample('mein', 'rot', 'es', 'Hemd'),
+        adjectiveExample('meine', 'rot', 'e', 'Jacke'),
+        adjectiveExample('meine', 'rot', 'en', 'Schuhe'),
+      ],
+      [
+        'Datif',
+        adjectiveExample('meinem', 'rot', 'en', 'Schal'),
+        adjectiveExample('meinem', 'rot', 'en', 'Hemd'),
+        adjectiveExample('meiner', 'rot', 'en', 'Jacke'),
+        adjectiveExample('meinen', 'rot', 'en', 'Schuhen'),
+      ],
     ],
+    rowTones: ['nominative', 'accusative', 'dative'],
   },
   personalPronouns: {
     title: 'Pronoms personnels',
-    columns: ['Nominatif', 'Accusatif', 'Datif'],
+    note: 'La couleur correspond au cas ; les libellés distinguent les formes identiques.',
+    columns: ['Personne', 'Nominatif', 'Accusatif', 'Datif'],
     rows: [
-      ['ich', 'mich', 'mir'],
-      ['du', 'dich', 'dir'],
-      ['er', 'ihn', 'ihm'],
-      ['es', 'es', 'ihm'],
-      ['sie', 'sie', 'ihr'],
-      ['wir', 'uns', 'uns'],
-      ['ihr', 'euch', 'euch'],
-      ['sie', 'sie', 'ihnen'],
-      ['Sie', 'Sie', 'Ihnen'],
+      ['je', 'ich', 'mich', 'mir'],
+      ['tu', 'du', 'dich', 'dir'],
+      ['il (masculin)', 'er', 'ihn', 'ihm'],
+      ['neutre', 'es', 'es', 'ihm'],
+      ['elle', 'sie', 'sie', 'ihr'],
+      ['nous', 'wir', 'uns', 'uns'],
+      ['vous (pluriel)', 'ihr', 'euch', 'euch'],
+      ['ils / elles', 'sie', 'sie', 'ihnen'],
+      ['vous (politesse)', 'Sie', 'Sie', 'Ihnen'],
     ],
+    columnTones: [undefined, 'nominative', 'accusative', 'dative'],
   },
 } satisfies Record<string, GrammarTable>;
 
 export const prepositionTables = {
   accusative: {
-    title: 'Prépositions toujours suivies de l’accusatif',
+    title: 'Prépositions prioritaires + accusatif',
+    note: 'La préposition impose l’accusatif.',
     columns: ['Préposition', 'Sens principal', 'Exemple'],
     rows: [
       ['durch', 'à travers', 'durch den Park'],
       ['für', 'pour', 'für meinen Geburtstag'],
-      ['gegen', 'contre / vers pour une heure', 'gegen den besten Spieler / gegen acht Uhr'],
+      ['gegen', 'contre / vers une heure approximative', 'gegen den besten Spieler / gegen acht Uhr'],
       ['ohne', 'sans', 'ohne seine Hilfe'],
-      ['um', 'autour de / à pour une heure', 'um das Haus / um sieben Uhr'],
+      ['um', 'autour de / à une heure précise', 'um das Haus / um sieben Uhr'],
     ],
+    tone: 'accusative',
   },
   dative: {
-    title: 'Prépositions toujours suivies du datif',
+    title: 'Prépositions et constructions prioritaires + datif',
+    note: 'Cette liste correspond aux formes à maîtriser dans la leçon.',
     columns: ['Préposition', 'Sens principal', 'Exemple'],
     rows: [
       ['aus', 'hors de / en matière de', 'aus der Schule / aus Holz'],
@@ -126,10 +212,11 @@ export const prepositionTables = {
       ['gegenüber', 'en face de', 'gegenüber der Post'],
       ['an … vorbei', 'passer devant', 'an der Kirche vorbei'],
     ],
+    tone: 'dative',
   },
   mixed: {
     title: 'Prépositions mixtes : wo ou wohin ?',
-    note: 'Datif pour un lieu déjà établi (wo ?). Accusatif pour une direction vers un but spatial (wohin ?).',
+    note: 'Datif pour le lieu de l’action (wo ?). Accusatif pour la direction vers un but (wohin ?).',
     columns: ['Préposition', 'Lieu — wo ? : datif', 'Direction — wohin ? : accusatif'],
     rows: [
       ['an', 'an der Wand', 'an die Wand'],
@@ -142,17 +229,31 @@ export const prepositionTables = {
       ['vor', 'vor dem Kino', 'vor das Kino'],
       ['zwischen', 'zwischen den Bäumen', 'zwischen die Bäume'],
     ],
+    columnTones: ['preposition', 'dative', 'accusative'],
   },
 } satisfies Record<string, GrammarTable>;
 
 export const genitiveTable = {
   title: 'Déclinaisons du génitif',
-  note: 'Le génitif marque souvent la possession. Au masculin et au neutre, le nom prend généralement -(e)s.',
+  note: 'Au masculin et au neutre, le nom reçoit généralement -(e)s.',
   columns: ['Type', 'Masculin', 'Neutre', 'Féminin', 'Pluriel'],
   rows: [
-    ['Déterminant défini', 'des netten Bruders', 'des netten Kindes', 'der netten Mutter', 'der netten Eltern'],
-    ['Déterminant indéfini', 'eines netten Bruders', 'eines netten Kindes', 'einer netten Mutter', 'netter Eltern / meiner netten Eltern'],
+    [
+      'Déterminant défini',
+      genitiveExample('des', 'nett', 'en', 'Bruder', 's'),
+      genitiveExample('des', 'nett', 'en', 'Kind', 'es'),
+      genitiveExample('der', 'nett', 'en', 'Mutter'),
+      genitiveExample('der', 'nett', 'en', 'Eltern'),
+    ],
+    [
+      'Type ein / possessif',
+      genitiveExample('eines', 'nett', 'en', 'Bruder', 's'),
+      genitiveExample('eines', 'nett', 'en', 'Kind', 'es'),
+      genitiveExample('einer', 'nett', 'en', 'Mutter'),
+      genitiveExample('meiner', 'nett', 'en', 'Eltern'),
+    ],
   ],
+  tone: 'genitive',
 } satisfies GrammarTable;
 
 export const grammarPractices = {

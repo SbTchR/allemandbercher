@@ -5,7 +5,6 @@ import ComparativeRuleLab from './ComparativeRuleLab.astro';
 import ComparativeTheoryContent from './ComparativeTheoryContent.astro';
 import CasesPracticeSuite from './CasesPracticeSuite.astro';
 import ExternalLinks from './ExternalLinks.astro';
-import GrammarPracticeLab from './GrammarPracticeLab.astro';
 import GrammarTheoryContent from './GrammarTheoryContent.astro';
 import ImageGallery from './ImageGallery.astro';
 import Layout from './Layout.astro';
@@ -44,7 +43,18 @@ const customGrammarSlug =
     ? (slug as GrammarTheoryPageSlug)
     : undefined;
 const hasWritingExerciseLab = entry.collection === 'conseils' && slug === 'expression-ecrite';
-const hasHeaderCallout = hasObjectives || hasComparativeExercise || hasSuperlativeExercise;
+const hasHeaderCallout = hasObjectives;
+const hasDedicatedTheoryPractice =
+  hasComparativeExercise ||
+  hasSuperlativeExercise ||
+  hasVerbPositionExercise ||
+  customGrammarSlug === 'les-cas-theorie-de-base';
+const theoryCategoryLabels = {
+  grammaire: 'Grammaire',
+  syntaxe: 'Syntaxe',
+  conjugaison: 'Conjugaison',
+  general: 'Théorie générale',
+};
 const isExerciseChapter = entry.collection === 'exercices' && entry.data.pageType === 'chapitre';
 const hasChapterDashboard =
   isExerciseChapter &&
@@ -54,6 +64,18 @@ const hasChapterDashboard =
 
 <Layout title={entry.data.title} description={entry.data.description}>
   <article class="resource-page">
+    {
+      entry.collection === 'theorie' && (
+        <nav class="breadcrumb" aria-label="Fil d’Ariane">
+          <a href={withBase('/theorie/')}>Théorie</a>
+          <span aria-hidden="true">›</span>
+          <a href={withBase(`/theorie/${entry.data.category}/`)}>{theoryCategoryLabels[entry.data.category]}</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">{entry.data.title}</span>
+        </nav>
+      )
+    }
+
     <header class:list={['resource-header', { 'resource-header-with-callout': hasHeaderCallout }]}>
       <div class="resource-title-block">
         <p class="eyebrow">{resourceEyebrow(entry)}</p>
@@ -64,38 +86,12 @@ const hasChapterDashboard =
               {primaryAction.label}
             </button>
           ) : (
-            entry.data.description && !hasComparativeExercise && !hasSuperlativeExercise && <p class="lead">{entry.data.description}</p>
+            entry.data.description && <p class="lead">{entry.data.description}</p>
           )
         }
       </div>
 
       {hasObjectives && <ObjectiveBox title={isExerciseChapter ? 'Objectifs du chapitre' : 'Objectifs'} objectives={entry.data.objectives} />}
-      {
-        hasComparativeExercise && (
-          <aside class="objective-box comparative-reminder" aria-labelledby="comparative-reminder-title">
-            <h2 id="comparative-reminder-title">À retenir</h2>
-            <p>Le comparatif permet de dire :</p>
-            <div class="comparative-reminder-lines" aria-label="Exemples de comparatif">
-              <span>plus grand que</span>
-              <span>plus petit que</span>
-              <span>aussi grand que</span>
-            </div>
-          </aside>
-        )
-      }
-      {
-        hasSuperlativeExercise && (
-          <aside class="objective-box comparative-reminder superlative-reminder" aria-labelledby="superlative-reminder-title">
-            <h2 id="superlative-reminder-title">À retenir</h2>
-            <p>Le superlatif permet de dire :</p>
-            <div class="comparative-reminder-lines" aria-label="Exemples de superlatif">
-              <span>am schnellsten</span>
-              <span>das schnellste Auto</span>
-              <span>am besten</span>
-            </div>
-          </aside>
-        )
-      }
     </header>
 
     {
@@ -176,15 +172,13 @@ const hasChapterDashboard =
     {hasSuperlativeExercise && <SuperlativeRuleLab />}
     {hasSuperlativeExercise && <SuperlativePracticeSuite />}
     {hasVerbPositionExercise && <VerbPositionPracticeSuite />}
+    {customGrammarSlug === 'les-cas-theorie-de-base' && <CasesPracticeSuite />}
+    {hasWritingExerciseLab && <WritingExerciseLab />}
     {
-      customGrammarSlug === 'les-cas-theorie-de-base' ? (
-        <CasesPracticeSuite />
-      ) : (
-        customGrammarSlug && <GrammarPracticeLab slug={customGrammarSlug} />
+      entry.collection === 'theorie' && slug && !hasDedicatedTheoryPractice && (
+        <TheoryPracticeSuite category={entry.data.category} slug={slug} />
       )
     }
-    {hasWritingExerciseLab && <WritingExerciseLab />}
-    {entry.collection === 'theorie' && slug && <TheoryPracticeSuite category={entry.data.category} slug={slug} />}
 
     <ImageGallery images={customGrammarSlug ? [] : entry.data.images} />
 

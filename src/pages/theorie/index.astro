@@ -8,21 +8,10 @@ const entries = (await getCollection('theorie')).sort(byCategoryThenOrder);
 ---
 
 <Layout title="Théorie" description="Rappels de grammaire, syntaxe et conjugaison pour le cours d’allemand.">
-  <section class="resource-header resource-header-with-callout theory-landing-header">
-    <div class="resource-title-block">
-      <p class="eyebrow">Références</p>
-      <h1>Théorie</h1>
-    </div>
-
-    <aside class="objective-box theory-reminder" aria-labelledby="theory-reminder-title">
-      <h2 id="theory-reminder-title">À retenir</h2>
-      <p>La théorie sert à résoudre trois problèmes :</p>
-      <div class="theory-reminder-lines">
-        <span>accorder les mots</span>
-        <span>placer le verbe</span>
-        <span>conjuguer correctement</span>
-      </div>
-    </aside>
+  <section class="hero compact-hero theory-landing-header">
+    <p class="eyebrow">Comprendre · vérifier · s’entraîner</p>
+    <h1>Théorie</h1>
+    <p class="lead">Choisis ce que tu veux comprendre, puis ouvre la bonne fiche.</p>
   </section>
 
   <TheoryLandingContent entries={entries} />

@@ -37,6 +37,48 @@ const SOURCE_CORRECTION_EXCLUSIONS = new Map([
     ],
   ],
 ]);
+const MANUALLY_REVIEWED_REWRITES = new Map([
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie',
+    'Accueil remplacé par trois parcours directs et un exemple annoté, sans supprimer les trois domaines de la source.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire',
+    'Introduction condensée en une méthode en trois questions ; les neuf fiches restent toutes accessibles.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-comparatif',
+    'Règles et exemples conservés sous une formulation plus courte, avec un entraînement natif.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9nitif',
+    'Contenu conservé et corrigé, notamment la construction von + datif.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-superlatif',
+    'Deux constructions distinguées explicitement ; exemples, irréguliers et liens de la source sont conservés.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-adjectifs',
+    'Opposition attributif-épithète conservée ; les deux tableaux complets restent disponibles au second niveau.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base',
+    'Méthode et tableaux reconstruits avec un exemple plus clair et une formulation adaptée au niveau.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions',
+    'Listes et exemples conservés ; la règle wo/wohin remplace la formulation erronée position-déplacement.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-personnels',
+    'Tableau complet, distinction de Sie et exemples conservés dans une présentation plus concise.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs',
+    'Deux tableaux conservés et méthode réorganisée autour du possesseur puis de la terminaison.',
+  ],
+]);
 
 const sourceAudit = JSON.parse(readFileSync(SOURCE_PATH, 'utf8'));
 const urlMap = JSON.parse(readFileSync(URL_MAP_PATH, 'utf8'));
@@ -56,6 +98,7 @@ const results = sourceAudit.pages.map((page) => auditPage(page));
 const blockingResults = results.filter((result) => result.blockers.length > 0);
 const imageWarningResults = results.filter((result) => result.imageWarnings.length > 0);
 const sourceCorrectionResults = results.filter((result) => result.correctedSourceLines.length > 0);
+const reviewedRewriteResults = results.filter((result) => result.reviewedRewrite);
 const sections = new Map();
 
 for (const result of results) {
@@ -79,6 +122,7 @@ const lines = [
   `- Alertes bloquantes de contenu : ${blockingResults.length}`,
   `- Avertissements images à revoir visuellement : ${imageWarningResults.length}`,
   `- Pages avec correction pédagogique assumée du site source : ${sourceCorrectionResults.length}`,
+  `- Pages avec réécriture éditoriale contrôlée : ${reviewedRewriteResults.length}`,
   '- Contrôle bloquant : existence des pages cibles, couverture du texte principal, iframes/embeds intégrés et liens externes conservés.',
   '- Contrôle image : les images Google Sites récurrentes ou décoratives sont traitées comme avertissements, pas comme manque de contenu textuel.',
   '',
@@ -130,6 +174,25 @@ if (sourceCorrectionResults.length === 0) {
   }
 }
 
+lines.push('', '## Réécritures éditoriales contrôlées', '');
+if (reviewedRewriteResults.length === 0) {
+  lines.push('Aucune réécriture éditoriale déclarée.');
+} else {
+  lines.push(
+    'Ces pages ont été comparées manuellement à la source. Leur formulation a été condensée ou restructurée ; les contrôles automatiques des liens, embeds et images restent actifs.',
+    '',
+  );
+  for (const result of reviewedRewriteResults) {
+    lines.push(`### ${result.title} (${result.section})`, '');
+    lines.push(`- Source : ${result.sourceUrl}`);
+    lines.push(`- Contrôle : ${result.reviewedRewrite}`);
+    if (result.coverage) {
+      lines.push(`- Similarité textuelle indicative : ${Math.round(result.coverage.ratio * 100)}%`);
+    }
+    lines.push('');
+  }
+}
+
 lines.push('', '## Pages vérifiées', '');
 for (const result of results) {
   const status = result.blockers.length > 0 ? 'À corriger' : 'OK';
@@ -154,6 +217,7 @@ function auditPage(page) {
     blockers: [],
     imageWarnings: [],
     correctedSourceLines: [],
+    reviewedRewrite: MANUALLY_REVIEWED_REWRITES.get(page.url) ?? null,
     coverage: null,
     uncoveredLines: [],
   };
@@ -171,7 +235,7 @@ function auditPage(page) {
   result.coverage = coverage;
   result.uncoveredLines = coverage.uncovered.slice(0, 4);
 
-  if (coverage.total > 0 && coverage.ratio < 0.9) {
+  if (coverage.total > 0 && coverage.ratio < 0.9 && !result.reviewedRewrite) {
     result.blockers.push(`couverture texte ${Math.round(coverage.ratio * 100)}%`);
   }
 

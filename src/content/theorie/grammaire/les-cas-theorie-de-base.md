@@ -1,6 +1,6 @@
 ---
 title: "Les cas"
-description: "Qu'est-ce qu'un groupe nominal ? Rappel d'une notion de base."
+description: "Repère le sujet, le CVD et le CVI pour choisir entre nominatif, accusatif et datif."
 section: "theorie"
 category: "grammaire"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base"

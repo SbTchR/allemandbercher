@@ -2,12 +2,18 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../../components/Layout.astro';
 import TheoryCategoryGuide from '../../../components/TheoryCategoryGuide.astro';
+import { withBase } from '../../../lib/paths';
 import { byOrderThenTitle } from '../../../lib/resources';
 
 const labels = {
   grammaire: 'Grammaire',
   syntaxe: 'Syntaxe',
   conjugaison: 'Conjugaison',
+};
+const descriptions = {
+  grammaire: 'Choisis une fiche selon la difficulté que tu veux résoudre.',
+  syntaxe: 'Choisis une fiche pour construire une phrase et placer le verbe.',
+  conjugaison: 'Choisis un temps ou un type de verbe à réviser.',
 };
 
 export async function getStaticPaths() {
@@ -19,10 +25,16 @@ const entries = (await getCollection('theorie', (entry) => entry.data.category =
 ---
 
 <Layout title={labels[category]} description={`Ressources de ${labels[category].toLowerCase()} pour le cours d’allemand.`}>
-  <section class="hero compact-hero">
+  <nav class="breadcrumb" aria-label="Fil d’Ariane">
+    <a href={withBase('/theorie/')}>Théorie</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">{labels[category]}</span>
+  </nav>
+
+  <section class="hero compact-hero theory-category-header">
     <p class="eyebrow">Théorie</p>
     <h1>{labels[category]}</h1>
-    <p class="lead">Rappels et exercices pour réviser cette partie de la théorie.</p>
+    <p class="lead">{descriptions[category]}</p>
   </section>
 
   <TheoryCategoryGuide category={category} entries={entries} />

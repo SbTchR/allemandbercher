@@ -190,26 +190,26 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
   },
   'grammaire/les-prepositions': {
     title: 'Préposition + cas',
-    intro: 'Commence par la préposition, puis demande-toi s’il y a position ou déplacement.',
+    intro: 'Commence par la préposition, puis demande-toi : wo ou wohin ?',
     level: '9H',
     lab: {
       title: 'Wo ou wohin ?',
       intro: 'Choisis la situation et observe le cas.',
       options: [
         {
-          label: 'Position',
+          label: 'Wo ? · lieu',
           sentenceHtml: 'Das Buch liegt <span class="case-chip case-chip-dative">auf dem Tisch</span>.',
           note: 'On décrit où se trouve le livre : datif.',
         },
         {
-          label: 'Déplacement',
-          sentenceHtml: 'Ich lege das Buch <span class="case-chip case-chip-accusative">auf den Tisch</span>.',
-          note: 'Le livre va vers la table : accusatif.',
+          label: 'Wo ? · action dans un lieu',
+          sentenceHtml: 'Die Kinder laufen <span class="case-chip case-chip-dative">im Park</span>.',
+          note: 'Les enfants bougent, mais le parc reste le lieu de l’action : datif.',
         },
         {
-          label: 'Préposition fixe',
-          sentenceHtml: 'Wir fahren <span class="case-chip case-chip-dative">mit dem Bus</span>.',
-          note: 'mit impose toujours le datif.',
+          label: 'Wohin ? · but',
+          sentenceHtml: 'Ich lege das Buch <span class="case-chip case-chip-accusative">auf den Tisch</span>.',
+          note: 'Le livre est posé vers un nouveau but : accusatif.',
         },
       ],
     },
@@ -238,12 +238,12 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
       options: [
         {
           label: 'Masculin',
-          sentenceHtml: 'Die Tasche <span class="case-chip case-chip-preposition">des Lehrers</span> ist hier.',
+          sentenceHtml: 'Die Tasche <span class="case-chip case-chip-genitive">des Lehrers</span> ist hier.',
           note: 'Le professeur possède le sac : des Lehrers.',
         },
         {
           label: 'Féminin',
-          sentenceHtml: 'Das Fahrrad <span class="case-chip case-chip-preposition">der Schülerin</span> ist blau.',
+          sentenceHtml: 'Das Fahrrad <span class="case-chip case-chip-genitive">der Schülerin</span> ist blau.',
           note: 'Au féminin génitif, le déterminant devient der.',
         },
         {
@@ -359,7 +359,7 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
   },
   'grammaire/le-comparatif': {
     title: 'Comparer deux éléments',
-    intro: 'Ajoute un entraînement court après le labo du comparatif.',
+    intro: 'Distingue la différence avec als et l’égalité avec wie.',
     level: '10H',
     choices: {
       title: 'Als ou wie ?',

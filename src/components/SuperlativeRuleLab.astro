@@ -5,15 +5,14 @@ const scenarios = [
     label: 'Course',
     prompt: 'Tomy / laufen / schnell',
     adjectiveFr: 'vite',
-    adjectiveBase: 'schnell',
     standalone: {
-      sentenceHtml: 'Tomy läuft <span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-ending">sten</span>.',
-      formulaHtml: '<span class="mark-superlative">am</span> + <span class="mark-adjective">schnell</span> + <span class="mark-ending">-sten</span>',
+      sentenceHtml: 'Tomy läuft <span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-superlative">st</span><span class="mark-ending">en</span>.',
+      formulaHtml: '<span class="mark-superlative">am</span> + <span class="mark-adjective">schnell</span> + <span class="mark-superlative">-st-</span> + <span class="mark-ending">-en</span>',
       meaningHtml: 'Tomy court <span class="mark-superlative">le plus vite</span>.',
     },
     noun: {
-      sentenceHtml: '<span class="mark-superlative">Der</span> <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> Läufer ist Tomy.',
-      formulaHtml: '<span class="mark-superlative">der</span> + <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> + nom',
+      sentenceHtml: '<span class="case-chip case-chip-determiner">Der</span> <span class="mark-adjective">schnell</span><span class="mark-superlative">st</span><span class="mark-ending">e</span> Läufer ist Tomy.',
+      formulaHtml: '<span class="case-chip case-chip-determiner">der</span> + <span class="mark-adjective">schnell</span> + <span class="mark-superlative">-st-</span> + <span class="mark-ending">-e</span> + nom',
       meaningHtml: 'Tomy est <span class="mark-superlative">le coureur le plus rapide</span>.',
     },
   },
@@ -22,15 +21,14 @@ const scenarios = [
     label: 'Voiture',
     prompt: 'Ferrari / Auto / schnell',
     adjectiveFr: 'rapide',
-    adjectiveBase: 'schnell',
     standalone: {
-      sentenceHtml: 'Der Ferrari fährt <span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-ending">sten</span>.',
-      formulaHtml: '<span class="mark-superlative">am</span> + <span class="mark-adjective">schnell</span> + <span class="mark-ending">-sten</span>',
+      sentenceHtml: 'Der Ferrari fährt <span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-superlative">st</span><span class="mark-ending">en</span>.',
+      formulaHtml: '<span class="mark-superlative">am</span> + <span class="mark-adjective">schnell</span> + <span class="mark-superlative">-st-</span> + <span class="mark-ending">-en</span>',
       meaningHtml: 'La Ferrari roule <span class="mark-superlative">le plus vite</span>.',
     },
     noun: {
-      sentenceHtml: '<span class="mark-superlative">Das</span> <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> Auto ist der Ferrari.',
-      formulaHtml: '<span class="mark-superlative">das</span> + <span class="mark-adjective">schnell</span><span class="mark-ending">ste</span> + nom',
+      sentenceHtml: '<span class="case-chip case-chip-determiner">Das</span> <span class="mark-adjective">schnell</span><span class="mark-superlative">st</span><span class="mark-ending">e</span> Auto ist der Ferrari.',
+      formulaHtml: '<span class="case-chip case-chip-determiner">das</span> + <span class="mark-adjective">schnell</span> + <span class="mark-superlative">-st-</span> + <span class="mark-ending">-e</span> + nom',
       meaningHtml: 'La Ferrari est <span class="mark-superlative">la voiture la plus rapide</span>.',
     },
   },
@@ -39,15 +37,14 @@ const scenarios = [
     label: 'Montagne',
     prompt: 'Everest / Berg / hoch',
     adjectiveFr: 'haut',
-    adjectiveBase: 'hoch',
     standalone: {
-      sentenceHtml: 'Der Everest ist <span class="mark-superlative">am höchsten</span>.',
-      formulaHtml: '<span class="mark-adjective">hoch</span> -> <span class="mark-superlative">am höchsten</span>',
+      sentenceHtml: 'Der Everest ist <span class="mark-superlative">am</span> <span class="mark-adjective">höch</span><span class="mark-superlative">st</span><span class="mark-ending">en</span>.',
+      formulaHtml: '<span class="mark-adjective">hoch</span> → <span class="mark-superlative">am</span> <span class="mark-adjective">höch</span><span class="mark-superlative">st</span><span class="mark-ending">en</span>',
       meaningHtml: 'L’Everest est <span class="mark-superlative">le plus haut</span>.',
     },
     noun: {
-      sentenceHtml: 'Der Everest ist <span class="mark-superlative">der</span> <span class="mark-adjective">höch</span><span class="mark-ending">ste</span> Berg.',
-      formulaHtml: '<span class="mark-superlative">der</span> + <span class="mark-adjective">höch</span><span class="mark-ending">ste</span> + nom',
+      sentenceHtml: 'Der Everest ist <span class="case-chip case-chip-determiner">der</span> <span class="mark-adjective">höch</span><span class="mark-superlative">st</span><span class="mark-ending">e</span> Berg.',
+      formulaHtml: '<span class="case-chip case-chip-determiner">der</span> + <span class="mark-adjective">höch</span> + <span class="mark-superlative">-st-</span> + <span class="mark-ending">-e</span> + nom',
       meaningHtml: 'L’Everest est <span class="mark-superlative">la montagne la plus haute</span>.',
     },
   },
@@ -56,16 +53,15 @@ const scenarios = [
     label: 'Math',
     prompt: 'Sarah / Mathe / gut',
     adjectiveFr: 'bon',
-    adjectiveBase: 'gut',
     standalone: {
-      sentenceHtml: 'Sarah ist in Mathe <span class="mark-superlative">am besten</span>.',
-      formulaHtml: '<span class="mark-adjective">gut</span> -> <span class="mark-superlative">am besten</span>',
-      meaningHtml: 'Sarah est <span class="mark-superlative">la meilleure</span> en math.',
+      sentenceHtml: 'Sarah ist in Mathe <span class="mark-superlative">am best</span><span class="mark-ending">en</span>.',
+      formulaHtml: '<span class="mark-adjective">gut</span> → <span class="mark-superlative">am best-</span><span class="mark-ending">en</span>',
+      meaningHtml: 'Sarah est <span class="mark-superlative">la meilleure</span> en mathématiques.',
     },
     noun: {
-      sentenceHtml: 'Sarah ist <span class="mark-superlative">die beste</span> Schülerin in Mathe.',
-      formulaHtml: '<span class="mark-superlative">die</span> + <span class="mark-adjective">beste</span> + nom',
-      meaningHtml: 'Sarah est <span class="mark-superlative">la meilleure élève</span> en math.',
+      sentenceHtml: 'Sarah ist <span class="case-chip case-chip-determiner">die</span> <span class="mark-superlative">best</span><span class="mark-ending">e</span> Schülerin in Mathe.',
+      formulaHtml: '<span class="case-chip case-chip-determiner">die</span> + <span class="mark-superlative">best-</span> + <span class="mark-ending">-e</span> + nom',
+      meaningHtml: 'Sarah est <span class="mark-superlative">la meilleure élève</span> en mathématiques.',
     },
   },
 ];
@@ -76,7 +72,7 @@ const scenarios = [
     <div>
       <p class="home-section-label">Mini-labo</p>
       <h2 id="superlative-lab-title">Choisis la forme du superlatif</h2>
-      <p>Change la situation et observe quand il faut utiliser <strong>am ... -sten</strong> ou un adjectif devant un nom.</p>
+      <p>Change la situation et observe quand il faut utiliser <strong>am ... -(e)sten</strong> ou une forme accordée devant un nom.</p>
     </div>
   </div>
 
@@ -106,7 +102,9 @@ const scenarios = [
         <button class="is-selected" type="button" data-mode="standalone" aria-pressed="true">Sans nom</button>
         <button type="button" data-mode="noun" aria-pressed="false">Avec un nom</button>
       </div>
-      <p class="comparative-lab-hint" data-superlative-hint><span class="mark-superlative">am</span> <span class="mark-adjective">schnell</span><span class="mark-ending">-sten</span></p>
+      <p class="comparative-lab-hint" data-superlative-hint>
+        <span class="mark-superlative">am</span> + forme en <span class="mark-superlative">-(e)st-</span><span class="mark-ending">en</span>
+      </p>
     </div>
 
     <div class="comparative-lab-result" aria-live="polite">
@@ -137,11 +135,10 @@ const scenarios = [
       if (formula) formula.innerHTML = current.formulaHtml;
       if (meaning) meaning.innerHTML = current.meaningHtml;
       if (hint) {
-        const adjective = scenarios[selectedScenario].adjectiveBase ?? 'schnell';
         hint.innerHTML =
           selectedMode === 'noun'
-            ? `<span class="mark-superlative">déterminant</span> <span class="mark-adjective">${adjective}</span><span class="mark-ending">-ste</span> + nom`
-            : `<span class="mark-superlative">am</span> <span class="mark-adjective">${adjective}</span><span class="mark-ending">-sten</span>`;
+            ? `<span class="case-chip case-chip-determiner">déterminant</span> + forme en <span class="mark-superlative">-(e)st-</span> + <span class="mark-ending">terminaison</span> + nom`
+            : `<span class="mark-superlative">am</span> + forme en <span class="mark-superlative">-(e)st-</span><span class="mark-ending">en</span>`;
       }
 
       scenarioButtons.forEach((button, index) => {

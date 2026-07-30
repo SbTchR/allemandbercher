@@ -223,92 +223,118 @@ const fallbackCards: RouteCard[] = entries
     problem: entry.data.description || 'Ouvrir cette fiche de théorie.',
   }));
 const cards = [...configuredCards, ...fallbackCards];
+const grammarGroups = [
+  {
+    title: 'Comprendre les cas',
+    note: 'Pour choisir le bon déterminant ou la bonne terminaison.',
+    slugs: ['les-cas-theorie-de-base', 'les-prepositions', 'tableaux-de-declinaisons', 'le-genitif'],
+  },
+  {
+    title: 'Remplacer et indiquer la possession',
+    note: 'Pour éviter les répétitions et dire à qui appartient quelque chose.',
+    slugs: ['les-pronoms-personnels', 'les-pronoms-possessifs'],
+  },
+  {
+    title: 'Décrire et comparer',
+    note: 'Pour accorder un adjectif et construire une comparaison.',
+    slugs: ['les-adjectifs', 'le-comparatif', 'le-superlatif'],
+  },
+];
+const groupedGrammarSlugs = new Set(grammarGroups.flatMap((group) => group.slugs));
+const otherGrammarCards = cards.filter((card) => !groupedGrammarSlugs.has(card.slug));
 ---
 
 {
   category === 'grammaire' && (
-    <section class="content-band theory-category-guide" aria-labelledby="grammar-guide-title">
-      <p class="home-section-label">Commence par lire ceci</p>
-      <h2 id="grammar-guide-title">L’accord des mots dans la phrase</h2>
-      <p class="category-guide-lead">
-        La grammaire règle les questions d’accords et de déclinaisons des mots dans la phrase. Voici les types de mots qui
-        s’accordent ou se déclinent :
-      </p>
+    <>
+      <section class="content-band theory-route-section grammar-route-section" aria-labelledby="grammaire-problem-title">
+        <div class="section-heading">
+          <div>
+            <p class="home-section-label">Toutes les fiches</p>
+            <h2 id="grammaire-problem-title">Que veux-tu comprendre&nbsp;?</h2>
+          </div>
+          <a class="text-link" href={withBase('/outils-en-ligne/nad-maschine/')}>Ouvrir la NAD-Maschine</a>
+        </div>
 
-      <div class="grammar-word-types" aria-label="Types de mots qui s’accordent ou se déclinent">
-        <span class="case-chip case-chip-noun">noms</span>
-        <span class="case-chip case-chip-determiner">déterminants</span>
-        <span class="case-chip case-chip-adjective">adjectifs</span>
-        <span class="case-chip case-chip-preposition">pronoms</span>
-      </div>
+        <div class="grammar-route-groups">
+          {
+            grammarGroups.map((group) => (
+              <section class="grammar-route-group" aria-labelledby={`grammar-group-${group.slugs[0]}`}>
+                <header>
+                  <h3 id={`grammar-group-${group.slugs[0]}`}>{group.title}</h3>
+                  <p>{group.note}</p>
+                </header>
+                <div class="theory-route-grid">
+                  {
+                    group.slugs.map((slug) => {
+                      const card = cards.find((candidate) => candidate.slug === slug);
+                      const entry = entryMap.get(slug);
+                      if (!card || !entry) return null;
+                      return (
+                        <a class="theory-route-card" href={resourceUrl(entry)}>
+                          <strong>{card.title}</strong>
+                          <span>{card.problem}</span>
+                          {card.example && <small>{card.example}</small>}
+                        </a>
+                      );
+                    })
+                  }
+                </div>
+              </section>
+            ))
+          }
+          {
+            otherGrammarCards.length > 0 && (
+              <section class="grammar-route-group" aria-labelledby="grammar-group-other">
+                <header>
+                  <h3 id="grammar-group-other">Autres fiches</h3>
+                  <p>Les nouvelles ressources de grammaire apparaissent automatiquement ici.</p>
+                </header>
+                <div class="theory-route-grid">
+                  {
+                    otherGrammarCards.map((card) => {
+                      const entry = entryMap.get(card.slug);
+                      if (!entry) return null;
+                      return (
+                        <a class="theory-route-card" href={resourceUrl(entry)}>
+                          <strong>{card.title}</strong>
+                          <span>{card.problem}</span>
+                          {card.example && <small>{card.example}</small>}
+                        </a>
+                      );
+                    })
+                  }
+                </div>
+              </section>
+            )
+          }
+        </div>
+      </section>
 
-      <p>Comme en français, ces mots s’accordent en genre — masculin, féminin ou neutre — et en nombre — singulier ou pluriel.</p>
+      <section class="grammar-method" aria-labelledby="grammar-guide-title">
+        <div class="grammar-method-copy">
+          <p class="home-section-label">La méthode en trois questions</p>
+          <h2 id="grammar-guide-title">Avant de choisir une terminaison</h2>
+          <ol class="grammar-method-steps">
+            <li><strong>Quel est le rôle du groupe ?</strong><span>Sujet, CVD, CVI ou possesseur.</span></li>
+            <li><strong>Quel est son genre et son nombre ?</strong><span>Masculin, féminin, neutre ou pluriel.</span></li>
+            <li><strong>Quel modèle faut-il suivre ?</strong><span>der, ein, possessif ou pronom.</span></li>
+          </ol>
+        </div>
 
-      <p>
-        En allemand, ces mots se déclinent également selon le rôle qu’ils ont dans la phrase : sujet, complément du verbe
-        direct (CVD), complément du verbe indirect (CVI) ou groupe prépositionnel.
-      </p>
-
-      <div class="category-guide-note">
-        <strong>Ihr, uns, euch, unser, euer… c’est déjà quoi ? 🤔</strong>
-        <p>
-          Si tu cherches à remplacer un groupe nominal pour ne pas le répéter plusieurs fois, tu as besoin des
-          <a href={withBase('/theorie/grammaire/les-pronoms-personnels/')}>pronoms personnels</a>.
-        </p>
-        <p>
-          Si tu cherches un déterminant pour indiquer à qui « appartient » quelque chose ou quelqu’un, tu as besoin des
-          <a href={withBase('/theorie/grammaire/les-pronoms-possessifs/')}>déterminants possessifs</a>.
-        </p>
-        <p>Exemple : Pouvez-vous me prêter votre stylo ? Le mien est cassé.</p>
-      </div>
-
-      <div class="category-example-board">
-        <p><span class="case-chip case-chip-nominative">Der Hund</span> <span class="case-chip case-chip-verb">ist</span> nett.</p>
-        <p>Ich <span class="case-chip case-chip-verb">mag</span> <span class="case-chip case-chip-accusative">den Hund</span>.</p>
-        <small>Le chien est gentil. J’aime le chien.</small>
-      </div>
-
-      <p>
-        Il peut y avoir de nombreux groupes dans une phrase, mais ceux que tu dois savoir reconnaître sont les suivants :
-        le verbe, le sujet, le CVD, le CVI et le groupe prépositionnel.
-      </p>
-
-      <div class="case-role-legend" aria-label="Code couleur stable des groupes de la phrase">
-        <article class="case-role-card case-role-card-verb">
-          <strong>Verbe</strong>
-          <p>Le mot conjugué avec le sujet.</p>
-        </article>
-        <article class="case-role-card case-role-card-nominative">
-          <strong>Sujet</strong>
-          <p>Nominatif : qui fait l’action ?</p>
-        </article>
-        <article class="case-role-card case-role-card-accusative">
-          <strong>CVD</strong>
-          <p>Accusatif : qui ou quoi ?</p>
-        </article>
-        <article class="case-role-card case-role-card-dative">
-          <strong>CVI</strong>
-          <p>Datif : à qui ou à quoi ?</p>
-        </article>
-        <article class="case-role-card case-role-card-preposition">
-          <strong>Groupe prépositionnel</strong>
-          <p>Le cas dépend de la préposition.</p>
-        </article>
-      </div>
-
-      <div class="category-guide-note">
-        <strong>Le groupe nominal</strong>
-        <p>
-          Un rappel de la technique pour déterminer les groupes de la phrase est disponible sur la
-          <a href={withBase('/theorie/grammaire/les-cas-theorie-de-base/')}>page des cas</a>.
-        </p>
-        <p>
-          Un groupe nominal comprend un <span class="case-chip case-chip-determiner">déterminant</span>, éventuellement un
-          <span class="case-chip case-chip-adjective">adjectif</span> et un <span class="case-chip case-chip-noun">nom</span>.
-          Il peut être sujet, CVD, CVI ou faire partie d’un groupe prépositionnel.
-        </p>
-      </div>
-    </section>
+        <div class="grammar-method-example">
+          <p class="grammar-method-label">Lis les groupes, pas seulement les mots</p>
+          <p class="grammar-method-sentence">
+            <span class="case-chip case-chip-nominative"><small>Sujet</small><span lang="de">Mia</span></span>
+            <span class="case-chip case-chip-verb"><small>Verbe</small><span lang="de">schickt</span></span>
+            <span class="case-chip case-chip-dative"><small>CVI · datif</small><span lang="de">ihrer Freundin</span></span>
+            <span class="case-chip case-chip-accusative"><small>CVD · accusatif</small><span lang="de">einen Brief</span></span>.
+          </p>
+          <p class="grammar-method-translation">Mia envoie une lettre à son amie.</p>
+          <a href={withBase('/theorie/grammaire/les-cas-theorie-de-base/')}>Voir l’analyse complète <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </>
   )
 }
 
@@ -447,28 +473,31 @@ const cards = [...configuredCards, ...fallbackCards];
   )
 }
 
-<section class="content-band theory-route-section" aria-labelledby={`${category}-problem-title`}>
-  <div class="section-heading">
-    <div>
-      <p class="home-section-label">Quel est ton problème ?</p>
-      <h2 id={`${category}-problem-title`}>Choisis la fiche qui répond à ta question</h2>
-    </div>
-    {category === 'grammaire' && <a class="text-link" href={withBase('/outils-en-ligne/nad-maschine/')}>Ouvrir la NAD-Maschine</a>}
-  </div>
+{
+  category !== 'grammaire' && (
+    <section class="content-band theory-route-section" aria-labelledby={`${category}-problem-title`}>
+      <div class="section-heading">
+        <div>
+          <p class="home-section-label">Quel est ton problème ?</p>
+          <h2 id={`${category}-problem-title`}>Choisis la fiche qui répond à ta question</h2>
+        </div>
+      </div>
 
-  <div class="theory-route-grid">
-    {
-      cards.map((card) => {
-        const entry = entryMap.get(card.slug);
-        if (!entry) return null;
-        return (
-          <a class="theory-route-card" href={resourceUrl(entry)}>
-            <strong>{card.title}</strong>
-            <span>{card.problem}</span>
-            {card.example && <small>{card.example}</small>}
-          </a>
-        );
-      })
-    }
-  </div>
-</section>
+      <div class="theory-route-grid">
+        {
+          cards.map((card) => {
+            const entry = entryMap.get(card.slug);
+            if (!entry) return null;
+            return (
+              <a class="theory-route-card" href={resourceUrl(entry)}>
+                <strong>{card.title}</strong>
+                <span>{card.problem}</span>
+                {card.example && <small>{card.example}</small>}
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+  )
+}

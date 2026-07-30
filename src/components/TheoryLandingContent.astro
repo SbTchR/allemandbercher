@@ -1,400 +1,96 @@
 ---
 import type { TheoryEntry } from '../lib/resources';
-import { resourceUrl } from '../lib/resources';
+import { withBase } from '../lib/paths';
 
 type Props = {
   entries: TheoryEntry[];
 };
 
-type TheoryItem = {
-  key: string;
-  examples: string[];
-};
-
-type TheoryGroup = {
-  category: 'grammaire' | 'syntaxe' | 'conjugaison';
-  title: string;
-  note: string;
-  items: TheoryItem[];
-};
-
 const { entries } = Astro.props;
-const entryMap = new Map(
-  entries.map((entry) => {
-    const slug = entry.id.split('/').pop()?.replace(/\.md$/, '');
-    return [`${entry.data.category}/${slug}`, entry];
-  })
-);
+const availableCategories = new Set<string>(entries.map((entry) => entry.data.category));
 
-const groups: TheoryGroup[] = [
+const pathways = [
   {
     category: 'grammaire',
-    title: 'Accords, cas et déclinaisons',
-    note: 'Pour comprendre le rôle des groupes dans la phrase et choisir les bonnes terminaisons.',
-    items: [
-      { key: 'grammaire/les-cas-theorie-de-base', examples: ['le sujet', 'le complément direct', 'le complément indirect'] },
-      { key: 'grammaire/tableaux-de-declinaisons', examples: ['mein / meinen / meinem', 'der / den / dem'] },
-      { key: 'grammaire/les-prepositions', examples: ['avec mon ami', 'dans la ville'] },
-      { key: 'grammaire/le-genitif', examples: ['le sac de Anna', 'le livre du prof'] },
-    ],
-  },
-  {
-    category: 'grammaire',
-    title: 'Pronoms et déterminants',
-    note: 'Pour remplacer un nom ou indiquer à qui appartient quelque chose.',
-    items: [
-      { key: 'grammaire/les-pronoms-personnels', examples: ['je / me / moi', 'il / lui'] },
-      { key: 'grammaire/les-pronoms-possessifs', examples: ['mon cahier', 'votre stylo'] },
-    ],
-  },
-  {
-    category: 'grammaire',
-    title: 'Adjectifs et comparaison',
-    note: 'Pour décrire, accorder un adjectif ou comparer plusieurs éléments.',
-    items: [
-      { key: 'grammaire/les-adjectifs', examples: ['un petit chien', 'une grande maison'] },
-      { key: 'grammaire/le-comparatif', examples: ['plus grand que', 'aussi grand que'] },
-      { key: 'grammaire/le-superlatif', examples: ['le plus grand', 'la plus belle'] },
-    ],
+    number: '1',
+    eyebrow: 'Accorder',
+    title: 'Grammaire',
+    question: 'Je ne sais pas accorder ou décliner les mots.',
+    topics: ['cas', 'pronoms', 'adjectifs'],
   },
   {
     category: 'syntaxe',
-    title: 'Phrase simple et place du verbe',
-    note: 'Pour construire une phrase, une question ou une phrase avec deux verbes.',
-    items: [
-      { key: 'syntaxe/la-place-du-verbe-principal', examples: ['Aujourd’hui, je vais...', 'Le verbe est en 2e position.'] },
-      { key: 'syntaxe/les-questions', examples: ['Où habites-tu ?', 'Est-ce que tu viens ?'] },
-      { key: 'syntaxe/les-phrases-avec-verbe-de-modalite', examples: ['Je dois...', 'Je peux...'] },
-      { key: 'syntaxe/les-phrases-au-passe-compose', examples: ['J’ai mangé...', 'Je suis allé...'] },
-    ],
-  },
-  {
-    category: 'syntaxe',
-    title: 'Connecteurs et liens entre phrases',
-    note: 'Pour relier deux idées sans perdre la place du verbe.',
-    items: [
-      { key: 'syntaxe/und-oder-aber-denn-also', examples: ['et / ou / mais', 'car / donc'] },
-      { key: 'syntaxe/trotzdem-deshalb', examples: ['pourtant...', 'c’est pourquoi...'] },
-    ],
-  },
-  {
-    category: 'syntaxe',
-    title: 'Subordonnées',
-    note: 'Pour mettre une phrase dans une autre phrase, souvent avec le verbe à la fin.',
-    items: [
-      { key: 'syntaxe/dass', examples: ['Je pense que...', 'Je trouve que...'] },
-      { key: 'syntaxe/weil', examples: ['parce que...', 'car...'] },
-      { key: 'syntaxe/wenn', examples: ['quand...', 'si...'] },
-      { key: 'syntaxe/damit-wahrend-bevor-nachdem-als-obwohl', examples: ['pour que...', 'pendant que...', 'bien que...'] },
-      { key: 'syntaxe/les-infinitives', examples: ['pour faire...', 'sans faire...'] },
-      { key: 'syntaxe/les-subordonnees-relatives', examples: ['la personne qui...', 'le livre que...'] },
-      { key: 'syntaxe/les-questions-indirectes', examples: ['où il habite', 'ce qu’elle fait'] },
-    ],
+    number: '2',
+    eyebrow: 'Organiser',
+    title: 'Syntaxe',
+    question: 'Je ne sais pas où placer le verbe.',
+    topics: ['questions', 'connecteurs', 'subordonnées'],
   },
   {
     category: 'conjugaison',
-    title: 'Temps et modes',
-    note: 'Pour conjuguer le verbe selon le moment ou l’intention.',
-    items: [
-      { key: 'conjugaison/present', examples: ['je joue', 'il habite'] },
-      { key: 'conjugaison/imperatif', examples: ['Écoute !', 'Ouvrez le livre !'] },
-      { key: 'conjugaison/passe-compose', examples: ['j’ai fait', 'je suis allé'] },
-      { key: 'conjugaison/preterit', examples: ['j’étais', 'il avait'] },
-      { key: 'conjugaison/futur', examples: ['je vais faire', 'il va venir'] },
-      { key: 'conjugaison/konjunktiv-ii', examples: ['je voudrais...', 'ce serait...'] },
-    ],
+    number: '3',
+    eyebrow: 'Former',
+    title: 'Conjugaison',
+    question: 'Je ne sais pas former ou utiliser un verbe.',
+    topics: ['présent', 'passé', 'modes'],
   },
-  {
-    category: 'conjugaison',
-    title: 'Types de verbes',
-    note: 'Pour utiliser les verbes qui changent la construction de la phrase.',
-    items: [
-      { key: 'conjugaison/verbes-de-modalite', examples: ['je dois...', 'je peux...'] },
-      { key: 'conjugaison/les-verbes-reflexifs', examples: ['je me lève', 'il se douche'] },
-    ],
-  },
-];
-
-const chooserOptions = [
-  {
-    key: 'accords',
-    label: 'Accords',
-    problem: 'Je ne sais pas quelle terminaison choisir.',
-    answer: 'Commence par les cas, puis vérifie les déterminants, adjectifs et prépositions.',
-  },
-  {
-    key: 'ordre',
-    label: 'Ordre des mots',
-    problem: 'Je ne sais pas où placer le verbe.',
-    answer: 'Va vers la syntaxe : phrase simple, question, connecteur ou subordonnée.',
-  },
-  {
-    key: 'verbes',
-    label: 'Verbes',
-    problem: 'Je ne sais pas conjuguer ou utiliser le verbe.',
-    answer: 'Va vers la conjugaison : temps, modes, verbes de modalité ou verbes réflexifs.',
-  },
-];
-
-const theoryCategories = [
-  {
-    key: 'grammaire',
-    label: 'Grammaire',
-    description: 'Accords, cas, pronoms, adjectifs et comparaison.',
-  },
-  {
-    key: 'syntaxe',
-    label: 'Syntaxe',
-    description: 'Place du verbe, questions, connecteurs et subordonnées.',
-  },
-  {
-    key: 'conjugaison',
-    label: 'Conjugaison',
-    description: 'Temps, modes et types de verbes.',
-  },
-] as const;
+].filter((pathway) => availableCategories.has(pathway.category));
 ---
 
-<section class="content-band theory-chooser" data-theory-chooser aria-labelledby="theory-chooser-title">
-  <div class="theory-chooser-header">
-    <p class="home-section-label">Repère rapide</p>
-    <h2 id="theory-chooser-title">Quel est ton problème ?</h2>
-  </div>
-  <div class="theory-chooser-grid">
-    <div class="theory-chooser-buttons" aria-label="Choisir un problème">
-      {
-        chooserOptions.map((option, index) => (
-          <button
-            class:list={['theory-chooser-button', { 'is-selected': index === 0 }]}
-            type="button"
-            data-choice={index}
-            aria-pressed={index === 0 ? 'true' : 'false'}
-          >
-            <strong>{option.label}</strong>
-            <span>{option.problem}</span>
-          </button>
-        ))
-      }
-    </div>
-    <div class="theory-chooser-result" aria-live="polite">
-      <p class="theory-chooser-kicker" data-choice-label>{chooserOptions[0].label}</p>
-      <p data-choice-answer>{chooserOptions[0].answer}</p>
-    </div>
-  </div>
-</section>
-
-<section
-  class="content-band theory-guide"
-  aria-labelledby="theory-agreement-title"
-  data-source-image-replacement="schéma des accords"
->
-  <p class="home-section-label">À retenir</p>
-  <h2 id="theory-agreement-title">Accords et déclinaisons</h2>
-  <p>
-    Voici les types de mots qui s’accordent ou se déclinent : les noms, les déterminants, les pronoms et les adjectifs.
-    Comme en français, ces mots s’accordent en genre (masculin, féminin, neutre) et en nombre (singulier, pluriel).
-  </p>
-  <p>
-    Mais en allemand, ils se déclinent également selon le rôle qu’ils ont dans la phrase : sujet, CVD, CVI ou groupe
-    prépositionnel. C’est pour cela que les pages de cas, de tableaux et de prépositions sont le point de départ.
-  </p>
-  <p data-source-image-replacement="exemple nominatif et accusatif">
-    <strong>Exemple :</strong> Der Hund ist nett. Ich mag den Hund. Le chien est gentil. J’aime le chien.
-  </p>
-  <p>
-    Il peut y avoir de nombreux groupes dans une phrase, mais ceux que tu dois savoir reconnaître sont les suivants :
-    verbe, sujet, CVD, CVI et groupe prépositionnel.
-  </p>
-  <p>
-    Un rappel de la technique pour déterminer les groupes de la phrase est fait sur la page des cas. Le groupe nominal
-    comprend un nom, un déterminant et éventuellement un adjectif.
-  </p>
-  <p>
-    La syntaxe règle la question de l’ordre des mots dans la phrase. En allemand, la difficulté principale réside dans
-    le fait de mettre le verbe au bon endroit.
-  </p>
-  <p>On distingue les types de phrases suivants :</p>
-  <ul>
-    <li>la phrase affirmative (phrase « normale ») ;</li>
-    <li>la phrase interrogative (question) ;</li>
-    <li>la phrase impérative (ordre) ;</li>
-    <li>la phrase subordonnée (phrase dans la phrase).</li>
-  </ul>
-  <p>Pour chaque type de phrase, il y a des règles différentes quant à la place du verbe.</p>
-  <p>
-    La place du verbe change aussi quand la phrase est au passé composé (auxiliaire + participe passé), par exemple
-    <strong>Peter hat einen Apfel gegessen.</strong> Peter a mangé une pomme.
-  </p>
-  <p data-source-image-replacement="phrase avec deux formes verbales">
-    Même principe quand la phrase contient un verbe de modalité (verbe de modalité + infinitif), par exemple
-    <strong>Peter muss sein Zimmer aufräumen.</strong> Peter doit ranger sa chambre.
-  </p>
-  <p>Dans ces cas de figure, il y a toujours :</p>
-  <ul>
-    <li>un verbe principal (celui qui est conjugué avec le sujet) ;</li>
-    <li>une forme verbale invariable (qui ne change pas en fonction du sujet, soit le participe passé ou un verbe à l’infinitif).</li>
-  </ul>
-  <p>
-    <strong>Attention :</strong> lorsqu’on parle de « verbe principal », il s’agit toujours du verbe qui est conjugué
-    avec le sujet !
-  </p>
-</section>
-
-<section class="content-band theory-guide" aria-labelledby="theory-guide-title">
-  <p class="home-section-label">Mode d’emploi</p>
-  <h2 id="theory-guide-title">Trois questions à se poser</h2>
-  <div class="theory-guide-grid">
-    <article class="theory-question-card">
-      <span aria-hidden="true">1</span>
-      <h3>Est-ce un problème d’accord ?</h3>
-      <p>Regarde si tu dois choisir une terminaison pour un déterminant, un pronom ou un adjectif. Dans ce cas, commence par les cas et les déclinaisons.</p>
-    </article>
-    <article class="theory-question-card">
-      <span aria-hidden="true">2</span>
-      <h3>Est-ce un problème de place du verbe ?</h3>
-      <p>Regarde si ta phrase est une question, une phrase avec deux verbes, une phrase avec connecteur ou une subordonnée.</p>
-    </article>
-    <article class="theory-question-card">
-      <span aria-hidden="true">3</span>
-      <h3>Est-ce un problème de conjugaison ?</h3>
-      <p>Regarde le temps verbal demandé, puis vérifie si le verbe est régulier, modal, réflexif ou à forme particulière.</p>
-    </article>
-  </div>
-</section>
-
-<section class="content-band theory-library" data-theory-library aria-labelledby="theory-library-title">
-  <div class="section-heading">
-    <p class="home-section-label">Toutes les fiches</p>
-    <h2 id="theory-library-title">Choisis un domaine</h2>
-    <p>Les fiches sont regroupées par besoin. Change d’onglet sans perdre ta place dans la page.</p>
+<section class="theory-pathways" aria-labelledby="theory-pathways-title">
+  <div class="theory-pathways-heading">
+    <p class="home-section-label">Par où commencer ?</p>
+    <h2 id="theory-pathways-title">Choisis ce que tu veux comprendre</h2>
   </div>
 
-  <div class="theory-library-tabs" role="tablist" aria-label="Domaines de théorie">
+  <div class="theory-pathway-grid">
     {
-      theoryCategories.map((category, index) => (
-        <button
-          type="button"
-          role="tab"
-          id={`theory-tab-${category.key}`}
-          aria-controls={`theory-panel-${category.key}`}
-          aria-selected={index === 0 ? 'true' : 'false'}
-          tabindex={index === 0 ? 0 : -1}
-          data-theory-tab={category.key}
-        >
-          <strong>{category.label}</strong>
-          <span>{category.description}</span>
-        </button>
+      pathways.map((pathway) => (
+        <a class={`theory-pathway theory-pathway-${pathway.category}`} href={withBase(`/theorie/${pathway.category}/`)}>
+          <span class="theory-pathway-number" aria-hidden="true">{pathway.number}</span>
+          <span class="theory-pathway-copy">
+            <span class="theory-pathway-eyebrow">{pathway.eyebrow}</span>
+            <strong>{pathway.title}</strong>
+            <span>{pathway.question}</span>
+          </span>
+          <span class="theory-pathway-topics" aria-label={`Notions : ${pathway.topics.join(', ')}`}>
+            {pathway.topics.map((topic) => <small>{topic}</small>)}
+          </span>
+          <span class="theory-pathway-arrow" aria-hidden="true">→</span>
+        </a>
       ))
     }
   </div>
-
-  {
-    theoryCategories.map((category) => (
-      <section
-        class="theory-library-panel"
-        role="tabpanel"
-        id={`theory-panel-${category.key}`}
-        aria-labelledby={`theory-tab-${category.key}`}
-        data-theory-panel={category.key}
-      >
-        {
-          groups
-            .filter((group) => group.category === category.key)
-            .map((group) => (
-              <article class="theory-page-group">
-                <header>
-                  <h3>{group.title}</h3>
-                  <p>{group.note}</p>
-                </header>
-                <div class="theory-card-grid">
-                  {
-                    group.items.map((item) => {
-                      const entry = entryMap.get(item.key);
-                      if (!entry) return null;
-                      return (
-                        <a class="theory-card" href={resourceUrl(entry)}>
-                          <span class="card-kicker">{entry.data.category}</span>
-                          <strong>{entry.data.title}</strong>
-                          <span class="theory-card-examples">
-                            {item.examples.map((example) => <span>{example}</span>)}
-                          </span>
-                        </a>
-                      );
-                    })
-                  }
-                </div>
-              </article>
-            ))
-        }
-      </section>
-    ))
-  }
 </section>
 
-<script define:vars={{ chooserOptions }} is:inline>
-  const chooser = document.querySelector('[data-theory-chooser]');
+<section class="theory-example-strip" aria-labelledby="theory-example-title">
+  <div class="theory-example-intro">
+    <p class="home-section-label">Un exemple suffit</p>
+    <h2 id="theory-example-title">Chaque couleur répond à une question</h2>
+    <p>Lis d’abord le verbe, puis repère les groupes de la phrase.</p>
+  </div>
 
-  if (chooser instanceof HTMLElement) {
-    const buttons = Array.from(chooser.querySelectorAll('[data-choice]'));
-    const label = chooser.querySelector('[data-choice-label]');
-    const answer = chooser.querySelector('[data-choice-answer]');
+  <div class="theory-example-sentence">
+    <span class="case-chip case-chip-time">
+      <small>Quand ?</small>
+      <span lang="de">Heute</span>
+    </span>
+    <span class="case-chip case-chip-verb">
+      <small>Verbe</small>
+      <span lang="de">schickt</span>
+    </span>
+    <span class="case-chip case-chip-nominative">
+      <small>Sujet · nominatif</small>
+      <span lang="de">das Mädchen</span>
+    </span>
+    <span class="case-chip case-chip-accusative">
+      <small>CVD · accusatif</small>
+      <span lang="de">einen Brief</span>
+    </span>
+  </div>
 
-    const update = (selectedIndex) => {
-      const option = chooserOptions[selectedIndex] ?? chooserOptions[0];
-      if (label) label.textContent = option.label;
-      if (answer) answer.textContent = option.answer;
-
-      buttons.forEach((button, index) => {
-        const isSelected = index === selectedIndex;
-        button.classList.toggle('is-selected', isSelected);
-        button.setAttribute('aria-pressed', String(isSelected));
-      });
-    };
-
-    buttons.forEach((button) => {
-      button.addEventListener('click', () => {
-        update(Number(button.dataset.choice ?? 0));
-      });
-    });
-  }
-
-  const library = document.querySelector('[data-theory-library]');
-
-  if (library instanceof HTMLElement) {
-    const tabs = Array.from(library.querySelectorAll('[data-theory-tab]'));
-    const panels = Array.from(library.querySelectorAll('[data-theory-panel]'));
-
-    const selectTheoryCategory = (key) => {
-      tabs.forEach((tab) => {
-        const isSelected = tab.getAttribute('data-theory-tab') === key;
-        tab.setAttribute('aria-selected', String(isSelected));
-        tab.setAttribute('tabindex', isSelected ? '0' : '-1');
-      });
-
-      panels.forEach((panel) => {
-        panel.hidden = panel.getAttribute('data-theory-panel') !== key;
-      });
-    };
-
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => selectTheoryCategory(tab.getAttribute('data-theory-tab')));
-      tab.addEventListener('keydown', (event) => {
-        const navigationKeys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
-        if (!navigationKeys.includes(event.key)) return;
-        event.preventDefault();
-        let nextIndex = index;
-        if (event.key === 'Home') nextIndex = 0;
-        else if (event.key === 'End') nextIndex = tabs.length - 1;
-        else {
-          const direction = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1 : -1;
-          nextIndex = (index + direction + tabs.length) % tabs.length;
-        }
-        const nextTab = tabs[nextIndex];
-        nextTab?.focus();
-        selectTheoryCategory(nextTab?.getAttribute('data-theory-tab'));
-      });
-    });
-
-    selectTheoryCategory(tabs[0]?.getAttribute('data-theory-tab'));
-  }
-</script>
+  <a class="theory-example-link" href={withBase('/theorie/grammaire/les-cas-theorie-de-base/')}>
+    Comprendre les cas
+    <span aria-hidden="true">→</span>
+  </a>
+</section>

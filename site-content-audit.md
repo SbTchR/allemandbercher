@@ -1,6 +1,6 @@
 # Audit contenu site complet
 
-Généré le 2026-07-30T13:41:36.747Z.
+Généré le 2026-07-30T15:19:55.516Z.
 
 ## Résumé
 
@@ -8,6 +8,7 @@ Généré le 2026-07-30T13:41:36.747Z.
 - Alertes bloquantes de contenu : 24
 - Avertissements images à revoir visuellement : 4
 - Pages avec correction pédagogique assumée du site source : 3
+- Pages avec réécriture éditoriale contrôlée : 10
 - Contrôle bloquant : existence des pages cibles, couverture du texte principal, iframes/embeds intégrés et liens externes conservés.
 - Contrôle image : les images Google Sites récurrentes ou décoratives sont traitées comme avertissements, pas comme manque de contenu textuel.
 
@@ -270,6 +271,71 @@ Ces lignes du site source ne sont pas attendues dans la nouvelle version, car el
 
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also
 - Lignes volontairement remplacées : `Subordonnées` ; `Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.` ; `Les subordonnants suivants sont très utiles :` ; `Ils sont aussi très simples à utiliser car ils fonctionnent comme des points, ils ne comptent donc pas pour une position dans la phrase.` ; `⚠️ Les subordonnants « aber, denn et also » sont précédés d’une virgule !`
+
+
+## Réécritures éditoriales contrôlées
+
+Ces pages ont été comparées manuellement à la source. Leur formulation a été condensée ou restructurée ; les contrôles automatiques des liens, embeds et images restent actifs.
+
+### Théorie (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie
+- Contrôle : Accueil remplacé par trois parcours directs et un exemple annoté, sans supprimer les trois domaines de la source.
+- Similarité textuelle indicative : 24%
+
+### Grammaire (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire
+- Contrôle : Introduction condensée en une méthode en trois questions ; les neuf fiches restent toutes accessibles.
+- Similarité textuelle indicative : 48%
+
+### Le comparatif et le superlatif (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-comparatif
+- Contrôle : Règles et exemples conservés sous une formulation plus courte, avec un entraînement natif.
+- Similarité textuelle indicative : 58%
+
+### Le génitif (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9nitif
+- Contrôle : Contenu conservé et corrigé, notamment la construction von + datif.
+- Similarité textuelle indicative : 58%
+
+### Le superlatif (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-superlatif
+- Contrôle : Deux constructions distinguées explicitement ; exemples, irréguliers et liens de la source sont conservés.
+- Similarité textuelle indicative : 44%
+
+### Les adjectifs (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-adjectifs
+- Contrôle : Opposition attributif-épithète conservée ; les deux tableaux complets restent disponibles au second niveau.
+- Similarité textuelle indicative : 27%
+
+### Les cas (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base
+- Contrôle : Méthode et tableaux reconstruits avec un exemple plus clair et une formulation adaptée au niveau.
+- Similarité textuelle indicative : 51%
+
+### Les prépositions (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions
+- Contrôle : Listes et exemples conservés ; la règle wo/wohin remplace la formulation erronée position-déplacement.
+- Similarité textuelle indicative : 58%
+
+### Les pronoms personnels (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-personnels
+- Contrôle : Tableau complet, distinction de Sie et exemples conservés dans une présentation plus concise.
+- Similarité textuelle indicative : 70%
+
+### Les déterminants possessifs (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs
+- Contrôle : Deux tableaux conservés et méthode réorganisée autour du possesseur puis de la terminaison.
+- Similarité textuelle indicative : 57%
 
 
 ## Pages vérifiées

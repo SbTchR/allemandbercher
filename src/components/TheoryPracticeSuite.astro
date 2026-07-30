@@ -95,7 +95,7 @@ const sortActivity = practice?.sort;
                 <blockquote>{item.sentence}</blockquote>
                 <div class="theory-choice-row" role="group" aria-label={`Réponses pour ${index + 1}`}>
                   {item.choices.map((choice) => (
-                    <button type="button" data-choice-button data-answer={item.answer} data-feedback={item.feedback} data-choice={choice}>
+                    <button type="button" data-choice-button data-answer={item.answer} data-success={item.feedback} data-choice={choice}>
                       {choice}
                     </button>
                   ))}
@@ -333,7 +333,7 @@ const sortActivity = practice?.sort;
           };
 
           items.forEach((item) => {
-            const feedback = item.querySelector('[data-feedback]');
+            const feedback = item.querySelector('p[data-feedback]');
             const buttons = Array.from(item.querySelectorAll('[data-choice-button]'));
             buttons.forEach((button) => {
               button.addEventListener('click', () => {
@@ -342,7 +342,7 @@ const sortActivity = practice?.sort;
                 button.classList.add(isCorrect ? 'is-correct' : 'is-wrong');
                 item.dataset.state = isCorrect ? 'correct' : 'wrong';
                 if (feedback) {
-                  feedback.textContent = isCorrect ? button.dataset.feedback ?? 'Correct.' : 'Pas encore. Ouvre l’indice, puis réessaie.';
+                  feedback.textContent = isCorrect ? button.dataset.success ?? 'Correct.' : 'Pas encore. Ouvre l’indice, puis réessaie.';
                   feedback.classList.toggle('is-correct', isCorrect);
                   feedback.classList.toggle('is-wrong', !isCorrect);
                 }

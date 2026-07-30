@@ -14,7 +14,7 @@ type Props = {
 };
 
 const { slug } = Astro.props;
-const linkGroups = externalLinkGroups[slug];
+const linkGroups = externalLinkGroups[slug] ?? [];
 const isCases = slug === 'les-cas-theorie-de-base';
 const isDeclensions = slug === 'tableaux-de-declinaisons';
 const isPrepositions = slug === 'les-prepositions';
@@ -27,185 +27,113 @@ const isGenitive = slug === 'le-genitif';
       <>
         <section
           class="case-role-legend"
-          aria-label="Code couleur des groupes"
-          data-source-image-replacement="schéma des rôles dans la phrase"
+          aria-label="Les trois cas de base"
+          data-source-image-replacement="schéma des trois cas de base"
         >
-          <article class="case-role-card case-role-card-verb">
-            <strong>Verbe</strong>
-            <p>Il donne l’action et sert de point de départ.</p>
-          </article>
           <article class="case-role-card case-role-card-nominative">
-            <strong>Sujet</strong>
-            <p>Nominatif : qui fait l’action ?</p>
+            <strong>Nominatif</strong>
+            <p>Le sujet : qui fait l’action ?</p>
           </article>
           <article class="case-role-card case-role-card-accusative">
-            <strong>CVD</strong>
-            <p>Accusatif : qui ou quoi ?</p>
+            <strong>Accusatif</strong>
+            <p>Souvent le CVD : qui ou quoi ?</p>
           </article>
           <article class="case-role-card case-role-card-dative">
-            <strong>CVI</strong>
-            <p>Datif : à qui ou à quoi ?</p>
-          </article>
-          <article class="case-role-card case-role-card-preposition">
-            <strong>Groupe prépositionnel</strong>
-            <p>Le cas dépend de la préposition.</p>
+            <strong>Datif</strong>
+            <p>Souvent le CVI : à qui ou à quoi ?</p>
           </article>
         </section>
 
-        <details class="lesson-card">
-          <summary>1. Le groupe nominal, c’est quoi ?</summary>
-          <div class="lesson-card-content">
+        <section class="grammar-core-section" aria-labelledby="case-example-title">
+          <h2 id="case-example-title">Une phrase, trois cas</h2>
+          <p>
+            Un groupe nominal peut contenir un <span class="mark-determiner">déterminant</span>, un{' '}
+            <span class="mark-adjective">adjectif</span> et un nom. Sa forme dépend de son rôle dans la phrase.
+          </p>
+
+          <div
+            class="sentence-lab"
+            aria-label="Phrase allemande analysée"
+            data-source-image-replacement="phrase allemande analysée par groupes"
+          >
             <p>
-              Un groupe nominal peut contenir un <span class="case-chip case-chip-determiner">déterminant</span>, un ou plusieurs{' '}
-              <span class="case-chip case-chip-adjective">adjectifs</span> et un <span class="case-chip case-chip-noun">nom</span>.
-              Exemple : <strong>le petit chien</strong>.
+              Heute <span class="case-chip case-chip-verb">schickt</span>{' '}
+              <span class="case-chip case-chip-nominative">Mia</span>{' '}
+              <span class="case-chip case-chip-dative">ihrer Freundin</span>{' '}
+              <span class="case-chip case-chip-accusative">einen Brief</span>.
             </p>
+            <p>Aujourd’hui, Mia envoie une lettre à son amie.</p>
+          </div>
+
+          <div class="mini-table-grid" data-source-image-replacement="rôles des trois groupes nominaux">
+            <article>
+              <strong>Mia</strong>
+              <p>fait l’action : nominatif.</p>
+            </article>
+            <article>
+              <strong>einen Brief</strong>
+              <p>Mia envoie quoi ? Accusatif.</p>
+            </article>
+            <article>
+              <strong>ihrer Freundin</strong>
+              <p>Mia envoie la lettre à qui ? Datif.</p>
+            </article>
+          </div>
+
+          <div class="grammar-callout" data-source-image-replacement="préposition et cas du groupe nominal">
+            <strong>Et après une préposition ?</strong>
             <p>
-              En allemand, ce groupe change de forme selon son rôle dans la phrase. C’est ce rôle qu’on appelle le cas :
-              <strong> nominatif</strong>, <strong>accusatif</strong> ou <strong>datif</strong>.
+              La préposition choisit le cas : <span class="case-chip case-chip-preposition">mit</span>{' '}
+              <span class="case-chip case-chip-dative">meinem Freund</span>, mais{' '}
+              <span class="case-chip case-chip-preposition">für</span>{' '}
+              <span class="case-chip case-chip-accusative">meinen Freund</span>.
             </p>
-            <p>
-              Pour comprendre à quoi correspondent les cas, il faut d’abord être capable de déterminer les groupes de
-              la phrase. Si tu connais déjà la théorie mais que tu hésites sur les déclinaisons, utilise aussi la
-              NAD-Maschine.
-            </p>
-            <div class="case-tool-callout">
-              <div>
-                <strong>Réflexe utile</strong>
-                <p>Avant de chercher une terminaison, cherche d’abord le rôle du groupe dans la phrase.</p>
-              </div>
-              <a class="case-tool-link" href={withBase('/outils-en-ligne/nad-maschine/')}>
-                Ouvrir la NAD-Maschine
-              </a>
+            <a href={withBase('/theorie/grammaire/les-prepositions/')}>Revoir les prépositions</a>
+          </div>
+
+          <GrammarMatrix table={declensionTables.shortcut} compact />
+
+          <div class="case-tool-callout">
+            <div>
+              <strong>Deux outils pour continuer</strong>
+              <p>Utilise la NAD-Maschine pour raisonner ou consulte les tableaux complets.</p>
+            </div>
+            <div class="chapter-actions">
+              <a class="case-tool-link" href={withBase('/outils-en-ligne/nad-maschine/')}>NAD-Maschine</a>
+              <a class="case-tool-link" href={withBase('/theorie/grammaire/tableaux-de-declinaisons/')}>Tableaux complets</a>
             </div>
           </div>
-        </details>
+        </section>
 
         <details class="lesson-card">
-          <summary>2. Trouver les groupes dans une phrase</summary>
+          <summary>Méthode : repérer les groupes</summary>
           <div class="lesson-card-content">
+            <ol class="grammar-steps">
+              <li>
+                <span>Verbe</span>
+                <strong>schickt</strong>
+                <small>Commence par le mot conjugué.</small>
+              </li>
+              <li>
+                <span>Sujet</span>
+                <strong>Mia</strong>
+                <small>Qui est-ce qui envoie ?</small>
+              </li>
+              <li>
+                <span>CVD</span>
+                <strong>einen Brief</strong>
+                <small>Mia envoie quoi ?</small>
+              </li>
+              <li>
+                <span>CVI</span>
+                <strong>ihrer Freundin</strong>
+                <small>Mia envoie une lettre à qui ?</small>
+              </li>
+            </ol>
             <p>
-              On ne cherche pas les cas au hasard. On démonte d’abord la phrase française, puis on traduit les groupes
-              avec le bon cas.
+              En 9H, il faut surtout maîtriser les déterminants et les pronoms personnels. Les déclinaisons des
+              adjectifs sont approfondies en 10H.
             </p>
-            <div class="case-analysis-board">
-              <div class="case-sentence-strip" aria-label="Phrase analysée">
-                <span class="case-token case-token-time">Aujourd’hui,</span>
-                <span class="case-token case-chip-nominative">la fille</span>
-                <span class="case-token case-chip-verb">envoie</span>
-                <span class="case-token case-chip-accusative">une lettre</span>
-                <span class="case-token case-chip-dative">à son amie</span>
-                <span class="case-token case-chip-preposition">pour son anniversaire</span>
-              </div>
-
-              <div class="case-question-grid">
-                <article class="case-question-card case-question-card-verb">
-                  <span>1</span>
-                  <div>
-                    <strong>Verbe principal</strong>
-                    <p>Quel mot est conjugué ?</p>
-                    <mark>envoie</mark>
-                  </div>
-                </article>
-                <article class="case-question-card case-question-card-nominative">
-                  <span>2</span>
-                  <div>
-                    <strong>Sujet</strong>
-                    <p>On pose la question « Qui est-ce qui ... ? » suivie du verbe : qui est-ce qui envoie ?</p>
-                    <mark>la fille</mark>
-                  </div>
-                </article>
-                <article class="case-question-card case-question-card-accusative">
-                  <span>3</span>
-                  <div>
-                    <strong>CVD</strong>
-                    <p>On pose la question « Qui ? / Quoi ? » précédée du sujet et du verbe : la fille envoie quoi ?</p>
-                    <mark>une lettre</mark>
-                  </div>
-                </article>
-                <article class="case-question-card case-question-card-dative">
-                  <span>4</span>
-                  <div>
-                    <strong>CVI</strong>
-                    <p>La fille envoie une lettre à qui ?</p>
-                    <mark>à son amie</mark>
-                  </div>
-                </article>
-                <article class="case-question-card case-question-card-preposition">
-                  <span>5</span>
-                  <div>
-                    <strong>Groupe prépositionnel</strong>
-                    <p>Quel groupe commence par une préposition ?</p>
-                    <mark>pour son anniversaire</mark>
-                  </div>
-                </article>
-              </div>
-              <p>
-                S’il reste des éléments de la phrase qui ne sont ni verbe, ni sujet, ni CVD, ni CVI, alors ils peuvent
-                être soit un complément de temps ou de lieu, soit un groupe prépositionnel.
-              </p>
-            </div>
-          </div>
-        </details>
-
-        <details class="lesson-card">
-          <summary>3. Passer du rôle au cas</summary>
-          <div class="lesson-card-content">
-            <div class="sentence-lab" aria-label="Passage du français à l'allemand">
-              <p>
-                Aujourd’hui, <span class="case-chip case-chip-nominative">la fille</span>{' '}
-                <span class="case-chip case-chip-verb">envoie</span>{' '}
-                <span class="case-chip case-chip-accusative">une lettre</span>{' '}
-                <span class="case-chip case-chip-dative">à son amie</span>{' '}
-                <span class="case-chip case-chip-preposition">pour son anniversaire</span>.
-              </p>
-              <p>
-                Heute <span class="case-chip case-chip-verb">schickt</span>{' '}
-                <span class="case-chip case-chip-nominative">das Mädchen</span>{' '}
-                <span class="case-chip case-chip-accusative">einen Brief</span>{' '}
-                <span class="case-chip case-chip-dative">seiner Freundin</span>{' '}
-                <span class="case-chip case-chip-preposition">für seinen Geburtstag</span>.
-              </p>
-            </div>
-            <div class="mini-table-grid">
-              <article>
-                <strong>Sujet</strong>
-                <p>Le sujet est toujours au nominatif : <span class="case-chip case-chip-nominative">das Mädchen</span> (neut.).</p>
-              </article>
-              <article>
-                <strong>CVD</strong>
-                <p>Le CVD est toujours à l’accusatif : <span class="case-chip case-chip-accusative">einen Brief</span> (masc.).</p>
-              </article>
-              <article>
-                <strong>CVI</strong>
-                <p><span class="case-chip case-chip-dative">datif</span> : seiner Freundin</p>
-              </article>
-              <article>
-                <strong>Groupe prépositionnel</strong>
-                <p>
-                  Le cas dépend de la préposition. Ici, <strong>für</strong> impose l’accusatif.
-                  <a href={withBase('/theorie/grammaire/les-prepositions/')}>Voir la page des prépositions</a>.
-                </p>
-              </article>
-            </div>
-            <GrammarMatrix table={declensionTables.shortcut} compact />
-          </div>
-        </details>
-
-        <details class="lesson-card">
-          <summary>4. Ce qu’il faut connaître pour décliner</summary>
-          <div class="lesson-card-content">
-            <ul class="mission-list">
-              <li>Déterminer le groupe : verbe, sujet, CVD, CVI ou groupe prépositionnel.</li>
-              <li>Connaître le genre du nom : masculin, neutre, féminin ou pluriel.</li>
-              <li>Connaître les tableaux de déclinaisons des déterminants.</li>
-              <li>Ajouter les adjectifs quand la notion a été travaillée en classe.</li>
-            </ul>
-            <div class="grammar-table-stack">
-              <GrammarMatrix table={declensionTables.definiteDeterminers} compact />
-              <GrammarMatrix table={declensionTables.possessiveDeterminers} compact />
-              <GrammarMatrix table={declensionTables.personalPronouns} compact />
-            </div>
           </div>
         </details>
       </>
@@ -215,7 +143,7 @@ const isGenitive = slug === 'le-genitif';
   {
     isDeclensions && (
       <>
-        <section class="chapter-dashboard grammar-dashboard" aria-label="Mode d'emploi des tableaux">
+        <section class="chapter-dashboard grammar-dashboard" aria-label="Méthode pour choisir une déclinaison">
           <article>
             <strong>1. Genre</strong>
             <p>Masculin, neutre, féminin ou pluriel.</p>
@@ -226,46 +154,63 @@ const isGenitive = slug === 'le-genitif';
           </article>
           <article>
             <strong>3. Forme</strong>
-            <p>Lis la case et applique la terminaison.</p>
+            <p>Lis la case et observe la terminaison.</p>
           </article>
         </section>
 
-        <details class="lesson-card">
-          <summary>1. Les déterminants</summary>
-          <div class="lesson-card-content">
-            <p>
-              Ces tableaux sont la base. Quand tu connais le genre et le cas, tu peux choisir le bon déterminant.
-              Le tableau avec <strong>mein</strong> montre aussi le modèle des déterminants possessifs.
-            </p>
-            <div class="grammar-table-stack">
-              <GrammarMatrix table={declensionTables.definiteDeterminers} />
-              <GrammarMatrix table={declensionTables.possessiveDeterminers} />
-            </div>
+        <nav class="grammar-table-jump-links" aria-label="Accès rapide aux tableaux">
+          <a href="#declension-determiners">Déterminants</a>
+          <a href="#declension-adjectives">Adjectifs</a>
+          <a href="#declension-pronouns">Pronoms personnels</a>
+        </nav>
+
+        <section class="grammar-table-section" id="declension-determiners" aria-labelledby="declension-determiners-title">
+          <h2 id="declension-determiners-title">Les déterminants</h2>
+          <p>
+            Le modèle <strong>ein</strong> sert aussi pour <strong>kein</strong> et les possessifs : mein, dein, sein,
+            ihr, unser et euer.
+          </p>
+          <div class="grammar-table-stack">
+            <GrammarMatrix table={declensionTables.definiteDeterminers} />
+            <GrammarMatrix table={declensionTables.possessiveDeterminers} />
           </div>
-        </details>
+        </section>
+
+        <section class="grammar-table-section" id="declension-adjectives" aria-labelledby="declension-adjectives-title">
+          <h2 id="declension-adjectives-title">Les adjectifs</h2>
+          <p>
+            L’adjectif se place entre le déterminant et le nom. Les terminaisons soulignées sont les éléments à
+            comparer.
+          </p>
+          <div class="grammar-table-stack">
+            <GrammarMatrix table={declensionTables.adjectiveAfterDefinite} />
+            <GrammarMatrix table={declensionTables.adjectiveAfterPossessive} />
+          </div>
+        </section>
+
+        <section class="grammar-table-section" id="declension-pronouns" aria-labelledby="declension-pronouns-title">
+          <h2 id="declension-pronouns-title">Les pronoms personnels</h2>
+          <p>Un pronom remplace un groupe nominal : ich devient mich à l’accusatif et mir au datif.</p>
+          <GrammarMatrix table={declensionTables.personalPronouns} />
+        </section>
 
         <details class="lesson-card">
-          <summary>2. Les adjectifs</summary>
+          <summary>Deux pièges à connaître</summary>
           <div class="lesson-card-content">
+            <ul class="mission-list">
+              <li>
+                Devant une terminaison, <strong>euer</strong> perd souvent son deuxième <strong>e</strong> :
+                eure, euren, eurem.
+              </li>
+              <li>
+                Au datif pluriel, le nom reçoit généralement un <strong>-n</strong> supplémentaire :
+                mit den Freunden, mit den roten Schuhen.
+              </li>
+            </ul>
             <p>
-              Les adjectifs se placent entre le déterminant et le nom. Leur terminaison dépend du déterminant déjà présent.
-              Observe surtout la différence entre <strong>der rote Schal</strong> et <strong>mein roter Schal</strong>.
+              Ces tableaux couvrent les trois cas de base. Le génitif est présenté sur sa
+              <a href={withBase('/theorie/grammaire/le-genitif/')}>page dédiée</a>.
             </p>
-            <div class="grammar-table-stack">
-              <GrammarMatrix table={declensionTables.adjectiveAfterDefinite} />
-              <GrammarMatrix table={declensionTables.adjectiveAfterPossessive} />
-            </div>
-          </div>
-        </details>
-
-        <details class="lesson-card">
-          <summary>3. Les pronoms personnels</summary>
-          <div class="lesson-card-content">
-            <p>
-              Les pronoms remplacent un groupe nominal. Ils changent fortement entre nominatif, accusatif et datif :
-              <strong> ich</strong>, <strong>mich</strong>, <strong>mir</strong>.
-            </p>
-            <GrammarMatrix table={declensionTables.personalPronouns} />
           </div>
         </details>
       </>
@@ -275,86 +220,76 @@ const isGenitive = slug === 'le-genitif';
   {
     isPrepositions && (
       <>
-        <section class="chapter-dashboard grammar-dashboard" aria-label="Résumé des prépositions">
+        <section
+          class="chapter-dashboard grammar-dashboard"
+          aria-label="Les trois familles de prépositions étudiées"
+          data-source-image-replacement="synthèse des trois familles de prépositions"
+        >
           <article>
-            <strong>Accusatif fixe</strong>
+            <strong>Accusatif à apprendre</strong>
             <p>durch, für, gegen, ohne, um.</p>
           </article>
           <article>
-            <strong>Datif fixe</strong>
-            <p>aus, bei, mit, nach, seit, von, zu, gegenüber, vorbei.</p>
+            <strong>Datif à apprendre</strong>
+            <p>aus, bei, mit, nach, seit, von, zu, gegenüber, an … vorbei.</p>
           </article>
           <article>
             <strong>Prépositions mixtes</strong>
-            <p>Datif pour la position, accusatif pour le déplacement.</p>
+            <p><em>wo?</em> + datif ; <em>wohin?</em> + accusatif.</p>
           </article>
         </section>
 
-        <details class="lesson-card">
-          <summary>1. Les prépositions qui imposent toujours un cas</summary>
-          <div class="lesson-card-content">
-            <p>
-              Certaines prépositions décident du cas à ta place. Dès que tu les reconnais, tu appliques le cas demandé,
-              même si le français ne montre pas clairement cette différence.
-            </p>
-            <div class="grammar-table-stack">
-              <GrammarMatrix table={prepositionTables.accusative} />
-              <GrammarMatrix table={prepositionTables.dative} />
-            </div>
+        <section class="grammar-table-section" aria-labelledby="fixed-prepositions-title">
+          <h2 id="fixed-prepositions-title">Les prépositions à cas fixe</h2>
+          <p>Pour cette leçon, retiens d’abord ces listes prioritaires : la préposition impose le cas.</p>
+          <div class="grammar-table-stack">
+            <GrammarMatrix table={prepositionTables.accusative} />
+            <GrammarMatrix table={prepositionTables.dative} />
           </div>
-        </details>
+        </section>
+
+        <section class="grammar-table-section" aria-labelledby="mixed-prepositions-title">
+          <h2 id="mixed-prepositions-title">Les neuf prépositions mixtes</h2>
+          <p>
+            Avec <strong>an, auf, hinter, in, neben, über, unter, vor</strong> et <strong>zwischen</strong>, pose une
+            question précise : <strong>wo?</strong> pour un lieu, <strong>wohin?</strong> pour une direction vers un but.
+          </p>
+
+          <div class="movement-switch">
+            <article>
+              <span class="case-chip case-chip-dative">Lieu — wo ?</span>
+              <strong>Das Blatt liegt neben dem Schrank.</strong>
+              <p>La feuille se trouve à cet endroit : datif.</p>
+            </article>
+            <article>
+              <span class="case-chip case-chip-accusative">Direction — wohin ?</span>
+              <strong>Peter legt das Blatt neben den Schrank.</strong>
+              <p>La feuille est dirigée vers un nouvel endroit : accusatif.</p>
+            </article>
+          </div>
+
+          <GrammarMatrix table={prepositionTables.mixed} />
+
+          <div class="grammar-callout">
+            <strong>Le mouvement ne suffit pas.</strong>
+            <p>
+              Dans <em>Die Kinder laufen im Park</em>, les enfants bougent, mais le parc reste le lieu de l’action :
+              <span class="case-chip case-chip-dative">im Park</span>.
+            </p>
+          </div>
+        </section>
 
         <details class="lesson-card">
-          <summary>2. Les prépositions mixtes : wo ou wohin ?</summary>
-          <div class="lesson-card-content">
-            <p>
-              Avec les prépositions mixtes, pose la question <strong>wo ?</strong> (« où ? ») ou
-              <strong>wohin ?</strong> (« vers quel lieu ? »). Un lieu où la relation est déjà établie demande le datif ;
-              une direction vers un nouveau but spatial demande l’accusatif.
-            </p>
-            <p>
-              Les neuf prépositions mixtes étudiées ici — an, auf, hinter, in, neben, über, unter, vor et zwischen —
-              peuvent être suivies du datif ou de l’accusatif. Le simple fait que l’action comporte du mouvement ne
-              suffit pas à choisir : c’est la relation de lieu ou de direction exprimée par le groupe qui compte.
-            </p>
-            <p>
-              Le tableau regroupe précisément ces neuf <em>Wechselpräpositionen</em>. Les autres prépositions allemandes
-              ne sont pas automatiquement mixtes : elles peuvent imposer un autre cas ou suivre une autre construction.
-            </p>
-            <p>
-              Pour maîtriser ce thème, tu dois connaître par cœur la liste des prépositions + Acc. et celle des
-              prépositions + Dat., puis distinguer les réponses à <em>wo?</em> et à <em>wohin?</em>.
-            </p>
-            <p><strong>Exemples :</strong> compare la direction et le lieu déjà établi dans les deux phrases suivantes.</p>
-            <div class="movement-switch">
-              <article>
-                <span class="case-chip case-chip-accusative">Direction — wohin ?</span>
-                <strong>Peter legt das Blatt neben den Schrank.</strong>
-                <p>La feuille va vers un nouvel endroit : accusatif. Peter pose la feuille à côté de l’armoire.</p>
-              </article>
-              <article>
-                <span class="case-chip case-chip-dative">Lieu — wo ?</span>
-                <strong>Das Blatt liegt neben dem Schrank.</strong>
-                <p>La feuille est déjà là : datif.</p>
-              </article>
-            </div>
-            <GrammarMatrix table={prepositionTables.mixed} />
-          </div>
-        </details>
-
-        <details class="lesson-card">
-          <summary>3. Les verbes qui donnent un indice</summary>
+          <summary>Verbes utiles pour comparer lieu et direction</summary>
           <div class="lesson-card-content">
             <div class="word-map">
               <span><strong>stellen</strong>poser debout vers un endroit</span>
+              <span><strong>stehen</strong>être debout à un endroit</span>
               <span><strong>legen</strong>poser à plat vers un endroit</span>
-              <span><strong>hängen</strong>suspendre, accrocher : Peter hängt das Poster an die Wand.</span>
-              <span><strong>stehen</strong>être debout quelque part</span>
-              <span><strong>liegen</strong>être couché quelque part</span>
-              <span><strong>hängen</strong>être accroché quelque part</span>
+              <span><strong>liegen</strong>être à plat à un endroit</span>
+              <span><strong>hängen + accusatif</strong>accrocher vers un endroit</span>
+              <span><strong>hängen + datif</strong>être accroché à un endroit</span>
             </div>
-            <p>Peter suspend le poster contre le mur : il y a un mouvement vers le mur, donc l’accusatif.</p>
-            <GrammarMatrix table={declensionTables.shortcut} compact />
           </div>
         </details>
       </>
@@ -367,64 +302,67 @@ const isGenitive = slug === 'le-genitif';
         <section class="chapter-dashboard grammar-dashboard" aria-label="Résumé du génitif">
           <article>
             <strong>Fonction</strong>
-            <p>Le génitif indique souvent l’appartenance.</p>
+            <p>Il indique souvent l’appartenance.</p>
           </article>
           <article>
             <strong>Question</strong>
-            <p>Wessen ? De qui ? À qui cela appartient ?</p>
+            <p><em>Wessen?</em> De qui ?</p>
           </article>
           <article>
-            <strong>À l’oral</strong>
-            <p>On remplace souvent le génitif par von + datif.</p>
+            <strong>Alternative orale</strong>
+            <p><em>von</em> + datif est fréquent.</p>
           </article>
         </section>
 
-        <details class="lesson-card">
-          <summary>1. À quoi sert le génitif ?</summary>
-          <div class="lesson-card-content">
+        <section class="grammar-table-section" aria-labelledby="genitive-use-title">
+          <h2 id="genitive-use-title">Exprimer le possesseur</h2>
+          <p>Le groupe qui désigne le possesseur se met au génitif.</p>
+
+          <div class="sentence-lab">
             <p>
-              Le génitif est le cas du complément du nom. Il indique souvent une possession :
-              <strong> la veste du jeune homme</strong> devient <strong>die Jacke des jungen Mannes</strong>.
+              <span>Nom possédé</span> die Jacke
             </p>
-            <div class="sentence-lab">
-              <p><span>Nom possédé</span> die Jacke</p>
-              <p><span>Possesseur au génitif</span> des jungen Mannes</p>
-            </div>
             <p>
-              À l’oral, on entend souvent <strong>von + datif</strong>. Mais à l’écrit, le génitif reste important :
-              <strong> die Jacke von dem jungen Mann</strong>.
+              <span>Possesseur</span>{' '}
+              <span class="case-chip case-chip-genitive">
+                <span class="mark-determiner">des</span> <span class="mark-adjective">jungen</span> Mann<span class="mark-ending">es</span>
+              </span>
+            </p>
+            <p>
+              Die Jacke <span class="case-chip case-chip-genitive">des jungen Mannes</span> ist blau.
             </p>
           </div>
-        </details>
 
-        <details class="lesson-card">
-          <summary>2. Décliner au génitif</summary>
-          <div class="lesson-card-content">
+          <GrammarMatrix table={genitiveTable} />
+
+          <div class="grammar-callout">
+            <strong>À l’oral</strong>
             <p>
-              Au masculin et au neutre, le déterminant devient <strong>des</strong> ou <strong>eines</strong>, et le nom prend
-              souvent <strong>-(e)s</strong>. Au féminin et au pluriel, le déterminant devient <strong>der</strong>.
+              On entend souvent <span class="case-chip case-chip-preposition">von</span>{' '}
+              <span class="case-chip case-chip-dative">dem jungen Mann</span>, généralement contracté en
+              <strong> vom jungen Mann</strong>.
             </p>
-            <GrammarMatrix table={genitiveTable} />
           </div>
-        </details>
+        </section>
 
         <details class="lesson-card">
-          <summary>3. Les cas particuliers à reconnaître</summary>
+          <summary>Formes particulières à reconnaître</summary>
           <div class="lesson-card-content">
             <ul class="mission-list">
-              <li>Quelques noms masculins prennent <strong>-(e)n</strong> au génitif : des Jungen, des Präsidenten, des Herrn.</li>
-              <li>Quelques noms masculin prennent la terminaison <strong>-(e)n</strong> au lieu de <strong>-(e)s</strong>.</li>
-              <li>Le mot interrogatif du génitif est <strong>Wessen ?</strong></li>
-              <li>Certaines prépositions peuvent être suivies du génitif : während, trotz, wegen.</li>
-              <li>Quelques prépositions sont aussi suivies du génitif.</li>
-              <li>À l’oral, on remplace souvent le génitif par la préposition <strong>von</strong> suivie du datif.</li>
-              <li>Les pronoms personnels se déclinent aussi au génitif, mais on les utilise très rarement : <strong>meinetwegen</strong>.</li>
+              <li>
+                Certains noms masculins faibles prennent <strong>-(e)n</strong> :
+                des Jungen, des Präsidenten, des Herrn.
+              </li>
+              <li>
+                Certaines prépositions se construisent souvent avec le génitif :
+                während, trotz et wegen.
+              </li>
+              <li>Les indications comme <strong>links der Strasse</strong> utilisent aussi le génitif.</li>
             </ul>
             <div class="word-map">
-              <span><strong>während</strong>während des Tages (pendant)</span>
+              <span><strong>während</strong>während des Tages</span>
               <span><strong>trotz</strong>trotz meiner guten Noten</span>
               <span><strong>wegen</strong>wegen des schlechten Wetters</span>
-              <span><strong>links / rechts</strong>links/rechts der Strasse (à gauche/à droite de)</span>
             </div>
           </div>
         </details>

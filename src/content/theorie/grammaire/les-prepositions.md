@@ -1,6 +1,6 @@
 ---
 title: "Les prépositions"
-description: "En allemand, 9 prépositions sont toujours suivies du datif et 5 sont toujours suivies de l’accusatif ."
+description: "Apprends les prépositions à cas fixe, puis distingue wo ? et wohin ? avec les prépositions mixtes."
 section: "theorie"
 category: "grammaire"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions"

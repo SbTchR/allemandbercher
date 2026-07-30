@@ -1,5 +1,5 @@
 ---
-import type { GrammarTable } from '../data/grammarTheory';
+import type { GrammarTable, GrammarTableCell, GrammarTone } from '../data/grammarTheory';
 
 type Props = {
   table: GrammarTable;
@@ -7,35 +7,80 @@ type Props = {
 };
 
 const { table, compact = false } = Astro.props;
+const captionId = `grammar-matrix-${table.title
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/^-|-$/g, '')}`;
+
+const getCellText = (cell: GrammarTableCell) => (typeof cell === 'string' ? cell : cell.text);
+const getCellHtml = (cell: GrammarTableCell) => (typeof cell === 'string' ? undefined : cell.html);
+const getCellTone = (
+  cell: GrammarTableCell,
+  rowIndex: number,
+  columnIndex: number,
+): GrammarTone | undefined =>
+  (typeof cell === 'string' ? undefined : cell.tone) ??
+  table.columnTones?.[columnIndex] ??
+  table.rowTones?.[rowIndex] ??
+  table.tone;
 ---
 
 <figure class:list={['grammar-matrix-card', { 'grammar-matrix-card-compact': compact }]}>
-  <figcaption>
+  <figcaption id={captionId}>
     <strong>{table.title}</strong>
     {table.note && <span>{table.note}</span>}
   </figcaption>
-  <div class="grammar-matrix-scroll">
-    <table class="grammar-matrix" data-source-image-replacement={table.title}>
+  <div class="grammar-matrix-scroll" role="region" tabindex="0" aria-labelledby={captionId}>
+    <table class="grammar-matrix" data-source-image-replacement={table.title} aria-labelledby={captionId}>
+      <colgroup>
+        {
+          table.columns.map((_, columnIndex) => {
+            const tone = table.columnTones?.[columnIndex] ?? table.tone;
+            return <col class={tone ? `grammar-column-${tone}` : undefined} data-case={tone} />;
+          })
+        }
+      </colgroup>
       <thead>
         <tr>
-          {table.columns.map((column) => <th scope="col">{column}</th>)}
+          {
+            table.columns.map((column, columnIndex) => {
+              const tone = table.columnTones?.[columnIndex] ?? table.tone;
+              return (
+                <th class={tone ? `grammar-cell-${tone}` : undefined} scope="col" data-case={tone}>
+                  {column}
+                </th>
+              );
+            })
+          }
         </tr>
       </thead>
       <tbody>
         {
-          table.rows.map((row) => (
-            <tr>
-              {row.map((cell, index) =>
-                index === 0 ? (
-                  <th scope="row" data-label={table.columns[index]}>
-                    {cell}
-                  </th>
-                ) : (
-                  <td data-label={table.columns[index]}>{cell}</td>
-                )
-              )}
-            </tr>
-          ))
+          table.rows.map((row, rowIndex) => {
+            const rowTone = table.rowTones?.[rowIndex] ?? table.tone;
+            return (
+              <tr class={rowTone ? `grammar-row-${rowTone}` : undefined} data-case={rowTone}>
+                {row.map((cell, columnIndex) => {
+                  const tone = getCellTone(cell, rowIndex, columnIndex);
+                  const cellHtml = getCellHtml(cell);
+                  const cellClass = tone ? `grammar-cell-${tone}` : undefined;
+                  const content = cellHtml ? <span set:html={cellHtml} /> : getCellText(cell);
+
+                  return columnIndex === 0 ? (
+                    <th class={cellClass} scope="row" data-label={table.columns[columnIndex]} data-case={tone}>
+                      {content}
+                    </th>
+                  ) : (
+                    <td class={cellClass} data-label={table.columns[columnIndex]} data-case={tone}>
+                      {content}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })
         }
       </tbody>
     </table>

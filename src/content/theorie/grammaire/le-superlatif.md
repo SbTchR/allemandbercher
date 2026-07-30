@@ -1,6 +1,6 @@
 ---
 title: "Le superlatif"
-description: "Le superlatif sert à exprimer ce qu’il y a de mieux."
+description: "Le superlatif désigne l’élément qui atteint le degré le plus élevé dans un groupe."
 section: "theorie"
 category: "grammaire"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-superlatif"
