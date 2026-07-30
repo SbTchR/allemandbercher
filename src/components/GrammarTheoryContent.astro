@@ -25,7 +25,11 @@ const isGenitive = slug === 'le-genitif';
   {
     isCases && (
       <>
-        <section class="case-role-legend" aria-label="Code couleur des groupes">
+        <section
+          class="case-role-legend"
+          aria-label="Code couleur des groupes"
+          data-source-image-replacement="schéma des rôles dans la phrase"
+        >
           <article class="case-role-card case-role-card-verb">
             <strong>Verbe</strong>
             <p>Il donne l’action et sert de point de départ.</p>
@@ -39,7 +43,7 @@ const isGenitive = slug === 'le-genitif';
             <p>Accusatif : qui ou quoi ?</p>
           </article>
           <article class="case-role-card case-role-card-dative">
-            <strong>CDI</strong>
+            <strong>CVI</strong>
             <p>Datif : à qui ou à quoi ?</p>
           </article>
           <article class="case-role-card case-role-card-preposition">
@@ -64,10 +68,6 @@ const isGenitive = slug === 'le-genitif';
               Pour comprendre à quoi correspondent les cas, il faut d’abord être capable de déterminer les groupes de
               la phrase. Si tu connais déjà la théorie mais que tu hésites sur les déclinaisons, utilise aussi la
               NAD-Maschine.
-            </p>
-            <p>
-              Si tu connais déjà plus ou moins la théorie mais que tu as de la peine à déterminer les déclinaisons des
-              mots, utilise la NAD-Maschine !
             </p>
             <div class="case-tool-callout">
               <div>
@@ -126,7 +126,7 @@ const isGenitive = slug === 'le-genitif';
                 <article class="case-question-card case-question-card-dative">
                   <span>4</span>
                   <div>
-                    <strong>CDI</strong>
+                    <strong>CVI</strong>
                     <p>La fille envoie une lettre à qui ?</p>
                     <mark>à son amie</mark>
                   </div>
@@ -141,7 +141,7 @@ const isGenitive = slug === 'le-genitif';
                 </article>
               </div>
               <p>
-                S’il reste des éléments de la phrase qui ne sont ni verbe, ni sujet, ni CDV, ni CVI, alors ils peuvent
+                S’il reste des éléments de la phrase qui ne sont ni verbe, ni sujet, ni CVD, ni CVI, alors ils peuvent
                 être soit un complément de temps ou de lieu, soit un groupe prépositionnel.
               </p>
             </div>
@@ -177,7 +177,7 @@ const isGenitive = slug === 'le-genitif';
                 <p>Le CVD est toujours à l’accusatif : <span class="case-chip case-chip-accusative">einen Brief</span> (masc.).</p>
               </article>
               <article>
-                <strong>CDI</strong>
+                <strong>CVI</strong>
                 <p><span class="case-chip case-chip-dative">datif</span> : seiner Freundin</p>
               </article>
               <article>
@@ -196,7 +196,7 @@ const isGenitive = slug === 'le-genitif';
           <summary>4. Ce qu’il faut connaître pour décliner</summary>
           <div class="lesson-card-content">
             <ul class="mission-list">
-              <li>Déterminer le groupe : verbe, sujet, CVD, CDI ou groupe prépositionnel.</li>
+              <li>Déterminer le groupe : verbe, sujet, CVD, CVI ou groupe prépositionnel.</li>
               <li>Connaître le genre du nom : masculin, neutre, féminin ou pluriel.</li>
               <li>Connaître les tableaux de déclinaisons des déterminants.</li>
               <li>Ajouter les adjectifs quand la notion a été travaillée en classe.</li>
@@ -308,30 +308,32 @@ const isGenitive = slug === 'le-genitif';
           <summary>2. Les prépositions mixtes : wo ou wohin ?</summary>
           <div class="lesson-card-content">
             <p>
-              Avec les prépositions mixtes, la question n’est pas « quelle préposition ? », mais « que fait le verbe ? ».
-              Un déplacement vers un endroit donne l’accusatif. Une position déjà installée donne le datif.
+              Avec les prépositions mixtes, pose la question <strong>wo ?</strong> (« où ? ») ou
+              <strong>wohin ?</strong> (« vers quel lieu ? »). Un lieu où la relation est déjà établie demande le datif ;
+              une direction vers un nouveau but spatial demande l’accusatif.
             </p>
             <p>
-              Les autres prépositions sont mixtes, c’est-à-dire qu’elles sont parfois suivies du datif et parfois de
-              l’accusatif. Pour savoir quel cas choisir, demande-toi si le verbe implique un déplacement ou une position.
+              Les neuf prépositions mixtes étudiées ici — an, auf, hinter, in, neben, über, unter, vor et zwischen —
+              peuvent être suivies du datif ou de l’accusatif. Le simple fait que l’action comporte du mouvement ne
+              suffit pas à choisir : c’est la relation de lieu ou de direction exprimée par le groupe qui compte.
             </p>
             <p>
-              Il s’agit de toutes les autres prépositions. Dans le tableau se trouvent les plus importantes, soit celles
-              que tu dois connaître. Pour savoir s’il faut accorder le groupe nominal qui suit une de ces préposition à
-              l’accusatif ou au datif, il faut se demander si le verbe implique un déplacement ou non.
+              Le tableau regroupe précisément ces neuf <em>Wechselpräpositionen</em>. Les autres prépositions allemandes
+              ne sont pas automatiquement mixtes : elles peuvent imposer un autre cas ou suivre une autre construction.
             </p>
             <p>
-              Pour maîtriser ce thème, tu dois connaître par coeur la liste des prépositions + Acc. et celle des
-              prépositions + Dat., puis reconnaître les exemples de déplacement ou de position.
+              Pour maîtriser ce thème, tu dois connaître par cœur la liste des prépositions + Acc. et celle des
+              prépositions + Dat., puis distinguer les réponses à <em>wo?</em> et à <em>wohin?</em>.
             </p>
+            <p><strong>Exemples :</strong> compare la direction et le lieu déjà établi dans les deux phrases suivantes.</p>
             <div class="movement-switch">
               <article>
-                <span class="case-chip case-chip-accusative">Déplacement</span>
+                <span class="case-chip case-chip-accusative">Direction — wohin ?</span>
                 <strong>Peter legt das Blatt neben den Schrank.</strong>
                 <p>La feuille va vers un nouvel endroit : accusatif. Peter pose la feuille à côté de l’armoire.</p>
               </article>
               <article>
-                <span class="case-chip case-chip-dative">Position</span>
+                <span class="case-chip case-chip-dative">Lieu — wo ?</span>
                 <strong>Das Blatt liegt neben dem Schrank.</strong>
                 <p>La feuille est déjà là : datif.</p>
               </article>

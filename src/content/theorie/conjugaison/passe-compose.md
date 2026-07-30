@@ -11,8 +11,6 @@ images: []
 migrationNotes: []
 ---
 
-En allemand, le passé composé se compose, comme en français, d’un auxiliaire (être ou avoir) et d’un participe passé .
-
 ## Rappel: En allemand, il y a deux grandes catégories de verbes :
 
 les verbes réguliers et les verbes irréguliers.
@@ -35,7 +33,7 @@ Le participe passé est précédé du préfixe « ge- » et se termine par un «
 
 Les verbes irréguliers au passé composé
 
-Il n’y a pas de règle précise pour expliquer la conjugaison des verbes irréguliers, le seul moyen d’arriver à les conjuguer correctement est de les apprendre par coeur car, souvent, le radical change.
+Il n’y a pas de règle précise pour expliquer la conjugaison des verbes irréguliers, le seul moyen d’arriver à les conjuguer correctement est de les apprendre par cœur car, souvent, le radical change.
 
 Ils peuvent être conjugués avec les auxiliaires être (sein) ou avoir (haben).
 
@@ -85,7 +83,7 @@ Il existe deux types d’exceptions qui sont présentes chez certains verbes ré
 
 ## Participe passé: verloren Ex: sie hat verloren
 
-Quelques exercices pour entrainer la conjugaison des verbes au passé composé.
+Quelques exercices pour entraîner la conjugaison des verbes au passé composé.
 
 - [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/perfekt_zeiten/06_perfekt_lernen_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/perfekt_zeiten/06_perfekt_lernen_uebung.htm)
 
@@ -109,7 +107,7 @@ Créé ton compte gratuit sur [www.blooket.com](https://www.blooket.com) , puis 
 
 Clique ensuite sur "Solo" si tu veux jouer seul ou sur "Host" pour jouer à plusieurs.
 
-Quelques exercices pour entrainer le passé composé.
+Quelques exercices pour entraîner le passé composé.
 
 - [https://learningapps.org/display?v=p0w3yd70v19](https://learningapps.org/display?v=p0w3yd70v19)
 
@@ -132,6 +130,3 @@ Quelques exercices pour entrainer le passé composé.
 - [http://www.lehrerlenz.de/mehr_bungen.html?TSPD_101_R0=b92eaf78d4a60fdcbacb5015dd1f8774dhq0000000000000000679a41c3ffff00000000000000000000000000005be024b6001667afb7](http://www.lehrerlenz.de/mehr_bungen.html?TSPD_101_R0=b92eaf78d4a60fdcbacb5015dd1f8774dhq0000000000000000679a41c3ffff00000000000000000000000000005be024b6001667afb7)
 
 - [http://www.lehrerlenz.de/tante_agathe.html](http://www.lehrerlenz.de/tante_agathe.html) (un peu difficile)
-
-## Exercices interactifs intégrés
-

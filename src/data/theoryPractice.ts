@@ -106,7 +106,7 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
           note: 'Avec sehen, le groupe vu est le complément direct : accusatif.',
         },
         {
-          label: 'CDI',
+          label: 'CVI',
           sentenceHtml: 'Die Lehrerin hilft <span class="case-chip case-chip-dative">dem Schüler</span>.',
           note: 'Avec helfen, la personne aidée est au datif.',
         },
@@ -118,7 +118,7 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
       categories: [
         { key: 'sujet', label: 'Sujet' },
         { key: 'cvd', label: 'CVD' },
-        { key: 'cdi', label: 'CDI' },
+        { key: 'cdi', label: 'CVI' },
         { key: 'prep', label: 'Groupe prép.' },
       ],
       items: [

@@ -1,65 +1,26 @@
 # Audit contenu site complet
 
-Généré le 2026-05-25T09:28:54.238Z.
+Généré le 2026-07-30T13:41:36.747Z.
 
 ## Résumé
 
 - Pages source vérifiées : 100
-- Alertes bloquantes de contenu : 29
-- Avertissements images à revoir visuellement : 13
+- Alertes bloquantes de contenu : 24
+- Avertissements images à revoir visuellement : 4
+- Pages avec correction pédagogique assumée du site source : 3
 - Contrôle bloquant : existence des pages cibles, couverture du texte principal, iframes/embeds intégrés et liens externes conservés.
 - Contrôle image : les images Google Sites récurrentes ou décoratives sont traitées comme avertissements, pas comme manque de contenu textuel.
 
 ## Par section
 
 - Accueil: 2/2 sans alerte bloquante, 0 avec avertissement image
-- Conseils: 1/6 sans alerte bloquante, 3 avec avertissement image
+- Conseils: 6/6 sans alerte bloquante, 0 avec avertissement image
 - Exercices: 6/28 sans alerte bloquante, 4 avec avertissement image
 - Outils en ligne: 1/2 sans alerte bloquante, 0 avec avertissement image
-- Théorie: 34/34 sans alerte bloquante, 6 avec avertissement image
+- Théorie: 34/34 sans alerte bloquante, 0 avec avertissement image
 - Vocabulaire: 27/28 sans alerte bloquante, 0 avec avertissement image
 
 ## Alertes bloquantes
-
-### Compréhension écrite (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite
-- Cible : /conseils/comprehension-ecrite/
-- Alertes : couverture texte 86%
-- Couverture texte : 86% (66 lignes source)
-- Exemples de lignes non retrouvées : `Il est parfois déconcertant de se retrouver face à un texte de plusieurs paragraphes en allemand, qui de plus comporte beaucoup de mots que l’on ne comprend pas. Mais il y a quelques techniques à garder en tête qui te permettront probablement de t’en sortir.` ; `Voici des sites qui proposent quelques exercices de compréhension écrite de différents niveaux.` ; `Repère les indicateurs temporels, qui marquent souvent la structure d’un texte (ordre chronologique).` ; `P. ex.: der Brieffreund —> Brief = lettre / Freund = ami —> le correspondant`
-
-### Compréhension orale (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/compr%C3%A9hension-orale
-- Cible : /conseils/comprehension-orale/
-- Alertes : couverture texte 80%
-- Couverture texte : 80% (66 lignes source)
-- Exemples de lignes non retrouvées : `La seule façon de s'améliorer en compréhension orale est l'entraînement. Cependant, il y a quelques techniques qui pourraient t'aider à comprendre l'essentiel d'un message que tu ne peux pas comprendre totalement avec ton bagage langagier. En effet, il n'est pas toujours nécessaire de tout comprendre, la plupart du temps il suffit de repérer quelques informations parmi ce qui est dis...` ; `Quand tu es face à un exercice de CO, il faut tout d'abord repérer de quel type de compréhension il s'agit.` ; `Je lis le(s) titre(s) et la consigne . Je me demande:` ; `ce que je connais déjà sur le thème (ce qui a été fait dans les exercices précédents, culture générale)`
-
-### Expression écrite (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/expression-%C3%A9crite
-- Cible : /conseils/expression-ecrite/
-- Alertes : couverture texte 81%
-- Couverture texte : 81% (63 lignes source)
-- Exemples de lignes non retrouvées : `une liste de quelques adverbes (peut-être, probablement, parfois, certainement...)` ; `Plus tu donnes d'informations dans ton texte, pour autant qu'elles soient compréhensibles, plus tu as de chances de "marquer des points". La difficulté est généralement de trouver des idées car souvent on "ne sait pas quoi dire"... Voilà donc des exemples d'éléments que tu peux ajouter pour rendre ton texte le plus complet possible:` ; `Lorsque tu mentionne un objet ou une personne, tu peux le/la décrire à l'aide d'adjectifs (couleur, taille, caractère, etc.) ou d'une phrase relative (p. ex. "le chien qui est gentil").` ; `Pour illustrer tes propos, tu peux donner des exemples, si possible sous forme de phrases complètes. --> p. ex. "J'aime faire du sport. Après l'école, je joue au football avec mes amis et le samedi, je vais nager."`
-
-### Expression orale (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/expression-orale
-- Cible : /conseils/expression-orale/
-- Alertes : couverture texte 63%
-- Couverture texte : 63% (46 lignes source)
-- Exemples de lignes non retrouvées : `une liste de verbes fréquemment utilisés et/ou spécifiques au thème` ; `une liste de noms spécifiques au thème, un peu compliqués (ex. pour le thème du Sport : der Verein, die Mannschaft, ... )` ; `une liste de quelques adverbes (peut-être, probablement, parfois, certainement...)` ; `une liste de mots très fréquents (quelque chose, quelqu'un, personne, ces, chaque, aussi, seulement, encore, ...). Tu en trouves une sur cette page .`
-
-### Vocabulaire (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/vocabulaire
-- Cible : /conseils/vocabulaire/
-- Alertes : couverture texte 51%
-- Couverture texte : 51% (41 lignes source)
-- Exemples de lignes non retrouvées : `App pour smartphone recommandée : Cabuu` ; `Il nous est donc impossible de retenir une grande quantité de mots en une seule fois, même pour un bref instant. C’est pourquoi il est nécessaire de découper la liste de voc en plusieurs petites parties (5-6 mots) et de se concentrer sur une partie à la foi. Cela n’empêche pas d’apprendre plusieurs parties le même jour, il faut juste les entrainer l’une après l’autre.` ; `Le vocabulaire ne s’enregistre pas sous forme de liste dans notre cerveau. De manière naturelle, chaque mot est intégré dans un réseau qui comprends tous les autres mots que l’on connait, dans n’importe quelle langue, ainsi que les représentations concrètes de ces mots (images).` ; `Il est donc indispensable d ’associer une image , un mouvement, une émotion, un ressenti, etc. à chaque mot que l’on veut retenir à long terme.`
 
 ### K1 - Los geht's (Exercices)
 
@@ -258,30 +219,6 @@ Généré le 2026-05-25T09:28:54.238Z.
 
 Ces points ne signalent pas un manque de texte, de lien ou d’exercice interactif. Ils indiquent seulement que la source Google Sites contient des images qui devront être arbitrées lors de la phase de finition visuelle.
 
-### Compréhension écrite (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite
-- Cible : /conseils/comprehension-ecrite/
-- Alertes : images Google Sites possibles à arbitrer 5
-- Couverture texte : 86% (66 lignes source)
-- Exemples de lignes non retrouvées : `Il est parfois déconcertant de se retrouver face à un texte de plusieurs paragraphes en allemand, qui de plus comporte beaucoup de mots que l’on ne comprend pas. Mais il y a quelques techniques à garder en tête qui te permettront probablement de t’en sortir.` ; `Voici des sites qui proposent quelques exercices de compréhension écrite de différents niveaux.` ; `Repère les indicateurs temporels, qui marquent souvent la structure d’un texte (ordre chronologique).` ; `P. ex.: der Brieffreund —> Brief = lettre / Freund = ami —> le correspondant`
-
-### Expression écrite (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/expression-%C3%A9crite
-- Cible : /conseils/expression-ecrite/
-- Alertes : images Google Sites possibles à arbitrer 4
-- Couverture texte : 81% (63 lignes source)
-- Exemples de lignes non retrouvées : `une liste de quelques adverbes (peut-être, probablement, parfois, certainement...)` ; `Plus tu donnes d'informations dans ton texte, pour autant qu'elles soient compréhensibles, plus tu as de chances de "marquer des points". La difficulté est généralement de trouver des idées car souvent on "ne sait pas quoi dire"... Voilà donc des exemples d'éléments que tu peux ajouter pour rendre ton texte le plus complet possible:` ; `Lorsque tu mentionne un objet ou une personne, tu peux le/la décrire à l'aide d'adjectifs (couleur, taille, caractère, etc.) ou d'une phrase relative (p. ex. "le chien qui est gentil").` ; `Pour illustrer tes propos, tu peux donner des exemples, si possible sous forme de phrases complètes. --> p. ex. "J'aime faire du sport. Après l'école, je joue au football avec mes amis et le samedi, je vais nager."`
-
-### Vocabulaire (Conseils)
-
-- Source : https://www.allemandbercher.ch/conseils/vocabulaire
-- Cible : /conseils/vocabulaire/
-- Alertes : images Google Sites possibles à arbitrer 1
-- Couverture texte : 51% (41 lignes source)
-- Exemples de lignes non retrouvées : `App pour smartphone recommandée : Cabuu` ; `Il nous est donc impossible de retenir une grande quantité de mots en une seule fois, même pour un bref instant. C’est pourquoi il est nécessaire de découper la liste de voc en plusieurs petites parties (5-6 mots) et de se concentrer sur une partie à la foi. Cela n’empêche pas d’apprendre plusieurs parties le même jour, il faut juste les entrainer l’une après l’autre.` ; `Le vocabulaire ne s’enregistre pas sous forme de liste dans notre cerveau. De manière naturelle, chaque mot est intégré dans un réseau qui comprends tous les autres mots que l’on connait, dans n’importe quelle langue, ainsi que les représentations concrètes de ces mots (images).` ; `Il est donc indispensable d ’associer une image , un mouvement, une émotion, un ressenti, etc. à chaque mot que l’on veut retenir à long terme.`
-
 ### K1 - Los geht's (Exercices)
 
 - Source : https://www.allemandbercher.ch/exercices/10h/k1-los-gehts
@@ -314,52 +251,25 @@ Ces points ne signalent pas un manque de texte, de lien ou d’exercice interact
 - Couverture texte : 63% (35 lignes source)
 - Exemples de lignes non retrouvées : `L'élève est capable de...` ; `Les déterminants possessifs sont les déterminants qui indiquent à qui appartient le nom qu'il précèdent. Chaque personne (je, tu, il, elle, etc.) a un déterminant possessif qui lui est propre en français comme en allemand.` ; `Les déterminants possessifs sont des déterminants définis. En allemand, ils se déclinent au nominatif, accusatif ou datif selon la place qu'ils occupent dans la phrase. Tu trouves les tableaux de déclinaisons des déterminants en cliquant sur ce lien .` ; `En bref, ces déterminants sont au datif lorsque le groupe nominal dont ils font partie est:`
 
-### Théorie (Théorie)
 
-- Source : https://www.allemandbercher.ch/th%C3%A9orie
-- Cible : /theorie/
-- Alertes : images Google Sites possibles à arbitrer 3
-- Couverture texte : 91% (54 lignes source)
-- Exemples de lignes non retrouvées : `Dans ces cas de figure, il y a toujours:` ; `un verbe principal (celui qui est conjugué avec le sujet)` ; `une forme verbale invariable (qui ne change pas en fonction du sujet, soit le participe passé ou un verbe à l’infinitif)` ; `⚠️ Il est donc important de garder en tête que lorsqu’on parle de « verbe principal » il s’agit toujours du verbe qui est conjugué avec le sujet !`
+## Corrections pédagogiques du site source
 
-### Le génitif (Théorie)
-
-- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9nitif
-- Cible : /theorie/grammaire/le-genitif/
-- Alertes : images Google Sites possibles à arbitrer 1
-- Couverture texte : 92% (24 lignes source)
-- Exemples de lignes non retrouvées : `Übung` ; `Autres exercices à faire en ligne`
-
-### Les cas (Théorie)
-
-- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%A9orie-de-base
-- Cible : /theorie/grammaire/les-cas-theorie-de-base/
-- Alertes : images Google Sites possibles à arbitrer 5
-- Couverture texte : 92% (61 lignes source)
-- Exemples de lignes non retrouvées : `—> « seiner Freundin » (fém.)` ; `Pour le groupe prépositionnel , cela va dépendre de la préposition. Les explications se trouvent sur la page des prépositions .` ; `Que faut-t-il donc connaître pour accorder correctement un groupe dans une phrase ?` ; `Les déclinaisons des adjectifs sont apprises en 10H.`
+Ces lignes du site source ne sont pas attendues dans la nouvelle version, car elles contiennent une terminologie ou une règle grammaticale erronée. La page locale fournit la règle corrigée.
 
 ### Les prépositions (Théorie)
 
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions
-- Cible : /theorie/grammaire/les-prepositions/
-- Alertes : images Google Sites possibles à arbitrer 4
-- Couverture texte : 93% (54 lignes source)
-- Exemples de lignes non retrouvées : `être capable de définir si un verbe implique un déplacement ou non.` ; `connaître le genre et le nombre des mots qui sont utilisés (féminin, masculin, neutre, pluriel).` ; `avoir en tête les tableaux de déclinaisons des déterminants et adjectifs (à partir de 10H) --> les savoir par coeur !` ; `Quelques exercices pour entrainer les groupes prépositionnels avec verbes de position et de mouvement .`
+- Lignes volontairement remplacées : `Les autres prépositions sont mixtes, c’est-à-dire qu’elles sont parfois suivies du datif et parfois de l’accusatif.` ; `Il s’agit de toutes les autres prépositions. Dans ce tableau se trouvent les plus importantes, soit celles que tu dois connaître.` ; `Pour savoir s’il faut accorder le groupe nominal qui suit une de ces préposition à l’accusatif ou au datif, il faut se demander si le verbe implique un déplacement ou non.` ; `Elles sont suivies de l’accusatif quand elles sont utilisées avec un verbe de déplacement .` ; `Elles sont suivies du datif quand elles sont utilisées avec un verbe de position .` ; `être capable de définir si un verbe implique un déplacement ou non.`
 
-### Tableaux de déclinaisons (Théorie)
+### trotzdem, deshalb, also (Théorie)
 
-- Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/tableaux-de-d%C3%A9clinaisons
-- Cible : /theorie/grammaire/tableaux-de-declinaisons/
-- Alertes : images Google Sites possibles à arbitrer 4
-- Couverture texte : 100% (4 lignes source)
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb
+- Lignes volontairement remplacées : `Subordonnées` ; `trotzdem = malgré que` ; `Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.` ; `Contrairement à « und, aber, denn et also », ces subordonnant comptent pour une place dans la phrase. Ils sont donc suivi d’une inversion sujet-verbe pour respecter la la règle du verbe en 2ème position.`
 
-### La place du verbe principal (Théorie)
+### und, oder, aber, denn, also (Théorie)
 
-- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/la-place-du-verbe-principal
-- Cible : /theorie/syntaxe/la-place-du-verbe-principal/
-- Alertes : images Google Sites possibles à arbitrer 1
-- Couverture texte : 92% (37 lignes source)
-- Exemples de lignes non retrouvées : `Ces 3 types de phrases sont détaillés sur des pages spécifiques (clique sur les mots soulignés).` ; `—> suite dans le même ordre` ; `etc.`
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also
+- Lignes volontairement remplacées : `Subordonnées` ; `Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.` ; `Les subordonnants suivants sont très utiles :` ; `Ils sont aussi très simples à utiliser car ils fonctionnent comme des points, ils ne comptent donc pas pour une position dans la phrase.` ; `⚠️ Les subordonnants « aber, denn et also » sont précédés d’une virgule !`
 
 
 ## Pages vérifiées
@@ -367,11 +277,11 @@ Ces points ne signalent pas un manque de texte, de lien ou d’exercice interact
 - [OK] Accueil - Accueil -> /
 - [OK] Accueil - Accueil -> /
 - [OK] Conseils - Conseils -> /conseils/
-- [À corriger + image à revoir] Conseils - Compréhension écrite -> /conseils/comprehension-ecrite/
-- [À corriger] Conseils - Compréhension orale -> /conseils/comprehension-orale/
-- [À corriger + image à revoir] Conseils - Expression écrite -> /conseils/expression-ecrite/
-- [À corriger] Conseils - Expression orale -> /conseils/expression-orale/
-- [À corriger + image à revoir] Conseils - Vocabulaire -> /conseils/vocabulaire/
+- [OK] Conseils - Compréhension écrite -> /conseils/comprehension-ecrite/
+- [OK] Conseils - Compréhension orale -> /conseils/comprehension-orale/
+- [OK] Conseils - Expression écrite -> /conseils/expression-ecrite/
+- [OK] Conseils - Expression orale -> /conseils/expression-orale/
+- [OK] Conseils - Vocabulaire -> /conseils/vocabulaire/
 - [OK] Exercices - Geni@l -> /exercices/
 - [OK] Exercices - 10H -> /exercices/10h/
 - [À corriger + image à revoir] Exercices - K1 - Los geht's -> /exercices/10h/k1-los-gehts/
@@ -402,7 +312,7 @@ Ces points ne signalent pas un manque de texte, de lien ou d’exercice interact
 - [À corriger] Exercices - K8 - Bei uns zu Hause -> /exercices/9h/kap-8-bei-uns-zu-hause/
 - [OK] Outils en ligne - NAD-Maschine -> /outils-en-ligne/nad-maschine/
 - [À corriger] Outils en ligne - Outils en ligne -> /outils-en-ligne/
-- [OK + image à revoir] Théorie - Théorie -> /theorie/
+- [OK] Théorie - Théorie -> /theorie/
 - [OK] Théorie - Conjugaison -> /theorie/conjugaison/
 - [OK] Théorie - Futur -> /theorie/conjugaison/futur/
 - [OK] Théorie - Impératif -> /theorie/conjugaison/imperatif/
@@ -414,18 +324,18 @@ Ces points ne signalent pas un manque de texte, de lien ou d’exercice interact
 - [OK] Théorie - Verbes de modalité -> /theorie/conjugaison/verbes-de-modalite/
 - [OK] Théorie - Grammaire -> /theorie/grammaire/
 - [OK] Théorie - Le comparatif et le superlatif -> /theorie/grammaire/le-comparatif/
-- [OK + image à revoir] Théorie - Le génitif -> /theorie/grammaire/le-genitif/
+- [OK] Théorie - Le génitif -> /theorie/grammaire/le-genitif/
 - [OK] Théorie - Le superlatif -> /theorie/grammaire/le-superlatif/
 - [OK] Théorie - Les adjectifs -> /theorie/grammaire/les-adjectifs/
-- [OK + image à revoir] Théorie - Les cas -> /theorie/grammaire/les-cas-theorie-de-base/
-- [OK + image à revoir] Théorie - Les prépositions -> /theorie/grammaire/les-prepositions/
+- [OK] Théorie - Les cas -> /theorie/grammaire/les-cas-theorie-de-base/
+- [OK] Théorie - Les prépositions -> /theorie/grammaire/les-prepositions/
 - [OK] Théorie - Les pronoms personnels -> /theorie/grammaire/les-pronoms-personnels/
 - [OK] Théorie - Les déterminants possessifs -> /theorie/grammaire/les-pronoms-possessifs/
-- [OK + image à revoir] Théorie - Tableaux de déclinaisons -> /theorie/grammaire/tableaux-de-declinaisons/
+- [OK] Théorie - Tableaux de déclinaisons -> /theorie/grammaire/tableaux-de-declinaisons/
 - [OK] Théorie - Syntaxe -> /theorie/syntaxe/
 - [OK] Théorie - damit, während, bevor, nachdem, als, ... -> /theorie/syntaxe/damit-wahrend-bevor-nachdem-als-obwohl/
 - [OK] Théorie - dass -> /theorie/syntaxe/dass/
-- [OK + image à revoir] Théorie - La place du verbe principal -> /theorie/syntaxe/la-place-du-verbe-principal/
+- [OK] Théorie - La place du verbe principal -> /theorie/syntaxe/la-place-du-verbe-principal/
 - [OK] Théorie - Les phrases infinitives -> /theorie/syntaxe/les-infinitives/
 - [OK] Théorie - Les phrases au passé composé -> /theorie/syntaxe/les-phrases-au-passe-compose/
 - [OK] Théorie - Les phrases avec verbe de modalité -> /theorie/syntaxe/les-phrases-avec-verbe-de-modalite/

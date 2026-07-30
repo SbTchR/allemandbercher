@@ -7,13 +7,9 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-subordonn%C3
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-syntaxe-les-subordonnees-relatives-1.png"
-    alt: "Image 1 - Les subordonnées relatives"
+images: []
 migrationNotes: []
 ---
-
-La phrase relative est une phrase qui se réfère à un nom dans une phrase normale, c’est donc une sorte de subordonnée, donc elle commence par un subordonnant et le verbe va à la fin. On appelle ce subordonnant « pronom relatif ».
 
 ## Exemple:
 
@@ -22,6 +18,24 @@ Der Mann trägt einen Hut. Der Mann ist mein Vater.
 —> Der Mann, der einen Hut trägt , ist mein Vater.
 
 ⚠️ Attention, le subordonnant peut être au nominatif, à l’accusatif ou au datif selon le rôle qu’il occupe dans la subordonnée.
+
+<table data-source-image-replacement="pronoms relatifs">
+  <caption>Déclinaison des pronoms relatifs</caption>
+  <thead>
+    <tr>
+      <th scope="col">Cas</th>
+      <th scope="col">Masculin</th>
+      <th scope="col">Neutre</th>
+      <th scope="col">Féminin</th>
+      <th scope="col">Pluriel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">Nominatif</th><td>der</td><td>das</td><td>die</td><td>die</td></tr>
+    <tr><th scope="row">Accusatif</th><td>den</td><td>das</td><td>die</td><td>die</td></tr>
+    <tr><th scope="row">Datif</th><td>dem</td><td>dem</td><td>der</td><td>denen</td></tr>
+  </tbody>
+</table>
 
 ## Exemples:
 
@@ -37,9 +51,9 @@ Der Mann, dem ich geschrieben habe , ist mein Onkel.
 
 Ich habe dem Mann geschrieben —> dem Mann = CVI —> Datif
 
-## Exercice
+## Exercices externes complémentaires
 
-Quelques exercices pour entrainer les phrases relatives.
+Quelques exercices pour entraîner les phrases relatives.
 
 - [https://mein-deutschbuch.de/grammatikuebungen-relativsaetze.html](https://mein-deutschbuch.de/grammatikuebungen-relativsaetze.html)
 
@@ -54,6 +68,3 @@ Quelques exercices pour entrainer les phrases relatives.
 - [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=5&Lection=2&Exercise=4&SubExercise=1](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=5&Lection=2&Exercise=4&SubExercise=1)
 
 - [http://www.lehrerlenz.de/relativstze_1.html](http://www.lehrerlenz.de/relativstze_1.html)
-
-## Exercices interactifs intégrés
-

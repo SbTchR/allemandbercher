@@ -7,19 +7,10 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-avec
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-syntaxe-les-phrases-avec-verbe-de-modalite-1.png"
-    alt: "Image 1 - Les phrases avec verbe de modalité"
-  - src: "../../../assets/source-site/theorie/theorie-syntaxe-les-phrases-avec-verbe-de-modalite-2.png"
-    alt: "Image 2 - Les phrases avec verbe de modalité"
-  - src: "../../../assets/source-site/theorie/theorie-syntaxe-les-phrases-avec-verbe-de-modalite-3.png"
-    alt: "Image 3 - Les phrases avec verbe de modalité"
-  - src: "../../../assets/source-site/theorie/theorie-syntaxe-les-phrases-avec-verbe-de-modalite-4.png"
-    alt: "Image 4 - Les phrases avec verbe de modalité"
-migrationNotes: []
+images: []
+migrationNotes:
+  - "Les tableaux et schémas en image du site source ont été reconstruits en HTML."
 ---
-
-Les verbes de modalité sont les verbes auxquels on peut ajouter un autre verbe à l’infinitif.
 
 Ex. pouvoir faire, devoir manger, vouloir aller, etc.
 
@@ -27,15 +18,62 @@ Ex. pouvoir faire, devoir manger, vouloir aller, etc.
 
 ## Syntaxe des phrases avec verbe de modalité:
 
-En allemand, l'ordre des mots dans la phrase qui contient un de ces verbes est différente qu'en français.
+En allemand, l’ordre des mots dans une phrase qui contient l’un de ces verbes est différent de celui du français.
 
-Les verbes de modalité sont des verbes irréguliers. Comme on les utilise très souvent, il est important de savoir les conjuguer correctement. La conjugaison de ces verbes est détaillée sur cette page .
+Les verbes de modalité sont des verbes irréguliers. Comme on les utilise très souvent, il est important de savoir les conjuguer correctement. Retrouve leur conjugaison sur la page consacrée aux [verbes de modalité](../../conjugaison/verbes-de-modalite/).
 
-Les 6 verbes de modalité
+## Les six verbes de modalité
 
-Le verbe "mögen" est très souvent utilisé au conditionnel. Nous ne voyons pas le conditionnel à notre niveau, sauf pour ce verbe-ci. Voici donc comment il se conjugue.
+<table data-source-image-replacement="verbes de modalité">
+  <caption>Sens et formes fréquentes des six verbes de modalité</caption>
+  <thead>
+    <tr>
+      <th scope="col">Sens</th>
+      <th scope="col">Verbe</th>
+      <th scope="col">ich</th>
+      <th scope="col">du</th>
+      <th scope="col">er / sie / es</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>pouvoir, avoir la capacité de</td><td>können</td><td>kann</td><td>kannst</td><td>kann</td></tr>
+    <tr><td>pouvoir, avoir le droit de</td><td>dürfen</td><td>darf</td><td>darfst</td><td>darf</td></tr>
+    <tr><td>vouloir</td><td>wollen</td><td>will</td><td>willst</td><td>will</td></tr>
+    <tr><td>aimer</td><td>mögen</td><td>mag</td><td>magst</td><td>mag</td></tr>
+    <tr><td>devoir, exprimer une obligation</td><td>müssen</td><td>muss</td><td>musst</td><td>muss</td></tr>
+    <tr><td>devoir au sens moral, donner un conseil</td><td>sollen</td><td>soll</td><td>sollst</td><td>soll</td></tr>
+  </tbody>
+</table>
 
-Une particularité: le verbe "sollen"
+### La forme möchte
+
+Le verbe **mögen** est très souvent utilisé au conditionnel. Nous ne voyons pas le conditionnel à notre niveau, sauf pour ce verbe-ci. Voici donc comment il se conjugue avec la forme **möchte**, employée pour exprimer « aimerais » ou « voudrais ».
+
+<table data-source-image-replacement="conjugaison de möchte">
+  <caption>Conjugaison de möchte au présent</caption>
+  <thead>
+    <tr>
+      <th scope="col">Pronom</th>
+      <th scope="col">Forme verbale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>ich</td><td>möchte</td></tr>
+    <tr><td>du</td><td>möchtest</td></tr>
+    <tr><td>er / sie / es</td><td>möchte</td></tr>
+    <tr><td>wir</td><td>möchten</td></tr>
+    <tr><td>ihr</td><td>möchtet</td></tr>
+    <tr><td>sie</td><td>möchten</td></tr>
+    <tr><td>Sie</td><td>möchten</td></tr>
+  </tbody>
+</table>
+
+### Une particularité : le verbe sollen
+
+Le verbe **sollen** signifie « devoir » au sens moral, sans exprimer une obligation impérative. Au présent en allemand, il peut donc être traduit par le conditionnel en français.
+
+- Il doit ranger sa chambre. = Er **muss** sein Zimmer aufräumen. **Muss** est la forme au présent de **müssen** : elle exprime ici une obligation.
+- Il devrait ranger sa chambre. = Er **soll** sein Zimmer aufräumen. **Soll** est la forme au présent de **sollen** : elle permet ici de donner un conseil.
 
 ## Syntaxe des phrases avec verbe de modalité
 
@@ -49,11 +87,24 @@ Jean aime aller à l’école.
 
 —> aller = verbe à l’infinitif
 
-Le verbe de modalité étant la forme verbale qui est conjuguée avec le sujet se place toujours en 2ème position. Le verbe à l’infinitif lui se place à la fin de la phrase.
+Le verbe de modalité, étant la forme verbale conjuguée avec le sujet, se place en 2e position. Le verbe à l’infinitif, lui, se place à la fin de la phrase.
 
-## Exemples:
+<div class="category-example-board" data-source-image-replacement="schéma de la place des verbes">
+  <p><strong>Position 2 :</strong> verbe de modalité conjugué avec le sujet.</p>
+  <p><strong>Fin de phrase :</strong> autre verbe à l’infinitif.</p>
+</div>
 
-## Exercice
+## Exemples
 
-## Exercices interactifs intégrés
-
+<div class="syntax-two-verb-grid" data-source-image-replacement="exemples de phrases avec un verbe de modalité">
+  <article>
+    <strong>Julia muss ihr Zimmer aufräumen.</strong>
+    <p>Julia doit ranger sa chambre.</p>
+    <small><b>muss</b> : verbe de modalité · <b>aufräumen</b> : verbe à l’infinitif</small>
+  </article>
+  <article>
+    <strong>Heute Abend darf Peter ausgehen.</strong>
+    <p>Ce soir, Peter a la permission de sortir.</p>
+    <small><b>darf</b> : verbe de modalité · <b>ausgehen</b> : verbe à l’infinitif</small>
+  </article>
+</div>

@@ -7,18 +7,9 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-cas-th%C3%
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-1.png"
-    alt: "Image 1 - Les cas"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-2.png"
-    alt: "Image 2 - Les cas"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-3.png"
-    alt: "Image 3 - Les cas"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-4.png"
-    alt: "Image 4 - Les cas"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-cas-theorie-de-base-5.png"
-    alt: "Image 5 - Les cas"
-migrationNotes: []
+images: []
+migrationNotes:
+  - "Les tableaux et schémas en image du site source ont été reconstruits en composants HTML."
 ---
 
 ## Théorie de base
@@ -53,7 +44,7 @@ Exemple: Aujourd’hui, la fille envoie une lettre à son amie pour son annivers
 
 —> Marco envoie (une lettre) à qui ? —> « à son amie »
 
-5. S’il reste des éléments de la phrase qui ne sont ni verbe, ni sujet, ni CDV, ni CVI, alors ils peuvent être…
+5. S’il reste des éléments de la phrase qui ne sont ni verbe, ni sujet, ni CVD, ni CVI, alors ils peuvent être…
 
 soit un complément de temps ou de lieu
 
@@ -87,7 +78,7 @@ Que faut-t-il donc connaître pour accorder correctement un groupe dans une phra
 
 Connaître le genre du nom (masculin, féminin, neutre).
 
-Connaître par coeur les tableaux de déclinaisons.
+Connaître par cœur les tableaux de déclinaisons.
 
 En 9H, il faut connaître les tableaux de déclinaisons des déterminants ainsi que celui des pronoms personnels.
 
@@ -101,8 +92,6 @@ Les déclinaisons des adjectifs sont apprises en 10H.
 
 ## Les pronoms personnels
 
-## Exercice
-
 ## Autres exercices à faire en ligne
 
 - [https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/)
@@ -113,7 +102,7 @@ Les déclinaisons des adjectifs sont apprises en 10H.
 
 - [https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html](https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html)
 
-## Quelques exercices en ligne pour entrainer l'accord de l'adjectif
+## Quelques exercices en ligne pour entraîner l'accord de l'adjectif
 
 - [http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html](http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html)
 
@@ -140,6 +129,3 @@ Les déclinaisons des adjectifs sont apprises en 10H.
 - [http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm](http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm)
 
 - [http://www.projectx2002.org/Duits/adjektiv_gemischt.htm](http://www.projectx2002.org/Duits/adjektiv_gemischt.htm)
-
-## Exercices interactifs intégrés
-

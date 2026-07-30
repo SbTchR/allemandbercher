@@ -7,23 +7,62 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9sent
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-present-1.png"
-    alt: "Image 1 - Présent"
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-present-2.png"
-    alt: "Image 2 - Présent"
+images: []
 migrationNotes: []
 ---
 
-Les verbes réguliers prennent les terminaisons suivantes au présent. En principe, le radical ne change pas.
+## Exemple régulier : machen
 
-Certains verbes sont irréguliers, c’est-à-dire que leur radical change lorsqu’on les conjugue. Par définition, il n’y a pas de règle pour définir ces changement de radicaux, il faut donc les apprendre par coeur.
+<table data-source-image-replacement="terminaisons du présent">
+  <caption>Conjugaison de machen au présent</caption>
+  <thead>
+    <tr>
+      <th scope="col">Pronom</th>
+      <th scope="col">Forme verbale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>ich</td><td>mache</td></tr>
+    <tr><td>du</td><td>machst</td></tr>
+    <tr><td>er / sie / es</td><td>macht</td></tr>
+    <tr><td>wir</td><td>machen</td></tr>
+    <tr><td>ihr</td><td>macht</td></tr>
+    <tr><td>sie</td><td>machen</td></tr>
+    <tr><td>Sie</td><td>machen</td></tr>
+  </tbody>
+</table>
+
+## Verbes irréguliers
+
+Certains verbes sont irréguliers, c’est-à-dire que leur radical change lorsqu’on les conjugue. Il n’y a pas de règle générale pour définir ces changements de radical : il faut donc les apprendre par cœur.
 
 Voici quelques exemples de verbes irréguliers qu’il faut absolument connaître. Il y en a bien sûr plein d’autres que tu peux trouver dans un dictionnaire ou dans ton livre de verbes.
 
+<table data-source-image-replacement="verbes irréguliers au présent">
+  <caption>Verbes fréquents et irréguliers au présent</caption>
+  <thead>
+    <tr>
+      <th scope="col">Pronom</th>
+      <th scope="col">sein</th>
+      <th scope="col">haben</th>
+      <th scope="col">fahren</th>
+      <th scope="col">essen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>ich</td><td>bin</td><td>habe</td><td>fahre</td><td>esse</td></tr>
+    <tr><td>du</td><td>bist</td><td>hast</td><td>fährst</td><td>isst</td></tr>
+    <tr><td>er / sie / es</td><td>ist</td><td>hat</td><td>fährt</td><td>isst</td></tr>
+    <tr><td>wir</td><td>sind</td><td>haben</td><td>fahren</td><td>essen</td></tr>
+    <tr><td>ihr</td><td>seid</td><td>habt</td><td>fahrt</td><td>esst</td></tr>
+    <tr><td>sie</td><td>sind</td><td>haben</td><td>fahren</td><td>essen</td></tr>
+    <tr><td>Sie</td><td>sind</td><td>haben</td><td>fahren</td><td>essen</td></tr>
+  </tbody>
+</table>
+
 103 verbes essentiels au présent avec Quizlet
 
-Quelques exercices pour entrainer la conjugaison des verbes au présent.
+Quelques exercices pour entraîner la conjugaison des verbes au présent.
 
 - [https://www.schubert-verlag.de/aufgaben/xg/xg01_03.htm](https://www.schubert-verlag.de/aufgaben/xg/xg01_03.htm)
 
@@ -46,6 +85,3 @@ Quelques exercices pour entrainer la conjugaison des verbes au présent.
 - [http://lerngrammatik.de/uebung_verb_praesens_unregelmaessige_verben_1.htm](http://lerngrammatik.de/uebung_verb_praesens_unregelmaessige_verben_1.htm)
 
 - [https://deutschlernerblog.de/verben-konjugieren-uebungen-starke-und-unregelmaessige-verben-a1/](https://deutschlernerblog.de/verben-konjugieren-uebungen-starke-und-unregelmaessige-verben-a1/)
-
-## Exercices interactifs intégrés
-

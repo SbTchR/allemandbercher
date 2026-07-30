@@ -15,7 +15,7 @@ const { table, compact = false } = Astro.props;
     {table.note && <span>{table.note}</span>}
   </figcaption>
   <div class="grammar-matrix-scroll">
-    <table class="grammar-matrix">
+    <table class="grammar-matrix" data-source-image-replacement={table.title}>
       <thead>
         <tr>
           {table.columns.map((column) => <th scope="col">{column}</th>)}

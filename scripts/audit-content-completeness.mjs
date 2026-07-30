@@ -5,6 +5,38 @@ const SOURCE_PATH = 'data/source-site-map.json';
 const URL_MAP_PATH = 'url-map.json';
 const DIST_DIR = 'dist';
 const REPORT_PATH = 'site-content-audit.md';
+const SOURCE_CORRECTION_EXCLUSIONS = new Map([
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb',
+    [
+      'Subordonnées',
+      'trotzdem = malgré que',
+      "Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.",
+      'Contrairement à « und, aber, denn et also », ces subordonnant comptent pour une place dans la phrase. Ils sont donc suivi d’une inversion sujet-verbe pour respecter la la règle du verbe en 2ème position.',
+    ],
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also',
+    [
+      'Subordonnées',
+      "Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.",
+      'Les subordonnants suivants sont très utiles :',
+      'Ils sont aussi très simples à utiliser car ils fonctionnent comme des points, ils ne comptent donc pas pour une position dans la phrase.',
+      '⚠️ Les subordonnants « aber, denn et also » sont précédés d’une virgule !',
+    ],
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9positions',
+    [
+      'Les autres prépositions sont mixtes, c’est-à-dire qu’elles sont parfois suivies du datif et parfois de l’accusatif.',
+      'Il s’agit de toutes les autres prépositions. Dans ce tableau se trouvent les plus importantes, soit celles que tu dois connaître.',
+      'Pour savoir s’il faut accorder le groupe nominal qui suit une de ces préposition à l’accusatif ou au datif, il faut se demander si le verbe implique un déplacement ou non.',
+      'Elles sont suivies de l’accusatif quand elles sont utilisées avec un verbe de déplacement .',
+      'Elles sont suivies du datif quand elles sont utilisées avec un verbe de position .',
+      'être capable de définir si un verbe implique un déplacement ou non.',
+    ],
+  ],
+]);
 
 const sourceAudit = JSON.parse(readFileSync(SOURCE_PATH, 'utf8'));
 const urlMap = JSON.parse(readFileSync(URL_MAP_PATH, 'utf8'));
@@ -23,6 +55,7 @@ for (const page of sourceAudit.pages) {
 const results = sourceAudit.pages.map((page) => auditPage(page));
 const blockingResults = results.filter((result) => result.blockers.length > 0);
 const imageWarningResults = results.filter((result) => result.imageWarnings.length > 0);
+const sourceCorrectionResults = results.filter((result) => result.correctedSourceLines.length > 0);
 const sections = new Map();
 
 for (const result of results) {
@@ -45,6 +78,7 @@ const lines = [
   `- Pages source vérifiées : ${results.length}`,
   `- Alertes bloquantes de contenu : ${blockingResults.length}`,
   `- Avertissements images à revoir visuellement : ${imageWarningResults.length}`,
+  `- Pages avec correction pédagogique assumée du site source : ${sourceCorrectionResults.length}`,
   '- Contrôle bloquant : existence des pages cibles, couverture du texte principal, iframes/embeds intégrés et liens externes conservés.',
   '- Contrôle image : les images Google Sites récurrentes ou décoratives sont traitées comme avertissements, pas comme manque de contenu textuel.',
   '',
@@ -80,6 +114,22 @@ if (imageWarningResults.length === 0) {
   }
 }
 
+lines.push('', '## Corrections pédagogiques du site source', '');
+if (sourceCorrectionResults.length === 0) {
+  lines.push('Aucune correction explicite du contenu source.');
+} else {
+  lines.push(
+    'Ces lignes du site source ne sont pas attendues dans la nouvelle version, car elles contiennent une terminologie ou une règle grammaticale erronée. La page locale fournit la règle corrigée.',
+    '',
+  );
+  for (const result of sourceCorrectionResults) {
+    lines.push(`### ${result.title} (${result.section})`, '');
+    lines.push(`- Source : ${result.sourceUrl}`);
+    lines.push(`- Lignes volontairement remplacées : ${result.correctedSourceLines.map((line) => `\`${line}\``).join(' ; ')}`);
+    lines.push('');
+  }
+}
+
 lines.push('', '## Pages vérifiées', '');
 for (const result of results) {
   const status = result.blockers.length > 0 ? 'À corriger' : 'OK';
@@ -103,6 +153,7 @@ function auditPage(page) {
     targetPath,
     blockers: [],
     imageWarnings: [],
+    correctedSourceLines: [],
     coverage: null,
     uncoveredLines: [],
   };
@@ -114,7 +165,9 @@ function auditPage(page) {
 
   const html = readFileSync(distPath, 'utf8');
   const localText = htmlToText(html);
-  const coverage = computeCoverage(page.textePrincipalNettoye ?? '', localText);
+  const correctedSource = excludeCorrectedSourceLines(page.url, page.textePrincipalNettoye ?? '');
+  result.correctedSourceLines = correctedSource.excluded;
+  const coverage = computeCoverage(correctedSource.text, localText);
   result.coverage = coverage;
   result.uncoveredLines = coverage.uncovered.slice(0, 4);
 
@@ -140,6 +193,20 @@ function auditPage(page) {
   }
 
   return result;
+}
+
+function excludeCorrectedSourceLines(sourceUrl, sourceText) {
+  const excludedLines = SOURCE_CORRECTION_EXCLUSIONS.get(sourceUrl) ?? [];
+  const excludedNormalized = new Set(excludedLines.map(normalizeText));
+  const kept = [];
+  const excluded = [];
+
+  for (const line of sourceText.split('\n')) {
+    if (excludedNormalized.has(normalizeText(line))) excluded.push(line.trim());
+    else kept.push(line);
+  }
+
+  return { text: kept.join('\n'), excluded };
 }
 
 function appendResult(lines, result, alerts) {
@@ -248,8 +315,10 @@ function isRelevantExternalLink(url) {
   if (!url || url.includes('fonts.googleapis.com') || url.includes('Cookie Policy')) return false;
   try {
     const parsed = new URL(url.replace(/&amp;/g, '&'));
-    if (parsed.hostname.includes('allemandbercher.ch')) return false;
-    if (parsed.hostname.includes('google.com') && parsed.pathname.includes('reportabuse')) return false;
+    const isSourceSite = parsed.hostname === 'allemandbercher.ch' || parsed.hostname.endsWith('.allemandbercher.ch');
+    const isGoogle = parsed.hostname === 'google.com' || parsed.hostname.endsWith('.google.com');
+    if (isSourceSite) return false;
+    if (isGoogle && parsed.pathname.includes('reportabuse')) return false;
     return true;
   } catch {
     return false;
@@ -257,23 +326,27 @@ function isRelevantExternalLink(url) {
 }
 
 function getRelevantSourceImages(page) {
-  const images = (page.imagesDetectees ?? [])
+  return (page.imagesDetectees ?? [])
     .map((image) => image.url ?? '')
     .filter(isRelevantSourceImage)
     .filter((url) => (sourceImageCounts.get(url) ?? 0) <= 4);
-  return images.slice(1);
 }
 
 function isRelevantSourceImage(url) {
   if (!url) return false;
   if (url.includes('fonts.googleapis.com')) return false;
   if (!url.includes('googleusercontent.com')) return false;
+  if (/=w16383(?:$|[&#])/.test(url)) return false;
   return true;
 }
 
 function countLocalPedagogicalImages(html) {
   const matches = [...html.matchAll(/<img[^>]+src=["']([^"']+)["']/gi)].map((match) => match[1]);
-  return matches.filter((src) => src.includes('/assets/source-site/') || src.includes('googleusercontent.com')).length;
+  const localImages = matches.filter(
+    (src) => src.includes('/assets/source-site/') || src.includes('googleusercontent.com'),
+  ).length;
+  const markedReplacements = [...html.matchAll(/\bdata-source-image-replacement\b/gi)].length;
+  return localImages + markedReplacements;
 }
 
 function containsCanonicalUrl(html, url) {
@@ -296,15 +369,39 @@ function canonicalizeUrl(value) {
     .replace(/&#39;/g, "'");
   try {
     const parsed = new URL(decoded);
+
+    if (
+      (parsed.hostname === 'google.com' || parsed.hostname.endsWith('.google.com'))
+      && parsed.pathname === '/url'
+      && parsed.searchParams.get('q')
+    ) {
+      return canonicalizeUrl(parsed.searchParams.get('q'));
+    }
+
+    const isYouTube = parsed.hostname === 'youtube.com' || parsed.hostname.endsWith('.youtube.com');
+    const isYouTuBe = parsed.hostname === 'youtu.be' || parsed.hostname.endsWith('.youtu.be');
+    if (isYouTube || isYouTuBe) {
+      const playlistId = parsed.searchParams.get('list');
+      if (parsed.pathname === '/playlist' && playlistId) {
+        return `https://youtube.com/playlist?list=${playlistId}`;
+      }
+      const videoId = isYouTuBe
+        ? parsed.pathname.split('/').filter(Boolean)[0]
+        : parsed.pathname.match(/^\/embed\/([^/]+)/)?.[1] ?? parsed.searchParams.get('v');
+      return videoId ? `https://youtube.com/watch?v=${videoId}` : `${parsed.origin}${parsed.pathname}`;
+    }
+
+    if (parsed.hostname === 'drive.google.com') {
+      const fileId = parsed.pathname.match(/^\/file\/d\/([^/]+)/)?.[1];
+      if (fileId) return `https://drive.google.com/file/d/${fileId}`;
+    }
+
     parsed.hash = '';
     if ((parsed.protocol === 'https:' || parsed.protocol === 'http:') && parsed.hostname.startsWith('www.')) {
       parsed.hostname = parsed.hostname.slice(4);
     }
     if ((parsed.protocol === 'https:' || parsed.protocol === 'http:') && parsed.pathname !== '/') {
       parsed.pathname = parsed.pathname.replace(/\/$/, '');
-    }
-    if (parsed.hostname.includes('youtube.com') || parsed.hostname.includes('youtu.be')) {
-      parsed.search = '';
     }
     return parsed.toString();
   } catch {

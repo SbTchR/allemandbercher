@@ -1,6 +1,6 @@
 ---
-title: "und, oder, aber, denn, also"
-description: "Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant."
+title: "und, oder, aber, denn"
+description: "Les conjonctions de coordination und, oder, aber et denn relient deux propositions principales sans modifier l’ordre des mots."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/und-oder-aber-denn-also"
@@ -8,28 +8,29 @@ pageType: "theorie"
 objectives: []
 externalLinks: []
 images: []
-migrationNotes: []
+migrationNotes:
+  - "Correction du site source : also est traité avec les adverbes conjonctifs ; les coordonnants de cette page sont und, oder, aber et denn."
 ---
 
-## Subordonnées
+## Conjonctions de coordination
 
-Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
+**und = et**
 
-Les subordonnants suivants sont très utiles :
+**oder = ou**
 
-**und = et aber = mais**
+**aber = mais**
 
-**also = alors, donc denn = car**
+**denn = car**
 
-Ils sont aussi très simples à utiliser car ils fonctionnent comme des points, ils ne comptent donc pas pour une position dans la phrase.
+Ces conjonctions relient deux propositions principales. Elles n’occupent pas une position dans la seconde proposition et ne provoquent donc pas d’inversion.
 
-C’est-à-dire que la structure de la phrase qui les suit n’a rien de particulier. Elle respecte donc la règle du verbe en 2ème position dans une phrase affirmative ou la règle du verbe en 1ère position dans une question.
+La proposition qui les suit garde l’ordre habituel : le verbe conjugué reste en 2e position dans une phrase affirmative et en 1re position dans une question fermée.
 
-⚠️ Les subordonnants « aber, denn et also » sont précédés d’une virgule !
+⚠️ Lorsqu’ils relient deux propositions, **aber** et **denn** sont précédés d’une virgule. On ne met généralement pas de virgule devant **und** ou **oder**.
 
 ## Exemples:
 
-Eva mag Fussball spielen, aber Max mag Tennis.
+Eva spielt gern Fussball, aber Max spielt gern Tennis.
 
 **p.1 p.2 p.0 p.1 p.2**
 
@@ -45,9 +46,4 @@ Si le sujet est le même dans les deux phrases, le pronom qui le remplace dans l
 
 ## Exemple:
 
-Eva spielt gern Fussball, aber (sie) mag nicht Tennis.
-
-## Exercice
-
-## Exercices interactifs intégrés
-
+Eva spielt gern Fussball, aber (sie) spielt nicht gern Tennis.

@@ -1,22 +1,15 @@
 ---
 title: "Tableaux de déclinaisons"
-description: "Les pronoms personnels"
+description: "Retrouve dans des tableaux modifiables les déclinaisons des déterminants, des adjectifs et des pronoms personnels."
 section: "theorie"
 category: "grammaire"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/tableaux-de-d%C3%A9clinaisons"
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-tableaux-de-declinaisons-1.png"
-    alt: "Image 1 - Tableaux de déclinaisons"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-tableaux-de-declinaisons-2.png"
-    alt: "Image 2 - Tableaux de déclinaisons"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-tableaux-de-declinaisons-3.png"
-    alt: "Image 3 - Tableaux de déclinaisons"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-tableaux-de-declinaisons-4.png"
-    alt: "Image 4 - Tableaux de déclinaisons"
-migrationNotes: []
+images: []
+migrationNotes:
+  - "Les tableaux en image du site source ont été reconstruits en tableaux HTML."
 ---
 
 ## Les déterminants
@@ -24,6 +17,3 @@ migrationNotes: []
 ## Les adjectifs
 
 ## Les pronoms personnels
-
-## Exercices interactifs intégrés
-

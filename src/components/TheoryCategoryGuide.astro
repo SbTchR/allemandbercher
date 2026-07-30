@@ -1,0 +1,474 @@
+---
+import type { TheoryEntry } from '../lib/resources';
+import { resourceUrl } from '../lib/resources';
+import { withBase } from '../lib/paths';
+
+type Category = 'grammaire' | 'syntaxe' | 'conjugaison';
+
+type Props = {
+  category: Category;
+  entries: TheoryEntry[];
+};
+
+type RouteCard = {
+  slug: string;
+  title: string;
+  problem: string;
+  example?: string;
+};
+
+const { category, entries } = Astro.props;
+const entryMap = new Map(entries.map((entry) => [entry.id.split('/').pop()?.replace(/\.md$/, ''), entry]));
+
+const routeCards: Record<Category, RouteCard[]> = {
+  grammaire: [
+    {
+      slug: 'les-pronoms-personnels',
+      title: 'Les pronoms personnels',
+      problem: 'Remplacer un groupe nominal sans le répéter.',
+      example: 'Le chien est gentil, je lui donne un biscuit.',
+    },
+    {
+      slug: 'les-pronoms-possessifs',
+      title: 'Les déterminants possessifs',
+      problem: 'Indiquer à qui appartient une personne ou un objet.',
+      example: 'mon cahier · votre stylo',
+    },
+    {
+      slug: 'les-cas-theorie-de-base',
+      title: 'Nominatif, accusatif, datif',
+      problem: 'Comprendre le rôle des groupes dans la phrase.',
+      example: 'sujet · CVD · CVI',
+    },
+    {
+      slug: 'les-prepositions',
+      title: 'Les prépositions',
+      problem: 'Choisir le cas demandé après une préposition.',
+      example: 'mit + datif · für + accusatif',
+    },
+    {
+      slug: 'tableaux-de-declinaisons',
+      title: 'Les tableaux de déclinaisons',
+      problem: 'Retrouver la bonne terminaison d’un déterminant ou d’un adjectif.',
+      example: 'der · den · dem',
+    },
+    {
+      slug: 'les-adjectifs',
+      title: 'Les adjectifs',
+      problem: 'Accorder ou décliner correctement un adjectif.',
+      example: 'der nette Hund',
+    },
+    {
+      slug: 'le-genitif',
+      title: 'Le génitif',
+      problem: 'Indiquer l’appartenance ou la possession.',
+      example: 'das Auto meines Vaters',
+    },
+    {
+      slug: 'le-comparatif',
+      title: 'Le comparatif',
+      problem: 'Comparer deux choses ou deux personnes.',
+      example: 'plus grand que · aussi petit que',
+    },
+    {
+      slug: 'le-superlatif',
+      title: 'Le superlatif',
+      problem: 'Comparer un élément à tous les autres.',
+      example: 'le plus petit · la plus grande',
+    },
+  ],
+  syntaxe: [
+    {
+      slug: 'la-place-du-verbe-principal',
+      title: 'Les phrases « normales »',
+      problem: 'Placer le verbe conjugué dans une phrase affirmative.',
+      example: 'Heute spiele ich Fussball.',
+    },
+    {
+      slug: 'les-questions',
+      title: 'Les questions',
+      problem: 'Construire une question avec ou sans mot interrogatif.',
+      example: 'Wo wohnst du? · Kommst du?',
+    },
+    {
+      slug: 'les-phrases-avec-verbe-de-modalite',
+      title: 'Les verbes de modalité',
+      problem: 'Placer le verbe modal et l’infinitif.',
+      example: 'können · mögen · müssen · dürfen',
+    },
+    {
+      slug: 'les-phrases-au-passe-compose',
+      title: 'Les phrases au passé composé',
+      problem: 'Placer l’auxiliaire et le participe passé.',
+      example: 'j’ai fait · je suis allé',
+    },
+    {
+      slug: 'und-oder-aber-denn-also',
+      title: 'Les connecteurs « rien de spécial »',
+      problem: 'Relier deux phrases sans changer la place habituelle du verbe.',
+      example: 'und · oder · aber · denn',
+    },
+    {
+      slug: 'trotzdem-deshalb',
+      title: 'Connecteurs avec inversion',
+      problem: 'Placer le verbe juste après le connecteur.',
+      example: 'trotzdem · deshalb · also',
+    },
+    {
+      slug: 'weil',
+      title: 'Subordonnées avec verbe à la fin',
+      problem: 'Donner une raison en envoyant le verbe à la fin.',
+      example: 'weil',
+    },
+    {
+      slug: 'wenn',
+      title: 'Quand ou si',
+      problem: 'Exprimer une condition ou une situation répétée.',
+      example: 'wenn',
+    },
+    {
+      slug: 'dass',
+      title: 'Dire ce que l’on pense',
+      problem: 'Introduire une idée ou une opinion.',
+      example: 'dass',
+    },
+    {
+      slug: 'damit-wahrend-bevor-nachdem-als-obwohl',
+      title: 'Autres subordonnées',
+      problem: 'Exprimer le but, le temps, l’opposition ou la concession.',
+      example: 'damit · während · bevor · nachdem · als · obwohl',
+    },
+    {
+      slug: 'les-infinitives',
+      title: 'Les subordonnées infinitives',
+      problem: 'Construire une proposition avec un infinitif.',
+      example: 'zu · um … zu · anstatt … zu',
+    },
+    {
+      slug: 'les-subordonnees-relatives',
+      title: 'Les subordonnées relatives',
+      problem: 'Ajouter une information sur une personne ou une chose.',
+      example: 'la personne qui… · le livre que…',
+    },
+    {
+      slug: 'les-questions-indirectes',
+      title: 'Les questions indirectes',
+      problem: 'Rapporter une question dans une phrase.',
+      example: 'où il habite · ce qu’elle fait',
+    },
+  ],
+  conjugaison: [
+    {
+      slug: 'present',
+      title: 'Le présent',
+      problem: 'Conjuguer ce qui se passe maintenant ou régulièrement.',
+      example: 'ich spiele · du spielst',
+    },
+    {
+      slug: 'preterit',
+      title: 'Le prétérit',
+      problem: 'Employer les formes du passé, notamment sein et haben.',
+      example: 'ich war · ich hatte',
+    },
+    {
+      slug: 'passe-compose',
+      title: 'Le passé composé',
+      problem: 'Construire le Perfekt avec haben ou sein.',
+      example: 'ich habe gespielt · ich bin gegangen',
+    },
+    {
+      slug: 'imperatif',
+      title: 'L’impératif',
+      problem: 'Donner un ordre ou une consigne.',
+      example: 'Komm! · Kommt! · Kommen Sie!',
+    },
+    {
+      slug: 'futur',
+      title: 'Le futur',
+      problem: 'Parler de ce qui va se passer.',
+      example: 'ich werde lernen',
+    },
+    {
+      slug: 'verbes-de-modalite',
+      title: 'Les verbes de modalité',
+      problem: 'Exprimer une possibilité, une obligation ou une volonté.',
+      example: 'können · müssen · wollen',
+    },
+    {
+      slug: 'les-verbes-reflexifs',
+      title: 'Les verbes réflexifs',
+      problem: 'Conjuguer un verbe accompagné d’un pronom réfléchi.',
+      example: 'ich freue mich',
+    },
+    {
+      slug: 'konjunktiv-ii',
+      title: 'Le Konjunktiv II',
+      problem: 'Exprimer un souhait, une hypothèse ou une demande polie.',
+      example: 'ich hätte gern · ich würde',
+    },
+  ],
+};
+
+const configuredCards = routeCards[category];
+const configuredSlugs = new Set(configuredCards.map((card) => card.slug));
+const fallbackCards: RouteCard[] = entries
+  .map((entry) => ({
+    entry,
+    slug: entry.id.split('/').pop()?.replace(/\.md$/, ''),
+  }))
+  .filter(({ slug }) => Boolean(slug) && !configuredSlugs.has(slug as string))
+  .map(({ entry, slug }) => ({
+    slug: slug as string,
+    title: entry.data.title,
+    problem: entry.data.description || 'Ouvrir cette fiche de théorie.',
+  }));
+const cards = [...configuredCards, ...fallbackCards];
+---
+
+{
+  category === 'grammaire' && (
+    <section class="content-band theory-category-guide" aria-labelledby="grammar-guide-title">
+      <p class="home-section-label">Commence par lire ceci</p>
+      <h2 id="grammar-guide-title">L’accord des mots dans la phrase</h2>
+      <p class="category-guide-lead">
+        La grammaire règle les questions d’accords et de déclinaisons des mots dans la phrase. Voici les types de mots qui
+        s’accordent ou se déclinent :
+      </p>
+
+      <div class="grammar-word-types" aria-label="Types de mots qui s’accordent ou se déclinent">
+        <span class="case-chip case-chip-noun">noms</span>
+        <span class="case-chip case-chip-determiner">déterminants</span>
+        <span class="case-chip case-chip-adjective">adjectifs</span>
+        <span class="case-chip case-chip-preposition">pronoms</span>
+      </div>
+
+      <p>Comme en français, ces mots s’accordent en genre — masculin, féminin ou neutre — et en nombre — singulier ou pluriel.</p>
+
+      <p>
+        En allemand, ces mots se déclinent également selon le rôle qu’ils ont dans la phrase : sujet, complément du verbe
+        direct (CVD), complément du verbe indirect (CVI) ou groupe prépositionnel.
+      </p>
+
+      <div class="category-guide-note">
+        <strong>Ihr, uns, euch, unser, euer… c’est déjà quoi ? 🤔</strong>
+        <p>
+          Si tu cherches à remplacer un groupe nominal pour ne pas le répéter plusieurs fois, tu as besoin des
+          <a href={withBase('/theorie/grammaire/les-pronoms-personnels/')}>pronoms personnels</a>.
+        </p>
+        <p>
+          Si tu cherches un déterminant pour indiquer à qui « appartient » quelque chose ou quelqu’un, tu as besoin des
+          <a href={withBase('/theorie/grammaire/les-pronoms-possessifs/')}>déterminants possessifs</a>.
+        </p>
+        <p>Exemple : Pouvez-vous me prêter votre stylo ? Le mien est cassé.</p>
+      </div>
+
+      <div class="category-example-board">
+        <p><span class="case-chip case-chip-nominative">Der Hund</span> <span class="case-chip case-chip-verb">ist</span> nett.</p>
+        <p>Ich <span class="case-chip case-chip-verb">mag</span> <span class="case-chip case-chip-accusative">den Hund</span>.</p>
+        <small>Le chien est gentil. J’aime le chien.</small>
+      </div>
+
+      <p>
+        Il peut y avoir de nombreux groupes dans une phrase, mais ceux que tu dois savoir reconnaître sont les suivants :
+        le verbe, le sujet, le CVD, le CVI et le groupe prépositionnel.
+      </p>
+
+      <div class="case-role-legend" aria-label="Code couleur stable des groupes de la phrase">
+        <article class="case-role-card case-role-card-verb">
+          <strong>Verbe</strong>
+          <p>Le mot conjugué avec le sujet.</p>
+        </article>
+        <article class="case-role-card case-role-card-nominative">
+          <strong>Sujet</strong>
+          <p>Nominatif : qui fait l’action ?</p>
+        </article>
+        <article class="case-role-card case-role-card-accusative">
+          <strong>CVD</strong>
+          <p>Accusatif : qui ou quoi ?</p>
+        </article>
+        <article class="case-role-card case-role-card-dative">
+          <strong>CVI</strong>
+          <p>Datif : à qui ou à quoi ?</p>
+        </article>
+        <article class="case-role-card case-role-card-preposition">
+          <strong>Groupe prépositionnel</strong>
+          <p>Le cas dépend de la préposition.</p>
+        </article>
+      </div>
+
+      <div class="category-guide-note">
+        <strong>Le groupe nominal</strong>
+        <p>
+          Un rappel de la technique pour déterminer les groupes de la phrase est disponible sur la
+          <a href={withBase('/theorie/grammaire/les-cas-theorie-de-base/')}>page des cas</a>.
+        </p>
+        <p>
+          Un groupe nominal comprend un <span class="case-chip case-chip-determiner">déterminant</span>, éventuellement un
+          <span class="case-chip case-chip-adjective">adjectif</span> et un <span class="case-chip case-chip-noun">nom</span>.
+          Il peut être sujet, CVD, CVI ou faire partie d’un groupe prépositionnel.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+{
+  category === 'syntaxe' && (
+    <section class="content-band theory-category-guide" aria-labelledby="syntax-guide-title">
+      <p class="home-section-label">Commence par lire ceci</p>
+      <h2 id="syntax-guide-title">L’ordre des mots dans la phrase</h2>
+      <p class="category-guide-lead">
+        La syntaxe règle la question de l’ordre des mots. En allemand, la difficulté principale consiste à mettre le
+        verbe au bon endroit.
+      </p>
+
+      <p>On distingue les types de phrases suivants :</p>
+      <div class="phrase-type-grid category-phrase-types">
+        <article>
+          <strong>La phrase affirmative (phrase « normale »)</strong>
+          <p>Le verbe conjugué occupe la deuxième position.</p>
+        </article>
+        <article>
+          <strong>La phrase interrogative (question)</strong>
+          <p>Le verbe suit le mot interrogatif ou ouvre la question.</p>
+        </article>
+        <article>
+          <strong>La phrase impérative (ordre)</strong>
+          <p>Le verbe sert à donner un ordre ou une consigne.</p>
+        </article>
+        <article>
+          <strong>La phrase subordonnée (phrase dans la phrase)</strong>
+          <p>Certains connecteurs envoient le verbe conjugué à la fin.</p>
+        </article>
+      </div>
+
+      <p>Pour chaque type de phrase, il y a des règles différentes concernant la place du verbe.</p>
+
+      <div class="syntax-role-legend" aria-label="Code couleur de la syntaxe">
+        <span><span class="role-chip mark-subject">sujet</span> jaune</span>
+        <span><span class="role-chip mark-verb">verbe principal</span> rouge</span>
+        <span><span class="role-chip mark-object">complément</span> bleu</span>
+        <span><span class="role-chip mark-verbal-tail">forme verbale finale</span> violet</span>
+      </div>
+
+      <div class="syntax-two-verb-grid">
+        <article>
+          <span>Passé composé</span>
+          <p>Peter <span class="mark-verb">hat</span> einen Apfel <span class="mark-verbal-tail">gegessen</span>.</p>
+          <small>Peter a mangé une pomme · auxiliaire + participe passé</small>
+        </article>
+        <article>
+          <span>Verbe de modalité</span>
+          <p>Peter <span class="mark-verb">muss</span> sein Zimmer <span class="mark-verbal-tail">aufräumen</span>.</p>
+          <small>Peter doit ranger sa chambre · verbe modal + infinitif</small>
+        </article>
+      </div>
+
+      <div class="category-guide-note">
+        <strong>Attention au vocabulaire utilisé</strong>
+        <p>Dans ces cas de figure, il y a toujours :</p>
+        <ul>
+          <li>un verbe principal, celui qui est conjugué avec le sujet ;</li>
+          <li>une forme verbale invariable, soit le participe passé ou un verbe à l’infinitif.</li>
+        </ul>
+        <p>Dans ces cas de figure, il y a toujours un verbe principal et une forme verbale invariable.</p>
+        <p>
+          Le <span class="mark-verb">verbe principal</span> est toujours celui qui est conjugué avec le sujet. La
+          <span class="mark-verbal-tail">forme verbale finale</span> est un infinitif, un participe passé ou une particule
+          séparable.
+        </p>
+        <p>
+          <strong>Attention :</strong> lorsqu’on parle de « verbe principal », il s’agit toujours du verbe qui est
+          conjugué avec le sujet !
+        </p>
+      </div>
+    </section>
+  )
+}
+
+{
+  category === 'conjugaison' && (
+    <section class="content-band theory-category-guide" aria-labelledby="conjugation-guide-title">
+      <p class="home-section-label">Repères de progression</p>
+      <h2 id="conjugation-guide-title">Conjuguer le verbe avec son sujet</h2>
+      <p class="category-guide-lead">
+        Le verbe est le cœur de la phrase : plus tu connais de verbes, plus il te sera facile d’écrire des phrases variées
+        dans un texte. Commence par apprendre les verbes les plus utilisés au quotidien à l’infinitif, puis apprends à les
+        conjuguer aux différents temps verbaux en fonction de ceux que tu as vus en classe.
+      </p>
+
+      <p>Pour rappel, tu as appris le présent en 7ème et en 8ème. Ensuite, tu apprends :</p>
+      <ul class="advice-checklist">
+        <li>l’impératif en début de 9ème ;</li>
+        <li>le passé composé en 9ème (2ème semestre) ;</li>
+        <li>le futur et le Konjunktiv II en 11ème.</li>
+      </ul>
+
+      <div class="conjugation-timeline" aria-label="Progression des temps verbaux">
+        <article>
+          <span>7–8H</span>
+          <strong>Présent</strong>
+          <p>Le temps de base à connaître avant les autres.</p>
+        </article>
+        <article>
+          <span>Début 9H</span>
+          <strong>Impératif</strong>
+          <p>Pour donner un ordre ou une consigne.</p>
+        </article>
+        <article>
+          <span>9H · 2e semestre</span>
+          <strong>Passé composé</strong>
+          <p>Auxiliaire au présent et participe passé.</p>
+        </article>
+        <article>
+          <span>11H</span>
+          <strong>Futur et Konjunktiv II</strong>
+          <p>Pour les projets, souhaits et hypothèses.</p>
+        </article>
+      </div>
+
+      <div class="category-guide-note">
+        <strong>Pour apprendre les verbes</strong>
+        <p>
+          Le site Blooket propose des jeux pour réviser les verbes. Utilise-le surtout pour commencer à les apprendre :
+          les questions à choix multiples sont pratiques pour les voir une première fois, mais elles ne suffisent pas
+          pour bien apprendre à écrire les mots. Alterne observation, rappel oral et production écrite.
+        </p>
+        <p>Crée ton compte gratuit sur Blooket, puis ouvre la liste de verbes avec le lien ci-dessous.</p>
+        <p>Clique ensuite sur « Solo » pour jouer seul ou sur « Host » pour jouer à plusieurs.</p>
+        <div class="category-guide-actions">
+          <a href="https://quizlet.com/355592036/" rel="noreferrer" target="_blank">Liste des verbes sur Quizlet</a>
+          <a href="https://www.blooket.com/set/62b174c039f42a8920c474b3" rel="noreferrer" target="_blank">
+            Réviser sur Blooket
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<section class="content-band theory-route-section" aria-labelledby={`${category}-problem-title`}>
+  <div class="section-heading">
+    <div>
+      <p class="home-section-label">Quel est ton problème ?</p>
+      <h2 id={`${category}-problem-title`}>Choisis la fiche qui répond à ta question</h2>
+    </div>
+    {category === 'grammaire' && <a class="text-link" href={withBase('/outils-en-ligne/nad-maschine/')}>Ouvrir la NAD-Maschine</a>}
+  </div>
+
+  <div class="theory-route-grid">
+    {
+      cards.map((card) => {
+        const entry = entryMap.get(card.slug);
+        if (!entry) return null;
+        return (
+          <a class="theory-route-card" href={resourceUrl(entry)}>
+            <strong>{card.title}</strong>
+            <span>{card.problem}</span>
+            {card.example && <small>{card.example}</small>}
+          </a>
+        );
+      })
+    }
+  </div>
+</section>

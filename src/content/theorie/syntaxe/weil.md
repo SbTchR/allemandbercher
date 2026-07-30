@@ -13,8 +13,6 @@ migrationNotes: []
 
 ## Subordonnées
 
-Rappel: Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
-
 ## Exemple:
 
 Paulo a faim. Paulo mange un hamburger. --> Paulo mange un hamburger parce qu 'il a faim.
@@ -25,7 +23,7 @@ Subordonnée: Il a faim.
 
 ## Subordonnant: parce que
 
-La syntaxe des subordonnées en allemand et différente de celle du français. En effet, dans les phrases introduites par les subordonnants dass, weil ou wenn , tu dois mettre le verbe conjugué tout à la fin. Le verbe conjugué est celui qui est accordé au sujet (donc pas participe passé, ni infinitif).
+La syntaxe des subordonnées en allemand est différente de celle du français. En effet, dans les phrases introduites par les subordonnants dass, weil ou wenn, tu dois mettre le verbe conjugué tout à la fin. Le verbe conjugué est celui qui est accordé au sujet (donc pas le participe passé ni l’infinitif).
 
 ## Exemples:
 
@@ -43,9 +41,9 @@ Avec un verbe de modalité: Julia ist froh, weil sie an die Party gehen darf .
 
 **wenn = quand / si**
 
-## Exercice
+## Exercices externes complémentaires
 
-Quelques exercices pour entrainer les phrases avec weil .
+Quelques exercices pour entraîner les phrases avec weil .
 
 - [https://www.schubert-verlag.de/aufgaben/xg/xg07_12.htm](https://www.schubert-verlag.de/aufgaben/xg/xg07_12.htm)
 
@@ -72,6 +70,3 @@ Quelques exercices pour entrainer les phrases avec weil .
 - [http://www.lehrerlenz.de/strafe_muss_sein.html](http://www.lehrerlenz.de/strafe_muss_sein.html)
 
 - [https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap3_nebensaetze.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap3_nebensaetze.htm)
-
-## Exercices interactifs intégrés
-

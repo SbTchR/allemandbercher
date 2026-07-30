@@ -11,11 +11,9 @@ images: []
 migrationNotes: []
 ---
 
-En allemand, le passé composé se compose, comme en français, d’un auxiliaire (être ou avoir) et d’un participe passé. La phrase au passé composé ne se compose cependant pas de la même manière !
+L’auxiliaire, étant la forme verbale conjuguée avec le sujet, est considéré comme le verbe principal et se place donc en 2e position dans une phrase affirmative.
 
-L’auxiliaire , étant la forme verbale qui est conjuguée avec le sujet, est considéré comme verbe principal et se place donc en 2 ème position (dans une phrase affirmative).
-
-Le participe passé lui se place à la ﬁn de la phrase !
+Le participe passé, lui, se place à la fin de la phrase !
 
 ## Exemple :
 
@@ -27,4 +25,4 @@ Am Montag habe ich mein Zimmer aufgeräumt .
 
 --> aufgeräumt = participe passé
 
-Clique sur ce lien pour accéder à la théorie sur la conjuguaison des verbes au passé composé.
+Consulte aussi la page consacrée à la [conjugaison des verbes au passé composé](../../conjugaison/passe-compose/).

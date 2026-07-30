@@ -11,8 +11,6 @@ images: []
 migrationNotes: []
 ---
 
-Une phrase infinitive est une phrase qui contient un verbe à l’infinitif en plus du verbe conjugué. Par exemple, les phrases avec un verbe de modalité sont des phrases infinitives. Il existe d’autres types d’infinitives:
-
 ## Infinitives simples
 
 Il y a quelques verbes qui peuvent fonctionner comme des verbes de modalité. C’est-à-dire qu’il faut simplement mettre le verbe à l’infinitif à la fin de la phrase.
@@ -43,13 +41,13 @@ Je te demande de fermer la porte.
 
 Avec un verbe à particule séparable, on place le « zu » entre la particule et l’infinitif (en un mot).
 
-Sie hat vergessen, ihr Buch mit zu nehmen.
+Sie hat vergessen, ihr Buch mitzunehmen.
 
-Elle a oublier de prendre son livre.
+Elle a oublié de prendre son livre.
 
 ## Infinitives « pour »
 
-Pour traduire la préposition « pour », vous connaissez le mot « für », mais celui-ci n’est utilisé que lorsque il est suivi d’un groupe nominal (ex: pour ma soeur = für meine Schwester).
+Pour traduire la préposition « pour », vous connaissez le mot « für », mais celui-ci n’est utilisé que lorsqu’il est suivi d’un groupe nominal (ex. : pour ma sœur = für meine Schwester).
 
 Lorsqu’il est suivi d’une phrase infinitive, on le traduit par « um… zu ». L’infinitive est aussi séparée par une virgule. On place le « um » juste après la virgule et le « zu » avant l’infinitif.
 
@@ -77,9 +75,7 @@ Exemples: Er spielt draussen, anstatt seine Hausaufgaben zu machen .
 
 Il joue dehors, au lieu de faire ses devoirs.
 
-## Exercice
-
-## Quelques exercices en ligne pour entrainer les infinitives:
+## Quelques exercices en ligne pour entraîner les infinitives:
 
 - [https://deutsch.lingolia.com/de/grammatik/satzbau/nebensaetze/infinitivsaetze/uebungen](https://deutsch.lingolia.com/de/grammatik/satzbau/nebensaetze/infinitivsaetze/uebungen)
 
@@ -96,6 +92,3 @@ Il joue dehors, au lieu de faire ses devoirs.
 - [https://schulminator.com/community/germanikus/128](https://schulminator.com/community/germanikus/128)
 
 - [https://lingvico.net/zuinfinitiv-i-b1/](https://lingvico.net/zuinfinitiv-i-b1/)
-
-## Exercices interactifs intégrés
-

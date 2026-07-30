@@ -1,5 +1,6 @@
 ---
 title: "Compréhension écrite"
+description: "Apprends à anticiper le contenu d’un texte, repérer les informations utiles et déjouer les principaux pièges de lecture en allemand."
 section: "conseils"
 category: "general"
 sourceUrl: "https://www.allemandbercher.ch/conseils/compr%C3%A9hension-%C3%A9crite"
@@ -8,7 +9,8 @@ order: 3
 objectives: []
 externalLinks: []
 images: []
-migrationNotes: []
+migrationNotes:
+  - "Les tableaux de suffixes, de pronoms réfléchis et de nuances ont été reconstruits en HTML modifiable."
 ---
 
 <section class="advice-dashboard" aria-label="Méthode de compréhension écrite">
@@ -26,16 +28,19 @@ migrationNotes: []
 </article>
 </section>
 
-<details class="external-quest" open>
-<summary>Exercices online</summary>
+<details class="external-quest">
+<summary>Exercices en ligne</summary>
+<div class="lesson-card-content">
+<p>Ces sites proposent des exercices de compréhension écrite de différents niveaux.</p>
 <div class="external-button-grid">
 <a href="https://www.schularena.com/deutsch/leseverstehen/leseverstehen_einfach">Schularena - lecture simple</a>
 <a href="http://www.goethe.de/ins/gb/lp/prj/mtg/mat/deindex.htm">Goethe - textes courts</a>
 <a href="http://www.lehrerlenz.de/texte_lesen.html">Lehrer Lenz - lire des textes</a>
 </div>
+</div>
 </details>
 
-<details class="lesson-card" open>
+<details class="lesson-card">
 <summary>1. Observer le contexte</summary>
 <div class="lesson-card-content">
 <p>Il est parfois déconcertant de se retrouver face à un texte de plusieurs paragraphes en allemand, surtout quand il contient beaucoup de mots inconnus. Avant de lire, commence par utiliser tout ce qui se trouve autour du texte.</p>
@@ -53,7 +58,7 @@ migrationNotes: []
 <div class="lesson-card-content">
 <p>Demande-toi ce que tu devras faire avant de lire le texte. Cela peut te faire gagner du temps car tu n’as pas toujours besoin de tout comprendre.</p>
 <div class="advice-table-wrap">
-<table class="quest-table advice-table">
+<table class="quest-table advice-table" data-source-image-replacement="stratégies de lecture">
 <thead>
 <tr>
 <th>Type</th>
@@ -141,7 +146,8 @@ migrationNotes: []
 </article>
 <article>
 <strong>Mots composés</strong>
-<p>Décortique les mots: <strong>der Brieffreund</strong> = Brief + Freund.</p>
+<p>Décortique les mots: <strong>der Brieffreund</strong> = Brief (lettre) + Freund (ami), donc « le correspondant ».</p>
+<p>Autre exemple: <strong>die Studiengebühren</strong> = Studien (études) + Gebühren (mot inconnu). Tu peux déjà comprendre qu’il s’agit des « Gebühren d’études » et affiner le sens grâce au contexte.</p>
 </article>
 <article>
 <strong>Mots répétés</strong>
@@ -150,17 +156,29 @@ migrationNotes: []
 </div>
 <div class="mini-note">
 <strong>Indice important</strong>
-<p>Les noms commencent toujours par une majuscule et se terminent parfois par un suffixe.</p>
+<p>Demande-toi toujours si le mot inconnu est un verbe, un nom, un adjectif, un adverbe, une préposition ou un déterminant. Les noms commencent par une majuscule et se terminent parfois par un suffixe.</p>
 </div>
-<div class="suffix-grid" aria-label="Suffixes fréquents des noms allemands">
-<span>-ung</span>
-<span>-heit</span>
-<span>-keit</span>
-<span>-schaft</span>
-<span>-tion</span>
-<span>-nis</span>
-<span>-er</span>
-<span>-chen</span>
+<div class="advice-table-wrap">
+<table class="quest-table advice-table compact-advice-table" data-source-image-replacement="suffixes des noms">
+<thead>
+<tr>
+<th scope="col">Suffixe</th>
+<th scope="col">Mot de départ</th>
+<th scope="col">Nom formé</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row">-keit</th><td><strong>persönlich</strong> = personnel</td><td><strong>die Persönlichkeit</strong> = la personnalité</td></tr>
+<tr><th scope="row">-heit</th><td><strong>das Kind</strong> = l’enfant</td><td><strong>die Kindheit</strong> = l’enfance</td></tr>
+<tr><th scope="row">-schaft</th><td><strong>der Freund</strong> = l’ami</td><td><strong>die Freundschaft</strong> = l’amitié</td></tr>
+<tr><th scope="row">-ung</th><td><strong>bedeuten</strong> = signifier</td><td><strong>die Bedeutung</strong> = la signification</td></tr>
+<tr><th scope="row">-er / -erin</th><td>Ces terminaisons désignent souvent des personnes.</td><td><strong>der Lehrer, die Lehrerin, der Verkäufer, die Wissenschaftlerin</strong>...</td></tr>
+</tbody>
+</table>
+</div>
+<div class="mini-note">
+<strong>En complément</strong>
+<p>D’autres terminaisons peuvent aussi signaler un nom: <strong>-tion</strong>, <strong>-nis</strong> et <strong>-chen</strong>.</p>
 </div>
 </div>
 </details>
@@ -170,7 +188,7 @@ migrationNotes: []
 <div class="lesson-card-content">
 <p>Pour comprendre une phrase, demande-toi: <strong>qui fait quoi ?</strong> Retrouve le sujet, le verbe et les compléments de verbe, puis remets-les dans l’ordre dans ta tête.</p>
 <div class="advice-table-wrap">
-<table class="quest-table advice-table">
+<table class="quest-table advice-table" data-source-image-replacement="verbes à particule séparable">
 <thead>
 <tr>
 <th>Difficulté</th>
@@ -187,7 +205,11 @@ migrationNotes: []
 <tr>
 <th>Verbe à la fin</th>
 <td>Subordonnée, passé composé ou verbe de modalité.</td>
-<td>Ich denke, dass ich heute nicht in die Schule <strong>komme</strong>.</td>
+<td>
+<strong>Subordonnée:</strong> Ich denke, dass ich heute nicht in die Schule <strong>komme</strong>.<br />
+<strong>Passé composé:</strong> Ich bin gestern nicht in die Schule <strong>gekommen</strong>.<br />
+<strong>Modalité:</strong> Ich muss morgen unbedingt in die Schule <strong>gehen</strong>.
+</td>
 </tr>
 <tr>
 <th>Infinitif à retrouver</th>
@@ -212,6 +234,24 @@ migrationNotes: []
 <summary>9. Repérer les verbes pronominaux</summary>
 <div class="lesson-card-content">
 <p>Tu ne peux comprendre les verbes comme <strong>sich freuen</strong> que si tu repères le pronom réfléchi.</p>
+<div class="advice-table-wrap">
+<table class="quest-table advice-table compact-advice-table" data-source-image-replacement="verbes réfléchis">
+<thead>
+<tr>
+<th scope="col">Sujet</th>
+<th scope="col">Pronom réfléchi</th>
+<th scope="col">Sujet</th>
+<th scope="col">Pronom réfléchi</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>ich</td><td>mich</td><td>wir</td><td>uns</td></tr>
+<tr><td>du</td><td>dich</td><td>ihr</td><td>euch</td></tr>
+<tr><td>er / sie / es</td><td>sich</td><td>sie / Sie</td><td>sich</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Application:</strong></p>
 <div class="sentence-diagram">
 <span>Ich</span>
 <span>freue</span>
@@ -242,32 +282,43 @@ migrationNotes: []
 <div class="lesson-card-content">
 <p>Tu dois connaître les mots qui expriment la négation et la nuance, car ils changent souvent le sens de la phrase.</p>
 <div class="advice-table-wrap">
-<table class="quest-table advice-table compact-advice-table">
+<table class="quest-table advice-table compact-advice-table" data-source-image-replacement="nombres et quantités">
 <thead>
 <tr>
-<th>Mot</th>
-<th>Sens</th>
-<th>Attention</th>
+<th scope="col">Mot</th>
+<th scope="col">Sens</th>
+<th scope="col">Mot</th>
+<th scope="col">Sens</th>
 </tr>
 </thead>
 <tbody>
-<tr><td>nicht</td><td>ne... pas</td><td>Nie l’information.</td></tr>
-<tr><td>kein</td><td>aucun / pas de</td><td>Nie un nom.</td></tr>
-<tr><td>nie</td><td>jamais</td><td>Change toute l’habitude.</td></tr>
-<tr><td>nur</td><td>seulement</td><td>Limite l’information.</td></tr>
-<tr><td>auch</td><td>aussi</td><td>Ajoute une information.</td></tr>
-<tr><td>noch</td><td>encore</td><td>Indique que quelque chose continue.</td></tr>
+<tr><td>auch</td><td>aussi</td><td>nicht</td><td>pas</td></tr>
+<tr><td>nur</td><td>seulement</td><td>nichts</td><td>rien</td></tr>
+<tr><td>noch</td><td>encore</td><td>kein(e)</td><td>pas de</td></tr>
+<tr><td>schon</td><td>déjà</td><td>nie</td><td>jamais</td></tr>
+<tr><td>sehr</td><td>très</td><td>manchmal</td><td>parfois</td></tr>
+<tr><td>zu (viel)</td><td>trop (de)</td><td>oft</td><td>souvent</td></tr>
+<tr><td>viel</td><td>beaucoup</td><td>meistens</td><td>la plupart du temps</td></tr>
+<tr><td>wenig</td><td>peu</td><td>immer</td><td>toujours</td></tr>
+<tr><td>ein bisschen</td><td>un peu</td><td>allein</td><td>seul</td></tr>
+<tr><td>genug</td><td>assez</td><td>beide</td><td>les deux</td></tr>
+<tr><td>fast</td><td>presque</td><td>selbst / selber</td><td>soi-même</td></tr>
+<tr><td>vielleicht</td><td>peut-être</td><td>wieder</td><td>de nouveau</td></tr>
 </tbody>
 </table>
 </div>
+<div class="mini-note">
+<strong>Conseil de lecture</strong>
+<p><strong>kein(e)</strong> accompagne un nom, <strong>nur</strong> limite une information, <strong>auch</strong> en ajoute une et <strong>noch</strong> indique souvent qu’une situation continue.</p>
+</div>
 <p>Les verbes de modalité sont aussi importants, car s’ils sont confondus, tu peux comprendre l’inverse de ce qui est écrit.</p>
 <div class="modal-grid">
-<span><strong>müssen</strong> devoir</span>
 <span><strong>dürfen</strong> avoir le droit</span>
 <span><strong>können</strong> pouvoir</span>
 <span><strong>wollen</strong> vouloir</span>
-<span><strong>mögen</strong> aimer bien</span>
-<span><strong>sollen</strong> devoir selon quelqu’un</span>
+<span><strong>mögen</strong> aimer</span>
+<span><strong>müssen</strong> devoir (obligation)</span>
+<span><strong>sollen</strong> devoir (conseil)</span>
 </div>
 </div>
 </details>

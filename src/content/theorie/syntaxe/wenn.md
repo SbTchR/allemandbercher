@@ -15,8 +15,6 @@ migrationNotes: []
 
 **Wenn = quand / si**
 
-Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
-
 ## Exemple:
 
 Je fais du vélo. La météo est bonne. --> Je fais du vélo quand la météo est bonne.
@@ -27,7 +25,7 @@ Subordonnée: La météo est bonne.
 
 ## Subordonnant: quand
 
-La syntaxe des subordonnées en allemand et différente de celle du français. En effet, dans les phrases introduites par les subordonnants wenn , tu dois mettre le verbe conjugué tout à la fin. Le verbe conjugué est celui qui est accordé au sujet (donc pas participe passé, ni infinitif).
+La syntaxe des subordonnées en allemand est différente de celle du français. En effet, dans les phrases introduites par le subordonnant wenn, tu dois mettre le verbe conjugué tout à la fin. Le verbe conjugué est celui qui est accordé au sujet (donc pas le participe passé ni l’infinitif).
 
 En allemand, les deux phrases sont séparées par une virgule !
 
@@ -45,21 +43,19 @@ Parfois, il est possible d’inverser la phrase principale et la subordonnée. D
 
 ## Exemple :
 
-Ich fahre rad, wenn das Wetter schön ist.
+Ich fahre Rad, wenn das Wetter schön ist.
 
 **phrase principale phrase subordonnée**
 
 **v. en 2e p. v. à la fin**
 
-Wenn das Wetter schön ist , fahre ich rad.
+Wenn das Wetter schön ist, fahre ich Rad.
 
 **phrase subordonnée phrase principale**
 
 v. à la fin v. en 2e p.
 
-## Exercice
-
-## Quelques exercices pour entrainer les phrases avec wenn :
+## Quelques exercices pour entraîner les phrases avec wenn :
 
 - [https://deutsch.lingolia.com/de/grammatik/satzbau/konditionalsaetze/uebungen](https://deutsch.lingolia.com/de/grammatik/satzbau/konditionalsaetze/uebungen)
 
@@ -68,6 +64,3 @@ v. à la fin v. en 2e p.
 - [http://lerngrammatik.de/uebung_satz_konditionalsatz_1.htm](http://lerngrammatik.de/uebung_satz_konditionalsatz_1.htm)
 
 - [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul11_erg/nebensaetze4.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul11_erg/nebensaetze4.htm)
-
-## Exercices interactifs intégrés
-

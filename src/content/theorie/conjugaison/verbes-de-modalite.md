@@ -7,29 +7,43 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/verbes-de-mo
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-verbes-de-modalite-1.png"
-    alt: "Image 1 - Verbes de modalité"
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-verbes-de-modalite-2.png"
-    alt: "Image 2 - Verbes de modalité"
+images: []
 migrationNotes: []
 ---
-
-Les verbes de modalité sont les verbes auxquels on peut ajouter un autre verbe à l’infinitif.
 
 Ex. pouvoir faire, devoir manger, vouloir aller, etc.
 
 ⚠️ Le verbe aimer peut être normal (aimer qch ou qn) ou modal (aimer faire qch).
 
-La syntaxe des phrases qui contiennent un verbe de modalité est différente en allemand, la théorie détaillée se trouve sur cette page .
+La syntaxe des phrases qui contiennent un verbe de modalité est différente en allemand. Elle est expliquée sur la page consacrée aux [phrases avec un verbe de modalité](../../syntaxe/les-phrases-avec-verbe-de-modalite/).
 
-Les verbes de modalité au présent
+## Les verbes de modalité au présent
 
-Comme on utilise ces verbes très souvent, il vaut la peine d’apprendre leur conjugaison par coeur. Utilise les exercices intégrés ci-dessous pour t’entraîner sans dépendre d’un site externe.
+Comme on utilise ces verbes très souvent, il vaut la peine d’apprendre leur conjugaison par cœur. Utilise les exercices intégrés ci-dessous pour t’entraîner sans dépendre d’un site externe.
 
-## Exercice
+<table data-source-image-replacement="verbes de modalité au présent">
+  <caption>Sens et formes fréquentes des verbes de modalité au présent</caption>
+  <thead>
+    <tr>
+      <th scope="col">Sens</th>
+      <th scope="col">Verbe</th>
+      <th scope="col">ich</th>
+      <th scope="col">du</th>
+      <th scope="col">er / sie / es</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>pouvoir, avoir la capacité de</td><td>können</td><td>kann</td><td>kannst</td><td>kann</td></tr>
+    <tr><td>pouvoir, avoir le droit de</td><td>dürfen</td><td>darf</td><td>darfst</td><td>darf</td></tr>
+    <tr><td>vouloir</td><td>wollen</td><td>will</td><td>willst</td><td>will</td></tr>
+    <tr><td>aimer</td><td>mögen</td><td>mag</td><td>magst</td><td>mag</td></tr>
+    <tr><td>aimer au conditionnel, « aimerais »</td><td>mögen (forme möchte)</td><td>möchte</td><td>möchtest</td><td>möchte</td></tr>
+    <tr><td>devoir, exprimer une obligation</td><td>müssen</td><td>muss</td><td>musst</td><td>muss</td></tr>
+    <tr><td>devoir au sens moral, donner un conseil</td><td>sollen</td><td>soll</td><td>sollst</td><td>soll</td></tr>
+  </tbody>
+</table>
 
-## Quelques exercices en ligne pour entrainer le verbe sollen :
+## Quelques exercices en ligne pour entraîner le verbe sollen :
 
 - [https://www.schubert-verlag.de/aufgaben/xg/xg06_10.htm](https://www.schubert-verlag.de/aufgaben/xg/xg06_10.htm)
 
@@ -39,7 +53,7 @@ Comme on utilise ces verbes très souvent, il vaut la peine d’apprendre leur c
 
 - [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=2&Lection=3&Exercise=6&SubExercise=1](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=2&Lection=3&Exercise=6&SubExercise=1)
 
-Quelques exercices pour entrainer les verbes de modalité.
+Quelques exercices pour entraîner les verbes de modalité.
 
 - [https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php](https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php)
 
@@ -57,16 +71,40 @@ Quelques exercices pour entrainer les verbes de modalité.
 
 - [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&Lection=6&SubExercise=1&Volume=3](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&Lection=6&SubExercise=1&Volume=3)
 
-Les verbes de modalité au prétérit
+## Les verbes de modalité au prétérit
 
 Ces verbes sont irréguliers au prétérit, car leur radical change (ils perdent les trémas qu’ils ont à l’infinitif par exemple).
 
-Au prétérit, pour la plupart des verbes, on ajoute les lettres « te » entre le radical est la terminaison.
+Au prétérit, on ajoute la marque **-te-** entre le radical et la terminaison :
+
+- radicaux : **konn-**, **durf-**, **woll-**, **moch-**, **muss-**, **soll-** ;
+- terminaisons : aucune avec **ich** et **er / sie / es**, **-st** avec **du**, **-en** avec **wir** et **sie / Sie**, **-t** avec **ihr**.
+
+<table data-source-image-replacement="verbes de modalité au prétérit">
+  <caption>Verbes de modalité au prétérit</caption>
+  <thead>
+    <tr>
+      <th scope="col">Pronom</th>
+      <th scope="col">können</th>
+      <th scope="col">dürfen</th>
+      <th scope="col">wollen</th>
+      <th scope="col">mögen</th>
+      <th scope="col">müssen</th>
+      <th scope="col">sollen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>ich</td><td>konnte</td><td>durfte</td><td>wollte</td><td>mochte</td><td>musste</td><td>sollte</td></tr>
+    <tr><td>du</td><td>konntest</td><td>durftest</td><td>wolltest</td><td>mochtest</td><td>musstest</td><td>solltest</td></tr>
+    <tr><td>er / sie / es</td><td>konnte</td><td>durfte</td><td>wollte</td><td>mochte</td><td>musste</td><td>sollte</td></tr>
+    <tr><td>wir</td><td>konnten</td><td>durften</td><td>wollten</td><td>mochten</td><td>mussten</td><td>sollten</td></tr>
+    <tr><td>ihr</td><td>konntet</td><td>durftet</td><td>wolltet</td><td>mochtet</td><td>musstet</td><td>solltet</td></tr>
+    <tr><td>sie / Sie</td><td>konnten</td><td>durften</td><td>wollten</td><td>mochten</td><td>mussten</td><td>sollten</td></tr>
+  </tbody>
+</table>
 
 Autres exercices en ligne sur les verbes de modalité au prétérit.
 
 - [https://www.schubert-verlag.de/aufgaben/uebungen_b2/b2_vergangenheit-verben1.htm](https://www.schubert-verlag.de/aufgaben/uebungen_b2/b2_vergangenheit-verben1.htm)
 
 - [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=205](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=205)
-
-## Exercices interactifs intégrés

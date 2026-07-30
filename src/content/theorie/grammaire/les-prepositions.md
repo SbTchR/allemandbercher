@@ -7,19 +7,10 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pr%C3%A9po
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-prepositions-1.png"
-    alt: "Image 1 - Les prépositions"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-prepositions-2.png"
-    alt: "Image 2 - Les prépositions"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-prepositions-3.png"
-    alt: "Image 3 - Les prépositions"
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-les-prepositions-4.png"
-    alt: "Image 4 - Les prépositions"
-migrationNotes: []
+images: []
+migrationNotes:
+  - "Les tableaux en image du site source ont été reconstruits dans le composant grammatical de la page."
 ---
-
-En allemand, 9 prépositions sont toujours suivies du datif et 5 sont toujours suivies de l’accusatif .
 
 Les autres prépositions sont mixtes, c’est-à-dire qu’elles sont parfois suivies du datif et parfois de l’accusatif.
 
@@ -31,13 +22,13 @@ Les prépositions suivies du datif
 
 Les prépositions suivantes sont toujours suivies du datif.
 
-Les prépositions mixtes
+Les neuf prépositions mixtes
 
-Il s’agit de toutes les autres prépositions. Dans ce tableau se trouvent les plus importantes, soit celles que tu dois connaître.
+Il s’agit de **an, auf, hinter, in, neben, über, unter, vor** et **zwischen**. Les autres prépositions allemandes ne sont pas automatiquement mixtes.
 
-Pour savoir s’il faut accorder le groupe nominal qui suit une de ces préposition à l’accusatif ou au datif, il faut se demander si le verbe implique un déplacement ou non.
+Pour savoir s’il faut accorder le groupe nominal qui suit une de ces prépositions à l’accusatif ou au datif, pose la question **wo ?** (« où ? ») ou **wohin ?** (« vers quel lieu ? »). Le simple fait que l’action comporte du mouvement ne suffit pas.
 
-Elles sont suivies de l’accusatif quand elles sont utilisées avec un verbe de déplacement .
+Elles sont suivies de l’accusatif lorsqu’elles expriment une direction vers un nouveau but spatial, et du datif lorsqu’elles décrivent un lieu où la relation est déjà établie.
 
 ## Exemples:
 
@@ -81,25 +72,23 @@ Das Poster hängt an der Wand.
 
 Le poster est suspendu contre le mur.
 
-## Exercice
-
 ## Pour maîtriser ce thème, tu dois:
 
-connaître par coeur la liste des prépositions + Acc. et celle des prépositions + Dat.
+connaître par cœur la liste des prépositions + Acc. et celle des prépositions + Dat.
 
 être capable de définir si un verbe implique un déplacement ou non.
 
 connaître le genre et le nombre des mots qui sont utilisés (féminin, masculin, neutre, pluriel).
 
-avoir en tête les tableaux de déclinaisons des déterminants et adjectifs (à partir de 10H) --> les savoir par coeur !
+avoir en tête les tableaux de déclinaisons des déterminants et adjectifs (à partir de 10H) --> les savoir par cœur !
 
-Exercices en ligne pour entrainer le datif après les prépositions de lieu.
+Exercices en ligne pour entraîner le datif après les prépositions de lieu.
 
 - [http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html](http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html)
 
 - [https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_zuhause.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_zuhause.htm)
 
-Quelques exercices pour entrainer les groupes prépositionnels avec verbes de position et de mouvement .
+Quelques exercices pour entraîner les groupes prépositionnels avec verbes de position et de mouvement .
 
 - [http://www.lehrerlenz.de/wo_oder_wohin.html](http://www.lehrerlenz.de/wo_oder_wohin.html)
 
@@ -124,6 +113,3 @@ Quelques exercices pour entrainer les groupes prépositionnels avec verbes de po
 - [https://www.deutsch-perfekt.com/deutsch-ueben/die-praepositionen-testen-sie-sich](https://www.deutsch-perfekt.com/deutsch-ueben/die-praepositionen-testen-sie-sich)
 
 - [http://www.lehrerlenz.de/unser_haus_3.html](http://www.lehrerlenz.de/unser_haus_3.html)
-
-## Exercices interactifs intégrés
-

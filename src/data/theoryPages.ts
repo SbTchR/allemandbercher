@@ -91,7 +91,7 @@ export const theoryCategoryIntros = {
     "Pour comprendre ce que sont les cas (nom., acc., dat.), rends-toi sur cette page .",
     "Si tu cherches à savoir quel cas tu dois mettre après une préposition, rends-toi sur cette page .",
     "Si tu n'as rien compris et que tu es en train de faire un exercice, utilise la NAD-Maschine !",
-    "Et si tu as bien compris le fonctionnement des cas mais que tu n'as pas encore appris par coeur les tableaux de déclinaisons de déterminants et adjectifs, rends-toi sur cette page .",
+    "Et si tu as bien compris le fonctionnement des cas mais que tu n'as pas encore appris par cœur les tableaux de déclinaisons de déterminants et adjectifs, rends-toi sur cette page .",
     "Les adjectifs... Mais pour quoi faire ??? 🙃",
     "Tu cherches à accorder ou décliner un adjectif correctement ? Rends-toi sur la page des adjectifs .",
     "Tu cherches à comparer deux choses ou deux personnes ? Tu as besoin du comparatif .",

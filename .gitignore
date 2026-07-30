@@ -3,6 +3,7 @@ dist/
 node_modules/
 .DS_Store
 npm-debug.log*
+.playwright-cli/
 
 # Source brute de migration Google Sites historique, conservée localement seulement.
 raw/site/
@@ -14,3 +15,6 @@ genial_klick/
 # Les captures d'audit reproductibles sont versionnées.
 !raw/source-site/
 !raw/source-site/**
+
+# Les images brutes restent locales : leurs équivalents HTML sont publiés.
+raw/source-site/images/

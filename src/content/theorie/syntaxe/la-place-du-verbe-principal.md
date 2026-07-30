@@ -14,8 +14,6 @@ images: []
 migrationNotes: []
 ---
 
-Par verbe « principal », on entend le verbe qui est conjugué avec le sujet (il y a parfois plusieurs formes verbales dans certaines phrases).
-
 Dans une phrase affirmative, le verbe principal se place toujours en 2e position. Quand une phrase contient plusieurs formes verbales, le verbe principal est celui qui est conjugué avec le sujet ; les formes comme l’infinitif ou le participe passé se placent généralement à la fin.
 
 Entraîne-toi ensuite à repérer le verbe principal et à compléter des phrases où il doit rester en 2e position.

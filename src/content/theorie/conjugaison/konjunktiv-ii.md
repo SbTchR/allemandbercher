@@ -7,13 +7,9 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/konjunktiv-i
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-konjunktiv-ii-1.png"
-    alt: "Image 1 - Konjunktiv II"
+images: []
 migrationNotes: []
 ---
-
-Le Konjunktiv II est employé pour exprimer la condition ou l’irréalité (p. ex. un souhait). On l’utilise aussi au discours indirect et dans des formulations particulièrement polies. Il est souvent traduit en français par le conditionnel .
 
 Ex. Wenn ich heute Abend Zeit hätte , würde ich ins Kino gehen .
 
@@ -49,6 +45,27 @@ Par ailleurs, on emploie aussi souvent à l’oral la forme avec würden pour de
 
 ## Conjugaison
 
+<table data-source-image-replacement="formation du Konjunktiv II">
+  <caption>Formes fréquentes du Konjunktiv II au présent</caption>
+  <thead>
+    <tr>
+      <th scope="col">Pronom</th>
+      <th scope="col">finden</th>
+      <th scope="col">sein</th>
+      <th scope="col">haben</th>
+      <th scope="col">werden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>ich</td><td>fände</td><td>wäre</td><td>hätte</td><td>würde</td></tr>
+    <tr><td>du</td><td>fändest</td><td>wärst</td><td>hättest</td><td>würdest</td></tr>
+    <tr><td>er / sie / es</td><td>fände</td><td>wäre</td><td>hätte</td><td>würde</td></tr>
+    <tr><td>wir</td><td>fänden</td><td>wären</td><td>hätten</td><td>würden</td></tr>
+    <tr><td>ihr</td><td>fändet</td><td>wäret</td><td>hättet</td><td>würdet</td></tr>
+    <tr><td>sie / Sie</td><td>fänden</td><td>wären</td><td>hätten</td><td>würden</td></tr>
+  </tbody>
+</table>
+
 Le Konjunktiv II dans le passé
 
 Pour exprimer une situation irréelle au passé, on utilise l’auxiliaire sein ou haben au Konjunktiv II, suivi du participe passé.
@@ -82,5 +99,3 @@ Konj. II. du passé Konj. II du passé
 ## Liens externes conservés
 
 - [https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel](https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel)
-## Exercices interactifs intégrés
-

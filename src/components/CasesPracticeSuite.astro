@@ -11,7 +11,7 @@ const flashcards = [
     back: 'Accusatif. Question : le sujet + le verbe + qui ou quoi ?',
   },
   {
-    front: 'CDI',
+    front: 'CVI',
     back: 'Datif. Question : le sujet + le verbe + à qui ou à quoi ?',
   },
   {
@@ -59,7 +59,7 @@ const sortingItems = [
     sentence: 'Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.',
     target: 'seiner Freundin',
     answer: 'cdi',
-    feedback: 'das Mädchen schickt einen Brief à qui ? seiner Freundin. C’est le CDI, donc le datif.',
+    feedback: 'das Mädchen schickt einen Brief à qui ? seiner Freundin. C’est le CVI, donc le datif.',
   },
   {
     sentence: 'Heute schickt das Mädchen einen Brief seiner Freundin für seinen Geburtstag.',
@@ -162,7 +162,7 @@ const caseExternalGroups = externalLinkGroups['les-cas-theorie-de-base'];
                 <button type="button" data-sort-choice="verbe">Verbe</button>
                 <button type="button" data-sort-choice="sujet">Sujet</button>
                 <button type="button" data-sort-choice="cvd">CVD</button>
-                <button type="button" data-sort-choice="cdi">CDI</button>
+                <button type="button" data-sort-choice="cdi">CVI</button>
                 <button type="button" data-sort-choice="prep">Groupe prép.</button>
               </div>
               <p class="case-sort-feedback" data-sort-feedback data-success={item.feedback} aria-live="polite"></p>

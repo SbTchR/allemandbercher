@@ -1,6 +1,5 @@
 ---
 import Nav from './Nav.astro';
-import LeoLookup from './LeoLookup.astro';
 import { withBase } from '../lib/paths';
 import '../styles/global.css';
 
@@ -27,7 +26,6 @@ const pageTitle = title === 'Accueil' ? 'Allemand Bercher' : `${title} | Alleman
     <main class="page-shell">
       <slot />
     </main>
-    <LeoLookup />
     <footer class="site-footer">
       <p>Allemand Bercher - ressources pour apprendre l’allemand à Bercher.</p>
     </footer>

@@ -1,10 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../../components/Layout.astro';
-import ResourceGrid from '../../../components/ResourceGrid.astro';
-import SourceIntro from '../../../components/SourceIntro.astro';
-import TheoryBox from '../../../components/TheoryBox.astro';
-import { theoryCategoryIntros } from '../../../data/theoryPages';
+import TheoryCategoryGuide from '../../../components/TheoryCategoryGuide.astro';
 import { byOrderThenTitle } from '../../../lib/resources';
 
 const labels = {
@@ -19,7 +16,6 @@ export async function getStaticPaths() {
 
 const category = Astro.params.category as keyof typeof labels;
 const entries = (await getCollection('theorie', (entry) => entry.data.category === category)).sort(byOrderThenTitle);
-const introLines = theoryCategoryIntros[category] ?? [];
 ---
 
 <Layout title={labels[category]} description={`Ressources de ${labels[category].toLowerCase()} pour le cours d’allemand.`}>
@@ -29,27 +25,5 @@ const introLines = theoryCategoryIntros[category] ?? [];
     <p class="lead">Rappels et exercices pour réviser cette partie de la théorie.</p>
   </section>
 
-  <section class="content-band">
-    <SourceIntro lines={introLines} />
-  </section>
-
-  {
-    category === 'conjugaison' && (
-      <section class="content-band">
-        <div class="prose">
-          <h2>Verbes essentiels</h2>
-          <p>
-            Les pages ci-dessous remplacent les anciens exercices intégrés externes par des activités directement dans le site :
-            conjugaison ciblée, cartes mémoire et phrases à compléter.
-          </p>
-        </div>
-      </section>
-    )
-  }
-
-  <section class="content-band">
-    <TheoryBox category={category}>
-      <ResourceGrid entries={entries} />
-    </TheoryBox>
-  </section>
+  <TheoryCategoryGuide category={category} entries={entries} />
 </Layout>

@@ -1,6 +1,7 @@
 ---
 import { navigationItems } from '../data/navigation';
 import { withBase } from '../lib/paths';
+import LeoLookup from './LeoLookup.astro';
 
 const basePath = import.meta.env.BASE_URL.replace(/\/+$/, '');
 const currentPath = Astro.url.pathname.replace(basePath, '') || '/';
@@ -16,13 +17,16 @@ function isActive(href: string) {
     <span class="brand-mark" aria-hidden="true">AB</span>
     <span>Allemand Bercher</span>
   </a>
-  <nav class="main-nav" aria-label="Navigation principale">
-    {
-      navigationItems.map((item) => (
-        <a class:list={{ active: isActive(item.href) }} href={withBase(item.href)}>
-          {item.label}
-        </a>
-      ))
-    }
-  </nav>
+  <div class="header-actions">
+    <nav class="main-nav" aria-label="Navigation principale">
+      {
+        navigationItems.map((item) => (
+          <a class:list={{ active: isActive(item.href) }} href={withBase(item.href)}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+    <LeoLookup />
+  </div>
 </header>

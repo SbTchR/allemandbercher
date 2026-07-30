@@ -7,13 +7,10 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-g%C3%A9niti
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-grammaire-le-genitif-1.png"
-    alt: "Image 1 - Le génitif"
-migrationNotes: []
+images: []
+migrationNotes:
+  - "Le tableau en image du site source a été reconstruit en tableau HTML."
 ---
-
-Le génitif est le cas du complément du nom. Il indique l’appartenance ou la possession.
 
 **ex. la veste du jeune homme = die Jacke des jungen Mannes**
 
@@ -58,6 +55,3 @@ Les pronoms personnels se déclinent aussi au génitif, mais on ne les utilise q
 - [https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-114828.php](https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-114828.php)
 
 - [https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-87001.php](https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-87001.php)
-
-## Exercices interactifs intégrés
-

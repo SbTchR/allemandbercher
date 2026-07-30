@@ -7,19 +7,10 @@ sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/imp%C3%A9rat
 pageType: "theorie"
 objectives: []
 externalLinks: []
-images: 
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-imperatif-1.png"
-    alt: "Image 1 - Impératif"
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-imperatif-2.png"
-    alt: "Image 2 - Impératif"
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-imperatif-3.png"
-    alt: "Image 3 - Impératif"
-  - src: "../../../assets/source-site/theorie/theorie-conjugaison-imperatif-4.png"
-    alt: "Image 4 - Impératif"
-migrationNotes: []
+images: []
+migrationNotes:
+  - "Les quatre tableaux en image du site source ont été reconstruits en tableaux HTML."
 ---
-
-L’impératif sert à donner un ordre ou faire une proposition, il ne se conjugue donc pas à toutes les formes, seulement à « tu », « nous », « vous » et « vous de politesse ».
 
 ## Exemples:
 
@@ -27,13 +18,30 @@ Fais tes devoirs ! —> Mach deine Hausaufgaben !
 
 Allons au cinéma ! —> Gehen wir ins Kino !
 
-La forme « du »
+## La forme « du »
 
 Pour former la forme impérative à « tu », il faut supprimer la terminaison de la forme du présent.
 
 ⚠️ Dans certains cas, il faut ajouter un « e » à la fin, notamment pour les verbes dont le radical se termine par « m » ou « n ».
 
 Pour les autres verbes, le « e » n'est pas obligatoire, mais on peut trouver les deux variantes pour certains verbes.
+
+<table data-source-image-replacement="impératif avec du">
+  <caption>La forme impérative avec du</caption>
+  <thead>
+    <tr>
+      <th scope="col">Infinitif</th>
+      <th scope="col">Présent avec du</th>
+      <th scope="col">Impératif</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>gehen</td><td>du gehst</td><td>Geh !</td></tr>
+    <tr><td>geben</td><td>du gibst</td><td>Gib !</td></tr>
+    <tr><td>rechnen</td><td>du rechnest</td><td>Rechne !</td></tr>
+    <tr><td>machen</td><td>du machst</td><td>Mach ! / Mache !</td></tr>
+  </tbody>
+</table>
 
 ## Exceptions:
 
@@ -47,15 +55,65 @@ Du lädst deine Freunde ein. —> Lade deine Freunde ein !
 
 Le verbe « être = sein » est aussi particulier. Voici sa conjugaison à l’impératif.
 
-La forme « ihr »
+<table data-source-image-replacement="impératif de sein">
+  <caption>L’impératif du verbe sein</caption>
+  <thead>
+    <tr>
+      <th scope="col">Personne</th>
+      <th scope="col">Présent</th>
+      <th scope="col">Impératif</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>du</td><td>du bist</td><td>Sei !</td></tr>
+    <tr><td>wir</td><td>wir sind</td><td>Seien wir !</td></tr>
+    <tr><td>ihr</td><td>ihr seid</td><td>Seid !</td></tr>
+    <tr><td>Sie</td><td>Sie sind</td><td>Seien Sie !</td></tr>
+  </tbody>
+</table>
+
+## La forme « ihr »
 
 La forme impérative du "vous" correspond à celle du présent, mais sans le pronom.
 
-La forme de politesse « Sie » et la forme « wir »
+<table data-source-image-replacement="impératif avec ihr">
+  <caption>La forme impérative avec ihr</caption>
+  <thead>
+    <tr>
+      <th scope="col">Infinitif</th>
+      <th scope="col">Présent avec ihr</th>
+      <th scope="col">Impératif</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>gehen</td><td>ihr geht</td><td>Geht !</td></tr>
+    <tr><td>geben</td><td>ihr gebt</td><td>Gebt !</td></tr>
+    <tr><td>rechnen</td><td>ihr rechnet</td><td>Rechnet !</td></tr>
+    <tr><td>machen</td><td>ihr macht</td><td>Macht !</td></tr>
+  </tbody>
+</table>
+
+## La forme de politesse « Sie » et la forme « wir »
 
 Les formes impératives du « vous » de politesse et du « nous » correspondent aussi à celles du présent, mais le pronom et le verbe sont inversés.
 
-La phrase impérative
+<table data-source-image-replacement="impératif avec Sie et wir">
+  <caption>Les formes impératives avec Sie et wir</caption>
+  <thead>
+    <tr>
+      <th scope="col">Infinitif</th>
+      <th scope="col">Présent</th>
+      <th scope="col">Impératif de politesse</th>
+      <th scope="col">Impératif avec wir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>gehen</td><td>Sie gehen / wir gehen</td><td>Gehen Sie !</td><td>Gehen wir !</td></tr>
+    <tr><td>geben</td><td>Sie geben / wir geben</td><td>Geben Sie !</td><td>Geben wir !</td></tr>
+  </tbody>
+</table>
+
+## La phrase impérative
 
 Dans une phrase impérative, le verbe se trouve en 1ère position !
 
@@ -71,9 +129,9 @@ Ferme la fenêtre, s’il-te-plaît ! —> Mach bitte das Fenster zu ! (v. = zum
 
 **Fais donc attention ! —> Pass doch auf ! (v. = aufpassen)**
 
-## Exercice
+## Exercices externes complémentaires
 
-Quelques exercices en ligne pour entrainer l'impératif.
+Quelques exercices en ligne pour entraîner l'impératif.
 
 - [https://mein-deutschbuch.de/grammatikuebungen-imperativ.html](https://mein-deutschbuch.de/grammatikuebungen-imperativ.html)
 
@@ -88,6 +146,3 @@ Quelques exercices en ligne pour entrainer l'impératif.
 - [http://www.lehrerlenz.de/imperativ__bungen.html](http://www.lehrerlenz.de/imperativ__bungen.html)
 
 - [https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-22234.php](https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-22234.php)
-
-## Exercices interactifs intégrés
-

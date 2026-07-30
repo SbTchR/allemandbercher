@@ -4,17 +4,17 @@ const defaultLeoProxyUrl = 'https://allemandbercher-leo-proxy.classmanager-bovs.
 const leoProxyUrl = import.meta.env.PUBLIC_LEO_PROXY_URL ?? defaultLeoProxyUrl;
 ---
 
-<button class="leo-lookup-button" type="button" data-open-leo>
+<button class="leo-lookup-button" type="button" data-open-leo aria-haspopup="dialog" aria-controls="leo-lookup-modal">
   <span>LEO</span>
   <small>Dictionnaire</small>
 </button>
 
-<dialog class="leo-lookup-modal" data-leo-modal>
+<dialog class="leo-lookup-modal" id="leo-lookup-modal" aria-labelledby="leo-lookup-title" data-leo-modal>
   <div class="leo-lookup-panel">
     <div class="leo-lookup-header">
       <div>
         <p class="eyebrow">Dictionnaire</p>
-        <h2>LEO allemand-français</h2>
+        <h2 id="leo-lookup-title">LEO allemand-français</h2>
       </div>
       <button class="resource-modal-close" type="button" data-close-leo>Fermer</button>
     </div>
