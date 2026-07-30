@@ -1,87 +1,36 @@
 ---
 title: "Passé composé"
-description: "En allemand, le passé composé se compose, comme en français, d’un auxiliaire (être ou avoir) et d’un participe passé ."
+description: "Construis le Perfekt avec haben ou sein et un participe passé final."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pass%C3%A9-compos%C3%A9"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "Choisir entre haben et sein"
+  - "Former et placer le participe passé"
 externalLinks: []
 images: []
 migrationNotes: []
 ---
 
-## Rappel: En allemand, il y a deux grandes catégories de verbes :
+## Trois modèles de participe passé
 
-les verbes réguliers et les verbes irréguliers.
+| Type | Construction fréquente | Exemple |
+|---|---|---|
+| Verbe faible | **ge-** + radical + **-t** | machen → gemacht |
+| Verbe fort | souvent **ge-** + radical modifié + **-en** | gehen → gegangen |
+| Verbe mixte | généralement **ge-** + radical modifié + **-t** | bringen → gebracht |
 
-Les verbes réguliers au passé composé
+Les formes fortes et mixtes doivent être apprises avec l’infinitif et l’auxiliaire :
 
-La plupart des verbes réguliers se conjuguent avec l’auxiliaire avoir (haben).
+- **machen – hat gemacht**
+- **gehen – ist gegangen**
+- **bringen – hat gebracht**
 
-Le participe passé est précédé du préfixe « ge- » et se termine par un « -t ».
+## Deux familles sans ge- initial
 
-## Exemple:
-
-## Infinitif: machen
-
-## Radical: mach -
-
-## Auxiliaire: haben
-
-## Participe passé: gemacht Ex: du hast gemacht
-
-Les verbes irréguliers au passé composé
-
-Il n’y a pas de règle précise pour expliquer la conjugaison des verbes irréguliers, le seul moyen d’arriver à les conjuguer correctement est de les apprendre par cœur car, souvent, le radical change.
-
-Ils peuvent être conjugués avec les auxiliaires être (sein) ou avoir (haben).
-
-Le participe passé est généralement précédé du préfixe « ge- » et se termine par un « -en ».
-
-## Exemples:
-
-## Infinitif: gehen
-
-## Radical: geh-
-
-## Auxiliaire: sein
-
-## Participe passé: gegangen Ex: ich bin gegangen
-
-## Infinitif: bringen (apporter)
-
-## Radical: bring-
-
-## Participe passé: gebracht Ex: er hat gebracht
-
-## Exceptions
-
-Il existe deux types d’exceptions qui sont présentes chez certains verbes réguliers et irréguliers:
-
-1. Les verbes à particule séparable: La particule se place avant le « ge- ».
-
-## Infinitif: abholen (aller chercher)
-
-## Particule: ab-
-
-## Radical: hol-
-
-## Participe passé: abgeholt Ex: wir haben abgeholt
-
-2. Les verbes qui commencent par « ge - ; mis - ; zer - ; be - ; er - ; ent - ; emp - et ver - » et ceux qui se termine en « - ieren » : Ils ne prennent pas le préfixe « ge - ».
-
-## Infinitif: telefonieren (régulier)
-
-## Radical: telefonier-
-
-## Participe passé: telefoniert Ex: sie haben telefoniert
-
-## Infinitif: verlieren (= perdre / irrégulier)
-
-## Radical: verlier-
-
-## Participe passé: verloren Ex: sie hat verloren
+1. Avec une particule séparable, **ge-** se glisse entre la particule et le radical : **abholen → abgeholt** · *Wir haben Lina abgeholt.*
+2. Les préfixes inséparables **be-, emp-, ent-, er-, ge-, miss-, ver-, zer-** et les verbes en **-ieren** ne prennent pas **ge-** : **verlieren → verloren** · **telefonieren → telefoniert**
 
 Quelques exercices pour entraîner la conjugaison des verbes au passé composé.
 
@@ -97,15 +46,7 @@ Quelques exercices pour entraîner la conjugaison des verbes au passé composé.
 
 - [https://learningapps.org/view649376](https://learningapps.org/view649376)
 
-103 Verbes essentiels au passé composé avec Quizlet
-
-Dans les options, choisir "réponses en allemand".
-
-Le site [www.blooket.com](https://www.blooket.com) propose aussi des jeux sympas pour réviser les verbes. Utilise-le plutôt pour commencer à les apprendre car il n'y a que des questions à choix multiples. Elles sont pratiques pour voir le voc une première fois mais pas suffisantes pour bien apprendre à écrire les mots.
-
-Créé ton compte gratuit sur [www.blooket.com](https://www.blooket.com) , puis clique sur ce lien pour accéder à la liste de voc.
-
-Clique ensuite sur "Solo" si tu veux jouer seul ou sur "Host" pour jouer à plusieurs.
+Pour mémoriser les formes, alterne reconnaissance et production écrite. Les exercices natifs ci-dessous vérifient les deux.
 
 Quelques exercices pour entraîner le passé composé.
 

@@ -1,11 +1,13 @@
 ---
 title: "Prétérit"
-description: "Pour construire le prétérit des verbes réguliers, on prend le radical du verbe et on y ajoute les lettres « te » ainsi que la terminaison. Voici les terminaisons des verbes réguliers, sauf à la première et à la troisième personne du singulier."
+description: "Reconnais les formes du récit, surtout war, hatte et les verbes modaux."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9t%C3%A9rit"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "Former le prétérit d’un verbe faible"
+  - "Mémoriser les formes fortes les plus utiles"
 externalLinks: []
 images: []
 migrationNotes:
@@ -34,11 +36,11 @@ migrationNotes:
   </tbody>
 </table>
 
-Comme au présent, les verbes irréguliers changent de radical au prétérit. Il n’y a pas de règle non plus, il faut donc aussi les apprendre par cœur.
+Les verbes forts changent de radical au prétérit. À **ich** et **er / sie / es**, ils n’ajoutent pas de terminaison : **gehen → ich ging**, **kommen → er kam**. Ces formes doivent être apprises avec le verbe.
 
 Pour ces verbes, c’est le changement de radical qui marque le prétérit, il n’y a donc pas toujours de « te ».
 
-La première et à la troisième personne du singulier n’ont pas de terminaison non plus.
+La première et la troisième personne du singulier n’ont pas de terminaison non plus.
 
 Voici quelques exemples.
 

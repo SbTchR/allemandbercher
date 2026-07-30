@@ -1,6 +1,6 @@
 # Audit contenu site complet
 
-Généré le 2026-07-30T15:54:26.456Z.
+Généré le 2026-07-30T16:49:34.247Z.
 
 ## Résumé
 
@@ -8,7 +8,7 @@ Généré le 2026-07-30T15:54:26.456Z.
 - Alertes bloquantes de contenu : 24
 - Avertissements images à revoir visuellement : 4
 - Pages avec correction pédagogique assumée du site source : 5
-- Pages avec réécriture éditoriale contrôlée : 14
+- Pages avec réécriture éditoriale contrôlée : 24
 - Contrôle bloquant : existence des pages cibles, couverture du texte principal, iframes/embeds intégrés et liens externes conservés.
 - Contrôle image : les images Google Sites récurrentes ou décoratives sont traitées comme avertissements, pas comme manque de contenu textuel.
 
@@ -293,6 +293,60 @@ Ces pages ont été comparées manuellement à la source. Leur formulation a ét
 - Contrôle : Accueil remplacé par trois parcours directs et un exemple annoté, sans supprimer les trois domaines de la source.
 - Similarité textuelle indicative : 24%
 
+### Conjugaison (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison
+- Contrôle : Les huit fiches et les repères de progression sont conservés dans trois parcours plus courts, avec les outils de révision.
+- Similarité textuelle indicative : 39%
+
+### Futur (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/futur
+- Contrôle : Werden et l’infinitif final sont conservés ; l’emploi fréquent du présent pour l’avenir est ajouté.
+- Similarité textuelle indicative : 67%
+
+### Impératif (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/imp%C3%A9ratif
+- Contrôle : Les quatre personnes et les particularités de la forme du sont conservées et clarifiées, avec entraînement natif.
+- Similarité textuelle indicative : 89%
+
+### Konjunktiv II (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/konjunktiv-ii
+- Contrôle : Souhait, hypothèse, politesse, formes directes, würde et passé sont conservés ; le discours indirect est nuancé.
+- Similarité textuelle indicative : 59%
+
+### Les verbes réflexifs (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/les-verbes-r%C3%A9flexifs
+- Contrôle : Tableau complet et opposition accusatif-datif conservés, avec exemples qui distinguent clairement les deux cas.
+- Similarité textuelle indicative : 90%
+
+### Passé composé (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pass%C3%A9-compos%C3%A9
+- Contrôle : Auxiliaires, participes faibles, forts, mixtes et préfixes conservés dans une progression interactive.
+- Similarité textuelle indicative : 68%
+
+### Présent (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9sent
+- Contrôle : Terminaisons et changements de radical conservés dans une fiche courte, avec tableau sémantique et exercices natifs.
+- Similarité textuelle indicative : 88%
+
+### Prétérit (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9t%C3%A9rit
+- Contrôle : Formation faible, formes fortes et formes usuelles de sein, haben et des modaux sont conservées et hiérarchisées.
+- Similarité textuelle indicative : 93%
+
+### Verbes de modalité (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/verbes-de-modalit%C3%A9
+- Contrôle : Sens, présent, prétérit et syntaxe des six modaux sont conservés ; möchte est correctement présenté comme Konjunktiv II.
+- Similarité textuelle indicative : 86%
+
 ### Grammaire (Théorie)
 
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire
@@ -346,6 +400,12 @@ Ces pages ont été comparées manuellement à la source. Leur formulation a ét
 - Source : https://www.allemandbercher.ch/th%C3%A9orie/grammaire/les-pronoms-possessifs
 - Contrôle : Deux tableaux conservés et méthode réorganisée autour du possesseur puis de la terminaison.
 - Similarité textuelle indicative : 57%
+
+### Syntaxe (Théorie)
+
+- Source : https://www.allemandbercher.ch/th%C3%A9orie/syntaxe
+- Contrôle : Les treize fiches restent accessibles, regroupées par construction ; les connecteurs allemands sont devenus les repères principaux.
+- Similarité textuelle indicative : 41%
 
 ### La place du verbe principal (Théorie)
 

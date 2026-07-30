@@ -1,0 +1,1255 @@
+---
+type ConjugationCoreSlug = 'present' | 'imperatif' | 'futur' | 'les-verbes-reflexifs';
+
+interface Props {
+  slug: ConjugationCoreSlug;
+}
+
+const { slug } = Astro.props;
+
+const presentRows = [
+  { label: 'ich', subject: 'ich', radical: 'mach', ending: 'e', form: 'mache', note: 'Avec ich, la terminaison est -e.' },
+  { label: 'du', subject: 'du', radical: 'mach', ending: 'st', form: 'machst', note: 'Avec du, la terminaison régulière est -st.' },
+  {
+    label: 'er / sie / es',
+    subject: 'er / sie / es',
+    radical: 'mach',
+    ending: 't',
+    form: 'macht',
+    note: 'Avec er, sie ou es, la terminaison est -t.',
+  },
+  {
+    label: 'wir',
+    subject: 'wir',
+    radical: 'mach',
+    ending: 'en',
+    form: 'machen',
+    note: 'Avec wir, la forme est identique à l’infinitif.',
+  },
+  { label: 'ihr', subject: 'ihr', radical: 'mach', ending: 't', form: 'macht', note: 'Avec ihr, la terminaison est -t.' },
+  {
+    label: 'sie / Sie',
+    subject: 'sie / Sie',
+    radical: 'mach',
+    ending: 'en',
+    form: 'machen',
+    note: 'Avec sie au pluriel ou Sie de politesse, la terminaison est -en.',
+  },
+] as const;
+
+const irregularPresentRows = [
+  { person: 'ich', sein: 'bin', haben: 'habe', fahren: 'fahre', essen: 'esse' },
+  { person: 'du', sein: 'bist', haben: 'hast', fahren: 'fährst', essen: 'isst' },
+  { person: 'er / sie / es', sein: 'ist', haben: 'hat', fahren: 'fährt', essen: 'isst' },
+  { person: 'wir', sein: 'sind', haben: 'haben', fahren: 'fahren', essen: 'essen' },
+  { person: 'ihr', sein: 'seid', haben: 'habt', fahren: 'fahrt', essen: 'esst' },
+  { person: 'sie / Sie', sein: 'sind', haben: 'haben', fahren: 'fahren', essen: 'essen' },
+] as const;
+
+const imperativeRows = [
+  { audience: 'du', construction: 'radical + parfois -e', example: 'Geh!', sein: 'Sei!' },
+  { audience: 'ihr', construction: 'forme du présent sans ihr', example: 'Geht!', sein: 'Seid!' },
+  { audience: 'Sie', construction: 'infinitif + Sie', example: 'Gehen Sie!', sein: 'Seien Sie!' },
+  { audience: 'wir', construction: 'infinitif + wir', example: 'Gehen wir!', sein: 'Seien wir ehrlich!' },
+] as const;
+
+const futureRows = [
+  { person: 'ich', form: 'werde' },
+  { person: 'du', form: 'wirst' },
+  { person: 'er / sie / es', form: 'wird' },
+  { person: 'wir', form: 'werden' },
+  { person: 'ihr', form: 'werdet' },
+  { person: 'sie / Sie', form: 'werden' },
+] as const;
+
+const futureLabRows = [
+  { label: 'ich', subject: 'Ich', form: 'werde', tail: 'nach Berlin reisen.', note: 'werden prend la forme werde avec ich.' },
+  { label: 'du', subject: 'Du', form: 'wirst', tail: 'viel Deutsch sprechen.', note: 'La forme avec du est wirst.' },
+  { label: 'er / sie / es', subject: 'Mia', form: 'wird', tail: 'später im Ausland arbeiten.', note: 'Avec une personne au singulier, on emploie wird.' },
+  { label: 'wir', subject: 'Wir', form: 'werden', tail: 'nächstes Jahr reisen.', note: 'Avec wir, werden garde la forme de l’infinitif.' },
+  { label: 'ihr', subject: 'Ihr', form: 'werdet', tail: 'bald mehr verstehen.', note: 'Avec ihr, la forme est werdet.' },
+  { label: 'sie / Sie', subject: 'Sie', form: 'werden', tail: 'morgen anfangen.', note: 'sie au pluriel et Sie de politesse prennent werden.' },
+] as const;
+
+const reflexiveRows = [
+  { person: 'ich', accusative: 'mich', dative: 'mir' },
+  { person: 'du', accusative: 'dich', dative: 'dir' },
+  { person: 'er / sie / es', accusative: 'sich', dative: 'sich' },
+  { person: 'wir', accusative: 'uns', dative: 'uns' },
+  { person: 'ihr', accusative: 'euch', dative: 'euch' },
+  { person: 'sie', accusative: 'sich', dative: 'sich' },
+  { person: 'Sie', accusative: 'sich', dative: 'sich' },
+] as const;
+---
+
+<section class:list={['conjugation-core', `core-page-${slug}`]} data-conjugation-core={slug}>
+  {
+    slug === 'present' && (
+      <>
+        <section class="core-rule" aria-labelledby="present-rule-title">
+          <div>
+            <p class="core-section-label">À retenir</p>
+            <h2 id="present-rule-title">Le sujet choisit la terminaison</h2>
+            <p>Le présent décrit ce qui se passe maintenant, une habitude ou un fait général.</p>
+          </div>
+          <div class="core-formula" aria-label="Formule du présent">
+            <span class="core-radical">radical</span>
+            <span aria-hidden="true">+</span>
+            <span class="core-ending">terminaison personnelle</span>
+            <span aria-hidden="true">=</span>
+            <span class="mark-verb">verbe conjugué</span>
+          </div>
+        </section>
+
+        <div class="core-legend" aria-label="Légende des couleurs grammaticales">
+          <span><span class="mark-subject">sujet</span> jaune</span>
+          <span><span class="mark-verb">verbe conjugué</span> rouge</span>
+          <span><span class="core-radical">radical</span> violet</span>
+          <span><span class="core-ending">terminaison</span> orange</span>
+        </div>
+
+        <section class="core-lab" data-core-lab aria-labelledby="present-lab-title">
+          <div>
+            <p class="core-section-label">Atelier</p>
+            <h2 id="present-lab-title">Choisis un sujet</h2>
+            <div class="core-choice-list core-choice-grid" role="group" aria-label="Choisir un pronom personnel">
+              {
+                presentRows.map((row, index) => (
+                  <button
+                    type="button"
+                    data-core-choice
+                    data-subject={row.subject}
+                    data-radical={row.radical}
+                    data-ending={row.ending}
+                    data-form={row.form}
+                    data-note={row.note}
+                    aria-pressed={index === 0 ? 'true' : 'false'}
+                  >
+                    {row.label}
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+          <div class="core-stage" data-core-example aria-live="polite">
+            <p class="core-stage-kicker">Construis la forme</p>
+            <p class="core-stage-sentence">
+              <span class="mark-subject" data-core-output="subject">ich</span>
+              <span aria-hidden="true"> + </span>
+              <span class="core-word-build">
+                <span class="core-radical" data-core-output="radical">mach</span><span class="core-ending" data-core-output="ending">e</span>
+              </span>
+              <span aria-hidden="true"> = </span>
+              <span class="mark-verb" data-core-output="form">mache</span>
+            </p>
+            <p class="core-stage-note" data-core-output="note">Avec ich, la terminaison est -e.</p>
+          </div>
+        </section>
+
+        <section class="core-card" aria-labelledby="present-table-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Modèle régulier</p>
+              <h2 id="present-table-title"><span lang="de">machen</span> — faire</h2>
+            </div>
+            <p>Le radical <strong class="core-radical">mach-</strong> ne change pas.</p>
+          </div>
+          <div class="core-table-scroll" role="region" aria-label="Conjugaison de machen au présent" tabindex="0">
+            <table class="core-table">
+              <caption>Terminaisons régulières du présent</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Sujet</th>
+                  <th scope="col">Radical</th>
+                  <th scope="col">Terminaison</th>
+                  <th scope="col">Forme</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  presentRows.map((row) => (
+                    <tr>
+                      <th scope="row"><span class="mark-subject">{row.label}</span></th>
+                      <td><span class="core-radical">{row.radical}-</span></td>
+                      <td><span class="core-ending">-{row.ending}</span></td>
+                      <td><strong class="mark-verb" lang="de">{row.form}</strong></td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="present-contrasts-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Trois pièges utiles</p>
+              <h2 id="present-contrasts-title">Le radical ne reste pas toujours identique</h2>
+            </div>
+          </div>
+          <div class="core-contrast-grid">
+            <article class="core-contrast-card">
+              <strong>Un <span class="core-ending">e</span> aide à prononcer</strong>
+              <p lang="de">arbeiten → du arbeit<span class="core-ending">est</span></p>
+              <small>Après certains radicaux en -d, -t, -m ou -n.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong>Pas de double son « s »</strong>
+              <p lang="de">heissen → du heiss<span class="core-ending">t</span></p>
+              <small>Avec un radical en -s, -ss, -x ou -z.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong>La voyelle peut changer</strong>
+              <p lang="de">du <span class="core-radical">fähr</span>st · er <span class="core-radical">iss</span>t</p>
+              <small>Surtout avec du et er / sie / es.</small>
+            </article>
+          </div>
+        </section>
+
+        <section class="core-card" aria-labelledby="present-irregular-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Formes essentielles</p>
+              <h2 id="present-irregular-title">Quatre verbes à reconnaître vite</h2>
+            </div>
+            <p>Compare surtout les formes avec <span lang="de">du</span> et <span lang="de">er / sie / es</span>.</p>
+          </div>
+          <div class="core-table-scroll" role="region" aria-label="Verbes fréquents au présent" tabindex="0">
+            <table class="core-table core-table-wide">
+              <caption>Conjugaison de sein, haben, fahren et essen</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Sujet</th>
+                  <th scope="col"><span lang="de">sein</span></th>
+                  <th scope="col"><span lang="de">haben</span></th>
+                  <th scope="col"><span lang="de">fahren</span></th>
+                  <th scope="col"><span lang="de">essen</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  irregularPresentRows.map((row) => (
+                    <tr>
+                      <th scope="row"><span class="mark-subject">{row.person}</span></th>
+                      <td><strong class="mark-verb" lang="de">{row.sein}</strong></td>
+                      <td><strong class="mark-verb" lang="de">{row.haben}</strong></td>
+                      <td><strong class="mark-verb" lang="de">{row.fahren}</strong></td>
+                      <td><strong class="mark-verb" lang="de">{row.essen}</strong></td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <nav class="core-resource-strip" aria-label="Ressources complémentaires sur le présent">
+          <strong>Pour aller plus loin</strong>
+          <a href="https://quizlet.com/355592284" target="_blank" rel="noreferrer">103 verbes essentiels</a>
+          <a href="https://www.schubert-verlag.de/aufgaben/xg/xg01_03.htm" target="_blank" rel="noreferrer">Exercice Schubert</a>
+          <a href="https://deutsch.lingolia.com/de/grammatik/zeitformen/praesens/uebungen" target="_blank" rel="noreferrer">Exercice Lingolia</a>
+        </nav>
+      </>
+    )
+  }
+
+  {
+    slug === 'imperatif' && (
+      <>
+        <section class="core-rule" aria-labelledby="imperative-rule-title">
+          <div>
+            <p class="core-section-label">À retenir</p>
+            <h2 id="imperative-rule-title">Le verbe ouvre la consigne</h2>
+            <p>L’impératif sert à donner une consigne, faire une demande ou proposer une action.</p>
+          </div>
+          <div class="core-formula core-formula-stack" aria-label="Formule de la phrase impérative">
+            <span><span class="mark-verb">verbe à l’impératif</span> en premier</span>
+            <span class="core-formula-example" lang="de">
+              <span class="mark-verb">Mach</span> bitte das Fenster <span class="mark-verbal-tail">zu</span>!
+            </span>
+          </div>
+        </section>
+
+        <div class="core-legend" aria-label="Légende des couleurs grammaticales">
+          <span><span class="mark-subject">pronom exprimé</span> jaune</span>
+          <span><span class="mark-verb">verbe conjugué</span> rouge</span>
+          <span><span class="core-radical">radical</span> violet</span>
+          <span><span class="mark-verbal-tail">particule séparable</span> violet</span>
+        </div>
+
+        <section class="core-lab" data-core-lab aria-labelledby="imperative-lab-title">
+          <div>
+            <p class="core-section-label">Atelier</p>
+            <h2 id="imperative-lab-title">À qui parles-tu ?</h2>
+            <div class="core-choice-list" role="group" aria-label="Choisir le destinataire de la consigne">
+              <button
+                type="button"
+                data-core-choice
+                data-verb="Geh"
+                data-subject=""
+                data-tail="geradeaus!"
+                data-note="Avec du, le sujet disparaît : on part du radical."
+                aria-pressed="true"
+              >
+                à une personne · du
+              </button>
+              <button
+                type="button"
+                data-core-choice
+                data-verb="Geht"
+                data-subject=""
+                data-tail="geradeaus!"
+                data-note="Avec ihr, on garde la forme du présent et on retire le pronom."
+                aria-pressed="false"
+              >
+                à plusieurs · ihr
+              </button>
+              <button
+                type="button"
+                data-core-choice
+                data-verb="Gehen"
+                data-subject="Sie"
+                data-tail="geradeaus!"
+                data-note="À la forme de politesse, le verbe précède Sie."
+                aria-pressed="false"
+              >
+                politesse · Sie
+              </button>
+              <button
+                type="button"
+                data-core-choice
+                data-verb="Gehen"
+                data-subject="wir"
+                data-tail="ins Kino!"
+                data-note="Avec wir, on propose une action commune : « Allons… »."
+                aria-pressed="false"
+              >
+                proposition · wir
+              </button>
+            </div>
+          </div>
+          <div class="core-stage" data-core-example aria-live="polite">
+            <p class="core-stage-kicker">La consigne change</p>
+            <p class="core-stage-sentence" lang="de">
+              <span class="mark-verb" data-core-output="verb">Geh</span>{' '}
+              <span class="mark-subject" data-core-output="subject" data-hide-when-empty hidden></span>{' '}
+              <span data-core-output="tail">geradeaus!</span>
+            </p>
+            <p class="core-stage-note" data-core-output="note">Avec du, le sujet disparaît : on part du radical.</p>
+          </div>
+        </section>
+
+        <section class="core-card" aria-labelledby="imperative-table-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Les quatre destinataires</p>
+              <h2 id="imperative-table-title">Une construction par situation</h2>
+            </div>
+          </div>
+          <div class="core-table-scroll" role="region" aria-label="Formes de l’impératif" tabindex="0">
+            <table class="core-table">
+              <caption>Formation de l’impératif avec gehen et sein</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Destinataire</th>
+                  <th scope="col">Construction</th>
+                  <th scope="col"><span lang="de">gehen</span></th>
+                  <th scope="col"><span lang="de">sein</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  imperativeRows.map((row) => (
+                    <tr>
+                      <th scope="row"><span class="mark-subject">{row.audience}</span></th>
+                      <td>{row.construction}</td>
+                      <td><strong class="mark-verb" lang="de">{row.example}</strong></td>
+                      <td><strong class="mark-verb" lang="de">{row.sein}</strong></td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="imperative-contrasts-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Les formes qui surprennent</p>
+              <h2 id="imperative-contrasts-title">Observe le radical, pas seulement la forme avec du</h2>
+            </div>
+          </div>
+          <div class="core-contrast-grid">
+            <article class="core-contrast-card">
+              <strong>e devient i ou ie</strong>
+              <p lang="de">geben → <span class="mark-verb">Gib!</span> · lesen → <span class="mark-verb">Lies!</span></p>
+              <small>Le changement reste et la forme est sans -e.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong>L’Umlaut disparaît</strong>
+              <p lang="de">fahren → <span class="mark-verb">Fahr!</span> · laufen → <span class="mark-verb">Lauf!</span></p>
+              <small>On reprend la voyelle de l’infinitif.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong>Le -e peut être nécessaire</strong>
+              <p lang="de">arbeiten → <span class="mark-verb">Arbeite!</span> · rechnen → <span class="mark-verb">Rechne!</span></p>
+              <small>Il rend certains groupes de consonnes prononçables.</small>
+            </article>
+          </div>
+        </section>
+
+        <section class="core-tip-strip" aria-label="Politesse et particules séparables">
+          <article>
+            <strong><span lang="de">bitte</span> rend la demande polie</strong>
+            <p lang="de"><span class="mark-verb">Sprechen</span> Sie bitte langsam!</p>
+          </article>
+          <article>
+            <strong><span lang="de">doch</span> encourage ou insiste doucement</strong>
+            <p lang="de"><span class="mark-verb">Komm</span> doch mit!</p>
+          </article>
+          <article>
+            <strong>La particule va à la fin</strong>
+            <p lang="de"><span class="mark-verb">Pass</span> gut <span class="mark-verbal-tail">auf</span>!</p>
+          </article>
+        </section>
+
+        <nav class="core-resource-strip" aria-label="Ressources complémentaires sur l’impératif">
+          <strong>Pour aller plus loin</strong>
+          <a href="https://mein-deutschbuch.de/grammatikuebungen-imperativ.html" target="_blank" rel="noreferrer">Mein Deutschbuch</a>
+          <a href="https://deutsch.lingolia.com/de/grammatik/verben/imperativ/uebungen" target="_blank" rel="noreferrer">Lingolia</a>
+          <a href="https://www.schubert-verlag.de/aufgaben/xg/xg06_12.htm" target="_blank" rel="noreferrer">Schubert-Verlag</a>
+        </nav>
+      </>
+    )
+  }
+
+  {
+    slug === 'futur' && (
+      <>
+        <section class="core-rule" aria-labelledby="future-rule-title">
+          <div>
+            <p class="core-section-label">Futur I</p>
+            <h2 id="future-rule-title">Le verbe forme une pince</h2>
+            <p>Dans une phrase affirmative, <span lang="de">werden</span> est conjugué et l’infinitif ferme la phrase.</p>
+          </div>
+          <div class="core-formula core-formula-stack" aria-label="Formule du futur I">
+            <span><span class="mark-verb">werden conjugué</span> en position 2</span>
+            <span><span class="mark-verbal-tail">infinitif</span> à la fin</span>
+            <span class="core-formula-example" lang="de">
+              Ich <span class="mark-verb">werde</span> nach Berlin <span class="mark-verbal-tail">reisen</span>.
+            </span>
+          </div>
+        </section>
+
+        <div class="core-legend" aria-label="Légende des couleurs grammaticales">
+          <span><span class="mark-subject">sujet</span> jaune</span>
+          <span><span class="mark-verb">werden conjugué</span> rouge</span>
+          <span><span class="mark-verbal-tail">infinitif</span> violet</span>
+        </div>
+
+        <section class="core-lab" data-core-lab aria-labelledby="future-lab-title">
+          <div>
+            <p class="core-section-label">Atelier</p>
+            <h2 id="future-lab-title">Conjugue <span lang="de">werden</span></h2>
+            <div class="core-choice-list core-choice-grid" role="group" aria-label="Choisir le sujet du futur">
+              {
+                futureLabRows.map((row, index) => (
+                  <button
+                    type="button"
+                    data-core-choice
+                    data-subject={row.subject}
+                    data-verb={row.form}
+                    data-tail={row.tail}
+                    data-note={row.note}
+                    aria-pressed={index === 0 ? 'true' : 'false'}
+                  >
+                    {row.label}
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+          <div class="core-stage" data-core-example aria-live="polite">
+            <p class="core-stage-kicker">Projection vers l’avenir</p>
+            <p class="core-stage-sentence" lang="de">
+              <span class="mark-subject" data-core-output="subject">Ich</span>{' '}
+              <span class="mark-verb" data-core-output="verb">werde</span>{' '}
+              <span class="mark-verbal-tail" data-core-output="tail">nach Berlin reisen.</span>
+            </p>
+            <p class="core-stage-note" data-core-output="note">werden prend la forme werde avec ich.</p>
+          </div>
+        </section>
+
+        <section class="core-card" aria-labelledby="future-table-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Auxiliaire</p>
+              <h2 id="future-table-title"><span lang="de">werden</span> au présent</h2>
+            </div>
+            <p>L’infinitif placé à la fin reste toujours invariable.</p>
+          </div>
+          <div class="core-table-scroll" role="region" aria-label="Conjugaison de werden" tabindex="0">
+            <table class="core-table core-table-compact">
+              <caption>Formes de werden utilisées pour le futur I</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Sujet</th>
+                  <th scope="col">Forme</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  futureRows.map((row) => (
+                    <tr>
+                      <th scope="row"><span class="mark-subject">{row.person}</span></th>
+                      <td><strong class="mark-verb" lang="de">{row.form}</strong></td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="future-contrasts-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Choisir la bonne forme</p>
+              <h2 id="future-contrasts-title">Le futur n’est pas toujours obligatoire</h2>
+            </div>
+          </div>
+          <div class="core-contrast-grid">
+            <article class="core-contrast-card">
+              <strong>Projet déjà daté</strong>
+              <p lang="de"><span class="mark-time">Morgen</span> <span class="mark-verb">reise</span> ich nach Berlin.</p>
+              <small>Le présent est souvent le plus naturel quand le moment est clair.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong>Projection ou prédiction</strong>
+              <p lang="de">Ich <span class="mark-verb">werde</span> später im Ausland <span class="mark-verbal-tail">arbeiten</span>.</p>
+              <small>Le Futur I met l’avenir ou la prévision au premier plan.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong><span lang="de">werden</span> peut signifier « devenir »</strong>
+              <p lang="de">Mia <span class="mark-verb">wird</span> Ärztin.</p>
+              <small>Sans infinitif final, cette phrase n’est pas au Futur I.</small>
+            </article>
+          </div>
+        </section>
+
+        <div class="core-example-pair" aria-label="Comparer werden comme verbe et comme auxiliaire">
+          <p><strong>Devenir :</strong> <span lang="de">Mia <span class="mark-verb">wird</span> Ärztin.</span></p>
+          <span aria-hidden="true">≠</span>
+          <p><strong>Futur I :</strong> <span lang="de">Mia <span class="mark-verb">wird</span> Ärztin <span class="mark-verbal-tail">sein</span>.</span></p>
+        </div>
+      </>
+    )
+  }
+
+  {
+    slug === 'les-verbes-reflexifs' && (
+      <>
+        <section class="core-rule" aria-labelledby="reflexive-rule-title">
+          <div>
+            <p class="core-section-label">À retenir</p>
+            <h2 id="reflexive-rule-title">Le pronom renvoie au sujet</h2>
+            <p>Apprends le verbe avec son pronom : <span lang="de">sich ärgern</span>, <span lang="de">sich beeilen</span>, <span lang="de">sich entschuldigen</span>.</p>
+          </div>
+          <div class="core-formula core-formula-stack" aria-label="Formule du verbe réflexif">
+            <span><span class="mark-subject">sujet</span> + <span class="mark-verb">verbe conjugué</span></span>
+            <span>+ <span class="case-chip case-chip-accusative">pronom réfléchi</span></span>
+            <span class="core-formula-example" lang="de">
+              Ich <span class="mark-verb">ärgere</span> <span class="case-chip case-chip-accusative">mich</span>.
+            </span>
+          </div>
+        </section>
+
+        <div class="core-legend" aria-label="Légende des couleurs grammaticales">
+          <span><span class="mark-subject">sujet</span> jaune</span>
+          <span><span class="mark-verb">verbe conjugué</span> rouge</span>
+          <span><span class="case-chip case-chip-accusative">accusatif</span> bleu</span>
+          <span><span class="case-chip case-chip-dative">datif</span> vert</span>
+        </div>
+
+        <section class="core-lab" data-core-lab aria-labelledby="reflexive-lab-title">
+          <div>
+            <p class="core-section-label">Atelier</p>
+            <h2 id="reflexive-lab-title">Accusatif ou datif ?</h2>
+            <div class="core-choice-list" role="group" aria-label="Comparer les deux constructions réflexives">
+              <button
+                type="button"
+                data-core-choice
+                data-subject="Ich"
+                data-verb="wasche"
+                data-reflexive="mich"
+                data-object=""
+                data-case="accusative"
+                data-case-label="Accusatif"
+                data-note="Le pronom mich est lui-même le complément direct."
+                aria-pressed="true"
+              >
+                Je me lave
+              </button>
+              <button
+                type="button"
+                data-core-choice
+                data-subject="Ich"
+                data-verb="wasche"
+                data-reflexive="mir"
+                data-object="die Haare"
+                data-case="dative"
+                data-case-label="Datif"
+                data-note="die Haare est le CVD : le pronom réfléchi passe au datif."
+                aria-pressed="false"
+              >
+                Je me lave les cheveux
+              </button>
+            </div>
+          </div>
+          <div class="core-stage" data-core-example aria-live="polite">
+            <p class="core-stage-kicker"><span data-core-output="case-label">Accusatif</span></p>
+            <p class="core-stage-sentence" lang="de">
+              <span class="mark-subject" data-core-output="subject">Ich</span>{' '}
+              <span class="mark-verb" data-core-output="verb">wasche</span>{' '}
+              <span class="case-chip case-chip-accusative" data-core-output="reflexive">mich</span>{' '}
+              <span class="case-chip case-chip-accusative" data-core-output="object" data-hide-when-empty hidden></span>.
+            </p>
+            <p class="core-stage-note" data-core-output="note">Le pronom mich est lui-même le complément direct.</p>
+          </div>
+        </section>
+
+        <section class="core-card" aria-labelledby="reflexive-table-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">Tableau de référence</p>
+              <h2 id="reflexive-table-title">Les pronoms réfléchis</h2>
+            </div>
+            <p>Seules les formes de <span lang="de">ich</span> et <span lang="de">du</span> diffèrent entre accusatif et datif.</p>
+          </div>
+          <div class="core-table-scroll" role="region" aria-label="Pronoms réfléchis à l’accusatif et au datif" tabindex="0">
+            <table class="core-table">
+              <caption>Pronoms réfléchis selon le sujet et le cas</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Sujet</th>
+                  <th scope="col">Accusatif</th>
+                  <th scope="col">Datif</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  reflexiveRows.map((row) => (
+                    <tr>
+                      <th scope="row"><span class="mark-subject">{row.person}</span></th>
+                      <td><strong class="case-chip case-chip-accusative" lang="de">{row.accusative}</strong></td>
+                      <td><strong class="case-chip case-chip-dative" lang="de">{row.dative}</strong></td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section aria-labelledby="reflexive-contrasts-title">
+          <div class="core-heading-row">
+            <div>
+              <p class="core-section-label">La règle pratique</p>
+              <h2 id="reflexive-contrasts-title">Regarde les compléments de la phrase</h2>
+            </div>
+          </div>
+          <div class="core-contrast-grid">
+            <article class="core-contrast-card">
+              <strong>Le pronom est le CVD</strong>
+              <p lang="de">Er <span class="mark-verb">ärgert</span> <span class="case-chip case-chip-accusative">sich</span>.</p>
+              <small>On emploie l’accusatif.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong>Un autre CVD est présent</strong>
+              <p lang="de">Du <span class="mark-verb">putzt</span> <span class="case-chip case-chip-dative">dir</span> <span class="case-chip case-chip-accusative">die Zähne</span>.</p>
+              <small>Le pronom réfléchi est alors au datif.</small>
+            </article>
+            <article class="core-contrast-card">
+              <strong>Le cas peut appartenir au verbe</strong>
+              <p lang="de"><span class="case-chip case-chip-dative">sich</span> etwas merken · <span class="case-chip case-chip-accusative">sich</span> für Musik interessieren</p>
+              <small>Dans le doute, apprends le verbe avec son pronom et sa préposition.</small>
+            </article>
+          </div>
+        </section>
+
+        <div class="core-example-pair core-example-pair-stacked" aria-label="Place du pronom réfléchi">
+          <p lang="de"><span class="mark-subject">Ich</span> <span class="mark-verb">freue</span> mich auf die Ferien.</p>
+          <p lang="de"><span class="mark-time">Heute</span> <span class="mark-verb">freut</span> sich <span class="mark-subject">Mia</span> auf die Ferien.</p>
+        </div>
+      </>
+    )
+  }
+</section>
+
+<script>
+  const initialiseConjugationCore = (root: HTMLElement) => {
+    if (root.dataset.coreReady === 'true') return;
+    root.dataset.coreReady = 'true';
+
+    root.querySelectorAll<HTMLElement>('[data-core-lab]').forEach((lab) => {
+      const buttons = [...lab.querySelectorAll<HTMLButtonElement>('[data-core-choice]')];
+
+      const activate = (button: HTMLButtonElement) => {
+        buttons.forEach((candidate) => {
+          candidate.setAttribute('aria-pressed', candidate === button ? 'true' : 'false');
+        });
+
+        lab.querySelectorAll<HTMLElement>('[data-core-output]').forEach((output) => {
+          const key = output.dataset.coreOutput;
+          if (!key) return;
+          const value = button.getAttribute(`data-${key}`) ?? '';
+          output.textContent = value;
+          if (output.hasAttribute('data-hide-when-empty')) {
+            output.hidden = value.length === 0;
+          }
+        });
+
+        const reflexive = lab.querySelector<HTMLElement>('[data-core-output="reflexive"]');
+        const grammaticalCase = button.dataset.case;
+        if (reflexive && grammaticalCase) {
+          reflexive.classList.toggle('case-chip-accusative', grammaticalCase === 'accusative');
+          reflexive.classList.toggle('case-chip-dative', grammaticalCase === 'dative');
+        }
+      };
+
+      buttons.forEach((button) => button.addEventListener('click', () => activate(button)));
+      const initial = buttons.find((button) => button.getAttribute('aria-pressed') === 'true') ?? buttons[0];
+      if (initial) activate(initial);
+    });
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-conjugation-core]').forEach(initialiseConjugationCore);
+</script>
+
+<style>
+  .conjugation-core {
+    display: grid;
+    gap: clamp(18px, 3vw, 30px);
+    color: var(--text);
+  }
+
+  .core-page-present {
+    --core-page-accent: var(--grammar-tail);
+    --core-page-soft: var(--grammar-tail-soft);
+  }
+
+  .core-page-imperatif {
+    --core-page-accent: var(--grammar-verb);
+    --core-page-soft: var(--grammar-verb-soft);
+  }
+
+  .core-page-futur {
+    --core-page-accent: #087b88;
+    --core-page-soft: #eaf7f8;
+  }
+
+  .core-page-les-verbes-reflexifs {
+    --core-page-accent: #8a476d;
+    --core-page-soft: #faeef5;
+  }
+
+  .core-rule,
+  .core-card,
+  .core-lab,
+  .core-tip-strip,
+  .core-example-pair,
+  .core-resource-strip {
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 7px 0 rgba(15, 26, 49, 0.06);
+  }
+
+  .core-rule {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+    gap: clamp(18px, 4vw, 42px);
+    align-items: center;
+    padding: clamp(20px, 4vw, 34px);
+    border-color: color-mix(in srgb, var(--core-page-accent) 24%, transparent);
+    background:
+      linear-gradient(120deg, var(--core-page-soft), transparent 46%),
+      rgba(255, 255, 255, 0.94);
+  }
+
+  .core-section-label {
+    margin: 0 0 5px;
+    color: var(--core-page-accent);
+    font-size: 0.78rem;
+    font-weight: 950;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .conjugation-core h2 {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.25rem, 2.2vw, 1.72rem);
+    line-height: 1.16;
+  }
+
+  .core-rule p:not(.core-section-label),
+  .core-heading-row p,
+  .core-contrast-card p,
+  .core-contrast-card small,
+  .core-tip-strip p,
+  .core-example-pair p {
+    margin-bottom: 0;
+  }
+
+  .core-rule p:not(.core-section-label) {
+    max-width: 58ch;
+    margin-top: 10px;
+    color: var(--muted);
+  }
+
+  .core-formula {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 116px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid color-mix(in srgb, var(--core-page-accent) 18%, transparent);
+    border-radius: 16px;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+      repeating-linear-gradient(0deg, transparent 0 27px, rgba(71, 85, 105, 0.08) 27px 28px),
+      repeating-linear-gradient(90deg, transparent 0 27px, rgba(71, 85, 105, 0.08) 27px 28px);
+    color: var(--ink);
+    font-size: clamp(1rem, 1.8vw, 1.24rem);
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .core-formula-stack {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 9px;
+  }
+
+  .core-formula-example {
+    display: block;
+    margin-top: 4px;
+    font-size: 1.05em;
+  }
+
+  .core-radical,
+  .core-ending {
+    display: inline;
+    border-radius: 7px;
+    padding: 0.05em 0.22em;
+    font-weight: 950;
+  }
+
+  .core-radical {
+    color: var(--grammar-tail);
+    background: var(--grammar-tail-soft);
+  }
+
+  .core-ending {
+    color: var(--grammar-ending);
+    background: var(--grammar-ending-soft);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.14em;
+  }
+
+  .core-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .core-legend > span {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 10px;
+    border: 2px solid rgba(15, 26, 49, 0.09);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 850;
+  }
+
+  .core-lab {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.78fr) minmax(0, 1.22fr);
+    gap: clamp(18px, 3vw, 28px);
+    padding: clamp(18px, 3vw, 26px);
+    border-color: color-mix(in srgb, var(--core-page-accent) 24%, transparent);
+  }
+
+  .core-choice-list {
+    display: grid;
+    gap: 9px;
+    margin-top: 15px;
+  }
+
+  .core-choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .core-choice-list button {
+    min-height: 44px;
+    padding: 9px 12px;
+    border: 2px solid color-mix(in srgb, var(--core-page-accent) 20%, var(--border));
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: left;
+    cursor: pointer;
+    transition:
+      transform 160ms ease,
+      border-color 160ms ease,
+      background 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .core-choice-list button:hover {
+    border-color: var(--core-page-accent);
+    transform: translateY(-1px);
+  }
+
+  .core-choice-list button[aria-pressed='true'] {
+    border-color: var(--core-page-accent);
+    background: var(--core-page-soft);
+    box-shadow: 0 4px 0 color-mix(in srgb, var(--core-page-accent) 18%, transparent);
+    color: color-mix(in srgb, var(--core-page-accent) 82%, var(--ink));
+  }
+
+  .core-choice-list button:focus-visible,
+  .core-table-scroll:focus-visible,
+  .core-resource-strip a:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .core-stage {
+    display: grid;
+    min-height: 230px;
+    align-content: center;
+    justify-items: center;
+    padding: clamp(18px, 4vw, 34px);
+    border: 2px solid color-mix(in srgb, var(--core-page-accent) 18%, transparent);
+    border-radius: 15px;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 31px, rgba(71, 85, 105, 0.07) 31px 32px),
+      repeating-linear-gradient(90deg, transparent 0 31px, rgba(71, 85, 105, 0.07) 31px 32px),
+      rgba(250, 252, 255, 0.88);
+    text-align: center;
+  }
+
+  .core-stage-kicker {
+    margin: 0 0 13px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 950;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .core-stage-sentence {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.28rem, 3vw, 2rem);
+    font-weight: 900;
+    line-height: 1.55;
+  }
+
+  .core-word-build {
+    white-space: nowrap;
+  }
+
+  .core-stage-note {
+    max-width: 50ch;
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: 0.94rem;
+    font-weight: 750;
+  }
+
+  .core-card {
+    padding: clamp(18px, 3vw, 28px);
+  }
+
+  .core-heading-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 15px;
+  }
+
+  .core-heading-row > p {
+    max-width: 43ch;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .core-table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.94);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .core-table {
+    width: 100%;
+    min-width: 610px;
+    margin: 0;
+    border: 0;
+    border-collapse: collapse;
+    background: transparent;
+    font-size: 0.93rem;
+  }
+
+  .core-table-compact {
+    min-width: 360px;
+  }
+
+  .core-table-wide {
+    min-width: 760px;
+  }
+
+  .core-table caption {
+    padding: 10px 14px;
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 800;
+    text-align: left;
+  }
+
+  .core-table th,
+  .core-table td {
+    padding: 11px 13px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .core-table th:last-child,
+  .core-table td:last-child {
+    border-right: 0;
+  }
+
+  .core-table tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+
+  .core-table thead th {
+    background: color-mix(in srgb, var(--core-page-soft) 68%, white);
+    color: var(--ink);
+    font-weight: 950;
+  }
+
+  .core-table tbody tr:nth-child(even) {
+    background: rgba(71, 85, 105, 0.035);
+  }
+
+  .core-table tbody th {
+    background: color-mix(in srgb, var(--grammar-nominative-soft) 54%, white);
+  }
+
+  .core-contrast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .core-contrast-card {
+    padding: 17px;
+    border: 2px solid var(--border);
+    border-top: 5px solid var(--core-page-accent);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .core-contrast-card > strong {
+    display: block;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+
+  .core-contrast-card p {
+    color: var(--ink);
+    font-weight: 850;
+  }
+
+  .core-contrast-card small {
+    display: block;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .core-tip-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow: hidden;
+  }
+
+  .core-tip-strip article {
+    padding: 18px;
+    border-right: 1px solid var(--border);
+  }
+
+  .core-tip-strip article:last-child {
+    border-right: 0;
+  }
+
+  .core-tip-strip strong {
+    color: var(--ink);
+  }
+
+  .core-tip-strip p {
+    color: var(--muted);
+  }
+
+  .core-resource-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+    padding: 13px 15px;
+  }
+
+  .core-resource-strip strong {
+    margin-right: 3px;
+    color: var(--ink);
+  }
+
+  .core-resource-strip a {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    padding: 7px 11px;
+    border: 2px solid color-mix(in srgb, var(--core-page-accent) 24%, transparent);
+    border-radius: 10px;
+    background: var(--core-page-soft);
+    color: color-mix(in srgb, var(--core-page-accent) 84%, var(--ink));
+    font-size: 0.88rem;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .core-resource-strip a:hover {
+    border-color: var(--core-page-accent);
+  }
+
+  .core-example-pair {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 17px 20px;
+    text-align: center;
+  }
+
+  .core-example-pair > span {
+    color: var(--core-page-accent);
+    font-size: 1.4rem;
+    font-weight: 950;
+  }
+
+  .core-example-pair-stacked {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  @media (max-width: 840px) {
+    .core-rule,
+    .core-lab {
+      grid-template-columns: 1fr;
+    }
+
+    .core-contrast-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .core-tip-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .core-tip-strip article {
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .core-tip-strip article:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .core-rule,
+    .core-card,
+    .core-lab {
+      padding: 16px;
+      border-radius: 15px;
+    }
+
+    .core-formula {
+      min-height: 100px;
+      padding: 15px;
+    }
+
+    .core-choice-grid,
+    .core-example-pair,
+    .core-example-pair-stacked {
+      grid-template-columns: 1fr;
+    }
+
+    .core-example-pair > span {
+      transform: rotate(90deg);
+    }
+
+    .core-heading-row {
+      display: block;
+    }
+
+    .core-heading-row > p {
+      margin-top: 8px;
+    }
+
+    .core-table {
+      font-size: 0.88rem;
+    }
+
+    .core-table th,
+    .core-table td {
+      padding: 9px 10px;
+    }
+
+    .core-stage {
+      min-height: 190px;
+      padding: 18px 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .core-choice-list button {
+      transition: none;
+    }
+  }
+</style>

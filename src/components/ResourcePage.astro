@@ -4,6 +4,9 @@ import ComparativeExercise from './ComparativeExercise.astro';
 import ComparativeRuleLab from './ComparativeRuleLab.astro';
 import ComparativeTheoryContent from './ComparativeTheoryContent.astro';
 import CasesPracticeSuite from './CasesPracticeSuite.astro';
+import ConjugationAdvancedTheory from './ConjugationAdvancedTheory.astro';
+import ConjugationCoreTheory from './ConjugationCoreTheory.astro';
+import ConjugationSourceReference from './ConjugationSourceReference.astro';
 import ExternalLinks from './ExternalLinks.astro';
 import GrammarTheoryContent from './GrammarTheoryContent.astro';
 import ImageGallery from './ImageGallery.astro';
@@ -56,6 +59,24 @@ const customGrammarSlug =
   slug &&
   grammarTheoryPageSlugs.includes(slug as GrammarTheoryPageSlug)
     ? (slug as GrammarTheoryPageSlug)
+    : undefined;
+const coreConjugationSlugs = ['present', 'imperatif', 'futur', 'les-verbes-reflexifs'] as const;
+type CoreConjugationSlug = (typeof coreConjugationSlugs)[number];
+const customCoreConjugationSlug =
+  entry.collection === 'theorie' &&
+  entry.data.category === 'conjugaison' &&
+  slug &&
+  coreConjugationSlugs.includes(slug as CoreConjugationSlug)
+    ? (slug as CoreConjugationSlug)
+    : undefined;
+const advancedConjugationSlugs = ['passe-compose', 'preterit', 'verbes-de-modalite', 'konjunktiv-ii'] as const;
+type AdvancedConjugationSlug = (typeof advancedConjugationSlugs)[number];
+const customAdvancedConjugationSlug =
+  entry.collection === 'theorie' &&
+  entry.data.category === 'conjugaison' &&
+  slug &&
+  advancedConjugationSlugs.includes(slug as AdvancedConjugationSlug)
+    ? (slug as AdvancedConjugationSlug)
     : undefined;
 const hasWritingExerciseLab = entry.collection === 'conseils' && slug === 'expression-ecrite';
 const hasHeaderCallout = hasObjectives;
@@ -168,6 +189,20 @@ const hasChapterDashboard =
                   <ModalSentenceTheoryContent />
                 ) : hasPerfectSentenceLesson ? (
                   <PerfectSentenceTheoryContent />
+                ) : customCoreConjugationSlug ? (
+                  <>
+                    <ConjugationCoreTheory slug={customCoreConjugationSlug} />
+                    <ConjugationSourceReference sourceUrl={entry.data.sourceUrl}>
+                      <Content />
+                    </ConjugationSourceReference>
+                  </>
+                ) : customAdvancedConjugationSlug ? (
+                  <>
+                    <ConjugationAdvancedTheory slug={customAdvancedConjugationSlug} />
+                    <ConjugationSourceReference sourceUrl={entry.data.sourceUrl}>
+                      <Content />
+                    </ConjugationSourceReference>
+                  </>
                 ) : customGrammarSlug ? (
                   <GrammarTheoryContent slug={customGrammarSlug} />
                 ) : (

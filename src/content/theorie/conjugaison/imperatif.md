@@ -1,11 +1,13 @@
 ---
 title: "Impératif"
-description: "L’impératif sert à donner un ordre ou faire une proposition, il ne se conjugue donc pas à toutes les formes, seulement à « tu », « nous », « vous » et « vous de politesse »."
+description: "Forme une consigne adaptée à du, ihr, wir ou Sie."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/imp%C3%A9ratif"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "Choisir la forme selon la personne"
+  - "Placer correctement le verbe et les particules séparables"
 externalLinks: []
 images: []
 migrationNotes:
@@ -14,15 +16,15 @@ migrationNotes:
 
 ## Exemples:
 
-Fais tes devoirs ! —> Mach deine Hausaufgaben !
+Fais tes devoirs ! → Mach deine Hausaufgaben!
 
-Allons au cinéma ! —> Gehen wir ins Kino !
+Allons au cinéma ! → Gehen wir ins Kino!
 
 ## La forme « du »
 
-Pour former la forme impérative à « tu », il faut supprimer la terminaison de la forme du présent.
+Pour former l’impératif avec **du**, on retire le pronom et on part du radical de l’infinitif. On peut aussi retrouver cette forme en retirant **-st** à la forme du présent.
 
-⚠️ Dans certains cas, il faut ajouter un « e » à la fin, notamment pour les verbes dont le radical se termine par « m » ou « n ».
+⚠️ La terminaison **-e** est notamment nécessaire après certains groupes consonantiques terminés par **-m** ou **-n** : **atmen → Atme!**, **rechnen → Rechne!**. Elle ne s’ajoute pas automatiquement à tous les radicaux en **m** ou **n** : **Komm!**, **Lern!**
 
 Pour les autres verbes, le « e » n'est pas obligatoire, mais on peut trouver les deux variantes pour certains verbes.
 
@@ -36,22 +38,22 @@ Pour les autres verbes, le « e » n'est pas obligatoire, mais on peut trouver l
     </tr>
   </thead>
   <tbody>
-    <tr><td>gehen</td><td>du gehst</td><td>Geh !</td></tr>
-    <tr><td>geben</td><td>du gibst</td><td>Gib !</td></tr>
-    <tr><td>rechnen</td><td>du rechnest</td><td>Rechne !</td></tr>
-    <tr><td>machen</td><td>du machst</td><td>Mach ! / Mache !</td></tr>
+    <tr><td>gehen</td><td>du gehst</td><td>Geh!</td></tr>
+    <tr><td>geben</td><td>du gibst</td><td>Gib!</td></tr>
+    <tr><td>rechnen</td><td>du rechnest</td><td>Rechne!</td></tr>
+    <tr><td>machen</td><td>du machst</td><td>Mach! / Mache!</td></tr>
   </tbody>
 </table>
 
 ## Exceptions:
 
-Les verbes irréguliers qui prennent des trémas (Umlaut) sur la voyelle au présent perdent ceux-ci à l’impératif.
+Les changements **e → i / ie** du présent sont généralement conservés : **du gibst → Gib!**, **du liest → Lies!**. En revanche, les Umlauts **a → ä** et **au → äu** disparaissent : **du fährst → Fahr!**, **du läufst → Lauf!**.
 
 ## Exemples :
 
-Du fährst nach Berlin. —> Fahre nach Berlin !
+Du fährst nach Berlin. → Fahr nach Berlin!
 
-Du lädst deine Freunde ein. —> Lade deine Freunde ein !
+Du lädst deine Freunde ein. → Lade deine Freunde ein!
 
 Le verbe « être = sein » est aussi particulier. Voici sa conjugaison à l’impératif.
 
@@ -65,10 +67,10 @@ Le verbe « être = sein » est aussi particulier. Voici sa conjugaison à l’i
     </tr>
   </thead>
   <tbody>
-    <tr><td>du</td><td>du bist</td><td>Sei !</td></tr>
-    <tr><td>wir</td><td>wir sind</td><td>Seien wir !</td></tr>
-    <tr><td>ihr</td><td>ihr seid</td><td>Seid !</td></tr>
-    <tr><td>Sie</td><td>Sie sind</td><td>Seien Sie !</td></tr>
+    <tr><td>du</td><td>du bist</td><td>Sei!</td></tr>
+    <tr><td>wir</td><td>wir sind</td><td>Seien wir!</td></tr>
+    <tr><td>ihr</td><td>ihr seid</td><td>Seid!</td></tr>
+    <tr><td>Sie</td><td>Sie sind</td><td>Seien Sie!</td></tr>
   </tbody>
 </table>
 
@@ -86,10 +88,10 @@ La forme impérative du "vous" correspond à celle du présent, mais sans le pro
     </tr>
   </thead>
   <tbody>
-    <tr><td>gehen</td><td>ihr geht</td><td>Geht !</td></tr>
-    <tr><td>geben</td><td>ihr gebt</td><td>Gebt !</td></tr>
-    <tr><td>rechnen</td><td>ihr rechnet</td><td>Rechnet !</td></tr>
-    <tr><td>machen</td><td>ihr macht</td><td>Macht !</td></tr>
+    <tr><td>gehen</td><td>ihr geht</td><td>Geht!</td></tr>
+    <tr><td>geben</td><td>ihr gebt</td><td>Gebt!</td></tr>
+    <tr><td>rechnen</td><td>ihr rechnet</td><td>Rechnet!</td></tr>
+    <tr><td>machen</td><td>ihr macht</td><td>Macht!</td></tr>
   </tbody>
 </table>
 
@@ -108,26 +110,26 @@ Les formes impératives du « vous » de politesse et du « nous » corresponden
     </tr>
   </thead>
   <tbody>
-    <tr><td>gehen</td><td>Sie gehen / wir gehen</td><td>Gehen Sie !</td><td>Gehen wir !</td></tr>
-    <tr><td>geben</td><td>Sie geben / wir geben</td><td>Geben Sie !</td><td>Geben wir !</td></tr>
+    <tr><td>gehen</td><td>Sie gehen / wir gehen</td><td>Gehen Sie!</td><td>Gehen wir!</td></tr>
+    <tr><td>geben</td><td>Sie geben / wir geben</td><td>Geben Sie!</td><td>Geben wir!</td></tr>
   </tbody>
 </table>
 
 ## La phrase impérative
 
-Dans une phrase impérative, le verbe se trouve en 1ère position !
+Dans une phrase impérative, le verbe se trouve en première position.
 
-Pour rendre la demande plus polie, on peut ajouter un « donc » ou un « s’il-vous-plaît » juste après le verbe.
+**bitte** rend la demande polie. **doch** peut l’adoucir ou encourager la personne, selon le ton.
 
-Allez donc à la maison ! —> Gehen Sie doch nach Hause !
+Allez donc à la maison ! → Gehen Sie doch nach Hause!
 
-Fais tes devoirs, s’il-te-plaît ! —> Mach bitte deine Hausaufgaben !
+Fais tes devoirs, s’il te plaît ! → Mach bitte deine Hausaufgaben!
 
 ⚠️ Lorsque le verbe a une particule séparable, celle-ci vient à la fin de la phrase, comme dans une phrase au présent.
 
-Ferme la fenêtre, s’il-te-plaît ! —> Mach bitte das Fenster zu ! (v. = zumachen)
+Ferme la fenêtre, s’il te plaît ! → Mach bitte das Fenster zu! (v. = **zumachen**)
 
-**Fais donc attention ! —> Pass doch auf ! (v. = aufpassen)**
+**Fais donc attention ! → Pass doch auf!** (v. = **aufpassen**)
 
 ## Exercices externes complémentaires
 

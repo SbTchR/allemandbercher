@@ -1,0 +1,1552 @@
+---
+type AdvancedConjugationSlug = 'passe-compose' | 'preterit' | 'verbes-de-modalite' | 'konjunktiv-ii';
+
+type Props = {
+  slug: AdvancedConjugationSlug;
+};
+
+type GrammarRole = 'subject' | 'finite' | 'stem' | 'ending';
+
+type PhrasePiece = {
+  text: string;
+  role?: GrammarRole;
+};
+
+type WorkshopOption = {
+  key: string;
+  label: string;
+  title: string;
+  formula: PhrasePiece[];
+  sentence: PhrasePiece[];
+  note: string;
+};
+
+const { slug } = Astro.props;
+
+const roleClasses: Record<GrammarRole, string> = {
+  subject: 'cav-subject',
+  finite: 'cav-finite',
+  stem: 'cav-stem',
+  ending: 'cav-ending',
+};
+
+const perfectOptions: WorkshopOption[] = [
+  {
+    key: 'machen',
+    label: 'machen',
+    title: 'Verbe faible',
+    formula: [
+      { text: 'ge-', role: 'ending' },
+      { text: 'mach', role: 'stem' },
+      { text: '-t', role: 'ending' },
+    ],
+    sentence: [
+      { text: 'Mia', role: 'subject' },
+      { text: 'hat', role: 'finite' },
+      { text: 'die Hausaufgaben' },
+      { text: 'gemacht.', role: 'stem' },
+    ],
+    note: 'Le radical reste stable et le participe se termine par -t.',
+  },
+  {
+    key: 'gehen',
+    label: 'gehen',
+    title: 'Verbe fort',
+    formula: [
+      { text: 'ge-', role: 'ending' },
+      { text: 'gang', role: 'stem' },
+      { text: '-en', role: 'ending' },
+    ],
+    sentence: [
+      { text: 'Wir', role: 'subject' },
+      { text: 'sind', role: 'finite' },
+      { text: 'nach Hause' },
+      { text: 'gegangen.', role: 'stem' },
+    ],
+    note: 'Le radical change. La forme gegangen doit être mémorisée.',
+  },
+  {
+    key: 'bringen',
+    label: 'bringen',
+    title: 'Verbe mixte',
+    formula: [
+      { text: 'ge-', role: 'ending' },
+      { text: 'brach', role: 'stem' },
+      { text: '-t', role: 'ending' },
+    ],
+    sentence: [
+      { text: 'Noah', role: 'subject' },
+      { text: 'hat', role: 'finite' },
+      { text: 'den Kuchen' },
+      { text: 'gebracht.', role: 'stem' },
+    ],
+    note: 'Le radical change comme avec un verbe fort, mais la terminaison est -t.',
+  },
+  {
+    key: 'abholen',
+    label: 'abholen',
+    title: 'Particule séparable',
+    formula: [
+      { text: 'ab-', role: 'stem' },
+      { text: 'ge-', role: 'ending' },
+      { text: 'hol', role: 'stem' },
+      { text: '-t', role: 'ending' },
+    ],
+    sentence: [
+      { text: 'Ich', role: 'subject' },
+      { text: 'habe', role: 'finite' },
+      { text: 'Lina' },
+      { text: 'abgeholt.', role: 'stem' },
+    ],
+    note: 'Avec une particule séparable, ge- se glisse entre la particule et le radical.',
+  },
+  {
+    key: 'verlieren',
+    label: 'verlieren',
+    title: 'Préfixe inséparable',
+    formula: [
+      { text: 'ver-', role: 'stem' },
+      { text: 'lor', role: 'stem' },
+      { text: '-en', role: 'ending' },
+    ],
+    sentence: [
+      { text: 'Sie', role: 'subject' },
+      { text: 'hat', role: 'finite' },
+      { text: 'ihren Schlüssel' },
+      { text: 'verloren.', role: 'stem' },
+    ],
+    note: 'Le préfixe ver- bloque ge-. La forme forte reste à apprendre.',
+  },
+  {
+    key: 'telefonieren',
+    label: 'telefonieren',
+    title: 'Verbe en -ieren',
+    formula: [
+      { text: 'telefonier', role: 'stem' },
+      { text: '-t', role: 'ending' },
+    ],
+    sentence: [
+      { text: 'Ihr', role: 'subject' },
+      { text: 'habt', role: 'finite' },
+      { text: 'lange' },
+      { text: 'telefoniert.', role: 'stem' },
+    ],
+    note: 'Les verbes en -ieren ne prennent jamais ge-.',
+  },
+];
+
+const perfectRows = [
+  {
+    type: 'Faible',
+    pattern: 'ge- + radical + -(e)t',
+    example: 'machen → gemacht',
+    note: 'Le modèle le plus régulier.',
+  },
+  {
+    type: 'Fort',
+    pattern: 'ge- + radical du participe + -en',
+    example: 'gehen → gegangen',
+    note: 'Le radical change souvent ; la forme s’apprend.',
+  },
+  {
+    type: 'Mixte',
+    pattern: 'ge- + radical modifié + -t',
+    example: 'bringen → gebracht',
+    note: 'Un petit groupe à mémoriser.',
+  },
+];
+
+const preteritOptions: WorkshopOption[] = [
+  {
+    key: 'machen',
+    label: 'machen',
+    title: 'Forme faible',
+    formula: [
+      { text: 'mach-', role: 'stem' },
+      { text: '-te', role: 'ending' },
+      { text: '→ machte', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Gestern' },
+      { text: 'machte', role: 'finite' },
+      { text: 'Lea', role: 'subject' },
+      { text: 'die Hausaufgaben.' },
+    ],
+    note: 'Le -te- porte le passé. Avec du : machtest ; avec wir : machten.',
+  },
+  {
+    key: 'sein',
+    label: 'sein',
+    title: 'Le verbe le plus utile',
+    formula: [
+      { text: 'war', role: 'finite' },
+      { text: '· warst · waren', role: 'stem' },
+    ],
+    sentence: [
+      { text: 'Am Montag' },
+      { text: 'war', role: 'finite' },
+      { text: 'ich', role: 'subject' },
+      { text: 'krank.' },
+    ],
+    note: 'war et waren apparaissent très souvent, même quand le Perfekt domine.',
+  },
+  {
+    key: 'haben',
+    label: 'haben',
+    title: 'Une autre forme fréquente',
+    formula: [
+      { text: 'hatte', role: 'finite' },
+      { text: '· hattest · hatten', role: 'stem' },
+    ],
+    sentence: [
+      { text: 'Wir', role: 'subject' },
+      { text: 'hatten', role: 'finite' },
+      { text: 'wenig Zeit.' },
+    ],
+    note: 'Le radical hat- reçoit les terminaisons faibles du prétérit.',
+  },
+  {
+    key: 'fahren',
+    label: 'fahren',
+    title: 'Forme forte',
+    formula: [
+      { text: 'fahr-', role: 'stem' },
+      { text: '→ fuhr', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Der Bus', role: 'subject' },
+      { text: 'fuhr', role: 'finite' },
+      { text: 'um acht Uhr.' },
+    ],
+    note: 'Le changement de voyelle marque le passé : fahren → fuhr.',
+  },
+  {
+    key: 'essen',
+    label: 'essen',
+    title: 'Forme forte à orthographe suisse',
+    formula: [
+      { text: 'ess-', role: 'stem' },
+      { text: '→ ass', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Ihr', role: 'subject' },
+      { text: 'asst', role: 'finite' },
+      { text: 'zusammen.' },
+    ],
+    note: 'En Suisse : ich ass, du assest, ihr asst.',
+  },
+];
+
+const preteritRows = [
+  ['ich', 'machte', 'war', 'hatte', 'fuhr', 'ass'],
+  ['du', 'machtest', 'warst', 'hattest', 'fuhrst', 'assest'],
+  ['er / sie / es', 'machte', 'war', 'hatte', 'fuhr', 'ass'],
+  ['wir', 'machten', 'waren', 'hatten', 'fuhren', 'assen'],
+  ['ihr', 'machtet', 'wart', 'hattet', 'fuhrt', 'asst'],
+  ['sie / Sie', 'machten', 'waren', 'hatten', 'fuhren', 'assen'],
+];
+
+const modalOptions: WorkshopOption[] = [
+  {
+    key: 'capacity',
+    label: 'capacité',
+    title: 'können · savoir / pouvoir',
+    formula: [
+      { text: 'können', role: 'stem' },
+      { text: '→ kann', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Mia', role: 'subject' },
+      { text: 'kann', role: 'finite' },
+      { text: 'sehr gut' },
+      { text: 'schwimmen.', role: 'stem' },
+    ],
+    note: 'können exprime ici une capacité.',
+  },
+  {
+    key: 'permission',
+    label: 'permission',
+    title: 'dürfen · avoir le droit',
+    formula: [
+      { text: 'dürfen', role: 'stem' },
+      { text: '→ dürft', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Ihr', role: 'subject' },
+      { text: 'dürft', role: 'finite' },
+      { text: 'heute länger' },
+      { text: 'bleiben.', role: 'stem' },
+    ],
+    note: 'dürfen donne ou refuse une permission.',
+  },
+  {
+    key: 'necessity',
+    label: 'nécessité',
+    title: 'müssen · être obligé',
+    formula: [
+      { text: 'müssen', role: 'stem' },
+      { text: '→ muss', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Lina', role: 'subject' },
+      { text: 'muss', role: 'finite' },
+      { text: 'für den Test' },
+      { text: 'lernen.', role: 'stem' },
+    ],
+    note: 'müssen exprime une nécessité ou une obligation.',
+  },
+  {
+    key: 'instruction',
+    label: 'consigne',
+    title: 'sollen · être censé',
+    formula: [
+      { text: 'sollen', role: 'stem' },
+      { text: '→ sollst', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Du', role: 'subject' },
+      { text: 'sollst', role: 'finite' },
+      { text: 'Frau Meier' },
+      { text: 'anrufen.', role: 'stem' },
+    ],
+    note: 'sollen transmet une consigne, une attente ou la parole de quelqu’un.',
+  },
+  {
+    key: 'intention',
+    label: 'volonté',
+    title: 'wollen · vouloir',
+    formula: [
+      { text: 'wollen', role: 'stem' },
+      { text: '→ wollen', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Wir', role: 'subject' },
+      { text: 'wollen', role: 'finite' },
+      { text: 'am Samstag' },
+      { text: 'wandern.', role: 'stem' },
+    ],
+    note: 'wollen exprime une intention ou une volonté nette.',
+  },
+  {
+    key: 'wish',
+    label: 'souhait poli',
+    title: 'möchte · aimerais',
+    formula: [
+      { text: 'mögen', role: 'stem' },
+      { text: '→ möchte', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Ich', role: 'subject' },
+      { text: 'möchte', role: 'finite' },
+      { text: 'ein Wasser' },
+      { text: 'bestellen.', role: 'stem' },
+    ],
+    note: 'möchte est le Konjunktiv II de mögen, pas un infinitif distinct.',
+  },
+];
+
+const modalPresentRows = [
+  ['ich', 'kann', 'darf', 'muss', 'soll', 'will', 'mag', 'möchte'],
+  ['du', 'kannst', 'darfst', 'musst', 'sollst', 'willst', 'magst', 'möchtest'],
+  ['er / sie / es', 'kann', 'darf', 'muss', 'soll', 'will', 'mag', 'möchte'],
+  ['wir', 'können', 'dürfen', 'müssen', 'sollen', 'wollen', 'mögen', 'möchten'],
+  ['ihr', 'könnt', 'dürft', 'müsst', 'sollt', 'wollt', 'mögt', 'möchtet'],
+  ['sie / Sie', 'können', 'dürfen', 'müssen', 'sollen', 'wollen', 'mögen', 'möchten'],
+];
+
+const modalPreteritRows = [
+  ['ich', 'konnte', 'durfte', 'musste', 'sollte', 'wollte', 'mochte'],
+  ['du', 'konntest', 'durftest', 'musstest', 'solltest', 'wolltest', 'mochtest'],
+  ['er / sie / es', 'konnte', 'durfte', 'musste', 'sollte', 'wollte', 'mochte'],
+  ['wir', 'konnten', 'durften', 'mussten', 'sollten', 'wollten', 'mochten'],
+  ['ihr', 'konntet', 'durftet', 'musstet', 'solltet', 'wolltet', 'mochtet'],
+  ['sie / Sie', 'konnten', 'durften', 'mussten', 'sollten', 'wollten', 'mochten'],
+];
+
+const konjunktivOptions: WorkshopOption[] = [
+  {
+    key: 'wish',
+    label: 'souhait',
+    title: 'Dire ce que l’on aimerait',
+    formula: [
+      { text: 'haben', role: 'stem' },
+      { text: '→ hätte', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Ich', role: 'subject' },
+      { text: 'hätte', role: 'finite' },
+      { text: 'gern mehr Zeit.' },
+    ],
+    note: 'hätte gern exprime un souhait sans présenter la situation comme réelle.',
+  },
+  {
+    key: 'hypothesis',
+    label: 'hypothèse',
+    title: 'Imaginer une autre situation',
+    formula: [
+      { text: 'wenn + KII', role: 'stem' },
+      { text: '→ würde + infinitif', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Wenn' },
+      { text: 'ich', role: 'subject' },
+      { text: 'mehr Zeit' },
+      { text: 'hätte,', role: 'finite' },
+      { text: 'würde', role: 'finite' },
+      { text: 'ich', role: 'subject' },
+      { text: 'öfter' },
+      { text: 'lesen.', role: 'stem' },
+    ],
+    note: 'En allemand, les deux parties de cette hypothèse sont au Konjunktiv II.',
+  },
+  {
+    key: 'politeness',
+    label: 'politesse',
+    title: 'Formuler une demande avec tact',
+    formula: [
+      { text: 'können', role: 'stem' },
+      { text: '→ könntest', role: 'finite' },
+    ],
+    sentence: [
+      { text: 'Könntest', role: 'finite' },
+      { text: 'du', role: 'subject' },
+      { text: 'mir bitte' },
+      { text: 'helfen?', role: 'stem' },
+    ],
+    note: 'La forme en Konjunktiv II rend la demande plus polie.',
+  },
+  {
+    key: 'past',
+    label: 'irréel passé',
+    title: 'Imaginer un passé différent',
+    formula: [
+      { text: 'hätte / wäre', role: 'finite' },
+      { text: '+ Partizip II', role: 'stem' },
+    ],
+    sentence: [
+      { text: 'Wenn' },
+      { text: 'wir', role: 'subject' },
+      { text: 'früher' },
+      { text: 'losgefahren', role: 'stem' },
+      { text: 'wären,', role: 'finite' },
+      { text: 'hätten', role: 'finite' },
+      { text: 'wir', role: 'subject' },
+      { text: 'den Zug' },
+      { text: 'erreicht.', role: 'stem' },
+    ],
+    note: 'Pour l’irréel passé : hätte ou wäre au Konjunktiv II + participe passé.',
+  },
+];
+
+const konjunktivRows = [
+  ['ich', 'fände', 'wäre', 'hätte', 'würde'],
+  ['du', 'fändest', 'wärst', 'hättest', 'würdest'],
+  ['er / sie / es', 'fände', 'wäre', 'hätte', 'würde'],
+  ['wir', 'fänden', 'wären', 'hätten', 'würden'],
+  ['ihr', 'fändet', 'wäret', 'hättet', 'würdet'],
+  ['sie / Sie', 'fänden', 'wären', 'hätten', 'würden'],
+];
+---
+
+<section class:list={['cav', `cav-${slug}`]} data-cav-root={slug}>
+  {
+    slug === 'passe-compose' && (
+      <>
+        <header class="cav-rule">
+          <div>
+            <h2>Construis le <span lang="de">Perfekt</span> en deux décisions</h2>
+            <p>Choisis l’auxiliaire, puis forme correctement le participe passé.</p>
+          </div>
+          <p class="cav-formula" aria-label="Formule du passé composé">
+            <span class="cav-finite">haben / sein</span>
+            <span aria-hidden="true">+</span>
+            <span class="cav-stem">Partizip II</span>
+          </p>
+        </header>
+
+        <div class="cav-legend" aria-label="Code couleur de la fiche">
+          <span><span class="cav-legend-swatch cav-subject">sujet</span> jaune</span>
+          <span><span class="cav-legend-swatch cav-finite">verbe conjugué</span> rouge</span>
+          <span><span class="cav-legend-swatch cav-stem">radical ou participe</span> violet</span>
+          <span><span class="cav-legend-swatch cav-ending">marque</span> orange</span>
+        </div>
+
+        <section class="cav-workshop" aria-labelledby="perfect-workshop-title" data-cav-switcher>
+          <div class="cav-workshop-controls">
+            <h3 id="perfect-workshop-title">Atelier du participe</h3>
+            <p>Choisis un infinitif et observe comment ses morceaux s’assemblent.</p>
+            <div class="cav-button-list" role="group" aria-label="Choisir un verbe">
+              {perfectOptions.map((option, index) => (
+                <button
+                  type="button"
+                  data-cav-choice={option.key}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div class="cav-workshop-stage" aria-live="polite">
+            {perfectOptions.map((option, index) => (
+              <article data-cav-panel={option.key} hidden={index !== 0}>
+                <p class="cav-panel-label">{option.title}</p>
+                <p class="cav-build" lang="de">
+                  {option.formula.map((piece) => (
+                    <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                  ))}
+                </p>
+                <p class="cav-sentence" lang="de">
+                  {option.sentence.map((piece, pieceIndex) => (
+                    <>
+                      {pieceIndex > 0 && ' '}
+                      <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                    </>
+                  ))}
+                </p>
+                <p class="cav-note">{option.note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="cav-reference">
+          <div class="cav-section-heading">
+            <h3>Trois familles à reconnaître</h3>
+            <p>Le radical et la terminaison ne se comportent pas toujours de la même manière.</p>
+          </div>
+          <div class="cav-table-scroll" role="region" tabindex="0" aria-label="Familles de participes passés">
+            <table>
+              <caption>Formation du participe passé</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Famille</th>
+                  <th scope="col">Construction</th>
+                  <th scope="col">Exemple</th>
+                  <th scope="col">Repère</th>
+                </tr>
+              </thead>
+              <tbody>
+                {perfectRows.map((row) => (
+                  <tr>
+                    <th scope="row">{row.type}</th>
+                    <td class="cav-pattern" lang="de">{row.pattern}</td>
+                    <td class="cav-form-cell" lang="de">{row.example}</td>
+                    <td>{row.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="cav-contrast-grid" aria-label="Cas particuliers du participe passé">
+          <article>
+            <h3>Particule séparable</h3>
+            <p lang="de"><strong>ab</strong> + ge + hol + t → <strong>abgeholt</strong></p>
+            <p><strong>ge-</strong> se place après la particule.</p>
+          </article>
+          <article>
+            <h3>Préfixe inséparable</h3>
+            <p lang="de"><strong>besucht · verloren</strong></p>
+            <p><strong>be-, emp-, ent-, er-, ge-, miss-, ver-, zer-</strong> bloquent ge-.</p>
+          </article>
+          <article>
+            <h3>Infinitif en -ieren</h3>
+            <p lang="de"><strong>telefoniert</strong></p>
+            <p>La terminaison reste -t, mais il n’y a pas de ge-.</p>
+          </article>
+        </div>
+
+        <aside class="cav-tip cav-aux-guide">
+          <strong>Choisir l’auxiliaire</strong>
+          <div>
+            <p><span class="cav-finite" lang="de">haben</span> dans la plupart des cas, notamment avec un CVD.</p>
+            <p>
+              <span class="cav-finite" lang="de">sein</span> surtout pour un déplacement ou un changement d’état
+              sans CVD, ainsi qu’avec <span lang="de">sein · bleiben · werden</span>.
+            </p>
+            <small>
+              Compare : <span lang="de">Sie ist nach Bern gefahren.</span> ·
+              <span lang="de">Sie hat das Auto gefahren.</span>
+            </small>
+          </div>
+        </aside>
+      </>
+    )
+  }
+
+  {
+    slug === 'preterit' && (
+      <>
+        <header class="cav-rule">
+          <div>
+            <h2>Commence par les formes vraiment utiles</h2>
+            <p><span lang="de">war</span>, <span lang="de">hatte</span> et les formes des modaux reviennent très souvent.</p>
+          </div>
+          <div class="cav-formula-stack" aria-label="Deux manières de former le prétérit">
+            <p><span class="cav-stem">radical</span> + <span class="cav-ending">-te</span></p>
+            <p><span class="cav-stem">radical modifié</span> + terminaison</p>
+          </div>
+        </header>
+
+        <div class="cav-legend" aria-label="Code couleur de la fiche">
+          <span><span class="cav-legend-swatch cav-subject">sujet</span> jaune</span>
+          <span><span class="cav-legend-swatch cav-finite">forme conjuguée</span> rouge</span>
+          <span><span class="cav-legend-swatch cav-stem">radical</span> violet</span>
+          <span><span class="cav-legend-swatch cav-ending">marque du passé</span> orange</span>
+        </div>
+
+        <section class="cav-workshop" aria-labelledby="preterit-workshop-title" data-cav-switcher>
+          <div class="cav-workshop-controls">
+            <h3 id="preterit-workshop-title">Atelier du prétérit</h3>
+            <p>Compare une forme régulière avec quatre verbes fréquents.</p>
+            <div class="cav-button-list" role="group" aria-label="Choisir un verbe">
+              {preteritOptions.map((option, index) => (
+                <button
+                  type="button"
+                  data-cav-choice={option.key}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div class="cav-workshop-stage" aria-live="polite">
+            {preteritOptions.map((option, index) => (
+              <article data-cav-panel={option.key} hidden={index !== 0}>
+                <p class="cav-panel-label">{option.title}</p>
+                <p class="cav-build" lang="de">
+                  {option.formula.map((piece, pieceIndex) => (
+                    <>
+                      {pieceIndex > 0 && ' '}
+                      <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                    </>
+                  ))}
+                </p>
+                <p class="cav-sentence" lang="de">
+                  {option.sentence.map((piece, pieceIndex) => (
+                    <>
+                      {pieceIndex > 0 && ' '}
+                      <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                    </>
+                  ))}
+                </p>
+                <p class="cav-note">{option.note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="cav-reference">
+          <div class="cav-section-heading">
+            <h3>Le tableau de référence</h3>
+            <p>Apprends d’abord les colonnes <span lang="de">sein</span> et <span lang="de">haben</span>.</p>
+          </div>
+          <div class="cav-table-scroll" role="region" tabindex="0" aria-label="Conjugaison au prétérit">
+            <table data-source-image-replacement="tableaux du prétérit régulier et irrégulier">
+              <caption>Formes de machen, sein, haben, fahren et essen</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Sujet</th>
+                  <th scope="col" lang="de">machen</th>
+                  <th scope="col" lang="de">sein</th>
+                  <th scope="col" lang="de">haben</th>
+                  <th scope="col" lang="de">fahren</th>
+                  <th scope="col" lang="de">essen</th>
+                </tr>
+              </thead>
+              <tbody>
+                {preteritRows.map((row) => (
+                  <tr>
+                    <th scope="row" class="cav-subject-cell" lang="de">{row[0]}</th>
+                    {row.slice(1).map((form) => <td class="cav-form-cell" lang="de">{form}</td>)}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="cav-contrast-grid cav-contrast-grid-two">
+          <article>
+            <h3>Verbe faible</h3>
+            <p lang="de"><strong>machen → machte</strong></p>
+            <p>Le radical reste stable ; <strong>-te-</strong> marque le passé.</p>
+          </article>
+          <article>
+            <h3>Verbe fort</h3>
+            <p lang="de"><strong>fahren → fuhr</strong></p>
+            <p>La voyelle change et il n’y a pas de -te-. La forme s’apprend.</p>
+          </article>
+        </div>
+
+        <aside class="cav-tip">
+          <strong>Quel passé employer ?</strong>
+          <p>
+            Le <span lang="de">Perfekt</span> domine souvent dans la conversation. Le prétérit reste essentiel pour
+            <span lang="de">sein</span>, <span lang="de">haben</span>, les verbes de modalité et les récits écrits.
+          </p>
+        </aside>
+      </>
+    )
+  }
+
+  {
+    slug === 'verbes-de-modalite' && (
+      <>
+        <header class="cav-rule">
+          <div>
+            <h2>Le modal se conjugue, l’autre verbe reste à l’infinitif</h2>
+            <p>Le choix du modal précise la capacité, la permission, la nécessité, la consigne ou la volonté.</p>
+          </div>
+          <p class="cav-formula" aria-label="Formule d'une phrase avec un verbe de modalité">
+            <span class="cav-finite">modal conjugué</span>
+            <span aria-hidden="true">…</span>
+            <span class="cav-stem">infinitif sans zu</span>
+          </p>
+        </header>
+
+        <div class="cav-legend" aria-label="Code couleur de la fiche">
+          <span><span class="cav-legend-swatch cav-subject">sujet</span> jaune</span>
+          <span><span class="cav-legend-swatch cav-finite">modal conjugué</span> rouge</span>
+          <span><span class="cav-legend-swatch cav-stem">infinitif ou radical</span> violet</span>
+        </div>
+
+        <section class="cav-workshop cav-workshop-wide" aria-labelledby="modal-workshop-title" data-cav-switcher>
+          <div class="cav-workshop-controls">
+            <h3 id="modal-workshop-title">Quel sens veux-tu exprimer ?</h3>
+            <p>Choisis l’intention : l’atelier sélectionne le modal adapté.</p>
+            <div class="cav-button-list cav-button-list-compact" role="group" aria-label="Choisir une intention">
+              {modalOptions.map((option, index) => (
+                <button
+                  type="button"
+                  data-cav-choice={option.key}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div class="cav-workshop-stage" aria-live="polite">
+            {modalOptions.map((option, index) => (
+              <article data-cav-panel={option.key} hidden={index !== 0}>
+                <p class="cav-panel-label">{option.title}</p>
+                <p class="cav-build" lang="de">
+                  {option.formula.map((piece, pieceIndex) => (
+                    <>
+                      {pieceIndex > 0 && ' '}
+                      <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                    </>
+                  ))}
+                </p>
+                <p class="cav-sentence" lang="de">
+                  {option.sentence.map((piece, pieceIndex) => (
+                    <>
+                      {pieceIndex > 0 && ' '}
+                      <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                    </>
+                  ))}
+                </p>
+                <p class="cav-note">{option.note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="cav-reference cav-modal-tables" data-cav-switcher>
+          <div class="cav-section-heading cav-heading-with-controls">
+            <div>
+              <h3>Tableaux de conjugaison</h3>
+              <p>Compare les mêmes personnes dans les deux temps.</p>
+            </div>
+            <div class="cav-inline-tabs" role="group" aria-label="Choisir le temps du tableau">
+              <button type="button" data-cav-choice="present" aria-pressed="true">Présent</button>
+              <button type="button" data-cav-choice="past" aria-pressed="false">Prétérit</button>
+            </div>
+          </div>
+
+          <div data-cav-panel="present">
+            <div class="cav-table-scroll" role="region" tabindex="0" aria-label="Modaux au présent">
+              <table data-source-image-replacement="verbes de modalité au présent">
+                <caption>Les six modaux au présent et la forme möchte</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Sujet</th>
+                    <th scope="col" lang="de">können</th>
+                    <th scope="col" lang="de">dürfen</th>
+                    <th scope="col" lang="de">müssen</th>
+                    <th scope="col" lang="de">sollen</th>
+                    <th scope="col" lang="de">wollen</th>
+                    <th scope="col" lang="de">mögen</th>
+                    <th scope="col" lang="de">möchte</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {modalPresentRows.map((row) => (
+                    <tr>
+                      <th scope="row" class="cav-subject-cell" lang="de">{row[0]}</th>
+                      {row.slice(1).map((form) => <td class="cav-form-cell" lang="de">{form}</td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="cav-table-note">
+              <strong lang="de">möchte</strong> est le Konjunktiv II de <strong lang="de">mögen</strong>. On l’utilise
+              si souvent pour « aimerais » qu’il mérite sa propre colonne.
+            </p>
+          </div>
+
+          <div data-cav-panel="past" hidden>
+            <div class="cav-table-scroll" role="region" tabindex="0" aria-label="Modaux au prétérit">
+              <table data-source-image-replacement="verbes de modalité au prétérit">
+                <caption>Les six verbes de modalité au prétérit</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Sujet</th>
+                    <th scope="col" lang="de">können</th>
+                    <th scope="col" lang="de">dürfen</th>
+                    <th scope="col" lang="de">müssen</th>
+                    <th scope="col" lang="de">sollen</th>
+                    <th scope="col" lang="de">wollen</th>
+                    <th scope="col" lang="de">mögen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {modalPreteritRows.map((row) => (
+                    <tr>
+                      <th scope="row" class="cav-subject-cell" lang="de">{row[0]}</th>
+                      {row.slice(1).map((form) => <td class="cav-form-cell" lang="de">{form}</td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="cav-table-note">
+              Les formes reçoivent <strong>-te-</strong> et les terminaisons faibles. Avec
+              <span lang="de">können · dürfen · müssen</span>, l’Umlaut disparaît :
+              <span lang="de">konnte · durfte · musste</span>.
+            </p>
+          </div>
+        </section>
+
+        <div class="cav-contrast-grid">
+          <article>
+            <h3><span lang="de">müssen</span> ou <span lang="de">sollen</span> ?</h3>
+            <p><strong>müssen</strong> = nécessité. <strong>sollen</strong> = consigne ou attente transmise.</p>
+          </article>
+          <article>
+            <h3><span lang="de">sollen</span> ou <span lang="de">sollte</span> ?</h3>
+            <p><strong>soll</strong> transmet une demande ; <strong>sollte</strong> formule clairement un conseil.</p>
+          </article>
+          <article>
+            <h3>La négation change tout</h3>
+            <p><strong>nicht dürfen</strong> = interdit ; <strong>nicht müssen</strong> = ne pas être obligé.</p>
+          </article>
+        </div>
+      </>
+    )
+  }
+
+  {
+    slug === 'konjunktiv-ii' && (
+      <>
+        <header class="cav-rule">
+          <div>
+            <h2>Trois usages à maîtriser d’abord</h2>
+            <p>Un souhait, une hypothèse et une demande polie couvrent l’essentiel au niveau scolaire.</p>
+          </div>
+          <div class="cav-formula-stack" aria-label="Deux formations du Konjunktiv II">
+            <p><span class="cav-stem">forme directe</span> : <span class="cav-finite">hätte · wäre · könnte</span></p>
+            <p><span class="cav-finite">würde</span> + <span class="cav-stem">infinitif</span></p>
+          </div>
+        </header>
+
+        <div class="cav-legend" aria-label="Code couleur de la fiche">
+          <span><span class="cav-legend-swatch cav-subject">sujet</span> jaune</span>
+          <span><span class="cav-legend-swatch cav-finite">forme conjuguée</span> rouge</span>
+          <span><span class="cav-legend-swatch cav-stem">radical, infinitif ou participe</span> violet</span>
+        </div>
+
+        <section class="cav-workshop cav-workshop-wide" aria-labelledby="kii-workshop-title" data-cav-switcher>
+          <div class="cav-workshop-controls">
+            <h3 id="kii-workshop-title">Atelier de l’irréel</h3>
+            <p>Choisis l’intention avant de choisir la forme.</p>
+            <div class="cav-button-list cav-button-list-compact" role="group" aria-label="Choisir un usage">
+              {konjunktivOptions.map((option, index) => (
+                <button
+                  type="button"
+                  data-cav-choice={option.key}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div class="cav-workshop-stage" aria-live="polite">
+            {konjunktivOptions.map((option, index) => (
+              <article data-cav-panel={option.key} hidden={index !== 0}>
+                <p class="cav-panel-label">{option.title}</p>
+                <p class="cav-build" lang="de">
+                  {option.formula.map((piece, pieceIndex) => (
+                    <>
+                      {pieceIndex > 0 && ' '}
+                      <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                    </>
+                  ))}
+                </p>
+                <p class="cav-sentence" lang="de">
+                  {option.sentence.map((piece, pieceIndex) => (
+                    <>
+                      {pieceIndex > 0 && ' '}
+                      <span class={piece.role ? roleClasses[piece.role] : undefined}>{piece.text}</span>
+                    </>
+                  ))}
+                </p>
+                <p class="cav-note">{option.note}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <div class="cav-contrast-grid">
+          <article>
+            <h3>Formes très fréquentes</h3>
+            <p lang="de"><strong>wäre · hätte · könnte · müsste · sollte · möchte</strong></p>
+            <p>Elles sont courtes, distinctes et utiles : apprends-les comme des repères.</p>
+          </article>
+          <article>
+            <h3><span lang="de">würde</span> + infinitif</h3>
+            <p lang="de"><strong>Ich würde öfter lesen.</strong></p>
+            <p>Cette construction évite les formes rares ou identiques au prétérit.</p>
+          </article>
+          <article>
+            <h3>L’irréel dans le passé</h3>
+            <p lang="de"><strong>hätte gesagt · wäre gefahren</strong></p>
+            <p>Conjugue l’auxiliaire au Konjunktiv II et garde le participe passé.</p>
+          </article>
+        </div>
+
+        <section class="cav-reference">
+          <div class="cav-section-heading">
+            <h3>Tableau des formes fréquentes</h3>
+            <p>Beaucoup de verbes forts prennent un Umlaut quand c’est possible : <span lang="de">fand → fände</span>, mais <span lang="de">ging → ginge</span>.</p>
+          </div>
+          <div class="cav-table-scroll" role="region" tabindex="0" aria-label="Conjugaison au Konjunktiv II">
+            <table data-source-image-replacement="formation du Konjunktiv II">
+              <caption>Formes fréquentes du Konjunktiv II</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Sujet</th>
+                  <th scope="col" lang="de">finden</th>
+                  <th scope="col" lang="de">sein</th>
+                  <th scope="col" lang="de">haben</th>
+                  <th scope="col" lang="de">werden</th>
+                </tr>
+              </thead>
+              <tbody>
+                {konjunktivRows.map((row) => (
+                  <tr>
+                    <th scope="row" class="cav-subject-cell" lang="de">{row[0]}</th>
+                    {row.slice(1).map((form) => <td class="cav-form-cell" lang="de">{form}</td>)}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside class="cav-tip">
+          <strong>Et le discours indirect ?</strong>
+          <p>
+            C’est un emploi avancé. Le Konjunktiv I est normalement le premier choix ; le Konjunktiv II peut le
+            remplacer quand la forme du Konjunktiv I n’est pas distincte ou pour marquer davantage de distance :
+            <span lang="de">Unser Lehrer sagt, wir müssten noch viel lernen.</span>
+          </p>
+        </aside>
+      </>
+    )
+  }
+</section>
+
+<script>
+  const setupAdvancedConjugation = () => {
+    document.querySelectorAll<HTMLElement>('[data-cav-root]').forEach((root) => {
+      if (root.dataset.cavReady === 'true') return;
+      root.dataset.cavReady = 'true';
+
+      root.querySelectorAll<HTMLElement>('[data-cav-switcher]').forEach((switcher) => {
+        const buttons = Array.from(switcher.querySelectorAll<HTMLButtonElement>('[data-cav-choice]'));
+        const panels = Array.from(switcher.querySelectorAll<HTMLElement>('[data-cav-panel]'));
+
+        const activate = (key: string) => {
+          buttons.forEach((button) => {
+            button.setAttribute('aria-pressed', button.dataset.cavChoice === key ? 'true' : 'false');
+          });
+          panels.forEach((panel) => {
+            panel.hidden = panel.dataset.cavPanel !== key;
+          });
+        };
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const key = button.dataset.cavChoice;
+            if (key) activate(key);
+          });
+        });
+      });
+    });
+  };
+
+  setupAdvancedConjugation();
+  document.addEventListener('astro:page-load', setupAdvancedConjugation);
+</script>
+
+<style>
+  .cav {
+    --cav-accent: #2e6f75;
+    --cav-accent-soft: rgba(46, 111, 117, 0.11);
+    display: grid;
+    gap: clamp(16px, 2.6vw, 28px);
+    margin: 0;
+    color: var(--text);
+  }
+
+  .cav-preterit {
+    --cav-accent: #9a5c12;
+    --cav-accent-soft: rgba(154, 92, 18, 0.11);
+  }
+
+  .cav-verbes-de-modalite {
+    --cav-accent: #23699d;
+    --cav-accent-soft: rgba(35, 105, 157, 0.11);
+  }
+
+  .cav-konjunktiv-ii {
+    --cav-accent: #6e4598;
+    --cav-accent-soft: rgba(110, 69, 152, 0.11);
+  }
+
+  .cav :where(h2, h3, p) {
+    margin-top: 0;
+  }
+
+  .cav :where(button, table) {
+    font: inherit;
+  }
+
+  .cav-rule {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: clamp(18px, 3vw, 34px);
+    align-items: center;
+    padding: clamp(20px, 3.5vw, 34px);
+    border: 2px solid color-mix(in srgb, var(--cav-accent) 26%, white);
+    border-radius: 24px;
+    background:
+      linear-gradient(135deg, var(--cav-accent-soft), transparent 55%),
+      rgba(255, 255, 255, 0.94);
+    box-shadow: 0 16px 34px rgba(15, 26, 49, 0.09);
+  }
+
+  .cav-rule h2 {
+    max-width: 27ch;
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: clamp(1.38rem, 2.6vw, 2rem);
+    line-height: 1.16;
+  }
+
+  .cav-rule > div > p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  .cav-formula,
+  .cav-formula-stack {
+    margin-bottom: 0;
+    padding: 18px;
+    border: 2px solid color-mix(in srgb, var(--grammar-tail) 20%, white);
+    border-radius: 18px;
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.98), var(--grammar-tail-soft));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .cav-formula {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1rem, 2vw, 1.32rem);
+  }
+
+  .cav-formula-stack {
+    display: grid;
+    gap: 8px;
+  }
+
+  .cav-formula-stack p {
+    margin-bottom: 0;
+  }
+
+  .cav-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    align-items: center;
+    padding: 0 4px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .cav-legend > span {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .cav-legend-swatch,
+  .cav-sentence :where(.cav-subject, .cav-finite, .cav-stem),
+  .cav-build :where(.cav-subject, .cav-finite, .cav-stem, .cav-ending) {
+    display: inline-block;
+    padding: 0.08em 0.32em;
+    border-radius: 0.42em;
+  }
+
+  .cav-subject {
+    color: var(--grammar-nominative);
+    background: var(--grammar-nominative-soft);
+  }
+
+  .cav-finite {
+    color: var(--grammar-verb);
+    background: var(--grammar-verb-soft);
+  }
+
+  .cav-stem {
+    color: var(--grammar-tail);
+    background: var(--grammar-tail-soft);
+  }
+
+  .cav-ending {
+    color: var(--grammar-ending);
+    background: var(--grammar-ending-soft);
+  }
+
+  .cav-workshop {
+    display: grid;
+    grid-template-columns: minmax(210px, 0.7fr) minmax(0, 1.3fr);
+    overflow: hidden;
+    border: 2px solid color-mix(in srgb, var(--cav-accent) 24%, white);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 14px 34px rgba(15, 26, 49, 0.08);
+  }
+
+  .cav-workshop-wide {
+    grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .cav-workshop-controls {
+    padding: clamp(18px, 3vw, 28px);
+    border-right: 2px solid color-mix(in srgb, var(--cav-accent) 18%, white);
+    background: linear-gradient(160deg, var(--cav-accent-soft), rgba(255, 255, 255, 0.92));
+  }
+
+  .cav-workshop-controls h3 {
+    margin-bottom: 4px;
+    color: var(--ink);
+    font-size: 1.25rem;
+  }
+
+  .cav-workshop-controls > p {
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.45;
+  }
+
+  .cav-button-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .cav-button-list-compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cav-button-list button,
+  .cav-inline-tabs button {
+    min-height: 42px;
+    border: 2px solid color-mix(in srgb, var(--cav-accent) 25%, white);
+    border-radius: 11px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.92);
+    font-weight: 800;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+      transform 150ms ease,
+      border-color 150ms ease,
+      background-color 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+  .cav-button-list button {
+    padding: 9px 12px;
+    text-align: left;
+  }
+
+  .cav-button-list button:hover,
+  .cav-inline-tabs button:hover {
+    border-color: var(--cav-accent);
+    transform: translateY(-1px);
+  }
+
+  .cav-button-list button[aria-pressed='true'],
+  .cav-inline-tabs button[aria-pressed='true'] {
+    border-color: var(--grammar-nominative);
+    background: linear-gradient(135deg, var(--grammar-nominative-soft), rgba(255, 255, 255, 0.98));
+    box-shadow: 0 6px 0 rgba(118, 82, 11, 0.12);
+  }
+
+  .cav-button-list button:focus-visible,
+  .cav-inline-tabs button:focus-visible,
+  .cav-table-scroll:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  .cav-workshop-stage {
+    display: grid;
+    min-height: 300px;
+    padding: clamp(22px, 4vw, 42px);
+    place-items: center;
+    background-image:
+      linear-gradient(rgba(67, 56, 161, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(67, 56, 161, 0.05) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .cav-workshop-stage article {
+    width: min(100%, 670px);
+    text-align: center;
+  }
+
+  [data-cav-panel][hidden] {
+    display: none;
+  }
+
+  .cav-panel-label {
+    margin-bottom: 10px;
+    color: var(--cav-accent);
+    font-weight: 900;
+    letter-spacing: 0.01em;
+  }
+
+  .cav-build {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    font-size: clamp(1.12rem, 2.5vw, 1.55rem);
+    font-weight: 900;
+  }
+
+  .cav-sentence {
+    margin-bottom: 18px;
+    color: var(--ink);
+    font-size: clamp(1.24rem, 3.1vw, 2rem);
+    font-weight: 850;
+    line-height: 1.55;
+  }
+
+  .cav-note {
+    max-width: 58ch;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .cav-reference {
+    display: grid;
+    gap: 14px;
+  }
+
+  .cav-section-heading {
+    padding-inline: 4px;
+  }
+
+  .cav-section-heading h3 {
+    margin-bottom: 4px;
+    color: var(--ink);
+    font-size: 1.25rem;
+  }
+
+  .cav-section-heading p {
+    margin-bottom: 0;
+    color: var(--muted);
+  }
+
+  .cav-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    border: 2px solid color-mix(in srgb, var(--cav-accent) 22%, white);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 12px 28px rgba(15, 26, 49, 0.07);
+  }
+
+  .cav table {
+    width: 100%;
+    min-width: 660px;
+    border-collapse: collapse;
+    line-height: 1.35;
+  }
+
+  .cav caption {
+    padding: 13px 16px;
+    color: var(--ink);
+    background: var(--cav-accent-soft);
+    font-weight: 900;
+    text-align: left;
+  }
+
+  .cav th,
+  .cav td {
+    padding: 11px 13px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  .cav tr > :last-child {
+    border-right: 0;
+  }
+
+  .cav tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+
+  .cav thead th {
+    color: var(--ink);
+    background: rgba(238, 244, 255, 0.9);
+    font-size: 0.86rem;
+  }
+
+  .cav tbody tr:nth-child(even) td {
+    background: rgba(246, 249, 255, 0.72);
+  }
+
+  .cav tbody th {
+    color: var(--cav-accent);
+    background: color-mix(in srgb, var(--cav-accent-soft) 72%, white);
+  }
+
+  .cav-subject-cell {
+    color: var(--grammar-nominative) !important;
+    background: var(--grammar-nominative-soft) !important;
+  }
+
+  .cav-form-cell {
+    color: var(--grammar-verb);
+    font-weight: 800;
+  }
+
+  .cav-pattern {
+    color: var(--grammar-tail);
+    font-weight: 800;
+  }
+
+  .cav-contrast-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .cav-contrast-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cav-contrast-grid article {
+    padding: 18px;
+    border: 2px solid color-mix(in srgb, var(--cav-accent) 18%, white);
+    border-top: 5px solid var(--cav-accent);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .cav-contrast-grid h3 {
+    margin-bottom: 8px;
+    color: var(--cav-accent);
+    font-size: 1.03rem;
+  }
+
+  .cav-contrast-grid p {
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+
+  .cav-contrast-grid p:last-child {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.91rem;
+  }
+
+  .cav-tip {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.25fr) minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    padding: 17px 20px;
+    border-left: 6px solid var(--cav-accent);
+    border-radius: 14px;
+    background: linear-gradient(110deg, var(--cav-accent-soft), rgba(255, 255, 255, 0.93));
+  }
+
+  .cav-tip strong {
+    color: var(--cav-accent);
+  }
+
+  .cav-tip p {
+    margin-bottom: 0;
+  }
+
+  .cav-aux-guide > div {
+    display: grid;
+    gap: 6px;
+  }
+
+  .cav-aux-guide small {
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  .cav-heading-with-controls {
+    display: flex;
+    gap: 18px;
+    align-items: end;
+    justify-content: space-between;
+  }
+
+  .cav-inline-tabs {
+    display: inline-flex;
+    gap: 7px;
+    flex: 0 0 auto;
+  }
+
+  .cav-inline-tabs button {
+    min-width: 104px;
+    padding: 8px 13px;
+  }
+
+  .cav-table-note {
+    margin: 10px 4px 0;
+    color: var(--muted);
+    font-size: 0.91rem;
+  }
+
+  @media (max-width: 820px) {
+    .cav-rule,
+    .cav-workshop,
+    .cav-workshop-wide {
+      grid-template-columns: 1fr;
+    }
+
+    .cav-workshop-controls {
+      border-right: 0;
+      border-bottom: 2px solid color-mix(in srgb, var(--cav-accent) 18%, white);
+    }
+
+    .cav-button-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cav-contrast-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cav-contrast-grid-two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 620px) {
+    .cav {
+      gap: 16px;
+    }
+
+    .cav-rule {
+      padding: 18px;
+      border-radius: 18px;
+    }
+
+    .cav-formula {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .cav-button-list,
+    .cav-button-list-compact {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cav-button-list button {
+      text-align: center;
+    }
+
+    .cav-workshop {
+      border-radius: 18px;
+    }
+
+    .cav-workshop-stage {
+      min-height: 275px;
+      padding: 24px 16px;
+    }
+
+    .cav-sentence {
+      font-size: 1.2rem;
+    }
+
+    .cav-heading-with-controls {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .cav-inline-tabs {
+      width: 100%;
+    }
+
+    .cav-inline-tabs button {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cav-contrast-grid-two {
+      grid-template-columns: 1fr;
+    }
+
+    .cav-tip {
+      grid-template-columns: 1fr;
+      gap: 5px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cav button {
+      scroll-behavior: auto;
+      transition: none;
+    }
+  }
+</style>

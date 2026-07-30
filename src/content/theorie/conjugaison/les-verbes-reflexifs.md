@@ -1,11 +1,13 @@
 ---
 title: "Les verbes réflexifs"
-description: "Un verbe pronominal est un verbe dont la conjugaison s’accompagne d’un pronom réfléchi (ex. je me lave)."
+description: "Accorde le pronom réfléchi avec le sujet et choisis son cas."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/les-verbes-r%C3%A9flexifs"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "Choisir le pronom réfléchi adapté au sujet"
+  - "Distinguer l’accusatif du datif"
 externalLinks: []
 images: []
 migrationNotes: []
@@ -37,12 +39,12 @@ Seules les deux premières personnes, **ich** et **du**, ont une forme différen
 
 ## Accusatif
 
-Le pronom réfléchi est à l’accusatif s’il n’y a pas de CVD.
+Le pronom réfléchi est généralement à l’accusatif lorsqu’il est le complément direct du verbe.
 
 Exemple : Il s’énerve. = Er ärgert sich.
 
 ## Datif
 
-Le pronom réfléchi est au datif s’il y a un CVD.
+Le pronom réfléchi est au datif lorsqu’un autre groupe est déjà complément direct.
 
 Exemple : Je me lave les cheveux. = Ich wasche mir die Haare.

@@ -1,19 +1,23 @@
 ---
 title: "Futur"
-description: "En allemand, le futur est un temps composé. On utilise l’auxiliaire werden conjugué au présent ainsi que l’infinitif du verbe principal."
+description: "Exprime un projet avec le présent ou avec werden + infinitif."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/futur"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "Conjuguer werden au présent"
+  - "Placer l’infinitif à la fin de la phrase"
 externalLinks: []
 images: []
 migrationNotes: []
 ---
 
-L’auxiliaire, en tant que verbe conjugué, se place en 2e position et l’infinitif du verbe principal, qui reste invariable, se place à la fin de la phrase.
+Pour former le Futur I, **werden** est conjugué et se place en deuxième position ; le verbe qui exprime l’action reste à l’infinitif et se place à la fin.
 
 Exemple : Je mangerai une pomme. = Ich werde einen Apfel essen.
+
+Lorsque le moment est déjà clair, l’allemand emploie souvent le présent : **Morgen esse ich bei Oma.**
 
 ## Conjugaison de werden
 

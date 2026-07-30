@@ -63,6 +63,14 @@ const MANUALLY_REVIEWED_REWRITES = new Map([
     'Introduction condensée en une méthode en trois questions ; les neuf fiches restent toutes accessibles.',
   ],
   [
+    'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe',
+    'Les treize fiches restent accessibles, regroupées par construction ; les connecteurs allemands sont devenus les repères principaux.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison',
+    'Les huit fiches et les repères de progression sont conservés dans trois parcours plus courts, avec les outils de révision.',
+  ],
+  [
     'https://www.allemandbercher.ch/th%C3%A9orie/grammaire/le-comparatif',
     'Règles et exemples conservés sous une formulation plus courte, avec un entraînement natif.',
   ],
@@ -109,6 +117,38 @@ const MANUALLY_REVIEWED_REWRITES = new Map([
   [
     'https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-phrases-au-pass%C3%A9-compos%C3%A9',
     'Règle de la pince verbale et exemples conservés, avec un exercice recentré sur l’ordre des mots.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9sent',
+    'Terminaisons et changements de radical conservés dans une fiche courte, avec tableau sémantique et exercices natifs.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/imp%C3%A9ratif',
+    'Les quatre personnes et les particularités de la forme du sont conservées et clarifiées, avec entraînement natif.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pass%C3%A9-compos%C3%A9',
+    'Auxiliaires, participes faibles, forts, mixtes et préfixes conservés dans une progression interactive.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9t%C3%A9rit',
+    'Formation faible, formes fortes et formes usuelles de sein, haben et des modaux sont conservées et hiérarchisées.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/futur',
+    'Werden et l’infinitif final sont conservés ; l’emploi fréquent du présent pour l’avenir est ajouté.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/verbes-de-modalit%C3%A9',
+    'Sens, présent, prétérit et syntaxe des six modaux sont conservés ; möchte est correctement présenté comme Konjunktiv II.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/les-verbes-r%C3%A9flexifs',
+    'Tableau complet et opposition accusatif-datif conservés, avec exemples qui distinguent clairement les deux cas.',
+  ],
+  [
+    'https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/konjunktiv-ii',
+    'Souhait, hypothèse, politesse, formes directes, würde et passé sont conservés ; le discours indirect est nuancé.',
   ],
 ]);
 

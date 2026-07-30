@@ -1,19 +1,19 @@
 ---
 title: "Verbes de modalité"
-description: "Les verbes de modalité sont les verbes auxquels on peut ajouter un autre verbe à l’infinitif."
+description: "Choisis le modal qui exprime la bonne intention et conjugue-le."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/verbes-de-modalit%C3%A9"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "Distinguer le sens des six verbes modaux"
+  - "Conjuguer le modal et garder l’infinitif à la fin"
 externalLinks: []
 images: []
 migrationNotes: []
 ---
 
-Ex. pouvoir faire, devoir manger, vouloir aller, etc.
-
-⚠️ Le verbe aimer peut être normal (aimer qch ou qn) ou modal (aimer faire qch).
+Les six verbes modaux sont **dürfen, können, mögen, müssen, sollen** et **wollen**. Ils précisent notamment une permission, une capacité, une obligation ou une volonté.
 
 La syntaxe des phrases qui contiennent un verbe de modalité est différente en allemand. Elle est expliquée sur la page consacrée aux [phrases avec un verbe de modalité](../../syntaxe/les-phrases-avec-verbe-de-modalite/).
 
@@ -37,9 +37,9 @@ Comme on utilise ces verbes très souvent, il vaut la peine d’apprendre leur c
     <tr><td>pouvoir, avoir le droit de</td><td>dürfen</td><td>darf</td><td>darfst</td><td>darf</td></tr>
     <tr><td>vouloir</td><td>wollen</td><td>will</td><td>willst</td><td>will</td></tr>
     <tr><td>aimer</td><td>mögen</td><td>mag</td><td>magst</td><td>mag</td></tr>
-    <tr><td>aimer au conditionnel, « aimerais »</td><td>mögen (forme möchte)</td><td>möchte</td><td>möchtest</td><td>möchte</td></tr>
+    <tr><td>aimerais, souhait poli</td><td>mögen au Konjunktiv II</td><td>möchte</td><td>möchtest</td><td>möchte</td></tr>
     <tr><td>devoir, exprimer une obligation</td><td>müssen</td><td>muss</td><td>musst</td><td>muss</td></tr>
-    <tr><td>devoir au sens moral, donner un conseil</td><td>sollen</td><td>soll</td><td>sollst</td><td>soll</td></tr>
+    <tr><td>devoir selon une consigne ou quelqu’un</td><td>sollen</td><td>soll</td><td>sollst</td><td>soll</td></tr>
   </tbody>
 </table>
 

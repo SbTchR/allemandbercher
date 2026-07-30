@@ -80,131 +80,110 @@ const routeCards: Record<Category, RouteCard[]> = {
   syntaxe: [
     {
       slug: 'la-place-du-verbe-principal',
-      title: 'Les phrases « normales »',
-      problem: 'Placer le verbe conjugué dans une phrase affirmative.',
-      example: 'Heute spiele ich Fussball.',
+      title: 'Phrase affirmative',
+      problem: 'Verbe conjugué en 2e position',
     },
     {
       slug: 'les-questions',
-      title: 'Les questions',
-      problem: 'Construire une question avec ou sans mot interrogatif.',
-      example: 'Wo wohnst du? · Kommst du?',
+      title: 'Questions',
+      problem: 'Mot interrogatif ou verbe en premier',
     },
     {
       slug: 'les-phrases-avec-verbe-de-modalite',
-      title: 'Les verbes de modalité',
-      problem: 'Placer le verbe modal et l’infinitif.',
-      example: 'können · mögen · müssen · dürfen',
+      title: 'Verbes de modalité',
+      problem: 'Modal en 2e position · infinitif à la fin',
     },
     {
       slug: 'les-phrases-au-passe-compose',
-      title: 'Les phrases au passé composé',
-      problem: 'Placer l’auxiliaire et le participe passé.',
-      example: 'j’ai fait · je suis allé',
+      title: 'Passé composé',
+      problem: 'Perfekt · auxiliaire et participe passé',
     },
     {
       slug: 'und-oder-aber-denn-also',
-      title: 'Les connecteurs « rien de spécial »',
-      problem: 'Relier deux phrases sans changer la place habituelle du verbe.',
-      example: 'und · oder · aber · denn',
+      title: 'und · oder · aber · denn',
+      problem: 'L’ordre habituel ne change pas',
     },
     {
       slug: 'trotzdem-deshalb',
-      title: 'Connecteurs avec inversion',
-      problem: 'Placer le verbe juste après le connecteur.',
-      example: 'trotzdem · deshalb · also',
+      title: 'trotzdem · deshalb · also',
+      problem: 'Connecteur, puis verbe conjugué',
     },
     {
       slug: 'weil',
-      title: 'Subordonnées avec verbe à la fin',
-      problem: 'Donner une raison en envoyant le verbe à la fin.',
-      example: 'weil',
+      title: 'weil',
+      problem: 'parce que · verbe à la fin',
     },
     {
       slug: 'wenn',
-      title: 'Quand ou si',
-      problem: 'Exprimer une condition ou une situation répétée.',
-      example: 'wenn',
+      title: 'wenn',
+      problem: 'si / quand · verbe à la fin',
     },
     {
       slug: 'dass',
-      title: 'Dire ce que l’on pense',
-      problem: 'Introduire une idée ou une opinion.',
-      example: 'dass',
+      title: 'dass',
+      problem: 'que · verbe à la fin',
     },
     {
       slug: 'damit-wahrend-bevor-nachdem-als-obwohl',
-      title: 'Autres subordonnées',
-      problem: 'Exprimer le but, le temps, l’opposition ou la concession.',
-      example: 'damit · während · bevor · nachdem · als · obwohl',
+      title: 'damit · während · bevor · nachdem · als · obwohl',
+      problem: 'But, temps ou opposition',
     },
     {
       slug: 'les-infinitives',
-      title: 'Les subordonnées infinitives',
-      problem: 'Construire une proposition avec un infinitif.',
-      example: 'zu · um … zu · anstatt … zu',
+      title: 'zu · um … zu · anstatt … zu',
+      problem: 'Construire un groupe infinitif',
     },
     {
       slug: 'les-subordonnees-relatives',
-      title: 'Les subordonnées relatives',
-      problem: 'Ajouter une information sur une personne ou une chose.',
-      example: 'la personne qui… · le livre que…',
+      title: 'Relatives',
+      problem: 'Préciser un nom · verbe à la fin',
     },
     {
       slug: 'les-questions-indirectes',
-      title: 'Les questions indirectes',
-      problem: 'Rapporter une question dans une phrase.',
-      example: 'où il habite · ce qu’elle fait',
+      title: 'Questions indirectes',
+      problem: 'Rapporter une question · verbe à la fin',
     },
   ],
   conjugaison: [
     {
       slug: 'present',
-      title: 'Le présent',
-      problem: 'Conjuguer ce qui se passe maintenant ou régulièrement.',
-      example: 'ich spiele · du spielst',
+      title: 'Präsens',
+      problem: 'Présent · maintenant ou régulièrement',
     },
     {
       slug: 'preterit',
-      title: 'Le prétérit',
-      problem: 'Employer les formes du passé, notamment sein et haben.',
-      example: 'ich war · ich hatte',
+      title: 'Präteritum',
+      problem: 'Prétérit · surtout sein et haben',
     },
     {
       slug: 'passe-compose',
-      title: 'Le passé composé',
-      problem: 'Construire le Perfekt avec haben ou sein.',
-      example: 'ich habe gespielt · ich bin gegangen',
+      title: 'Perfekt',
+      problem: 'Passé composé · haben/sein + participe',
     },
     {
       slug: 'imperatif',
-      title: 'L’impératif',
-      problem: 'Donner un ordre ou une consigne.',
-      example: 'Komm! · Kommt! · Kommen Sie!',
+      title: 'Imperativ',
+      problem: 'Impératif · donner une consigne',
     },
     {
       slug: 'futur',
-      title: 'Le futur',
-      problem: 'Parler de ce qui va se passer.',
-      example: 'ich werde lernen',
+      title: 'Futur I',
+      problem: 'Futur · werden + infinitif',
     },
     {
       slug: 'verbes-de-modalite',
-      title: 'Les verbes de modalité',
-      problem: 'Exprimer une possibilité, une obligation ou une volonté.',
-      example: 'können · müssen · wollen',
+      title: 'Modalverben',
+      problem: 'Pouvoir, devoir, vouloir…',
     },
     {
       slug: 'les-verbes-reflexifs',
-      title: 'Les verbes réflexifs',
-      problem: 'Conjuguer un verbe accompagné d’un pronom réfléchi.',
-      example: 'ich freue mich',
+      title: 'Reflexive Verben',
+      problem: 'Avec mich, dich, sich…',
     },
     {
       slug: 'konjunktiv-ii',
-      title: 'Le Konjunktiv II',
-      problem: 'Exprimer un souhait, une hypothèse ou une demande polie.',
-      example: 'ich hätte gern · ich würde',
+      title: 'Konjunktiv II',
+      problem: 'Souhait, hypothèse ou politesse',
     },
   ],
 };
@@ -242,6 +221,64 @@ const grammarGroups = [
 ];
 const groupedGrammarSlugs = new Set(grammarGroups.flatMap((group) => group.slugs));
 const otherGrammarCards = cards.filter((card) => !groupedGrammarSlugs.has(card.slug));
+const syntaxGroups = [
+  {
+    number: '1',
+    title: 'Construire une phrase',
+    note: 'Choisis la construction.',
+    tone: 'build',
+    slugs: [
+      'la-place-du-verbe-principal',
+      'les-questions',
+      'les-phrases-avec-verbe-de-modalite',
+      'les-phrases-au-passe-compose',
+    ],
+  },
+  {
+    number: '2',
+    title: 'Relier deux phrases',
+    note: 'Choisis le bon lien.',
+    tone: 'connect',
+    slugs: ['und-oder-aber-denn-also', 'trotzdem-deshalb'],
+  },
+  {
+    number: '3',
+    title: 'Verbe à la fin',
+    note: 'Repère la conjonction.',
+    tone: 'verb-end',
+    slugs: ['weil', 'wenn', 'dass', 'damit-wahrend-bevor-nachdem-als-obwohl'],
+  },
+  {
+    number: '4',
+    title: 'Structures avancées',
+    note: 'Pour aller plus loin.',
+    tone: 'advanced',
+    slugs: ['les-infinitives', 'les-subordonnees-relatives', 'les-questions-indirectes'],
+  },
+] as const;
+const conjugationGroups = [
+  {
+    number: '1',
+    title: 'Conjuguer maintenant',
+    note: 'Sujet, consigne ou type de verbe.',
+    tone: 'now',
+    slugs: ['present', 'imperatif', 'verbes-de-modalite', 'les-verbes-reflexifs'],
+  },
+  {
+    number: '2',
+    title: 'Situer dans le temps',
+    note: 'Passé ou futur.',
+    tone: 'time',
+    slugs: ['passe-compose', 'preterit', 'futur'],
+  },
+  {
+    number: '3',
+    title: 'Exprimer l’irréel',
+    note: 'Souhait, hypothèse ou politesse.',
+    tone: 'irrealis',
+    slugs: ['konjunktiv-ii'],
+  },
+] as const;
 ---
 
 {
@@ -341,38 +378,15 @@ const otherGrammarCards = cards.filter((card) => !groupedGrammarSlugs.has(card.s
 {
   category === 'syntaxe' && (
     <section class="content-band theory-category-guide" aria-labelledby="syntax-guide-title">
-      <p class="home-section-label">Commence par lire ceci</p>
-      <h2 id="syntax-guide-title">L’ordre des mots dans la phrase</h2>
+      <p class="home-section-label">Repère express</p>
+      <h2 id="syntax-guide-title">Le verbe donne la structure</h2>
       <p class="category-guide-lead">
-        La syntaxe règle la question de l’ordre des mots. En allemand, la difficulté principale consiste à mettre le
-        verbe au bon endroit.
+        Cherche d’abord le mot qui relie les idées : il t’indique souvent où placer le verbe.
       </p>
-
-      <p>On distingue les types de phrases suivants :</p>
-      <div class="phrase-type-grid category-phrase-types">
-        <article>
-          <strong>La phrase affirmative (phrase « normale »)</strong>
-          <p>Le verbe conjugué occupe la deuxième position.</p>
-        </article>
-        <article>
-          <strong>La phrase interrogative (question)</strong>
-          <p>Le verbe suit le mot interrogatif ou ouvre la question.</p>
-        </article>
-        <article>
-          <strong>La phrase impérative (ordre)</strong>
-          <p>Le verbe sert à donner un ordre ou une consigne.</p>
-        </article>
-        <article>
-          <strong>La phrase subordonnée (phrase dans la phrase)</strong>
-          <p>Certains connecteurs envoient le verbe conjugué à la fin.</p>
-        </article>
-      </div>
-
-      <p>Pour chaque type de phrase, il y a des règles différentes concernant la place du verbe.</p>
 
       <div class="syntax-role-legend" aria-label="Code couleur de la syntaxe">
         <span><span class="role-chip mark-subject">sujet</span> jaune</span>
-        <span><span class="role-chip mark-verb">verbe principal</span> rouge</span>
+        <span><span class="role-chip mark-verb">verbe conjugué</span> rouge</span>
         <span><span class="role-chip mark-object">complément</span> bleu</span>
         <span><span class="role-chip mark-verbal-tail">forme verbale finale</span> violet</span>
       </div>
@@ -389,24 +403,128 @@ const otherGrammarCards = cards.filter((card) => !groupedGrammarSlugs.has(card.s
           <small>Peter doit ranger sa chambre · verbe modal + infinitif</small>
         </article>
       </div>
+    </section>
+  )
+}
 
-      <div class="category-guide-note">
-        <strong>Attention au vocabulaire utilisé</strong>
-        <p>Dans ces cas de figure, il y a toujours :</p>
-        <ul>
-          <li>un verbe principal, celui qui est conjugué avec le sujet ;</li>
-          <li>une forme verbale invariable, soit le participe passé ou un verbe à l’infinitif.</li>
-        </ul>
-        <p>Dans ces cas de figure, il y a toujours un verbe principal et une forme verbale invariable.</p>
-        <p>
-          Le <span class="mark-verb">verbe principal</span> est toujours celui qui est conjugué avec le sujet. La
-          <span class="mark-verbal-tail">forme verbale finale</span> est un infinitif, un participe passé ou une particule
-          séparable.
-        </p>
-        <p>
-          <strong>Attention :</strong> lorsqu’on parle de « verbe principal », il s’agit toujours du verbe qui est
-          conjugué avec le sujet !
-        </p>
+{
+  category === 'conjugaison' && (
+    <section class="conjugation-overview" aria-labelledby="conjugation-guide-title">
+      <header class="conjugation-overview__header">
+        <h2 id="conjugation-guide-title">Conjuguer le verbe avec son sujet</h2>
+        <p>Le verbe change selon le sujet et le temps. Va directement à la fiche dont tu as besoin.</p>
+      </header>
+
+      <div class="conjugation-overview__support">
+        <section class="conjugation-progress" aria-labelledby="conjugation-progress-title">
+          <h3 id="conjugation-progress-title">Progression</h3>
+          <div class="conjugation-progress__steps">
+            <p><strong>7–8H</strong><span lang="de">Präsens</span></p>
+            <p><strong>9H</strong><span lang="de">Imperativ · Perfekt</span></p>
+            <p><strong>11H</strong><span lang="de">Futur I · Konjunktiv II</span></p>
+          </div>
+        </section>
+
+        <aside class="conjugation-tools" aria-labelledby="conjugation-tools-title">
+          <div>
+            <h3 id="conjugation-tools-title">Réviser les verbes</h3>
+            <p>Une liste et des jeux rapides.</p>
+          </div>
+          <nav aria-label="Outils pour réviser les verbes">
+            <a href="https://quizlet.com/355592036/" rel="noreferrer" target="_blank">
+              <span><strong>Quizlet</strong><small>Liste de verbes</small></span>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path d="M5 12h13M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="https://www.blooket.com/set/62b174c039f42a8920c474b3" rel="noreferrer" target="_blank">
+              <span><strong>Blooket</strong><small>Jeux rapides</small></span>
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+                <path d="M5 12h13M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </nav>
+        </aside>
+      </div>
+    </section>
+  )
+}
+
+{
+  category === 'syntaxe' && (
+    <section class="syntax-problem-index" aria-labelledby="syntaxe-problem-title">
+      <header class="syntax-problem-index__header">
+        <h2 id="syntaxe-problem-title">Quel est ton problème&nbsp;?</h2>
+      </header>
+
+      <div class="syntax-route-groups">
+        {
+          syntaxGroups.map((group) => (
+            <section
+              class={`syntax-route-group syntax-route-group--${group.tone}`}
+              aria-labelledby={`syntax-group-${group.number}`}
+            >
+              <header class="syntax-route-group__intro">
+                <span class="syntax-route-group__number" aria-hidden="true">{group.number}</span>
+                <div>
+                  <h3 id={`syntax-group-${group.number}`}>{group.title}</h3>
+                  <p>{group.note}</p>
+                </div>
+              </header>
+
+              <div class={`syntax-route-list syntax-route-list--${group.tone}`}>
+                {
+                  group.slugs.map((slug) => {
+                    const card = cards.find((candidate) => candidate.slug === slug);
+                    const entry = entryMap.get(slug);
+                    if (!card || !entry) return null;
+
+                    const isFeatured = slug === 'weil';
+                    const isKeyword = ['weil', 'wenn', 'dass'].includes(slug);
+                    const isLong =
+                      slug === 'damit-wahrend-bevor-nachdem-als-obwohl' ||
+                      slug === 'les-infinitives';
+                    const isGermanTitle = [
+                      'und-oder-aber-denn-also',
+                      'trotzdem-deshalb',
+                      'weil',
+                      'wenn',
+                      'dass',
+                      'damit-wahrend-bevor-nachdem-als-obwohl',
+                      'les-infinitives',
+                    ].includes(slug);
+
+                    return (
+                      <a
+                        class:list={[
+                          'syntax-route-card',
+                          isFeatured && 'syntax-route-card--featured',
+                          isKeyword && 'syntax-route-card--keyword',
+                          isLong && 'syntax-route-card--long',
+                        ]}
+                        href={resourceUrl(entry)}
+                      >
+                        <span class="syntax-route-card__copy">
+                          <strong lang={isGermanTitle ? 'de' : undefined}>{card.title}</strong>
+                          <small>{card.problem}</small>
+                        </span>
+                        <svg
+                          class="syntax-route-card__arrow"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                          aria-hidden="true"
+                        >
+                          <path d="M5 12h13M13 6l6 6-6 6" />
+                        </svg>
+                      </a>
+                    );
+                  })
+                }
+              </div>
+            </section>
+          ))
+        }
       </div>
     </section>
   )
@@ -414,90 +532,847 @@ const otherGrammarCards = cards.filter((card) => !groupedGrammarSlugs.has(card.s
 
 {
   category === 'conjugaison' && (
-    <section class="content-band theory-category-guide" aria-labelledby="conjugation-guide-title">
-      <p class="home-section-label">Repères de progression</p>
-      <h2 id="conjugation-guide-title">Conjuguer le verbe avec son sujet</h2>
-      <p class="category-guide-lead">
-        Le verbe est le cœur de la phrase : plus tu connais de verbes, plus il te sera facile d’écrire des phrases variées
-        dans un texte. Commence par apprendre les verbes les plus utilisés au quotidien à l’infinitif, puis apprends à les
-        conjuguer aux différents temps verbaux en fonction de ceux que tu as vus en classe.
-      </p>
+    <section class="conjugation-problem-index" aria-labelledby="conjugaison-problem-title">
+      <header class="conjugation-problem-index__header">
+        <h2 id="conjugaison-problem-title">Que veux-tu faire&nbsp;?</h2>
+      </header>
 
-      <p>Pour rappel, tu as appris le présent en 7ème et en 8ème. Ensuite, tu apprends :</p>
-      <ul class="advice-checklist">
-        <li>l’impératif en début de 9ème ;</li>
-        <li>le passé composé en 9ème (2ème semestre) ;</li>
-        <li>le futur et le Konjunktiv II en 11ème.</li>
-      </ul>
-
-      <div class="conjugation-timeline" aria-label="Progression des temps verbaux">
-        <article>
-          <span>7–8H</span>
-          <strong>Présent</strong>
-          <p>Le temps de base à connaître avant les autres.</p>
-        </article>
-        <article>
-          <span>Début 9H</span>
-          <strong>Impératif</strong>
-          <p>Pour donner un ordre ou une consigne.</p>
-        </article>
-        <article>
-          <span>9H · 2e semestre</span>
-          <strong>Passé composé</strong>
-          <p>Auxiliaire au présent et participe passé.</p>
-        </article>
-        <article>
-          <span>11H</span>
-          <strong>Futur et Konjunktiv II</strong>
-          <p>Pour les projets, souhaits et hypothèses.</p>
-        </article>
-      </div>
-
-      <div class="category-guide-note">
-        <strong>Pour apprendre les verbes</strong>
-        <p>
-          Le site Blooket propose des jeux pour réviser les verbes. Utilise-le surtout pour commencer à les apprendre :
-          les questions à choix multiples sont pratiques pour les voir une première fois, mais elles ne suffisent pas
-          pour bien apprendre à écrire les mots. Alterne observation, rappel oral et production écrite.
-        </p>
-        <p>Crée ton compte gratuit sur Blooket, puis ouvre la liste de verbes avec le lien ci-dessous.</p>
-        <p>Clique ensuite sur « Solo » pour jouer seul ou sur « Host » pour jouer à plusieurs.</p>
-        <div class="category-guide-actions">
-          <a href="https://quizlet.com/355592036/" rel="noreferrer" target="_blank">Liste des verbes sur Quizlet</a>
-          <a href="https://www.blooket.com/set/62b174c039f42a8920c474b3" rel="noreferrer" target="_blank">
-            Réviser sur Blooket
-          </a>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-{
-  category !== 'grammaire' && (
-    <section class="content-band theory-route-section" aria-labelledby={`${category}-problem-title`}>
-      <div class="section-heading">
-        <div>
-          <p class="home-section-label">Quel est ton problème ?</p>
-          <h2 id={`${category}-problem-title`}>Choisis la fiche qui répond à ta question</h2>
-        </div>
-      </div>
-
-      <div class="theory-route-grid">
+      <div class="conjugation-route-groups">
         {
-          cards.map((card) => {
-            const entry = entryMap.get(card.slug);
-            if (!entry) return null;
-            return (
-              <a class="theory-route-card" href={resourceUrl(entry)}>
-                <strong>{card.title}</strong>
-                <span>{card.problem}</span>
-                {card.example && <small>{card.example}</small>}
-              </a>
-            );
-          })
+          conjugationGroups.map((group) => (
+            <section
+              class={`conjugation-route-group conjugation-route-group--${group.tone}`}
+              aria-labelledby={`conjugation-group-${group.number}`}
+            >
+              <header class="conjugation-route-group__intro">
+                <span class="conjugation-route-group__number" aria-hidden="true">{group.number}</span>
+                <div>
+                  <h3 id={`conjugation-group-${group.number}`}>{group.title}</h3>
+                  <p>{group.note}</p>
+                </div>
+              </header>
+
+              <div class={`conjugation-route-list conjugation-route-list--${group.tone}`}>
+                {
+                  group.slugs.map((slug) => {
+                    const card = cards.find((candidate) => candidate.slug === slug);
+                    const entry = entryMap.get(slug);
+                    if (!card || !entry) return null;
+
+                    return (
+                      <a
+                        class:list={[
+                          'conjugation-route-card',
+                          slug === 'konjunktiv-ii' && 'conjugation-route-card--featured',
+                        ]}
+                        href={resourceUrl(entry)}
+                      >
+                        <span class="conjugation-route-card__copy">
+                          <strong lang="de">{card.title}</strong>
+                          <small>{card.problem}</small>
+                        </span>
+                        <svg
+                          class="conjugation-route-card__arrow"
+                          viewBox="0 0 24 24"
+                          width="24"
+                          height="24"
+                          aria-hidden="true"
+                        >
+                          <path d="M5 12h13M13 6l6 6-6 6" />
+                        </svg>
+                      </a>
+                    );
+                  })
+                }
+              </div>
+            </section>
+          ))
         }
       </div>
     </section>
   )
 }
+
+<style>
+  .syntax-problem-index {
+    display: grid;
+    gap: 22px;
+    margin-top: 26px;
+  }
+
+  .syntax-problem-index__header {
+    padding-inline: clamp(4px, 1vw, 12px);
+  }
+
+  .syntax-problem-index__header h2 {
+    position: relative;
+    width: fit-content;
+    margin: 0;
+    color: #132555;
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .syntax-problem-index__header h2::after {
+    position: absolute;
+    right: 0;
+    bottom: -9px;
+    left: 12%;
+    height: 3px;
+    border-radius: 999px;
+    background: #c61b3c;
+    content: "";
+    transform: rotate(-1deg);
+  }
+
+  .syntax-route-groups {
+    display: grid;
+    gap: 18px;
+  }
+
+  .syntax-route-group {
+    --syntax-tone: #246cc8;
+    --syntax-tone-dark: #174c9a;
+    --syntax-tone-soft: #edf6ff;
+    display: grid;
+    grid-template-columns: minmax(190px, 220px) minmax(0, 1fr);
+    gap: clamp(18px, 2.4vw, 30px);
+    align-items: stretch;
+    padding: clamp(18px, 2.3vw, 26px);
+    border: 1px solid color-mix(in srgb, var(--syntax-tone) 15%, transparent);
+    border-left: 10px solid var(--syntax-tone);
+    border-radius: 18px;
+    background: var(--syntax-tone-soft);
+  }
+
+  .syntax-route-group--connect {
+    --syntax-tone: #d09200;
+    --syntax-tone-dark: #815600;
+    --syntax-tone-soft: #fff8e6;
+  }
+
+  .syntax-route-group--verb-end {
+    --syntax-tone: #6741b8;
+    --syntax-tone-dark: #4f2c9a;
+    --syntax-tone-soft: #f4f1ff;
+  }
+
+  .syntax-route-group--advanced {
+    --syntax-tone: #087f9e;
+    --syntax-tone-dark: #00627c;
+    --syntax-tone-soft: #eaf8fb;
+  }
+
+  .syntax-route-group__intro {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    align-content: center;
+  }
+
+  .syntax-route-group__number {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--syntax-tone);
+    box-shadow: inset 0 -3px 0 rgba(15, 26, 49, 0.14);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 950;
+  }
+
+  .syntax-route-group__intro h3 {
+    margin: 1px 0 8px;
+    color: #132555;
+    font-size: clamp(1.15rem, 2vw, 1.42rem);
+    line-height: 1.15;
+  }
+
+  .syntax-route-group__intro p {
+    margin: 0;
+    color: #43506d;
+    font-size: 0.88rem;
+    font-weight: 760;
+    line-height: 1.35;
+  }
+
+  .syntax-route-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .syntax-route-list--connect {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .syntax-route-list--verb-end {
+    grid-template-columns:
+      minmax(180px, 1.25fr)
+      minmax(145px, 0.8fr)
+      minmax(145px, 0.8fr)
+      minmax(270px, 1.7fr);
+  }
+
+  .syntax-route-list--advanced {
+    grid-template-columns: 1.1fr 0.8fr 1.15fr;
+  }
+
+  .syntax-route-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 132px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 18px 17px;
+    border: 2px solid color-mix(in srgb, var(--syntax-tone) 18%, #d8deea);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+      0 5px 0 rgba(15, 26, 49, 0.05),
+      0 10px 24px rgba(24, 47, 91, 0.07);
+    color: var(--syntax-tone-dark);
+    text-decoration: none;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease,
+      transform 160ms ease;
+  }
+
+  .syntax-route-card:hover {
+    border-color: color-mix(in srgb, var(--syntax-tone) 58%, transparent);
+    box-shadow:
+      0 7px 0 color-mix(in srgb, var(--syntax-tone) 10%, transparent),
+      0 16px 28px rgba(24, 47, 91, 0.12);
+    transform: translateY(-3px);
+  }
+
+  .syntax-route-card__copy {
+    display: grid;
+    gap: 9px;
+    min-width: 0;
+  }
+
+  .syntax-route-card strong {
+    overflow-wrap: normal;
+    color: inherit;
+    font-size: clamp(1.18rem, 1.75vw, 1.62rem);
+    font-weight: 950;
+    hyphens: none;
+    line-height: 1.14;
+  }
+
+  .syntax-route-list--build .syntax-route-card strong {
+    font-size: clamp(1.08rem, 1.45vw, 1.38rem);
+  }
+
+  .syntax-route-card small {
+    color: #53617f;
+    font-size: 0.78rem;
+    font-weight: 780;
+    line-height: 1.3;
+  }
+
+  .syntax-route-card__arrow {
+    flex: 0 0 auto;
+    color: var(--syntax-tone);
+    transition: transform 160ms ease;
+  }
+
+  .syntax-route-card__arrow path {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  .syntax-route-card:hover .syntax-route-card__arrow {
+    transform: translateX(3px);
+  }
+
+  .syntax-route-card--featured {
+    border-color: var(--syntax-tone);
+    box-shadow:
+      0 6px 0 color-mix(in srgb, var(--syntax-tone) 14%, transparent),
+      0 15px 32px color-mix(in srgb, var(--syntax-tone) 15%, transparent);
+  }
+
+  .syntax-route-card--featured strong {
+    font-size: clamp(2.75rem, 5vw, 4.4rem);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+  }
+
+  .syntax-route-card--keyword strong {
+    overflow-wrap: normal;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1080px) {
+    .syntax-route-group {
+      grid-template-columns: 1fr;
+    }
+
+    .syntax-route-group__intro {
+      grid-template-columns: 42px minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .syntax-route-group__intro h3 {
+      margin-bottom: 4px;
+    }
+  }
+
+  @media (max-width: 840px) {
+    .syntax-route-list,
+    .syntax-route-list--connect,
+    .syntax-route-list--verb-end,
+    .syntax-route-list--advanced {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .syntax-route-card--long {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .syntax-problem-index {
+      gap: 18px;
+    }
+
+    .syntax-route-group {
+      gap: 16px;
+      padding: 17px 14px 17px 16px;
+      border-left-width: 7px;
+      border-radius: 15px;
+    }
+
+    .syntax-route-group__intro {
+      grid-template-columns: 36px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .syntax-route-group__number {
+      width: 34px;
+      height: 34px;
+      font-size: 0.94rem;
+    }
+
+    .syntax-route-list,
+    .syntax-route-list--connect,
+    .syntax-route-list--verb-end,
+    .syntax-route-list--advanced {
+      grid-template-columns: 1fr;
+    }
+
+    .syntax-route-card,
+    .syntax-route-card--long {
+      grid-column: auto;
+      min-height: 104px;
+      padding: 16px;
+    }
+
+    .syntax-route-card--featured strong {
+      font-size: clamp(2.7rem, 15vw, 3.8rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .syntax-route-card,
+    .syntax-route-card__arrow {
+      transition: none;
+    }
+
+    .syntax-route-card:hover,
+    .syntax-route-card:hover .syntax-route-card__arrow {
+      transform: none;
+    }
+  }
+
+  .conjugation-overview {
+    display: grid;
+    gap: 20px;
+    margin-top: 26px;
+    padding: clamp(22px, 3vw, 34px);
+    border: 2px solid rgba(36, 108, 200, 0.16);
+    border-radius: 20px;
+    background:
+      linear-gradient(135deg, rgba(36, 108, 200, 0.08), transparent 48%),
+      rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 0 rgba(15, 26, 49, 0.05);
+  }
+
+  .conjugation-overview__header {
+    display: flex;
+    gap: 24px;
+    align-items: end;
+    justify-content: space-between;
+  }
+
+  .conjugation-overview__header h2 {
+    margin: 0;
+    color: #132555;
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
+    line-height: 1.12;
+  }
+
+  .conjugation-overview__header p {
+    max-width: 45ch;
+    margin: 0;
+    color: #43506d;
+    font-weight: 760;
+    line-height: 1.45;
+  }
+
+  .conjugation-overview__support {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: 14px;
+  }
+
+  .conjugation-progress,
+  .conjugation-tools {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid rgba(31, 42, 68, 0.11);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.84);
+  }
+
+  .conjugation-progress h3,
+  .conjugation-tools h3 {
+    margin: 0;
+    color: #132555;
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .conjugation-progress__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 12px;
+    border: 1px solid rgba(36, 108, 200, 0.15);
+    border-radius: 12px;
+    background: #f4f8ff;
+  }
+
+  .conjugation-progress__steps p {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+    margin: 0;
+    padding: 10px 12px;
+  }
+
+  .conjugation-progress__steps p + p {
+    border-left: 1px solid rgba(36, 108, 200, 0.15);
+  }
+
+  .conjugation-progress__steps strong {
+    color: #174c9a;
+    font-size: 0.78rem;
+    font-weight: 950;
+  }
+
+  .conjugation-progress__steps span {
+    color: #23375d;
+    font-size: 0.86rem;
+    font-weight: 850;
+    line-height: 1.25;
+  }
+
+  .conjugation-tools {
+    display: grid;
+    grid-template-columns: minmax(110px, 0.55fr) minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    background: #fff8e6;
+  }
+
+  .conjugation-tools > div p {
+    margin: 4px 0 0;
+    color: #5c5264;
+    font-size: 0.8rem;
+    font-weight: 720;
+    line-height: 1.3;
+  }
+
+  .conjugation-tools nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .conjugation-tools a {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 11px;
+    border: 1px solid rgba(208, 146, 0, 0.3);
+    border-radius: 11px;
+    background: #fff;
+    color: #815600;
+    text-decoration: none;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease,
+      transform 160ms ease;
+  }
+
+  .conjugation-tools a span {
+    display: grid;
+    min-width: 0;
+  }
+
+  .conjugation-tools a strong {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .conjugation-tools a small {
+    color: #665b70;
+    font-size: 0.7rem;
+    font-weight: 760;
+  }
+
+  .conjugation-tools a:hover {
+    border-color: #d09200;
+    box-shadow: 0 5px 0 rgba(208, 146, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .conjugation-tools svg {
+    flex: 0 0 auto;
+  }
+
+  .conjugation-tools svg path,
+  .conjugation-route-card__arrow path {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  .conjugation-problem-index {
+    display: grid;
+    gap: 22px;
+    margin-top: 26px;
+  }
+
+  .conjugation-problem-index__header {
+    padding-inline: clamp(4px, 1vw, 12px);
+  }
+
+  .conjugation-problem-index__header h2 {
+    position: relative;
+    width: fit-content;
+    margin: 0;
+    color: #132555;
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .conjugation-problem-index__header h2::after {
+    position: absolute;
+    right: 0;
+    bottom: -9px;
+    left: 12%;
+    height: 3px;
+    border-radius: 999px;
+    background: #246cc8;
+    content: "";
+    transform: rotate(-1deg);
+  }
+
+  .conjugation-route-groups {
+    display: grid;
+    gap: 18px;
+  }
+
+  .conjugation-route-group {
+    --conjugation-tone: #246cc8;
+    --conjugation-tone-dark: #174c9a;
+    --conjugation-tone-soft: #edf6ff;
+    display: grid;
+    grid-template-columns: minmax(190px, 220px) minmax(0, 1fr);
+    gap: clamp(18px, 2.4vw, 30px);
+    align-items: stretch;
+    padding: clamp(18px, 2.3vw, 26px);
+    border: 1px solid color-mix(in srgb, var(--conjugation-tone) 15%, transparent);
+    border-left: 10px solid var(--conjugation-tone);
+    border-radius: 18px;
+    background: var(--conjugation-tone-soft);
+  }
+
+  .conjugation-route-group--time {
+    --conjugation-tone: #d09200;
+    --conjugation-tone-dark: #815600;
+    --conjugation-tone-soft: #fff8e6;
+  }
+
+  .conjugation-route-group--irrealis {
+    --conjugation-tone: #6741b8;
+    --conjugation-tone-dark: #4f2c9a;
+    --conjugation-tone-soft: #f4f1ff;
+  }
+
+  .conjugation-route-group__intro {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 12px;
+    align-content: center;
+  }
+
+  .conjugation-route-group__number {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--conjugation-tone);
+    box-shadow: inset 0 -3px 0 rgba(15, 26, 49, 0.14);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 950;
+  }
+
+  .conjugation-route-group__intro h3 {
+    margin: 1px 0 8px;
+    color: #132555;
+    font-size: clamp(1.15rem, 2vw, 1.42rem);
+    line-height: 1.15;
+  }
+
+  .conjugation-route-group__intro p {
+    margin: 0;
+    color: #43506d;
+    font-size: 0.88rem;
+    font-weight: 760;
+    line-height: 1.35;
+  }
+
+  .conjugation-route-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .conjugation-route-list--time {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .conjugation-route-list--irrealis {
+    grid-template-columns: 1fr;
+  }
+
+  .conjugation-route-card {
+    display: flex;
+    min-width: 0;
+    min-height: 132px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px;
+    border: 2px solid color-mix(in srgb, var(--conjugation-tone) 18%, #d8deea);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+      0 5px 0 rgba(15, 26, 49, 0.05),
+      0 10px 24px rgba(24, 47, 91, 0.07);
+    color: var(--conjugation-tone-dark);
+    text-decoration: none;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease,
+      transform 160ms ease;
+  }
+
+  .conjugation-route-card:hover {
+    border-color: color-mix(in srgb, var(--conjugation-tone) 58%, transparent);
+    box-shadow:
+      0 7px 0 color-mix(in srgb, var(--conjugation-tone) 10%, transparent),
+      0 16px 28px rgba(24, 47, 91, 0.12);
+    transform: translateY(-3px);
+  }
+
+  .conjugation-route-card__copy {
+    display: grid;
+    gap: 9px;
+    min-width: 0;
+  }
+
+  .conjugation-route-card strong {
+    overflow-wrap: normal;
+    color: inherit;
+    font-size: clamp(1.25rem, 1.75vw, 1.66rem);
+    font-weight: 950;
+    hyphens: none;
+    line-height: 1.12;
+  }
+
+  .conjugation-route-card small {
+    color: #53617f;
+    font-size: 0.78rem;
+    font-weight: 780;
+    line-height: 1.3;
+  }
+
+  .conjugation-route-card__arrow {
+    flex: 0 0 auto;
+    color: var(--conjugation-tone);
+    transition: transform 160ms ease;
+  }
+
+  .conjugation-route-card:hover .conjugation-route-card__arrow {
+    transform: translateX(3px);
+  }
+
+  .conjugation-route-card--featured {
+    border-color: var(--conjugation-tone);
+    box-shadow:
+      0 6px 0 color-mix(in srgb, var(--conjugation-tone) 14%, transparent),
+      0 15px 32px color-mix(in srgb, var(--conjugation-tone) 15%, transparent);
+  }
+
+  .conjugation-route-card--featured strong {
+    font-size: clamp(1.85rem, 3vw, 2.8rem);
+  }
+
+  .conjugation-route-list--now .conjugation-route-card {
+    gap: 7px;
+    padding-inline: 14px;
+  }
+
+  .conjugation-route-list--now .conjugation-route-card strong {
+    font-size: clamp(1.15rem, 1.5vw, 1.48rem);
+  }
+
+  @media (max-width: 1080px) {
+    .conjugation-route-group {
+      grid-template-columns: 1fr;
+    }
+
+    .conjugation-route-group__intro {
+      align-items: center;
+    }
+
+    .conjugation-route-group__intro h3 {
+      margin-bottom: 4px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .conjugation-overview__header {
+      display: grid;
+      gap: 8px;
+    }
+
+    .conjugation-overview__support {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 840px) {
+    .conjugation-route-list,
+    .conjugation-route-list--time {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .conjugation-route-list--irrealis {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .conjugation-overview {
+      gap: 16px;
+      padding: 18px 15px;
+      border-radius: 16px;
+    }
+
+    .conjugation-progress,
+    .conjugation-tools {
+      padding: 13px;
+    }
+
+    .conjugation-progress__steps p {
+      padding: 9px 7px;
+    }
+
+    .conjugation-progress__steps strong {
+      font-size: 0.72rem;
+    }
+
+    .conjugation-progress__steps span {
+      font-size: 0.74rem;
+    }
+
+    .conjugation-tools {
+      grid-template-columns: 1fr;
+    }
+
+    .conjugation-tools nav {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .conjugation-problem-index {
+      gap: 18px;
+    }
+
+    .conjugation-route-group {
+      gap: 16px;
+      padding: 17px 14px 17px 16px;
+      border-left-width: 7px;
+      border-radius: 15px;
+    }
+
+    .conjugation-route-group__intro {
+      grid-template-columns: 36px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .conjugation-route-group__number {
+      width: 34px;
+      height: 34px;
+      font-size: 0.94rem;
+    }
+
+    .conjugation-route-list,
+    .conjugation-route-list--time,
+    .conjugation-route-list--irrealis {
+      grid-template-columns: 1fr;
+    }
+
+    .conjugation-route-card {
+      min-height: 104px;
+      padding: 16px;
+    }
+
+    .conjugation-route-card--featured strong {
+      font-size: clamp(1.8rem, 9vw, 2.4rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .conjugation-tools a,
+    .conjugation-route-card,
+    .conjugation-route-card__arrow {
+      transition: none;
+    }
+
+    .conjugation-tools a:hover,
+    .conjugation-route-card:hover,
+    .conjugation-route-card:hover .conjugation-route-card__arrow {
+      transform: none;
+    }
+  }
+</style>

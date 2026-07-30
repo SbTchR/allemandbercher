@@ -1,11 +1,13 @@
 ---
 title: "Présent"
-description: "Les verbes réguliers prennent les terminaisons suivantes au présent. En principe, le radical ne change pas."
+description: "Choisis le bon radical, puis accorde le verbe avec son sujet."
 section: "theorie"
 category: "conjugaison"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/conjugaison/pr%C3%A9sent"
 pageType: "theorie"
-objectives: []
+objectives:
+  - "Retrouver les terminaisons du présent"
+  - "Repérer les changements de radical avec du et er / sie / es"
 externalLinks: []
 images: []
 migrationNotes: []
@@ -34,7 +36,7 @@ migrationNotes: []
 
 ## Verbes irréguliers
 
-Certains verbes sont irréguliers, c’est-à-dire que leur radical change lorsqu’on les conjugue. Il n’y a pas de règle générale pour définir ces changements de radical : il faut donc les apprendre par cœur.
+Certains verbes changent de radical au présent. Ce changement apparaît surtout avec **du** et **er / sie / es** : **fahren → du fährst**, **lesen → er liest**, **nehmen → sie nimmt**. Il faut apprendre ces formes avec le verbe.
 
 Voici quelques exemples de verbes irréguliers qu’il faut absolument connaître. Il y en a bien sûr plein d’autres que tu peux trouver dans un dictionnaire ou dans ton livre de verbes.
 
