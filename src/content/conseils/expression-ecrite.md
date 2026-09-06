@@ -26,10 +26,10 @@ migrationNotes:
 <strong>Relire</strong>
 <p>Corriger par étapes: contenu, cohérence, vocabulaire, orthographe, grammaire.</p>
 </article>
-</section>
-
-<details class="lesson-card">
-<summary>1. Se préparer</summary>
+</section><section data-advice-step="Préparer">
+<h2>Préparer</h2>
+<section class="advice-reading-section">
+<h3>Se préparer</h3>
 <div class="lesson-card-content">
 <p>Prépare des listes de vocabulaire en fonction du thème qui est évalué.</p>
 <div class="advice-grid three-columns">
@@ -43,12 +43,26 @@ migrationNotes:
 <p>Lors du test, tu devras te forcer à intégrer un maximum des mots que tu as préparés dans ton texte.</p>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>2. Donner un maximum d'informations différentes</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Faire un plan avant d'écrire</h3>
 <div class="lesson-card-content">
-<p>Plus tu donnes d'informations dans ton texte, pour autant qu'elles soient compréhensibles, plus tu as de chances de marquer des points.</p>
+<p>Prépare rapidement un plan avec des mots-clés.</p>
+<div class="advice-flow">
+<span>Idées</span>
+<span>Ordre logique</span>
+<span>Structures utiles</span>
+<span>Rédaction</span>
+</div>
+<p>Ajoute dans ton plan les différentes structures grammaticales que tu vas utiliser: Modalverben, passé composé, subordonnées, comparatif, superlatif...</p>
+</div>
+</section>
+</section><section data-advice-step="Enrichir">
+<h2>Enrichir</h2>
+<section class="advice-reading-section">
+<h3>Donner un maximum d'informations différentes</h3>
+<div class="lesson-card-content">
+<p>Ajoute des informations différentes et compréhensibles, en respectant la consigne.</p>
 <div class="advice-grid two-columns">
 <article>
 <strong>Ajouter des détails</strong>
@@ -60,7 +74,7 @@ migrationNotes:
 </article>
 <article>
 <strong>Dévier un peu du sujet</strong>
-<p>Ajoute une information liée au thème, mais reste cohérent avec la consigne. Si tu dois décrire ta chambre, tu peux écrire: « La bibliothèque se trouve devant mon bureau. J’aime bien lire des bandes dessinées. » Il ne faut toutefois pas présenter tous tes loisirs.</p>
+<p>Ajoute un détail lié au thème : « Dans ma chambre, il y a une bibliothèque. J’aime lire des BD. » Évite de partir hors sujet.</p>
 </article>
 <article>
 <strong>Inventer des informations</strong>
@@ -68,10 +82,9 @@ migrationNotes:
 </article>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>3. Varier les phrases</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Varier les phrases</h3>
 <div class="lesson-card-content">
 <p>Afin que ton texte ne soit pas trop répétitif, évite d’utiliser tout le temps les mêmes verbes et le même vocabulaire.</p>
 <div class="before-after">
@@ -86,25 +99,25 @@ migrationNotes:
 </div>
 <p>Essaie aussi de construire des phrases plus complexes que la simple phrase <strong>sujet - verbe - objet</strong>. Tu peux utiliser des <a href="../../theorie/syntaxe/weil/">subordonnées</a>, des <a href="../../theorie/syntaxe/les-subordonnees-relatives/">phrases relatives</a> ou des <a href="../../theorie/syntaxe/les-phrases-avec-verbe-de-modalite/">verbes de modalité</a>.</p>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>4. Les infos doivent être compréhensibles</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Les infos doivent être compréhensibles</h3>
 <div class="lesson-card-content">
 <p>Les phrases incompréhensibles ne rapportent aucun point. Utilise donc du vocabulaire que tu maîtrises et ne traduis pas mot pour mot une expression typique du français.</p>
-<p>Une expression comme <strong>« mettre les pieds dans le plat »</strong>, par exemple, ne peut pas être traduite mot à mot: il faut employer une formulation allemande que tu connais et dont tu comprends le sens.</p>
+<p>Par exemple, ne traduis pas « mettre les pieds dans le plat » mot à mot. Utilise une expression allemande que tu connais.</p>
 <div class="advice-alert">
 <strong>Il ne faut pas faire de la traduction.</strong>
-<p>Il faut connaître des phrases-types et les utiliser pour former la base de ton texte.</p>
+<p>Pars de phrases-types allemandes.</p>
 </div>
 <p>Prépare à l'avance des phrases toutes faites que tu trouves dans les encadrés bleus du Kursbuch. Lorsque tu écris, pars de ces phrases en les modifiant légèrement.</p>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>5. Respecter les consignes</summary>
+</section>
+</section><section data-advice-step="Relire">
+<h2>Relire</h2>
+<section class="advice-reading-section">
+<h3>Respecter les consignes</h3>
 <div class="lesson-card-content">
-<p>Cela paraît évident, mais il est facile d'oublier une partie de la consigne. Quand tu as fini d'écrire ton texte, relis une fois la consigne en détail.</p>
+<p>À la fin, relis la consigne et coche chaque point demandé.</p>
 <ul class="advice-checklist">
 <li>Toutes les informations demandées sont présentes.</li>
 <li>Le type de texte correspond à la situation.</li>
@@ -112,28 +125,13 @@ migrationNotes:
 <li>Les éléments importants sont compréhensibles.</li>
 </ul>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>6. Faire un plan avant d'écrire</summary>
-<div class="lesson-card-content">
-<p>Prépare rapidement un plan avec des mots-clés.</p>
-<div class="advice-flow">
-<span>Idées</span>
-<span>Ordre logique</span>
-<span>Structures utiles</span>
-<span>Rédaction</span>
-</div>
-<p>Ajoute dans ton plan les différentes structures grammaticales que tu vas utiliser: Modalverben, passé composé, subordonnées, comparatif, superlatif...</p>
-</div>
-</details>
-
-<details class="lesson-card">
-<summary>7. Relecture par étapes</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Relecture par étapes</h3>
 <div class="lesson-card-content">
 <p>Lorsque tu écris ton texte, tu dois déjà beaucoup te concentrer sur le contenu. Il est donc indispensable de prévoir un moment de relecture à la fin.</p>
 <p>Pour être efficace, la relecture doit se faire par étapes. À chaque relecture, concentre-toi sur un seul aspect.</p>
-<p>Cette grille se base sur une grille d’évaluation. Adapte-la à ton année, à ton niveau et aux structures grammaticales apprises dans le chapitre. En principe, une ligne correspond à une relecture; certaines seront naturellement plus rapides que d’autres.</p>
+<p><strong>Une ligne = une relecture.</strong> Adapte cette grille à ton année, ton niveau et aux structures apprises.</p>
 <div class="advice-table-wrap">
 <table class="quest-table advice-table review-table" data-source-image-replacement="grille de relecture">
 <thead>
@@ -195,7 +193,7 @@ migrationNotes:
 <td>
 <ul>
 <li>J’ai utilisé les moyens langagiers et les phrases-types vus dans le chapitre.</li>
-<li>Le verbe conjugué est toujours en 2e position dans une phrase principale.</li>
+<li>Dans une principale déclarative, le verbe conjugué est en 2e position.</li>
 <li>Les verbes à l’infinitif sont à la fin des phrases.</li>
 <li>Les participes passés sont à la fin des phrases, comme les infinitifs.</li>
 <li>Les particules séparables sont à la fin des phrases: <em>fängt ... an, stehe ... auf</em>...</li>
@@ -205,8 +203,8 @@ migrationNotes:
 <li>J’ai mis le datif - <em>dem, einem / dem, einem / der, einer</em> - si c’est le CVI (à qui? à quoi?).</li>
 <li>J’ai mis l’accusatif après <em>durch, für, gegen, ohne, um</em>.</li>
 <li>J’ai mis le datif après <em>aus, bei, mit, nach, seit, von, zu</em>.</li>
-<li>Après <em>an, auf, in, neben, über, unter, hinter, vor, zwischen</em>, j’ai mis le datif s’il n’y a pas de déplacement dans la phrase.</li>
-<li>Après ces mêmes prépositions mixtes, j’ai mis l’accusatif s’il y a un déplacement dans la phrase.</li>
+<li>Après <em>an, auf, in, neben, über, unter, hinter, vor, zwischen</em> : datif pour le lieu (<em>wo ?</em>), même si on y bouge.</li>
+<li>Après ces prépositions mixtes : accusatif pour une direction vers un but (<em>wohin ?</em>).</li>
 </ul>
 </td>
 </tr>
@@ -214,10 +212,11 @@ migrationNotes:
 </table>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>Les connecteurs et organisateurs</summary>
+</section>
+</section><section data-advice-step="Relier les idées">
+<h2>Relier les idées</h2>
+<section class="advice-reading-section">
+<h3>Les connecteurs et organisateurs</h3>
 <div class="lesson-card-content">
 <p>Un texte est composé de phrases liées entre elles. Les connecteurs marquent la différence entre un véritable texte et une simple liste de phrases.</p>
 <div class="before-after">
@@ -289,13 +288,12 @@ migrationNotes:
 <p>Pour situer plus précisément un élément, tu peux aussi utiliser <strong>hier</strong>, <strong>dort</strong>, <strong>links</strong>, <strong>rechts</strong>, <strong>vor</strong>, <strong>hinter</strong>, <strong>neben</strong> et <strong>zwischen</strong>.</p>
 </div>
 </div>
-</details>
-
-<details class="external-quest">
-<summary>Exercices en ligne pour entraîner la formulation de phrases</summary>
+</section>
+</section><section class="advice-reading-section">
+<h3>Exercices en ligne pour entraîner la formulation de phrases</h3>
 <div class="external-button-grid">
-<a href="http://www.lehrerlenz.de/stze_bilden2.html">Lehrer Lenz - phrases 1</a>
-<a href="http://www.lehrerlenz.de/wir_bilden_stze.html">Lehrer Lenz - phrases 2</a>
+
+
 <a href="https://mein-deutschbuch.de/grammatikuebungen-verben-mit-dativ-akkusativ.html">Dativ / Akkusativ</a>
 <a href="https://mein-deutschbuch.de/grammatikuebungen-perfekt.html">Perfekt</a>
 <a href="https://www.grammatiktraining.de/satzbau/satzteile-in-hauptsaetzen-ergaenzen-uebung.html">Compléter des phrases</a>
@@ -307,4 +305,4 @@ migrationNotes:
 <a href="https://www.grammatiktraining.de/satzbau/grammatikuebung-saetze-mit-praepositionalobjekt-ordnen.html">Compléments prépositionnels</a>
 <a href="https://www.grammatiktraining.de/satzbau/satzstellung-in-nebensaetzen-uebung.html">Subordonnées</a>
 </div>
-</details>
+</section>

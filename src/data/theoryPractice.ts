@@ -1,3 +1,4 @@
+import { advicePracticePages } from './advicePractice';
 export type TheoryLabOption = {
   label: string;
   sentenceHtml: string;
@@ -87,6 +88,7 @@ export type TheoryPracticePage = {
 };
 
 export const theoryPracticePages: Record<string, TheoryPracticePage> = {
+  ...advicePracticePages,
   'grammaire/les-cas-theorie-de-base': {
     title: 'Manipuler les cas',
     intro: 'Repère le rôle du groupe avant de chercher la terminaison.',
@@ -526,7 +528,7 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
         },
         {
           label: 'Avec weil',
-          sentenceHtml: 'Ich bleibe zu Hause, weil ich krank <span class="mark-verbal-tail">bin</span>.',
+          sentenceHtml: 'Ich bleibe zu Hause, weil ich krank <span class="mark-verb">bin</span>.',
           note: 'Avec weil, le verbe conjugué va à la fin.',
         },
       ],
@@ -570,12 +572,12 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
       options: [
         {
           label: 'Opinion',
-          sentenceHtml: 'Ich finde, dass die Jacke schön <span class="mark-verbal-tail">ist</span>.',
+          sentenceHtml: 'Ich finde, dass die Jacke schön <span class="mark-verb">ist</span>.',
           note: 'Le verbe ist se place à la fin.',
         },
         {
           label: 'Pensée',
-          sentenceHtml: 'Ich glaube, dass wir morgen einen Test <span class="mark-verbal-tail">haben</span>.',
+          sentenceHtml: 'Ich glaube, dass wir morgen einen Test <span class="mark-verb">haben</span>.',
           note: 'Le verbe conjugué de la subordonnée est haben.',
         },
       ],
@@ -633,7 +635,7 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
       title: 'Place zu',
       intro: 'Reconstruis le groupe infinitif.',
       items: [
-        { prompt: 'pour ranger la chambre', tokens: ['das Zimmer', 'aufzuräumen'], answer: 'das Zimmer aufzuräumen', hint: 'Avec aufräumen, zu entre auf et räumen.' },
+        { prompt: 'ranger la chambre (avec zu)', tokens: ['das Zimmer', 'aufzuräumen'], answer: 'das Zimmer aufzuräumen', hint: 'Avec aufräumen, zu entre auf et räumen.' },
       ],
     },
   },
@@ -682,7 +684,7 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
         },
         {
           label: 'Indirecte',
-          sentenceHtml: 'Ich weiss nicht, wo du <span class="mark-verbal-tail">wohnst</span>.',
+          sentenceHtml: 'Ich weiss nicht, wo du <span class="mark-verb">wohnst</span>.',
           note: 'Dans la question indirecte, le verbe va à la fin.',
         },
       ],
@@ -951,7 +953,7 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
         },
         {
           label: 'Hypothèse',
-          sentenceHtml: 'Wenn ich Zeit <span class="mark-verbal-tail">hätte</span>, würde ich reisen.',
+          sentenceHtml: 'Wenn ich Zeit <span class="mark-verb">hätte</span>, würde ich reisen.',
           note: 'Dans la subordonnée avec wenn, hätte va à la fin.',
         },
       ],
@@ -968,3 +970,51 @@ export const theoryPracticePages: Record<string, TheoryPracticePage> = {
     },
   },
 } satisfies Record<string, TheoryPracticePage>;
+
+// Observations used next to the rule on pages without a dedicated theory workshop.
+const extraObservations: Record<string, TheoryPracticePage['lab']> = {
+  'grammaire/les-pronoms-personnels': {
+    title: 'Remplace le groupe, garde son rôle', intro: 'Choisis la fonction du pronom.', options: [
+      {label:'Sujet',sentenceHtml:'<span class="mark-subject">Der Junge → Er</span> spielt.',note:'Sujet, nominatif : der Junge devient er.'},
+      {label:'CVD',sentenceHtml:'Ich sehe <span class="case-chip case-chip-accusative">den Jungen → ihn</span>.',note:'La personne vue est le CVD : accusatif, ihn.'},
+      {label:'CVI',sentenceHtml:'Ich helfe <span class="case-chip case-chip-dative">dem Jungen → ihm</span>.',note:'helfen demande le datif : ihm.'},
+    ],
+  },
+  'syntaxe/und-oder-aber-denn-also': {
+    title:'Le connecteur ne prend pas de place',intro:'Compare une affirmation et une question.',options:[
+      {label:'Affirmation',sentenceHtml:'Ich lese, aber <span class="mark-subject">du</span> <span class="mark-verb">spielst</span>.',note:'Après aber : sujet en 1, verbe en 2.'},
+      {label:'Question',sentenceHtml:'Trinkst du Tee oder <span class="mark-verb">trinkst</span> <span class="mark-subject">du</span> Wasser?',note:'Après oder, la question oui/non garde son verbe en 1.'},
+    ],
+  },
+  'syntaxe/trotzdem-deshalb': {
+    title:'Le sens change, le verbe reste en deuxième place',intro:'Choisis une suite à « Il pleut ».',options:[
+      {label:'Conséquence',sentenceHtml:'Es regnet, <strong>deshalb</strong> <span class="mark-verb">bleibe</span> <span class="mark-subject">ich</span> zu Hause.',note:'Je reste donc à la maison. deshalb occupe la première place.'},
+      {label:'Malgré cela',sentenceHtml:'Es regnet, <strong>trotzdem</strong> <span class="mark-verb">gehe</span> <span class="mark-subject">ich</span> spazieren.',note:'Je me promène quand même. trotzdem est suivi du verbe, puis du sujet.'},
+      {label:'Dans la phrase',sentenceHtml:'Es regnet, aber <span class="mark-subject">ich</span> <span class="mark-verb">gehe</span> <strong>trotzdem</strong> spazieren.',note:'trotzdem peut aussi se placer plus loin. Le verbe reste en deuxième position.'},
+    ],
+  },
+  'syntaxe/wenn': {
+    title:'Change le début de la phrase',intro:'La règle du verbe reste la même.',options:[
+      {label:'Principale d’abord',sentenceHtml:'Ich <span class="mark-verb">komme</span>, wenn ich Zeit <span class="mark-verb">habe</span>.',note:'Le verbe de la subordonnée est à la fin.'},
+      {label:'Wenn d’abord',sentenceHtml:'Wenn ich Zeit <span class="mark-verb">habe</span>, <span class="mark-verb">komme</span> <span class="mark-subject">ich</span>.',note:'La subordonnée prend une place entière. Le verbe komme suit la virgule.'},
+      {label:'Deux verbes',sentenceHtml:'Du darfst kommen, wenn du die Aufgabe <span class="mark-verbal-tail">gemacht</span> <span class="mark-verb">hast</span>.',note:'Au passé composé : participe passé, puis auxiliaire conjugué à la fin.'},
+    ],
+  },
+  'syntaxe/damit-wahrend-bevor-nachdem-als-obwohl': {
+    title:'Un mot change le lien entre les idées',intro:'Observe le sens et le verbe rouge.',options:[
+      {label:'But : damit',sentenceHtml:'Ich helfe dir, <strong>damit</strong> du fertig <span class="mark-verb">wirst</span>.',note:'Je t’aide pour que tu termines.'},
+      {label:'Temps : bevor',sentenceHtml:'Ich lese, <strong>bevor</strong> ich ins Bett <span class="mark-verb">gehe</span>.',note:'Je lis avant d’aller au lit.'},
+      {label:'Opposition : obwohl',sentenceHtml:'Ich komme, <strong>obwohl</strong> ich müde <span class="mark-verb">bin</span>.',note:'Je viens bien que je sois fatigué.'},
+      {label:'Passé : als',sentenceHtml:'<strong>Als</strong> ich klein <span class="mark-verb">war</span>, wohnte ich in Bern.',note:'als décrit ici une période passée, pas une habitude qui se répète.'},
+    ],
+  },
+  'syntaxe/les-infinitives': {
+    title:'Choisis une intention',intro:'Le groupe infinitif arrive à la fin.',options:[
+      {label:'Sans zu',sentenceHtml:'Ich gehe <span class="mark-verbal-tail">schwimmen</span>.',note:'Après gehen, l’infinitif est sans zu.'},
+      {label:'Un but',sentenceHtml:'Ich lerne, <strong>um</strong> den Test <span class="mark-verbal-tail">zu bestehen</span>.',note:'um … zu = pour. La même personne apprend et passe le test.'},
+      {label:'Sans faire',sentenceHtml:'Er geht, <strong>ohne</strong> <span class="mark-verbal-tail">zu warten</span>.',note:'ohne … zu = sans. Il part sans attendre.'},
+      {label:'Particule séparable',sentenceHtml:'Ich versuche, mein Zimmer <span class="mark-verbal-tail">auf<strong>zu</strong>räumen</span>.',note:'zu se glisse entre auf et räumen, en un seul mot.'},
+    ],
+  },
+};
+for (const [key, lab] of Object.entries(extraObservations)) theoryPracticePages[key].lab = lab;

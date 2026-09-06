@@ -1,6 +1,6 @@
 ---
 title: "trotzdem, deshalb, also"
-description: "Trotzdem, deshalb et also sont des adverbes conjonctifs : placés en tête de proposition, ils occupent la 1re position et sont suivis du verbe conjugué."
+description: "trotzdem, deshalb, also : connecteur, verbe, sujet."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/trotzdem-deshalb"
@@ -12,26 +12,20 @@ migrationNotes:
   - "Correction du site source : trotzdem signifie « pourtant / malgré cela » et ces mots sont des adverbes conjonctifs, pas des subordonnants."
 ---
 
-## Adverbes conjonctifs
+## Le verbe vient juste après
 
-**trotzdem = pourtant, malgré cela**
+| Mot | Sens | Exemple |
+| --- | --- | --- |
+| **trotzdem** | pourtant, malgré cela | Ich bin krank, trotzdem <span class="mark-verb">gehe</span> ich zur Schule. |
+| **deshalb** | c’est pourquoi | Ich bin müde, deshalb <span class="mark-verb">gehe</span> ich ins Bett. |
+| **also** | donc, alors | Es regnet, also <span class="mark-verb">bleiben</span> wir zu Hause. |
 
-**deshalb = c’est pourquoi**
+En tête de proposition : **connecteur (1) → verbe conjugué (2) → sujet**.
 
-**also = donc, alors**
+Ces mots relient deux propositions principales. Sépare-les par une virgule ou un point.
 
-Ces adverbes relient deux propositions principales. Contrairement aux conjonctions de coordination **und**, **oder**, **aber** et **denn**, ils occupent une position dans la seconde proposition.
+### Trotzdem peut aussi rester dans la phrase
 
-Lorsqu’ils sont placés en tête de cette proposition, le verbe conjugué vient immédiatement après : **adverbe en 1re position + verbe en 2e position + sujet**.
+Ich bin krank, aber ich <span class="mark-verb">gehe</span> **trotzdem** zur Schule.
 
-⚠️ Les deux propositions sont séparées par une virgule. Cette virgule précède alors **trotzdem**, **deshalb** ou **also**.
-
-Exemple : Ich habe eine gute Note, deshalb bin ich glücklich.
-
-**p.1 p.2 p.1 p.2**
-
-Das Eis ist teuer, trotzdem kaufe ich es.
-
-Le mot **trotzdem** peut aussi signifier « quand même » et être utilisé à l’intérieur d’une phrase simple.
-
-Exemple: Ich bin krank, aber ich gehe trotzdem in die Schule.
+Ici, trotzdem signifie **quand même**. Le verbe garde sa deuxième position.

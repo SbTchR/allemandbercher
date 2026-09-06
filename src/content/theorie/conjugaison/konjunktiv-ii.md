@@ -75,4 +75,6 @@ Au passé, le choix entre **hätte** et **wäre** suit le même principe que le 
 
 ## Liens externes conservés
 
-- [https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel](https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel)
+<div class="external-button-grid">
+<a href="https://francais.lingolia.com/fr/grammaire/les-verbes/conditionnel" target="_blank" rel="noreferrer">francais.lingolia.com · exercice 1</a>
+</div>

@@ -26,24 +26,12 @@ migrationNotes:
 <strong>Après</strong>
 <p>Vérifier les pièges: négation, nuances, pronoms, verbes et distracteurs.</p>
 </article>
-</section>
-
-<details class="external-quest">
-<summary>Exercices en ligne</summary>
+</section><section data-advice-step="Préparer">
+<h2>Préparer</h2>
+<section class="advice-reading-section">
+<h3>Observer le contexte</h3>
 <div class="lesson-card-content">
-<p>Ces sites proposent des exercices de compréhension écrite de différents niveaux.</p>
-<div class="external-button-grid">
-<a href="https://www.schularena.com/deutsch/leseverstehen/leseverstehen_einfach">Schularena - lecture simple</a>
-<a href="http://www.goethe.de/ins/gb/lp/prj/mtg/mat/deindex.htm">Goethe - textes courts</a>
-<a href="http://www.lehrerlenz.de/texte_lesen.html">Lehrer Lenz - lire des textes</a>
-</div>
-</div>
-</details>
-
-<details class="lesson-card">
-<summary>1. Observer le contexte</summary>
-<div class="lesson-card-content">
-<p>Il est parfois déconcertant de se retrouver face à un texte de plusieurs paragraphes en allemand, surtout quand il contient beaucoup de mots inconnus. Avant de lire, commence par utiliser tout ce qui se trouve autour du texte.</p>
+<p>Des mots inconnus ? Commence par les indices autour du texte.</p>
 <ul class="advice-checklist">
 <li>Lis le titre de l’exercice et les consignes.</li>
 <li>Observe les images et les informations autour du texte.</li>
@@ -51,10 +39,9 @@ migrationNotes:
 <li>Fais déjà des liens avec le vocabulaire que tu connais.</li>
 </ul>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>2. Repérer le type d'exercice</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Repérer le type d'exercice</h3>
 <div class="lesson-card-content">
 <p>Demande-toi ce que tu devras faire avant de lire le texte. Cela peut te faire gagner du temps car tu n’as pas toujours besoin de tout comprendre.</p>
 <div class="advice-table-wrap">
@@ -86,24 +73,25 @@ migrationNotes:
 </table>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>3. Se focaliser sur ce que tu comprends</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Se focaliser sur ce que tu comprends</h3>
 <div class="lesson-card-content">
-<p>Il y a parfois des passages que tu n’as pas besoin de comprendre pour répondre aux questions. Et tu n’as pas forcément besoin de comprendre tous les mots d’une phrase pour comprendre l’essentiel.</p>
+<p>Tu n’as pas besoin de tout traduire pour répondre aux questions.</p>
 <div class="mini-note">
 <strong>Mission rapide</strong>
 <p>Lis d’abord les questions, puis surligne seulement les mots qui peuvent aider à y répondre.</p>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>4. Décortiquer le texte</summary>
+</section>
+</section><section data-advice-step="Trouver les indices">
+<h2>Trouver les indices</h2>
+<section class="advice-reading-section">
+<h3>Décortiquer le texte</h3>
 <div class="lesson-card-content">
 <p>Lors de la première lecture, repère les différentes parties du texte et le thème de chacune afin de savoir où chercher les informations par la suite.</p>
 <p>Les infos principales comme <strong>qui</strong>, <strong>quand</strong>, <strong>quoi</strong> et <strong>où</strong> se trouvent généralement dans l’introduction.</p>
+<p>Les mots de temps indiquent l’ordre des événements :</p>
 <div class="word-map">
 <span><strong>zuerst</strong> d’abord</span>
 <span><strong>in den Ferien</strong> pendant les vacances</span>
@@ -113,10 +101,9 @@ migrationNotes:
 <span><strong>zum Schluss</strong> pour finir</span>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>5. Repérer les distracteurs</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Repérer les distracteurs</h3>
 <div class="lesson-card-content">
 <p>Repère les petits pièges qui peuvent t’induire en erreur.</p>
 <div class="advice-grid two-columns">
@@ -131,10 +118,9 @@ migrationNotes:
 </article>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>6. Déduire le sens de certains mots</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Déduire le sens de certains mots</h3>
 <div class="lesson-card-content">
 <p>Focalise-toi sur les mots que tu comprends dans une phrase et observe sa structure. Traduis la phrase dans ta tête en laissant les mots inconnus en allemand.</p>
 <blockquote>Die Mutter muss ständig auf die Kinder aufpassen.<br />La maman doit <strong>ständig aufpassen</strong> sur les enfants.</blockquote>
@@ -156,7 +142,7 @@ migrationNotes:
 </div>
 <div class="mini-note">
 <strong>Indice important</strong>
-<p>Demande-toi toujours si le mot inconnu est un verbe, un nom, un adjectif, un adverbe, une préposition ou un déterminant. Les noms commencent par une majuscule et se terminent parfois par un suffixe.</p>
+<p>Identifie le type du mot : nom, verbe, adjectif, adverbe, préposition ou déterminant. Un nom commence par une majuscule ; un suffixe peut aider.</p>
 </div>
 <div class="advice-table-wrap">
 <table class="quest-table advice-table compact-advice-table" data-source-image-replacement="suffixes des noms">
@@ -181,10 +167,11 @@ migrationNotes:
 <p>D’autres terminaisons peuvent aussi signaler un nom: <strong>-tion</strong>, <strong>-nis</strong> et <strong>-chen</strong>.</p>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>7. Observer la structure d’une phrase</summary>
+</section>
+</section><section data-advice-step="Décoder la phrase">
+<h2>Décoder la phrase</h2>
+<section class="advice-reading-section">
+<h3>Observer la structure d’une phrase</h3>
 <div class="lesson-card-content">
 <p>Pour comprendre une phrase, demande-toi: <strong>qui fait quoi ?</strong> Retrouve le sujet, le verbe et les compléments de verbe, puis remets-les dans l’ordre dans ta tête.</p>
 <div class="advice-table-wrap">
@@ -220,18 +207,16 @@ migrationNotes:
 </table>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>8. Repérer les verbes à particule séparable</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Repérer les verbes à particule séparable</h3>
 <div class="lesson-card-content">
 <p>Un verbe à particule n’a pas le même sens que le verbe de base. Pense que la particule est souvent à la fin de la phrase.</p>
 <div class="advice-example-line"><span>hören</span><strong>entendre</strong><span>aufhören</span><strong>s’arrêter</strong></div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>9. Repérer les verbes pronominaux</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Repérer les verbes pronominaux</h3>
 <div class="lesson-card-content">
 <p>Tu ne peux comprendre les verbes comme <strong>sich freuen</strong> que si tu repères le pronom réfléchi.</p>
 <div class="advice-table-wrap">
@@ -260,25 +245,24 @@ migrationNotes:
 </div>
 <p><strong>mich</strong> indique que le verbe est pronominal: <em>je me réjouis des vacances</em>.</p>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>10. Comprendre les pronoms</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Comprendre les pronoms</h3>
 <div class="lesson-card-content">
 <p>Quand il y a un pronom dans la phrase, demande-toi qui ou quoi il remplace. Il peut s’agir d’une personne ou d’un groupe nominal cité précédemment dans le texte.</p>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>11. Comprendre les phrases relatives</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Comprendre les phrases relatives</h3>
 <div class="lesson-card-content">
 <p>Quand un mot comme <strong>der</strong>, <strong>die</strong>, <strong>das</strong> ou <strong>den</strong> n’est pas suivi d’un nom, il s’agit souvent d’un pronom relatif qu’on traduit par <strong>qui</strong> ou <strong>que</strong>.</p>
 <blockquote>Ich habe die Schüler gesehen, <strong>die</strong> nicht in die Schule gekommen sind.</blockquote>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>12. Comprendre la nuance</summary>
+</section>
+</section><section data-advice-step="Comprendre les nuances">
+<h2>Comprendre les nuances</h2>
+<section class="advice-reading-section">
+<h3>Comprendre la nuance</h3>
 <div class="lesson-card-content">
 <p>Tu dois connaître les mots qui expriment la négation et la nuance, car ils changent souvent le sens de la phrase.</p>
 <div class="advice-table-wrap">
@@ -321,4 +305,5 @@ migrationNotes:
 <span><strong>sollen</strong> devoir (conseil)</span>
 </div>
 </div>
-</details>
+</section>
+</section>

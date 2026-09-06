@@ -1,6 +1,6 @@
 ---
 title: "damit, während, bevor, nachdem, als, ..."
-description: "Ces conjonctions introduisent une subordonnée dont le verbe conjugué se place à la fin."
+description: "But, temps ou opposition : choisis le mot, puis place le verbe à la fin."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/damit-w%C3%A4hrend-bevor-nachdem-als-obwohl"
@@ -11,58 +11,39 @@ images: []
 migrationNotes: []
 ---
 
-## Subordonnées
+## Choisir le sens
 
-**damit = pour que während = pendant que**
+| Mot | Sens | Exemple |
+| --- | --- | --- |
+| **damit** | pour que | Ich helfe dir, damit du fertig <span class="mark-verb">wirst</span>. |
+| **während** | pendant que | Ich lese, während du <span class="mark-verb">kochst</span>. |
+| **bevor** | avant que | Ich lese, bevor ich ins Bett <span class="mark-verb">gehe</span>. |
+| **nachdem** | après que | Ich ging ins Bett, nachdem ich das Buch gelesen <span class="mark-verb">hatte</span>. |
+| **als** | quand (une fois dans le passé) | Als ich klein <span class="mark-verb">war</span>, wohnte ich in Bern. |
+| **obwohl** | bien que | Ich komme, obwohl ich müde <span class="mark-verb">bin</span>. |
+| **sobald** | dès que | Ich komme, sobald ich Zeit <span class="mark-verb">habe</span>. |
+| **seitdem** | depuis que | Ich bin fitter, seitdem ich Sport <span class="mark-verb">mache</span>. |
 
-**bevor = avant que als = alors que**
+**Même règle :** une virgule, le subordonnant, puis le verbe conjugué **à la fin**.
 
-**nachdem = après que obwohl = bien que**
+### Deux verbes
 
-**sobald = aussitôt (dès) que seitdem = depuis que**
+Wir kaufen ein Ticket, damit wir nach Berlin <span class="mark-verbal-tail">fahren</span> <span class="mark-verb">können</span>.
 
-Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant.
+Wir sind froh, nachdem wir den Film <span class="mark-verbal-tail">gesehen</span> <span class="mark-verb">haben</span>.
 
-Exemple : Je lis toujours un livre avant que j’aille au lit.
+L’infinitif ou le participe passé précède le verbe conjugué. Avec **nachdem**, l’action introduite est antérieure : au récit passé, on rencontre souvent **hatte / war + participe passé**.
 
-Phrase principale: Je lis toujours un livre.
+### Inverser les deux parties
 
-Subordonnée : J’aille au lit.
+Ich <span class="mark-verb">lese</span> ein Buch, bevor ich ins Bett <span class="mark-verb">gehe</span>.<br />
+Bevor ich ins Bett <span class="mark-verb">gehe</span>, <span class="mark-verb">lese</span> ich ein Buch.
 
-## Subordonnant: avant que
+La subordonnée compte comme une place : le verbe de la principale suit la virgule.
 
-La syntaxe de certaines subordonnées en allemand est différente de celle du français. En effet, dans les phrases introduites par damit, bevor, nachdem, während, als et obwohl, tu dois mettre le verbe conjugué tout à la fin.
+## Pour continuer
 
-Le verbe conjugué est celui qui est accordé au sujet (donc pas participe passé, ni infinitif).
-
-## Exemples:
-
-Au présent: Ich lese immer ein Buch, bevor ich ins Bett gehe .
-
-Au passé composé: Wir haben alle geweint, nachdem wir den Film «Titanic» gesehen haben .
-
-Avec un verbe de modalité: Wir kaufen ein Flugticket, damit wir im Ausland die Ferien verbringen können .
-
-Parfois, il est possible d’inverser la phrase principale et la subordonnée. Dans ce cas, il y a une inversion sujet-verbe dans la phrase principale car la subordonnée compte comme une place (verbe en 2ème position).
-
-⚠️ Le verbe de la subordonnée est toujours à la fin de celle-ci !
-
-## Exemple :
-
-Ich lese immer ein Buch, bevor ich ins Bett gehe .
-
-**phrase principale phrase subordonnée**
-
-**v. en 2e p. v. à la fin**
-
-Bevor ich ins Bett gehe , lese ich immer ein Buch.
-
-**phrase subordonnée phrase principale**
-
-v. à la fin v. en 2e p.
-
-## Exercices externes complémentaires
-
-- [https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html](https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html)
-
-- [https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen](https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen)
+<div class="external-button-grid">
+<a href="https://mein-deutschbuch.de/grammatikuebungen-konjunktionen.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 1</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/satzbau/konjunktionen/uebungen" target="_blank" rel="noreferrer">Lingolia · exercice 2</a>
+</div>

@@ -25,31 +25,6 @@ const sortActivity = practice?.sort;
         <span>{practice.level}</span>
       </div>
 
-      {practice.lab && (
-        <article class="theory-activity theory-lab" data-theory-lab>
-          <div class="theory-activity-head">
-            <div>
-              <p class="theory-activity-kicker">Observation active</p>
-              <h3>{practice.lab.title}</h3>
-              <p>{practice.lab.intro}</p>
-            </div>
-          </div>
-          <div class="theory-lab-grid">
-            <div class="theory-lab-options" aria-label="Choix d’exemples">
-              {practice.lab.options.map((option, index) => (
-                <button class:list={[{ 'is-selected': index === 0 }]} type="button" data-lab-option={index} aria-pressed={index === 0 ? 'true' : 'false'}>
-                  {option.label}
-                </button>
-              ))}
-            </div>
-            <div class="theory-lab-result" aria-live="polite">
-              <p data-lab-sentence set:html={practice.lab.options[0].sentenceHtml}></p>
-              <p data-lab-note>{practice.lab.options[0].note}</p>
-            </div>
-          </div>
-        </article>
-      )}
-
       {practice.cards && (
         <article class="theory-activity theory-flashcards" data-theory-cards>
           <div class="theory-activity-head">
@@ -269,28 +244,6 @@ const sortActivity = practice?.sort;
 
         hintDialog?.addEventListener('click', (event) => {
           if (event.target === hintDialog && hintDialog instanceof HTMLDialogElement) hintDialog.close();
-        });
-
-        root.querySelectorAll('[data-theory-lab]').forEach((lab) => {
-          const sentence = lab.querySelector('[data-lab-sentence]');
-          const note = lab.querySelector('[data-lab-note]');
-          const buttons = Array.from(lab.querySelectorAll('[data-lab-option]'));
-          const options = practice.lab?.options ?? [];
-
-          buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-              const index = Number(button.dataset.labOption ?? 0);
-              const option = options[index] ?? options[0];
-              if (!option) return;
-              if (sentence) sentence.innerHTML = option.sentenceHtml;
-              if (note) note.textContent = option.note;
-              buttons.forEach((choice, choiceIndex) => {
-                const selected = choiceIndex === index;
-                choice.classList.toggle('is-selected', selected);
-                choice.setAttribute('aria-pressed', String(selected));
-              });
-            });
-          });
         });
 
         root.querySelectorAll('[data-theory-cards]').forEach((cardsRoot) => {

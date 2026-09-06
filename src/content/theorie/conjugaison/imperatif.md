@@ -135,16 +135,10 @@ Ferme la fenêtre, s’il te plaît ! → Mach bitte das Fenster zu! (v. = **zum
 
 Quelques exercices en ligne pour entraîner l'impératif.
 
-- [https://mein-deutschbuch.de/grammatikuebungen-imperativ.html](https://mein-deutschbuch.de/grammatikuebungen-imperativ.html)
-
-- [https://deutsch.lingolia.com/de/grammatik/verben/imperativ/uebungen](https://deutsch.lingolia.com/de/grammatik/verben/imperativ/uebungen)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg06_12.htm](https://www.schubert-verlag.de/aufgaben/xg/xg06_12.htm)
-
-- [http://lerngrammatik.de/uebung_verb_imperativ_1.htm](http://lerngrammatik.de/uebung_verb_imperativ_1.htm)
-
-- [https://www.hueber.de/shared/uebungen/delfin/lerner/uebungen/fset.php?Volume=1&Lection=8&Exercise=6&SubExercise=1](https://www.hueber.de/shared/uebungen/delfin/lerner/uebungen/fset.php?Volume=1&Lection=8&Exercise=6&SubExercise=1)
-
-- [http://www.lehrerlenz.de/imperativ__bungen.html](http://www.lehrerlenz.de/imperativ__bungen.html)
-
-- [https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-22234.php](https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-22234.php)
+<div class="external-button-grid">
+<a href="https://mein-deutschbuch.de/grammatikuebungen-imperativ.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 1</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/verben/imperativ/uebungen" target="_blank" rel="noreferrer">Lingolia · exercice 2</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg06_12.htm" target="_blank" rel="noreferrer">Schubert · exercice 3</a>
+<a href="http://lerngrammatik.de/uebung_verb_imperativ_1.htm" target="_blank" rel="noreferrer">Lerngrammatik · exercice 4</a>
+<a href="https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-22234.php" target="_blank" rel="noreferrer">allemandfacile.com · exercice 5</a>
+</div>

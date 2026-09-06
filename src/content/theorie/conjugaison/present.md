@@ -66,24 +66,16 @@ Voici quelques exemples de verbes irréguliers qu’il faut absolument connaîtr
 
 Quelques exercices pour entraîner la conjugaison des verbes au présent.
 
-- [https://www.schubert-verlag.de/aufgaben/xg/xg01_03.htm](https://www.schubert-verlag.de/aufgaben/xg/xg01_03.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg02_06.htm](https://www.schubert-verlag.de/aufgaben/xg/xg02_06.htm)
-
-- [https://deutsch.lingolia.com/de/grammatik/zeitformen/praesens/uebungen](https://deutsch.lingolia.com/de/grammatik/zeitformen/praesens/uebungen)
-
-- [https://www.deutsch-lernen.com/anfaengerkurs/uebung1_1.php](https://www.deutsch-lernen.com/anfaengerkurs/uebung1_1.php)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/02_verben_grammatik/09_a_uebungen_verben_gegenwart.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/02_verben_grammatik/09_a_uebungen_verben_gegenwart.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg03_06.htm](https://www.schubert-verlag.de/aufgaben/xg/xg03_06.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap1_verbauswahl1.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap1_verbauswahl1.htm)
-
-- [https://mein-deutschbuch.de/grammatikuebungen-verbkonjugation.html](https://mein-deutschbuch.de/grammatikuebungen-verbkonjugation.html)
-
-- [https://mein-deutschbuch.de/grammatikuebungen-unregelmaessige-verben.html](https://mein-deutschbuch.de/grammatikuebungen-unregelmaessige-verben.html)
-
-- [http://lerngrammatik.de/uebung_verb_praesens_unregelmaessige_verben_1.htm](http://lerngrammatik.de/uebung_verb_praesens_unregelmaessige_verben_1.htm)
-
-- [https://deutschlernerblog.de/verben-konjugieren-uebungen-starke-und-unregelmaessige-verben-a1/](https://deutschlernerblog.de/verben-konjugieren-uebungen-starke-und-unregelmaessige-verben-a1/)
+<div class="external-button-grid">
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg01_03.htm" target="_blank" rel="noreferrer">Schubert · exercice 1</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg02_06.htm" target="_blank" rel="noreferrer">Schubert · exercice 2</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/zeitformen/praesens/uebungen" target="_blank" rel="noreferrer">Lingolia · exercice 3</a>
+<a href="https://www.deutsch-lernen.com/anfaengerkurs/uebung1_1.php" target="_blank" rel="noreferrer">deutsch-lernen.com · exercice 4</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/02_verben_grammatik/09_a_uebungen_verben_gegenwart.htm" target="_blank" rel="noreferrer">Levrai · exercice 5</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg03_06.htm" target="_blank" rel="noreferrer">Schubert · exercice 6</a>
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap1_verbauswahl1.htm" target="_blank" rel="noreferrer">Schubert · exercice 7</a>
+<a href="https://mein-deutschbuch.de/grammatikuebungen-verbkonjugation.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 8</a>
+<a href="https://mein-deutschbuch.de/grammatikuebungen-unregelmaessige-verben.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 9</a>
+<a href="http://lerngrammatik.de/uebung_verb_praesens_unregelmaessige_verben_1.htm" target="_blank" rel="noreferrer">Lerngrammatik · exercice 10</a>
+<a href="https://deutschlernerblog.de/verben-konjugieren-uebungen-starke-und-unregelmaessige-verben-a1/" target="_blank" rel="noreferrer">deutschlernerblog.de · exercice 11</a>
+</div>

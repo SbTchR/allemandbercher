@@ -1,0 +1,53 @@
+---
+import { withBase } from '../lib/paths';
+---
+<section class="content-band listening-practice" data-listening-practice>
+  <p class="home-section-label">À l’écoute · 11 secondes</p>
+  <h2>Un rendez-vous au cinéma</h2>
+  <p>Lis les trois questions. Écoute, réponds, puis réécoute pour vérifier.</p>
+  <audio controls preload="metadata" src={withBase('/audio/conseils-rendezvous.m4a')} aria-label="Message en allemand : rendez-vous au cinéma"></audio>
+  <form>
+    <label>Quel jour ?<select name="day" data-expected="samedi"><option value="">Choisis…</option><option>vendredi</option><option>samedi</option><option>dimanche</option></select></label>
+    <label>À quelle heure est le rendez-vous ?<select name="time" data-expected="14 h"><option value="">Choisis…</option><option>14 h</option><option>14 h 30</option><option>15 h</option></select></label>
+    <label>Combien faut-il apporter ?<select name="money" data-expected="10 francs"><option value="">Choisis…</option><option>5 francs</option><option>10 francs</option><option>20 francs</option></select></label>
+    <div class="theory-action-row"><button type="submit" class="quest-launch-button">Vérifier</button><button type="reset" class="text-link">Recommencer</button></div>
+    <p data-listening-feedback role="status"></p>
+  </form>
+  <details><summary>Lire la transcription et comprendre</summary>
+    <p lang="de">Hallo Mia! Wir treffen uns am Samstag um vierzehn Uhr vor dem Kino. Der Film beginnt erst um halb drei. Bring bitte zehn Franken mit. Bis Samstag!</p>
+    <p>Le rendez-vous est <strong>samedi à 14 h</strong>, devant le cinéma. Le film commence à <strong>14 h 30</strong>. Il faut apporter <strong>10 francs</strong>.</p>
+    <p><strong>Le piège :</strong> l’heure du rendez-vous n’est pas celle du film.</p>
+  </details>
+</section>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-listening-practice]').forEach(root => {
+    const form = root.querySelector('form')!;
+    const fields = [...form.querySelectorAll('select')];
+    const feedback = root.querySelector('[data-listening-feedback]')!;
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let score = 0;
+      fields.forEach(field => {
+        const correct = field.value === field.dataset.expected;
+        if (correct) score++;
+        field.setAttribute('aria-invalid', String(!correct));
+      });
+      feedback.textContent = score === fields.length ? '3 / 3 · Bravo ! Tu as distingué le rendez-vous et le début du film.' : `${score} / 3 · Réécoute et corrige les réponses signalées.`;
+    });
+    form.addEventListener('reset', () => {
+      feedback.textContent = '';
+      fields.forEach(field => field.removeAttribute('aria-invalid'));
+      root.querySelector('details')!.open = false;
+      const audio = root.querySelector('audio')!; audio.pause(); audio.currentTime = 0;
+    });
+  });
+</script>
+<style>
+  audio { width: min(100%, 480px); margin-bottom: 20px; }
+  form { display: grid; gap: 16px; max-width: 650px; }
+  label { display: grid; gap: 7px; font-weight: 700; }
+  select { min-height: 46px; padding: 10px; font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius-md); }
+  select[aria-invalid="true"] { border: 2px solid var(--accent); }
+  details { margin-top: 20px; }
+  summary { cursor: pointer; padding-block: 12px; font-weight: 700; }
+</style>

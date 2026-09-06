@@ -1,6 +1,6 @@
 ---
 title: "Les phrases infinitives"
-description: "Une phrase infinitive est une phrase qui contient un verbe à l’infinitif en plus du verbe conjugué. Par exemple, les phrases avec un verbe de modalité sont des phrases infinitives. Il existe d’autres types d’infinitives:"
+description: "Infinitif seul, zu, um … zu, ohne … zu ou anstatt … zu : choisis la construction."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/les-infinitives"
@@ -11,84 +11,43 @@ images: []
 migrationNotes: []
 ---
 
-## Infinitives simples
+## Avec ou sans zu ?
 
-Il y a quelques verbes qui peuvent fonctionner comme des verbes de modalité. C’est-à-dire qu’il faut simplement mettre le verbe à l’infinitif à la fin de la phrase.
+| Construction | Exemple | Sens |
+| --- | --- | --- |
+| **Sans zu** après un modal ou certains verbes | Ich gehe <span class="mark-verbal-tail">schwimmen</span>. · Ich höre ihn <span class="mark-verbal-tail">kommen</span>. | Je vais nager. · Je l’entends venir. |
+| **zu + infinitif** | Er beginnt, seine Hausaufgaben **zu** <span class="mark-verbal-tail">machen</span>. | Il commence à faire ses devoirs. |
+| **zu + infinitif** | Ich bitte dich, die Tür **zu** <span class="mark-verbal-tail">schliessen</span>. | Je te demande de fermer la porte. |
 
-Exemples: gehen (aller) : Ich gehe am Montag schwimmen .
+**Sans zu :** notamment les modaux, gehen, fahren, kommen, hören, sehen, fühlen et lassen. Apprends la construction avec le verbe : le français « de / à » ne suffit pas pour décider.
 
-Je vais nager lundi.
+**Particule séparable :** mitnehmen → mit**zu**nehmen.<br />
+Sie hat vergessen, ihr Buch **mitzunehmen**. = Elle a oublié de prendre son livre.
 
-hören (entendre): Er hört den Mann kommen .
+## But, absence ou remplacement
 
-Il entend venir l’homme.
+| Construction | Exemple | Sens |
+| --- | --- | --- |
+| **um … zu** | Ich gehe in mein Zimmer, **um** mein Buch **zu lesen**. | pour lire mon livre |
+| **ohne … zu** | Er geht, **ohne** den Wortschatz **zu lernen**. | sans apprendre le vocabulaire |
+| **anstatt … zu** (ou **statt … zu**) | Er spielt, **anstatt** seine Hausaufgaben **zu machen**. | au lieu de faire ses devoirs |
 
-## Autres verbes qui peuvent fonctionner ainsi:
+Place **um / ohne / (an)statt** après la virgule et **zu** juste avant l’infinitif.
 
-fahren, machen, sich lassen, kommen, sehen, fühlen, etc.
+**Même personne pour les deux actions :** Ich lerne, **um** den Test **zu bestehen**.<br />
+**Personnes différentes :** Ich helfe dir, **damit du** den Test **bestehst**.
 
-## Infinitives « de »
+**Pour + nom :** für meine Schwester. **Pour + action :** um einen Film zu sehen.
 
-Dans les phrases où l’infinitif est précédé d’un « de » ou d’un « à », il faut traduire celui-ci par la particule « zu ». La phrase infinitive est séparée par une virgule et le « zu » se place juste avant l’infinitif.
+## Pour continuer
 
-Exemples: Er beginnt, seine Hausaufgaben zu machen .
-
-Il commence à faire ses devoirs.
-
-Ich bitte dich, die Tür zu schliessen .
-
-Je te demande de fermer la porte.
-
-Avec un verbe à particule séparable, on place le « zu » entre la particule et l’infinitif (en un mot).
-
-Sie hat vergessen, ihr Buch mitzunehmen.
-
-Elle a oublié de prendre son livre.
-
-## Infinitives « pour »
-
-Pour traduire la préposition « pour », vous connaissez le mot « für », mais celui-ci n’est utilisé que lorsqu’il est suivi d’un groupe nominal (ex. : pour ma sœur = für meine Schwester).
-
-Lorsqu’il est suivi d’une phrase infinitive, on le traduit par « um… zu ». L’infinitive est aussi séparée par une virgule. On place le « um » juste après la virgule et le « zu » avant l’infinitif.
-
-Exemples: Ich gehe in mein Zimmer, um mein Buch zu lesen .
-
-Je vais dans ma chambre, pour lire mon livre.
-
-Ich gehe ins Kino, um einen Film zu schauen .
-
-Je vais au cinéma, pour regarder un film.
-
-## Infinitives « sans »
-
-Même principe, sauf que l’on traduit « sans » par « ohne… zu ».
-
-Exemples: Er glaubt, er kann eine gute Note haben, ohne den Wortschatz zu lernen .
-
-Il croit qu’il peut avoir une bonne note, sans apprendre le vocabulaire.
-
-## Infinitives « au lieu de »
-
-Même principe, sauf que l’on traduit « au lieu de » par « anstatt… zu ».
-
-Exemples: Er spielt draussen, anstatt seine Hausaufgaben zu machen .
-
-Il joue dehors, au lieu de faire ses devoirs.
-
-## Quelques exercices en ligne pour entraîner les infinitives:
-
-- [https://deutsch.lingolia.com/de/grammatik/satzbau/nebensaetze/infinitivsaetze/uebungen](https://deutsch.lingolia.com/de/grammatik/satzbau/nebensaetze/infinitivsaetze/uebungen)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg11_02.htm](https://www.schubert-verlag.de/aufgaben/xg/xg11_02.htm)
-
-- [https://sprachekulturkommunikation.com/ergaenzungsaetze-infinitivsaetze-mit-zu-tipps-und-beispielsaetze/](https://sprachekulturkommunikation.com/ergaenzungsaetze-infinitivsaetze-mit-zu-tipps-und-beispielsaetze/)
-
-- [https://mein-deutschbuch.de/grammatikuebungen-infinitivsaetze.html](https://mein-deutschbuch.de/grammatikuebungen-infinitivsaetze.html)
-
-- [https://deutsch.lingolia.com/de/grammatik/verben/infinitiv/uebungen](https://deutsch.lingolia.com/de/grammatik/verben/infinitiv/uebungen)
-
-- [http://lernox.de/lernmaterial/infinitivsaetze-mit-oder-ohne-zu-rsr1535](http://lernox.de/lernmaterial/infinitivsaetze-mit-oder-ohne-zu-rsr1535)
-
-- [https://schulminator.com/community/germanikus/128](https://schulminator.com/community/germanikus/128)
-
-- [https://lingvico.net/zuinfinitiv-i-b1/](https://lingvico.net/zuinfinitiv-i-b1/)
+<div class="external-button-grid">
+<a href="https://deutsch.lingolia.com/de/grammatik/satzbau/nebensaetze/infinitivsaetze/uebungen" target="_blank" rel="noreferrer">Lingolia · exercice 1</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg11_02.htm" target="_blank" rel="noreferrer">Schubert · exercice 2</a>
+<a href="https://sprachekulturkommunikation.com/ergaenzungsaetze-infinitivsaetze-mit-zu-tipps-und-beispielsaetze/" target="_blank" rel="noreferrer">sprachekulturkommunikation.com · exercice 3</a>
+<a href="https://mein-deutschbuch.de/grammatikuebungen-infinitivsaetze.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 4</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/verben/infinitiv/uebungen" target="_blank" rel="noreferrer">Lingolia · exercice 5</a>
+<a href="http://lernox.de/lernmaterial/infinitivsaetze-mit-oder-ohne-zu-rsr1535" target="_blank" rel="noreferrer">lernox.de · exercice 6</a>
+<a href="https://schulminator.com/community/germanikus/128" target="_blank" rel="noreferrer">schulminator.com · exercice 7</a>
+<a href="https://lingvico.net/zuinfinitiv-i-b1/" target="_blank" rel="noreferrer">lingvico.net · exercice 8</a>
+</div>

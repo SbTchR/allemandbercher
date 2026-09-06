@@ -105,7 +105,7 @@ migrationNotes: []
 <details class="external-quest">
   <summary>Exercices externes supplémentaires</summary>
   <div class="external-button-grid">
-    <a href="https://deutsch-coach.com/uebung-personalpronomen-im-nominativ/" target="_blank" rel="noreferrer">Nominatif</a>
+
     <a href="https://www.grammatiktraining.de/pronomen/grammatikuebung-personalpronomen-ergaenzen.html" target="_blank" rel="noreferrer">Compléter les pronoms</a>
     <a href="https://deutsch.lingolia.com/de/grammatik/pronomen/personalpronomen/uebungen" target="_blank" rel="noreferrer">Lingolia</a>
     <a href="https://www.schubert-verlag.de/aufgaben/xg/xg03_10.htm" target="_blank" rel="noreferrer">Schubert Verlag</a>

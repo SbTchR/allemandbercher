@@ -514,18 +514,12 @@ export const externalLinkGroups = {
     {
       title: 'Position ou mouvement',
       links: [
-        {
-          label: 'Wo oder wohin',
-          url: 'http://www.lehrerlenz.de/wo_oder_wohin.html',
-        },
+
         {
           label: 'Mein Deutschbuch',
           url: 'https://mein-deutschbuch.de/grammatikuebungen-wechselpraepositionen.html',
         },
-        {
-          label: 'Grammatiktraining',
-          url: 'https://www.grammatiktraining.de/templokpraepositionen/wechselpraepositionen-artikel-ergaenzen-grammatikuebung.html',
-        },
+
         {
           label: 'Schubert XG 03',
           url: 'https://www.schubert-verlag.de/aufgaben/xg/xg03_08.htm',
@@ -545,18 +539,12 @@ export const externalLinkGroups = {
           label: 'Lingolia',
           url: 'https://deutsch.lingolia.com/de/grammatik/deklination/genitiv/uebungen',
         },
-        {
-          label: 'Lehrerlenz',
-          url: 'http://www.lehrerlenz.de/genitiv__grammatikbungen.html',
-        },
+
         {
           label: 'Mein Deutschbuch',
           url: 'https://mein-deutschbuch.de/grammatikuebungen-genitiv.html',
         },
-        {
-          label: 'DeutschAkademie',
-          url: 'https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=38',
-        },
+
         {
           label: 'Allemand facile 1',
           url: 'https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-114828.php',

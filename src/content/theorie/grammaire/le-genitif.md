@@ -42,14 +42,9 @@ Dans quelques expressions figées, on rencontre une forme liée à un pronom per
 
 ## Autres exercices à faire en ligne
 
-- [Lingolia : le génitif](https://deutsch.lingolia.com/de/grammatik/deklination/genitiv/uebungen)
-
-- [Lehrerlenz : exercices sur le génitif](http://www.lehrerlenz.de/genitiv__grammatikbungen.html)
-
-- [Mein Deutschbuch](https://mein-deutschbuch.de/grammatikuebungen-genitiv.html)
-
-- [DeutschAkademie](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=38)
-
-- [Allemand facile : exercice 1](https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-114828.php)
-
-- [Allemand facile : exercice 2](https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-87001.php)
+<div class="external-button-grid">
+<a href="https://deutsch.lingolia.com/de/grammatik/deklination/genitiv/uebungen" target="_blank" rel="noreferrer">Lingolia : le génitif</a>
+<a href="https://mein-deutschbuch.de/grammatikuebungen-genitiv.html" target="_blank" rel="noreferrer">Mein Deutschbuch</a>
+<a href="https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-114828.php" target="_blank" rel="noreferrer">Allemand facile : exercice 1</a>
+<a href="https://www.allemandfacile.com/exercices/exercice-allemand-2/exercice-allemand-87001.php" target="_blank" rel="noreferrer">Allemand facile : exercice 2</a>
+</div>

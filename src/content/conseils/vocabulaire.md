@@ -27,43 +27,28 @@ migrationNotes:
 <strong>Répéter</strong>
 <p>Revoir plusieurs fois les mots avant le test pour les garder en mémoire.</p>
 </article>
-</section>
-
-<div class="advice-alert">
-<strong>Révise tous les jours un petit peu à la fois.</strong>
-<p>La régularité est plus efficace qu’une grosse révision juste avant le test.</p>
-</div>
-
-<details class="external-quest">
-<summary>Applications recommandées</summary>
-<div class="external-button-grid">
-<a href="https://sbtchr.github.io/AppVoc/">Application faite maison pour tous les vocs de Genial Klick</a>
-<a href="https://sites.google.com/view/vocallemand/accueil">Page originale de l’application</a>
-<a href="https://cabuu.app/">App pour smartphone recommandée : Cabuu</a>
-</div>
-</details>
-
-<details class="lesson-card">
-<summary>Comment la mémoire fonctionne-t-elle ?</summary>
+</section><section data-advice-step="Créer des liens">
+<h2>Créer des liens</h2>
+<section class="advice-reading-section">
+<h3>Comment la mémoire fonctionne-t-elle ?</h3>
 <div class="lesson-card-content">
 <div class="advice-grid two-columns">
 <article>
 <strong>Mémoire de travail</strong>
-<p>Elle retient pendant un bref instant, environ 30 secondes, une quantité limitée d’informations. Elle peut s’améliorer avec l’entraînement, mais elle ne permet pas de mémoriser une longue liste d’un seul coup.</p>
+<p>Ta mémoire de travail retient peu d’informations à la fois. Entraîne-la avec de petits groupes de mots.</p>
 </article>
 <article>
 <strong>Réseau d’idées</strong>
 <p>Le vocabulaire ne s’enregistre pas comme une liste. Chaque mot est relié à d’autres mots, images, gestes ou émotions.</p>
 </article>
 </div>
-<p>Il est donc impossible de retenir une grande quantité de mots en une seule fois. Découpe la liste en petites parties de 5 ou 6 mots et travaille une partie après l’autre. Tu peux apprendre plusieurs parties le même jour, à condition de les entraîner successivement.</p>
+<p>Découpe la liste en groupes de <strong>5 ou 6 mots</strong>. Travaille-les l’un après l’autre, même si tu en apprends plusieurs le même jour.</p>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>Associations d’idées</summary>
+</section>
+<section class="advice-reading-section">
+<h3>Associations d’idées</h3>
 <div class="lesson-card-content">
-<p>Le vocabulaire ne s’enregistre pas sous forme de liste dans notre cerveau. De manière naturelle, chaque mot est intégré dans un réseau qui comprend les autres mots que l’on connaît, dans n’importe quelle langue, ainsi que leurs représentations concrètes, comme des images.</p>
+<p>Relie le nouveau mot à des mots connus, dans toutes tes langues, et à une image.</p>
 <p>Lorsque tu apprends un mot, associe-le à un maximum d’autres mots que tu connais, ou à une petite phrase.</p>
 <div class="memory-network" data-source-image-replacement aria-label="Exemple de réseau autour du mot Fussball">
 <strong>Fussball</strong>
@@ -75,17 +60,18 @@ migrationNotes:
 </div>
 <p>Associe aussi une image, un mouvement, une émotion ou un ressenti au mot. Plus il y a de connexions dans ce réseau, plus il est facile de retrouver l’information.</p>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>Répétition espacée</summary>
+</section>
+</section><section data-advice-step="Espacer">
+<h2>Espacer</h2>
+<section class="advice-reading-section">
+<h3>Répétition espacée</h3>
 <div class="lesson-card-content">
-<p>L’oubli est une manière pour le cerveau de se protéger. Notre inconscient trie les informations que notre cerveau reçoit et supprime celles qu’il considère comme les moins utiles. C’est une bonne chose, car sinon nous aurions beaucoup trop d’informations en tête. Pour forcer notre cerveau à garder une information, il est donc nécessaire de la lui présenter plusieurs fois.</p>
-<p>Chaque mot doit être révisé au minimum 5-6 fois. Si tu as un test le vendredi, tu devrais être capable de donner tous les mots le lundi soir, puis les revoir chaque jour jusqu’au test.</p>
-<p><strong>Chaque jour, tu en auras oublié un peu moins.</strong> Une révision fait remonter les mots à 10 sur 10; entre deux rappels, la perte devient progressivement plus faible.</p>
+<p>Oublier est normal. Pour retenir un mot, essaie de le retrouver plusieurs fois, à des moments différents.</p>
+<p>Prévois plusieurs rappels, par exemple 5 ou 6. Pour un test vendredi, commence avant lundi et révise chaque jour.</p>
+<p>Les rappels réguliers aident à retenir les mots plus longtemps. Le tableau illustre cette idée ; ce ne sont pas des résultats garantis.</p>
 <div class="advice-table-wrap">
 <table class="quest-table advice-table compact-advice-table">
-<caption>Lecture accessible du schéma de répétition espacée; les valeurs sont approximatives.</caption>
+<caption>Exemple de rappels espacés : valeurs illustratives, variables selon les mots et les personnes.</caption>
 <thead>
 <tr>
 <th scope="col">Jour</th>
@@ -103,14 +89,15 @@ migrationNotes:
 </tbody>
 </table>
 </div>
-<p>Les courbes plus basses du schéma original montrent ce qui arriverait sans nouveau rappel: le nombre de mots retenus continuerait à diminuer. Le rappel quotidien relance la mémorisation et aplatit peu à peu la courbe d’oubli.</p>
+<p>Sans rappel, tu risques d’oublier davantage. Révise surtout les mots qui résistent.</p>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>Comment réviser efficacement ?</summary>
+</section>
+</section><section data-advice-step="Apprendre">
+<h2>Apprendre</h2>
+<section class="advice-reading-section">
+<h3>Comment réviser efficacement ?</h3>
 <div class="lesson-card-content">
-<p>À chaque fois que tu révises ton vocabulaire, passe par les 4 étapes suivantes pour chacune des petites parties de la liste, soit 5 ou 6 mots à la fois, afin de les retenir à long terme. Cette méthode devrait te permettre d’économiser de l’énergie et de gagner du temps.</p>
+<p>Pour chaque groupe de 5 ou 6 mots, suis ces quatre étapes.</p>
 <div class="advice-table-wrap">
 <table class="quest-table advice-table">
 <thead>
@@ -123,12 +110,12 @@ migrationNotes:
 <tbody>
 <tr>
 <th>1. Comprendre tous les mots et toutes les phrases</th>
-<td>Cache les mots en allemand avec un cahier et fais-le défiler en essayant, pour chaque mot, de dire sa traduction. Répète l’opération jusqu’à ce que tu puisses donner la traduction du tac au tac pour chacun d’eux. Décortique les mots longs - par exemple <strong>Fuss-ball</strong> = pied-balle -, fais des liens avec des mots déjà connus comme <strong>Fussball spielen</strong> et représente-toi une image, un mouvement ou une émotion.</td>
+<td>Lis l’allemand et retrouve le sens français. Découpe les mots : <strong>Fuss-ball</strong> = pied-balle. Associe une image ou une phrase : <strong>Fussball spielen</strong>.</td>
 <td>Comprendre tous les mots et toutes les phrases.</td>
 </tr>
 <tr>
 <th>2. Apprendre par oral les mots et phrases à connaître en actif</th>
-<td>Travaille dans l’autre sens, du français vers l’allemand, si possible à haute voix. Vérifie la prononciation si nécessaire. Sois aussi attentif aux types de mots : noms, verbes, adjectifs... À chaque fois que tu cherches un mot dans ta mémoire, essaie de passer par la représentation que tu en as : image, mouvement, émotion, etc. Pour retenir un déterminant, cherche une analogie, par exemple <strong>der Pausenhof - der Bahnhof</strong>.</td>
+<td>Cache l’allemand. Retrouve et prononce le mot à partir du français. Vérifie le son dans un dictionnaire ou avec ton enseignant. Apprends les noms avec leur déterminant : <strong>der Pausenhof – der Bahnhof</strong>.</td>
 <td>Apprendre les mots actifs et fixer la prononciation.</td>
 </tr>
 <tr>
@@ -153,16 +140,17 @@ migrationNotes:
 <p>Plus tu t’entraîneras à apprendre du vocabulaire par cœur, plus cette méthode deviendra facile et rapide au fil du temps.</p>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>Prononcer juste = écrire juste</summary>
+</section>
+</section><section data-advice-step="Prononcer">
+<h2>Prononcer</h2>
+<section class="advice-reading-section">
+<h3>Prononcer juste = écrire juste</h3>
 <div class="lesson-card-content">
 <p>Être bien au point avec la prononciation des syllabes en allemand aide beaucoup à orthographier correctement les mots.</p>
 <p>Pour savoir comment on prononce un mot, cherche-le dans un dictionnaire en ligne comme leo.org ou pons.com, ou sur Quizlet, puis clique sur l'icône haut-parleur.</p>
 <p class="advice-subheading"><strong>Tableau de phonétique allemande</strong></p>
 <div class="advice-table-wrap">
-<table class="quest-table advice-table">
+<table class="quest-table advice-table" data-pronunciation-table>
 <thead>
 <tr>
 <th scope="col">Lettres</th>
@@ -184,7 +172,7 @@ migrationNotes:
 <tr><th scope="row">s</th><td>suivi d’une voyelle</td><td>« z »</td><td>zéro</td><td>sehen</td></tr>
 <tr><th scope="row">u</th><td>-</td><td>« ou »</td><td>Louis</td><td>Fussball, lustig</td></tr>
 <tr><th scope="row">ü</th><td>-</td><td>« u »</td><td>Ursule</td><td>für, über, gemütlich</td></tr>
-<tr><th scope="row">v</th><td>-</td><td>« f »</td><td>Philippe</td><td>positiv, viel</td></tr>
+<tr><th scope="row">v</th><td>souvent ; certains emprunts se prononcent « v »</td><td>« f » ou « v »</td><td>Philippe / Véronique</td><td>viel : « f » ; positiv : « v »</td></tr>
 <tr><th scope="row">w</th><td>-</td><td>« v »</td><td>Véronique</td><td>was, zwei</td></tr>
 <tr><th scope="row">y</th><td>-</td><td>« u »</td><td>but</td><td>Typ, sympathisch</td></tr>
 <tr><th scope="row">z</th><td>-</td><td>« ts »</td><td>carnotset</td><td>zwanzig, Zimmer</td></tr>
@@ -198,8 +186,8 @@ migrationNotes:
 <tr><th scope="row">in</th><td>-</td><td>« inne »</td><td>Line</td><td>interessant</td></tr>
 <tr><th scope="row">ch</th><td>après a, o, u ou au</td><td>« r »</td><td>rire</td><td>Buch, Loch, Dach, Bauch</td></tr>
 <tr><th scope="row">ch</th><td>après les autres voyelles et les consonnes</td><td>« ch » dans la gorge</td><td>-</td><td>ich, Milch, Kirche, manchmal, Mädchen</td></tr>
-<tr><th scope="row">ch</th><td>devant a, o, u, l, r ou s</td><td>« k »</td><td>chaos</td><td>Chaos, Chor, sechs, wachsen</td></tr>
-<tr><th scope="row">g</th><td>à la fin d’un mot ou avant « -keit »</td><td>« ch » dans la gorge</td><td>-</td><td>richtig, Richtigkeit, wichtig, Wichtigkeit</td></tr>
+<tr><th scope="row">ch</th><td>dans certains mots d’origine étrangère ou dans -chs</td><td>« k »</td><td>chaos</td><td>Chaos, Chor, sechs, wachsen</td></tr>
+<tr><th scope="row">-ig</th><td>souvent en fin de mot ou avant « -keit » (varie selon la région)</td><td>« ch » dans la gorge</td><td>-</td><td>richtig, Richtigkeit, wichtig, Wichtigkeit</td></tr>
 <tr><th scope="row">sch</th><td>-</td><td>« ch »</td><td>chariot</td><td>Fisch, Mensch, falsch</td></tr>
 <tr><th scope="row">-er</th><td>à la fin d’un mot</td><td>« a » un peu étouffé</td><td>-</td><td>Lehrer, Wasser</td></tr>
 <tr><th scope="row">qu</th><td>-</td><td>« kv »</td><td>-</td><td>Qualität, Quantität, Quatsch</td></tr>
@@ -214,12 +202,13 @@ migrationNotes:
 </div>
 </section>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>Les mots fréquents</summary>
+</section>
+</section><section data-advice-step="Mots fréquents">
+<h2>Mots fréquents</h2>
+<section class="advice-reading-section">
+<h3>Les mots fréquents</h3>
 <div class="lesson-card-content">
-<p>Pour développer ton vocabulaire de base, révise de temps en temps cette liste de mots. Ce sont des mots très fréquents mais difficiles à retenir.</p>
+<p>Révise aussi les mots fréquents : ils sont utiles dans presque tous les textes.</p>
 <section class="embed-panel compact-embed-panel" aria-label="Mots fréquents à réviser">
 <h2>Une première sélection à réviser sur le site</h2>
 <div class="advice-table-wrap">
@@ -243,24 +232,31 @@ migrationNotes:
 </table>
 </div>
 <div class="mini-note">
-<strong>Complément natif</strong>
-<p>Cette courte sélection reste disponible même si Quizlet refuse l’affichage intégré. La liste externe complète demeure accessible avec le bouton ci-dessous.</p>
+<strong>À réviser</strong>
+<p>Commence par ces mots, puis passe à la liste complète si tu le souhaites.</p>
 </div>
 <div class="external-button-grid">
 <a href="https://quizlet.com/696862761/les-mots-frequents-flash-cards/">Ouvrir la liste complète sur Quizlet</a>
 </div>
 </section>
 </div>
-</details>
-
-<details class="external-quest">
-<summary>Blooket pour commencer à réviser</summary>
+</section>
+</section><section class="advice-reading-section">
+<h3>Applications recommandées</h3>
+<div class="external-button-grid">
+<a href="https://sbtchr.github.io/AppVoc/">Application faite maison pour tous les vocs de Genial Klick</a>
+<a href="https://sites.google.com/view/vocallemand/accueil">Page originale de l’application</a>
+<a href="https://cabuu.app/">App pour smartphone recommandée : Cabuu</a>
+</div>
+</section>
+<section class="advice-reading-section">
+<h3>Blooket pour commencer à réviser</h3>
 <div class="lesson-card-content">
-<p>Le site <a href="http://www.blooket.com/">www.blooket.com</a> propose aussi des jeux sympas pour réviser le voc. Utilise-le plutôt pour commencer à apprendre un nouveau voc: les questions à choix multiples sont pratiques pour voir les mots une première fois, mais pas suffisantes pour apprendre à les écrire.</p>
+<p>Blooket aide à découvrir les mots avec des QCM. Pour savoir les écrire, entraîne-toi aussi sans choix de réponses.</p>
 <div class="external-button-grid">
 <a href="http://www.blooket.com/">Créer un compte Blooket</a>
 <a href="https://www.blooket.com/set/62b1741b83ceb40018c212cf">Accéder à la liste de voc</a>
 </div>
 <p>Clique ensuite sur <strong>Solo</strong> pour jouer seul ou sur <strong>Host</strong> pour jouer à plusieurs.</p>
 </div>
-</details>
+</section>

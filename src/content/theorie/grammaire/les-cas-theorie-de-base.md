@@ -94,38 +94,26 @@ Les déclinaisons des adjectifs sont apprises en 10H.
 
 ## Autres exercices à faire en ligne
 
-- [https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/)
-
-- [https://deutschlernerblog.de/deklination-unbestimmter-artikel-online-uebungen-grammatikuebungen/](https://deutschlernerblog.de/deklination-unbestimmter-artikel-online-uebungen-grammatikuebungen/)
-
-- [http://www.lehrerlenz.de/lektion_14_dativ.html](http://www.lehrerlenz.de/lektion_14_dativ.html)
-
-- [https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html](https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html)
-
+<div class="external-button-grid">
+<a href="https://deutschlernerblog.de/deklination-bestimmter-artikel-online-uebungen-grammatikuebungen/" target="_blank" rel="noreferrer">deutschlernerblog.de · exercice 1</a>
+<a href="https://deutschlernerblog.de/deklination-unbestimmter-artikel-online-uebungen-grammatikuebungen/" target="_blank" rel="noreferrer">deutschlernerblog.de · exercice 2</a>
+<a href="http://www.lehrerlenz.de/lektion_14_dativ.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 3</a>
+<a href="https://www.grammatiktraining.de/dativakkusativ/grammatikuebung-nominativ-dativ-oder-akkusativ-zuordnen.html" target="_blank" rel="noreferrer">Grammatiktraining · exercice 4</a>
+</div>
 ## Quelques exercices en ligne pour entraîner l'accord de l'adjectif
 
-- [http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html](http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html)
-
-- [https://mein-deutschbuch.de/grammatikuebungen-adjektivdeklination-1.html](https://mein-deutschbuch.de/grammatikuebungen-adjektivdeklination-1.html)
-
-- [https://deutschlernerblog.de/uebungen-zur-adjektivdeklination-deutsch-a1-a2/](https://deutschlernerblog.de/uebungen-zur-adjektivdeklination-deutsch-a1-a2/)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg05_15.htm](https://www.schubert-verlag.de/aufgaben/xg/xg05_15.htm)
-
-- [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=4&Lection=2&Exercise=1&SubExercise=1](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=4&Lection=2&Exercise=1&SubExercise=1)
-
-- [https://www.deutsch-lernen.com/uebungen/dc-ue02_2.php?check=yes](https://www.deutsch-lernen.com/uebungen/dc-ue02_2.php?check=yes)
-
-- [https://deutsch.lingolia.com/de/grammatik/adjektive/deklination/uebungen](https://deutsch.lingolia.com/de/grammatik/adjektive/deklination/uebungen)
-
-- [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=14](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=14)
-
-- [https://www.grammatiktraining.de/adjektive/grammatikuebung-adjektivkonstruktionen-ergaenzen.html](https://www.grammatiktraining.de/adjektive/grammatikuebung-adjektivkonstruktionen-ergaenzen.html)
-
-- [https://www.grammatiktraining.de/adjektive/grammatikuebung-die-drei-fahrraeder-endungen-ergaenzen.html](https://www.grammatiktraining.de/adjektive/grammatikuebung-die-drei-fahrraeder-endungen-ergaenzen.html)
-
-- [https://www.grammatiktraining.de/adjektive/grammatikuebung-herr-gelb-und-herr-rot-endungen-ergaenzen.html](https://www.grammatiktraining.de/adjektive/grammatikuebung-herr-gelb-und-herr-rot-endungen-ergaenzen.html)
-
-- [http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm](http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm)
-
-- [http://www.projectx2002.org/Duits/adjektiv_gemischt.htm](http://www.projectx2002.org/Duits/adjektiv_gemischt.htm)
+<div class="external-button-grid">
+<a href="http://www.lehrerlenz.de/lektion_18_adjektivdeklination.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 1</a>
+<a href="https://mein-deutschbuch.de/grammatikuebungen-adjektivdeklination-1.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 2</a>
+<a href="https://deutschlernerblog.de/uebungen-zur-adjektivdeklination-deutsch-a1-a2/" target="_blank" rel="noreferrer">deutschlernerblog.de · exercice 3</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg05_15.htm" target="_blank" rel="noreferrer">Schubert · exercice 4</a>
+<a href="https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=4&amp;Lection=2&amp;Exercise=1&amp;SubExercise=1" target="_blank" rel="noreferrer">hueber.de · exercice 5</a>
+<a href="https://www.deutsch-lernen.com/uebungen/dc-ue02_2.php?check=yes" target="_blank" rel="noreferrer">deutsch-lernen.com · exercice 6</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/adjektive/deklination/uebungen" target="_blank" rel="noreferrer">Lingolia · exercice 7</a>
+<a href="https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=14" target="_blank" rel="noreferrer">deutschakademie.de · exercice 8</a>
+<a href="https://www.grammatiktraining.de/adjektive/grammatikuebung-adjektivkonstruktionen-ergaenzen.html" target="_blank" rel="noreferrer">Grammatiktraining · exercice 9</a>
+<a href="https://www.grammatiktraining.de/adjektive/grammatikuebung-die-drei-fahrraeder-endungen-ergaenzen.html" target="_blank" rel="noreferrer">Grammatiktraining · exercice 10</a>
+<a href="https://www.grammatiktraining.de/adjektive/grammatikuebung-herr-gelb-und-herr-rot-endungen-ergaenzen.html" target="_blank" rel="noreferrer">Grammatiktraining · exercice 11</a>
+<a href="http://www.lerngrammatik.de/uebung_adjektiv_deklination_bestimmter_artikel_1.htm" target="_blank" rel="noreferrer">Lerngrammatik · exercice 12</a>
+<a href="http://www.projectx2002.org/Duits/adjektiv_gemischt.htm" target="_blank" rel="noreferrer">projectx2002.org · exercice 13</a>
+</div>

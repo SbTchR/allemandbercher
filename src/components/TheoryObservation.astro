@@ -1,0 +1,37 @@
+---
+import { theoryPracticePages } from '../data/theoryPractice';
+const { category, slug } = Astro.props;
+const lab = theoryPracticePages[`${category}/${slug}`]?.lab;
+---
+{lab && <section class="theory-activity theory-lab lesson-observation" data-observation>
+  <p class="home-section-label">Manipule l’exemple</p>
+  <h2>{lab.title}</h2>
+  <p>{lab.intro}</p>
+  <div class="theory-lab-options" role="group" aria-label={lab.title}>
+    {lab.options.map((option, i) => <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} data-example-choice={i}>{option.label}</button>)}
+  </div>
+  <div aria-live="polite">
+    {lab.options.map((option, i) => <div data-example-panel={i} hidden={i !== 0}>
+      <p class="lesson-example" lang="de" set:html={option.sentenceHtml} />
+      <p>{option.note}</p>
+    </div>)}
+  </div>
+</section>}
+<script>
+  document.querySelectorAll<HTMLElement>('[data-observation]').forEach(root => {
+    const buttons = [...root.querySelectorAll<HTMLButtonElement>('[data-example-choice]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[data-example-panel]')];
+    buttons.forEach((button, index) => button.addEventListener('click', () => {
+      buttons.forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
+      panels.forEach((p, i) => p.hidden = i !== index);
+    }));
+  });
+</script>
+<style>
+  .lesson-observation { margin-block: 0 28px; padding: clamp(18px, 3vw, 30px); border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--panel); }
+  .theory-lab-options { display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; }
+  .lesson-example { font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.9; }
+  button { min-height: 44px; }
+  button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  [hidden] { display: none !important; }
+</style>

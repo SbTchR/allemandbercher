@@ -34,40 +34,23 @@ Les formes fortes et mixtes doivent être apprises avec l’infinitif et l’aux
 
 Quelques exercices pour entraîner la conjugaison des verbes au passé composé.
 
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/perfekt_zeiten/06_perfekt_lernen_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/perfekt_zeiten/06_perfekt_lernen_uebung.htm)
-
-- [https://learningapps.org/view649366](https://learningapps.org/view649366)
-
-- [https://learningapps.org/watch?v=psxrbjcb319](https://learningapps.org/watch?v=psxrbjcb319)
-
-- [https://learningapps.org/watch?v=p0w3yd70v19](https://learningapps.org/watch?v=p0w3yd70v19)
-
-- [https://learningapps.org/watch?v=putfredzn19](https://learningapps.org/watch?v=putfredzn19)
-
-- [https://learningapps.org/view649376](https://learningapps.org/view649376)
-
+<div class="external-button-grid">
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/perfekt_zeiten/06_perfekt_lernen_uebung.htm" target="_blank" rel="noreferrer">Levrai · exercice 1</a>
+<a href="https://learningapps.org/view649366" target="_blank" rel="noreferrer">LearningApps · exercice 2</a>
+<a href="https://learningapps.org/watch?v=psxrbjcb319" target="_blank" rel="noreferrer">LearningApps · exercice 3</a>
+<a href="https://learningapps.org/watch?v=p0w3yd70v19" target="_blank" rel="noreferrer">LearningApps · exercice 4</a>
+<a href="https://learningapps.org/watch?v=putfredzn19" target="_blank" rel="noreferrer">LearningApps · exercice 5</a>
+<a href="https://learningapps.org/view649376" target="_blank" rel="noreferrer">LearningApps · exercice 6</a>
+</div>
 Pour mémoriser les formes, alterne reconnaissance et production écrite. Les exercices natifs ci-dessous vérifient les deux.
 
 Quelques exercices pour entraîner le passé composé.
 
-- [https://learningapps.org/display?v=p0w3yd70v19](https://learningapps.org/display?v=p0w3yd70v19)
-
-- [https://learningapps.org/display?v=putfredzn19](https://learningapps.org/display?v=putfredzn19)
-
-- [http://www.lehrerlenz.de/regelmige_verben__beispiele.html](http://www.lehrerlenz.de/regelmige_verben__beispiele.html)
-
-- [http://www.lehrerlenz.de/wo_haben_sie_den_elefanten_gekauft.html](http://www.lehrerlenz.de/wo_haben_sie_den_elefanten_gekauft.html)
-
-- [http://www.lehrerlenz.de/regelmige_verben_1.html?TSPD_101_R0=0447c5399cc16043454d64a1935c935daII0000000000000000679a41c3ffff00000000000000000000000000005be023b90068421a66](http://www.lehrerlenz.de/regelmige_verben_1.html?TSPD_101_R0=0447c5399cc16043454d64a1935c935daII0000000000000000679a41c3ffff00000000000000000000000000005be023b90068421a66)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg04_08.htm](https://www.schubert-verlag.de/aufgaben/xg/xg04_08.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg04_09.htm](https://www.schubert-verlag.de/aufgaben/xg/xg04_09.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg04_10.htm](https://www.schubert-verlag.de/aufgaben/xg/xg04_10.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg04_11.htm](https://www.schubert-verlag.de/aufgaben/xg/xg04_11.htm)
-
-- [http://www.lehrerlenz.de/mehr_bungen.html?TSPD_101_R0=b92eaf78d4a60fdcbacb5015dd1f8774dhq0000000000000000679a41c3ffff00000000000000000000000000005be024b6001667afb7](http://www.lehrerlenz.de/mehr_bungen.html?TSPD_101_R0=b92eaf78d4a60fdcbacb5015dd1f8774dhq0000000000000000679a41c3ffff00000000000000000000000000005be024b6001667afb7)
-
-- [http://www.lehrerlenz.de/tante_agathe.html](http://www.lehrerlenz.de/tante_agathe.html) (un peu difficile)
+<div class="external-button-grid">
+<a href="https://learningapps.org/display?v=p0w3yd70v19" target="_blank" rel="noreferrer">LearningApps · exercice 1</a>
+<a href="https://learningapps.org/display?v=putfredzn19" target="_blank" rel="noreferrer">LearningApps · exercice 2</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg04_08.htm" target="_blank" rel="noreferrer">Schubert · exercice 3</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg04_09.htm" target="_blank" rel="noreferrer">Schubert · exercice 4</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg04_10.htm" target="_blank" rel="noreferrer">Schubert · exercice 5</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg04_11.htm" target="_blank" rel="noreferrer">Schubert · exercice 6</a>
+</div>

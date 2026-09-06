@@ -22,10 +22,15 @@ import SuperlativeTheoryContent from './SuperlativeTheoryContent.astro';
 import SyntaxQuestionsLesson from './SyntaxQuestionsLesson.astro';
 import SyntaxVerbPositionLesson from './SyntaxVerbPositionLesson.astro';
 import TheoryBox from './TheoryBox.astro';
+import TheoryObservation from './TheoryObservation.astro';
+import AdviceJourney from './AdviceJourney.astro';
+import LessonSupport from './LessonSupport.astro';
+import ListeningPractice from './ListeningPractice.astro';
 import TheoryPracticeSuite from './TheoryPracticeSuite.astro';
 import VerbPositionPracticeSuite from './VerbPositionPracticeSuite.astro';
 import WritingExerciseLab from './WritingExerciseLab.astro';
 import { grammarTheoryPageSlugs, type GrammarTheoryPageSlug } from '../data/grammarTheory';
+import { lessonResources } from '../data/lessonResources';
 import { withBase } from '../lib/paths';
 import { resourceEyebrow, type ResourceEntry } from '../lib/resources';
 
@@ -35,6 +40,7 @@ type Props = {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const isLearningPage = entry.collection === 'theorie' || entry.collection === 'conseils';
 const hasObjectives = entry.data.objectives.length > 0;
 const hasAside = entry.data.externalLinks.length > 0;
 const primaryAction = entry.data.primaryAction;
@@ -79,6 +85,7 @@ const customAdvancedConjugationSlug =
     ? (slug as AdvancedConjugationSlug)
     : undefined;
 const hasWritingExerciseLab = entry.collection === 'conseils' && slug === 'expression-ecrite';
+const extraResources = entry.collection === 'theorie' ? lessonResources[`${entry.data.category}/${slug}`] ?? [] : [];
 const hasHeaderCallout = hasObjectives;
 const hasDedicatedTheoryPractice =
   hasComparativeExercise ||
@@ -101,7 +108,7 @@ const hasChapterDashboard =
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <article class="resource-page">
+  <article class:list={["resource-page", { "learning-page": isLearningPage }]}>
     {
       entry.collection === 'theorie' && (
         <nav class="breadcrumb" aria-label="Fil d’Ariane">
@@ -171,7 +178,8 @@ const hasChapterDashboard =
       )
     }
 
-    <div class:list={['resource-layout', { 'resource-layout-wide': !hasAside }]}>
+    {isLearningPage && <LessonSupport />}
+    <div id={isLearningPage ? 'lesson' : undefined} class:list={['resource-layout', { 'resource-layout-wide': !hasAside }]}>
       <div class="prose">
         {
           entry.collection === 'theorie' ? (
@@ -204,12 +212,20 @@ const hasChapterDashboard =
                     </ConjugationSourceReference>
                   </>
                 ) : customGrammarSlug ? (
-                  <GrammarTheoryContent slug={customGrammarSlug} />
+                  <>
+                    <TheoryObservation category={entry.data.category} slug={customGrammarSlug} />
+                    <GrammarTheoryContent slug={customGrammarSlug} />
+                  </>
                 ) : (
-                  <Content />
+                  <>
+                    {slug && <TheoryObservation category={entry.data.category} slug={slug} />}
+                    <Content />
+                  </>
                 )
               }
             </TheoryBox>
+          ) : entry.collection === 'conseils' ? (
+            <AdviceJourney><Content /></AdviceJourney>
           ) : (
             <Content />
           )
@@ -225,6 +241,7 @@ const hasChapterDashboard =
       }
     </div>
 
+    <div id={isLearningPage ? "practice" : undefined}>
     {hasComparativeExercise && <ComparativeRuleLab />}
     {hasComparativeExercise && <ComparativeExercise />}
     {hasSuperlativeExercise && <SuperlativeRuleLab />}
@@ -240,6 +257,13 @@ const hasChapterDashboard =
       )
     }
 
+    {entry.collection === 'conseils' && slug === 'comprehension-orale' && <ListeningPractice />}
+    {entry.collection === 'conseils' && slug && <TheoryPracticeSuite category="conseils" slug={slug} />}
+    </div>
+    {extraResources.length > 0 && <section class="content-band">
+      <h2>D’autres exercices pour continuer</h2>
+      <div class="external-button-grid">{extraResources.map(link => <a href={link.url} target="_blank" rel="noreferrer">{link.label}</a>)}</div>
+    </section>}
     <ImageGallery images={customGrammarSlug ? [] : entry.data.images} />
 
     {

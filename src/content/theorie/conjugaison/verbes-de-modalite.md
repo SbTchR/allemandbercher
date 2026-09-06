@@ -45,32 +45,23 @@ Comme on utilise ces verbes très souvent, il vaut la peine d’apprendre leur c
 
 ## Quelques exercices en ligne pour entraîner le verbe sollen :
 
-- [https://www.schubert-verlag.de/aufgaben/xg/xg06_10.htm](https://www.schubert-verlag.de/aufgaben/xg/xg06_10.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg06_09.htm](https://www.schubert-verlag.de/aufgaben/xg/xg06_09.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg06_08.htm](https://www.schubert-verlag.de/aufgaben/xg/xg06_08.htm)
-
-- [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=2&Lection=3&Exercise=6&SubExercise=1](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=2&Lection=3&Exercise=6&SubExercise=1)
-
+<div class="external-button-grid">
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg06_10.htm" target="_blank" rel="noreferrer">Schubert · exercice 1</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg06_09.htm" target="_blank" rel="noreferrer">Schubert · exercice 2</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg06_08.htm" target="_blank" rel="noreferrer">Schubert · exercice 3</a>
+<a href="https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Volume=2&amp;Lection=3&amp;Exercise=6&amp;SubExercise=1" target="_blank" rel="noreferrer">hueber.de · exercice 4</a>
+</div>
 Quelques exercices pour entraîner les verbes de modalité.
 
-- [https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php](https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php)
-
-- [https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_modalverben.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_modalverben.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg03_07.htm](https://www.schubert-verlag.de/aufgaben/xg/xg03_07.htm)
-
-- [http://www.lehrerlenz.de/lektion_13_modalverben.html](http://www.lehrerlenz.de/lektion_13_modalverben.html)
-
-- [https://deutsch.lingolia.com/de/grammatik/verben/modalverben/uebungen](https://deutsch.lingolia.com/de/grammatik/verben/modalverben/uebungen)
-
-- [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=241](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=241)
-
-- [https://www.grammatiktraining.de/modalverben/schreibuebung-saetze-mit-modalverben-bilden.html](https://www.grammatiktraining.de/modalverben/schreibuebung-saetze-mit-modalverben-bilden.html)
-
-- [https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&Lection=6&SubExercise=1&Volume=3](https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&Lection=6&SubExercise=1&Volume=3)
-
+<div class="external-button-grid">
+<a href="https://www.deutsch-lernen.com/uebungen/dc-ue01_1.php" target="_blank" rel="noreferrer">deutsch-lernen.com · exercice 1</a>
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_modalverben.htm" target="_blank" rel="noreferrer">Schubert · exercice 2</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg03_07.htm" target="_blank" rel="noreferrer">Schubert · exercice 3</a>
+<a href="http://www.lehrerlenz.de/lektion_13_modalverben.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 4</a>
+<a href="https://deutsch.lingolia.com/de/grammatik/verben/modalverben/uebungen" target="_blank" rel="noreferrer">Lingolia · exercice 5</a>
+<a href="https://www.grammatiktraining.de/modalverben/schreibuebung-saetze-mit-modalverben-bilden.html" target="_blank" rel="noreferrer">Grammatiktraining · exercice 6</a>
+<a href="https://www.hueber.de/shared/uebungen/schritte-international/fset.php?Exercise=2&amp;Lection=6&amp;SubExercise=1&amp;Volume=3" target="_blank" rel="noreferrer">hueber.de · exercice 7</a>
+</div>
 ## Les verbes de modalité au prétérit
 
 Ces verbes sont irréguliers au prétérit, car leur radical change (ils perdent les trémas qu’ils ont à l’infinitif par exemple).
@@ -105,6 +96,6 @@ Au prétérit, on ajoute la marque **-te-** entre le radical et la terminaison :
 
 Autres exercices en ligne sur les verbes de modalité au prétérit.
 
-- [https://www.schubert-verlag.de/aufgaben/uebungen_b2/b2_vergangenheit-verben1.htm](https://www.schubert-verlag.de/aufgaben/uebungen_b2/b2_vergangenheit-verben1.htm)
-
-- [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=205](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=205)
+<div class="external-button-grid">
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_b2/b2_vergangenheit-verben1.htm" target="_blank" rel="noreferrer">Schubert · exercice 1</a>
+</div>

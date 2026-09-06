@@ -1,0 +1,111 @@
+<div data-advice-journey>
+  <div class="advice-step-nav" data-advice-nav hidden>
+    <p class="home-section-label">Une étape à la fois</p>
+    <div class="advice-step-buttons" data-advice-buttons role="group" aria-label="Étapes de la méthode"></div>
+    <div class="advice-step-actions">
+      <button type="button" data-advice-prev>← Précédente</button>
+      <output data-advice-progress aria-live="polite"></output>
+      <button type="button" data-advice-next>Suivante →</button>
+      <button type="button" data-advice-all aria-pressed="false">Tout afficher</button>
+    </div>
+  </div>
+  <div data-advice-content><slot /></div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-advice-journey]').forEach(root => {
+    const steps = [...root.querySelectorAll<HTMLElement>('[data-advice-step]')];
+    const nav = root.querySelector<HTMLElement>('[data-advice-nav]');
+    const group = root.querySelector('[data-advice-buttons]');
+    if (!steps.length || !nav || !group) return;
+    let current = 0;
+    let all = false;
+    const prev = root.querySelector<HTMLButtonElement>('[data-advice-prev]')!;
+    const next = root.querySelector<HTMLButtonElement>('[data-advice-next]')!;
+    const toggle = root.querySelector<HTMLButtonElement>('[data-advice-all]')!;
+    const buttons = steps.map((step, i) => {
+      step.id = `advice-step-${i}`;
+      const b = document.createElement('button');
+      b.type = 'button'; b.textContent = `${i + 1}. ${step.dataset.adviceStep}`;
+      b.setAttribute('aria-controls', step.id);
+      b.addEventListener('click', () => {current = i; all = false; show();});
+      group.append(b); return b;
+    });
+    function show() {
+      steps.forEach((step, i) => step.hidden = !all && i !== current);
+      buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(!all && i === current)));
+      prev.disabled = all || current === 0;
+      next.disabled = all || current === steps.length - 1;
+      toggle.setAttribute('aria-pressed', String(all));
+      toggle.textContent = all ? 'Revenir aux étapes' : 'Tout afficher';
+      root.querySelector('[data-advice-progress]')!.textContent = all ? `${steps.length} étapes` : `${current + 1} / ${steps.length}`;
+    }
+    prev.addEventListener('click', () => {current--; show();});
+    next.addEventListener('click', () => {current++; show();});
+    toggle.addEventListener('click', () => {all = !all; show();});
+    const review = root.querySelector<HTMLTableElement>('.review-table');
+    if (review) {
+      review.querySelectorAll('tbody tr').forEach(row => {
+        const cell = row.querySelector('th, td');
+        if (!cell) return;
+        const label = document.createElement('label');
+        const check = document.createElement('input');
+        check.type = 'checkbox';
+        label.append(check);
+        while (cell.firstChild) label.append(cell.firstChild);
+        cell.append(label);
+      });
+      const reset = document.createElement('button');
+      reset.type = 'button'; reset.textContent = 'Décocher la grille';
+      reset.addEventListener('click', () => review.querySelectorAll<HTMLInputElement>('input').forEach(input => input.checked = false));
+      review.parentElement?.after(reset);
+    }
+    const soundTable = root.querySelector<HTMLTableElement>('[data-pronunciation-table]');
+    if (soundTable) {
+      const rows = [...soundTable.querySelectorAll<HTMLTableRowElement>('tbody tr')];
+      const choices = document.createElement('div');
+      choices.className = 'advice-step-buttons'; choices.setAttribute('role', 'group'); choices.setAttribute('aria-label', 'Sons à observer');
+      const names = ['Groupes de lettres', 'Voyelles', 'Consonnes', 'Tout'];
+      const vowels = ['a', 'ä', 'o', 'ö', 'u', 'ü', 'y'];
+      const groups = ['ai', 'ei', 'ie', 'eu', 'äu', 'au', 'an', 'in', 'sch', 'qu', '-er'];
+      const filters = names.map((name, index) => {
+        const button = document.createElement('button'); button.type = 'button'; button.textContent = name;
+        button.addEventListener('click', () => filter(index)); choices.append(button); return button;
+      });
+      function filter(index: number) {
+        rows.forEach(row => {
+          const sound = row.cells[0].textContent?.trim() || '';
+          row.hidden = index !== 3 && !(index === 0 ? groups.includes(sound) : index === 1 ? vowels.includes(sound) : !groups.includes(sound) && !vowels.includes(sound));
+        });
+        filters.forEach((button, i) => button.setAttribute('aria-pressed', String(index === i)));
+      }
+      soundTable.parentElement?.before(choices); filter(0);
+    }
+    nav.hidden = false;
+    show();
+  });
+</script>
+<style>
+  .advice-step-nav { padding: 20px; margin-bottom: 24px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--panel); }
+  :global([data-advice-journey] .advice-step-buttons), .advice-step-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .advice-step-actions { margin-top: 16px; }
+  :global([data-advice-journey] button) { min-height: 44px; padding: 8px 14px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--panel); color: var(--text); font: inherit; font-weight: 700; cursor: pointer; }
+  :global([data-advice-journey] button[aria-pressed="true"]) { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  :global(.review-table label) { display: flex; align-items: start; gap: 10px; cursor: pointer; }
+  :global(.review-table input) { min-width: 22px; height: 22px; accent-color: var(--accent); }
+  :global([data-advice-journey] button:disabled) { opacity: .45; cursor: default; }
+  :global([data-advice-journey] button:focus-visible) { outline: 3px solid var(--focus); outline-offset: 3px; }
+  :global([data-advice-step][hidden]), [hidden] { display: none !important; }
+  :global([data-advice-step] > section) { margin-block: 28px; }
+  :global(.advice-reading-section) { padding-block: 12px; }
+  :global(.advice-reading-section > h3) { font-size: 1.2rem; }
+  :global([data-advice-step] p) { max-width: 74ch; }
+  @media (max-width: 600px) {
+    :global(.learning-page .prose .review-table) { display: block; min-width: 0; }
+    :global(.review-table thead) { display: none; }
+    :global(.review-table tbody), :global(.review-table tr), :global(.review-table th), :global(.review-table td) { display: block; width: 100%; }
+    :global(.review-table tbody tr + tr) { margin-top: 20px; }
+    :global(.review-table th), :global(.review-table td) { padding: 14px; }
+    :global(.learning-page .prose .review-table th:first-child) { width: 100%; }
+  }
+  @media print { .advice-step-nav { display: none; } :global([data-advice-step][hidden]) { display: block !important; } }
+</style>

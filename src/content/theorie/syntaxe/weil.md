@@ -1,6 +1,6 @@
 ---
 title: "weil"
-description: "Rappel: Une subordonnée est une phrase qui se trouve à l'intérieur d'une autre phrase. Elle est liée à la phrase principale par un subordonnant."
+description: "weil = parce que : donne une raison."
 section: "theorie"
 category: "syntaxe"
 sourceUrl: "https://www.allemandbercher.ch/th%C3%A9orie/syntaxe/weil"
@@ -11,62 +11,28 @@ images: []
 migrationNotes: []
 ---
 
-## Subordonnées
+## À retenir
 
-## Exemple:
+Réponds à **Warum ?** (Pourquoi ?). Après **weil**, le verbe conjugué va à la **fin**. Une virgule sépare les deux propositions.
 
-Paulo a faim. Paulo mange un hamburger. --> Paulo mange un hamburger parce qu 'il a faim.
+| Construction | Observe le verbe rouge | Sens |
+| --- | --- | --- |
+| Présent | Ich bleibe zu Hause, weil ich krank <span class="mark-verb">bin</span>. | Je reste à la maison parce que je suis malade. |
+| Passé composé | Ich bin froh, weil du <span class="mark-verbal-tail">gekommen</span> <span class="mark-verb">bist</span>. | Je suis content parce que tu es venu. |
+| Modalité | Ich bin froh, weil ich <span class="mark-verbal-tail">mitkommen</span> <span class="mark-verb">darf</span>. | Je suis content parce que je peux venir avec vous. |
 
-Phrase principale: Paulo mange un hamburger.
+**Deux verbes ?** Le participe passé ou l’infinitif (violet) précède le verbe conjugué (rouge).
 
-Subordonnée: Il a faim.
+**À distinguer :** weil = parce que · dass = que · wenn = quand / si.
 
-## Subordonnant: parce que
+## Pour continuer
 
-La syntaxe des subordonnées en allemand est différente de celle du français. En effet, dans les phrases introduites par les subordonnants dass, weil ou wenn, tu dois mettre le verbe conjugué tout à la fin. Le verbe conjugué est celui qui est accordé au sujet (donc pas le participe passé ni l’infinitif).
-
-## Exemples:
-
-Au présent: Nicolas ist froh, weil Julia an der Party kommt .
-
-Au passé composé: Nicolas ist froh, weil Julia an der Party gekommen ist .
-
-Avec un verbe de modalité: Julia ist froh, weil sie an die Party gehen darf .
-
-## Rappel:
-
-**dass = que**
-
-**weil = parce que**
-
-**wenn = quand / si**
-
-## Exercices externes complémentaires
-
-Quelques exercices pour entraîner les phrases avec weil .
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg07_12.htm](https://www.schubert-verlag.de/aufgaben/xg/xg07_12.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg07_13a.htm](https://www.schubert-verlag.de/aufgaben/xg/xg07_13a.htm)
-
-- [https://www.grammatiktraining.de/kausalesaetze/schreibuebung-saetze-mit-weil-verbinden.html](https://www.grammatiktraining.de/kausalesaetze/schreibuebung-saetze-mit-weil-verbinden.html)
-
-- [https://mein-deutschbuch.de/grammatikuebungen-kausalsaetze.html](https://mein-deutschbuch.de/grammatikuebungen-kausalsaetze.html)
-
-- [https://lingvico.net/bilden-sie-weil-saetze-1-a2/](https://lingvico.net/bilden-sie-weil-saetze-1-a2/)
-
-- [https://einstufungstests.klett-sprachen.de/eks/dafunternehmen/fragebogen.php?jsstatus=js&questname=dafunternehmen&questclass=A2&status=dafunternehmen&questblock=14](https://einstufungstests.klett-sprachen.de/eks/dafunternehmen/fragebogen.php?jsstatus=js&questname=dafunternehmen&questclass=A2&status=dafunternehmen&questblock=14)
-
-- [http://www.lehrerlenz.de/weil_oder_denn.html](http://www.lehrerlenz.de/weil_oder_denn.html)
-
-- [http://www.lehrerlenz.de/ist_das_eine_gute_erziehung_2.html](http://www.lehrerlenz.de/ist_das_eine_gute_erziehung_2.html)
-
-## Exercices mix (dass, weil ,denn, ...)
-
-- [http://www.lehrerlenz.de/ist_das_eine_gute_erziehung1.html](http://www.lehrerlenz.de/ist_das_eine_gute_erziehung1.html)
-
-- [http://www.lehrerlenz.de/ist_das_eine_gute_erziehung3.html](http://www.lehrerlenz.de/ist_das_eine_gute_erziehung3.html)
-
-- [http://www.lehrerlenz.de/strafe_muss_sein.html](http://www.lehrerlenz.de/strafe_muss_sein.html)
-
-- [https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap3_nebensaetze.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap3_nebensaetze.htm)
+<div class="external-button-grid">
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg07_12.htm" target="_blank" rel="noreferrer">Schubert · exercice 1</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg07_13a.htm" target="_blank" rel="noreferrer">Schubert · exercice 2</a>
+<a href="https://www.grammatiktraining.de/kausalesaetze/schreibuebung-saetze-mit-weil-verbinden.html" target="_blank" rel="noreferrer">Grammatiktraining · exercice 3</a>
+<a href="https://mein-deutschbuch.de/grammatikuebungen-kausalsaetze.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 4</a>
+<a href="https://lingvico.net/bilden-sie-weil-saetze-1-a2/" target="_blank" rel="noreferrer">lingvico.net · exercice 5</a>
+<a href="https://einstufungstests.klett-sprachen.de/eks/dafunternehmen/fragebogen.php?jsstatus=js&amp;questname=dafunternehmen&amp;questclass=A2&amp;status=dafunternehmen&amp;questblock=14" target="_blank" rel="noreferrer">einstufungstests.klett-sprachen.de · exercice 6</a>
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap3_nebensaetze.htm" target="_blank" rel="noreferrer">Schubert · exercice 7</a>
+</div>

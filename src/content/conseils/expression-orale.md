@@ -25,10 +25,10 @@ migrationNotes: []
 <strong>Réussir</strong>
 <p>Produire un message complet, compréhensible, cohérent et fluide.</p>
 </article>
-</section>
-
-<details class="lesson-card">
-<summary>1. Se préparer</summary>
+</section><section data-advice-step="Préparer">
+<h2>Préparer</h2>
+<section class="advice-reading-section">
+<h3>Se préparer</h3>
 <div class="lesson-card-content">
 <p>Prépare des listes de vocabulaire en fonction du thème qui est évalué.</p>
 <div class="advice-grid three-columns">
@@ -45,10 +45,11 @@ migrationNotes: []
 <p>Lors du test, tu devras te forcer à utiliser les phrases-types et le vocabulaire que tu as préparés.</p>
 </div>
 </div>
-</details>
-
-<details class="lesson-card">
-<summary>2. S'entraîner</summary>
+</section>
+</section><section data-advice-step="Parler">
+<h2>Parler</h2>
+<section class="advice-reading-section">
+<h3>S'entraîner</h3>
 <div class="lesson-card-content">
 <p>On n'apprend pas à parler la bouche fermée, comme on n'apprend pas à marcher en restant assis.</p>
 <p>Entraîne-toi à parler à haute voix ou au moins dans ta tête en t'imaginant des situations de la vie quotidienne dans lesquelles tu devrais réagir spontanément.</p>
@@ -65,18 +66,18 @@ migrationNotes: []
 <p>Utilise l’enregistreur de ton téléphone ou de ton ordinateur pour t’écouter, repérer les hésitations, puis recommencer la même prise en parlant plus naturellement.</p>
 </section>
 </div>
-</details>
-
+</section>
+</section><section data-advice-step="Vérifier son message">
+<h2>Vérifier son message</h2>
 <section class="advice-section-title">
 <h2>Pour réussir un exercice d'expression orale, le message doit être...</h2>
 </section>
-
 <section class="advice-criteria-grid" aria-label="Quatre critères pour réussir">
 <article class="advice-criterion-card">
 <h3>Complet</h3>
 <div class="lesson-card-content">
-<p>Le contenu du message est l'élément le plus important. Sans contenu, il n'est pas possible de juger la qualité. La consigne impose généralement un minimum d’informations : donne-les toutes.</p>
-<p>Pour viser plus haut que le minimum, pense à ajouter des informations supplémentaires. Tu peux toujours rajouter une réplique à un dialogue, préciser une information de base ou éventuellement dévier un peu du sujet pour montrer que tu sais exprimer plus que le minimum.</p>
+<p>Donne toutes les informations demandées. Un message complet contient d’abord des idées compréhensibles.</p>
+<p>Pour enrichir le message, ajoute une précision, une réplique ou une idée liée au thème.</p>
 <ul class="advice-checklist">
 <li>Donne toutes les informations demandées par la consigne.</li>
 <li>Pour viser plus haut, ajoute des informations supplémentaires.</li>
@@ -115,11 +116,11 @@ migrationNotes: []
 <div class="advice-grid two-columns">
 <article>
 <strong>Dans un dialogue</strong>
-<p>Dans un dialogue, les réponses doivent correspondre aux questions et inversement. Un dialogue n’est pas un interrogatoire : ce n’est pas toujours la même personne qui pose les questions. Lorsque tu réponds à ton partenaire, tu peux enchaîner avec une question en lien avec ta réponse.</p>
+<p>Réponds à la question, puis relance ton partenaire. Vous devez tous les deux pouvoir poser des questions.</p>
 </article>
 <article>
 <strong>Dans un monologue</strong>
-<p>Les informations doivent suivre un ordre logique et avoir un lien entre elles : « Ma branche préférée est le sport. J’aime courir et jouer au foot. J’ai l’entraînement de foot tous les mardis et jeudis après l’école. »</p>
+<p>Relie tes idées : « J’aime le sport. Je joue au foot. Je m’entraîne le mardi et le jeudi. »</p>
 </article>
 </div>
 <blockquote>Aimes-tu l'allemand ? → Oui bien sûr, j'adore ça ! Sais-tu quand nous avons la prochaine période d'allemand ?</blockquote>
@@ -129,7 +130,7 @@ migrationNotes: []
 <article class="advice-criterion-card">
 <h3>Fluide</h3>
 <div class="lesson-card-content">
-<p>Il est nécessaire de s'exprimer de manière relativement fluide afin de ne pas ennuyer l'interlocuteur et d'être compréhensible.</p>
+<p>Parle à un rythme régulier avec des phrases courtes.</p>
 <ul class="advice-checklist">
 <li>Connais le vocabulaire relatif au thème abordé.</li>
 <li>Prépare de petites phrases-types.</li>
@@ -143,4 +144,5 @@ migrationNotes: []
 </div>
 </div>
 </article>
+</section>
 </section>

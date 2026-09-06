@@ -1008,8 +1008,8 @@ const konjunktivRows = [
 
 <style>
   .cav {
-    --cav-accent: #2e6f75;
-    --cav-accent-soft: rgba(46, 111, 117, 0.11);
+    --cav-accent: var(--accent);
+    --cav-accent-soft: var(--accent-soft);
     display: grid;
     gap: clamp(16px, 2.6vw, 28px);
     margin: 0;
@@ -1017,18 +1017,18 @@ const konjunktivRows = [
   }
 
   .cav-preterit {
-    --cav-accent: #9a5c12;
-    --cav-accent-soft: rgba(154, 92, 18, 0.11);
+    --cav-accent: var(--accent);
+    --cav-accent-soft: var(--accent-soft);
   }
 
   .cav-verbes-de-modalite {
-    --cav-accent: #23699d;
-    --cav-accent-soft: rgba(35, 105, 157, 0.11);
+    --cav-accent: var(--accent);
+    --cav-accent-soft: var(--accent-soft);
   }
 
   .cav-konjunktiv-ii {
-    --cav-accent: #6e4598;
-    --cav-accent-soft: rgba(110, 69, 152, 0.11);
+    --cav-accent: var(--accent);
+    --cav-accent-soft: var(--accent-soft);
   }
 
   .cav :where(h2, h3, p) {

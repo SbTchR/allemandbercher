@@ -84,32 +84,22 @@ avoir en tête les tableaux de déclinaisons des déterminants et adjectifs (à 
 
 Exercices en ligne pour entraîner le datif après les prépositions de lieu.
 
-- [http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html](http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html)
-
-- [https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_zuhause.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_zuhause.htm)
-
+<div class="external-button-grid">
+<a href="http://www.lehrerlenz.de/lektion_16_wechselprpositionen.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 1</a>
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_a1/a1_kap7_zuhause.htm" target="_blank" rel="noreferrer">Schubert · exercice 2</a>
+</div>
 Quelques exercices pour entraîner les groupes prépositionnels avec verbes de position et de mouvement .
 
-- [http://www.lehrerlenz.de/wo_oder_wohin.html](http://www.lehrerlenz.de/wo_oder_wohin.html)
 
-- [https://mein-deutschbuch.de/grammatikuebungen-wechselpraepositionen.html](https://mein-deutschbuch.de/grammatikuebungen-wechselpraepositionen.html)
-
-- [https://www.grammatiktraining.de/templokpraepositionen/wechselpraepositionen-artikel-ergaenzen-grammatikuebung.html](https://www.grammatiktraining.de/templokpraepositionen/wechselpraepositionen-artikel-ergaenzen-grammatikuebung.html)
-
-- [http://www.lehrerlenz.de/das_haus_von_familie_simpson.html](http://www.lehrerlenz.de/das_haus_von_familie_simpson.html)
-
-- [http://www.lehrerlenz.de/grammatikbungen11.html](http://www.lehrerlenz.de/grammatikbungen11.html)
-
-- [http://www.lehrerlenz.de/im_haus_von_frau_bolte.html](http://www.lehrerlenz.de/im_haus_von_frau_bolte.html)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg03_08.htm](https://www.schubert-verlag.de/aufgaben/xg/xg03_08.htm)
-
-- [https://courseware.nus.edu.sg/e-daf/cwm/la2201gr/prp/prpex4.htm](https://courseware.nus.edu.sg/e-daf/cwm/la2201gr/prp/prpex4.htm)
-
-- [http://www.lehrerlenz.de/bildgeschichte_der_kluge_hund.html](http://www.lehrerlenz.de/bildgeschichte_der_kluge_hund.html)
-
-- [http://www.lehrerlenz.de/auf_dem_weg_zum_millionr.html](http://www.lehrerlenz.de/auf_dem_weg_zum_millionr.html)
-
-- [https://www.deutsch-perfekt.com/deutsch-ueben/die-praepositionen-testen-sie-sich](https://www.deutsch-perfekt.com/deutsch-ueben/die-praepositionen-testen-sie-sich)
-
-- [http://www.lehrerlenz.de/unser_haus_3.html](http://www.lehrerlenz.de/unser_haus_3.html)
+<div class="external-button-grid">
+<a href="https://mein-deutschbuch.de/grammatikuebungen-wechselpraepositionen.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 1</a>
+<a href="http://www.lehrerlenz.de/das_haus_von_familie_simpson.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 2</a>
+<a href="http://www.lehrerlenz.de/grammatikbungen11.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 3</a>
+<a href="http://www.lehrerlenz.de/im_haus_von_frau_bolte.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 4</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg03_08.htm" target="_blank" rel="noreferrer">Schubert · exercice 5</a>
+<a href="https://courseware.nus.edu.sg/e-daf/cwm/la2201gr/prp/prpex4.htm" target="_blank" rel="noreferrer">courseware.nus.edu.sg · exercice 6</a>
+<a href="http://www.lehrerlenz.de/bildgeschichte_der_kluge_hund.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 7</a>
+<a href="http://www.lehrerlenz.de/auf_dem_weg_zum_millionr.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 8</a>
+<a href="https://www.deutsch-perfekt.com/deutsch-ueben/die-praepositionen-testen-sie-sich" target="_blank" rel="noreferrer">deutsch-perfekt.com · exercice 9</a>
+<a href="http://www.lehrerlenz.de/unser_haus_3.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 10</a>
+</div>

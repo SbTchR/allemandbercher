@@ -1,0 +1,63 @@
+<nav class="lesson-shortcuts" aria-label="Dans cette fiche">
+  <a href="#lesson">Comprendre</a>
+  <a href="#practice">M’entraîner</a>
+</nav>
+<script>
+  document.querySelectorAll<HTMLTableElement>('.learning-page .prose table').forEach(table => {
+    const parent = table.parentElement;
+    if (!parent) return;
+    if (!['auto', 'scroll'].includes(getComputedStyle(parent).overflowX)) {
+      const scroll = document.createElement('div');
+      scroll.className = 'lesson-table-scroll'; scroll.tabIndex = 0;
+      scroll.setAttribute('role', 'region');
+      scroll.setAttribute('aria-label', table.caption?.textContent || 'Tableau : faire défiler si nécessaire');
+      table.before(scroll); scroll.append(table);
+    }
+    table.classList.add('lesson-table');
+  });
+  // Keep the complete HTML readable without JavaScript; show one activity at a time when available.
+  document.querySelectorAll<HTMLElement>('.learning-page [data-theory-practice]').forEach(root => {
+    const activities = [...root.querySelectorAll<HTMLElement>(':scope > .theory-activity')];
+    if (activities.length < 2) return;
+    const nav = document.createElement('div');
+    nav.className = 'lesson-activity-choices';
+    nav.setAttribute('role', 'group');
+    nav.setAttribute('aria-label', 'Choisir un exercice');
+    const buttons = activities.map((activity, index) => {
+      const button = document.createElement('button');
+      activity.id = `${root.id}-activity-${index}`;
+      button.type = 'button';
+      button.textContent = activity.querySelector('.theory-activity-kicker')?.textContent || `Exercice ${index + 1}`;
+      button.setAttribute('aria-controls', activity.id);
+      button.addEventListener('click', () => select(index));
+      nav.append(button); return button;
+    });
+    function select(index: number) {
+      activities.forEach((activity, i) => activity.hidden = i !== index);
+      buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
+    }
+    activities[0].before(nav);
+    select(0);
+  });
+  document.querySelectorAll<HTMLButtonElement>('.learning-page .theory-flashcard').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+  });
+</script>
+<style is:global>
+  .learning-page .lesson-shortcuts, .learning-page .lesson-activity-choices { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 24px; }
+  .learning-page .lesson-shortcuts a, .learning-page .lesson-activity-choices button { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 18px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--panel); color: var(--text); font: inherit; font-weight: 800; text-decoration: none; cursor: pointer; }
+  .learning-page .lesson-shortcuts a:hover, .learning-page .lesson-activity-choices button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .learning-page :is(button, a, input, select):focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .learning-page [hidden] { display: none !important; }
+  .learning-page :is(#lesson, #practice) { scroll-margin-top: 120px; }
+  .learning-page .prose > :is(p, ul, ol), .learning-page .theory-box > :is(p, ul, ol) { max-width: 76ch; }
+  .learning-page .lesson-table-scroll { overflow-x: auto; max-width: 100%; margin-block: 20px; border-radius: var(--radius-md); }
+  .learning-page .prose .lesson-table { display: table; width: 100%; margin-block: 0; }
+  .learning-page .lesson-table-scroll .lesson-table { min-width: 520px; }
+  .learning-page .prose :is(td, th) { line-height: 1.6; }
+  .learning-page .prose h2 { margin-top: 28px; }
+  .learning-page .prose .external-button-grid { margin-block: 16px 28px; }
+  .learning-page .prose .external-button-grid a { overflow-wrap: anywhere; }
+  .learning-page .theory-activity[hidden] { display: none !important; }
+  @media print { .learning-page :is(.lesson-shortcuts, .lesson-activity-choices) { display: none; } .learning-page .theory-activity[hidden] { display: block !important; } }
+</style>

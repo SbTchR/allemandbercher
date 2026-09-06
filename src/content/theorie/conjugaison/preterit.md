@@ -71,40 +71,18 @@ Voici quelques exemples.
 
 Quelques exercices pour entraîner le prétérit des verbes réguliers et irréguliers.
 
-- [https://www.schubert-verlag.de/aufgaben/uebungen_b1/b1_kap8_praeteritum.htm](https://www.schubert-verlag.de/aufgaben/uebungen_b1/b1_kap8_praeteritum.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg07_05.htm](https://www.schubert-verlag.de/aufgaben/xg/xg07_05.htm)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/40_praeteritum_uebungen.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/40_praeteritum_uebungen.htm)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/42_vergangenheit_uebungen_lernen.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/42_vergangenheit_uebungen_lernen.htm)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/45_praeteritum_vergangenheit_verben.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/45_praeteritum_vergangenheit_verben.htm)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/50_verben_praeteritum_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/50_verben_praeteritum_uebung.htm)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/54_verben_imperfekt_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/54_verben_imperfekt_uebung.htm)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/52_zeiten_praeteritum_uebungen.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/52_zeiten_praeteritum_uebungen.htm)
-
-- [https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/53_verben_im_praeteritum_zeit_uebung.htm](https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/53_verben_im_praeteritum_zeit_uebung.htm)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15/praeteritum.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15/praeteritum.htm)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15/praeteritum_ue.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15/praeteritum_ue.htm)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15_erg/praeteritum_ue2.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15_erg/praeteritum_ue2.htm)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15_erg/praeteritum_ue3.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15_erg/praeteritum_ue3.htm)
-
-- [http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15/praeteritum_ue1.htm](http://daten.schule.at/gegenstand/deutsch/data/daf_tibs/modul15/praeteritum_ue1.htm)
-
-- [https://mein-deutschbuch.de/grammatikuebungen-praeteritum.html](https://mein-deutschbuch.de/grammatikuebungen-praeteritum.html)
-
-- [http://www.lehrerlenz.de/lektion_22_prteritum.html](http://www.lehrerlenz.de/lektion_22_prteritum.html)
-
-- [https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_bach.htm](https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_bach.htm)
-
-- [https://www.schubert-verlag.de/aufgaben/xg/xg07_04.htm](https://www.schubert-verlag.de/aufgaben/xg/xg07_04.htm)
-
-- [https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=206](https://www.deutschakademie.de/online-deutschkurs/choosethemaref.php?tid=206)
+<div class="external-button-grid">
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_b1/b1_kap8_praeteritum.htm" target="_blank" rel="noreferrer">Schubert · exercice 1</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg07_05.htm" target="_blank" rel="noreferrer">Schubert · exercice 2</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/40_praeteritum_uebungen.htm" target="_blank" rel="noreferrer">Levrai · exercice 3</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/42_vergangenheit_uebungen_lernen.htm" target="_blank" rel="noreferrer">Levrai · exercice 4</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/45_praeteritum_vergangenheit_verben.htm" target="_blank" rel="noreferrer">Levrai · exercice 5</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/50_verben_praeteritum_uebung.htm" target="_blank" rel="noreferrer">Levrai · exercice 6</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/54_verben_imperfekt_uebung.htm" target="_blank" rel="noreferrer">Levrai · exercice 7</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/52_zeiten_praeteritum_uebungen.htm" target="_blank" rel="noreferrer">Levrai · exercice 8</a>
+<a href="https://online-lernen.levrai.de/deutsch-uebungen/grammatik_5_7/praeteritum_imperfekt/53_verben_im_praeteritum_zeit_uebung.htm" target="_blank" rel="noreferrer">Levrai · exercice 9</a>
+<a href="https://mein-deutschbuch.de/grammatikuebungen-praeteritum.html" target="_blank" rel="noreferrer">Mein Deutschbuch · exercice 10</a>
+<a href="http://www.lehrerlenz.de/lektion_22_prteritum.html" target="_blank" rel="noreferrer">lehrerlenz.de · exercice 11</a>
+<a href="https://www.schubert-verlag.de/aufgaben/uebungen_a2/a2_kap2_bach.htm" target="_blank" rel="noreferrer">Schubert · exercice 12</a>
+<a href="https://www.schubert-verlag.de/aufgaben/xg/xg07_04.htm" target="_blank" rel="noreferrer">Schubert · exercice 13</a>
+</div>
