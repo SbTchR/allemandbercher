@@ -29,6 +29,7 @@ import ListeningPractice from './ListeningPractice.astro';
 import TheoryPracticeSuite from './TheoryPracticeSuite.astro';
 import VerbPositionPracticeSuite from './VerbPositionPracticeSuite.astro';
 import WritingExerciseLab from './WritingExerciseLab.astro';
+import ChapterOnePractice from './ChapterOnePractice.astro';
 import { grammarTheoryPageSlugs, type GrammarTheoryPageSlug } from '../data/grammarTheory';
 import { lessonResources } from '../data/lessonResources';
 import { withBase } from '../lib/paths';
@@ -101,8 +102,11 @@ const theoryCategoryLabels = {
   general: 'Théorie générale',
 };
 const isExerciseChapter = entry.collection === 'exercices' && entry.data.pageType === 'chapitre';
+const hasChapterOnePractice =
+  entry.collection === 'exercices' && entry.data.level === '9H' && slug === 'kap-1-die-neue-schule';
 const hasChapterDashboard =
   isExerciseChapter &&
+  !hasChapterOnePractice &&
   (entry.data.communicationObjectives.length > 0 || entry.data.languageFocus.length > 0 || Boolean(entry.data.finalMission));
 
 ---
@@ -179,7 +183,7 @@ const hasChapterDashboard =
     }
 
     {isLearningPage && <LessonSupport />}
-    <div id={isLearningPage ? 'lesson' : undefined} class:list={['resource-layout', { 'resource-layout-wide': !hasAside }]}>
+    {hasChapterOnePractice ? <ChapterOnePractice /> : <div id={isLearningPage ? 'lesson' : undefined} class:list={['resource-layout', { 'resource-layout-wide': !hasAside }]}>
       <div class="prose">
         {
           entry.collection === 'theorie' ? (
@@ -239,7 +243,7 @@ const hasChapterDashboard =
           </aside>
         )
       }
-    </div>
+    </div>}
 
     <div id={isLearningPage ? "practice" : undefined}>
     {hasComparativeExercise && <ComparativeRuleLab />}
